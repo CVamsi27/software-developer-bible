@@ -31624,7 +31624,7 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "951f74fef0a14740e246cd170e1aff18498b91bfef8e2b9db8c4624cd8b657dd",
+      "sha256": "a424392dda87ac7b913498496a3584a8b0715e9ee0a9bfbdbea693aa9ecfee41",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31642,12 +31642,12 @@
       },
       "review": {
         "path": "docs/api-contract.md",
-        "sha256": "951f74fef0a14740e246cd170e1aff18498b91bfef8e2b9db8c4624cd8b657dd",
+        "sha256": "a424392dda87ac7b913498496a3584a8b0715e9ee0a9bfbdbea693aa9ecfee41",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 7B count/read-time sync (2026-11-24): Full read of 119 lines. Updated generated counts/read-time navigation after Wave 7B.",
+        "notes": "Wave 11B C1-C8 refinement (2026-11-24): Full read of 115 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",
@@ -31660,7 +31660,7 @@
     },
     {
       "path": "docs/corpus-review/README.md",
-      "sha256": "4cc59846a1a03cbc92b3d1b893643e2a686d0e43e4684ca6cdc7b0dd0cd3e676",
+      "sha256": "03f764d92362db16977ece8acd4d3dcaf82a5ab9feff21ee486bbe47584955d6",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31679,16 +31679,16 @@
         "path": "docs/corpus-review/README.md",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 0 standard update (2026-11-23): updated repair rule 1 to permit full comprehension rewrites while preserving anchors and authored REVISION.md pairs.",
+        "notes": "Wave 11B C1-C8 refinement (2026-11-24): Full read of 98 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
-        "sha256": "4cc59846a1a03cbc92b3d1b893643e2a686d0e43e4684ca6cdc7b0dd0cd3e676"
+        "sha256": "03f764d92362db16977ece8acd4d3dcaf82a5ab9feff21ee486bbe47584955d6"
       }
     },
     {
       "path": "docs/deployment.md",
-      "sha256": "ea99a37f317c2a867f6f19756e78b15e15853b729507e8f02c3d9e64d00d59bb",
+      "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31707,18 +31707,18 @@
       },
       "review": {
         "path": "docs/deployment.md",
-        "sha256": "ea99a37f317c2a867f6f19756e78b15e15853b729507e8f02c3d9e64d00d59bb",
+        "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-02",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full Pages/git/auth/probe runbook re-read against the refresh-cookie flow. Verified the access/refresh lifetimes, publishable-key requirement for the refresh exchange, manual persistence/logout checks, and session-scope statement against functions/_middleware.ts, functions/auth/session.ts and functions/auth/logout.ts; build, deployed and authenticated proof remain distinct.",
+        "notes": "Wave 11B C1-C8 refinement (2026-11-24): Full read of 349 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/full-corpus-readability-pass.md",
-      "sha256": "e2374e9fb84becc8322751ed2a3c167620a85840c32fc0ccd26ab9689cd802b9",
+      "sha256": "1a293644ac5aaa527e2078bcca12c5ac2e476af78c18d4b4ace0acda557e6e75",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31736,18 +31736,18 @@
       },
       "review": {
         "path": "docs/full-corpus-readability-pass.md",
-        "sha256": "e2374e9fb84becc8322751ed2a3c167620a85840c32fc0ccd26ab9689cd802b9",
+        "sha256": "1a293644ac5aaa527e2078bcca12c5ac2e476af78c18d4b4ace0acda557e6e75",
         "status": "reviewed",
         "reviewer": "buffy",
-        "reviewDate": "2026-11-14",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Re-read after correcting the stale 2026-11-11 progress header: clarified that the per-stack table is a dated snapshot, replaced the stale 32/32 gate claim with the current suite, and fixed the duplicated 'is'. Live corpus total checked with scripts/check_counts.py.",
+        "notes": "Wave 11B C1-C8 refinement (2026-11-24): Full read of 85 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/gate-design-principles.md",
-      "sha256": "f166efc5781c7fe84ee6b89d58ed93b4662f6a396e5eeab31468400bcdcc6df3",
+      "sha256": "9b124d7f3f7e4215c6955a42efaaf1d6456737bbc8978430e30c3f8f44c6277f",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31770,18 +31770,18 @@
       },
       "review": {
         "path": "docs/gate-design-principles.md",
-        "sha256": "f166efc5781c7fe84ee6b89d58ed93b4662f6a396e5eeab31468400bcdcc6df3",
+        "sha256": "9b124d7f3f7e4215c6955a42efaaf1d6456737bbc8978430e30c3f8f44c6277f",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full predicate/fixer/writer/harness contracts checked, realistic defect/clean controls, scope floors, fixed points and contextual baseline limits.",
+        "notes": "Wave 11B C1-C8 refinement (2026-11-24): Full read of 200 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/planner-site-sync.md",
-      "sha256": "f9f116d841d8f0be790a714696d211bcc524cc42f9e3071074f5f9aa733480f8",
+      "sha256": "0809fbc903438884bf2c22b71aa17d7f614e29bf5bf88602564cc645327064a9",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31797,18 +31797,18 @@
       },
       "review": {
         "path": "docs/planner-site-sync.md",
-        "sha256": "f9f116d841d8f0be790a714696d211bcc524cc42f9e3071074f5f9aa733480f8",
+        "sha256": "0809fbc903438884bf2c22b71aa17d7f614e29bf5bf88602564cc645327064a9",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Repaired public/private ownership and initialization versus versioned forward release. Matched portfolio scripts: compatible deployment, private previews/backups, per-row CAS, ALL-row readback, conflict reconciliation and no-op repeat.",
+        "notes": "Wave 11B C1-C8 refinement (2026-11-24): Full read of 43 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/readability-standard.md",
-      "sha256": "e70899ea35ef4f3371fd2c7743d849096c62c37d151b565610a753f52195a479",
+      "sha256": "fa08a6e782f4e320b3cd740b6490c9615f34a03d1e60dff98913fffe013ee1bd",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31828,18 +31828,18 @@
       },
       "review": {
         "path": "docs/readability-standard.md",
-        "sha256": "e70899ea35ef4f3371fd2c7743d849096c62c37d151b565610a753f52195a479",
+        "sha256": "fa08a6e782f4e320b3cd740b6490c9615f34a03d1e60dff98913fffe013ee1bd",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full readability/density/editorial rules read. Clarified dated replacement-only/no-new-citation/uncommitted batch limits do not prohibit authorized technical corrections and release.",
+        "notes": "Wave 11B C1-C8 refinement (2026-11-24): Full read of 170 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/reference-coverage-audit.md",
-      "sha256": "3689d7276801e93d486718c90b2098ae14a3573aadf82bf122e96c5b690c9da0",
+      "sha256": "0c249e8ff34bbb322223c9b2893eee28fce501c75d43502c6c3102bcb0d221b1",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31860,25 +31860,25 @@
       },
       "review": {
         "path": "docs/reference-coverage-audit.md",
-        "sha256": "3689d7276801e93d486718c90b2098ae14a3573aadf82bf122e96c5b690c9da0",
+        "sha256": "0c249e8ff34bbb322223c9b2893eee28fce501c75d43502c6c3102bcb0d221b1",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped navigation review after the Linux publication check: eight directory links now name the real INDEX.md landing page. Topic descriptions, source coverage and all historical audit claims are unchanged. This is not a fresh semantic review of the audit body.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 11B C1-C8 refinement (2026-11-24): Full read of 121 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/residential-verification-checklist.md",
-      "sha256": "e151fa0b02bfa514e4a1955ac539fd48c47e0d7eb83fd53006d2319441b38760",
+      "sha256": "676c4a8f46ee29f6d5a09cf42e078aadcd7a728f5bf3f74c1dfa13379d01fe9c",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
         "headings": [
           "0. Pull the current verdicts from the last CI run",
           "1. SUSPECT rows (hosts in `SUSPECT_DEAD_HOSTS`)",
-          "2. Datacenter-blocked hosts (`DATACENTER_BLOCKED_HOSTS`, e.g. leetcode)",
+          "2. Datacenter-blocked hosts (`DATACENTER_BLOCKED_HOSTS`, for example LeetCode)",
           "3. Bot-wall WARNs that may hide rot",
           "4. Close the loop"
         ],
@@ -31889,18 +31889,18 @@
       },
       "review": {
         "path": "docs/residential-verification-checklist.md",
-        "sha256": "e151fa0b02bfa514e4a1955ac539fd48c47e0d7eb83fd53006d2319441b38760",
+        "sha256": "676c4a8f46ee29f6d5a09cf42e078aadcd7a728f5bf3f74c1dfa13379d01fe9c",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Log retrieval, status versus intended body evidence, bot-wall classifications and replacement/full-gate workflow checked; browser and blocked scripted verdicts stay separate.",
+        "notes": "Wave 11B C1-C8 refinement (2026-11-24): Full read of 70 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/scripts-map.md",
-      "sha256": "f613251e0013cfadfa13df5e337cae26fabd7504ade5c363534265d6a6ae764a",
+      "sha256": "e2b91b0392845da9a149ff2ec41627da3f08ceeaefd47ba8e867e5f15b321c5c",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31922,12 +31922,12 @@
       },
       "review": {
         "path": "docs/scripts-map.md",
-        "sha256": "f613251e0013cfadfa13df5e337cae26fabd7504ade5c363534265d6a6ae764a",
+        "sha256": "e2b91b0392845da9a149ff2ec41627da3f08ceeaefd47ba8e867e5f15b321c5c",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 0 update (2026-11-23): updated job_board_watch.py row to document new --discover/--query/--location/--json live ATS discovery mode and Lever support across public Greenhouse, Ashby, Lever, and Personio feeds.",
+        "notes": "Wave 11B C1-C8 refinement (2026-11-24): Full read of 227 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -32774,7 +32774,7 @@
     },
     {
       "path": "docs/topic-importance.md",
-      "sha256": "e747ee5984a850cb2b4e5f99bc65ed3069a2be29e1ba869e8050b486bf108aae",
+      "sha256": "ebbb8f010715897690652281e3ee8d3c854ec7ce466bf1acbb6eed28fbcac7a9",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32793,18 +32793,18 @@
       },
       "review": {
         "path": "docs/topic-importance.md",
-        "sha256": "e747ee5984a850cb2b4e5f99bc65ed3069a2be29e1ba869e8050b486bf108aae",
+        "sha256": "ebbb8f010715897690652281e3ee8d3c854ec7ce466bf1acbb6eed28fbcac7a9",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Independent role/general axes, full-stack India/global/conditional EU priorities, practical baseline and relevance-based specialist depth checked; queue is not readiness.",
+        "notes": "Wave 11B C1-C8 refinement (2026-11-24): Full read of 55 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "a36593fa4a6a225afc8a6afb3ce9f40f84b56b9468a49fdc42456fd2ce3482f8",
+      "sha256": "09a682c4413de913e59b22db9f7f93bbd91e528c7dd414a9e862666c6228f764",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32819,12 +32819,12 @@
       },
       "review": {
         "path": "docs/verification-gates.md",
-        "sha256": "a36593fa4a6a225afc8a6afb3ce9f40f84b56b9468a49fdc42456fd2ce3482f8",
+        "sha256": "09a682c4413de913e59b22db9f7f93bbd91e528c7dd414a9e862666c6228f764",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 5B count/read-time sync (2026-11-24): Full read of 125 lines. Updated generated counts/read-time navigation after Wave 5B.",
+        "notes": "Wave 11B C1-C8 refinement (2026-11-24): Full read of 137 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },

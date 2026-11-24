@@ -18,7 +18,7 @@
 
 A verification gate checks a named condition and returns a failing result when the condition is violated. The build or release harness must propagate that result for the check to block anything.
 
-**Textbook definition:** a verification gate is an acceptance predicate evaluated at a workflow boundary, with progression contingent on its result. Its assurance is limited by the predicate, inputs and enforcement path.
+**Textbook definition:** a verification gate is an acceptance predicate evaluated at a workflow boundary, with progression contingent on its result. Its assurance is limited by the predicate, inputs, and enforcement path.
 
 - **Gate** — a read-only check that fails a build. Never writes.
 - **Fixer** — rewrites files; idempotent; shares its detection logic with a
@@ -35,68 +35,69 @@ A verification gate checks a named condition and returns a failing result when t
 
 ## First Principles
 
-1. **Prose has no compiler.** Invalid syntax or types may fail a build, but wrong behavior can still compile; a document that
-   lies can render perfectly. In a hand-maintained corpus, a count, an API
-   signature, a path or a guarantee can look plausible and still be wrong.
-   The suite makes specific, repeatable properties explicit. Structural
-   checks, semantic review and live-source verification answer different
-   questions; none substitutes for the others. Bounded local checks can run
-   routinely, while remote drift and claims that need human interpretation
-   require separate evidence.
+1. **Prose has no compiler.** Invalid syntax or types may fail a build, whereas
+   wrong behavior can compile cleanly and a document that lies can render
+   perfectly. In a hand-maintained corpus, a count, an Application Programming
+   Interface (API) signature, a path, or a guarantee can look plausible and
+   still be wrong.
+
+   The suite makes specific, repeatable properties explicit. Structural checks,
+   semantic review, and live-source verification answer different questions and
+   cannot substitute for one another; bounded local checks run routinely, while
+   remote drift and judgment calls require separate evidence.
 
 2. **A claim without an owner drifts.** A number quoted independently in three
-   places can become inconsistent as the corpus changes. Two complementary controls are: give the claim a single *writer* that recomputes it from
-   disk (a restamper with `--write`), or give it a constant *reader* that
-   fails when reality disagrees (a gate). Hand-editing an owned claim is not
-   maintenance — it is re-introducing the drift on a delay.
+   places becomes inconsistent as the corpus evolves. Two complementary
+   controls stop this: give each claim a single *writer* that recomputes it from
+   disk (a restamper with `--write`), or give it a constant *reader* that fails
+   when reality disagrees (a gate). Hand-editing an owned claim re-introduces
+   drift on a delay.
 
-3. **A repeatable rule makes a check reusable.** A sweep is true the day it runs
-   and less true every day after. Converting a sweep's finding into a gate
-   rule checks that named property on subsequent runs. The detector itself still needs regression controls and updated inputs. The residue
-   — defect classes too singular or context-dependent to gate — decays back
-   silently unless re-probed on a schedule, which is what the drift drill is
-   for. The corollary sets the boundary: *do not gate singletons*. A rule
-   needs a recurring class to guard; a rule for a one-off is noise that
-   trains contributors to ignore failures.
+3. **A repeatable rule makes a check reusable.** A sweep is true the day it
+   runs and less true every day after, whereas converting a finding into a gate
+   checks that property on every subsequent run. The detector still needs
+   regression controls and updated inputs, while singular or context-dependent
+   classes stay in the scheduled drift drill. The corollary sets the boundary:
+   *do not gate singletons*, because a one-off rule produces noise that trains
+   contributors to ignore failures.
 
 4. **A gate is only as blocking as its wiring.** Every gate script can exit 1
-   correctly and still be worth nothing if the harness never listens — the
-   real false green here was a failure branch writing a variable the summary
-   never read, skipping four gates and exiting 0. So the harness needs a gate
-   of its own, and in CI the same audit applies one level up: a workflow step
-   that runs a gate under `set +e` and drops the status is the same lie,
-   again invisible from the inside.
+   correctly and still block nothing if the harness ignores it — the real
+   false green here wrote a variable the summary never read, skipping four
+   gates and exiting 0. Continuous Integration (CI) needs the same audit one
+   level up, because a workflow step running under `set +e` and dropping its
+   exit code is an invisible lie from the inside.
 
-5. **Detection rots like content does.** A gate that stops firing — after a
-   refactor, a rename, an over-eager cleanup — stays green forever, and
-   nothing about green distinguishes "verified" from "never ran." Wiring
-   checks cannot see this; they prove a failure *can* reach the exit, not
-   that detection *still works*. Gates therefore need gates: plant each
-   canonical defect and require non-zero (fire side), run on clean content
-   and require zero (clean side), and pin the tooling's own parsers and
-   fixers with characterization suites. An unrealistic plant that "passes"
-   proves nothing — the gates are calibrated against real corpus shape, and
-   the plants must be too.
+5. **Detection rots like content does.** A gate that stops firing after a
+   refactor or cleanup stays green forever, and green alone never distinguishes
+   "verified" from "never ran." Wiring checks prove a failure *can* reach the
+   exit, not that detection *still works*.
 
-6. **Calibrate to reality, then prove both ways.** A rule that fires on the
-   corpus as it stands buries signal in baseline noise; a rule never proven
-   to fire may be dead code (one rule here was — unreachable after a
-   `return`, caught only by the plant). Both proofs are mandatory before a
-   rule is trusted, and the honest record of what a rule caught on its first
-   baseline run — the day-one ledger — is the empirical argument that the
-   method finds what manual passes miss.
+   Gates therefore need gates: plant each canonical defect and require non-zero
+   (fire side), run on clean content and require zero (clean side), and pin
+   parsers and fixers with characterization suites. Because gates are
+   calibrated against real corpus shape, planted defects must match that shape
+   too.
+
+6. **Calibrate to reality, then prove both ways.** A rule firing on the live
+   corpus buries signal in baseline noise, while a rule never proven to fire
+   may be dead code (one rule here was unreachable after a `return`, caught
+   only by the plant). Both proofs are mandatory before trusting a rule, and the
+   day-one ledger records empirically what rules find that manual passes miss.
 
 ## Why Do We Need It?
 
-Because every layer added here answered a failure that actually happened:
-counts drifted by double digits before the count guard existed; a bank
-promised 30 questions and held 20; a repair pass built on a naive fence
-toggle corrupted three files; ten scripts each carried a fence parser that
-desynced on nested fences; the box fixer silently skipped whole files; a red
-build passed CI through a wiring gap; a rule was dead code until a plant
-proved it could fire. None of these were hypothetical. The suite is the
-shape it is because each shape was forced by an incident — and the incidents
-are all recorded, with dates, in the [health report](2026-09-19-corpus-health-report.md).
+Every layer added here answered an observed failure: counts drifted by double
+digits before the count guard existed, an interview bank promised 30 questions
+and held 20, and a repair pass built on a naive fence toggle corrupted three
+files. Ten scripts once carried separate fence parsers that desynced on nested
+fences, the box fixer silently skipped whole files, a red build passed CI
+through a wiring gap, and one rule was dead code until a plant proved it could
+fire.
+
+None of those failures were hypothetical. The suite has its current shape
+because each check was forced by an incident recorded with dates in the
+[health report](2026-09-19-corpus-health-report.md).
 
 ## How It Works
 
@@ -120,41 +121,42 @@ are all recorded, with dates, in the [health report](2026-09-19-corpus-health-re
 ### The layers, and what watches each
 
 | Concern | Examples | Checks (labels can overlap) |
-| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
-| Corpus claims and learning content | counts, links, structure, staleness, answer depth, spelling, repeated prose, topic links and generated reading metadata | gates 1–14, 19, 24–27 |
-| Harness and workflow wiring | failure propagation, gate inventory, CI enforcement and trigger coverage | gate 15 |
-| Shared parsers and repair tools | fence and prose parsing, planted gate defects, writer output, empty-scope behavior and fixed points | gates 16–18, 20, 22–23 |
-| Navigation and teaching flow | reachable chapters, readable previous/next labels and related-reading guidance | gates 3–4, 21, 27 |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------ |
+| Corpus claims and learning content | counts, links, structure, staleness, answer depth, spelling, repeated prose, topic links, and generated reading metadata | gates 1–14, 19, 24–27 |
+| Harness and workflow wiring | failure propagation, gate inventory, CI enforcement, and trigger coverage | gate 15 |
+| Shared parsers and repair tools | fence and prose parsing, planted gate defects, writer output, empty-scope behavior, and fixed points | gates 16–18, 20, 22–23 |
+| Navigation and teaching flow | reachable chapters, readable previous and next labels, and related-reading guidance | gates 3–4, 21, 27 |
 
-These rows group concerns; they are not mutually exclusive or complete
-coverage claims. Each gate checks only its named property on its declared
-inputs. Parser, writer and harness tests exercise selected failure and
-control cases, so a passing test still leaves other behavior for review.
+These rows group concerns rather than claiming complete coverage, and each gate
+checks only its named property on its declared inputs. Parser, writer, and
+harness tests exercise selected failure and control cases, so passing tests
+still leave other behavior for review.
 
 ## Real-world Application
 
 The method transfers to any corpus or codebase where generated or hand-kept
-claims must stay true: API docs quoting counts, runbooks quoting endpoints,
-READMEs quoting versions. Start by inventorying claims and sorting them into
-owned vs unowned; convert unowned live-count claims to restampers first
-(cheapest, highest yield); sweep defect classes only where a gate can be
-built from the wreckage; and keep the day-one ledger from the beginning —
-it is what converts "we added checks" into "we know the checks work."
+claims must stay true: API docs quoting counts, runbooks quoting endpoints, and
+READMEs quoting versions.
+
+Start by inventorying claims and sorting them into owned versus unowned,
+convert unowned live-count claims to restampers first (cheapest, highest yield),
+sweep defect classes only where a gate can catch regressions, and keep the
+day-one ledger from the start to show the checks work.
 
 ## Common Mistakes
 
 - **Mass-applying a derivation because the numbers look large.** The See
-  Also surface measured 1958 bare entries (72%) — a big, uniform-looking
-  class, and exactly the shape the nav-label and cheat-sheet defects had. But
-  drafting the derivation before applying it showed what readers would
-  actually get: 1874 of the 1888 derivable entries collapse into four
+  Also surface measured 1958 bare entries (72%) — a big, uniform-looking class
+  matching the shape of the nav-label and cheat-sheet defects. Yet drafting
+  the derivation showed 1874 of 1888 derivable entries collapsed into four
   boilerplate templates ("the X topic index", "derives X from first
-  principles") repeated hundreds of times each — the bare link with extra
-  words, and a new uniform-and-wrong signature minted by the fix itself. A
-  reason phrase is a judgment about *why this link helps this reader here*;
-  it can be assisted, checked for hygiene (resolves, not a duplicate of the
-  label), and progressively improved — but not mass-generated. The measured
-  non-action and its numbers are recorded in the health-report ledger.
+  principles") repeated hundreds of times each — a bare link with extra words
+  and a new wrong signature minted by the fix itself.
+
+  A reason phrase judges *why this link helps this reader here*; it can be
+  assisted, checked for hygiene (resolves without echoing the label), and
+  improved progressively, never mass-generated. That measured non-action and its
+  numbers live in the health-report ledger.
 
 | Mistake | Why it bites | Instead |
 | ---------------------------------------------- | -------------------------------------------------------------------- | --------------------------- |
@@ -178,10 +180,9 @@ it is what converts "we added checks" into "we know the checks work."
 
 ## Summary
 
-The suite combines corpus checks, parser/fixer tests, a harness auditor and a drift drill. Its checks arose from observed defects and are tested with defect and clean controls. They cover named failure classes, not every possible technical or editorial error. The design fits in
-one sentence: **make the corpus a system whose lies are detectable, whose
-detection is wired, and whose wiring is itself tested** — then write down
-how, so the next maintainer inherits the reasoning and not just the rules.
+The suite combines corpus checks, parser and fixer tests, a harness auditor, and a drift drill. Its checks arose from observed defects and are tested with defect and clean controls covering named failure classes rather than every possible technical or editorial error.
+
+The design fits in one sentence: **make the corpus a system whose lies are detectable, whose detection is wired, and whose wiring is itself tested** — then write down how, so the next maintainer inherits the reasoning and not just the rules.
 
 ## See Also
 

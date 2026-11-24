@@ -30,7 +30,7 @@ Not in scope, because the corpus is not defective there:
 2. **Test the arithmetic and the claims.** Re-derive capacity numbers, re-check version
    claims against their date, and verify that code samples would run as written.
 3. **Rewrite only genuine instances.** A section qualifies when it asserts a mechanism
-   without an example, a trace, a table or a diagram that makes the mechanism visible.
+   without an example, a trace, a table, or a diagram that makes the mechanism visible.
 4. **Leave sound sections alone.** Padding a good section is a defect, not a fix.
 5. **Restamp and verify.** Every `.md` edit invalidates its review record in
    `docs/2026-10-25-fullstack-review-records.json`, and the canonical writers
@@ -69,43 +69,13 @@ The table is a dated snapshot of the stack files in the 2026-11-11 start scope; 
 | `70.2.1.05-intervals.md` | Two "Common Mistakes" items repeated one rule; others bare imperatives | Four distinct mistakes, each stating its failure |
 | `40.9.01-the-twelve-factor-app.md` | "Best Practices" restated the Summary's nouns | Three repeatable checks that falsify a factor |
 
-Reviewed and found sound, with no content change: six execution/scope chapters, This,
-Prototypes, Proxy and Reflect, the Instagram and Nginx chapters, GitHub Actions, Argo CD,
-Twitter feed, chat system, YouTube, chaos engineering, and all six async/concurrency
-chapters (event loop, promises, async/await, error handling, abort and cancellation,
-bounded concurrency), plus the whole memory-and-data category: pass by value, Map/Set/WeakMap/WeakSet,
-shallow versus deep copy, debounce, throttle, memory leaks, garbage collection, hash-table
-internals, and equality and coercion; plus the functional-patterns category: modules,
-memoization, generators, currying and composition, and recursion with tail calls; and the modern-and-interview category: recent ECMAScript
-features, web workers, DOM events and delegation, and cross-tab communication.
+Reviewed and found sound with no content change across completed stacks:
 
-The `10.1-javascript` stack is now complete: every content chapter in its six categories has
-been read in full, and the stack produced exactly one repair (the V8 hidden-classes section).
-The TypeScript foundations category is also complete: types versus interfaces, keyof and
-typeof, type narrowing, and tsconfig compiler options.
-The generics-and-inference category is complete: generics, infer, advanced generics, and
-type variance.
-The type-transformations category is complete: utility types, conditional types, mapped
-types, and template literal types.
-The advanced-patterns category is complete: `satisfies`, branded types, decorators,
-declaration files, pattern composition, and the compiler pipeline.
-The React stack is complete: internals, core hooks, advanced hooks, modern React, and the
-portals/compound-component patterns (twenty-two chapters). One numbering defect fixed in
-`useEffect`; the interview bank is out of scope.
-The Next.js stack is complete: rendering fundamentals, routing and middleware, data and
-caching, and production (sixteen chapters); the interview bank is out of scope.
-Form handling is complete (six chapters): the three form libraries, Zod, server-action
-forms, and autosave/draft recovery.
-The animation stack is complete (seven chapters). The HTML/CSS stack is complete too
-(nine chapters), which finishes every teaching category in `10-frontend` except the
-interview banks.
-The Node.js stack is complete: runtime and I/O, processes and concurrency, and security
-and operations (`20.1.1`-`20.1.4`; thirteen teaching chapters plus backups). The interview
-bank is out of scope. `20.2-nestjs` is also complete across all five categories (eighteen
-teaching chapters): core architecture, request lifecycle, patterns, quality/operations and
-custom decorators. `20.3-rest-apis` is complete too (twenty teaching chapters) across design
-and contract, HTTP mechanics, payloads/errors/integration and edge/scale. The `20.4-database` stack is complete (twenty-three teaching chapters): PostgreSQL foundations, querying and
-optimization, transactions and replication, ORM and access, plus operations and scaling.
+- **Execution, scope, and core language (`10.1-javascript` — all six categories complete):** execution and scope, `this`, prototypes, `Proxy` and `Reflect`, all six async and concurrency chapters (event loop, promises, `async` and `await`, error handling, abort and cancellation, bounded concurrency), memory and data (pass by value, `Map`, `Set`, `WeakMap`, `WeakSet`, shallow versus deep copy, debounce, throttle, memory leaks, garbage collection, hash-table internals, equality and coercion), functional patterns (modules, memoization, generators, currying and composition, recursion with tail calls), and modern and interview topics (recent ECMAScript features, Web Workers, Document Object Model (DOM) events and delegation, cross-tab communication). Only the V8 Hidden Classes section required a repair.
+- **TypeScript (`10.2-typescript` — core categories complete):** foundations (types versus interfaces, `keyof` and `typeof`, type narrowing, `tsconfig` compiler options), generics and inference (generics, `infer`, advanced generics, type variance), type transformations (utility types, conditional types, mapped types, template literal types), and advanced patterns (`satisfies`, branded types, decorators, declaration files, pattern composition, compiler pipeline).
+- **Frontend UI stacks (`10.3`–`10.7`):** React internals, core hooks, advanced hooks, modern React, portals, and compound components (twenty-two chapters; one numbering fix in `useEffect`, interview bank out of scope); Next.js rendering fundamentals, routing and middleware, data and caching, and production (sixteen chapters; interview bank out of scope); form handling (six chapters across the three form libraries, Zod, server-action forms, and autosave and draft recovery); animation (seven chapters); and HTML and CSS (nine chapters), finishing every teaching category in `10-frontend`.
+- **Architecture and platform spotlights:** Instagram and Nginx chapters, GitHub Actions, Argo CD, Twitter feed, chat system, YouTube, and chaos engineering.
+- **Backend stacks (`20.1`–`20.4`):** Node.js runtime and I/O, processes and concurrency, and security and operations (`20.1.1`–`20.1.4`, thirteen teaching chapters plus backups; interview bank out of scope); `20.2-nestjs` across all five categories (eighteen teaching chapters: core architecture, request lifecycle, patterns, quality and operations, and custom decorators); `20.3-rest-apis` (twenty teaching chapters across design and contract, HTTP mechanics, payloads, errors, and integration, plus edge and scale); and `20.4-database` (twenty-three teaching chapters across PostgreSQL foundations, querying and optimization, transactions and replication, Object-Relational Mapping (ORM) and access, plus operations and scaling).
 
 ## Cadence
 

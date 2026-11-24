@@ -1,30 +1,33 @@
 {% raw %}
 # Site Deployment — Cloudflare Pages builds straight from git
 
-> Cloudflare Pages is connected to this repo and builds +
-> publishes on every push to `main`. GitHub Actions runs only the
-> render/safety gate (`site-build.yml`); there is no deploy job, no API
-> token, and no secret to rotate.
+> Cloudflare Pages is connected to this repo and builds and publishes
+> on every push to `main`. GitHub Actions runs only the render and safety gate
+> (`site-build.yml`); there is no deploy job, no Application Programming
+> Interface (API) token, and no secret to rotate.
 
 The production host is private by design. Cloudflare Pages Functions run the
 access gate before a static file can be served: Google OAuth is brokered by
 Supabase Auth, and only the allowlisted account receives a short-lived
-`HttpOnly` access cookie plus a 30-day `HttpOnly` refresh cookie. When the
-access cookie expires, the gate exchanges the refresh cookie with Supabase and
-renews both cookies server-side, so a normal refresh or a return visit does not
-ask for Google again. Matching is case-insensitive and the
-gate treats supported `@gmail.com` and `@googlemail.com` aliases as equivalent.
-An unauthenticated visitor sees `/auth/login.html`;
-a signed-in visitor with a different address is sent to
-`https://personal.buildora.work/?study=access-denied` (with stale/invalid cookies
-purged so the browser never enters an access-denied redirect loop). The gate is
-server-side, so copying a static file URL does not bypass it.
+`HttpOnly` access cookie plus a 30-day `HttpOnly` refresh cookie.
+
+When the access cookie expires, the gate exchanges the refresh cookie with
+Supabase and renews both cookies server-side, so a normal refresh or return
+visit does not prompt for Google again. Email matching is case-insensitive, and
+the gate treats supported `@gmail.com` and `@googlemail.com` aliases as
+equivalent.
+
+An unauthenticated visitor sees `/auth/login.html`; a signed-in visitor with a
+different address is sent to `https://personal.buildora.work/?study=access-denied`
+(with stale or invalid cookies purged so the browser never enters an
+access-denied redirect loop). Because the gate runs server-side, copying a
+static file URL does not bypass it.
 
 |  |  |
 | --------------- | ---------------------------------------------------------------------- |
 | **Status** | Git integration (Connect to Git) · production branch `main` |
 | **Pages build** | `bundle exec jekyll build` → `_site` (Ruby 3.4.11 via `.ruby-version`) |
-| **CI gate** | `site-build.yml` → same render + lane-exclusion assertions |
+| **CI gate** | `site-build.yml` → same render and lane-exclusion assertions |
 
 ## 1. How publishing works
 
@@ -74,10 +77,14 @@ links keep that context so **Return to roadmap** reopens the same assignment.
 1. **Connect the repo** — Cloudflare dashboard → *Workers & Pages* →
    *Create* → *Pages* → *Connect to Git* → select
    `CVamsi27/software-developer-bible` → name the project exactly
-   `software-developer-bible`
-   (must match `wrangler.toml` for manual CLI use). It must be a **Pages**
-   project: a Worker project (Workers Builds) shows a *Deploy command*
-   field — typically prefilled with `npx wrangler deploy` — and does not match this repo's Pages Functions deployment contract. If you see that field, stop and check the project identity. Create the intended Pages project; remove a mistaken Worker only after confirming it serves no needed traffic.
+   `software-developer-bible` (matching `wrangler.toml` for manual CLI use).
+
+   It must be a **Pages** project: a Worker project (Workers Builds) shows a
+   *Deploy command* field — typically prefilled with `npx wrangler deploy` — and
+   does not match this repo's Pages Functions deployment contract. If you see
+   that field, stop and check the project identity: create the intended Pages
+   project, and remove a mistaken Worker only after confirming it serves no
+   needed traffic.
 2. **Build settings** — framework preset `Jekyll`, then override:
    | Setting | Value |
    | ------------------------- | ---------------------------- |
@@ -87,56 +94,53 @@ links keep that context so **Return to roadmap** reopens the same assignment.
    (The preset's bare `jekyll build` skips bundler; the override builds
    against the locked `Gemfile`.)
 3. **Environment** — Pages project → *Settings* → *Environment variables*:
-   `JEKYLL_ENV=production`. The `.ruby-version` file pins Ruby 3.4.11;
-   Cloudflare Pages supports a repository `.ruby-version` override. The
-   lock now uses `github-pages 232`, Jekyll 3.10.0 and Liquid 4.0.4, which
-   removes the Ruby 3.2+ `Object#tainted?` incompatibility in Liquid 4.0.3.
-   If the build image ignores the file, set `RUBY_VERSION=3.4.11` here.
-   Add `STUDY_ALLOWED_EMAIL` with the exact Google account authorized to read
-   Study. This value is required; when it is missing, the gate fails closed
-   and no verified account receives content access. Add these **production**
-   variables for the Pages Functions auth gate: `SUPABASE_URL` and either
-   `SUPABASE_ANON_KEY` or `SUPABASE_JWKS_URL`. They are read at request time
-   and are intentionally not committed. With asymmetric Supabase signing,
-   `SUPABASE_JWKS_URL` is automatically derived from `SUPABASE_URL` as
-   `${SUPABASE_URL}/auth/v1/.well-known/jwks.json` if omitted; Study verifies
-   the access token locally with ES256/RS256 asymmetric cryptographic checks
-   and dual-strategy verification (falling back from `/auth/v1/user` to JWKS).
-   The implementation also accepts the personal app's public aliases
-   (`NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY`). If the project
-   uses symmetric signing, provide the publishable/anon key instead of JWKS.
-   Silent renewal exchanges the refresh cookie at
-   `${SUPABASE_URL}/auth/v1/token?grant_type=refresh_token`, and that endpoint
-   requires the publishable/anon key. A JWKS-only configuration still verifies
-   access tokens, but after the access cookie expires it falls back to an
-   interactive Google login because it cannot perform the exchange.
-   In Supabase Auth → URL Configuration, allow the exact
-   redirect URL `https://study.buildora.work/auth/callback.html` (and the
-   Pages preview callback URL when testing a preview deployment). The page
-   itself lives in `functions/_middleware.ts` and nowhere else: the adapter
-   answers the callback directly because Pages canonicalizes a `.html` asset
-   request with a 308 (`/auth/login.html` → `/auth/login`), which is where the
-   callback's `#access_token` fragment was lost. Do not add a second copy as
-   an asset or a route — each would be shadowed by the intercept and drift.
-   **Optional, and the only way to cover the success path:** add
-   `STUDY_PROBE_TOKEN` (generate with `openssl rand -hex 32`) as a
-   **production** variable here, and the same value as a **repository secret**
-   of the same name (GitHub → Settings → Secrets and variables → Actions),
-   which is what `study-live.yml` passes to the probe. This token is a bearer credential with chapter-read access, not a harmless health-check flag; keep it secret and rotate both configured copies together. A request whose session
-   cookie carries it is treated as the approved account, so the live probe can
-   fetch one real chapter per stack and assert each answers 200 with its own
-   title, instead of only proving the site is *blocked*. Leave it unset and the
-   branch is inert: the probe reports a warning, not a failure, and the manual
-   checklist in §3 is the only proof of the signed-in path.
-4. **No GitHub token needed** — jekyll-github-metadata has no disable
-   flag, so `_config.yml` neutralizes it by construction instead: `github:`
-   is an Array (never merged into an API-backed drop) and
-   url/title/description/baseurl are all set explicitly (so the plugin
-   installs zero lazy Values). The Pages build therefore makes no GitHub
-   API calls — no token, no `PAGES_REPO_NWO`. (The old failure mode was an
-   unset `baseurl`: the plugin installed a lazy baseurl Value whose render
-   died with "No repo name found", because in production builds the git
-   remote is never consulted. See §4.)
+
+   - **Ruby and Jekyll pin:** set `JEKYLL_ENV=production`. The `.ruby-version`
+     file pins Ruby 3.4.11, and Cloudflare Pages supports a repository
+     `.ruby-version` override. The lock uses `github-pages 232`, Jekyll 3.10.0,
+     and Liquid 4.0.4, removing the Ruby 3.2+ `Object#tainted?` incompatibility
+     in Liquid 4.0.3. If the build image ignores the file, set `RUBY_VERSION=3.4.11`.
+   - **Authorized account:** add `STUDY_ALLOWED_EMAIL` with the exact Google
+     account authorized to read Study. This value is required; when missing,
+     the gate fails closed and no verified account receives content access.
+   - **Supabase signing and renewal:** add `SUPABASE_URL` and either
+     `SUPABASE_ANON_KEY` or `SUPABASE_JWKS_URL` as **production** variables
+     for the Pages Functions auth gate (read at request time, intentionally
+     not committed). With asymmetric Supabase signing, `SUPABASE_JWKS_URL`
+     (JSON Web Key Set) defaults to `${SUPABASE_URL}/auth/v1/.well-known/jwks.json`
+     if omitted; Study verifies the access token locally with ES256 and RS256
+     checks and dual-strategy verification (falling back from `/auth/v1/user`
+     to JWKS). The gate also accepts `NEXT_PUBLIC_SUPABASE_URL` and
+     `SUPABASE_PUBLISHABLE_KEY`. For symmetric signing, provide the
+     publishable or anon key instead of JWKS. Silent renewal exchanges the
+     refresh cookie at `${SUPABASE_URL}/auth/v1/token?grant_type=refresh_token`,
+     which requires the publishable or anon key; a JWKS-only setup still verifies
+     access tokens, then falls back to interactive Google login after expiry.
+   - **Callback allowlist:** in Supabase Auth → URL Configuration, allow the
+     exact redirect URL `https://study.buildora.work/auth/callback.html` (and
+     the Pages preview callback URL when testing a preview deployment). The page
+     lives in `functions/_middleware.ts` and nowhere else: the adapter answers
+     the callback directly because Pages canonicalizes `.html` asset requests
+     with a 308 (`/auth/login.html` → `/auth/login`), which drops the
+     callback's `#access_token` fragment. Never add a second copy as an asset or
+     route — each would be shadowed by the intercept and drift.
+   - **Optional probe token:** add `STUDY_PROBE_TOKEN` (generated with
+     `openssl rand -hex 32`) as a **production** variable here and as a
+     **repository secret** of the same name (GitHub → Settings → Secrets and
+     variables → Actions) for `study-live.yml`. Treat it as a bearer credential
+     with chapter-read access and rotate both copies together. A request whose
+     session cookie carries it is treated as the approved account so the live
+     probe can fetch one chapter per stack and assert HTTP 200 with that
+     chapter's own title; leave it unset and the probe logs a warning while the
+     manual checklist in §3 proves the signed-in path.
+4. **No GitHub token needed** — `jekyll-github-metadata` has no disable flag,
+   so `_config.yml` neutralizes it by construction instead: `github:` is an
+   Array (never merged into an API-backed drop) and `url`, `title`,
+   `description`, and `baseurl` are all set explicitly (installing zero lazy
+   Values). The Pages build makes zero GitHub API calls — no token, no
+   `PAGES_REPO_NWO`. (The old failure mode was an unset `baseurl`, which made
+   the plugin install a lazy `baseurl` Value that died with "No repo name found"
+   because production builds never consult the git remote. See §4.)
 5. **Remove the old Direct Upload wiring** — repo → *Settings* → *Secrets
    and variables* → *Actions*: delete secrets `CF_API_TOKEN` and
    `CF_ACCOUNT_ID` plus variable `DEPLOY_SITE_ENABLED` (the `deploy` job
@@ -148,16 +152,15 @@ links keep that context so **Return to roadmap** reopens the same assignment.
    ```
 
 7. **Attach the production domain** — Pages project → *Custom domains* →
-   set up `study.buildora.work`. This is the production URL; the
-   `.pages.dev` hostname is not an access path: the root Pages middleware
-   redirects `software-developer-bible.pages.dev` to the canonical study
-   host before auth/static handling. Also configure the account-level Pages
-   redirect described below so the platform fallback cannot be used as a
-   second public entry point. (The `CNAME` file in the repo root is a GitHub
-   Pages leftover and does nothing here; the dashboard record is what serves
-   the domain.) If `buildora.work` is a
-   zone in the same Cloudflare account, the record is added for you;
-   otherwise add this record at your DNS provider:
+   set up `study.buildora.work`. This is the production URL; the `.pages.dev`
+   hostname is not an access path because the root Pages middleware redirects
+   `software-developer-bible.pages.dev` to the canonical study host before
+   auth and static handling. Also configure the account-level Pages redirect
+   below so the platform fallback cannot act as a second public entry point
+   (the root `CNAME` file is a GitHub Pages leftover and does nothing here).
+
+   If `buildora.work` is a zone in the same Cloudflare account, Cloudflare adds
+   the DNS record automatically; otherwise add this record at your DNS provider:
 
    ```text
    CNAME  study  →  software-developer-bible.pages.dev
@@ -170,10 +173,10 @@ links keep that context so **Return to roadmap** reopens the same assignment.
    ```
 
    In Cloudflare Pages, add a redirect from the production
-   `software-developer-bible.pages.dev` hostname to
-   `https://study.buildora.work` using the Pages custom-domain redirect flow
-   (or an account-level Bulk Redirect). Verify the fallback returns a 308/301
-   with no chapter content, while the canonical host returns the sign-in flow.
+   `software-developer-bible.pages.dev` hostname to `https://study.buildora.work`
+   using the Pages custom-domain redirect flow (or an account-level Bulk
+   Redirect). Verify the fallback returns HTTP 308 or 301 with no chapter content,
+   while the canonical host returns the sign-in flow.
 
 ## 3. Private entry-flow verification
 
@@ -184,11 +187,11 @@ node --test functions/_lib/study-access.test.mjs
 node --experimental-strip-types --test functions/_middleware.test.mjs
 ```
 
-The first is the policy (who may read, and under what session); the second is
-the Pages adapter that turns that policy into a Response — URL parse, cookie
-read, `next()` hand-off. The adapter had no coverage anywhere until it did: it
-was exercised only by requests to production, where a broken `Location` header
-looks exactly like a working one from the dashboard.
+The first checks the policy (who may read and under what session); the second
+checks the Pages adapter that turns that policy into a `Response` (URL parsing,
+cookie reads, and `next()` hand-off). Previously the adapter had zero automated
+coverage and was exercised only against production, where a broken `Location`
+header looked identical to a working one from the dashboard.
 
 ### Machine-checked contract
 
@@ -200,67 +203,58 @@ python3 scripts/check_study_live.py --verbose   # exits 1 on a contract violatio
 
 `study-live.yml` runs the offline half (`test_study_live.py`, which drives the
 real CLI against stub hosts and pins every exit code) on any change to its own
-inputs, and the live probe on anything that changes what production should serve
-(the corpus, `_config.yml`, `api/**`, the edge) as well as weekly on Mondays and
-on manual *Run workflow*.
+inputs. It runs the live probe on anything that changes what production serves
+(the corpus, `_config.yml`, `api/**`, and the edge), as well as weekly on
+Mondays and on manual *Run workflow*.
 
-The probe used to be scheduled-only, because Pages builds from git in parallel
-with this repo's CI and a push-time probe would measure the *previous* build.
-That safety cost a week of detection latency, so the probe waits instead: with
-`--await-fresh` it polls the deployment's own commit — published at
-`/api/version`, no session required — until the deploy lands (bounded, then it
-judges). The commit is the one fact a deployment can publish without leaking
-content, and comparing it with the checkout's `HEAD` is what separates "the
-site is up" from "the site is this commit" — a distinction that is not
-academic: on 2026-09-22 production served a bundle a commit behind HEAD for
-fifteen hours while every gate was green, because a stale deployment is still a
-*working* site. It also distinguishes any two consecutive builds, including a
-push that touched only `scripts/` or `functions/` — something the corpus digest
-this replaced could not see, so those pushes wait (and fail) instead of
-matching a digest that never moved.
+The probe used to be scheduled-only because Pages builds from git in parallel
+with CI, so a push-time probe would measure the *previous* build. With
+`--await-fresh`, it instead polls `/api/version` (unauthenticated) until the
+deployment matches `HEAD`, bounded by a timeout before judging.
 
-Waiting is what makes the push trigger safe — without it the probe would fail
-on a deployment that is merely in flight. The two states it waits for are both
-a build in flight: a readable commit from an older build, and a deployment that
-predates the endpoint itself (any non-200 — the path is still gated there). A
-200 whose body is not the endpoint's payload is misconfiguration, cannot be
-waited out, and fails on the first read naming that cause instead of blaming an
-old commit — so the run cannot stall for its whole budget before reporting a
-state the first read already settled. Scheduled runs can start hours late
-(GitHub queues them; this repo's `job-board-watch` has fired as late as 11:19
-for an 06:00 cron), so the push trigger is the fast path and Monday is the
-backstop.
+Publishing only the commit SHA separates "the site is up" from "the site is
+this commit" without leaking content. On 2026-09-22, for instance, production
+served a bundle one commit behind `HEAD` for fifteen hours while every gate
+stayed green, and comparing commits also catches pushes touching only
+`scripts/` or `functions/` that the corpus digest alone cannot see.
 
+Waiting makes the push trigger safe by distinguishing two in-flight states
+(a readable older commit, or a non-200 response predating `/api/version`) from
+a true misconfiguration. If HTTP 200 returns an unexpected payload shape, the
+probe fails immediately with that cause instead of burning its timeout budget.
 
-The probe list is not repeated here: each probe in
-`scripts/check_study_live.py` owns the expectation it enforces, and
-`--print-contract` renders the whole set — a copy in this runbook could only
-drift from it.
+Because scheduled runs can start hours late (GitHub queues them — this repo's
+`job-board-watch` has fired as late as 11:19 for an 06:00 cron), the push
+trigger is the fast path and Monday is the backstop.
+
+The probe list is not repeated here: each probe in `scripts/check_study_live.py`
+owns the expectation it enforces, and `--print-contract` renders the whole
+set so this runbook cannot drift from it.
 
 Warnings never change the exit code: they describe environment state (unset
-Supabase variables, a dead denial host) that only an operator can change —
-including when that host does not answer at all. A zero exit with warnings proves only the paths actually exercised; unconfigured or unprobed paths remain unverified. Failures mean the live host
-contradicts the checked contract.
+Supabase variables or an unreachable denial host) that only an operator can
+change. A zero exit with warnings proves only the exercised paths and leaves
+unprobed paths unverified; failures mean the live host contradicts the checked
+contract.
 
-**The signed-in path** is probed only when `STUDY_PROBE_TOKEN` is set (see
-§2 step 3): the probe then fetches one real chapter per top-level stack with
-that credential and asserts each response is 200 *and* contains that chapter's
-own title — the two halves that no amount of policy testing can join, because
-the middleware letting a valid session through and the edge serving that file
-are different machines. One chapter per stack exists because each stack is its
-own render class; a marker is a full plain-prose run from the chapter's title,
-never a single word, because "Testing" or "WebSockets" appears in the
-navigation of every page in its section and would make the assertion vacuous.
-It also checks that no two chapters return identical bodies, which catches an
-edge serving one cached response for every path. The freshness check above is
-not part of this branch: the commit needs no credential.
+**The signed-in path** runs only when `STUDY_PROBE_TOKEN` is set (see §2 step 3):
+the probe fetches one chapter per top-level stack with that credential and
+asserts each response returns HTTP 200 and contains that chapter's own title.
+Policy unit tests alone cannot bridge the gap between middleware validation and
+edge static delivery.
 
-Without the credential the probe says so in a warning, and only the offline
-suites (`node --test` over the policy, the adapter, the routes and the version
-route) plus the artifact assertions in `site-build.yml` stand behind that path.
+Fetching one chapter per stack verifies every render class, and matching a full
+plain-prose title phrase ensures the navigation sidebar ("Testing",
+"WebSockets") cannot create a false positive. It also verifies that two
+chapters never return identical bodies, catching an edge rule serving one
+cached page for every route.
 
-Either way, verify by hand in a private window after any auth change — it is
-the only check that also exercises Google's consent screen and the callback:
+Without the credential, the probe warns and only the offline `node --test`
+suites (policy, adapter, routes, and version route) plus `site-build.yml`
+artifact assertions cover that path.
+
+Either way, verify manually in a private browser window after any auth change —
+it is the only check that exercises Google's consent screen and callback:
 
 1. `https://study.buildora.work/` opens the Google sign-in screen rather than
    returning a chapter file.
@@ -274,7 +268,7 @@ the only check that also exercises Google's consent screen and the callback:
 6. `/auth/logout` returns to login, and reloading the site after it asks for
    Google again: both the access and refresh cookies must be gone.
 
-The current scope is an open-app/browser session. There is no background push
+The current scope is an open-app browser session. There is no background push
 delivery, server-side refresh-token store beyond Supabase's own rotation, or
 binary upload in this site.
 
@@ -286,7 +280,13 @@ binary upload in this site.
   publishing temporarily: Pages project → *Settings* → *Builds* → *Branch
   control* → turn off automatic production-branch deployments. The CI gate
   keeps running; re-enable to resume.
-- **Local preview:** use the locked bundle and Ruby version to build with `JEKYLL_ENV=production bundle exec jekyll build`. A historical native-gem failure does not establish that preview is unavailable now. Serve the output on loopback and run the [rendered-page checks](scripts-map.md#rendered-page-checks). On case-insensitive filesystems, the authored homepage needs the documented temporary preview alias because `INDEX.html` and `index.html` collide. Local rendering does not prove edge auth or a deployed release.
+- **Local preview:** use the locked bundle and Ruby version to build with
+  `JEKYLL_ENV=production bundle exec jekyll build` (a historical native-gem
+  failure does not mean preview is unavailable now). Serve `_site` on loopback
+  and run the [rendered-page checks](scripts-map.md#rendered-page-checks); on
+  case-insensitive filesystems, map Home via the documented preview alias
+  because `INDEX.html` and `index.html` collide. Local rendering does not
+  prove edge auth or a deployed release.
 - Rollbacks are a dashboard action: Pages project → *Deployments* → select a
   prior deployment → *Rollback*.
 
@@ -295,27 +295,24 @@ binary upload in this site.
 **`Missing entry-point to Worker script` after `npx wrangler deploy`, or
 a *Deploy command* field in the project settings.** The repo was connected
 as a *Worker* (Workers Builds) instead of a *Pages* project, which does not
-match this repository's deployment contract. Confirm the project identity and
-create the intended *Pages* → *Connect to Git* project from §2. Remove a
-mistaken Worker only after confirming it serves no needed traffic. Do not set a deploy command to
-`npx wrangler deploy` on this repo.
+match this repository's deployment contract. Confirm the project identity,
+create the intended *Pages* → *Connect to Git* project from §2, remove any
+mistaken Worker only after confirming it serves no needed traffic, and never
+set a deploy command to `npx wrangler deploy` on this repo.
 
 **`No repo name found` from GitHub Metadata during the Pages build.**
-jekyll-github-metadata installed a lazy Value (historically: the unset
+`jekyll-github-metadata` installed a lazy Value (historically the unset
 `baseurl`) whose render needs the GitHub API — and production builds never
-consult the git remote, so without `PAGES_REPO_NWO` the render dies. Fixed
-in-repo: `_config.yml` sets `baseurl: ""` plus url/title/description
+consult the git remote, so without `PAGES_REPO_NWO` the render fails. Fixed
+in-repo: `_config.yml` sets `baseurl: ""` plus `url`, `title`, and `description`
 explicitly and keeps `github:` an Array, so the plugin installs zero lazy
-Values and makes zero API calls. If this error ever returns, that
-short-circuit regressed — do not "fix" it with a token; restore the
-`_config.yml` shape documented there.
+Values and makes zero API calls. Restore that shape instead of adding a token.
 
 **Pages build fails on Ruby or gems.** Check the build log's Ruby line: it
-must read 3.4.11. The pin is the `.ruby-version` file; if the image ignores
-it, set `RUBY_VERSION=3.4.11` under *Settings* → *Environment variables*.
-Keep `Gemfile.lock` committed so local, CI and Pages builds use the same
-compatible `github-pages`/Liquid set. The Ruby 3.4.11 pin and lock were
-validated together with the full Jekyll render.
+must read `3.4.11`. The pin is `.ruby-version`; if the image ignores it, set
+`RUBY_VERSION=3.4.11` under *Settings* → *Environment variables*. Keep
+`Gemfile.lock` committed so local, CI, and Pages builds use the same
+`github-pages` and Liquid versions validated together in the full Jekyll render.
 
 **Pages is green but CI (`site-build`) is red.** The deployment is live
 without its safety guards (lane exclusion, Liquid warnings) — treat as

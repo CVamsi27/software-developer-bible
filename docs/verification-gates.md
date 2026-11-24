@@ -4,11 +4,12 @@
 > Named structural and regression contracts are enforced by scripts, and
 > `bash scripts/verify.sh` runs all of them. This page maps each gate to the
 > rule it enforces, the files it scans, and the canonical fix when it fails.
-> Most gates are stdlib text scans; the bounded example pack also uses pinned Node and TypeScript. They run on every relevant push,
-> with a scheduled backstop. For the full scripts inventory — fixers, restampers,
-> workflow tools, and the doctrine for adding new scripts — see
-> [Scripts Map](scripts-map.md); for the design rationale — why the suite is
-> shaped the way it is — see [Gate Design Principles](gate-design-principles.md).
+>
+> Most gates are standard-library text scans; the bounded example pack also
+> uses pinned Node and TypeScript, and all run on relevant pushes with a
+> scheduled backstop. See [Scripts Map](scripts-map.md) for the full scripts
+> inventory (fixers, restampers, workflow tools, and doctrine) and
+> [Gate Design Principles](gate-design-principles.md) for the design rationale.
 
 Run everything locally before any commit:
 
@@ -16,14 +17,24 @@ Run everything locally before any commit:
 bash scripts/verify.sh          # all 34 gates; exit 1 blocks the push
 ```
 
-CI (`.github/workflows/code-whitespace.yml`) runs the same scripts on every
-push/PR — a red X means a gate your local run should have caught.
+Continuous Integration (CI) in `.github/workflows/code-whitespace.yml` runs the
+same scripts on every push and pull request — a red X means a gate your local
+run should have caught.
 
-The [current full-stack review](2026-10-25-fullstack-coverage-review.md) records exact-hash full-document coverage. The [explanation-depth progress ledger](2026-10-08-explanation-depth-progress.md) retains its historical checkpoint. The [earlier October continuation](2026-10-01-chapter-review-continuation.md) preserves that wave's scope and evidence. Passing gates do not prove every explanation is technically correct.
+The [current full-stack review](2026-10-25-fullstack-coverage-review.md) records exact-hash full-document coverage, while the [explanation-depth progress ledger](2026-10-08-explanation-depth-progress.md) retains its historical checkpoint and the [earlier October continuation](2026-10-01-chapter-review-continuation.md) preserves that wave's scope and evidence. Passing gates do not prove every explanation is technically correct.
 
 ## The gates
 
-Gate 29 runs `senior_coverage.py --require-complete` against the current review ledger. It rejects changed bytes, new Markdown, orphan records and an empty scope. Gate 18 tests that a stale review reaches the actual harness's failing exit. The wiring auditor explicitly requires this command despite its filename and checks both push and pull-request filters for the review and inventory JSON inputs. Setup for the three canonical examples is in the [scripts map](scripts-map.md#canonical-example-replay); these local traces do not validate cloud effects, deployment behavior or learner mastery.
+Gate 29 runs `senior_coverage.py --require-complete` against the current review
+ledger, rejecting changed bytes, new Markdown, orphan records, and an empty
+scope, while Gate 18 tests that a stale review reaches the actual harness's
+failing exit.
+
+The wiring auditor explicitly requires this command despite its filename and
+checks both push and pull-request filters for the review and inventory JSON
+inputs. Setup for the three canonical examples is in the
+[scripts map](scripts-map.md#canonical-example-replay); these local traces do not
+validate cloud effects, deployment behavior, or learner mastery.
 
 | # | Script | Enforces | Canonical fix on FAIL |
 | --- | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -70,56 +81,57 @@ walks every top-level dir starting with a digit and selects files matching
 80-lanes trees (their planning docs carry First-Principles sections too) and
 *excludes* INDEX files and interview banks by name.
 
-**Teaching-template scope** — gates 6b, 10–13 walk every `*.md` outside
-`INDEX.md`/`README.md` and the exempt prefixes (`80-lanes-*`, `81-lanes-*`,
-`projects/`, and for 6b `docs/`), i.e. today's 680 content files (the same
-computation `check_counts.py` uses for the "search all N chapters" claim, so
-the two cannot disagree). Lanes and
-projects are exempt *here* on purpose: they are personal campaign/planning
-material with their own genres (phase guides, trackers), not chapter-shaped
-teaching documents. The campaign files themselves moved to the private
-workspace repository on 2026-10-17; gate 7 (`check_private_refs.py`) now
-guards that boundary: no current doc may point back at them.
+**Teaching-template scope** — gates 6b and 10–13 walk every `*.md` outside
+`INDEX.md`, `README.md`, and the exempt prefixes (`80-lanes-*`, `81-lanes-*`,
+`projects/`, and for 6b `docs/`) — i.e., today's 680 content files (matching the
+computation `check_counts.py` uses for "search all N chapters").
 
-**Public Markdown rendering scope** — gate 6b additionally checks fence grammar and Liquid wrappers in every public `.md`, including INDEX, README, lane guides, project notes, and docs. Personal data and archived/dependency trees are excluded from that rendering pass. Template rules remain genre-specific; widening grammar checks does not force operational docs into a teaching template.
+Lanes and projects are exempt here on purpose: they hold campaign and planning
+material with their own genres (phase guides, trackers) rather than teaching
+chapters. The campaign files moved to the private workspace repository on
+2026-10-17; gate 7 (`check_private_refs.py`) guards that boundary so no public
+doc points back at them.
 
-**Whole-tree** — gates 1–5, 8–8c (counts, alignment, structure, links,
+**Public Markdown rendering scope** — gate 6b additionally checks fence grammar and Liquid wrappers in every public `.md`, including `INDEX.md`, `README.md`, lane guides, project notes, and docs. Personal data and archived or dependency trees are excluded from that rendering pass, and template rules remain genre-specific so operational docs are not forced into a teaching template.
+
+**Whole-tree** — gates 1–5 and 8–8c (counts, alignment, structure, links,
 freshness, whitespace) scan everything including lanes and docs, because
 broken links and misaligned tables are genre-independent defects. Gate 14
-regenerates `search.html` from gates 6b+13 data, so it inherits their scope.
+regenerates `search.html` from gates 6b and 13 data, so it inherits their scope.
 
 **Not content at all** — gate 15 (`check_verify_wiring.py`) never reads a
-chapter. It reads only `scripts/verify.sh`, `contributing.md` and this page,
-checking the harness's own wiring and self-description. It is the only gate
-whose subject is the gate system, and it exists because a gate can be
-perfectly correct and still not block anything.
+chapter. It reads only `scripts/verify.sh`, `contributing.md`, and this page,
+checking the harness's own wiring and self-description so a gate cannot be
+correct locally while silently failing to block the build.
 
 
 ## Adding a gate
 
-1. Write `scripts/check_<thing>.py`, stdlib-only, exit 0/1, deterministic
-   (sort every walk — union-find over unsorted `os.walk` produced different
-   twin groups on macOS vs Linux once). Prefer giving the gate a `--write`
-   that *restamps* the claim from the same computation it checks (the
-   `check_counts.py` / `read_time.py` pattern): a claim with one owner and a
-   rewriter cannot drift, and the fix command is never guesswork.
+1. Write `scripts/check_<thing>.py`, using only the Python standard library,
+   exiting `0` or `1`, and sorting every walk deterministically (union-find over
+   unsorted `os.walk` once produced different twin groups on macOS versus Linux).
+   Prefer giving the gate a `--write` flag that *restamps* the claim from the
+   same computation it checks (`check_counts.py`, `read_time.py`) so the fix
+   command is never guesswork.
 2. Prove it can fire — **both halves**. Plant the defect in a scratch file and
-   watch the *script* fail, then run `bash scripts/verify.sh` and confirm it
-   fails too. The second half is not ceremony: gate 10's failure branch wrote a
-   variable named `FAILURES` instead of `FAIL`, so its own correct `exit 1`
-   never reached the suite's exit code and a broken cross-reference passed CI
-   for as long as the bug existed. Gate 15 now checks that wiring statically —
-   run it after touching `verify.sh`, and remember that planting a defect
-   manually leaves the tree dirty if the script you test aborts early (use a
-   scratch copy and restore in a `finally`).
-3. Calibrate to corpus reality (reader-hook and definition-led teaching flow, topic-specific section order, separate revision companions, case-study
-   genre, …) — a gate stricter than the corpus buries real signal in noise.
+   watch the *script* fail, then run `bash scripts/verify.sh` and confirm the
+   suite fails too.
+
+   Gate 10's failure branch once wrote `FAILURES` instead of `FAIL`, so its
+   `exit 1` never reached the suite exit code and a broken cross-reference passed
+   CI. Gate 15 now checks that wiring statically; run it after editing
+   `verify.sh`, and test manual defect plants using a scratch copy restored in
+   `finally`.
+3. Calibrate to corpus reality (reader-hook and definition-led teaching flow,
+   topic-specific section order, separate revision companions, and the
+   case-study genre) — a gate stricter than the corpus buries real signal in
+   noise.
 4. Wire it into `scripts/verify.sh` with the canonical fix in the FAIL
    message, add the CI step, and add a row here. Use `FAIL=1` in the failure
-   branch — gate 15 enforces that, along with the label order and the gate
-   count quoted in all three files (`--write` restamps the count). If you add
-   a CI step, make it propagate its exit status (`exit "$code"` after
-   `set +e`) and make sure the workflow's `paths:` filter covers the script;
-   gate 15 enforces both, so a gate that cannot fail the job and a gate that
-   no push can trigger are caught before they ship.
+   branch — gate 15 enforces that, along with label order and the gate count
+   quoted in all three files (`--write` restamps the count).
+
+   If you add a CI step, propagate its exit status (`exit "$code"` after
+   `set +e`) and ensure the workflow's `paths:` filter covers the script; gate 15
+   enforces both so neither an unfailing gate nor an untriggered gate can ship.
 {% endraw %}

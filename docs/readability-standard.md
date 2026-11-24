@@ -3,7 +3,7 @@
 Gold reference: `10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.02-scope.md`.
 Every teaching chapter must read like it: scannable, concrete, senior-deep.
 
-The replacement-only, no-new-URL and leave-uncommitted restrictions below describe the dated readability batch. They do not prohibit separately authorized technical corrections, companion updates or releases. For current work, follow AGENTS.md, verify new citations and run the complete release gates.
+The replacement-only, no-new-URL, and leave-uncommitted restrictions below describe the dated readability batch. They do not prohibit separately authorized technical corrections, companion updates, or releases. For current work, follow `AGENTS.md`, verify new citations, and run the complete release gates.
 
 ## 0. Why the outline rule changed on 2026-10-21
 
@@ -49,35 +49,39 @@ than guessing at it:
    argument. Each title names the move ("Lookup Walks Outward, and an Inner
    Name Shadows the Outer One"), never the container ("How It Works",
    "Explanation", "Overview", "Details", "Key Points", "Deep Dive", "In Depth",
-   "Mechanism" — retired by gate 28). Each section: one idea, bold lead-ins, a
-   tiny code/config snippet proving it, then 1–3 sentences of consequence.
-   Tables ONLY for genuine comparisons (2–6 rows); never a table followed by
-   paragraphs restating it. Subsections cited by a stable `#anchor` (from
-   REVISION companions or interview banks) keep their descriptive titles
+   "Mechanism" — retired by gate 28). Each section covers one idea: bold
+   lead-ins, a tiny code or config snippet proving it, then 1–3 sentences of
+   consequence.
+
+   Use tables only for genuine comparisons (2–6 rows) and never follow a table
+   with paragraphs restating it. Subsections cited by a stable `#anchor` (from
+   `REVISION.md` companions or interview banks) keep their descriptive titles
    without a number; worked examples may continue in the optional
-   `## Code Examples` section; system-design case studies use their own
-   requirements→design→trace walkthrough template.
+   `## Code Examples` section, and system-design case studies use their
+   requirements → design → trace walkthrough template.
 6. **## Summary**: dense 3–6 sentence recap, no new facts.
-7. **## See Also / ## References & Learn More / prev-next footer**: preserved
-   (see section 2).
-8. Optional canon sections (`Why It Matters`, `Code Examples`, `Real-World Use Cases`, `Common Mistakes`, `Best Practices`, `Performance Considerations`) only when they
-   add NEW reasoning; never restate the mechanism. No Q&A / revision drills in chapters.
+7. **## See Also, ## References & Learn More, and previous and next footer**:
+   preserved (see section 2).
+8. **Optional canon sections** (`Why It Matters`, `Code Examples`, `Real-World Use Cases`, `Common Mistakes`, `Best Practices`, `Performance Considerations`): add only when they contribute new reasoning, never to restate a mechanism. Keep Q/A and revision drills out of concept chapters.
 
 ## 2. Preservation contract (hard rules — violations break gates)
 
-- Keep every required section: Definition, First Principles, Summary, See Also,
+- Keep every required section: Definition, First Principles, Summary, See Also, and
   `References & Learn More` (exact `##` titles).
-- Keep ALL outbound links (See Also, References, inline): same targets. Do not add
-  new external URLs. If a reference URL is dead, keep it and report it.
-- Heading anchors: before renaming/removing any `##`/`###` heading, grep the repo for
-  `](...YourFile.md#...` incoming links. Preserve every referenced slug; if a
-  referenced heading must move, keep an equivalent slug. (The 2026-10-21
-  promotion preserved slugs because a slug is generated from the heading text,
-  not its level — and `grep` found 0 incoming `#how-it-works` anchors.)
-- Keep all domain terms, API names, and internal mechanisms (V8/JVM/engine specifics,
-  failure modes, boundaries). Cut WORDS, never topics. Senior depth is the point.
-- Do not touch INDEX.md, REVISION.md, interview-question banks, or any other file.
-- Do not commit anything. Leave changes uncommitted in the working tree.
+- Keep all outbound links (See Also, References, and inline links) pointing to
+  the same targets. Do not add new external URLs; if a reference URL is dead,
+  keep it and report it.
+- **Heading anchors:** before renaming or removing any `##` or `###` heading,
+  search the repo for `](...YourFile.md#...` incoming links and preserve every
+  referenced slug. If a referenced heading must move, keep an equivalent slug
+  (the 2026-10-21 promotion preserved slugs because a slug comes from heading
+  text, not heading level, and `grep` found 0 incoming `#how-it-works` anchors).
+- Keep all domain terms, API names, and internal mechanisms (V8 or Java Virtual
+  Machine (JVM) engine specifics, failure modes, and boundaries). Cut words,
+  never topics — senior depth is the point.
+- Do not touch `INDEX.md`, `REVISION.md`, interview-question banks, or any other file.
+- Do not commit anything during that scoped rewrite pass; leave changes
+  uncommitted in the working tree for review.
 
 ## 3. Readability rules
 
@@ -126,7 +130,7 @@ Density and editorial quality are separate passes. The density pass moves existi
 content into readable paragraphs; this pass improves how that content explains
 itself without turning it into a different argument.
 
-- **Open with the concrete problem.** Lead with the failure, decision or
+- **Open with the concrete problem.** Lead with the failure, decision, or
   surprising result that gives the reader a reason to continue. Define a term
   before relying on it, then trace cause to mechanism to observable result.
 - **Write full sentences and split long ones.** Turn fragments into complete
@@ -137,21 +141,21 @@ itself without turning it into a different argument.
   already defines in the same sentence.
 - **Remove true redundancy, not depth.** Delete a sentence only when another
   sentence already makes the same point with the same concrete detail. Keep
-  caveats, failure boundaries, security warnings, version constraints and
+  caveats, failure boundaries, security warnings, version constraints, and
   counterexamples even when they make the prose longer.
 - **Make cross-references earn their place.** A See Also description states what
   the linked chapter contributes to this argument. Replace vague labels such as
   "related theory" or a bare parenthetical with a concrete connection.
 - **Add at most one decision sentence from existing facts.** A boundary or
-  trade-off sentence is allowed when the chapter's own mechanism, table or
+  trade-off sentence is allowed when the chapter's own mechanism, table, or
   example already supports it. Never invent a version, date, number, URL,
-  benchmark, product behavior or quotation.
-- **Keep the structure stable.** Headings, anchors, code blocks, tables and link
+  benchmark, product behavior, or quotation.
+- **Keep the structure stable.** Headings, anchors, code blocks, tables, and link
   targets stay unchanged unless a verified inconsistency requires a fix. Repair
-  a dangling cross-reference, a code/prose contradiction, a malformed diagram or
-  a vague See Also description only after checking the existing content.
+  a dangling cross-reference, a code and prose contradiction, a malformed
+  diagram, or a vague See Also description only after checking existing content.
 - **Do not force a generic sequence.** Definition, First Principles, mechanism,
-  examples and boundary sections appear when they advance the explanation, not
+  examples, and boundary sections appear when they advance the explanation, not
   as a template applied uniformly to every chapter.
 
 ## 6. Per-batch verification (mandatory before reporting done)
@@ -162,5 +166,5 @@ itself without turning it into a different argument.
 - `python3 scripts/prose_hygiene.py` — no spelling or empty-opener findings.
 - `python3 scripts/check_links.py` — zero broken links.
 - `python3 scripts/check_freshness.py` — no known stale API or citation pattern.
-- Report: files rewritten, reference URLs kept vs dead-found, incoming anchors preserved,
-  and any verified code/prose or diagram repair.
+- Report files rewritten, reference URLs kept versus dead URLs found, incoming
+  anchors preserved, and any verified code, prose, or diagram repair.

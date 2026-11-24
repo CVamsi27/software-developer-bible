@@ -18,10 +18,10 @@
 
 - **A script exists to prevent a named defect.** Checkers here cover concrete
   failure classes such as count drift, bank over-promising, invisible
-  sub-stacks and fence desynchronization. Before adding one, name the defect
+  sub-stacks, and fence desynchronization. Before adding one, name the defect
   it detects and the behavior that proves it catches that defect.
 - **One owner per concern.** Counts are restamped only by
-  `check_counts.py --write`, fence state is parsed only by `md_fences.py`,
+  `check_counts.py --write`, fence state is parsed only by `md_fences.py`, and
   the gate count lives only in `check_verify_wiring.py`'s computation. Two
   implementations of one concern *will* disagree eventually; the disagreement
   is the bug.
@@ -37,10 +37,10 @@
   repair and restamp tools listed by `check_fixpoint.py` must be idempotent;
   one-shot authoring helpers such as `insert_section.py` have a different
   contract and are not run as corpus-wide repair passes.
-- **Restampers** recompute *owned claims* from disk (badges, counts,
-  read-times, search index). Running a restamper is how a "drifted" failure
-  becomes green — legitimately, because the claim's owner recomputed it.
-- **Generators** produce files whose content is fully derived (search page,
+- **Restampers** recompute *owned claims* from disk (badges, counts, read
+  times, and the search index). Running a restamper is how a "drifted" failure
+  becomes green legitimately, because the claim's owner recomputed it.
+- **Generators** produce files whose content is fully derived (search page and
   metadata digests); `--check` mode makes the generator double as a gate.
 
 ## How It Works
@@ -48,16 +48,16 @@
 ### The 34 gates, in verify.sh order
 
 | # | Script | What it owns | Fails when |
-| --- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| --- | ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | 1 | `check_counts.py` | Every count claim on the nav surface (badges, blurb counts, table Files columns, repo-scale totals, [api-contract](api-contract.md)) | a claim disagrees with live disk |
-| 2 | `check_alignment.py` | Table pipe alignment, surrounding blank lines + ASCII box walls | rows/pipes misaligned or a table boundary fails to render |
-| 3 | `check_structure.py` | IDs unique, sequences contiguous, banks last, one H1, unique H2 slugs, **INDEX completeness** (every numbered subdir with an INDEX is linked) | structure or navigation has a gap |
-| 4 | `check_links.py` | Source Markdown links, anchors, visible path labels and unambiguous prose code paths resolve (fence-aware; generated `_site/` output and vendored `vendor/` dependencies are excluded) | a link is broken or presents a path that no longer exists |
-| 5 | `check_freshness.py` | Known stale API signatures and date-gated EOL tables | a known stale signature appears |
+| 2 | `check_alignment.py` | Table pipe alignment, surrounding blank lines, and ASCII box walls | rows or pipes misaligned or a table boundary fails to render |
+| 3 | `check_structure.py` | IDs unique, sequences contiguous, banks last, one H1, unique H2 slugs, **INDEX completeness** (every numbered subdir with an `INDEX.md` is linked) | structure or navigation has a gap |
+| 4 | `check_links.py` | Source Markdown links, anchors, visible path labels, and unambiguous prose code paths resolve (fence-aware; generated `_site/` output and vendored `vendor/` dependencies are excluded) | a link is broken or presents a path that no longer exists |
+| 5 | `check_freshness.py` | Known stale Application Programming Interface (API) signatures and date-gated End-of-Life (EOL) tables | a known stale signature appears |
 | 6 | `link_baseline.py` (diff) | Every cited external URL is in the probe-verified baseline | an unverified URL is cited |
-| 6b | `check_template.py` | Template sections/order, metadata contract, empty sections, question-claim contract, 25-question floor, fence grammar | a chapter or bank violates the contract |
-| 7 | `check_private_refs.py` | No references back into the private workspace (retired in-repo path, private-repo links; dated records exempt) | a public doc points back at private campaign material |
-| 8 | `check_code_whitespace.py` | Trailing WS + paste-shift bases inside fenced code | code hygiene regresses |
+| 6b | `check_template.py` | Template sections and order, metadata contract, empty sections, question-claim contract, 25-question floor, and fence grammar | a chapter or bank violates the contract |
+| 7 | `check_private_refs.py` | No references back into the private workspace (retired in-repo path and private-repo links; dated records exempt) | a public doc points back at private campaign material |
+| 8 | `check_code_whitespace.py` | Trailing whitespace and paste-shift bases inside fenced code | code hygiene regresses |
 | 8b | `fix_box_code_indent.py --check` | Code embedded in box walls keeps indentation | box code renders flat |
 | 8c | `fix_box_width.py --check` | Boxes stay within screen width | a box wraps on laptop screens |
 | 9 | `check_first_principles.py --diff` | First-Principles coverage must not regress | coverage drops below baseline |
@@ -69,34 +69,34 @@
 | 15 | `check_verify_wiring.py` | The harness itself: failure branches, gate count in 3 files, CI enforcement, trigger paths | the harness stops listening |
 | 16 | `test_md_fences.py` | The fence owner's semantics (16 characterization cases) | `md_fences.walk` drifts |
 | 17 | `test_fixers.py` | The fixers' repair output (7 planted-defect round trips, byte-exact) | a fixer repairs wrongly |
-| 18 | `test_gates.py`, `test_read_time.py`, `test_senior_coverage.py`, `test_curriculum_examples.py` | **The suite self-test** — planted gate defects, study-time grammar, exact-byte release enforcement and three extracted canonical mechanisms | gate detection, source identity or an executable contract regresses |
+| 18 | `test_gates.py`, `test_read_time.py`, `test_senior_coverage.py`, `test_curriculum_examples.py` | **The suite self-test** — planted gate defects, study-time grammar, exact-byte release enforcement, and three extracted canonical mechanisms | gate detection, source identity, or an executable contract regresses |
 | 19 | `check_answer_depth.py` | Interview answers AND chapter Definitions carry ≥25 prose words (fence- and table-aware); H3-title-plus-code genres deliberately exempt | an answer is table-only or one-line prose; a Definition is a bare table |
-| 20 | `test_prose_scan.py` | The prose scanner's classification contract (11 characterization cases) | `prose_scan` starts counting tables/fences or drops exclusions |
-| 21 | `fix_nav_labels.py --check` | Previous/Next nav labels are canonically-cased human titles, not paths | a label is a raw path or a slug-humanized acronym (`Mvcc`, `Cicd`) |
-| 22 | `check_fixpoint.py` | A clean corpus is a byte-for-byte no-op for every repair/restamp writer | a writer edits what its checker calls clean (an edit no gate can flag) |
-| 23 | `check_scope_floor.py` | Every corpus gate exits 1 with a SCOPE ERROR on an empty tree (list derived from verify.sh) | a gate reports compliance while scanning nothing |
-| 24 | `prose_hygiene.py` | Spelling convention (10 measured pairs), glued ATX headings, GFM table cell counts, empty-filler register (rule 4 check-only) | a minority spelling, a heading that renders as literal text, a table row with a broken cell grid |
+| 20 | `test_prose_scan.py` | The prose scanner's classification contract (11 characterization cases) | `prose_scan` starts counting tables or fences or drops exclusions |
+| 21 | `fix_nav_labels.py --check` | Previous and Next navigation labels are canonically cased human titles, not paths | a label is a raw path or a slug-humanized acronym (`Mvcc`, `Cicd`) |
+| 22 | `check_fixpoint.py` | A clean corpus is a byte-for-byte no-op for every repair or restamp writer | a writer edits what its checker calls clean (an edit no gate can flag) |
+| 23 | `check_scope_floor.py` | Every corpus gate exits 1 with a SCOPE ERROR on an empty tree (list derived from `verify.sh`) | a gate reports compliance while scanning nothing |
+| 24 | `prose_hygiene.py` | Spelling convention (10 measured pairs), glued ATX headings, GitHub Flavored Markdown (GFM) table cell counts, and empty-filler register (rule 4 check-only) | a minority spelling, a heading that renders as literal text, or a table row with a broken cell grid |
 | 25 | `check_dilution.py` | A chapter must not restate itself — ceiling baseline over the measured 0/0 state (within-chapter, sentence granularity; gate 11 owns cross-chapter) | a paragraph restated 20+ lines apart exceeds the baseline |
 | 26 | `check_code_dup.py` | A chapter must not re-teach another chapter's code — cross-file fenced-block pairs (identical token streams ≥ 10 lines; near ≥ 0.85) against a ceiling baseline of classified keeps | an example duplicated from a sibling chapter exceeds the baseline |
-| 27 | `check_see_also.py` | See Also hygiene — per-stack bare ceilings, label echoes, clipped endings and copied heading/table fragments; uses the shared fence reader | a new bare entry, label echo or unfinished description |
+| 27 | `check_see_also.py` | See Also hygiene — per-stack bare ceilings, label echoes, clipped endings, and copied heading or table fragments; uses the shared fence reader | a new bare entry, label echo, or unfinished description |
 | 28 | `check_readability.py` | The outline names the mechanism: no retired generic heading (`How It Works`, `Explanation`, `Overview`, …) and no numbered mechanism step left under one, in learning chapters (`--write` removes the label and promotes its `### N.` children to `##`, preserving every heading text so anchors survive) | a chapter files its argument under a generic label |
-| 29 | `senior_coverage.py --require-complete` | Every current Markdown file has a scoped review bound to its final bytes | a review is stale, missing, orphaned or invalid, or the scope is empty |
-| 30 | `check_prose.py` | Seven mechanical prose classes an editor fixes without thinking: a stutter, a doubled space, a run-together sentence, a space before punctuation, a doubled comma/semicolon, a wrong indefinite article, an unclosed bold run. Code spans, fences, tables, headings and the metadata comment are masked; `--write` repairs the first five, the last two report only | prose carries a defect no reader should have to parse |
+| 29 | `senior_coverage.py --require-complete` | Every current Markdown file has a scoped review bound to its final bytes | a review is stale, missing, orphaned, or invalid, or the scope is empty |
+| 30 | `check_prose.py` | Seven mechanical prose classes an editor fixes without thinking: a stutter, a doubled space, a run-together sentence, a space before punctuation, a doubled comma or semicolon, a wrong indefinite article, or an unclosed bold run. Code spans, fences, tables, headings, and the metadata comment are masked; `--write` repairs the first five, while the last two report only | prose carries a defect no reader should have to parse |
 | 31 | `test_review_ledger.py` → `review_ledger.py check` | Per-file review evidence: one hash-pinned row per tracked Markdown file, six reader axes, explicit pending ratchet; the pin suite proves the checker still rejects the retired structural-scan template and a source size masquerading as page weight | a reviewed byte changes, a row loses evidence, the checker stops detecting a template row, or a new file appears unreviewed |
 | — | `scan_scope.py` | The scope floor itself: one owner for "a checker that finds nothing must not pass" (imported by every corpus gate) | — |
 
 ### The checker → fixer → restamper recipes
 
-When a gate fails, identify the reported defect and use its matching repair. Metadata placement, category and tag errors need an authored correction; the read-time writer only computes read times. Never hand-edit an owned count:
+When a gate fails, identify the reported defect and use its matching repair. Metadata placement, category, and tag errors need an authored correction; the read-time writer only computes read times. Never hand-edit an owned count:
 
 | Failure | Reach for |
-| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Gate 1 count drift | `python3 scripts/check_counts.py --write` |
-| Gate 2 misaligned tables/boxes | `python3 scripts/check_alignment.py --fix` |
+| Gate 2 misaligned tables or boxes | `python3 scripts/check_alignment.py --fix` |
 | Gate 6b metadata drift | `python3 scripts/read_time.py --write` after fixing placement |
-| Gate 13/14 study-time / search drift | `python3 scripts/read_time.py --write` → `python3 scripts/gen_master_index.py` → `python3 scripts/check_counts.py --write` (this order; earlier steps change what later steps read) |
+| Gate 13 or 14 study-time or search drift | `python3 scripts/read_time.py --write` → `python3 scripts/gen_master_index.py` → `python3 scripts/check_counts.py --write` (keep this order; earlier steps change later inputs) |
 | Gate 28 generic section label | `python3 scripts/check_readability.py --write` (mechanical: promotes the umbrella's own children, touches no prose) |
-| Gate 8/8b/8c hygiene | `python3 scripts/fix_code_whitespace.py --trailing-ws --paste-shift` / `fix_box_code_indent.py --fix` / `fix_box_width.py --fix` then `check_alignment.py --fix` |
+| Gate 8, 8b, or 8c hygiene | `python3 scripts/fix_code_whitespace.py --trailing-ws --paste-shift` / `fix_box_code_indent.py --fix` / `fix_box_width.py --fix` then `check_alignment.py --fix` |
 | Gate 6 new external URL | probe-verify in a browser, then `python3 scripts/link_baseline.py --update`, commit the JSON with the doc |
 | Gate 12 missing twin links | `python3 scripts/link_topic_twins.py` (dry-run first) |
 | Gate 15 wiring broken | fix by hand — that is the point; `--write` only restamps counts |
@@ -114,27 +114,29 @@ When a gate fails, identify the reported defect and use its matching repair. Met
 | `test_rendered_headings.py` | Checks the Minima page and post layouts keep one article H1; runs unit fixtures and scans the built site in `site-build.yml` |
 | `check_rendered_links.py` | Scans the built HTML for missing local pages, assets and fragments, including source files excluded from publication; checks legacy badge destinations handled by the reader, recognizes real Pages Function routes and rejects an empty build |
 | `test_rendered_links.py` | Offline fixtures for the published-link checker: excluded source, legacy Markdown URLs, fragments, assets, function endpoints, same-host URLs and empty builds |
-| `fix_depth.py` | Rewrites relative md links after files move deeper/shallower |
-| `fix_fence_labels.py` | Relabels fences mislabeled as `text`/`plain`/`output`/`console` |
+| `fix_depth.py` | Rewrites relative Markdown links after files move deeper or shallower |
+| `fix_fence_labels.py` | Relabels fences mislabeled as `text`, `plain`, `output`, or `console` |
 | `fix_section_order.py` | One-off canonical section reorder (normalizer) |
 | `insert_section.py` | Inserts a `## Definition`-style section at its canonical slot |
 | `relink.py` | Bulk-rewrites links whose target basename changed (rename companion) |
 | `tldr_digest.py` | Prints an authoring digest for chapters the template gate flags |
-| `gen_master_index.py` | Generates search.html + api/index.json + api/search-index.js (`--check` = gate 14) |
-| `senior_coverage.py` | Gate 29 owns exact-byte review completeness. Inventory-only mode writes the current genre/status report; it never grants a review. |
-| `depth_report.py` | Reports where the corpus is thin — prose words, code fences, `##` sections, Definition length, per section and per chapter. Inventory only, deliberately not a gate: a word floor would reward padding. The rubric in `docs/2026-11-quality-rubric.md` is what turns its numbers into a reading order. |
-| `check_prose.py` | Gate 30. Mechanical grammar only — the classes a rewrite cannot disagree with. Every pattern is calibrated against the corpus it judges: the first run reported 10,154 findings and 10,152 were the detector's own artifacts, so each rule now carries a pinned near-miss test in `test_check_prose.py` (a hyphenated compound is not a stutter, a glob is not bold, `1..n` is not a doubled period). |
+| `gen_master_index.py` | Generates `search.html`, `api/index.json`, and `api/search-index.js` (`--check` = gate 14) |
+| `senior_coverage.py` | Gate 29 owns exact-byte review completeness. Inventory-only mode writes the current genre and status report; it never grants a review. |
+| `depth_report.py` | Reports where the corpus is thin — prose words, code fences, `##` sections, Definition length, per section and per chapter. Inventory only, deliberately not a gate: a word floor would reward padding. The rubric in `docs/2026-11-quality-rubric.md` turns its numbers into a reading order. |
+| `check_prose.py` | Gate 30. Mechanical grammar only — the classes a rewrite cannot disagree with. Every pattern is calibrated against the corpus it judges: the first run reported 10,154 findings and 10,152 were the detector's own artifacts, so each rule carries a pinned near-miss test in `test_check_prose.py` (a hyphenated compound is not a stutter, a glob is not bold, `1..n` is not a doubled period). |
 | `test_check_prose.py` | Gate 30's detection contract: every rule fires on a canonical defect, stays silent on the shape that produced its calibration false positive, and `--write` is idempotent and leaves code spans byte-identical. |
 | `drift_drill.py` | Quarterly re-probe of the 31 known staleness classes (advisory, opens tracking issues) |
-| `job_board_watch.py` | Live ATS discovery (`--discover`, `--query`, `--location`, `--json`) and weekly JD watch across public Greenhouse, Ashby, Lever, and Personio feeds. Targets come from `--config`/`JOB_WATCH_CONFIG` because board lists and applied-to postings are personal data kept in the private workspace, not this public repo |
+| `job_board_watch.py` | Live Applicant Tracking System (ATS) discovery (`--discover`, `--query`, `--location`, `--json`) and weekly job-description (JD) watch across public Greenhouse, Ashby, Lever, and Personio feeds. Targets come from `--config` or `JOB_WATCH_CONFIG` because board lists and applied-to postings are personal data kept in the private workspace, not this public repo |
 | `md_fences.py` | The single fence parser — imported by ten scripts; pinned by gate 16 |
-| `prose_scan.py` | The single reasoning-prose classifier (fence/table/heading/quote/badge exclusions) — imported by gate 19; pinned by gate 20. `read_time.py` deliberately keeps its own reading-weight model; the two classifiers answer different questions |
-| `test_md_fences.py` / `test_fixers.py` / `test_gates.py` / `test_read_time.py` | The tooling's own test suites (gates 16/17/18) |
-| `external-links-baseline.json` / `first-principles-baseline.json` | Owned data tables: probe-verified URLs; coverage floor |
+| `prose_scan.py` | The single reasoning-prose classifier (fence, table, heading, quote, and badge exclusions) — imported by gate 19; pinned by gate 20. `read_time.py` deliberately keeps its own reading-weight model; the two classifiers answer different questions |
+| `test_md_fences.py`, `test_fixers.py`, `test_gates.py`, `test_read_time.py` | The tooling's own test suites (gates 16, 17, and 18) |
+| `external-links-baseline.json` and `first-principles-baseline.json` | Owned data tables: probe-verified URLs and coverage floor |
 
 ### Canonical example replay
 
-`test_curriculum_examples.py` extracts three selected mechanisms from their canonical Markdown fences: nested microtask order, primitive versus nested `const` inference, and operation-owned bulkhead permits. The [case manifest](../scripts/fixtures/curriculum-cases.json) binds each fence's identity and SHA-256, names the supplied wrapper boundary, pins Node 24.22.2 and TypeScript 5.9.3, and records literal outcomes. A changed or moved fence fails before execution. Accepted and rejected TypeScript programs are both checked. Each named mutation must change the expected result in a disposable copy. No chapter example is copied into a second teaching home.
+`test_curriculum_examples.py` extracts three selected mechanisms from their canonical Markdown fences: nested microtask order, primitive versus nested `const` inference, and operation-owned bulkhead permits. The [case manifest](../scripts/fixtures/curriculum-cases.json) binds each fence's identity and SHA-256, names the supplied wrapper boundary, pins Node 24.22.2 and TypeScript 5.9.3, and records literal outcomes.
+
+A changed or moved fence fails before execution. Both accepted and rejected TypeScript programs are checked, each named mutation must alter the expected result in a disposable copy, and no chapter example is duplicated into a second teaching home.
 
 Select Node 24.22.2 through your runtime manager, then install the compiler once in the ignored dependency directory:
 
@@ -144,18 +146,20 @@ export CURRICULUM_TSC="$PWD/node_modules/typescript/bin/tsc"
 python3 scripts/test_curriculum_examples.py
 ```
 
-`CURRICULUM_NODE` can name an already installed Node executable; otherwise the runner uses `node` on `PATH`. The test checks exact tool versions, runs only these local allowlisted commands with a ten-second timeout, and does not inherit credentials or fetch packages. CI installs the pins before the full suite. `test_senior_coverage.py` separately checks current/stale/pending/orphan and invalid records, per-event review triggers, and the real harness's final failing exit using synthetic files. Historical temporary-fixture notes remain dated evidence; this pack adds durable replay for these three boundaries only.
+`CURRICULUM_NODE` can name an already installed Node executable; otherwise the runner uses `node` on `PATH`. The test checks exact tool versions, runs only allowlisted local commands with a ten-second timeout, and neither inherits credentials nor fetches packages; Continuous Integration (CI) installs the pins before the full suite.
+
+`test_senior_coverage.py` separately checks current, stale, pending, orphan, and invalid records, per-event review triggers, and the real harness's final failing exit using synthetic files. Historical temporary-fixture notes remain dated evidence; this pack adds durable replay for these three boundaries only.
 
 ### Rendered-page checks
 
 The optional Playwright suites exercise the built site served at `http://127.0.0.1:4337`:
 
-- `test_reading_ui_browser.cjs` checks chapter width, theme behavior, contrast and reader controls.
+- `test_reading_ui_browser.cjs` checks chapter width, theme behavior, contrast, and reader controls.
 - `test_read_aloud_browser.cjs` checks speech extraction and playback; set `STUDY_TEST_URL` to a built chapter.
-- `test_reading_pages_browser.cjs` checks navigation routes, one visible title, separate mobile touch targets, pointer/keyboard menus, expanded state/focus, local overflow, homepage/table/hover contrast and clipboard text.
-- `test_rendered_headings.py` checks that a rendered Markdown H1 suppresses Minima's generated title across page and post layouts, including the built README.
+- `test_reading_pages_browser.cjs` checks navigation routes, one visible title, separate mobile touch targets, pointer and keyboard menus, expanded state and focus, local overflow, homepage, table, and hover contrast, and clipboard text.
+- `test_rendered_headings.py` checks that a rendered Markdown H1 suppresses Minima's generated title across page and post layouts, including the built `README.md`.
 
-Run these with `@playwright/test` and its Chromium browser available to Node. On a case-insensitive preview filesystem, `INDEX.html` and `index.html` collide. Render the authored homepage output to a temporary preview alias and set `STUDY_HOME_ROUTE` to that alias for the navigation suite; the production routes stay unchanged. A successful static build does not replace these browser checks.
+Run these with `@playwright/test` and its Chromium browser available to Node. On a case-insensitive preview filesystem, `INDEX.html` and `index.html` collide: render the authored homepage output to a temporary preview alias and set `STUDY_HOME_ROUTE` to that alias for the navigation suite, leaving production routes unchanged. A successful static build does not replace these browser checks.
 
 ### Doctrine: adding a script
 
@@ -199,12 +203,9 @@ which failures are always hand-fix by design.
 
 ## Summary
 
-The scripts form three legible layers — **gates** that judge, **fixers** that
-repair, **restampers/generators** that recompute owned claims — with one
-owner per concern and test suites pinning the two layers most able to do
-silent damage. When something fails, the recipe table routes you to the one
-correct tool; when you add a tool, the doctrine tells you what wiring makes
-it real.
+The scripts form three legible layers — **gates** that judge, **fixers** that repair, and **restampers and generators** that recompute owned claims — with one owner per concern and test suites pinning the two layers most able to do silent damage.
+
+When something fails, the recipe table routes you to the one correct tool; when you add a tool, the doctrine tells you what wiring makes it real.
 
 ## See Also
 
@@ -212,14 +213,15 @@ it real.
   history and full contract of every gate row.
 - [Gate Design Principles](gate-design-principles.md) — why the suite is
   shaped the way it is: the constraints, the method, and the layer table.
-- [Corpus Health Report](2026-09-19-corpus-health-report.md) — the ledger of clean sweeps and boundary findings
-  ledger this map summarizes; every defect named here is documented there.
+- [Corpus Health Report](2026-09-19-corpus-health-report.md) — the ledger of
+  clean sweeps and boundary findings that this map summarizes; every defect
+  named here is documented there.
 - [Contributing](../contributing.md) — repo conventions the gates enforce.
 
 ## References
 
 - `scripts/verify.sh` — the executable table of contents for this map.
-- `scripts/test_fixers.py` / `scripts/test_md_fences.py` — the recorded
+- `scripts/test_fixers.py` and `scripts/test_md_fences.py` — the recorded
   contracts of the fixers and the fence parser.
-- `scripts/test_read_time.py` — regression checks for singular/plural file
+- `scripts/test_read_time.py` — regression checks for singular and plural file
   counts in generated study-time lines.

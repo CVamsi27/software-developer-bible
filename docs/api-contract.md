@@ -28,24 +28,21 @@
 ```
 
 | Field | Meaning |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `p` | Site path (`…​.html`) — equals the repo path with the extension swapped. For repo-relative links, replace the trailing `.html` with `.md`. |
 | `t` | Chapter H1 title (the same string gate 6b sees). |
-| `s` / `c` | Section (from the metadata comment) and Category (one of contributing.md's canonical 14 — gate 6b enforces both). |
-| `g` | Tags trimmed, deduplicated and sorted; the generator preserves their spelling and case. |
+| `s` and `c` | Section (from the metadata comment) and Category (one of `contributing.md`'s canonical 14 — gate 6b enforces both). |
+| `g` | Tags trimmed, deduplicated, and sorted; the generator preserves their spelling and case. |
 | `m` | Computed read minutes (gate 13's model; reference genres already halved). |
 | `totals.read_minutes` | Sum over all chapters (divide by 60 for hours). |
-| `corpus_digest` | sha256 over each content file's sha256, keyed by repo path, in sorted order. It changes when any chapter's bytes change and carries no timestamp, so equal digests mean equal corpus content. It is *not* the deployment-freshness anchor — a digest over content files cannot see a push that changed only `scripts/` or `functions/` — so `scripts/check_study_live.py` compares the deployed commit (`/api/version` on the study host, no session required) with the checkout's `HEAD`. Deliberately a placeholder in the example above: a literal value in this document would be stale after the next chapter edit, and nothing restamps it. |
+| `corpus_digest` | SHA-256 over each content file's SHA-256, keyed by repo path, in sorted order. It changes when any chapter's bytes change and carries no timestamp, so equal digests mean equal corpus content. It is *not* the deployment-freshness anchor — a digest over content files cannot see a push that changed only `scripts/` or `functions/` — so `scripts/check_study_live.py` compares the deployed commit (`/api/version` on the study host, no session required) with the checkout's `HEAD`. Deliberately a placeholder in the example above: a literal value in this document would be stale after the next chapter edit, and nothing restamps it. |
 
-**Generated contract** (when the relevant gates pass): generated from the same
-metadata gate 6b validates, so a record cannot exist for a file that fails
-the template gate; minutes match gate 13's model; the generator writes both outputs in one invocation and gate 14 byte-compares them against the current corpus; the two filesystem writes are sequential, so an interrupted run must be rerun;
-no timestamps — the same corpus produces byte-identical output, so
-consumers can commit it or diff it without noise.
+**Generated contract** (when the relevant gates pass):
 
-**Non-guarantees:** record order is alphabetical by section `s`, then path `p`, not study order
-(use the per-stack INDEX files for pedagogy order); tags are a free
-vocabulary (only their presence, not their spelling, is gated).
+- **Validated inputs:** generated from the same metadata gate 6b validates, so a record cannot exist for a file that fails the template gate; minutes match gate 13's model.
+- **Deterministic outputs:** the generator writes both outputs in one invocation and gate 14 byte-compares them against the current corpus. Because the two filesystem writes are sequential, rerun an interrupted invocation. No timestamps are included, so consumers can commit or diff the artifact without noise.
+
+**Non-guarantees:** record order is alphabetical by section `s`, then path `p`, not study order (use the per-stack `INDEX.md` files for study order); tags are a free vocabulary (only their presence, not their spelling, is gated).
 
 ## Regenerating
 
@@ -56,8 +53,7 @@ python3 scripts/gen_master_index.py --check  # gate 14: fails on drift
 
 ## Consumer: `repos/resume-generator` (Python)
 
-Link bible chapters as preparation behind relevant skills. A chapter describes a topic; it does not prove professional ownership, a shipped feature or a measured result. Resume claims need project or employment evidence separately. Copy this helper into the
-resume-generator repo (or vendor it) as needed:
+Link bible chapters as preparation behind relevant skills. A chapter describes a topic; it does not prove professional ownership, a shipped feature, or a measured result. Resume claims need project or employment evidence separately. Copy this helper into the `resume-generator` repo (or vendor it) as needed:
 
 ```python
 #!/usr/bin/env python3
@@ -116,4 +112,4 @@ export const repoLink = (c: Chapter) =>
 
 ## Versioning
 
-The current generator has no `v` field or versioned compatibility endpoint. Before a field removal or type change, coordinate consumers and implement an explicit version/migration contract; gate 14 checks the current generated bytes, not backward compatibility. Additive optional fields still require consumers that tolerate unknown fields.
+The current generator has no `v` field or versioned compatibility endpoint. Before a field removal or type change, coordinate consumers and implement an explicit version and migration contract; gate 14 checks the current generated bytes rather than backward compatibility. Additive optional fields still require consumers that tolerate unknown fields.

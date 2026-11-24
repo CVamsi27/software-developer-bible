@@ -1,6 +1,6 @@
 # Read-Aloud Reader UI Design
 
-> **Historical design record:** requirements, example paths and checkboxes describe this dated plan, not current repository status or authorization to rerun it. Later [explanation-depth work](../plans/2026-10-08-explanation-depth.md), [AGENTS.md](../../../AGENTS.md) and [contributing.md](../../../contributing.md) govern current changes. Preserve stable chapter IDs; TL;DR and inline chapter cheat/revision sections are retired.
+> **Historical design record:** requirements, example paths, and checkboxes describe this dated plan, not current repository status or authorization to rerun it. Later [explanation-depth work](../plans/2026-10-08-explanation-depth.md), [AGENTS.md](../../../AGENTS.md), and [contributing.md](../../../contributing.md) govern current changes. Preserve stable chapter IDs; `TL;DR` and inline chapter cheat and revision sections are retired.
 
 ## Problem
 
@@ -16,7 +16,7 @@ Use the existing theme tokens for player surfaces, controls, text, focus rings, 
 
 ## Boundaries and failures
 
-Keep the browser SpeechSynthesis API and current play, pause/resume, stop, unsupported-browser, and error behavior. Do not change chapter extraction rules or add a server-side audio service. A missing source block must not interrupt narration. If speech synthesis is unavailable, keep the compact control disabled and its explanation accessible.
+Keep the browser `SpeechSynthesis` API and current play, pause and resume, stop, unsupported-browser, and error behavior. Do not change chapter extraction rules or add a server-side audio service. A missing source block must not interrupt narration; if speech synthesis is unavailable, keep the compact control disabled and its explanation accessible.
 
 ## Verification
 

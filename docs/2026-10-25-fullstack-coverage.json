@@ -32511,7 +32511,7 @@
     },
     {
       "path": "docs/superpowers/specs/2026-08-25-full-restructure-design.md",
-      "sha256": "7cd4f903a1527cb05bad15673e41cfbed83fd7d471d131c85e4065948eb1d3de",
+      "sha256": "0ab84a3e79244f908b90fd432951934b91866afc1209ef6ced3ebaedd7ae60a8",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32524,7 +32524,7 @@
           "6. INDEX updates",
           "7. Link integrity & verification",
           "8. Execution order (each numbered step = one commit)",
-          "9. Out of scope / constraints"
+          "9. Out of scope & constraints"
         ],
         "code_fences": 0,
         "revision_questions": 0,
@@ -32533,18 +32533,18 @@
       },
       "review": {
         "path": "docs/superpowers/specs/2026-08-25-full-restructure-design.md",
-        "sha256": "7cd4f903a1527cb05bad15673e41cfbed83fd7d471d131c85e4065948eb1d3de",
+        "sha256": "0ab84a3e79244f908b90fd432951934b91866afc1209ef6ced3ebaedd7ae60a8",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Historical 2026-08-25-full-restructure-design: full design/execution record read, including examples and all dated checkpoints. Preserve dates/paths/checkboxes as historical evidence, not current runtime behavior or authorization. Current AGENTS and exact-hash review supersede obsolete templates and private-location statements; no old test result promoted to current proof.",
+        "notes": "Wave 11D-1 historical design specs C1-C8 refinement (2026-11-24): Full read of 287 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/superpowers/specs/2026-10-05-read-aloud-reader-ui-design.md",
-      "sha256": "4bbaa52ba7507dbb5d374bae3537b6cfaa925dc1a1c7fd5cf07d0b569ad11e48",
+      "sha256": "f9fc3b27c89a9ad68284315f768d2d2221edbf909cf2b382a33840f7643c9855",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32561,18 +32561,18 @@
       },
       "review": {
         "path": "docs/superpowers/specs/2026-10-05-read-aloud-reader-ui-design.md",
-        "sha256": "4bbaa52ba7507dbb5d374bae3537b6cfaa925dc1a1c7fd5cf07d0b569ad11e48",
+        "sha256": "f9fc3b27c89a9ad68284315f768d2d2221edbf909cf2b382a33840f7643c9855",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Historical 2026-10-05-read-aloud-reader-ui-design: full design/execution record read, including examples and all dated checkpoints. Preserve dates/paths/checkboxes as historical evidence, not current runtime behavior or authorization. Current AGENTS and exact-hash review supersede obsolete templates and private-location statements; no old test result promoted to current proof.",
+        "notes": "Wave 11D-1 historical design specs C1-C8 refinement (2026-11-24): Full read of 23 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/superpowers/specs/2026-10-07-reading-and-interview-quality-design.md",
-      "sha256": "1de5cb2aac0a983e741a3fc1a5f9a5a0920e909d1139aa816392db367f057d42",
+      "sha256": "cf4136573f78d22fb62470c910c07fd4de3334662dc1016ad6dcd78f3933ceae",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32584,18 +32584,18 @@
       },
       "review": {
         "path": "docs/superpowers/specs/2026-10-07-reading-and-interview-quality-design.md",
-        "sha256": "1de5cb2aac0a983e741a3fc1a5f9a5a0920e909d1139aa816392db367f057d42",
+        "sha256": "cf4136573f78d22fb62470c910c07fd4de3334662dc1016ad6dcd78f3933ceae",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Historical 2026-10-07-reading-and-interview-quality-design: full design/execution record read, including examples and all dated checkpoints. Preserve dates/paths/checkboxes as historical evidence, not current runtime behavior or authorization. Current AGENTS and exact-hash review supersede obsolete templates and private-location statements; no old test result promoted to current proof.",
+        "notes": "Wave 11D-1 historical design specs C1-C8 refinement (2026-11-24): Full read of 17 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/superpowers/specs/2026-10-08-explanation-depth-design.md",
-      "sha256": "a82cbd89ae3d6dbad4d57fcdd53424aca5d2c556d565ffa0e7ee55d14347b55e",
+      "sha256": "11e0dc5003e09c99df32ade81779ac36e9f83c269178c5df686948e612000228",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32616,18 +32616,18 @@
       },
       "review": {
         "path": "docs/superpowers/specs/2026-10-08-explanation-depth-design.md",
-        "sha256": "a82cbd89ae3d6dbad4d57fcdd53424aca5d2c556d565ffa0e7ee55d14347b55e",
+        "sha256": "11e0dc5003e09c99df32ade81779ac36e9f83c269178c5df686948e612000228",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Historical 2026-10-08-explanation-depth-design: full design/execution record read, including examples and all dated checkpoints. Preserve dates/paths/checkboxes as historical evidence, not current runtime behavior or authorization. Current AGENTS and exact-hash review supersede obsolete templates and private-location statements; no old test result promoted to current proof.",
+        "notes": "Wave 11D-1 historical design specs C1-C8 refinement (2026-11-24): Full read of 119 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/superpowers/specs/2026-10-14-nodejs-production-runtime-architecture-design.md",
-      "sha256": "d363f196e3ced001971a24a0dc737e4e7a1e1cbaf0bce9422010c48dcc989a84",
+      "sha256": "659595a708d67bdc8f2b7055c80ec5d21e3297257a7fe9e8dea70071bd99dbb7",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32646,18 +32646,18 @@
       },
       "review": {
         "path": "docs/superpowers/specs/2026-10-14-nodejs-production-runtime-architecture-design.md",
-        "sha256": "d363f196e3ced001971a24a0dc737e4e7a1e1cbaf0bce9422010c48dcc989a84",
+        "sha256": "659595a708d67bdc8f2b7055c80ec5d21e3297257a7fe9e8dea70071bd99dbb7",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-14",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content read (2026-11-14): Read end to end: context and gap, approaches table, design, reader flow, curriculum integration, accuracy rules, acceptance criteria, risks. Two chapters only, each with a stated scope; the follow-on gaps are listed instead of designed here.",
+        "notes": "Wave 11D-1 historical design specs C1-C8 refinement (2026-11-24): Full read of 78 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/superpowers/specs/2026-11-02-read-aloud-controls-design.md",
-      "sha256": "7f25aa1eebfb4d24cd2d76cecaa81d72bef003162595c0ce64ec33e6893c964d",
+      "sha256": "79c0adaf41f14fd3edd94fc50dcff612f9d126c7d593651d8f86a69a9dfd7bf9",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32676,18 +32676,18 @@
       },
       "review": {
         "path": "docs/superpowers/specs/2026-11-02-read-aloud-controls-design.md",
-        "sha256": "7f25aa1eebfb4d24cd2d76cecaa81d72bef003162595c0ce64ec33e6893c964d",
+        "sha256": "79c0adaf41f14fd3edd94fc50dcff612f9d126c7d593651d8f86a69a9dfd7bf9",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-02",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Reviewed the revised voice shortlist and retained reader behavior: Samantha, Ava, Allison, Alex, and Victoria are preferred when browser-provided; missing names are skipped and English voices fill remaining slots in stable order. Confirmed the voice key version reset, English-only cap, wide article measure, visible paragraph cue, dock alignment, and speech-state boundaries.",
+        "notes": "Wave 11D-1 historical design specs C1-C8 refinement (2026-11-24): Full read of 38 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/superpowers/specs/2026-11-05-listening-experience-design.md",
-      "sha256": "ab77b6f8d34dded27f8a82a72072c14d9fe01a02eda7cde7e76f676bf4a28898",
+      "sha256": "68fec9ab75fa4f2419a6fbb2f16f236ec817655d550e8350febe64dc5781d483",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32705,18 +32705,18 @@
       },
       "review": {
         "path": "docs/superpowers/specs/2026-11-05-listening-experience-design.md",
-        "sha256": "ab77b6f8d34dded27f8a82a72072c14d9fe01a02eda7cde7e76f676bf4a28898",
+        "sha256": "68fec9ab75fa4f2419a6fbb2f16f236ec817655d550e8350febe64dc5781d483",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-14",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review including the spoken-word addition: the original local-voice and playback design remains coherent. Word callbacks use retained chunk offsets and exact source character ranges; current-word contrast complements the paragraph, pause freezes position, obsolete speech cannot move it, and CSS Highlight/fallback rectangles preserve authored markup. No-boundary voices retain paragraph emphasis. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
+        "notes": "Wave 11D-1 historical design specs C1-C8 refinement (2026-11-24): Full read of 35 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/superpowers/specs/2026-11-05-site-refinement-design.md",
-      "sha256": "6b5c51deb43f74782f9416548b14e8e1ff1d43fe0732b5fdd92798eec835fe99",
+      "sha256": "f211ec5d51b3c1926462b175f8e643a00a65044f25d0df69c7e85fcf5034fa32",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32733,18 +32733,18 @@
       },
       "review": {
         "path": "docs/superpowers/specs/2026-11-05-site-refinement-design.md",
-        "sha256": "6b5c51deb43f74782f9416548b14e8e1ff1d43fe0732b5fdd92798eec835fe99",
+        "sha256": "f211ec5d51b3c1926462b175f8e643a00a65044f25d0df69c7e85fcf5034fa32",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-14",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review of the current reader and discovery specification/plan: responsive Back to top ownership, word and paragraph emphasis, local voice filtering, interview tools, search category context, catalog-backed badge routing, rendered publication checks, scoped information repairs and evidence limits. The later user authorization to commit, push and merge is retained. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
+        "notes": "Wave 11D-1 historical design specs C1-C8 refinement (2026-11-24): Full read of 29 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/superpowers/specs/2026-11-18-performance-ui-design.md",
-      "sha256": "3d66d1fbbeda9734d3f5159c334ea89a44d8824c72e93b4b1adeb65bcc1b2719",
+      "sha256": "17f8fc9a4cc982df062898826b026a5f34ff283ac7fb06e4a3693cbe48dd02b2",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32763,12 +32763,12 @@
       },
       "review": {
         "path": "docs/superpowers/specs/2026-11-18-performance-ui-design.md",
-        "sha256": "3d66d1fbbeda9734d3f5159c334ea89a44d8824c72e93b4b1adeb65bcc1b2719",
+        "sha256": "17f8fc9a4cc982df062898826b026a5f34ff283ac7fb06e4a3693cbe48dd02b2",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-18",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review (2026-11-18): approved diagnosis and two-phase scope read end to end. The spec preserves authored content and file previews, externalizes repeated reader/search payload, defines the gzip budget and limits UI changes to evidence-backed checks; browser coverage is explicitly conditional on dependencies.",
+        "notes": "Wave 11D-1 historical design specs C1-C8 refinement (2026-11-24): Full read of 78 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },

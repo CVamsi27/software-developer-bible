@@ -1,18 +1,18 @@
 # Design - Bible Restructure: Unified Numbering, Category Subfolders, Full Topic Coverage
 
-> **Historical design record:** requirements, example paths and checkboxes describe this dated plan, not current repository status or authorization to rerun it. Later [explanation-depth work](../plans/2026-10-08-explanation-depth.md), [AGENTS.md](../../../AGENTS.md) and [contributing.md](../../../contributing.md) govern current changes. Preserve stable chapter IDs; TL;DR and inline chapter cheat/revision sections are retired.
+> **Historical design record:** requirements, example paths, and checkboxes describe this dated plan, not current repository status or authorization to rerun it. Later [explanation-depth work](../plans/2026-10-08-explanation-depth.md), [AGENTS.md](../../../AGENTS.md), and [contributing.md](../../../contributing.md) govern current changes. Preserve stable chapter IDs; `TL;DR` and inline chapter cheat and revision sections are retired.
 
 Date: 2026-08-25
 Status: Approved (user approved all sections including design-patterns scheme conversion)
-Scope: Everything at once - structure, numbering, auth completion, and ~80 new chapters across all stacks.
+Scope: Everything at once — structure, numbering, authentication completion, and ~80 new chapters across all stacks.
 
 ---
 
 ## 1. Problem statement
 
-1. **Numbering gaps everywhere**: `20.5-security` starts at `.03` (gaps .01-.02, .07-.08), `20.4-database` (.16/.21), `20.8-caching` (.02/.04/.05), `30.3-infra-patterns` (.08-.10/.12), `70.1-behavioral` (starts at .03). The entire `auth/` subfolder is unnumbered.
+1. **Numbering gaps everywhere**: `20.5-security` starts at `.03` (gaps `.01`–`.02`, `.07`–`.08`), `20.4-database` (`.16` and `.21`), `20.8-caching` (`.02`, `.04`, and `.05`), `30.3-infra-patterns` (`.08`–`.10` and `.12`), and `70.1-behavioral` (starts at `.03`). The entire `auth/` subfolder is unnumbered.
 2. **Subfolders missing**: only design-patterns and system-design have category subfolders; ~19 larger flat stacks do not.
-3. **Incomplete topics**: e.g., the auth track lacks Basic/Digest Auth, API Keys, MFA/Passkeys, and a dedicated SSO/SAML stage (ref: "7 Authentication Concepts Every Developer Should Know", Hayk Simonyan). Similar verified gaps exist across all stacks.
+3. **Incomplete topics**: for example, the authentication track lacks Basic and Digest Authentication, API Keys, multi-factor authentication (MFA) and passkeys, and a dedicated single sign-on (SSO) and Security Assertion Markup Language (SAML) stage (ref: "7 Authentication Concepts Every Developer Should Know", Hayk Simonyan). Similar verified gaps exist across all stacks.
 
 ## 2. Unified convention (single source of truth)
 
@@ -25,8 +25,8 @@ Scope: Everything at once - structure, numbering, auth completion, and ~80 new c
 
 - `cat` segment in filenames = folder number without leading zero (folder `02-attacks-and-defense/` holds files `20.5.2.xx-*`).
 - Interview-questions files always sort last within their scope.
-- `AGENTS.md` and `contributing.md` updated to document exactly this convention (replacing the old concatenated design-patterns rule).
-- Root `INDEX.md` / `README.md` / `ROADMAP.md` counts refreshed at the end.
+- `AGENTS.md` and `contributing.md` updated to document this exact convention (replacing the old concatenated design-patterns rule).
+- Root `INDEX.md`, `README.md`, and `ROADMAP.md` counts refreshed at the end.
 
 ## 3. Structural moves (per stack)
 
@@ -106,7 +106,7 @@ react-native-cross-platform->10.8.01, deep-linking-universal-links(NEW)->10.8.02
 - `03-hardening-and-operations/`: encryption->20.5.3.01, web-security->.02, threat-modeling-stride->.03, secrets-management->.04, vulnerability-management-patch-governance(NEW)->.05
 - `04-interview-drills/`: interview-questions->20.5.4.01
 
-oauth2-oidc.md gets slimmed: SSO/SAML/passkey content moves to new chapters 07/08 with links left behind.
+`oauth2-oidc.md` gets slimmed: SSO, SAML, and passkey content moves to new chapters `07` and `08` with links left behind.
 
 ### 20.6-microservices -> 5 categories
 - `01-service-topology/`: service-discovery->20.6.1.01, api-gateway->.02, service-mesh->.03, strangler-fig->.04
@@ -147,7 +147,7 @@ NEW case studies (append in 02-case-studies): typeahead-autocomplete->30.2.2.23,
 - `04-data-at-scale/`: database-scaling->30.3.4.01, data-pipelines->.02, cdn-architecture->.03
 - `05-shipping-and-evolution/`: zero-downtime-deployments->30.3.5.01, technical-debt->.02, cost-engineering-finops(NEW)->.03, data-retention-archival(NEW)->.04
 
-Dedup rules: PostgreSQL backup mechanics (WAL, pgBackRest, PITR how-to) live in 20.4.5.04; operational drill cadence/game-days live here. 50.4 does NOT get its own DR chapter (cross-links instead).
+Dedup rules: PostgreSQL backup mechanics (write-ahead log (WAL), `pgBackRest`, and point-in-time recovery (PITR) how-tos) live in `20.4.5.04`, while operational drill cadence and game-days live here. `50.4` does not get its own disaster recovery (DR) chapter (cross-links instead).
 
 ### 40.1-docker - flat + 3 NEW (compacted, IQ last)
 images-containers->40.1.01, volumes-networks->.02, compose->.03, multi-stage-builds->.04, dockerfile-best-practices->.05, production-patterns->.06, container-runtime-internals-namespaces-cgroups(NEW)->.07, image-signing-sbom-supply-chain(NEW)->.08, rootless-sandboxed-runtimes(NEW)->.09, interview-questions->.10
@@ -235,19 +235,19 @@ Unchanged: `00-strategy/`, `80-lanes-abroad-full-stack/`, `81-lanes-indian-sde-f
 
 ## 4. Auth completion spec (video parity)
 
-Ref: https://www.youtube.com/watch?v=iX8g4LqF8p8 (Hayk Simonyan - Basic, Digest, API Keys, Sessions, Bearer/JWT + access/refresh, OAuth2, OIDC, SSO, SAML, Authorization).
+Ref: https://www.youtube.com/watch?v=iX8g4LqF8p8 (Hayk Simonyan - Basic, Digest, API Keys, Sessions, Bearer and JSON Web Tokens (JWT) plus access and refresh tokens, OAuth 2, OpenID Connect (OIDC), SSO, SAML, and Authorization).
 
 New chapters in `20.5-security/01-auth/`:
-1. **20.5.1.02-http-basic-digest-auth.md** - Authorization header mechanics, Base64 credentials over TLS, `WWW-Authenticate`/401 handshake, Digest challenge-response (MD5 legacy, why it died), browser/curl examples, when Basic is still OK (internal tools, machine endpoints), comparison table vs all other methods.
-2. **20.5.1.03-api-keys.md** - key generation with CSPRNG, hashing keys at rest, prefix schemes (`sk_live_`), rotation & revocation, per-key scopes, rate-limit binding, leak response runbook, vs OAuth client-credentials decision table.
-3. **20.5.1.07-sso-saml-federation.md** - extracted from oauth2-oidc.md: SAML 2.0 flows (SP-initiated / IdP-initiated), assertions/signing/cert exchange, SAML vs OIDC table, enterprise SSO + SCIM provisioning, JIT provisioning.
-4. **20.5.1.08-mfa-passkeys-webauthn.md** - TOTP/HOTP mechanics, SMS weakness, WebAuthn registration/authentication ceremonies, passkey sync, assurance levels (AAL), account recovery as weakest link.
+1. **20.5.1.02-http-basic-digest-auth.md** — `Authorization` header mechanics, Base64 credentials over Transport Layer Security (TLS), `WWW-Authenticate` and `401` handshake, Digest challenge-response (Message Digest 5 (MD5) legacy and why it died), browser and `curl` examples, when Basic is still acceptable (internal tools and machine endpoints), and a comparison table versus all other methods.
+2. **20.5.1.03-api-keys.md** — key generation with a cryptographically secure pseudorandom number generator (CSPRNG), hashing keys at rest, prefix schemes (`sk_live_`), rotation and revocation, per-key scopes, rate-limit binding, a leak response runbook, and an API keys versus OAuth client-credentials decision table.
+3. **20.5.1.07-sso-saml-federation.md** — extracted from `oauth2-oidc.md`: SAML 2.0 flows (Service Provider (SP)-initiated and Identity Provider (IdP)-initiated), assertions, signing, and certificate exchange, a SAML versus OIDC table, enterprise SSO with System for Cross-domain Identity Management (SCIM) provisioning, and Just-In-Time (JIT) provisioning.
+4. **20.5.1.08-mfa-passkeys-webauthn.md** — Time-based and HMAC-based One-Time Password (TOTP and HOTP) mechanics, Short Message Service (SMS) weakness, Web Authentication API (WebAuthn) registration and authentication ceremonies, passkey sync, Authenticator Assurance Levels (AAL), and account recovery as the weakest link.
 
-Plus edits: oauth2-oidc.md slimmed (grants/PKCE/OIDC remain; SSO/SAML/passkeys replaced by links to 07/08); auth INDEX rebuilt as a 10-stage flow; security stack INDEX updated; security interview bank cross-links fixed; REST authentication chapter cross-linked.
+Plus edits: `oauth2-oidc.md` is slimmed (grants, Proof Key for Code Exchange (PKCE), and OIDC remain; SSO, SAML, and passkeys are replaced by links to chapters `07` and `08`), the authentication `INDEX` is rebuilt as a 10-stage flow, the security stack `INDEX` and security interview bank cross-links are updated, and the Representational State Transfer (REST) authentication chapter is cross-linked.
 
 ## 5. New chapters by wave (83 total - authoritative source: NEW markers in section 3)
 
-Every chapter follows contributing.md template: TL;DR -> Definition -> Why -> How -> Code -> Real-world -> Mistakes -> Best practices -> Summary -> Cheat sheet -> See Also -> References. No emojis. Badges per contributing.md. Each new file also gets a category INDEX row and stack INDEX row.
+Every chapter follows the `contributing.md` template: TL;DR, Definition, Why, How, Code, Real-world, Mistakes, Best practices, Summary, Cheat sheet, See Also, and References. Avoid emojis, keep badges aligned with `contributing.md`, and add a category `INDEX` row and stack `INDEX` row for each new file.
 
 **Wave A - Frontend (13):** dom-events-delegation, cross-tab-communication, tsconfig-compiler-options, type-variance, usesyncexternalstore, react-router, deploying-nextjs, autosave-draft-recovery, canvas-svg-animation, css-architecture-styling-approaches, theming-design-tokens, deep-linking-universal-links, testing-react-native-apps
 
@@ -257,29 +257,29 @@ Every chapter follows contributing.md template: TL;DR -> Definition -> Why -> Ho
 
 **Wave D - Platform (19):** container-runtime-internals-namespaces-cgroups, image-signing-sbom-supply-chain, rootless-sandboxed-runtimes, node-autoscaling-cluster-capacity, kustomize-overlays-packaging-tradeoffs, crds-operators-controller-patterns, artifact-registries-release-promotion, pipeline-supply-chain-security-slsa, dora-metrics-delivery-performance, continuous-profiling, ebpf-observability, asset-pipelines-css-images-fonts, git-internals-objects-refs-packfiles, git-at-scale-lfs-partial-clones, signed-commits-repository-security, durable-execution-temporal-inngest, versioning-publishing-strategies, multi-cdn-traffic-steering, media-optimization-at-the-edge
 
-**Wave E - Quality/Realtime/Toolkit (17):** test-data-management-anonymization, accessible-charts-data-viz, accessibility-design-systems, http2-http3-performance-effects, production-readiness-reviews, on-call-without-burnout, graphql-subscriptions-live-queries, webrtc-peer-to-peer, testing-realtime-systems, stakeholder-management-stories, judgment-calls-ambiguity, behavioral-anti-patterns-checklist, shortest-paths-dijkstra-bellman-ford, linked-list-manipulation-patterns, matrix-traversal-simulation, docker-kubernetes-cicd-cheat-sheet, sql-data-modeling-cheat-sheet
+**Wave E - Quality, Realtime, and Toolkit (17):** test-data-management-anonymization, accessible-charts-data-viz, accessibility-design-systems, http2-http3-performance-effects, production-readiness-reviews, on-call-without-burnout, graphql-subscriptions-live-queries, webrtc-peer-to-peer, testing-realtime-systems, stakeholder-management-stories, judgment-calls-ambiguity, behavioral-anti-patterns-checklist, shortest-paths-dijkstra-bellman-ford, linked-list-manipulation-patterns, matrix-traversal-simulation, docker-kubernetes-cicd-cheat-sheet, sql-data-modeling-cheat-sheet
 
 Total new chapters: 13 (A) + 20 (B) + 14 (C) + 19 (D) + 17 (E) = **83**. Section 3's NEW markers enumerate the identical set with final file IDs.
 
 ## 6. INDEX updates
 
-Every affected stack INDEX rebuilt: badges (file counts), category tables, study-flow ASCII diagrams, per-file topic rows, suggested paths, cross-references, navigation footers. Category-level INDEX.md created for each new subfolder (like design-patterns has). Root `INDEX.md`, `README.md`, `ROADMAP.md`, `contributing.md`, `AGENTS.md` updated last.
+Every affected stack `INDEX` is rebuilt: badges (file counts), category tables, study-flow ASCII diagrams, per-file topic rows, suggested paths, cross-references, and navigation footers. Category-level `INDEX.md` files are created for each new subfolder (like design-patterns has), and root `INDEX.md`, `README.md`, `ROADMAP.md`, `contributing.md`, and `AGENTS.md` are updated last.
 
 ## 7. Link integrity & verification
 
-- After each move batch: repo-wide grep sweep for old paths; rewrite all references.
-- Repo link check (per contributing.md) after every phase commit.
-- Final verification script: zero broken relative links between md files, zero duplicate file IDs, contiguous sequences per folder, badge counts == actual counts.
+- After each move batch: run a repo-wide `grep` sweep for old paths and rewrite all references.
+- Run the repo link check (per `contributing.md`) after every phase commit.
+- Final verification script: zero broken relative links between Markdown files, zero duplicate file IDs, contiguous sequences per folder, and badge counts matching actual counts.
 
 ## 8. Execution order (each numbered step = one commit)
 
 1. This spec.
-2. Phase 1 - Structural moves + compaction + renames (all stacks), link repair, category INDEXes, stack INDEX rebuilds, AGENTS/contributing convention update.
-3. Phase 2 - Auth completion (section 4) + security INDEX refresh.
-4. Phases 3-7 - Content Waves A-E via parallel authoring agents; after each wave: link check + INDEX counts + commit.
-5. Phase 8 - Root docs (README/INDEX/ROADMAP/contributing/AGENTS) final counts + full link check + final commit.
+2. Phase 1 — Structural moves, compaction, and renames (all stacks), link repair, category `INDEX` updates, stack `INDEX` rebuilds, and `AGENTS.md` and `contributing.md` convention updates.
+3. Phase 2 — Auth completion (Section 4) and security `INDEX` refresh.
+4. Phases 3–7 — Content Waves A–E via parallel authoring agents; after each wave, run link checks, update `INDEX` counts, and commit.
+5. Phase 8 — Root docs (`README.md`, `INDEX.md`, `ROADMAP.md`, `contributing.md`, and `AGENTS.md`) final counts, full link check, and final commit.
 
-## 9. Out of scope / constraints
+## 9. Out of scope & constraints
 
 - No changes inside `80-lanes-abroad-full-stack/personal/` content (symlinks respected).
 - No commits or pushes anywhere outside this repo; never touch `~/repos/career-ops`.

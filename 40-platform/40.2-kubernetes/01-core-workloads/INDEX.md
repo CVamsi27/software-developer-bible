@@ -1,7 +1,7 @@
 # Core Workloads
 
-> **Study time:** ≈ 34 min of reading (5 files, ~7 min average).
-> **5 files.** What actually runs in a Kubernetes cluster: pods and ReplicaSets, Deployments on top, StatefulSets/DaemonSets for special cases, Jobs/CronJobs for batch. Read these before anything else in the K8s stack.
+> **Study time:** ≈ 35 min of reading (5 files, ~7 min average).
+> **5 files.** What actually runs in a Kubernetes cluster: pods and ReplicaSets, Deployments on top, StatefulSets/DaemonSets for special cases, Jobs/CronJobs for batch. Read these before anything else in the Kubernetes stack.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Workloads-blue)](../INDEX.md)
@@ -18,10 +18,10 @@ These chapters explain how declared workloads become running processes or comple
 ## File Index
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
+| ----: | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ | ----------: |
 | 01 | [Pods & ReplicaSets](40.2.1.01-pods-replicasets.md) | Control-plane request path, Pod lifecycle, init containers, sidecars, selectors, and replacement | Optional | Specialized | 8 min |
-| 02 | [Deployments](40.2.1.02-deployments.md) | Trace template change through readiness; compare rollout strategies, HPA ownership and recovery | Optional | Specialized | 9 min |
-| 03 | [StatefulSets & DaemonSets](40.2.1.03-statefulsets-daemonsets.md) | Stateful workloads (databases), stable network IDs, ordered rollout, node-level agents (logging, monitoring) | Optional | Specialized | 7 min |
+| 02 | [Deployments](40.2.1.02-deployments.md) | Trace template change through readiness; compare rollout strategies, Horizontal Pod Autoscaler (HPA) ownership and recovery | Optional | Specialized | 9 min |
+| 03 | [StatefulSets & DaemonSets](40.2.1.03-statefulsets-daemonsets.md) | Stateful workloads (databases), stable network IDs, ordered rollout, node-level agents (logging, monitoring) | Optional | Specialized | 8 min |
 | 04 | [Jobs & CronJobs](40.2.1.04-jobs-cronjobs.md) | Batch jobs, scheduled tasks, backoff, parallelism, completion modes, concurrency policy | Optional | Specialized | 7 min |
 
 ---

@@ -28,11 +28,11 @@ Source: [Kubernetes Pods & ReplicaSets](40.2.1.01-pods-replicasets.md)
 
 **Q:** A ReplicaSet creates a Pod, but no process starts. Which components own the next steps?
 
-**A:** The API server admits and stores the Pod; the scheduler selects a node and records the binding; the node's kubelet observes that assignment and asks its container runtime to start the containers through CRI. The scheduler does not run the process.
+**A:** The API server admits and stores the Pod; the scheduler selects a node and records the binding; the node's kubelet observes that assignment and asks its container runtime to start the containers through Container Runtime Interface (CRI). The scheduler does not run the process.
 
 **Q:** Why can an API write succeed while the replacement is still unavailable?
 
-**A:** API acceptance proves the object passed the API boundary and was stored. Reconciliation, placement, startup, and readiness still take time. An EndpointSlice can already contain the Pod with `ready: false`; under normal Service routing, its existence does not make it eligible for new traffic.
+**A:** API acceptance proves the object passed the API boundary and was stored. Reconciliation, placement, startup, and readiness still take time. An `EndpointSlice` can already contain the Pod with `ready: false`; under normal Service routing, its existence does not make it eligible for new traffic.
 
 **Q:** Where should you investigate when there is no Pod object versus a Pod stuck in `Pending`?
 
@@ -42,7 +42,7 @@ Source: [Kubernetes Pods & ReplicaSets](40.2.1.01-pods-replicasets.md)
 
 Source: [Kubernetes Deployments](40.2.1.02-deployments.md)
 
-**Q:** Why can maxUnavailable zero still produce a bad release?
+**Q:** Why can `maxUnavailable: 0` still produce a bad release?
 
 **A:** It constrains rollout availability according to Pod readiness. Incorrect probes, dependency overload, insufficient surge capacity, or application incompatibility can still affect users.
 
@@ -54,9 +54,9 @@ Source: [Kubernetes Deployments](40.2.1.02-deployments.md)
 
 **A:** The next surge Pod needs quota admission, schedulable capacity, startup, and availability. If any step fails, keeping old capacity is consistent with the policy but prevents progress. Inspect each state rather than treating desired replicas as ready capacity.
 
-**Q:** Why can a quota-blocked rollout have no new Pending Pod?
+**Q:** Why can a quota-blocked rollout have no new `Pending` Pod?
 
-**A:** ResourceQuota admission can reject Pod creation before any Pod object is stored, while the Deployment and ReplicaSet already exist. Inspect the owning controller's creation events; scheduler Pending diagnostics apply after a Pod exists.
+**A:** `ResourceQuota` admission can reject Pod creation before any Pod object is stored, while the Deployment and ReplicaSet already exist. Inspect the owning controller's creation events; scheduler `Pending` diagnostics apply after a Pod exists.
 
 **Q:** Nine stable Pods and one canary Pod share a Service. Is exactly 10% of requests guaranteed to hit canary?
 
@@ -70,9 +70,9 @@ Source: [StatefulSets & DaemonSets](40.2.1.03-statefulsets-daemonsets.md)
 
 **A:** A stable ordinal/name and associated storage identity. It does not make application replication, backup, or consistency automatic.
 
-**Q:** What changes when a StatefulSet has Parallel management or an explicit PVC retention policy?
+**Q:** What changes when a StatefulSet has `Parallel` management or an explicit PersistentVolumeClaim (PVC) retention policy?
 
-**A:** Parallel changes scale-operation sequencing, not RollingUpdate's update rules. Default PVC retention can be changed by the supported explicit retention policy; inspect it before assuming scale-down keeps or deletes data.
+**A:** `Parallel` changes scale-operation sequencing, not `RollingUpdate`'s update rules. Default PVC retention can be changed by the supported explicit retention policy; inspect it before assuming scale-down keeps or deletes data.
 
 **Q:** Does one desired DaemonSet Pod per node guarantee one healthy agent at every instant?
 
@@ -86,7 +86,7 @@ Source: [Jobs & CronJobs](40.2.1.04-jobs-cronjobs.md)
 
 **A:** Controller retries and infrastructure failures can repeat work. Persist an idempotency decision with the business operation rather than assuming one Pod equals exactly one effect.
 
-**Q:** Does Forbid on a CronJob provide exactly-once scheduling?
+**Q:** Does `Forbid` on a CronJob provide exactly-once scheduling?
 
 **A:** No. It prevents overlapping Jobs from that CronJob according to its policy; delayed/missed schedules and repeated work still require application-level handling.
 

@@ -1,7 +1,7 @@
 # Docker — Index
 
-> **Study time:** ≈ 1 h 9 m of reading (11 files, ~6 min average).
-> **11 files** — Docker fundamentals from images and containers to volumes, networks, Compose, multi-stage builds, runtime internals (namespaces/cgroups), supply chain security (signing/SBOM), rootless & sandboxed runtimes, production patterns, and interview questions.
+> **Study time:** ≈ 1 h 10 m of reading (11 files, ~6 min average).
+> **11 files** — Docker fundamentals from images and containers to volumes, networks, Compose, multi-stage builds, runtime internals (namespaces and control groups (`cgroups`)), supply chain security (signing and Software Bill of Materials (`SBOM`)), rootless and sandboxed runtimes, production patterns, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
@@ -50,9 +50,9 @@ Production workflows.
 | --: | ------ | -------- | --- | --- | ----------: |
 | 05 | [Best Practices & Security](40.1.05-dockerfile-best-practices.md) | Layer caching, non-root users, distroless images, image scanning, labels | Important | Important | 6 min |
 | 06 | [Production Patterns](40.1.06-production-patterns.md) | Multi-stage builds (advanced), Docker Compose in production, image optimization, container security checklist | Important | Important | 5 min |
-| 07 | [Container Runtime Internals](40.1.07-container-runtime-internals-namespaces-cgroups.md) | Namespaces (pid/net/mnt/uts/ipc/user), cgroups v2 limits, OverlayFS copy-on-write layers, runc/containerd stack, container vs VM | Optional | Specialized | 8 min |
-| 08 | [Image Signing, SBOM & Supply Chain](40.1.08-image-signing-sbom-supply-chain.md) | Cosign signing + admission verification, SBOM (syft, BuildKit attestations), SLSA provenance levels, registry policy, CI gates | Optional | Specialized | 6 min |
-| 09 | [Rootless & Sandboxed Runtimes](40.1.09-rootless-sandboxed-runtimes.md) | Rootless mode and user namespaces, version-dependent network backends, gVisor vs Kata boundaries, multi-tenant isolation, RuntimeClass | Optional | Specialized | 11 min |
+| 07 | [Container Runtime Internals](40.1.07-container-runtime-internals-namespaces-cgroups.md) | Namespaces (`pid`/`net`/`mnt`/`uts`/`ipc`/`user`), `cgroups v2` limits, OverlayFS copy-on-write layers, `runc`/`containerd` stack, container vs virtual machine (VM) | Optional | Specialized | 8 min |
+| 08 | [Image Signing, SBOM & Supply Chain](40.1.08-image-signing-sbom-supply-chain.md) | Cosign signing + admission verification, SBOM (`syft`, BuildKit attestations), Supply-chain Levels for Software Artifacts (SLSA) provenance levels, registry policy, Continuous Integration (CI) gates | Optional | Specialized | 6 min |
+| 09 | [Rootless & Sandboxed Runtimes](40.1.09-rootless-sandboxed-runtimes.md) | Rootless mode and user namespaces, version-dependent network backends, gVisor vs Kata boundaries, multi-tenant isolation, `RuntimeClass` | Optional | Specialized | 11 min |
 
 ---
 
@@ -60,7 +60,7 @@ Production workflows.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 10 | [Interview Questions](40.1.10-interview-questions.md) | 30 curated questions with answers | Important | Important | 6 min |
+| 10 | [Interview Questions](40.1.10-interview-questions.md) | 30 curated questions with answers | Important | Important | 7 min |
 
 ---
 
@@ -74,15 +74,15 @@ Production workflows.
 
 ## Cross-References
 
-- [Kubernetes](../40.2-kubernetes/INDEX.md) — schedules OCI images through CRI-compatible runtimes such as containerd or CRI-O
-- [CI/CD](../40.3-ci-cd/INDEX.md) — Docker build/deploy pipelines
+- [Kubernetes](../40.2-kubernetes/INDEX.md) — schedules Open Container Initiative (OCI) images through Container Runtime Interface (CRI)-compatible runtimes such as `containerd` or CRI-O
+- [CI/CD](../40.3-ci-cd/INDEX.md) — Continuous Integration / Continuous Delivery (CI/CD) Docker build and deploy pipelines
 - [Microservices](../../20-backend/20.6-microservices/INDEX.md) — services packaged as Docker images
 
 ---
 
 ## Navigation
 
-[← Previous: Microservices](../../20-backend/20.6-microservices/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Kubernetes →](../40.2-kubernetes/INDEX.md)
+[← Previous: Microservices](../../20-backend/20.6-microservices/INDEX.md) · [Back to Index](../../INDEX.md) · [Next: Kubernetes →](../40.2-kubernetes/INDEX.md)
 
 ---
 
@@ -91,11 +91,11 @@ Production workflows.
 Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
 
 | Topic | Docita evidence |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Dockerfile in production | `apps/api/Dockerfile` — image source selected by `fly.toml [build]`; verify the deployed image separately |
-| Compose for local/e2e | `docker-compose.yml`: API service + `postgres:15-alpine`; E2E tests run against this Postgres (`docita_test`) |
-| Image scanning | `.github/workflows/container-scan.yml` schedules Trivy filesystem scans (`scan-type: fs`) of apps/api and apps/worker; this is not a built-image scan |
-| Rootless/runtimes/signing | No rootless/sandbox/cosign/SBOM setup established by these inspected Docker/Compose/scan files; verify the release configuration separately |
+| Compose for local/end-to-end | `docker-compose.yml`: API service + `postgres:15-alpine`; end-to-end (E2E) tests run against this Postgres (`docita_test`) |
+| Image scanning | `.github/workflows/container-scan.yml` schedules Trivy filesystem scans (`scan-type: fs`) of `apps/api` and `apps/worker`; this is not a built-image scan |
+| Rootless/runtimes/signing | No rootless, sandbox, Cosign, or SBOM setup established by these inspected Docker, Compose, or scan files; verify the release configuration separately |
 
 ## Finish This Section
 

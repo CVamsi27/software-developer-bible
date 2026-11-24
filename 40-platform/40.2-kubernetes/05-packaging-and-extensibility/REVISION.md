@@ -18,13 +18,13 @@ Source: [Kubernetes Helm](40.2.5.01-helm.md)
 
 **A:** It tracks rendered releases and supports rollback to prior manifests. It cannot automatically reverse database migrations or external side effects.
 
-**Q:** Why inspect rendered templates rather than only values.yaml?
+**Q:** Why inspect rendered templates rather than only `values.yaml`?
 
 **A:** Templates and chart defaults determine the actual manifests. Valid values are not proof that the rendered deployment has safe probes, selectors, permissions, or resource settings.
 
-**Q:** A production values file enables autoscaling and the chart includes the matching HPA template. Which controller owns the replica count?
+**Q:** A production values file enables autoscaling and the chart includes the matching Horizontal Pod Autoscaler (HPA) template. Which controller owns the replica count?
 
-**A:** The HPA owns the Deployment's scale subresource. The Deployment template omits a competing fixed `spec.replicas`; CPU utilization also requires suitable resource requests and a working metrics API.
+**A:** The HPA owns the Deployment's scale subresource. The Deployment template omits a competing fixed `spec.replicas`; Central Processing Unit (CPU) utilization also requires suitable resource requests and a working metrics Application Programming Interface (API).
 
 **Q:** How does Helm 4 choose an apply method for a new release versus an existing Helm 3 release?
 
@@ -40,11 +40,11 @@ Source: [Kustomize Overlays & Packaging Trade-offs](40.2.5.02-kustomize-overlays
 
 **Q:** Why can `helm template ... | kustomize build .` fail to apply any changes to the chart output?
 
-**A:** Kustomize reads resources declared in the directory; the pipe does not declare stdin as a resource. Write the chart output to a declared resource file or configure the Helm generator with the required build flag, then inspect the result.
+**A:** Kustomize reads resources declared in the directory; the pipe does not declare `stdin` as a resource. Write the chart output to a declared resource file or configure the Helm generator with the required build flag, then inspect the result.
 
-**Q:** Trace a changed configMapGenerator input into a Deployment rollout. What breaks the trace if name hashes are disabled?
+**Q:** Trace a changed `configMapGenerator` input into a Deployment rollout. What breaks the trace if name hashes are disabled?
 
-**A:** The generator changes the hashed object name and a recognized Pod-template reference; applying that changed template starts the rollout. Without the changed name/reference, an environment-based consumer can retain its original value until explicit replacement.
+**A:** The generator changes the hashed object name and a recognized Pod-template reference; applying that changed template starts the rollout. Without the changed name or reference, an environment-based consumer can retain its original value until explicit replacement.
 
 ## CRDs, Operators & Controller Patterns
 
@@ -52,19 +52,19 @@ Source: [CRDs, Operators & Controller Patterns](40.2.5.03-crds-operators-control
 
 **Q:** Why must an operator reconcile the same resource repeatedly without damage?
 
-**A:** Watches, retries, and restarts may trigger reconciliation again. Reconcile desired/current state idempotently and record external operation state when necessary.
+**A:** Watches, retries, and restarts may trigger reconciliation again. Reconcile desired versus current state idempotently and record external operation state when necessary.
 
 **Q:** What problem do finalizers solve, and what new failure mode do they add?
 
 **A:** They delay deletion until cleanup completes. A broken controller or inaccessible dependency can leave deletion blocked, so cleanup needs a recoverable operational path.
 
-**Q:** The CRD is installed and a PostgresCluster object is accepted, but no Pods appear. Which missing owner explains this?
+**Q:** The Custom Resource Definition (CRD) is installed and a `PostgresCluster` object is accepted, but no Pods appear. Which missing owner explains this?
 
-**A:** The CRD supplies API validation/storage; a controller must implement its spec. An accepted object without the controller remains declared intent, not a provisioned database.
+**A:** The CRD supplies API validation and storage; a controller must implement its spec. An accepted object without the controller remains declared intent, not a provisioned database.
 
 **Q:** Why must finalizer cleanup tolerate a provider delete that succeeded before the controller lost its response?
 
-**A:** Reconciliation can retry. Cleanup must recognize the already deleted external resource and safely finish before removing the finalizer. A manual finalizer removal skips cleanup and can abandon data/resources.
+**A:** Reconciliation can retry. Cleanup must recognize the already deleted external resource and safely finish before removing the finalizer. A manual finalizer removal skips cleanup and can abandon data or resources.
 
 **Q:** Why does changing a CRD's storage version not migrate objects already stored in etcd?
 

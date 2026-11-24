@@ -19163,7 +19163,7 @@
     },
     {
       "path": "40-platform/40.1-docker/40.1.01-images-containers.md",
-      "sha256": "1ae323e940b9bce174b933477c91dcc089c363706cfd6cd1b0751dda367c6883",
+      "sha256": "b248dd1fb71b1d733104d71b67efc21c161e7c2990cf5a60c602d2db3ba9aa4a",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -19186,19 +19186,19 @@
       },
       "review": {
         "path": "40-platform/40.1-docker/40.1.01-images-containers.md",
-        "sha256": "1ae323e940b9bce174b933477c91dcc089c363706cfd6cd1b0751dda367c6883",
+        "sha256": "b248dd1fb71b1d733104d71b67efc21c161e7c2990cf5a60c602d2db3ba9aa4a",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full content read: image digest versus mutable tag; layers versus execution metadata; precompiled dist and production dependency assumption; exec CMD and signals; context ignores, disposable writable layer, mounts and host-kernel/resource boundary. Official Dockerfile, multi-stage and Engine security docs checked; maintained Node24 example is a supported-major choice rather than a latest claim. No runtime build claimed: Docker client29.8.2 exists but Docker Desktop daemon socket is unavailable.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 110 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.1-docker/40.1.02-volumes-networks.md",
-      "sha256": "dec8be2eba5461be0c1909edb2bc1befce362ba119eec80c09ea6d6a8d348b77",
+      "sha256": "bf1874e3206616a81e254952dc0c513b5e0d8b39519f820bbe55d70cf491b666",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -19219,19 +19219,19 @@
       },
       "review": {
         "path": "40-platform/40.1-docker/40.1.02-volumes-networks.md",
-        "sha256": "dec8be2eba5461be0c1909edb2bc1befce362ba119eec80c09ea6d6a8d348b77",
+        "sha256": "bf1874e3206616a81e254952dc0c513b5e0d8b39519f820bbe55d70cf491b666",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full content read: named/bind/tmpfs lifetimes, mount hiding/copy-up, Desktop VM storage, local volume versus backup, PostgreSQL18 versioned PGDATA/parent mount migration, bridge DNS/container port versus loopback/published address, bounded wget readiness loop and reachability versus authorization. Primary Docker volumes, PG official-image README and Compose startup-order references checked. Docker daemon unavailable, so database image/network commands were not executed and are not validated runtime results.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 92 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.1-docker/40.1.03-compose.md",
-      "sha256": "9af2c888c78994e9b72b2f2934779930e6b164e9ddde18e16cbd6006eaaf45f3",
+      "sha256": "a8bb2b489e23f11b37cb159d05c4d3cfd350284f55b457621ac63598007c159f",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -19252,19 +19252,19 @@
       },
       "review": {
         "path": "40-platform/40.1-docker/40.1.03-compose.md",
-        "sha256": "9af2c888c78994e9b72b2f2934779930e6b164e9ddde18e16cbd6006eaaf45f3",
+        "sha256": "a8bb2b489e23f11b37cb159d05c4d3cfd350284f55b457621ac63598007c159f",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 182 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.1-docker/40.1.04-multi-stage-builds.md",
-      "sha256": "90425e5c52f4f03173a181271ace8c614c2513f1aa19cf558120db9ef4a36e68",
+      "sha256": "362de7fdc6058d572b8564df027500139ecedba27dcccb61a099ec0451ffa0fe",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -19285,19 +19285,19 @@
       },
       "review": {
         "path": "40-platform/40.1-docker/40.1.04-multi-stage-builds.md",
-        "sha256": "90425e5c52f4f03173a181271ace8c614c2513f1aa19cf558120db9ef4a36e68",
+        "sha256": "362de7fdc6058d572b8564df027500139ecedba27dcccb61a099ec0451ffa0fe",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 120 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.1-docker/40.1.05-dockerfile-best-practices.md",
-      "sha256": "31d6ab26d3e4d3344e8b87e1b9ff166e5838e29ec56d912e28251a6bd776d7a3",
+      "sha256": "92baca395abaa634cd7a0533bb6f50392ce1c1c87e5059f04972c58f9cde6b98",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -19319,19 +19319,19 @@
       },
       "review": {
         "path": "40-platform/40.1-docker/40.1.05-dockerfile-best-practices.md",
-        "sha256": "31d6ab26d3e4d3344e8b87e1b9ff166e5838e29ec56d912e28251a6bd776d7a3",
+        "sha256": "92baca395abaa634cd7a0533bb6f50392ce1c1c87e5059f04972c58f9cde6b98",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 128 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.1-docker/40.1.06-production-patterns.md",
-      "sha256": "076b6e563c7c57d6c6e636b195f4b142b9a02935f7139215e453ac68c4100581",
+      "sha256": "897142a33ef3911627fb75adc1535f010755295c9c6dcef8ba0793480ac671dd",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -19354,19 +19354,19 @@
       },
       "review": {
         "path": "40-platform/40.1-docker/40.1.06-production-patterns.md",
-        "sha256": "076b6e563c7c57d6c6e636b195f4b142b9a02935f7139215e453ac68c4100581",
+        "sha256": "897142a33ef3911627fb75adc1535f010755295c9c6dcef8ba0793480ac671dd",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full content read: one tested digest promotion and prior digest rollback; lockfile/pinned base are not full hermetic reproducibility; secret lifecycles; read-only/tmpfs/capability/PID/CPU/memory command and runtime enforcement; SIGTERM deadline/drain; Docker health versus restart policy; persistent data, consistent restore, expand-contract migration versus image rollback; admission signature/provenance and user-facing evidence. Primary Engine security/Compose behavior checked. Placeholder digest is explicit and target-image assumptions preserved. Docker daemon unavailable; no hardening or performance experiment claimed.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 85 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.1-docker/40.1.07-container-runtime-internals-namespaces-cgroups.md",
-      "sha256": "34dac11200e88e499607c6f61c9ac4033a09910f775c205b04b09dbf7e8e8027",
+      "sha256": "e3cae13877fdd808aeedcd73cfe56b893367048d064cbc9860485ad34ca44d11",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -19388,13 +19388,13 @@
       },
       "review": {
         "path": "40-platform/40.1-docker/40.1.07-container-runtime-internals-namespaces-cgroups.md",
-        "sha256": "34dac11200e88e499607c6f61c9ac4033a09910f775c205b04b09dbf7e8e8027",
+        "sha256": "e3cae13877fdd808aeedcd73cfe56b893367048d064cbc9860485ad34ca44d11",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full original/final content read: each namespace view, permitted Linux unshare experiment and Desktop boundary, cgroupv2 CPU quota versus reservation, memory/cache/high/max/events, exit137 ambiguity, OverlayFS copy-up/whiteout, image config versus layers, runtime/shim supervision and CRI path, hostile-tenant/VM tradeoffs. Docker exec official lifetime and kernel cgroup docs checked. Repaired postmortem recipe: exec requires original running process, counters may vanish on cleanup and replacement counters are different evidence; export live counters and preserve runtime/node events. No Linux namespace/cgroup runtime test possible on host without Docker daemon.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 180 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [
           {
             "description": "Postmortem OOM diagnostic sequence used docker exec without stating it requires a running original container or preserves no removed cgroup counters.",
@@ -19406,7 +19406,7 @@
     },
     {
       "path": "40-platform/40.1-docker/40.1.08-image-signing-sbom-supply-chain.md",
-      "sha256": "76d82c91c0a6756c82ed16717319b1ad865db19a167ef0d3d5811f4eca3700bf",
+      "sha256": "28a6d8cf3a5967caf1008128ccdf0f041bd2c63b988a826b3026337c7af3bb7d",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -19428,19 +19428,19 @@
       },
       "review": {
         "path": "40-platform/40.1-docker/40.1.08-image-signing-sbom-supply-chain.md",
-        "sha256": "76d82c91c0a6756c82ed16717319b1ad865db19a167ef0d3d5811f4eca3700bf",
+        "sha256": "28a6d8cf3a5967caf1008128ccdf0f041bd2c63b988a826b3026337c7af3bb7d",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 124 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.1-docker/40.1.09-rootless-sandboxed-runtimes.md",
-      "sha256": "46b0e7363e080b2e68d1decb953faf7ead525a8360ce70e27536ff51ecf303e8",
+      "sha256": "9c5aaaf510694fffeaca8c4bf78fa27c920671d300302823c328fd96565cc4ee",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -19465,13 +19465,13 @@
       },
       "review": {
         "path": "40-platform/40.1-docker/40.1.09-rootless-sandboxed-runtimes.md",
-        "sha256": "46b0e7363e080b2e68d1decb953faf7ead525a8360ce70e27536ff51ecf303e8",
+        "sha256": "9c5aaaf510694fffeaca8c4bf78fa27c920671d300302823c328fd96565cc4ee",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 227 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "31cfd27043346840442eb860d3eb915117f8a95d04a597fea983c2ce550bd5e4",
@@ -19483,7 +19483,7 @@
     },
     {
       "path": "40-platform/40.1-docker/40.1.10-interview-questions.md",
-      "sha256": "e5e075b0edc7aed9a96ddcfb876b0380a6ad826c9bb931ec884b8ba683749dd1",
+      "sha256": "e93154912bc13f89ec7854d6513a14a41b625a7aa62f521321e7d01dfc4eb2e9",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -19501,19 +19501,19 @@
       },
       "review": {
         "path": "40-platform/40.1-docker/40.1.10-interview-questions.md",
-        "sha256": "e5e075b0edc7aed9a96ddcfb876b0380a6ad826c9bb931ec884b8ba683749dd1",
+        "sha256": "e93154912bc13f89ec7854d6513a14a41b625a7aa62f521321e7d01dfc4eb2e9",
         "genre": "interview-bank",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-14",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content read (2026-11-14): Read end to end; the bank states 30 questions and the headings run Question 1 through Question 30. Each answer closes on its failure boundary instead of restating the command syntax.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 293 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.1-docker/INDEX.md",
-      "sha256": "4cbe014853d88723589d724b26ab8d537754e68fad62a69fb0c0022c3a1a225f",
+      "sha256": "8e73f6fe60152a0353f118bfa1c57e1558a1e843f13f70bd730cbfcbd9f9a532",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -19536,13 +19536,13 @@
       },
       "review": {
         "path": "40-platform/40.1-docker/INDEX.md",
-        "sha256": "4cbe014853d88723589d724b26ab8d537754e68fad62a69fb0c0022c3a1a225f",
+        "sha256": "8e73f6fe60152a0353f118bfa1c57e1558a1e843f13f70bd730cbfcbd9f9a532",
         "genre": "index",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full content read: staged artifact, repeatable release and trust-boundary learning flow;9 chapter concepts and bank reachable, revision before drill, category table and roles remain coherent. Docita entries explicitly candidate inspected files and distinguish filesystem from image scan. Generated count/read metadata left untouched. No blocking content finding.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 102 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "78ec4787a23db2679df0072fd66fdde72741e8d6716d3bf5963f1df5ab812a16",
@@ -19554,7 +19554,7 @@
     },
     {
       "path": "40-platform/40.1-docker/REVISION.md",
-      "sha256": "8e13dca518b3a3f663037ee535c5883bc76af9af9547229b4e8e822d324d090d",
+      "sha256": "58c41e4c8fc0199c24f2689aec62e672e7da8d57436d1c29ed150d21938c7836",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -19565,7 +19565,7 @@
           "Docker Multi-Stage Builds",
           "Dockerfile Best Practices & Security",
           "Docker Production Patterns — Security, Optimization, Multi-Stage",
-          "Container Runtime Internals — Namespaces, cgroups, OverlayFS",
+          "Container Runtime Internals — Namespaces, cgroups and OverlayFS",
           "Image Signing, SBOM & Supply Chain Security",
           "Rootless Mode & Sandboxed Runtimes (gVisor, Kata)",
           "Trace Changed Conditions",
@@ -19580,13 +19580,13 @@
       },
       "review": {
         "path": "40-platform/40.1-docker/REVISION.md",
-        "sha256": "8e13dca518b3a3f663037ee535c5883bc76af9af9547229b4e8e822d324d090d",
+        "sha256": "58c41e4c8fc0199c24f2689aec62e672e7da8d57436d1c29ed150d21938c7836",
         "genre": "revision-companion",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full original/final content read: every existing question preserved and source-linked groups span all9 learning concepts, including PG18 layout and Engine29.5 version conditions. Added focused retrieval for postmortem exec/cgroup lifetime, actual CPU controller delegation and Podman API socket versus Quadlet supervision, consistent with repaired canonical chapters. Companion continues to test mechanism rather than duplicate complete Docker/YAML recipes.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 151 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [
           {
             "description": "Updated companion retrieval to preserve corrected postmortem, rootless resource enforcement and Podman supervision boundaries.",
@@ -20045,7 +20045,7 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.01-pods-replicasets.md",
-      "sha256": "1f6f8a6544a01d8a9ea55a27d192a1a75e280355928b63b19ebdd7c093726316",
+      "sha256": "0e7fdaa6c6085f617e4b38578b51519ece630220606615e8eed5f2860337003e",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -20068,19 +20068,19 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.01-pods-replicasets.md",
-        "sha256": "1f6f8a6544a01d8a9ea55a27d192a1a75e280355928b63b19ebdd7c093726316",
+        "sha256": "0e7fdaa6c6085f617e4b38578b51519ece630220606615e8eed5f2860337003e",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 152 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.02-deployments.md",
-      "sha256": "d760b813d7969b8ded704aea86dd9a61bf896a05f501cdb2860987777e985338",
+      "sha256": "35e75580e54f3e17fa8a718ebdda68f3727debb79e8e7e348abfaaa983f23878",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -20103,13 +20103,13 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.02-deployments.md",
-        "sha256": "d760b813d7969b8ded704aea86dd9a61bf896a05f501cdb2860987777e985338",
+        "sha256": "35e75580e54f3e17fa8a718ebdda68f3727debb79e8e7e348abfaaa983f23878",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full original/final content read: complete Deployment manifest, controller template/revision trace, surge/readiness/minReadySeconds and terminating resources, probes with local liveness, stalled ProgressDeadlineExceeded without auto rollback, compatibility/data boundary, traffic-layer canary/bluegreen, HPA field ownership/PDB/drain separation. Official Deployment and quota docs confirm quota rejects Pod creation403 before Pod storage. Repaired Pending-from-quota diagnosis and non-terminating surge population wording; companion now tests missing-Pod admission boundary. No actual cluster rollout or service SLO asserted.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 179 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [
           {
             "description": "Rollout diagnosis treated quota violation as an existing Pending Pod; admission can reject Pod creation while Deployment/ReplicaSet exist. Corrected controller event versus scheduling diagnosis.",
@@ -20126,7 +20126,7 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.03-statefulsets-daemonsets.md",
-      "sha256": "7dd616ef90b510d06a128184c5d0af684a7585f8effc26ff8935267745572b8c",
+      "sha256": "7dfdde42e228f494b73943ae6a7adde19dd378b7e0555a03512def69cc08ede9",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -20149,19 +20149,19 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.03-statefulsets-daemonsets.md",
-        "sha256": "7dd616ef90b510d06a128184c5d0af684a7585f8effc26ff8935267745572b8c",
+        "sha256": "7dfdde42e228f494b73943ae6a7adde19dd378b7e0555a03512def69cc08ede9",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 165 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.04-jobs-cronjobs.md",
-      "sha256": "3b571bf4c8807aef28b230d0f4e2d475217e454a08f7daea66cd314265b025a3",
+      "sha256": "fd3bcb7ebb8409c8a4fa0d6ee9b314566678a1c2e2ccab176dddf55973803719",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -20183,13 +20183,13 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.04-jobs-cronjobs.md",
-        "sha256": "3b571bf4c8807aef28b230d0f4e2d475217e454a08f7daea66cd314265b025a3",
+        "sha256": "fd3bcb7ebb8409c8a4fa0d6ee9b314566678a1c2e2ccab176dddf55973803719",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full original/final content read: finite completion accounting versus external effects, indexed work, restartPolicy/retry/deadline/TTL controls, duplicate/terminating attempts, per-index backoff1.33 and podFailurePolicy1.31/FailIndex conditions; approximate CronJob scheduling/timezone/deadline100missed window, per-owner Allow/Forbid/Replace, scheduled-timestamp annotation1.32 and backup/restore output boundary. Official Job/CronJob docs verified. Clarified migration example is one logical Job with retriable attempts, not one attempt. Example credentials/storage/image prerequisites remain explicit; no backup/run/restore or cluster test asserted.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 146 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [
           {
             "description": "Migration example said one bounded attempt despite backoffLimit2 and repeated Pod attempts; clarified logical Job versus physical attempts.",
@@ -20201,7 +20201,7 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/01-core-workloads/INDEX.md",
-      "sha256": "6b14beb8b7a6ae6ce7114d8c211a2310f53195818312ceef7d514b789a5127f6",
+      "sha256": "14a387c980ec72a43d0cea8a82b35f8d9c53366c6cac26f83aa19ef81756c272",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -20220,13 +20220,13 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/01-core-workloads/INDEX.md",
-        "sha256": "6b14beb8b7a6ae6ce7114d8c211a2310f53195818312ceef7d514b789a5127f6",
+        "sha256": "14a387c980ec72a43d0cea8a82b35f8d9c53366c6cac26f83aa19ef81756c272",
         "genre": "index",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full original/final content read: first trace request/admission/reconciliation/scheduler/node/readiness and then distinguish interchangeable replicas, ordinal identity, eligible nodes and finite work; companion and adjacent categories connected. Narrowed Docita release evidence to candidate configuration requiring enabled-trigger/deployed-history checks; existence of a workflow/Dockerfile cannot establish an executed rollout. No Kubernetes implementation claim.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 57 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [
           {
             "description": "Docita anchor implied an executed CI-driven rollout from configuration presence; now explicitly requires enabled-trigger and deployment-history evidence.",
@@ -20244,7 +20244,7 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/01-core-workloads/REVISION.md",
-      "sha256": "71bfe4e40d6cc7695edca52069d3a79edfcd390ee4cd9ff11e285c5ecd2c1a27",
+      "sha256": "17ebd4b854583d43e0aaf2f327b31fec4b6b5b88f56b3132dde9dc84e09a0ab2",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -20264,13 +20264,13 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/01-core-workloads/REVISION.md",
-        "sha256": "71bfe4e40d6cc7695edca52069d3a79edfcd390ee4cd9ff11e285c5ecd2c1a27",
+        "sha256": "17ebd4b854583d43e0aaf2f327b31fec4b6b5b88f56b3132dde9dc84e09a0ab2",
         "genre": "revision-companion",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full original/final content read: all authored Pod/controller/API-path, zero-unavailability/rollback, canary routing, StatefulSet retention/DaemonSet coverage and indexed-Job duplicate/FailIndex questions preserved with source-linked groups. Added quota-admission versus Pending retrieval prompt; checked answers against repaired chapters and official v1.37 controller docs. No duplicate full manifests or unsupported exactly-once/availability promise.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 111 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [
           {
             "description": "Revision needed an explicit missing-Pod quota-admission case to preserve the corrected rollout diagnostic boundary.",
@@ -20288,7 +20288,7 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.01-services-ingress.md",
-      "sha256": "d1b834d7bd84de66f9cb5152ef0daed6f4a179601eb5c97f376cada44af763e2",
+      "sha256": "4d5b63eb1250a04d45be8224a0734bd1df50644bb52c424eafe32e56d33a3747",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -20315,19 +20315,19 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.01-services-ingress.md",
-        "sha256": "d1b834d7bd84de66f9cb5152ef0daed6f4a179601eb5c97f376cada44af763e2",
+        "sha256": "4d5b63eb1250a04d45be8224a0734bd1df50644bb52c424eafe32e56d33a3747",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 192 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.02-configmaps-secrets.md",
-      "sha256": "c5401995b7ca790dd4df72fe701d39878399cd0e18d5b7674fe2ffda448c4512",
+      "sha256": "35f2816a6e40d131a859adbe7fc869275f90da3b9c17594c0fb7eba9dc597089",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -20351,19 +20351,19 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.02-configmaps-secrets.md",
-        "sha256": "c5401995b7ca790dd4df72fe701d39878399cd0e18d5b7674fe2ffda448c4512",
+        "sha256": "35f2816a6e40d131a859adbe7fc869275f90da3b9c17594c0fb7eba9dc597089",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 215 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.03-podpresets.md",
-      "sha256": "b702189782619fc6f6c476350fed32eeaa156a6cb03f6ff7a6a9ee07019308df",
+      "sha256": "ec6595f4024516a6d6abc9736a272c0e8c5a1cbd330e68e374360b2e721c4d41",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -20387,19 +20387,19 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.03-podpresets.md",
-        "sha256": "b702189782619fc6f6c476350fed32eeaa156a6cb03f6ff7a6a9ee07019308df",
+        "sha256": "ec6595f4024516a6d6abc9736a272c0e8c5a1cbd330e68e374360b2e721c4d41",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full content read: removed settings.k8s.io alpha API1.20 and limited historical env/volume scope, rendered-template ownership versus admission dependency, mutation versus mandatory validation, same-namespace references/startup environment, inspect admitted Pod versus source, dry-run sideEffects contract, idempotent patches/outage failure policy and migration. Verified exact Kubernetes1.20 changelog removal plus current admission-controller docs. No obsolete example suggested for current clusters; no cluster access/dry-run mutation performed.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 118 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.2-kubernetes/02-networking-and-config/INDEX.md",
-      "sha256": "5c811916cc9c09e96edc4973215da99a7c4ea9c6dff6ee3f662fd014946e89c7",
+      "sha256": "db5f0c58e92c4f2abfaf15a166cc423925427134e6ce277bfb77fc0d6e4f916c",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -20419,13 +20419,13 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/02-networking-and-config/INDEX.md",
-        "sha256": "5c811916cc9c09e96edc4973215da99a7c4ea9c6dff6ee3f662fd014946e89c7",
+        "sha256": "db5f0c58e92c4f2abfaf15a166cc423925427134e6ce277bfb77fc0d6e4f916c",
         "genre": "index",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full original/final content read: passes follow traffic discovery/data plane then config delivery/reload then obsolete PodPreset replacement, followed by revision. Historical API and retired controller separated. Narrowed unsupported Never in-repo secret assurance to actual environment-reference configuration and separate provisioning/repository-control verification. Candidate Docita analogs do not establish a deployed Kubernetes feature.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 62 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [
           {
             "description": "Docita secrets anchor claimed universal absence of in-repository secrets from environment-reference evidence; scoped the claim to inspected configuration and explicit control verification.",
@@ -20443,7 +20443,7 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/02-networking-and-config/REVISION.md",
-      "sha256": "ecb4b7b4b5440e4a149dfb3b6b1685a01a17e84d13e09dd39dd8e5b190f7ec45",
+      "sha256": "9c62e4af3fd2a48250b7b459d69efbb6f00911c3fc7b165c9a6ab722fae5146c",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -20462,19 +20462,19 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/02-networking-and-config/REVISION.md",
-        "sha256": "ecb4b7b4b5440e4a149dfb3b6b1685a01a17e84d13e09dd39dd8e5b190f7ec45",
+        "sha256": "9c62e4af3fd2a48250b7b459d69efbb6f00911c3fc7b165c9a6ab722fae5146c",
         "genre": "revision-companion",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full content read: source-linked retrieval covers controller versus route, Serviceport versus targetPort, retired ingress-nginx versus stable frozen API, base64/encryption/Pod-create authorization, mounted versus env/subPath refresh and actual nonroot read mode, historical PodPreset and fail-closed webhook admission. Answers consistent with complete chapters and checked primary lifecycle/security docs. Existing authored questions preserved; no new blocking finding.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 75 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.2-kubernetes/03-scaling/40.2.3.01-hpa-scaling.md",
-      "sha256": "4be9148469d77726f46d36effedb067fdbbd7e94d0f72ac835d5ac7c5458480c",
+      "sha256": "05f9865948dfa9407f385c3b31db3ba63e4da668de2272fdcfeb2cbf00466180",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -20501,13 +20501,13 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/03-scaling/40.2.3.01-hpa-scaling.md",
-        "sha256": "4be9148469d77726f46d36effedb067fdbbd7e94d0f72ac835d5ac7c5458480c",
+        "sha256": "05f9865948dfa9407f385c3b31db3ba63e4da668de2272fdcfeb2cbf00466180",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full original/final content read: complete CPU metric-to-scale-subresource-to-Pod-to-node/readiness trace, request denominator and ceil ratio with worked400m/500m80percent example, conservative missing samples/readiness/tolerance/multi-metric downscale behavior, bounds/stabilization/rolling policy windows, target field ownership, per-Pod/external backlog adapters, memory redistributability, VPA denominator coordination, PDB-independent replica reductions. Verified official HPA and1.37 scale-to-zero beta condition/gate docs. Added required nonzero initial target to establish controller-owned zero state and integer rounding of percent removal policy; corrected quota event owner. No load test/cluster application/API query performed; ratio is prediction not benchmark.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 302 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [
           {
             "description": "Scale-to-zero example omitted starting from at least one replica; an initialized/manually zero target without ScaledToZero stays paused and will not wake.",
@@ -20530,7 +20530,7 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md",
-      "sha256": "c5759a6a7cc98b26c52b2518b498bc0fa12feb1c507fcb22d0211273187084d1",
+      "sha256": "6598f485b6c9d4dfbe1e12f950918121da1b6fb25214f82ef97afc72743bfb1f",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -20553,19 +20553,19 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md",
-        "sha256": "c5759a6a7cc98b26c52b2518b498bc0fa12feb1c507fcb22d0211273187084d1",
+        "sha256": "6598f485b6c9d4dfbe1e12f950918121da1b6fb25214f82ef97afc72743bfb1f",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-14",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content read (2026-11-14): Trace follows HPA to Pod to scheduler to autoscaler to node to readiness, one asynchronous loop per step. The CA versus Karpenter comparison lives in a table so the prose does not argue both twice.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 181 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.2-kubernetes/03-scaling/INDEX.md",
-      "sha256": "b942d2797851e8a62c0dbb02530614be5e611667ff2e1dce4466de276e042a9d",
+      "sha256": "3cc1d9d57da26ee8143ea1309f968b8baa5f605ea14ced7d22d14c232fe84bc3",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -20584,13 +20584,13 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/03-scaling/INDEX.md",
-        "sha256": "b942d2797851e8a62c0dbb02530614be5e611667ff2e1dce4466de276e042a9d",
+        "sha256": "3cc1d9d57da26ee8143ea1309f968b8baa5f605ea14ced7d22d14c232fe84bc3",
         "genre": "index",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full content read: learning pass separates metric/request-based HPA from schedulable-Pod node capacity and safety/latency constraints; category crosslinks and revision order coherent. Docita scaling evidence explicitly distinguishes Fly Proxy starting existing machines from HPA/node provisioning and records disabled scheduled-workflow state as dated evidence. No current deployment/schedule claim inferred; count/read metadata not hand edited.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 55 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "42872a8b4cf19eca0694ca4002e727637c9a0e1f98b430bda69f4fab02ac08e3",
@@ -20602,7 +20602,7 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/03-scaling/REVISION.md",
-      "sha256": "8057b7ba28d5e336dce2004cc9bf7e535cbb96e6c63e550b370b308bf2a7e701",
+      "sha256": "f65315a0718d84121fd57dd2876e5c5f6bd639ba8de5d7eaed5977d4accfbbd9",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -20620,13 +20620,13 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/03-scaling/REVISION.md",
-        "sha256": "8057b7ba28d5e336dce2004cc9bf7e535cbb96e6c63e550b370b308bf2a7e701",
+        "sha256": "f65315a0718d84121fd57dd2876e5c5f6bd639ba8de5d7eaed5977d4accfbbd9",
         "genre": "revision-companion",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full original/final content read: all authored ratio, denominator, missing-metric, scale-zero identity, shape/taint/placeholder and consolidation questions retained with source groups. Added precise retrieval for percentage rounding, initialized-zero pause, required device-plugin GPU limits and Karpenter selection-versus-drain deadlines. Answers checked against final chapters and primary1.37/Karpenter1.15 contracts; no duplicate full manifests.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 99 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [
           {
             "description": "Companion lacked repaired integer-policy, scale-zero bootstrap, GPU validation and protected-drain failure boundaries; synchronized focused retrieval prompts.",
@@ -20638,7 +20638,7 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.01-health-checks.md",
-      "sha256": "b957846e1de68f4b38375ed16d5a0f7803edb5aedb9bae934089d31d8d262ac0",
+      "sha256": "29d1bd26b09927a3731d5f240473e605ecad3cc8ca16cf71768300107d7088f0",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -20661,19 +20661,19 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.01-health-checks.md",
-        "sha256": "b957846e1de68f4b38375ed16d5a0f7803edb5aedb9bae934089d31d8d262ac0",
+        "sha256": "29d1bd26b09927a3731d5f240473e605ecad3cc8ca16cf71768300107d7088f0",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 179 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.02-pod-disruption-budgets.md",
-      "sha256": "78f2fc99505b41aab3dc2edca7cd7b6799d488882a926731f0a5e7cd972b4e74",
+      "sha256": "d74055cc4a5dffe8574f57bbe0294ad90ce9708e104b9ea205e4e8967178eb88",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -20695,19 +20695,19 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.02-pod-disruption-budgets.md",
-        "sha256": "78f2fc99505b41aab3dc2edca7cd7b6799d488882a926731f0a5e7cd972b4e74",
+        "sha256": "d74055cc4a5dffe8574f57bbe0294ad90ce9708e104b9ea205e4e8967178eb88",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full content read: only cooperating eviction API admission, crashes/delete/rollout/HPA bypass, healthy threshold versus desired count and in-progress disruptions/status lag, percentage rounding and singleton loss, policy/v1 empty-selector namespace scope, common controller requirement versus bare/unsupported scale, AlwaysAllow running-unhealthy versus healthy budget with stable1.31 minimum, quorum not membership, drain replacement capacity. Official PDB/unhealthy-policy docs verified. No real node drain or PDB admission tested; no end-to-end availability guarantee claimed.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 122 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.03-rbac-network-policies.md",
-      "sha256": "d7201da27b8cc6047089e89bbb938dadeb123e0b9f106e22afbcd224e37adc22",
+      "sha256": "59365e9dedc7c52b4fb9fd1d98316385f8b21b4b4932a180099ff7d3d52eaa14",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -20729,13 +20729,13 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.03-rbac-network-policies.md",
-        "sha256": "d7201da27b8cc6047089e89bbb938dadeb123e0b9f106e22afbcd224e37adc22",
+        "sha256": "59365e9dedc7c52b4fb9fd1d98316385f8b21b4b4932a180099ff7d3d52eaa14",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full original/final content read: authentication subject then APIgroup/resource/subresource/verb/scope, additive role bindings and RBAC no-opinion authorizer chain, namespaced RoleBinding ClusterRole versus clusterwide binding, projected token/legacy token version boundaries, create-Pod indirect Secret access and impersonation test rights. NetworkPolicy supporting CNI, per-direction additive union and both connection sides/replies, selector AND versus OR, DNS UDP/TCP and namespace labels, NAT identity and asynchronous propagation. Official authorization/network docs verified. Added node/self and hostNetwork exception beside default-deny to avoid treating Pod policy as host quarantine. No live RBAC or packet policy enforcement result asserted.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 190 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [
           {
             "description": "Default-deny explanation omitted standard own-node/self traffic exceptions and implementation-dependent hostNetwork behavior; stated host isolation as a separate control.",
@@ -20747,7 +20747,7 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.04-resource-quotas.md",
-      "sha256": "a2949d10d4edb26320e374ec2cea64c609a7f5fae275d80d97a9301d8acbce92",
+      "sha256": "ae5427488a30b8f35920a3b9170082cffe3e8ee762fc279d11a31662e5480240",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -20768,13 +20768,13 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.04-resource-quotas.md",
-        "sha256": "a2949d10d4edb26320e374ec2cea64c609a7f5fae275d80d97a9301d8acbce92",
+        "sha256": "ae5427488a30b8f35920a3b9170082cffe3e8ee762fc279d11a31662e5480240",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full original/final content read: aggregate declared admission budget versus physical capacity/live use/QoS/cost, LimitRange per-container defaults/min/max/ratio and arithmetic200m/500m totals, additive quota scopes, rejected create versus Pending scheduling and surge/terminating budget, storage/extended resource boundaries. Verified official quota/LimitRange/resource docs and Kubernetesv1.37.0 pod quota evaluator Constraints/PodUsageFunc source. Repaired universal each-container-required claim: when PodLevelResources is enabled and Pod declarations set, old missing-container-fields check is skipped and effective Pod accounting used; linked owning core resource chapter. No API admission/runtime quota experiment performed.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 129 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [
           {
             "description": "Every-container CPU/memory-field requirement was presented universally despite enabled Pod-level resource declaration exception; narrowed per-container example and documented versioned evaluator branch.",
@@ -20786,7 +20786,7 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/04-production-hardening/INDEX.md",
-      "sha256": "9feef522d21558c29ca23a7e645322ed692cf6c7af0f854de0a8d99c2a558faf",
+      "sha256": "d86ba2a52ce2cfb22662ea89a4c0658dca7c7a958b2ca3aeca8c06ad1c6c4925",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -20805,13 +20805,13 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/04-production-hardening/INDEX.md",
-        "sha256": "9feef522d21558c29ca23a7e645322ed692cf6c7af0f854de0a8d99c2a558faf",
+        "sha256": "d86ba2a52ce2cfb22662ea89a4c0658dca7c7a958b2ca3aeca8c06ad1c6c4925",
         "genre": "index",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full content read: probe-to-availability then eviction/admission, API authorization/network reachability, and namespace limits in distinct passes; all4 learning chapters and revision reachable. Docita anchors separate Fly/application checks from Kube probes, source filesystem scan from image scan, and application tenant controls from Kubernetes capacity. Counts/read metadata untouched; no blocking content finding.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 58 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "3b86d6690528292c2bf24f61e6adb6acddd99e624cae16293cf4edd8e969eb47",
@@ -20823,7 +20823,7 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/04-production-hardening/REVISION.md",
-      "sha256": "818173ec638062b3b2ab1a7cc0241ff4f24041ace55afef2539b462973d5da23",
+      "sha256": "92947c8015d92edd366a41cd8eede0555a8d24ca0357b09c821ab272fdd37f86",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -20843,13 +20843,13 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/04-production-hardening/REVISION.md",
-        "sha256": "818173ec638062b3b2ab1a7cc0241ff4f24041ace55afef2539b462973d5da23",
+        "sha256": "92947c8015d92edd366a41cd8eede0555a8d24ca0357b09c821ab272fdd37f86",
         "genre": "revision-companion",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full original/final content read: existing source-linked startup/TLS, PDB healthy allowance/empty-selector, RBAC authorizer/binding/traffic halves and quota admission/accounting questions preserved. Added node/self host-boundary retrieval and feature-gated Pod-level quota exception, narrowing older omitted-request question to its per-container model. Answers match final canonical chapters, official1.37 source and focused Node handler check; no full implementations repeated.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 119 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [
           {
             "description": "Companion needed standard node/self isolation and Pod-level quota exception to preserve repaired security/admission scope.",
@@ -20867,7 +20867,7 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.01-helm.md",
-      "sha256": "f5f674cc84533af5a3b8543f6e18526a2b71f8a6e5f69b6015fd04b39b63f51c",
+      "sha256": "fd91c636a5c483d6840c76ea54476919e683b304ca9467f556137840d469022f",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -20889,19 +20889,19 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.01-helm.md",
-        "sha256": "f5f674cc84533af5a3b8543f6e18526a2b71f8a6e5f69b6015fd04b39b63f51c",
+        "sha256": "fd91c636a5c483d6840c76ea54476919e683b304ca9467f556137840d469022f",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 427 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.02-kustomize-overlays-packaging-tradeoffs.md",
-      "sha256": "a620bdc5aa29f4496c1c47250b92054335c6fb36d144c1579940ab19dea2619b",
+      "sha256": "77f03d3c0962c743019fd9858b3cc1179c57c702348237da8c4923993031d001",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -20924,19 +20924,19 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.02-kustomize-overlays-packaging-tradeoffs.md",
-        "sha256": "a620bdc5aa29f4496c1c47250b92054335c6fb36d144c1579940ab19dea2619b",
+        "sha256": "77f03d3c0962c743019fd9858b3cc1179c57c702348237da8c4923993031d001",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 189 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.03-crds-operators-controller-patterns.md",
-      "sha256": "07fedd5684b05f7fd9e4f6b04eaf49c0b5028a42430805c9d289a1ac2bea50a5",
+      "sha256": "ebe2b6e6892d81e23d5a8ed557c32f2e5d887dfc71e0a6bf88277a13b9f10946",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -20959,19 +20959,19 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.03-crds-operators-controller-patterns.md",
-        "sha256": "07fedd5684b05f7fd9e4f6b04eaf49c0b5028a42430805c9d289a1ac2bea50a5",
+        "sha256": "ebe2b6e6892d81e23d5a8ed557c32f2e5d887dfc71e0a6bf88277a13b9f10946",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 205 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.2-kubernetes/05-packaging-and-extensibility/INDEX.md",
-      "sha256": "a7df869a778c56d002df7ec17a1e85c6a1abe51b263030a3495da2ee4d495834",
+      "sha256": "5a9a2126d1ba37d2ecfd89400e3fe6851838ac5a6e2ab17b2eff47259589daef",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -20991,13 +20991,13 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/05-packaging-and-extensibility/INDEX.md",
-        "sha256": "a7df869a778c56d002df7ec17a1e85c6a1abe51b263030a3495da2ee4d495834",
+        "sha256": "5a9a2126d1ba37d2ecfd89400e3fe6851838ac5a6e2ab17b2eff47259589daef",
         "genre": "index",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full original/final content read: packaging choice flows from Helm values/release history through Kustomize exact rendered composition to owning a reconciler/API; revision after all three concepts. Replaced candidate Dockerfile and disabled workflow assumptions with explicit trigger/deployed-release evidence boundary. No count metadata writer run.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 55 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [
           {
             "description": "Candidate Dockerfile was treated as executed plain CI deployment evidence; narrowed to image packaging and required active triggers/release history.",
@@ -21009,7 +21009,7 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/05-packaging-and-extensibility/REVISION.md",
-      "sha256": "a8aedccce7d4cc7ed1fdd687125c128a9f6cc23ebef2e6960108f5990d57222b",
+      "sha256": "d1b386dccf0088c6fa261fe708b3d9125b72c438e2dea5d5992b94d38a10fc0a",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -21028,19 +21028,19 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/05-packaging-and-extensibility/REVISION.md",
-        "sha256": "a8aedccce7d4cc7ed1fdd687125c128a9f6cc23ebef2e6960108f5990d57222b",
+        "sha256": "d1b386dccf0088c6fa261fe708b3d9125b72c438e2dea5d5992b94d38a10fc0a",
         "genre": "revision-companion",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full content read: source-linked existing Helm release/rollback external-effects/render/HPA/Helm4 apply method retrieval, Kustomize directory-pipe/hash-reference rollout, CRD intent-without-controller/repeat-safe reconciliation/finalizer lostresponse/storage migration prompts. All3 concepts covered without duplicating full mechanisms; answers remain aligned with final repaired examples. No blocking companion finding.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 83 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.2-kubernetes/06-interview-prep/40.2.6.01-interview-questions.md",
-      "sha256": "7f5780a7af2ecc28ec6a529a853871cb6d7b90c39dcda35a4fb78ddccd3654ed",
+      "sha256": "85382ae764a63293acc873a2f132091717f771e38fe245f996f43ab5897774a0",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -21058,13 +21058,13 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/06-interview-prep/40.2.6.01-interview-questions.md",
-        "sha256": "7f5780a7af2ecc28ec6a529a853871cb6d7b90c39dcda35a4fb78ddccd3654ed",
+        "sha256": "85382ae764a63293acc873a2f132091717f771e38fe245f996f43ab5897774a0",
         "genre": "interview-bank",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 829 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "09051dc8d4ee1a4167b6b04622892cff7cde94831a35c0ed99aa8657998a05a0",
@@ -21076,7 +21076,7 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/06-interview-prep/INDEX.md",
-      "sha256": "75360d5ecd42461c897086043fd71dc10f8b651f5f1ff0da6df85d15035e3341",
+      "sha256": "be391a7af8efada5923bd0cb356c6bf6f47ee024b27868f268f98f0fee7357b4",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -21093,13 +21093,13 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/06-interview-prep/INDEX.md",
-        "sha256": "75360d5ecd42461c897086043fd71dc10f8b651f5f1ff0da6df85d15035e3341",
+        "sha256": "be391a7af8efada5923bd0cb356c6bf6f47ee024b27868f268f98f0fee7357b4",
         "genre": "index",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full original/final content read: thirty-question drill after all five learning categories, assumptions/mechanism/failure/verification guidance and source navigation. Candidate Fly configuration analogy now separated from evidence of executed/deployed behavior; Kubernetes operational experience remains explicitly unestablished.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 36 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [
           {
             "description": "Fly configuration analogy was worded as established deployed behavior/working production experience; bounded to candidate configuration and actual evidence.",
@@ -21117,7 +21117,7 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/INDEX.md",
-      "sha256": "be0caab0b49f4c55172a54f5aad74e9e564e83e0c317b572045eca0947e53899",
+      "sha256": "aa5d05b413bf7ab67ebf352044fe5e355e5feb977a4cfb125b042dea3e96237c",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -21141,13 +21141,13 @@
       },
       "review": {
         "path": "40-platform/40.2-kubernetes/INDEX.md",
-        "sha256": "be0caab0b49f4c55172a54f5aad74e9e564e83e0c317b572045eca0947e53899",
+        "sha256": "aa5d05b413bf7ab67ebf352044fe5e355e5feb977a4cfb125b042dea3e96237c",
         "genre": "index",
         "status": "reviewed",
         "reviewer": "animation_coverage",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full content read: workload-to-traffic/config-to-probe/scaling/recovery learning passes; all5 learning categories and final bank mapped, source chapters remain canonical, revision precedes drill. Current role labels and supported-controller ownership preserved. Counts/read metadata left for root generation. No deployment/runtime evidence inferred from navigation or example manifests.",
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 124 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "ac1ab419f378d9a41eb62aa1eba8857b35988cf987b2168ee1413b9809bf2d7b",
@@ -24347,7 +24347,7 @@
     },
     {
       "path": "40-platform/INDEX.md",
-      "sha256": "2b5d69aeb933db65a357a73b836926a6d11bd806a39e2729fe6af3e30dfab268",
+      "sha256": "cd9d4ac9f07c867cf0b3e88e81616a7b6af6d5aa269ca8e01511aed2cd64222b",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -24367,13 +24367,13 @@
       },
       "review": {
         "path": "40-platform/INDEX.md",
-        "sha256": "2b5d69aeb933db65a357a73b836926a6d11bd806a39e2729fe6af3e30dfab268",
+        "sha256": "cd9d4ac9f07c867cf0b3e88e81616a7b6af6d5aa269ca8e01511aed2cd64222b",
         "genre": "index",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 132 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "006f685350cac4d3b8150851e252af5b62f433ddc0b206379ba665966a8dda57",
@@ -31021,7 +31021,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "b065b99d5db0f39cc221e09a7bfe86dbe13b0921e55e7952f4fcab1d1b52ff06",
+      "sha256": "5e9f3a4df945a78842116faae91ef5bf3f4298c8796a2638c3171d629f28b4f8",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -31039,12 +31039,12 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "b065b99d5db0f39cc221e09a7bfe86dbe13b0921e55e7952f4fcab1d1b52ff06",
+        "sha256": "5e9f3a4df945a78842116faae91ef5bf3f4298c8796a2638c3171d629f28b4f8",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design + synced index/docs, 2026-11-24).",
+        "notes": "Wave 4A count/read-time sync (2026-11-24): Full read of 206 lines. Updated generated counts/read-time navigation after Wave 4A.",
         "findings": []
       }
     },
@@ -31624,7 +31624,7 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "bcac74d5bab5291f0fff585689ca371f19c30ef74db7f14769854a9517ec5995",
+      "sha256": "35f7da29d5f5cf27e75d1a1fae7756e90452bca32f5e43400f339d3d9158bd57",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31642,12 +31642,12 @@
       },
       "review": {
         "path": "docs/api-contract.md",
-        "sha256": "bcac74d5bab5291f0fff585689ca371f19c30ef74db7f14769854a9517ec5995",
+        "sha256": "35f7da29d5f5cf27e75d1a1fae7756e90452bca32f5e43400f339d3d9158bd57",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design + synced index/docs, 2026-11-24).",
+        "notes": "Wave 4A count/read-time sync (2026-11-24): Full read of 119 lines. Updated generated counts/read-time navigation after Wave 4A.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

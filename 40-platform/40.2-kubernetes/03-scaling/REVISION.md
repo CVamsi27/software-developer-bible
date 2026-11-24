@@ -14,7 +14,7 @@ Read the chapters in the [section learning flow](INDEX.md), then close them and 
 
 Source: [Kubernetes HPA & Scaling](40.2.3.01-hpa-scaling.md)
 
-**Q:** Why does a CPU utilization target depend on resource requests?
+**Q:** Why does a central processing unit (CPU) utilization target depend on resource requests?
 
 **A:** Utilization compares observed CPU to the requested CPU. Missing or unsuitable requests distort or prevent that metric's scaling decision.
 
@@ -46,7 +46,7 @@ Source: [Kubernetes HPA & Scaling](40.2.3.01-hpa-scaling.md)
 
 **A:** No. The removal allowance rounds up to a whole Pod, so one can be removed if the recommendation, minimum count and other rules allow it. A percentage policy is not fractional-Pod precision.
 
-**Q:** Will an HPA with minReplicas zero wake a Deployment that was initialized with zero replicas?
+**Q:** Will an HPA with `minReplicas: 0` wake a Deployment that was initialized with zero replicas?
 
 **A:** Not without its HPA-owned `ScaledToZero=True` state. Start with at least one replica so the controller can own a later transition to zero; manual zero remains a pause.
 
@@ -70,7 +70,7 @@ Source: [Node Autoscaling & Cluster Capacity (Cluster Autoscaler, Karpenter)](40
 
 **A:** Requests must fit on one feasible node; aggregate free CPU across machines is not one schedulable slot. A provisioner needs a permitted node shape with enough capacity and matching placement constraints.
 
-**Q:** Does tolerating the GPU pool's taint allocate a GPU or guarantee placement in that pool?
+**Q:** Does tolerating the Graphics Processing Unit (GPU) pool's taint allocate a GPU or guarantee placement in that pool?
 
 **A:** It only permits the taint. A selector or affinity chooses the pool, and a device resource request allocates an exposed GPU. The provider's device plugin must first make that resource available.
 
@@ -80,11 +80,11 @@ Source: [Node Autoscaling & Cluster Capacity (Cluster Autoscaler, Karpenter)](40
 
 **Q:** Does an expiration event guarantee Karpenter immediately finishes deleting a node with protected Pods?
 
-**A:** No. Selection for disruption and completing drain are separate. A do-not-disrupt Pod can block expiration/manual termination without a NodeClaim grace deadline; when a configured deadline expires, forced deletion can interrupt the application.
+**A:** No. Selection for disruption and completing drain are separate. A `karpenter.sh/do-not-disrupt` Pod can block expiration/manual termination without a `NodeClaim` grace deadline; when a configured deadline expires, forced deletion can interrupt the application.
 
 **Q:** Why might a low-priority headroom buffer fail to refill after application Pods preempt it?
 
-**A:** The autoscaler's configured expendable-priority cutoff can exclude the replacement placeholders from scale-up demand. Verify the priority configuration and actual Pending events; preemption alone does not prove refill works.
+**A:** The autoscaler's configured expendable-priority cutoff can exclude the replacement placeholders from scale-up demand. Verify the priority configuration and actual `Pending` events; preemption alone does not prove refill works.
 
 ## Summary
 

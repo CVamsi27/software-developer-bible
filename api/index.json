@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "59b83a7a7357e330f3f896e620e1ac121c0cfd4064ec26bc6a4e67e8957df92f",
+ "corpus_digest": "a2fce97d9e654b978fefd1202ce66d14ceba688ce29cdd978910f5ef3fabb0f4",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5389
+  "read_minutes": 5390
  },
  "chapters": [
   {
@@ -4909,7 +4909,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "40-platform/40.1-docker/REVISION.html",
@@ -5073,7 +5073,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.04-jobs-cronjobs.html",
@@ -5268,7 +5268,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 21
+   "m": 20
   },
   {
    "p": "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.html",

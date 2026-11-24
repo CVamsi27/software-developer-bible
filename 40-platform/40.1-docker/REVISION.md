@@ -40,7 +40,7 @@ Source: [Docker Multi-Stage Builds](40.1.04-multi-stage-builds.md)
 
 **Q:** What crosses a multi-stage build boundary?
 
-**A:** COPY --from transfers specified files, not the earlier stage's ENV, USER or command configuration. A stage inherits the configuration of its own FROM image; define its runtime settings deliberately. Build tools and secrets are not automatically needed in the runtime image.
+**A:** `COPY --from` transfers specified files, not the earlier stage's `ENV`, `USER`, or command configuration. A stage inherits the configuration of its own `FROM` image; define its runtime settings deliberately. Build tools and secrets are not automatically needed in the runtime image.
 
 ## Dockerfile Best Practices & Security
 
@@ -54,25 +54,25 @@ Source: [Dockerfile Best Practices & Security](40.1.05-dockerfile-best-practices
 
 Source: [Docker Production Patterns — Security, Optimization, Multi-Stage](40.1.06-production-patterns.md)
 
-**Q:** What must a production container do on SIGTERM?
+**Q:** What must a production container do on `SIGTERM`?
 
 **A:** Stop accepting new work, drain or safely abandon current work within the orchestrator's grace period, close resources, and exit. Merely setting a health check does not implement shutdown.
 
-## Container Runtime Internals — Namespaces, cgroups, OverlayFS
+## Container Runtime Internals — Namespaces, cgroups and OverlayFS
 
-Source: [Container Runtime Internals — Namespaces, cgroups, OverlayFS](40.1.07-container-runtime-internals-namespaces-cgroups.md)
+Source: [Container Runtime Internals — Namespaces, cgroups and OverlayFS](40.1.07-container-runtime-internals-namespaces-cgroups.md)
 
 **Q:** How do namespaces and cgroups answer different questions?
 
-**A:** Namespaces determine the process's view of resources; cgroups account for and limit resource use. Neither alone provides a VM-style separate kernel.
+**A:** Namespaces determine the process's view of resources; cgroups account for and limit resource use. Neither alone provides a virtual machine (VM)-style separate kernel.
 
-**Q:** Why is “VMs are always safer than containers” an incomplete conclusion for untrusted workloads?
+**Q:** Why is "VMs are always safer than containers" an incomplete conclusion for untrusted workloads?
 
-**A:** A VM gives a workload a guest kernel behind a hypervisor; a standard Linux container shares the host kernel. The remaining risks depend on configuration: container privileges, mounts and kernel exposure matter, while VMs still depend on the hypervisor, host and management plane. Choose and harden the boundary against the threat model.
+**A:** A VM gives a workload a guest kernel behind a hypervisor; a standard Linux container shares the host kernel. The remaining risks depend on configuration: container privileges, mounts, and kernel exposure matter, while VMs still depend on the hypervisor, host, and management plane. Choose and harden the boundary against the threat model.
 
 **Q:** Why can a correct `docker exec ... memory.events` command fail during an OOM investigation?
 
-**A:** Exec requires the original container to be running, and its cgroup may disappear during cleanup. Export counters while alive, then combine retained inspect state with runtime/node events; reading a replacement container does not recover the old counters.
+**A:** `docker exec` requires the original container to be running, and its cgroup may disappear during cleanup. Export counters while alive, then combine retained inspect state with runtime and node events; reading a replacement container does not recover the old counters.
 
 ## Image Signing, SBOM & Supply Chain Security
 

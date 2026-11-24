@@ -54,7 +54,7 @@ Source: [RBAC & Network Policies](40.2.4.03-rbac-network-policies.md)
 
 **A:** The cluster's network implementation must enforce NetworkPolicy. The object's existence alone does not prove data-plane isolation.
 
-**Q:** If no RBAC rule matches a request, does that alone prove the API server rejects it?
+**Q:** If no Role-Based Access Control (RBAC) rule matches a request, does that alone prove the Application Programming Interface (API) server rejects it?
 
 **A:** No. The RBAC authorizer returns no opinion when no rule matches, so another configured authorizer may decide the request. A conclusive allow or deny decides it; if every authorizer returns no opinion, the API server denies it.
 
@@ -66,13 +66,13 @@ Source: [RBAC & Network Policies](40.2.4.03-rbac-network-policies.md)
 
 **A:** The Role describes permissions; a binding connects them to subjects. A RoleBinding grants the referenced Role or ClusterRole within its own namespace. A ClusterRoleBinding instead grants its ClusterRole cluster-wide.
 
-**Q:** API-to-database egress allows TCP 5432, but a DNS lookup fails. What changed in the connection trace?
+**Q:** API-to-database egress allows TCP 5432, but a Domain Name System (DNS) lookup fails. What changed in the connection trace?
 
-**A:** The database connection first needs name resolution. The API's isolated egress also needs the actual DNS path on UDP/TCP 53, and the destination's ingress must permit the database connection. A rule for database traffic does not imply DNS access.
+**A:** The database connection first needs name resolution. The API's isolated egress also needs the actual DNS path on User Datagram Protocol (UDP) or Transmission Control Protocol (TCP) port 53, and the destination's ingress must permit the database connection. A rule for database traffic does not imply DNS access.
 
 **Q:** Does a default-deny Pod NetworkPolicy quarantine the Pod from its own node?
 
-**A:** No. Standard NetworkPolicy permits traffic to/from the Pod's node and cannot deny self-access; hostNetwork handling is also implementation dependent. A host boundary needs separate controls.
+**A:** No. Standard NetworkPolicy permits traffic to and from the Pod's node and cannot deny self-access; `hostNetwork` handling is also implementation-dependent. A host boundary needs separate controls.
 
 ## Resource Quotas
 
@@ -80,23 +80,23 @@ Source: [Resource Quotas](40.2.4.04-resource-quotas.md)
 
 **Q:** Why does an admitted resource quota not reserve useful service capacity?
 
-**A:** Quotas cap namespace requests/counts. Scheduling capacity, per-container limits, placement, and the workload's performance still require separate policies.
+**A:** Quotas cap namespace requests and counts. Scheduling capacity, per-container limits, placement, and the workload's performance still require separate policies.
 
-**Q:** Trace a container with default CPU request `200m` and limit `500m` through namespace admission and node placement.
+**Q:** Trace a container with default Central Processing Unit (CPU) request `200m` and limit `500m` through namespace admission and node placement.
 
 **A:** LimitRange supplies defaults, then quota checks the resulting request and limit totals. If admitted, the scheduler still needs a feasible node for the request. Admission does not reserve node capacity or prove readiness.
 
 **Q:** In the per-container resource model, what happens if a CPU-request quota exists but required requests and compatible defaults are absent?
 
-**A:** Admission can reject Pod creation. The workload controller may exist with fewer Pods than desired; inspect its events. This differs from an existing Pending Pod that the scheduler cannot place.
+**A:** Admission can reject Pod creation. The workload controller may exist with fewer Pods than desired; inspect its events. This differs from an existing `Pending` Pod that the scheduler cannot place.
 
-**Q:** Does CPU/memory quota always require explicit fields on every container?
+**Q:** Does CPU and memory quota always require explicit fields on every container?
 
-**A:** No. The older per-container check applies to that model, but Kubernetes 1.37 skips it when PodLevelResources is enabled and Pod-level resources are set. Account from the effective Pod declarations and verify the feature support.
+**A:** No. The older per-container check applies to that model, but Kubernetes 1.37 skips it when `PodLevelResources` is enabled and Pod-level resources are set. Account from the effective Pod declarations and verify the feature support.
 
 **Q:** Why can the node autoscaler do nothing when a quota rejects the fourth requested replica?
 
-**A:** Admission rejected the Pod before it existed, so there is no unschedulable Pod to trigger node provisioning. Fix the namespace budget or workload request first; a Pending Pod indicates a later scheduling-stage problem.
+**A:** Admission rejected the Pod before it existed, so there is no unschedulable Pod to trigger node provisioning. Fix the namespace budget or workload request first; a `Pending` Pod indicates a later scheduling-stage problem.
 
 **Q:** A namespace stays below its CPU-request quota. Can its running containers collectively use more CPU than that request total?
 

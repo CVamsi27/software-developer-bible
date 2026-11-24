@@ -1,7 +1,7 @@
 # Testing — Index
 
 > **Study time:** ≈ 2 h 15 m of reading (20 files, ~7 min average).
-> **20 files across six categories.** Learn testing fundamentals, framework behavior, unit/integration/E2E boundaries, test data, mocking, reusable patterns, load and fault experiments, then practice the interview bank.
+> **20 files across six categories.** Learn testing fundamentals, framework behavior, unit, integration, and end-to-end (E2E) boundaries, test data, mocking, reusable patterns, and load and fault experiments, then practice the interview bank.
 
 [![Files](https://img.shields.io/badge/files-20-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
@@ -14,12 +14,12 @@ A test observes selected behavior under a controlled arrangement. Start with the
 ## Six categories in study order
 
 | Category | Files | Purpose |
-| ----------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------------------------------ |
-| [01 — Foundations](01-foundations/INDEX.md) | 2 | Test types, testing pyramid, TDD vs BDD, coverage, test data management — contract, observation and data ownership |
-| [02 — Frameworks](02-frameworks/INDEX.md) | 5 | Jest, Vitest, RTL, comparison — execution, module behavior and awaited UI observations |
+| ----------------------------------------------------------- | ----: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [01 — Foundations](01-foundations/INDEX.md) | 2 | Test types, testing pyramid, test-driven development (TDD) versus behavior-driven development (BDD), coverage, and test data management — contract, observation, and data ownership |
+| [02 — Frameworks](02-frameworks/INDEX.md) | 5 | Jest, Vitest, React Testing Library (RTL), and framework comparison — execution, module behavior, and awaited user-interface (UI) observations |
 | [03 — Test Levels](03-test-levels/INDEX.md) | 3 | Unit, integration, E2E — scope and real-boundary evidence |
-| [04 — Mocking & Patterns](04-mocking-and-patterns/INDEX.md) | 2 | Controlled collaborators, visible scenarios and resource ownership |
-| [05 — Advanced](05-advanced/INDEX.md) | 2 | Workload models, semantic thresholds and bounded fault experiments |
+| [04 — Mocking & Patterns](04-mocking-and-patterns/INDEX.md) | 2 | Controlled collaborators, visible scenarios, and resource ownership |
+| [05 — Advanced](05-advanced/INDEX.md) | 2 | Workload models, semantic thresholds, and bounded fault experiments |
 | [06 — Interview Prep](06-interview-prep/INDEX.md) | 1 | Forty questions with changed-condition probes |
 
 ---
@@ -29,7 +29,7 @@ A test observes selected behavior under a controlled arrangement. Start with the
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Testing Overview](01-foundations/50.1.1.01-testing-overview.md) | Test types, testing pyramid, TDD, BDD, coverage, strategies, when to write which test | Essential | Foundational | 8 min |
-| 02 | [Test Data Management & Anonymization](01-foundations/50.1.1.02-test-data-management-anonymization.md) | Synthetic ownership, deterministic generation, anonymization/pseudonymization and golden oracles | Essential | Foundational | 9 min |
+| 02 | [Test Data Management & Anonymization](01-foundations/50.1.1.02-test-data-management-anonymization.md) | Synthetic ownership, deterministic generation, anonymization, pseudonymization, and golden oracles | Essential | Foundational | 9 min |
 
 ---
 
@@ -38,16 +38,16 @@ A test observes selected behavior under a controlled arrangement. Start with the
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
 | 01 | [Jest](02-frameworks/50.1.2.01-jest.md) | Configuration, matchers, snapshots, mocking, code coverage | Existing suites or projects with a compatible configured runtime | Essential | Foundational | 8 min |
-| 02 | [Vitest](02-frameworks/50.1.2.02-vitest.md) | Runtime/configuration, transforms, mocking and migration boundaries | Choose from compatibility and measured suite behavior | Essential | Foundational | 8 min |
+| 02 | [Vitest](02-frameworks/50.1.2.02-vitest.md) | Runtime and configuration, transforms, mocking, and migration boundaries | Choose from compatibility and measured suite behavior | Essential | Foundational | 8 min |
 | 03 | [React Testing Library](02-frameworks/50.1.2.03-react-testing-library.md) | Render, queries, events, async testing, accessibility (testing-library/jest-dom) | React component tests | Essential | Foundational | 10 min |
-| 04 | [Testing Frameworks Comparison](02-frameworks/50.1.2.04-testing-frameworks-comparison.md) | Jest vs Vitest, Playwright E2E, Supertest API testing, choosing the right framework | Stack decisions | Essential | Foundational | 4 min |
-| 05 | [Playwright](02-frameworks/50.1.2.05-playwright.md) | Action-specific waits, browser fixtures, controlled APIs, visual contracts and diagnostics | Real-browser journeys | Essential | Foundational | 6 min |
+| 04 | [Testing Frameworks Comparison](02-frameworks/50.1.2.04-testing-frameworks-comparison.md) | Jest versus Vitest, Playwright E2E, Supertest Application Programming Interface (API) testing, choosing the right framework | Stack decisions | Essential | Foundational | 4 min |
+| 05 | [Playwright](02-frameworks/50.1.2.05-playwright.md) | Action-specific waits, browser fixtures, controlled APIs, visual contracts, and diagnostics | Real-browser journeys | Essential | Foundational | 6 min |
 
 ---
 
 ## Test Levels
 
-Choose the smallest boundary that observes the relevant failure. Broader scope adds real seams and also setup, cost and diagnosis sources; it does not automatically make every assertion stronger. The pyramid is a feedback-cost model, not a universal test-count ratio.
+Choose the smallest boundary that observes the relevant failure. Broader scope adds real seams and also setup, cost, and diagnosis sources; it does not automatically make every assertion stronger. The pyramid is a feedback-cost model, not a universal test-count ratio.
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
@@ -61,7 +61,7 @@ Choose the smallest boundary that observes the relevant failure. Broader scope a
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Mocking](04-mocking-and-patterns/50.1.4.01-mocking.md) | Mock functions, spies, modules, network requests (MSW), time | Essential | Foundational | 9 min |
+| 01 | [Mocking](04-mocking-and-patterns/50.1.4.01-mocking.md) | Mock functions, spies, modules, network requests (Mock Service Worker (MSW)), time | Essential | Foundational | 9 min |
 | 02 | [Test Patterns](04-mocking-and-patterns/50.1.4.02-test-patterns.md) | Arrange-Act-Assert, factory methods, test fixtures, builders | Essential | Foundational | 9 min |
 
 ---
@@ -70,8 +70,8 @@ Choose the smallest boundary that observes the relevant failure. Broader scope a
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
-| 01 | [Performance & Load Testing](05-advanced/50.1.5.01-performance-load-testing.md) | k6, Artillery, Locust, p95/p99, ramp-up, stress/soak | Production-scale services | Important | Specialized | 9 min |
-| 02 | [Chaos Engineering & Game Days](05-advanced/50.1.5.02-chaos-engineering.md) | Falsifiable hypotheses, bounded faults, Toxiproxy and recovery evidence | Test a stated resilience hypothesis under a controlled disruption | Important | Specialized | 8 min |
+| 01 | [Performance & Load Testing](05-advanced/50.1.5.01-performance-load-testing.md) | k6, Artillery, Locust, 95th-percentile and 99th-percentile (p95 and p99) latency, ramp-up, and stress and soak testing | Production-scale services | Important | Specialized | 9 min |
+| 02 | [Chaos Engineering & Game Days](05-advanced/50.1.5.02-chaos-engineering.md) | Falsifiable hypotheses, bounded faults, Toxiproxy, and recovery evidence | Test a stated resilience hypothesis under a controlled disruption | Important | Specialized | 8 min |
 
 ---
 
@@ -79,28 +79,28 @@ Choose the smallest boundary that observes the relevant failure. Broader scope a
 
 | # | File | Contents | Time | Role priority | General importance |
 | --: | ------ | ---------- | ------ | --- | --- |
-| 01 | [Testing Interview Questions](06-interview-prep/50.1.6.01-interview-questions.md) | 40 questions across fundamentals, async behavior, application boundaries, strategy and experience | Practice in several sessions | Essential | Foundational |
+| 01 | [Testing Interview Questions](06-interview-prep/50.1.6.01-interview-questions.md) | 40 questions across fundamentals, asynchronous behavior, application boundaries, strategy, and experience | Practice in several sessions | Essential | Foundational |
 
 ---
 
 ## Learning passes and revision
 
-1. **State the contract:** foundations and data management explain outcomes, assertions, observed code and resource ownership. Finish the [foundations revision](01-foundations/REVISION.md).
+1. **State the contract:** foundations and data management explain outcomes, assertions, observed code, and resource ownership. Finish the [foundations revision](01-foundations/REVISION.md).
 2. **Run and observe:** choose the compatible runner, learn awaited component observations, then use [Playwright](02-frameworks/50.1.2.05-playwright.md) for behavior that needs a real browser. State each test's dependency boundary. Finish the [framework revision](02-frameworks/REVISION.md).
-3. **Choose scope:** unit, integration and complete journeys establish different claims. Finish the [test-level revision](03-test-levels/REVISION.md).
-4. **Control and reuse deliberately:** mocking and patterns preserve consumer behavior, scenario visibility and cleanup. Finish the [mocking/pattern revision](04-mocking-and-patterns/REVISION.md).
-5. **Vary operating conditions:** workload and fault experiments separate the offered input, observed response and recovery. Finish the [advanced revision](05-advanced/REVISION.md).
+3. **Choose scope:** unit, integration, and complete journeys establish different claims. Finish the [test-level revision](03-test-levels/REVISION.md).
+4. **Control and reuse deliberately:** mocking and patterns preserve consumer behavior, scenario visibility, and cleanup. Finish the [mocking and pattern revision](04-mocking-and-patterns/REVISION.md).
+5. **Vary operating conditions:** workload and fault experiments separate the offered input, observed response, and recovery. Finish the [advanced revision](05-advanced/REVISION.md).
 6. **Practice decisions:** answer the [interview bank](06-interview-prep/INDEX.md), including its changed-condition probes and supported experience questions.
 
 ## Cross-References
 
 - [React](../../10-frontend/10.3-react/INDEX.md) — RTL for component tests
 - [NestJS](../../20-backend/20.2-nestjs/INDEX.md) — NestJS testing module
-- [CI/CD](../../40-platform/40.3-ci-cd/INDEX.md) — running tests in CI
+- [CI/CD](../../40-platform/40.3-ci-cd/INDEX.md) — running tests in Continuous Integration (CI)
 - [Coding Patterns](../../70-interview-toolkit/70.2-coding-patterns/INDEX.md) — testing algorithm solutions
 
 ---
 
 ## Navigation
 
-[← Previous: Twelve-Factor App](../../40-platform/40.9-twelve-factor/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Accessibility →](../50.2-accessibility/INDEX.md)
+[← Previous: Twelve-Factor App](../../40-platform/40.9-twelve-factor/INDEX.md) · [Back to Index](../../INDEX.md) · [Next: Accessibility →](../50.2-accessibility/INDEX.md)

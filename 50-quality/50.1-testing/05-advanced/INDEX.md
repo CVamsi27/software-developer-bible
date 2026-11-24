@@ -1,7 +1,7 @@
 # Advanced Testing
 
 > **Study time:** ≈ 19 min of reading (3 files, ~6 min average).
-> **3 files.** Testing beyond correctness: performance/load testing (k6, Artillery, Locust) and chaos engineering — measuring behavior under stated load and failure conditions.
+> **3 files.** Testing beyond correctness: performance and load testing (k6, Artillery, Locust) and chaos engineering — measuring behavior under stated load and failure conditions.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
@@ -15,15 +15,15 @@ Read [Performance & Load Testing](50.1.5.01-performance-load-testing.md). Start 
 
 ## Pass 2 — Change one failure condition
 
-Read [Chaos Engineering & Game Days](50.1.5.02-chaos-engineering.md). Define the hypothesis and fault boundary, run the local downstream-delay fixture and explain what it establishes. Add an application contract before claiming deadline, retry or circuit-breaker resilience.
+Read [Chaos Engineering & Game Days](50.1.5.02-chaos-engineering.md). Define the hypothesis and fault boundary, run the local downstream-delay fixture and explain what it establishes. Add an application contract before claiming deadline, retry, or circuit-breaker resilience.
 
 ## Revision, then operational practice
 
-Complete [REVISION](REVISION.md) with the chapters closed. Return to a source example when you cannot trace its denominator, fault or decision boundary. For production permission, response roles and recovery ownership, continue with [operational chaos engineering](../../50.4-production-engineering/50.4.03-chaos-engineering.md).
+Complete [REVISION](REVISION.md) with the chapters closed. Return to a source example when you cannot trace its denominator, fault, or decision boundary. For production permission, response roles, and recovery ownership, continue with [operational chaos engineering](../../50.4-production-engineering/50.4.03-chaos-engineering.md).
 
 ## Related learning
 
-- [Production Engineering](../../50.4-production-engineering/INDEX.md) — reliability targets, readiness and response capacity
+- [Production Engineering](../../50.4-production-engineering/INDEX.md) — reliability targets, readiness, and response capacity
 - [Observability](../../../40-platform/40.4-observability/INDEX.md) — instruments and measurement coverage
 
 ## Docita Anchor
@@ -35,7 +35,7 @@ Complete [REVISION](REVISION.md) with the chapters closed. Return to a source ex
 | Performance budgets as gates | `scripts/perf/check-perf-budget.mjs` + `scripts/perf/perf-baseline.mjs` |
 | Web Vitals field checks | `scripts/perf/check-web-vitals.mjs` + `check-web-vitals-budget.mjs` |
 | Route-level budgets | `scripts/perf/route-budgets.config.mjs` + `check-route-budgets.mjs` |
-| Chaos engineering | _No direct docita implementation yet._ |
+| Chaos engineering | _No direct Docita implementation yet._ |
 
 ## Navigation
 

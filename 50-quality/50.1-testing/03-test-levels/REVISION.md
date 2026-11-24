@@ -34,9 +34,9 @@ Source: [Unit Testing](50.1.3.01-unit-testing.md)
 
 Source: [Integration Testing](50.1.3.02-integration-testing.md)
 
-**Q:** Why can a transaction rollback fail to isolate an API integration test?
+**Q:** Why can a transaction rollback fail to isolate an Application Programming Interface (API) integration test?
 
-**A:** The API may use a different database connection/transaction. Isolation must encompass the application's writes through a test schema/database, injected transaction, or reliable cleanup strategy.
+**A:** The API may use a different database connection or transaction. Isolation must encompass the application's writes through a test schema or database, injected transaction, or reliable cleanup strategy.
 
 **Q:** What does a mocked external service leave unverified?
 
@@ -46,13 +46,13 @@ Source: [Integration Testing](50.1.3.02-integration-testing.md)
 
 **A:** Both callers can observe absence before either writes. The database constraint or supported atomic transaction protocol must arbitrate the write; verify competing requests and the durable winner.
 
-**Q:** Why can a SQL fake return success while the real API returns an error?
+**Q:** Why can a Structured Query Language (SQL) fake return success while the real API returns an error?
 
 **A:** It can miss mistakes in how columns map to application fields, how the database driver represents values, whether uniqueness constraints hold, or which writes commit together. Exercise the actual query or constraint through the database connection and check the stored state.
 
-**Q:** When is TRUNCATE acceptable test cleanup?
+**Q:** When is `TRUNCATE` acceptable test cleanup?
 
-**A:** When the test fixture exclusively owns the affected database/tables and no concurrent test or consumer can write there. Shared parallel suites need isolated namespaces or another supported strategy.
+**A:** When the test fixture exclusively owns the affected database or tables and no concurrent test or consumer can write there. Shared parallel suites need isolated namespaces or another supported strategy.
 
 ## E2E Testing
 
@@ -66,21 +66,21 @@ Source: [E2E Testing](50.1.3.03-e2e-testing.md)
 
 **A:** It waits too long when the condition is ready and too little when delayed. Wait on the actual observable state with a bounded deadline.
 
-**Q:** Why does registering waitForResponse after clicking create an intermittent failure?
+**Q:** Why does registering `waitForResponse` after clicking create an intermittent failure?
 
-**A:** A fast response can arrive before the observer exists. Register the observer before the triggering action, then await both the action and the intended response/outcome.
+**A:** A fast response can arrive before the observer exists. Register the observer before the triggering action, then await both the action and the intended response and outcome.
 
-**Q:** What does the intercepted 503 note test establish, and what does it leave unverified?
+**Q:** What does the intercepted `503` note test establish, and what does it leave unverified?
 
-**A:** It establishes that the UI keeps the entered title, shows failure and does not invent a saved note for that controlled browser response. It does not establish the real backend's failure protocol or persistence behavior.
+**A:** It establishes that the User Interface (UI) keeps the entered title, shows failure, and does not invent a saved note for that controlled browser response. It does not establish the real backend's failure protocol or persistence behavior.
 
 **Q:** Why are random note titles insufficient isolation?
 
-**A:** They avoid name collisions, but tests can still share account, tenant, quotas or server records. Scope fixtures and clean up after failure/retry as well as success.
+**A:** They avoid name collisions, but tests can still share account, tenant, quotas, or server records. Scope fixtures and clean up after failure and retry as well as success.
 
-**Q:** Why should storageState and traces have stricter handling than ordinary test reports?
+**Q:** Why should `storageState` and traces have stricter handling than ordinary test reports?
 
-**A:** Auth state may permit account impersonation, and traces can capture credentials or private response content. Use synthetic identities, exclude auth files from version control/general uploads, and restrict artifact access and retention.
+**A:** Auth state may permit account impersonation, and traces can capture credentials or private response content. Use synthetic identities, exclude auth files from version control and general uploads, and restrict artifact access and retention.
 
 ## Summary
 

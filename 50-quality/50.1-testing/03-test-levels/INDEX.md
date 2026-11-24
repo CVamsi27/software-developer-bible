@@ -15,22 +15,22 @@ A booking can fail inside a calculation, at the database boundary, or while the 
 
 ## Pass 1 — Make the Rule Deterministic
 
-[Unit Testing](50.1.3.01-unit-testing.md) isolates the behavior you own. Learn to control external boundaries while asserting inputs, outputs and failure effects. Keep internal helper-call details out of the contract unless that interaction is itself required.
+[Unit Testing](50.1.3.01-unit-testing.md) isolates the behavior you own. Learn to control external boundaries while asserting inputs, outputs, and failure effects. Keep internal helper-call details out of the contract unless that interaction is itself required.
 
 ## Pass 2 — Exercise the Connection That Can Break
 
-[Integration Testing](50.1.3.02-integration-testing.md) checks selected connections between components: HTTP routing, conversion of values into request or response formats (serialization), database constraints or provider protocols. State which components are real. A mocked payment response cannot verify a provider; an API test transaction cannot roll back writes made through an unrelated connection.
+[Integration Testing](50.1.3.02-integration-testing.md) checks selected connections between components: Hypertext Transfer Protocol (HTTP) routing, conversion of values into request or response formats (serialization), database constraints, or provider protocols. State which components are real. A mocked payment response cannot verify a provider; an Application Programming Interface (API) test transaction cannot roll back writes made through an unrelated connection.
 
 ## Pass 3 — Observe the User's Consequence
 
-[E2E Testing](50.1.3.03-e2e-testing.md) follows a browser action through the declared application boundary. Trace a write and subsequent reload/read, then force an error to verify recovery. Learn why browser-context isolation does not reset server data and why traces/auth files need restricted handling.
+[E2E Testing](50.1.3.03-e2e-testing.md) follows a browser action through the declared application boundary. Trace a write and subsequent reload and read, then force an error to verify recovery. Learn why browser-context isolation does not reset server data and why traces and authentication files need restricted handling.
 
 ## Compare the Observation Before Choosing a Tool
 
 | Risk | Useful observation | Why another layer may miss it |
-| ------------------------------------------ | -------------------------------------------- | ------------------------------------------------ |
+| ------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
 | Incorrect conflict calculation | Deterministic business-rule result | A browser journey may never hit that branch |
-| Two concurrent bookings claim one slot | Real database constraint/transaction outcome | Separate mocked calls do not exercise the race |
+| Two concurrent bookings claim one slot | Real database constraint and transaction outcome | Separate mocked calls do not exercise the race |
 | Cookie or route breaks the booking journey | Authorized browser write and subsequent read | A direct handler test can bypass the broken path |
 
 Runner and component-library choices are explained in [Frameworks](../02-frameworks/INDEX.md). Load and failure experiments extend these checks in [Advanced](../05-advanced/INDEX.md); they are separate dimensions rather than a higher confidence tier.
@@ -41,7 +41,7 @@ Close the chapters and work through [section revision questions](REVISION.md). R
 
 ## Apply the Flow to a Real Repository
 
-Locate one pure rule, one real database/API seam, and one browser journey in the application you work on. Inspect their setup, isolation, failure assertions and current run evidence. File names or a historical suite count do not establish what the tests verify.
+Locate one pure rule, one real database and API seam, and one browser journey in the application you work on. Inspect their setup, isolation, failure assertions, and current run evidence. File names or a historical suite count do not establish what the tests verify.
 
 ## Navigation
 

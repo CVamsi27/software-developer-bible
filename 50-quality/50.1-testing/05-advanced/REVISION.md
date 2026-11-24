@@ -24,7 +24,7 @@ Source: [Performance & Load Testing](50.1.5.01-performance-load-testing.md)
 
 **Q:** What proves the load generator is not the bottleneck?
 
-**A:** Its CPU/network/resource usage, achieved arrival rate, dropped iterations, and connection limits must show that it supplied the intended workload throughout the measurement.
+**A:** Its Central Processing Unit (CPU), network, and resource usage, achieved arrival rate, dropped iterations, and connection limits must show that it supplied the intended workload throughout the measurement.
 
 ## Chaos Engineering & Game Days
 
@@ -32,7 +32,7 @@ Source: [Chaos Engineering & Game Days](50.1.5.02-chaos-engineering.md)
 
 **Q:** What makes fault injection an experiment rather than random breakage?
 
-**A:** A falsifiable hypothesis, known baseline, bounded fault/blast radius, measurements, abort criteria, and recorded findings distinguish an experiment.
+**A:** A falsifiable hypothesis, known baseline, bounded fault and blast radius, measurements, abort criteria, and recorded findings distinguish an experiment.
 
 **Q:** Why start a new chaos scenario in staging?
 
@@ -46,25 +46,25 @@ Source: [Performance & Load Testing](50.1.5.01-performance-load-testing.md)
 
 **A:** The denominator must be all observed attempts. Adding only failures makes one failure look like a 100% failure population and cannot express the actual ratio.
 
-**Q:** Can HTTP 200 still fail the example's process-level gate?
+**Q:** Can Hypertext Transfer Protocol (HTTP) `200` still fail the example's process-level gate?
 
-**A:** Yes. The expected item and price feed a custom `semantic_failures` Rate with one combined result per request and a zero-failure threshold. The built-in `checks` metric can also have a threshold, but counts each named predicate separately. A wrong price can fail the process gate while `http_req_failed` remains zero; bare checks without a threshold do not set a failing exit status.
+**A:** Yes. The expected item and price feed a custom `semantic_failures` `Rate` with one combined result per request and a zero-failure threshold. The built-in `checks` metric can also have a threshold, but counts each named predicate separately. A wrong price can fail the process gate while `http_req_failed` remains zero; bare checks without a threshold do not set a failing exit status.
 
 **Q:** What boundary does Little's Law require?
 
-**A:** Use the same stable work population for average throughput, average time and average in-flight work. Include queue time when waiting work is in the population; a p99 multiplied by all registered users is not that relationship.
+**A:** Use the same stable work population for average throughput, average time, and average in-flight work. Include queue time when waiting work is in the population; a 99th-percentile latency (`p99`) multiplied by all registered users is not that relationship.
 
 ## Fault layer and application behavior
 
 Source: [Chaos Engineering & Game Days](50.1.5.02-chaos-engineering.md)
 
-**Q:** Does a 150 ms downstream latency toxic generate a 50% HTTP error rate?
+**Q:** Does a 150-millisecond (ms) downstream latency toxic generate a 50% HTTP error rate?
 
 **A:** No. It delays selected server-to-client data. HTTP errors require an appropriate application or protocol-aware failure scenario; toxicity selects links and is not a business error percentage.
 
 **Q:** What does the local delay example establish about a circuit breaker?
 
-**A:** Nothing about its state transitions. It verifies delayed correct responses and recovery through the proxy. A breaker test must observe the actual application contract, opening, rejection and recovery probes.
+**A:** Nothing about its state transitions. It verifies delayed correct responses and recovery through the proxy. A breaker test must observe the actual application contract, opening, rejection, and recovery probes.
 
 **Q:** Why verify that the application uses the proxy before interpreting a passing chaos test?
 

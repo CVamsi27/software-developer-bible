@@ -11188,43 +11188,43 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "50-quality/50.1-testing/01-foundations/50.1.1.01-testing-overview.md": {
-   "sha256": "1798cc8d3a61d77811ec83a8a34670a900b2c8f2f51be703767585c8ad333748",
-   "lines": 145,
+   "sha256": "d2ced7e46868c97e9316184ed2e009df0e895b7bc842e21a880f21976d62a7fe",
+   "lines": 155,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Node.js strict assertion API (`node:assert/strict`), test boundary contracts, and mutation testing principles.",
-    "readable": "Full read of 145 lines (1,169 prose words). Covers unit, integration, API, E2E, and contract evidence boundaries, the testing pyramid as a cost-feedback model, TDD red-green-refactor, BDD, coverage vs mutation testing, and flake diagnosis.",
-    "concise": "1,169 words across 145 lines. Covers unit, integration, API, E2E, and contract evidence boundaries, the testing pyramid as a cost-feedback model, TDD red-green-refactor, BDD, coverage vs mutation testing, and flake diagnosis.",
+    "readable": "Full read of 155 lines (1185 prose words). (1,169 prose words). Covers unit, integration, API, E2E, and contract evidence boundaries, the testing pyramid as a cost-feedback model, TDD red-green-refactor, BDD, coverage vs mutation testing, and flake diagnosis.",
+    "concise": "1185 words across 155 lines. 1,169 words across 145 lines. Covers unit, integration, API, E2E, and contract evidence boundaries, the testing pyramid as a cost-feedback model, TDD red-green-refactor, BDD, coverage vs mutation testing, and flake diagnosis.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers unit, integration, API, E2E, and contract evidence boundaries, the testing pyramid as a cost-feedback model, TDD red-green-refactor, BDD, coverage vs mutation testing, and flake diagnosis.",
     "fast": "Measured 24.8 KB raw / 7.7 KB gzip. Covers unit, integration, API, E2E, and contract evidence boundaries, the testing pyramid as a cost-feedback model, TDD red-green-refactor, BDD, coverage vs mutation testing, and flake diagnosis.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers unit, integration, API, E2E, and contract evidence boundaries, the testing pyramid as a cost-feedback model, TDD red-green-refactor, BDD, coverage vs mutation testing, and flake diagnosis."
    },
-   "notes": "Covers unit, integration, API, E2E, and contract evidence boundaries, the testing pyramid as a cost-feedback model, TDD red-green-refactor, BDD, coverage vs mutation testing, and flake diagnosis."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/01-foundations/50.1.1.02-test-data-management-anonymization.md": {
-   "sha256": "36611c630f3f58fa83564b7b543f9e1072730e5b2f08be3943c73f0a4a5f8506",
-   "lines": 185,
+   "sha256": "eaf605243d4d8d55b7d30e212b3bee96e90cfe11b8833e8942e44c08afaac59e",
+   "lines": 199,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: GDPR Recital 26 / Article 4(5), NIST IR 8053 de-identification, `@faker-js/faker` reproducible results, and Node.js `crypto.createHmac`.",
-    "readable": "Full read of 185 lines (1,098 prose words). Covers explicit claim-first factories, seeded `@faker-js/faker` with fixed `refDate`, GDPR anonymization vs HMAC pseudonymization, join-preserving tokens, and golden datasets.",
-    "concise": "1,098 words across 185 lines. Covers explicit claim-first factories, seeded `@faker-js/faker` with fixed `refDate`, GDPR anonymization vs HMAC pseudonymization, join-preserving tokens, and golden datasets.",
+    "readable": "Full read of 199 lines (1120 prose words). (1,098 prose words). Covers explicit claim-first factories, seeded `@faker-js/faker` with fixed `refDate`, GDPR anonymization vs HMAC pseudonymization, join-preserving tokens, and golden datasets.",
+    "concise": "1120 words across 199 lines. 1,098 words across 185 lines. Covers explicit claim-first factories, seeded `@faker-js/faker` with fixed `refDate`, GDPR anonymization vs HMAC pseudonymization, join-preserving tokens, and golden datasets.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers explicit claim-first factories, seeded `@faker-js/faker` with fixed `refDate`, GDPR anonymization vs HMAC pseudonymization, join-preserving tokens, and golden datasets.",
     "fast": "Measured 31.8 KB raw / 8.3 KB gzip. Covers explicit claim-first factories, seeded `@faker-js/faker` with fixed `refDate`, GDPR anonymization vs HMAC pseudonymization, join-preserving tokens, and golden datasets.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers explicit claim-first factories, seeded `@faker-js/faker` with fixed `refDate`, GDPR anonymization vs HMAC pseudonymization, join-preserving tokens, and golden datasets."
    },
-   "notes": "Covers explicit claim-first factories, seeded `@faker-js/faker` with fixed `refDate`, GDPR anonymization vs HMAC pseudonymization, join-preserving tokens, and golden datasets."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/01-foundations/INDEX.md": {
-   "sha256": "f925e4015180d230a7220f69ab49a7b5d113a658bdb2ca0c8f489ed4f7477903",
+   "sha256": "714ea60265217cc38e10ceb58ccfd77374baccbda540a98097443c20efb4a285",
    "lines": 54,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Testing pyramid evidence model, deterministic synthetic fixtures, and GDPR Recital 26 anonymization boundaries.",
     "readable": "Full read of 54 lines (109 prose words). Learning-flow index for testing foundations: evidence boundaries, test types, testing pyramid, TDD/BDD, and test data management.",
@@ -11233,318 +11233,318 @@
     "fast": "Measured 9.9 KB raw / 3.3 KB gzip. Learning-flow index for testing foundations: evidence boundaries, test types, testing pyramid, TDD/BDD, and test data management.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for testing foundations: evidence boundaries, test types, testing pyramid, TDD/BDD, and test data management."
    },
-   "notes": "Learning-flow index for testing foundations: evidence boundaries, test types, testing pyramid, TDD/BDD, and test data management."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/01-foundations/REVISION.md": {
-   "sha256": "b15e915484d664926b3534308b0b608ce00c19e7f57a0b22d6bee8d00cfdf314",
+   "sha256": "4b2b6d6dc9034737aca82d069fdc07f8c209e865236caea6f9c26d1443926b91",
    "lines": 71,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: GDPR Recital 26 / Article 4(5) pseudonymization definitions and deterministic test oracle design.",
-    "readable": "Full read of 71 lines (514 prose words). Active-recall Q&A companion covering test oracles, boundary selection, pseudonymization vs anonymization, seeded generator determinism, and golden checksums.",
-    "concise": "514 words across 71 lines. Active-recall Q&A companion covering test oracles, boundary selection, pseudonymization vs anonymization, seeded generator determinism, and golden checksums.",
+    "readable": "Full read of 71 lines (531 prose words). Active-recall Q&A companion covering test oracles, boundary selection, pseudonymization vs anonymization, seeded generator determinism, and golden checksums.",
+    "concise": "531 words across 71 lines. Active-recall Q&A companion covering test oracles, boundary selection, pseudonymization vs anonymization, seeded generator determinism, and golden checksums.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering test oracles, boundary selection, pseudonymization vs anonymization, seeded generator determinism, and golden checksums.",
     "fast": "Measured 10.8 KB raw / 3.9 KB gzip. Active-recall Q&A companion covering test oracles, boundary selection, pseudonymization vs anonymization, seeded generator determinism, and golden checksums.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering test oracles, boundary selection, pseudonymization vs anonymization, seeded generator determinism, and golden checksums."
    },
-   "notes": "Active-recall Q&A companion covering test oracles, boundary selection, pseudonymization vs anonymization, seeded generator determinism, and golden checksums."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/02-frameworks/50.1.2.01-jest.md": {
-   "sha256": "57b24d3f3ce97e5eaaa584644322afabac0ef8bb7c59992ea6c77db9a3b05062",
-   "lines": 182,
+   "sha256": "219224c632a073cb5b50ebe271d24339d36339e739f776e741546eb9697253f6",
+   "lines": 186,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Jest on Node 24.9+ synchronous ESM `require()` support, `--experimental-vm-modules`, and `advanceTimersByTimeAsync`.",
-    "readable": "Full read of 182 lines (1,010 prose words). Covers Jest runtime configuration, dependency-injected async contract assertions, matcher semantics, `mockClear`/`mockReset`/`mockRestore`, ESM VM modules and Node 24.9+ `require(esm)`, and fake timers.",
-    "concise": "1,010 words across 182 lines. Covers Jest runtime configuration, dependency-injected async contract assertions, matcher semantics, `mockClear`/`mockReset`/`mockRestore`, ESM VM modules and Node 24.9+ `require(esm)`, and fake timers.",
+    "readable": "Full read of 186 lines (1040 prose words). (1,010 prose words). Covers Jest runtime configuration, dependency-injected async contract assertions, matcher semantics, `mockClear`/`mockReset`/`mockRestore`, ESM VM modules and Node 24.9+ `require(esm)`, and fake timers.",
+    "concise": "1040 words across 186 lines. 1,010 words across 182 lines. Covers Jest runtime configuration, dependency-injected async contract assertions, matcher semantics, `mockClear`/`mockReset`/`mockRestore`, ESM VM modules and Node 24.9+ `require(esm)`, and fake timers.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers Jest runtime configuration, dependency-injected async contract assertions, matcher semantics, `mockClear`/`mockReset`/`mockRestore`, ESM VM modules and Node 24.9+ `require(esm)`, and fake timers.",
     "fast": "Measured 29.8 KB raw / 7.6 KB gzip. Covers Jest runtime configuration, dependency-injected async contract assertions, matcher semantics, `mockClear`/`mockReset`/`mockRestore`, ESM VM modules and Node 24.9+ `require(esm)`, and fake timers.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers Jest runtime configuration, dependency-injected async contract assertions, matcher semantics, `mockClear`/`mockReset`/`mockRestore`, ESM VM modules and Node 24.9+ `require(esm)`, and fake timers."
    },
-   "notes": "Covers Jest runtime configuration, dependency-injected async contract assertions, matcher semantics, `mockClear`/`mockReset`/`mockRestore`, ESM VM modules and Node 24.9+ `require(esm)`, and fake timers."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/02-frameworks/50.1.2.02-vitest.md": {
-   "sha256": "01917d8f04d0e6c873931b4ba81e16f5e346268ec22385d4ea6bfe7bc4bcee92",
-   "lines": 183,
+   "sha256": "b2ef92eee511e9fd6c323c6b78b382925ec37b9165c56df953bc0cac16320c20",
+   "lines": 191,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Vitest 5.0.5 package manifest (Node `^22.12.0 || ^24.0.0 || >=26.0.0`, Vite `^6.4.0 || ^7.0.0 || ^8.0.0`) and `@vitest/browser-playwright`.",
-    "readable": "Full read of 183 lines (947 prose words). Covers Vitest 5 configuration (`pool: 'forks'`, `clearMocks: true`), fake-timer retry testing, `vi.mock`/`vi.hoisted`, Vitest Browser Mode (stable since v4), MSW 2.x, and V8 coverage.",
-    "concise": "947 words across 183 lines. Covers Vitest 5 configuration (`pool: 'forks'`, `clearMocks: true`), fake-timer retry testing, `vi.mock`/`vi.hoisted`, Vitest Browser Mode (stable since v4), MSW 2.x, and V8 coverage.",
+    "readable": "Full read of 191 lines (974 prose words). Covers Vitest 5 configuration (`pool: 'forks'`, `clearMocks: true`), fake-timer retry testing, `vi.mock`/`vi.hoisted`, Vitest Browser Mode (stable since v4), MSW 2.x, and V8 coverage.",
+    "concise": "974 words across 191 lines. Covers Vitest 5 configuration (`pool: 'forks'`, `clearMocks: true`), fake-timer retry testing, `vi.mock`/`vi.hoisted`, Vitest Browser Mode (stable since v4), MSW 2.x, and V8 coverage.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers Vitest 5 configuration (`pool: 'forks'`, `clearMocks: true`), fake-timer retry testing, `vi.mock`/`vi.hoisted`, Vitest Browser Mode (stable since v4), MSW 2.x, and V8 coverage.",
     "fast": "Measured 30.1 KB raw / 7.7 KB gzip. Covers Vitest 5 configuration (`pool: 'forks'`, `clearMocks: true`), fake-timer retry testing, `vi.mock`/`vi.hoisted`, Vitest Browser Mode (stable since v4), MSW 2.x, and V8 coverage.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers Vitest 5 configuration (`pool: 'forks'`, `clearMocks: true`), fake-timer retry testing, `vi.mock`/`vi.hoisted`, Vitest Browser Mode (stable since v4), MSW 2.x, and V8 coverage."
    },
-   "notes": "Covers Vitest 5 configuration (`pool: 'forks'`, `clearMocks: true`), fake-timer retry testing, `vi.mock`/`vi.hoisted`, Vitest Browser Mode (stable since v4), MSW 2.x, and V8 coverage."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/02-frameworks/50.1.2.03-react-testing-library.md": {
-   "sha256": "83b6aa4b5d74a1b7d671143c7632ec6b3f041f120508c45020b035374602806e",
-   "lines": 205,
+   "sha256": "5ae9d90ca2ab1dc7eff1dfdaab35c1203a13df437fa6dfd1234ae4424f2a02dc",
+   "lines": 211,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: `@testing-library/react`, `@testing-library/user-event` v14, and `@testing-library/jest-dom/vitest`.",
-    "readable": "Full read of 205 lines (917 prose words). Covers RTL query semantics (`getBy`, `queryBy`, `findBy`), accessible role/label targeting, `userEvent.setup()`, pending/success/error form state verification, and `waitFor` retry rules.",
-    "concise": "917 words across 205 lines. Covers RTL query semantics (`getBy`, `queryBy`, `findBy`), accessible role/label targeting, `userEvent.setup()`, pending/success/error form state verification, and `waitFor` retry rules.",
+    "readable": "Full read of 211 lines (946 prose words). Covers RTL query semantics (`getBy`, `queryBy`, `findBy`), accessible role/label targeting, `userEvent.setup()`, pending/success/error form state verification, and `waitFor` retry rules.",
+    "concise": "946 words across 211 lines. Covers RTL query semantics (`getBy`, `queryBy`, `findBy`), accessible role/label targeting, `userEvent.setup()`, pending/success/error form state verification, and `waitFor` retry rules.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers RTL query semantics (`getBy`, `queryBy`, `findBy`), accessible role/label targeting, `userEvent.setup()`, pending/success/error form state verification, and `waitFor` retry rules.",
     "fast": "Measured 43.9 KB raw / 8.2 KB gzip. Covers RTL query semantics (`getBy`, `queryBy`, `findBy`), accessible role/label targeting, `userEvent.setup()`, pending/success/error form state verification, and `waitFor` retry rules.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers RTL query semantics (`getBy`, `queryBy`, `findBy`), accessible role/label targeting, `userEvent.setup()`, pending/success/error form state verification, and `waitFor` retry rules."
    },
-   "notes": "Covers RTL query semantics (`getBy`, `queryBy`, `findBy`), accessible role/label targeting, `userEvent.setup()`, pending/success/error form state verification, and `waitFor` retry rules."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/02-frameworks/50.1.2.04-testing-frameworks-comparison.md": {
-   "sha256": "af3e1359512b95e24ce11519047338ad4333fe7314e5e813e2932952fc4b9713",
-   "lines": 82,
+   "sha256": "c2612f2d72b91fdb293517ae6c266239cbfef93d55a8b8aa03c7c4ac2a170172",
+   "lines": 86,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: 2026 JavaScript/TypeScript test toolchain boundaries across Vitest 5, Jest, RTL, Supertest, Playwright, and Testcontainers.",
-    "readable": "Full read of 82 lines (544 prose words). Compares Jest, Vitest 5, React Testing Library, Supertest, Playwright Test, and Testcontainers across runtime boundaries, migration economics, and concurrency/authorization testing.",
-    "concise": "544 words across 82 lines. Compares Jest, Vitest 5, React Testing Library, Supertest, Playwright Test, and Testcontainers across runtime boundaries, migration economics, and concurrency/authorization testing.",
+    "readable": "Full read of 86 lines (550 prose words). Compares Jest, Vitest 5, React Testing Library, Supertest, Playwright Test, and Testcontainers across runtime boundaries, migration economics, and concurrency/authorization testing.",
+    "concise": "550 words across 86 lines. Compares Jest, Vitest 5, React Testing Library, Supertest, Playwright Test, and Testcontainers across runtime boundaries, migration economics, and concurrency/authorization testing.",
     "focused": "Single canonical home with no duplicate code across chapters. Compares Jest, Vitest 5, React Testing Library, Supertest, Playwright Test, and Testcontainers across runtime boundaries, migration economics, and concurrency/authorization testing.",
     "fast": "Measured 14.9 KB raw / 5.3 KB gzip. Compares Jest, Vitest 5, React Testing Library, Supertest, Playwright Test, and Testcontainers across runtime boundaries, migration economics, and concurrency/authorization testing.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Compares Jest, Vitest 5, React Testing Library, Supertest, Playwright Test, and Testcontainers across runtime boundaries, migration economics, and concurrency/authorization testing."
    },
-   "notes": "Compares Jest, Vitest 5, React Testing Library, Supertest, Playwright Test, and Testcontainers across runtime boundaries, migration economics, and concurrency/authorization testing."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/02-frameworks/50.1.2.05-playwright.md": {
-   "sha256": "de59c08639af8c0d0785d5f5bd42b002a1683be34b94ca111bcb1f8619f60800",
-   "lines": 106,
+   "sha256": "dad46abf88e179ee6a7d8c1d6bb01269b9022f48d7a3b6bac5640d8a67b847cd",
+   "lines": 118,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: `@playwright/test` web-first assertions, `page.route` network interception, `trace: 'retain-on-failure'`, and `toHaveScreenshot`.",
-    "readable": "Full read of 106 lines (959 prose words). Covers Playwright locators and actionability auto-waiting, isolated browser-context fixtures, `page.route` payload verification, `storageState` handling, Trace Viewer, and CI sharding.",
-    "concise": "959 words across 106 lines. Covers Playwright locators and actionability auto-waiting, isolated browser-context fixtures, `page.route` payload verification, `storageState` handling, Trace Viewer, and CI sharding.",
+    "readable": "Full read of 118 lines (975 prose words). Covers Playwright locators and actionability auto-waiting, isolated browser-context fixtures, `page.route` payload verification, `storageState` handling, Trace Viewer, and CI sharding.",
+    "concise": "975 words across 118 lines. Covers Playwright locators and actionability auto-waiting, isolated browser-context fixtures, `page.route` payload verification, `storageState` handling, Trace Viewer, and CI sharding.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers Playwright locators and actionability auto-waiting, isolated browser-context fixtures, `page.route` payload verification, `storageState` handling, Trace Viewer, and CI sharding.",
     "fast": "Measured 21.8 KB raw / 6.4 KB gzip. Covers Playwright locators and actionability auto-waiting, isolated browser-context fixtures, `page.route` payload verification, `storageState` handling, Trace Viewer, and CI sharding.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers Playwright locators and actionability auto-waiting, isolated browser-context fixtures, `page.route` payload verification, `storageState` handling, Trace Viewer, and CI sharding."
    },
-   "notes": "Covers Playwright locators and actionability auto-waiting, isolated browser-context fixtures, `page.route` payload verification, `storageState` handling, Trace Viewer, and CI sharding."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/02-frameworks/INDEX.md": {
-   "sha256": "63efd4bb678c73dce7e3346a68d97a7117e39b7520fc3df4d5f3441a7dc60c2f",
+   "sha256": "b7d0bb62623ae11b4cea2fd5c001a9915591874b83ea18ca1bfe528adba70f23",
    "lines": 64,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Vitest 5.0.5 (Node 22/24/26+, Vite 6/7/8), Jest on Node 24.9+ (`require(esm)`), React Testing Library, and Playwright.",
-    "readable": "Full read of 64 lines (231 prose words). Learning-flow index for JavaScript and TypeScript testing frameworks: Jest, Vitest 5, React Testing Library, Playwright Test, and framework selection trade-offs.",
-    "concise": "231 words across 64 lines. Learning-flow index for JavaScript and TypeScript testing frameworks: Jest, Vitest 5, React Testing Library, Playwright Test, and framework selection trade-offs.",
+    "readable": "Full read of 64 lines (236 prose words). Learning-flow index for JavaScript and TypeScript testing frameworks: Jest, Vitest 5, React Testing Library, Playwright Test, and framework selection trade-offs.",
+    "concise": "236 words across 64 lines. Learning-flow index for JavaScript and TypeScript testing frameworks: Jest, Vitest 5, React Testing Library, Playwright Test, and framework selection trade-offs.",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for JavaScript and TypeScript testing frameworks: Jest, Vitest 5, React Testing Library, Playwright Test, and framework selection trade-offs.",
     "fast": "Measured 12.4 KB raw / 3.9 KB gzip. Learning-flow index for JavaScript and TypeScript testing frameworks: Jest, Vitest 5, React Testing Library, Playwright Test, and framework selection trade-offs.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for JavaScript and TypeScript testing frameworks: Jest, Vitest 5, React Testing Library, Playwright Test, and framework selection trade-offs."
    },
-   "notes": "Learning-flow index for JavaScript and TypeScript testing frameworks: Jest, Vitest 5, React Testing Library, Playwright Test, and framework selection trade-offs."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/02-frameworks/REVISION.md": {
-   "sha256": "22b865ce510b738bfe1b2769eb1a285c018e9a941b41a3e5a7573ebedc96af84",
+   "sha256": "19e6cf4efb0b32c19435c99be5837dca51da44cfe03455206096fca2ab4e64c7",
    "lines": 124,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Vitest 5, Jest, React Testing Library, MSW 2.x, and Playwright Test.",
-    "readable": "Full read of 124 lines (1,011 prose words). Active-recall Q&A companion covering mock clear/reset/restore, Vitest 5 default `clearMocks`, Browser Mode vs jsdom, RTL query priority and `waitFor`, and Playwright actionability vs business waits.",
-    "concise": "1,011 words across 124 lines. Active-recall Q&A companion covering mock clear/reset/restore, Vitest 5 default `clearMocks`, Browser Mode vs jsdom, RTL query priority and `waitFor`, and Playwright actionability vs business waits.",
+    "readable": "Full read of 124 lines (1051 prose words). (1,011 prose words). Active-recall Q&A companion covering mock clear/reset/restore, Vitest 5 default `clearMocks`, Browser Mode vs jsdom, RTL query priority and `waitFor`, and Playwright actionability vs business waits.",
+    "concise": "1051 words across 124 lines. 1,011 words across 124 lines. Active-recall Q&A companion covering mock clear/reset/restore, Vitest 5 default `clearMocks`, Browser Mode vs jsdom, RTL query priority and `waitFor`, and Playwright actionability vs business waits.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering mock clear/reset/restore, Vitest 5 default `clearMocks`, Browser Mode vs jsdom, RTL query priority and `waitFor`, and Playwright actionability vs business waits.",
     "fast": "Measured 15.2 KB raw / 5.3 KB gzip. Active-recall Q&A companion covering mock clear/reset/restore, Vitest 5 default `clearMocks`, Browser Mode vs jsdom, RTL query priority and `waitFor`, and Playwright actionability vs business waits.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering mock clear/reset/restore, Vitest 5 default `clearMocks`, Browser Mode vs jsdom, RTL query priority and `waitFor`, and Playwright actionability vs business waits."
    },
-   "notes": "Active-recall Q&A companion covering mock clear/reset/restore, Vitest 5 default `clearMocks`, Browser Mode vs jsdom, RTL query priority and `waitFor`, and Playwright actionability vs business waits."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/03-test-levels/50.1.3.01-unit-testing.md": {
-   "sha256": "625d725b35db954fec2aa8e813838a712ee76e32e180d043695675a1d356fc41",
-   "lines": 138,
+   "sha256": "6621121ad448518c7282d37f97a2828f75f40a46233e390a10fac1feb0502faa",
+   "lines": 144,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Node.js `node:assert/strict` deterministic clock/loader boundary testing and FIRST principles.",
-    "readable": "Full read of 138 lines (910 prose words). Covers behavioral unit boundaries, AAA structure, test double roles (Dummy, Stub, Spy, Mock, Fake), exact token-cache expiry boundary testing (`999` vs `1000`), and contract sharing with fakes.",
-    "concise": "910 words across 138 lines. Covers behavioral unit boundaries, AAA structure, test double roles (Dummy, Stub, Spy, Mock, Fake), exact token-cache expiry boundary testing (`999` vs `1000`), and contract sharing with fakes.",
+    "readable": "Full read of 144 lines (919 prose words). Covers behavioral unit boundaries, AAA structure, test double roles (Dummy, Stub, Spy, Mock, Fake), exact token-cache expiry boundary testing (`999` vs `1000`), and contract sharing with fakes.",
+    "concise": "919 words across 144 lines. Covers behavioral unit boundaries, AAA structure, test double roles (Dummy, Stub, Spy, Mock, Fake), exact token-cache expiry boundary testing (`999` vs `1000`), and contract sharing with fakes.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers behavioral unit boundaries, AAA structure, test double roles (Dummy, Stub, Spy, Mock, Fake), exact token-cache expiry boundary testing (`999` vs `1000`), and contract sharing with fakes.",
     "fast": "Measured 25.6 KB raw / 6.9 KB gzip. Covers behavioral unit boundaries, AAA structure, test double roles (Dummy, Stub, Spy, Mock, Fake), exact token-cache expiry boundary testing (`999` vs `1000`), and contract sharing with fakes.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers behavioral unit boundaries, AAA structure, test double roles (Dummy, Stub, Spy, Mock, Fake), exact token-cache expiry boundary testing (`999` vs `1000`), and contract sharing with fakes."
    },
-   "notes": "Covers behavioral unit boundaries, AAA structure, test double roles (Dummy, Stub, Spy, Mock, Fake), exact token-cache expiry boundary testing (`999` vs `1000`), and contract sharing with fakes."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/03-test-levels/50.1.3.02-integration-testing.md": {
-   "sha256": "0fb0535a17694c4dfa95a2a2fd6bd6a8547aa8bc075ce7363d553c1ade63a1be",
-   "lines": 188,
+   "sha256": "ccc410ed636a9c557a795bc6e248fe8ef4b7d4637c7c364355a82d7a659eb2e7",
+   "lines": 200,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Express 5, `@testcontainers/postgresql`, node-postgres parameterized queries, MSW 2.x (`http`/`HttpResponse`), and Pact contract verification.",
-    "readable": "Full read of 188 lines (853 prose words). Covers real-seam integration testing with Express 5, `pg`, Supertest, and `@testcontainers/postgresql`, competing concurrent booking claims (`ON CONFLICT DO NOTHING`), and database write isolation.",
-    "concise": "853 words across 188 lines. Covers real-seam integration testing with Express 5, `pg`, Supertest, and `@testcontainers/postgresql`, competing concurrent booking claims (`ON CONFLICT DO NOTHING`), and database write isolation.",
+    "readable": "Full read of 200 lines (874 prose words). Covers real-seam integration testing with Express 5, `pg`, Supertest, and `@testcontainers/postgresql`, competing concurrent booking claims (`ON CONFLICT DO NOTHING`), and database write isolation.",
+    "concise": "874 words across 200 lines. Covers real-seam integration testing with Express 5, `pg`, Supertest, and `@testcontainers/postgresql`, competing concurrent booking claims (`ON CONFLICT DO NOTHING`), and database write isolation.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers real-seam integration testing with Express 5, `pg`, Supertest, and `@testcontainers/postgresql`, competing concurrent booking claims (`ON CONFLICT DO NOTHING`), and database write isolation.",
     "fast": "Measured 37.9 KB raw / 8.4 KB gzip. Covers real-seam integration testing with Express 5, `pg`, Supertest, and `@testcontainers/postgresql`, competing concurrent booking claims (`ON CONFLICT DO NOTHING`), and database write isolation.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers real-seam integration testing with Express 5, `pg`, Supertest, and `@testcontainers/postgresql`, competing concurrent booking claims (`ON CONFLICT DO NOTHING`), and database write isolation."
    },
-   "notes": "Covers real-seam integration testing with Express 5, `pg`, Supertest, and `@testcontainers/postgresql`, competing concurrent booking claims (`ON CONFLICT DO NOTHING`), and database write isolation."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/03-test-levels/50.1.3.03-e2e-testing.md": {
-   "sha256": "c7174ebc0f06b2c5e49a6c580140034e7b33a2f2c68adac67c40d1586bc96597",
-   "lines": 183,
+   "sha256": "1b7590554363d830604c257543eaa2689cd4452cce8210ae05a559750776016b",
+   "lines": 193,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: `@playwright/test` `waitForResponse`, `storageState` security, and `--reporter=blob` / `merge-reports` CI sharding.",
-    "readable": "Full read of 183 lines (1,015 prose words). Covers multi-browser Playwright E2E configuration (`webServer`, Chromium/Firefox/WebKit), write-then-reload persistence verification, forced 503 failure recovery, and blob-report CI sharding.",
-    "concise": "1,015 words across 183 lines. Covers multi-browser Playwright E2E configuration (`webServer`, Chromium/Firefox/WebKit), write-then-reload persistence verification, forced 503 failure recovery, and blob-report CI sharding.",
+    "readable": "Full read of 193 lines (1026 prose words). (1,015 prose words). Covers multi-browser Playwright E2E configuration (`webServer`, Chromium/Firefox/WebKit), write-then-reload persistence verification, forced 503 failure recovery, and blob-report CI sharding.",
+    "concise": "1026 words across 193 lines. 1,015 words across 183 lines. Covers multi-browser Playwright E2E configuration (`webServer`, Chromium/Firefox/WebKit), write-then-reload persistence verification, forced 503 failure recovery, and blob-report CI sharding.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers multi-browser Playwright E2E configuration (`webServer`, Chromium/Firefox/WebKit), write-then-reload persistence verification, forced 503 failure recovery, and blob-report CI sharding.",
     "fast": "Measured 34.7 KB raw / 8.2 KB gzip. Covers multi-browser Playwright E2E configuration (`webServer`, Chromium/Firefox/WebKit), write-then-reload persistence verification, forced 503 failure recovery, and blob-report CI sharding.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers multi-browser Playwright E2E configuration (`webServer`, Chromium/Firefox/WebKit), write-then-reload persistence verification, forced 503 failure recovery, and blob-report CI sharding."
    },
-   "notes": "Covers multi-browser Playwright E2E configuration (`webServer`, Chromium/Firefox/WebKit), write-then-reload persistence verification, forced 503 failure recovery, and blob-report CI sharding."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/03-test-levels/INDEX.md": {
-   "sha256": "bcc7f21f19fa78eaa83e1c2700e4876d920037b62c8611895f4664203de30ae0",
+   "sha256": "ee88009021ad083440c57d271a9ac486f388da1f11f9381ef4acc7fff639e7c3",
    "lines": 48,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Unit, integration (Testcontainers + Supertest), and E2E (Playwright) verification boundaries.",
-    "readable": "Full read of 48 lines (275 prose words). Learning-flow index for the three test levels: deterministic unit testing, real-seam integration testing, and full-journey browser E2E testing.",
-    "concise": "275 words across 48 lines. Learning-flow index for the three test levels: deterministic unit testing, real-seam integration testing, and full-journey browser E2E testing.",
+    "readable": "Full read of 48 lines (287 prose words). Learning-flow index for the three test levels: deterministic unit testing, real-seam integration testing, and full-journey browser E2E testing.",
+    "concise": "287 words across 48 lines. Learning-flow index for the three test levels: deterministic unit testing, real-seam integration testing, and full-journey browser E2E testing.",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for the three test levels: deterministic unit testing, real-seam integration testing, and full-journey browser E2E testing.",
     "fast": "Measured 10.0 KB raw / 3.7 KB gzip. Learning-flow index for the three test levels: deterministic unit testing, real-seam integration testing, and full-journey browser E2E testing.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for the three test levels: deterministic unit testing, real-seam integration testing, and full-journey browser E2E testing."
    },
-   "notes": "Learning-flow index for the three test levels: deterministic unit testing, real-seam integration testing, and full-journey browser E2E testing."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/03-test-levels/REVISION.md": {
-   "sha256": "e75bf7949249d990edbf75ef15e20205dc366554ddab191f3f7af5025385355b",
+   "sha256": "5931382824b532d34b873599f7185c18bd40293bab43d5f4e6e0b05d183d8c04",
    "lines": 95,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Test double roles, node-postgres transaction client scoping, Testcontainers, and Playwright response observers.",
-    "readable": "Full read of 95 lines (733 prose words). Active-recall Q&A companion covering controlled clock boundaries, why transaction rollback fails across separate pool connections, competing write arbitration, and `waitForResponse` registration order.",
-    "concise": "733 words across 95 lines. Active-recall Q&A companion covering controlled clock boundaries, why transaction rollback fails across separate pool connections, competing write arbitration, and `waitForResponse` registration order.",
+    "readable": "Full read of 95 lines (753 prose words). Active-recall Q&A companion covering controlled clock boundaries, why transaction rollback fails across separate pool connections, competing write arbitration, and `waitForResponse` registration order.",
+    "concise": "753 words across 95 lines. Active-recall Q&A companion covering controlled clock boundaries, why transaction rollback fails across separate pool connections, competing write arbitration, and `waitForResponse` registration order.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering controlled clock boundaries, why transaction rollback fails across separate pool connections, competing write arbitration, and `waitForResponse` registration order.",
     "fast": "Measured 12.6 KB raw / 4.5 KB gzip. Active-recall Q&A companion covering controlled clock boundaries, why transaction rollback fails across separate pool connections, competing write arbitration, and `waitForResponse` registration order.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering controlled clock boundaries, why transaction rollback fails across separate pool connections, competing write arbitration, and `waitForResponse` registration order."
    },
-   "notes": "Active-recall Q&A companion covering controlled clock boundaries, why transaction rollback fails across separate pool connections, competing write arbitration, and `waitForResponse` registration order."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/04-mocking-and-patterns/50.1.4.01-mocking.md": {
-   "sha256": "a475eecc3a071f33ca6e3e4bc2b8712f8d6ad433d3851312125717693420da5a",
-   "lines": 195,
+   "sha256": "c355300420b54df6c827588a59815c9c8a6626eede429ec76847c4bcb6f215ef",
+   "lines": 209,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: MSW 2.x (`msw/node`, `http`, `HttpResponse`) and Vitest 5 `vi.restoreAllMocks()` vs `mockRestore()` contracts.",
-    "readable": "Full read of 195 lines (1,083 prose words). Covers test double roles, typed delivery boundary mocks, `vi.mocked` vs runtime replacement, MSW 2.x Node server interception (`http`, `HttpResponse`, `HttpResponse.error()`), and mock reset/restore tables.",
-    "concise": "1,083 words across 195 lines. Covers test double roles, typed delivery boundary mocks, `vi.mocked` vs runtime replacement, MSW 2.x Node server interception (`http`, `HttpResponse`, `HttpResponse.error()`), and mock reset/restore tables.",
+    "readable": "Full read of 209 lines (1102 prose words). (1,083 prose words). Covers test double roles, typed delivery boundary mocks, `vi.mocked` vs runtime replacement, MSW 2.x Node server interception (`http`, `HttpResponse`, `HttpResponse.error()`), and mock reset/restore tables.",
+    "concise": "1102 words across 209 lines. 1,083 words across 195 lines. Covers test double roles, typed delivery boundary mocks, `vi.mocked` vs runtime replacement, MSW 2.x Node server interception (`http`, `HttpResponse`, `HttpResponse.error()`), and mock reset/restore tables.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers test double roles, typed delivery boundary mocks, `vi.mocked` vs runtime replacement, MSW 2.x Node server interception (`http`, `HttpResponse`, `HttpResponse.error()`), and mock reset/restore tables.",
     "fast": "Measured 37.1 KB raw / 8.4 KB gzip. Covers test double roles, typed delivery boundary mocks, `vi.mocked` vs runtime replacement, MSW 2.x Node server interception (`http`, `HttpResponse`, `HttpResponse.error()`), and mock reset/restore tables.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers test double roles, typed delivery boundary mocks, `vi.mocked` vs runtime replacement, MSW 2.x Node server interception (`http`, `HttpResponse`, `HttpResponse.error()`), and mock reset/restore tables."
    },
-   "notes": "Covers test double roles, typed delivery boundary mocks, `vi.mocked` vs runtime replacement, MSW 2.x Node server interception (`http`, `HttpResponse`, `HttpResponse.error()`), and mock reset/restore tables."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/04-mocking-and-patterns/50.1.4.02-test-patterns.md": {
-   "sha256": "4aa3a2412dd54d52acea86ec75075bb26547418d0ed89f4e00d0d375acf9ce35",
-   "lines": 179,
+   "sha256": "4418c3b423666e86c531e0f529e85762713d729ee29f8950668a2a5c3fd976e5",
+   "lines": 191,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Vitest `it.each` parameterized testing and `fast-check` (`fc.assert`, `fc.property`, deterministic `seed`).",
-    "readable": "Full read of 179 lines (994 prose words). Covers AAA and four-phase test structure, claim-visible factories (`makeLine`), defensive-copying `CartBuilder`, `it.each` parameterized cases, and `fast-check` property-based shrinking.",
-    "concise": "994 words across 179 lines. Covers AAA and four-phase test structure, claim-visible factories (`makeLine`), defensive-copying `CartBuilder`, `it.each` parameterized cases, and `fast-check` property-based shrinking.",
+    "readable": "Full read of 191 lines (1010 prose words). Covers AAA and four-phase test structure, claim-visible factories (`makeLine`), defensive-copying `CartBuilder`, `it.each` parameterized cases, and `fast-check` property-based shrinking.",
+    "concise": "1010 words across 191 lines. Covers AAA and four-phase test structure, claim-visible factories (`makeLine`), defensive-copying `CartBuilder`, `it.each` parameterized cases, and `fast-check` property-based shrinking.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers AAA and four-phase test structure, claim-visible factories (`makeLine`), defensive-copying `CartBuilder`, `it.each` parameterized cases, and `fast-check` property-based shrinking.",
     "fast": "Measured 35.9 KB raw / 7.9 KB gzip. Covers AAA and four-phase test structure, claim-visible factories (`makeLine`), defensive-copying `CartBuilder`, `it.each` parameterized cases, and `fast-check` property-based shrinking.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers AAA and four-phase test structure, claim-visible factories (`makeLine`), defensive-copying `CartBuilder`, `it.each` parameterized cases, and `fast-check` property-based shrinking."
    },
-   "notes": "Covers AAA and four-phase test structure, claim-visible factories (`makeLine`), defensive-copying `CartBuilder`, `it.each` parameterized cases, and `fast-check` property-based shrinking."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/04-mocking-and-patterns/INDEX.md": {
-   "sha256": "18cbd108576f3359e6b75dcde2bf360fdeda85d223d4293730990e13743f4942",
+   "sha256": "8abc32f99500afc0d4caaae1e526a235b06224b92c7bfeca9d76dbac3e4330f0",
    "lines": 59,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Vitest/Jest mocking lifecycles, MSW 2.x (`http`/`HttpResponse`), and `fast-check` property-based testing.",
-    "readable": "Full read of 59 lines (281 prose words). Learning-flow index for test mocking and maintainable test patterns (Arrange-Act-Assert, factories, builders, fixtures, and property-based testing).",
-    "concise": "281 words across 59 lines. Learning-flow index for test mocking and maintainable test patterns (Arrange-Act-Assert, factories, builders, fixtures, and property-based testing).",
+    "readable": "Full read of 59 lines (287 prose words). Learning-flow index for test mocking and maintainable test patterns (Arrange-Act-Assert, factories, builders, fixtures, and property-based testing).",
+    "concise": "287 words across 59 lines. Learning-flow index for test mocking and maintainable test patterns (Arrange-Act-Assert, factories, builders, fixtures, and property-based testing).",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for test mocking and maintainable test patterns (Arrange-Act-Assert, factories, builders, fixtures, and property-based testing).",
     "fast": "Measured 11.1 KB raw / 3.8 KB gzip. Learning-flow index for test mocking and maintainable test patterns (Arrange-Act-Assert, factories, builders, fixtures, and property-based testing).",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for test mocking and maintainable test patterns (Arrange-Act-Assert, factories, builders, fixtures, and property-based testing)."
    },
-   "notes": "Learning-flow index for test mocking and maintainable test patterns (Arrange-Act-Assert, factories, builders, fixtures, and property-based testing)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/04-mocking-and-patterns/REVISION.md": {
-   "sha256": "e67a0de5faa60319978806b1e72ceb86c84a448975417d06e2b1eca2ac3f5b9b",
+   "sha256": "a97eceafd93445f9af8861f7f213a691e234119ff1890c6a9a0f3f75bbfa0313",
    "lines": 91,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Vitest 5 mock restoration semantics, MSW 2.x error modeling, and `fast-check` property-based testing.",
-    "readable": "Full read of 91 lines (730 prose words). Active-recall Q&A companion covering network-level vs wrapper mocking, Vitest `vi.restoreAllMocks()` vs `mockRestore()`, HTTP 500 vs `HttpResponse.error()`, defensive builder copying, and property invariants.",
-    "concise": "730 words across 91 lines. Active-recall Q&A companion covering network-level vs wrapper mocking, Vitest `vi.restoreAllMocks()` vs `mockRestore()`, HTTP 500 vs `HttpResponse.error()`, defensive builder copying, and property invariants.",
+    "readable": "Full read of 91 lines (741 prose words). Active-recall Q&A companion covering network-level vs wrapper mocking, Vitest `vi.restoreAllMocks()` vs `mockRestore()`, HTTP 500 vs `HttpResponse.error()`, defensive builder copying, and property invariants.",
+    "concise": "741 words across 91 lines. Active-recall Q&A companion covering network-level vs wrapper mocking, Vitest `vi.restoreAllMocks()` vs `mockRestore()`, HTTP 500 vs `HttpResponse.error()`, defensive builder copying, and property invariants.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering network-level vs wrapper mocking, Vitest `vi.restoreAllMocks()` vs `mockRestore()`, HTTP 500 vs `HttpResponse.error()`, defensive builder copying, and property invariants.",
     "fast": "Measured 12.4 KB raw / 4.4 KB gzip. Active-recall Q&A companion covering network-level vs wrapper mocking, Vitest `vi.restoreAllMocks()` vs `mockRestore()`, HTTP 500 vs `HttpResponse.error()`, defensive builder copying, and property invariants.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering network-level vs wrapper mocking, Vitest `vi.restoreAllMocks()` vs `mockRestore()`, HTTP 500 vs `HttpResponse.error()`, defensive builder copying, and property invariants."
    },
-   "notes": "Active-recall Q&A companion covering network-level vs wrapper mocking, Vitest `vi.restoreAllMocks()` vs `mockRestore()`, HTTP 500 vs `HttpResponse.error()`, defensive builder copying, and property invariants."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/05-advanced/50.1.5.01-performance-load-testing.md": {
-   "sha256": "edea708f49c0a395ccff23052bfe2dc9364e9cc2071f65066c8e903f515ade0c",
-   "lines": 178,
+   "sha256": "8cba1522a9860a348f22043553c347139b94c692695df7503cedfd8735a887ce",
+   "lines": 186,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Grafana k6 `constant-arrival-rate` executor, custom `Rate` metric denominators, and `dropped_iterations` thresholds.",
-    "readable": "Full read of 178 lines (1,060 prose words). Covers load/stress/spike/soak test shapes, closed-VU vs open arrival-rate models, Little's Law, and a runnable k6 `constant-arrival-rate` test with a custom `semantic_failures` Rate gate.",
-    "concise": "1,060 words across 178 lines. Covers load/stress/spike/soak test shapes, closed-VU vs open arrival-rate models, Little's Law, and a runnable k6 `constant-arrival-rate` test with a custom `semantic_failures` Rate gate.",
+    "readable": "Full read of 186 lines (1068 prose words). (1,060 prose words). Covers load/stress/spike/soak test shapes, closed-VU vs open arrival-rate models, Little's Law, and a runnable k6 `constant-arrival-rate` test with a custom `semantic_failures` Rate gate.",
+    "concise": "1068 words across 186 lines. 1,060 words across 178 lines. Covers load/stress/spike/soak test shapes, closed-VU vs open arrival-rate models, Little's Law, and a runnable k6 `constant-arrival-rate` test with a custom `semantic_failures` Rate gate.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers load/stress/spike/soak test shapes, closed-VU vs open arrival-rate models, Little's Law, and a runnable k6 `constant-arrival-rate` test with a custom `semantic_failures` Rate gate.",
     "fast": "Measured 29.9 KB raw / 8.0 KB gzip. Covers load/stress/spike/soak test shapes, closed-VU vs open arrival-rate models, Little's Law, and a runnable k6 `constant-arrival-rate` test with a custom `semantic_failures` Rate gate.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers load/stress/spike/soak test shapes, closed-VU vs open arrival-rate models, Little's Law, and a runnable k6 `constant-arrival-rate` test with a custom `semantic_failures` Rate gate."
    },
-   "notes": "Covers load/stress/spike/soak test shapes, closed-VU vs open arrival-rate models, Little's Law, and a runnable k6 `constant-arrival-rate` test with a custom `semantic_failures` Rate gate."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/05-advanced/50.1.5.02-chaos-engineering.md": {
-   "sha256": "45f668f52e37576bb85cc4d97c4b0701018973b290c148b436f23e08b701862b",
-   "lines": 182,
+   "sha256": "194bf8299691b7847ae0ac7ade82cd43470ee0f5379af274e0bfcd1ea37afd78",
+   "lines": 190,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Principles of Chaos Engineering and Shopify Toxiproxy 2.x HTTP control API (`/proxies` and `/toxics`).",
-    "readable": "Full read of 182 lines (860 prose words). Covers falsifiable chaos hypotheses, fault layer matching, and a runnable Python + Toxiproxy 2.x downstream-latency experiment verifying baseline, active delay, and recovery.",
-    "concise": "860 words across 182 lines. Covers falsifiable chaos hypotheses, fault layer matching, and a runnable Python + Toxiproxy 2.x downstream-latency experiment verifying baseline, active delay, and recovery.",
+    "readable": "Full read of 190 lines (875 prose words). Covers falsifiable chaos hypotheses, fault layer matching, and a runnable Python + Toxiproxy 2.x downstream-latency experiment verifying baseline, active delay, and recovery.",
+    "concise": "875 words across 190 lines. Covers falsifiable chaos hypotheses, fault layer matching, and a runnable Python + Toxiproxy 2.x downstream-latency experiment verifying baseline, active delay, and recovery.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers falsifiable chaos hypotheses, fault layer matching, and a runnable Python + Toxiproxy 2.x downstream-latency experiment verifying baseline, active delay, and recovery.",
     "fast": "Measured 30.2 KB raw / 7.9 KB gzip. Covers falsifiable chaos hypotheses, fault layer matching, and a runnable Python + Toxiproxy 2.x downstream-latency experiment verifying baseline, active delay, and recovery.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers falsifiable chaos hypotheses, fault layer matching, and a runnable Python + Toxiproxy 2.x downstream-latency experiment verifying baseline, active delay, and recovery."
    },
-   "notes": "Covers falsifiable chaos hypotheses, fault layer matching, and a runnable Python + Toxiproxy 2.x downstream-latency experiment verifying baseline, active delay, and recovery."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/05-advanced/INDEX.md": {
-   "sha256": "e6e2062f322203352ce01b086ebd51daa5e209984a7a663e0cec3bed4e9fa3d1",
+   "sha256": "d7a0bde65a3b4aad391aba933431826384d19992aa658dd2b78eaae8d6edf2f1",
    "lines": 42,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Grafana k6 `constant-arrival-rate` workloads and Shopify Toxiproxy 2.x fault injection.",
     "readable": "Full read of 42 lines (175 prose words). Learning-flow index for advanced testing: performance/load testing (k6 open vs closed workload models) and falsifiable chaos engineering experiments (Toxiproxy).",
@@ -11553,71 +11553,71 @@
     "fast": "Measured 9.4 KB raw / 3.3 KB gzip. Learning-flow index for advanced testing: performance/load testing (k6 open vs closed workload models) and falsifiable chaos engineering experiments (Toxiproxy).",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for advanced testing: performance/load testing (k6 open vs closed workload models) and falsifiable chaos engineering experiments (Toxiproxy)."
    },
-   "notes": "Learning-flow index for advanced testing: performance/load testing (k6 open vs closed workload models) and falsifiable chaos engineering experiments (Toxiproxy)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/05-advanced/REVISION.md": {
-   "sha256": "e46b778e23abf4d8cde2c41930995920c792494c029709cc645096eb8c0a3cd1",
+   "sha256": "66b7b793fae44a628eb563525cd60ebde5008697aa07c15aa07beed986064121",
    "lines": 83,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Grafana k6 custom `Rate` thresholds, Little's Law, and Toxiproxy 2.x TCP fault injection.",
-    "readable": "Full read of 83 lines (586 prose words). Active-recall Q&A companion covering closed-VU coordinated omission vs open arrival rates, k6 custom `Rate` denominators, Little's Law population boundaries, and Toxiproxy downstream delay vs circuit-breaker testing.",
-    "concise": "586 words across 83 lines. Active-recall Q&A companion covering closed-VU coordinated omission vs open arrival rates, k6 custom `Rate` denominators, Little's Law population boundaries, and Toxiproxy downstream delay vs circuit-breaker testing.",
+    "readable": "Full read of 83 lines (599 prose words). Active-recall Q&A companion covering closed-VU coordinated omission vs open arrival rates, k6 custom `Rate` denominators, Little's Law population boundaries, and Toxiproxy downstream delay vs circuit-breaker testing.",
+    "concise": "599 words across 83 lines. Active-recall Q&A companion covering closed-VU coordinated omission vs open arrival rates, k6 custom `Rate` denominators, Little's Law population boundaries, and Toxiproxy downstream delay vs circuit-breaker testing.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering closed-VU coordinated omission vs open arrival rates, k6 custom `Rate` denominators, Little's Law population boundaries, and Toxiproxy downstream delay vs circuit-breaker testing.",
     "fast": "Measured 11.8 KB raw / 4.1 KB gzip. Active-recall Q&A companion covering closed-VU coordinated omission vs open arrival rates, k6 custom `Rate` denominators, Little's Law population boundaries, and Toxiproxy downstream delay vs circuit-breaker testing.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering closed-VU coordinated omission vs open arrival rates, k6 custom `Rate` denominators, Little's Law population boundaries, and Toxiproxy downstream delay vs circuit-breaker testing."
    },
-   "notes": "Active-recall Q&A companion covering closed-VU coordinated omission vs open arrival rates, k6 custom `Rate` denominators, Little's Law population boundaries, and Toxiproxy downstream delay vs circuit-breaker testing."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/06-interview-prep/50.1.6.01-interview-questions.md": {
-   "sha256": "9a413c6fd71399b95eedbffb210983e465d6680c8f99f6adcba00b5334edcd64",
+   "sha256": "bc050e98b0e59a0e82ab64a56b66cff6963334b63e88adc49b5d9e16bc8b2fe1",
    "lines": 295,
    "genre": "interview",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Vitest 5, Playwright, React Testing Library, MSW 2.x, Pact, Testcontainers, k6, and Stryker.",
-    "readable": "Full read of 295 lines (3,864 prose words). Covers 40 senior testing interview questions with changed-condition probes across test boundaries, TDD, async/timers, RTL, MSW 2.x, flaky-test triage, Pact contracts, Testcontainers, and Stryker mutation testing.",
-    "concise": "3,864 words across 295 lines. Covers 40 senior testing interview questions with changed-condition probes across test boundaries, TDD, async/timers, RTL, MSW 2.x, flaky-test triage, Pact contracts, Testcontainers, and Stryker mutation testing.",
+    "readable": "Full read of 295 lines (3930 prose words). (3,864 prose words). Covers 40 senior testing interview questions with changed-condition probes across test boundaries, TDD, async/timers, RTL, MSW 2.x, flaky-test triage, Pact contracts, Testcontainers, and Stryker mutation testing.",
+    "concise": "3930 words across 295 lines. 3,864 words across 295 lines. Covers 40 senior testing interview questions with changed-condition probes across test boundaries, TDD, async/timers, RTL, MSW 2.x, flaky-test triage, Pact contracts, Testcontainers, and Stryker mutation testing.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers 40 senior testing interview questions with changed-condition probes across test boundaries, TDD, async/timers, RTL, MSW 2.x, flaky-test triage, Pact contracts, Testcontainers, and Stryker mutation testing.",
     "fast": "Measured 41.2 KB raw / 14.2 KB gzip. Covers 40 senior testing interview questions with changed-condition probes across test boundaries, TDD, async/timers, RTL, MSW 2.x, flaky-test triage, Pact contracts, Testcontainers, and Stryker mutation testing.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers 40 senior testing interview questions with changed-condition probes across test boundaries, TDD, async/timers, RTL, MSW 2.x, flaky-test triage, Pact contracts, Testcontainers, and Stryker mutation testing."
    },
-   "notes": "Covers 40 senior testing interview questions with changed-condition probes across test boundaries, TDD, async/timers, RTL, MSW 2.x, flaky-test triage, Pact contracts, Testcontainers, and Stryker mutation testing."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/06-interview-prep/INDEX.md": {
-   "sha256": "31bbadd64190bd0a6d0ce6ebc3a75b8b3b98b57e6ac2e5432ee48011b6c496e4",
+   "sha256": "34314b9bbcea5174d0fb90edf3b044184610864a014a3139f11def40435bed2e",
    "lines": 53,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: 2026 testing standards across Vitest 5, Playwright, RTL, MSW 2.x, Testcontainers, k6, and Stryker mutation testing.",
-    "readable": "Full read of 53 lines (188 prose words). Learning-flow index for the 40-question senior testing interview preparation bank.",
-    "concise": "188 words across 53 lines. Learning-flow index for the 40-question senior testing interview preparation bank.",
+    "readable": "Full read of 53 lines (191 prose words). Learning-flow index for the 40-question senior testing interview preparation bank.",
+    "concise": "191 words across 53 lines. Learning-flow index for the 40-question senior testing interview preparation bank.",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for the 40-question senior testing interview preparation bank.",
     "fast": "Measured 9.4 KB raw / 3.4 KB gzip. Learning-flow index for the 40-question senior testing interview preparation bank.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for the 40-question senior testing interview preparation bank."
    },
-   "notes": "Learning-flow index for the 40-question senior testing interview preparation bank."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/INDEX.md": {
-   "sha256": "611ce7d28ea0995e31d066b2a9474cf56fa98936fbd48321c2cbb526e367732f",
+   "sha256": "133bb9d002d447801b782a5b9f319d86e813bd2a70504ccfb43799f5ca6a58a9",
    "lines": 106,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Vitest, Playwright, React Testing Library, MSW 2.x, Testcontainers, k6, and Toxiproxy.",
-    "readable": "Full read of 106 lines (251 prose words). Learning-flow index for 50.1-testing across six categories: foundations, frameworks (Jest, Vitest, RTL, Playwright), test levels, mocking/patterns, load/chaos testing, and interview prep.",
-    "concise": "251 words across 106 lines. Learning-flow index for 50.1-testing across six categories: foundations, frameworks (Jest, Vitest, RTL, Playwright), test levels, mocking/patterns, load/chaos testing, and interview prep.",
+    "readable": "Full read of 106 lines (254 prose words). Learning-flow index for 50.1-testing across six categories: foundations, frameworks (Jest, Vitest, RTL, Playwright), test levels, mocking/patterns, load/chaos testing, and interview prep.",
+    "concise": "254 words across 106 lines. Learning-flow index for 50.1-testing across six categories: foundations, frameworks (Jest, Vitest, RTL, Playwright), test levels, mocking/patterns, load/chaos testing, and interview prep.",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for 50.1-testing across six categories: foundations, frameworks (Jest, Vitest, RTL, Playwright), test levels, mocking/patterns, load/chaos testing, and interview prep.",
     "fast": "Measured 18.7 KB raw / 4.9 KB gzip. Learning-flow index for 50.1-testing across six categories: foundations, frameworks (Jest, Vitest, RTL, Playwright), test levels, mocking/patterns, load/chaos testing, and interview prep.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for 50.1-testing across six categories: foundations, frameworks (Jest, Vitest, RTL, Playwright), test levels, mocking/patterns, load/chaos testing, and interview prep."
    },
-   "notes": "Learning-flow index for 50.1-testing across six categories: foundations, frameworks (Jest, Vitest, RTL, Playwright), test levels, mocking/patterns, load/chaos testing, and interview prep."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.2-accessibility/50.2.01-wcag-overview.md": {
    "sha256": "b76e19060f5f6bd121f6e4e42886ee687fd7dc03b883a9402a0afbdb6692d811",
@@ -12196,20 +12196,20 @@
    "notes": "Active-recall Q&A companion covering incident command separation, NIST SP 800-61 Rev. 3 containment, request-based error budget math, bounded rollbacks, fault expiry, and shift page distributions."
   },
   "50-quality/INDEX.md": {
-   "sha256": "dbc231b7a8d1693fa1d2fa1e2c89cda7b96ec585d2860025b308673f2ad980be",
+   "sha256": "694f9c1041de05b16df9f2368fe2f29e7595b90a65979e44267d474061a377e8",
    "lines": 64,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Vitest, Playwright, WCAG 2.2, Core Web Vitals (LCP, INP, CLS), and production incident response.",
-    "readable": "Full read of 64 lines (323 prose words). Section-level learning-flow index for 50-quality across testing (50.1), accessibility (50.2), performance monitoring (50.3), and production engineering (50.4).",
-    "concise": "323 words across 64 lines. Section-level learning-flow index for 50-quality across testing (50.1), accessibility (50.2), performance monitoring (50.3), and production engineering (50.4).",
+    "readable": "Full read of 64 lines (326 prose words). Section-level learning-flow index for 50-quality across testing (50.1), accessibility (50.2), performance monitoring (50.3), and production engineering (50.4).",
+    "concise": "326 words across 64 lines. Section-level learning-flow index for 50-quality across testing (50.1), accessibility (50.2), performance monitoring (50.3), and production engineering (50.4).",
     "focused": "Single canonical home with no duplicate code across chapters. Section-level learning-flow index for 50-quality across testing (50.1), accessibility (50.2), performance monitoring (50.3), and production engineering (50.4).",
     "fast": "Measured 10.7 KB raw / 3.9 KB gzip. Section-level learning-flow index for 50-quality across testing (50.1), accessibility (50.2), performance monitoring (50.3), and production engineering (50.4).",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Section-level learning-flow index for 50-quality across testing (50.1), accessibility (50.2), performance monitoring (50.3), and production engineering (50.4)."
    },
-   "notes": "Section-level learning-flow index for 50-quality across testing (50.1), accessibility (50.2), performance monitoring (50.3), and production engineering (50.4)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.md": {
    "sha256": "f6f3fab1cf6010fdb837ec3bbd7e13588374967d0864d7b305580d61aea83539",

@@ -16,15 +16,15 @@ Source: [Jest](50.1.2.01-jest.md)
 
 **Q:** Why does a mock reset differ from clearing calls?
 
-**A:** Clearing removes recorded calls/results; resetting also resets mock implementations according to the installed runner/version; restoring returns a spy/replaced property to its original implementation. Choose the needed isolation deliberately.
+**A:** Clearing removes recorded calls and results; resetting also resets mock implementations according to the installed runner and version; restoring returns a spy or replaced property to its original implementation. Choose the needed isolation deliberately.
 
-**Q:** Does `jest.mocked(fetch)` replace the global fetch implementation after mocking an unrelated API module?
+**Q:** Does `jest.mocked(fetch)` replace the global fetch implementation after mocking an unrelated Application Programming Interface (API) module?
 
 **A:** No. It is a typing helper. Create a real mock or spy at the intended boundary; mocking a different module does not replace the global.
 
 **Q:** Can isolated test files safely clear the same database in parallel?
 
-**A:** No. The runtime sandbox does not isolate external data. Use separate databases/schemas or correctly scoped transactions and account for all workers.
+**A:** No. The runtime sandbox does not isolate external data. Use separate databases and schemas or correctly scoped transactions, and account for all workers.
 
 ## Vitest
 
@@ -38,13 +38,13 @@ Source: [Vitest](50.1.2.02-vitest.md)
 
 **A:** No. Run a checker or supported type-test workflow separately; successful runtime tests do not validate every static type relationship.
 
-**Q:** Why does an MSW handler that always returns success fail to establish the client's header contract?
+**Q:** Why does a Mock Service Worker (MSW) handler that always returns success fail to establish the client's header contract?
 
-**A:** Interception preserves the constructed request, but the handler or test must assert the expected header/body. Otherwise a malformed request can still receive the canned successful response.
+**A:** Interception preserves the constructed request, but the handler or test must assert the expected header and body. Otherwise, a malformed request can still receive the canned successful response.
 
-**Q:** Can jsdom or happy-dom establish the same result as Vitest Browser Mode or a Next.js async Server Component E2E test?
+**Q:** Can jsdom or happy-dom establish the same result as Vitest Browser Mode or a Next.js async Server Component end-to-end (E2E) test?
 
-**A:** No. DOM emulators implement a subset of browser behavior. Vitest Browser Mode is a separate real-browser environment, stable since v4 and configured with a provider package; async Server Component routing/rendering needs the framework runtime, for which Next.js recommends E2E.
+**A:** No. Document Object Model (DOM) emulators implement a subset of browser behavior. Vitest Browser Mode is a separate real-browser environment, stable since v4 and configured with a provider package; async Server Component routing and rendering need the framework runtime, for which Next.js recommends E2E tests.
 
 **Q:** What does Vitest 5's default `clearMocks` do, and why can concurrent tests make it unsafe to share one mock?
 
@@ -55,7 +55,7 @@ Source: [Vitest](50.1.2.02-vitest.md)
 
 Source: [React Testing Library](50.1.2.03-react-testing-library.md)
 
-**Q:** Why prefer a role-and-name query to a CSS selector?
+**Q:** Why prefer a role-and-name query to a Cascading Style Sheets (CSS) selector?
 
 **A:** It checks the interface users and assistive technology can identify while reducing coupling to markup structure. It still cannot prove all accessibility requirements.
 
@@ -73,11 +73,11 @@ Source: [Testing Frameworks Comparison](50.1.2.04-testing-frameworks-comparison.
 
 **Q:** Why can one application reasonably use more than one testing tool?
 
-**A:** Node unit tests, real dependency integration, and cross-browser interactions have different execution/observation requirements. Choose tools per boundary rather than making one framework cover everything.
+**A:** Node unit tests, real dependency integration, and cross-browser interactions have different execution and observation requirements. Choose tools per boundary rather than making one framework cover everything.
 
 **Q:** Does booking the same slot twice in sequence establish race safety?
 
-**A:** No. It checks an existing-conflict path. Race safety needs overlapping operations against the real persistence constraint/transaction and an assertion on the durable invariant.
+**A:** No. It checks an existing-conflict path. Race safety needs overlapping operations against the real persistence constraint and transaction and an assertion on the durable invariant.
 
 ## Playwright — End-to-End Browser Journeys
 
@@ -85,35 +85,35 @@ Source: [Playwright: End-to-End Browser Journeys](50.1.2.05-playwright.md)
 
 **Q:** Which timing problem do locator checks solve, and which completion still needs an assertion?
 
-**A:** Each action checks its own requirements, such as a click's visibility, stability, event reception and enabled state. Those checks do not establish that a save committed. Await the relevant business result; retrying assertions observe that result within a timeout.
+**A:** Each action checks its own requirements, such as a click's visibility, stability, event reception, and enabled state. Those checks do not establish that a save committed. Await the relevant business result; retrying assertions observe that result within a timeout.
 
 **Q:** Why does `storageState` save a login for later tests?
 
-**A:** It saves cookies and localStorage and can include IndexedDB when requested. It does not automatically save sessionStorage. Each test can load that state into its own context, but reused credentials still refer to the same server account. Treat the file as a secret and isolate backend records separately.
+**A:** It saves `cookies` and `localStorage` and can include IndexedDB when requested. It does not automatically save `sessionStorage`. Each test can load that state into its own context, but reused credentials still refer to the same server account. Treat the file as a secret and isolate backend records separately.
 
-**Q:** A route-mocked profile test submits JSON and sees the new value after reload. What has it established?
+**Q:** A route-mocked profile test submits JavaScript Object Notation (JSON) and sees the new value after reload. What has it established?
 
-**A:** The browser constructed the expected request and rendered the mock's later response. It has not established a database commit, server authorization or concurrency safety. A separate integration journey must use the real isolated backend to verify those boundaries.
+**A:** The browser constructed the expected request and rendered the mock's later response. It has not established a database commit, server authorization, or concurrency safety. A separate integration journey must use the real isolated backend to verify those boundaries.
 
 **Q:** Why can a click finish before the save has committed?
 
-**A:** Actionability checks establish that the browser can perform that click. They do not know the application's business completion condition. Await the saved-state assertion, or register the relevant response/event wait before the click.
+**A:** Actionability checks establish that the browser can perform that click. They do not know the application's business completion condition. Await the saved-state assertion, or register the relevant response and event wait before the click.
 
-**Q:** Why can a request miss a page.route handler even when its URL pattern is correct?
+**Q:** Why can a request miss a `page.route` handler even when its Uniform Resource Locator (URL) pattern is correct?
 
 **A:** A service worker may handle the request before ordinary network routing. Block workers for the mocked test when appropriate, or test the worker's behavior as its own boundary.
 
 **Q:** Is a test that fails once and passes on retry a reliable first-pass success?
 
-**A:** No. Record it as flaky and inspect the trace, timing and shared state. Bounded retries help collect evidence and recover a run; they do not remove the defect. Restrict access and retention for artifacts that can contain credentials or user data.
+**A:** No. Record it as flaky and inspect the trace, timing, and shared state. Bounded retries help collect evidence and recover a run; they do not remove the defect. Restrict access and retention for artifacts that can contain credentials or user data.
 
 **Q:** What makes a screenshot comparison useful for a critical page layout?
 
-**A:** A stable visual contract and controlled browser, operating system, fonts, viewport and data. Mask or disable intentional variation without hiding the behavior being checked, inspect changed baselines and keep behavioral assertions too. Visual comparisons are not limited to design tokens, and a trace does not replace an expected-layout comparison.
+**A:** A stable visual contract and controlled browser, operating system, fonts, viewport, and data. Mask or disable intentional variation without hiding the behavior being checked, inspect changed baselines, and keep behavioral assertions too. Visual comparisons are not limited to design tokens, and a trace does not replace an expected-layout comparison.
 
 ## Summary
 
-Check which runtime, dependency and observation each test actually reaches. Reproduce the pending/error cases, then explain where integration or browser evidence is still required.
+Check which runtime, dependency, and observation each test actually reaches. Reproduce the pending and error cases, then explain where integration or browser evidence is still required.
 
 ## See Also
 

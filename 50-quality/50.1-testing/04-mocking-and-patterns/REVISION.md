@@ -20,21 +20,21 @@ Source: [Mocking](50.1.4.01-mocking.md)
 
 **Q:** Why can a permissive mock hide a broken request?
 
-**A:** It may answer even when the method, URL, payload, or headers are wrong. Match the contract and make unexpected requests fail clearly.
+**A:** It may answer even when the method, Uniform Resource Locator (URL), payload, or headers are wrong. Match the contract and make unexpected requests fail clearly.
 
 **Q:** Why can clearing a mock's call history still leave a test-order dependency?
 
-**A:** It preserves configured behavior. A previous return/rejection or mutable fake state can still affect the next test; reset the intended behavior or construct a fresh double and reset separate data.
+**A:** It preserves configured behavior. A previous return or rejection or mutable fake state can still affect the next test; reset the intended behavior or construct a fresh double, and reset separate data.
 
 **Q:** In current Vitest, does restoring all spied methods also erase the calls retained on a spy variable?
 
 **A:** No. `vi.restoreAllMocks()` restores the original methods but retains that spy's history and mock implementation. Individual `mockRestore()` has a different contract. Choose explicit clearing or fresh doubles when history isolation is required.
 
-**Q:** How do an HTTP 500 and HttpResponse.error exercise different client paths?
+**Q:** How do a Hypertext Transfer Protocol (HTTP) `500` and `HttpResponse.error` exercise different client paths?
 
-**A:** A 500 is a received response whose status the client must inspect; HttpResponse.error causes a transport rejection handled through the promise error path. One cannot stand in for both.
+**A:** A `500` is a received response whose status the client must inspect; `HttpResponse.error` causes a transport rejection handled through the promise error path. One cannot stand in for both.
 
-**Q:** Why is checking a password starts with hashed_ insufficient?
+**Q:** Why is checking a password starts with `hashed_` insufficient?
 
 **A:** A fake string prefix can satisfy the assertion without a supported hash. Verify the stored value using the real password verifier and assert that plaintext was not stored.
 
@@ -66,7 +66,7 @@ Source: [Test Patterns](50.1.4.02-test-patterns.md)
 
 **A:** No. An implementation that always returns zero also preserves totals under reordering. Independent expected-value cases check the pricing rule; generated cases search the stated input domain for violations of a relationship.
 
-**Q:** Why does a shared fixture need more than an afterEach cleanup hook?
+**Q:** Why does a shared fixture need more than an `afterEach` cleanup hook?
 
 **A:** Concurrent tests can see or delete each other's state before cleanup. Namespace resources by ownership, await setup and cleanup, and account for a runner that dies before hooks execute.
 
@@ -74,13 +74,13 @@ Source: [Test Patterns](50.1.4.02-test-patterns.md)
 
 **A:** A rejected action can have both a required error and a required unchanged state. Those observations define one failure contract; splitting them can conceal forbidden mutation.
 
-**Q:** What does a passing DOM snapshot fail to establish?
+**Q:** What does a passing Document Object Model (DOM) snapshot fail to establish?
 
-**A:** It checks the reviewed serialized structure. It does not establish layout, keyboard behavior, screen-reader output or the correctness of an unreviewed update.
+**A:** It checks the reviewed serialized structure. It does not establish layout, keyboard behavior, screen-reader output, or the correctness of an unreviewed update.
 
 ## Summary
 
-Control the smallest useful boundary and exercise the real consumer. Keep the double’s configured behavior, timer state and separate fixture data explicit so a passing result supports only the intended claim.
+Control the smallest useful boundary and exercise the real consumer. Keep the double’s configured behavior, timer state, and separate fixture data explicit so a passing result supports only the intended claim.
 
 ## See Also
 

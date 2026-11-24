@@ -18,7 +18,7 @@ Source: [Testing Overview](50.1.1.01-testing-overview.md)
 
 **A:** Tests sample scenarios under specific environments and assertions. Missing cases, unrealistic doubles, and deployment differences can leave defects unobserved.
 
-**Q:** What should determine the mix of unit, integration, and E2E tests?
+**Q:** What should determine the mix of unit, integration, and end-to-end (E2E) tests?
 
 **A:** The cost and failure risk of the behavior being verified. Fast units and real boundary tests complement a small set of critical browser journeys; a fixed percentage is not universal.
 
@@ -26,9 +26,9 @@ Source: [Testing Overview](50.1.1.01-testing-overview.md)
 
 **A:** It checks the required observable outcome or contract while allowing valid internal changes. Mirroring implementation steps makes the test change with the code rather than detect a defect.
 
-**Q:** A browser test intercepts the order API and returns a success fixture. Does it verify that a real order was committed?
+**Q:** A browser test intercepts the order Application Programming Interface (API) and returns a success fixture. Does it verify that a real order was committed?
 
-**A:** It verifies the UI against the supplied response. To verify persistence, exercise the real handler and database, then assert the stored order and inventory invariant. State external substitutions separately.
+**A:** It verifies the user interface (UI) against the supplied response. To verify persistence, exercise the real handler and database, then assert the stored order and inventory invariant. State external substitutions separately.
 
 **Q:** A price function executes every line during tests but returns 502 for two items at 500 cents. What is missing?
 
@@ -40,13 +40,13 @@ Source: [Test Data Management & Anonymization](50.1.1.02-test-data-management-an
 
 **Q:** Why is replacing names with repeatable tokens usually pseudonymization?
 
-**A:** Stable tokens preserve linkage, and a mapping, key or available candidate inputs may permit re-identification. Under GDPR, assess whether identification is reasonably likely in the recipient's context; removing obvious identifiers alone does not establish anonymity.
+**A:** Stable tokens preserve linkage, and a mapping, key, or available candidate inputs may permit re-identification. Under General Data Protection Regulation (GDPR), assess whether identification is reasonably likely in the recipient's context; removing obvious identifiers alone does not establish anonymity.
 
 **Q:** Why can a seeded data factory still be nondeterministic?
 
-**A:** Uncontrolled clocks, randomness outside the seeded source, IDs, concurrency, and external data can vary. Control all inputs relevant to the assertion.
+**A:** Uncontrolled clocks, randomness outside the seeded source, identifiers (IDs), concurrency, and external data can vary. Control all inputs relevant to the assertion.
 
-**Q:** Why does preserving customer/order joins with HMAC tokens not make an export anonymous?
+**Q:** Why does preserving customer and order joins with Hash-based Message Authentication Code (HMAC) tokens not make an export anonymous?
 
 **A:** The same input and key preserve stable linkage. A key holder can recompute tokens from candidate IDs, and other fields may identify someone without the key. The transformation also leaves dates and event histories untouched.
 

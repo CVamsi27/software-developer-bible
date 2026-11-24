@@ -1,7 +1,7 @@
 # Testing Foundations
 
 > **Study time:** ≈ 19 min of reading (3 files, ~6 min average).
-> **3 files.** The mental model before any tool: the testing pyramid, test types, TDD vs BDD, coverage trade-offs — and the data that feeds every suite. Everything else in the testing stack assumes this vocabulary.
+> **3 files.** The mental model before any tool: the testing pyramid, test types, test-driven development (TDD) versus behavior-driven development (BDD), coverage trade-offs — and the data that feeds every suite. Everything else in the testing stack assumes this vocabulary.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
@@ -39,7 +39,7 @@ Start by deciding what behavior a test can claim and which boundary can expose i
 
 ## Docita Anchor
 
-[Docita](https://github.com/CVamsi27/docita) is a companion source repository for this Bible — the paths below are inspection leads; check the current implementation, executed tests and deployment evidence before claiming behavior.
+[Docita](https://github.com/CVamsi27/docita) is a companion source repository for this Bible — the paths below are inspection leads; check the current implementation, executed tests, and deployment evidence before claiming behavior.
 
 | Topic | Docita evidence |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
@@ -47,7 +47,7 @@ Start by deciding what behavior a test can claim and which boundary can expose i
 | Co-located unit tests | `*.spec.ts` files beside their source across `apps/api/src` |
 | Deterministic time (injected clock port) | `apps/api/src/shared/common/ports/clock.port.ts` + `apps/api/src/shared/modules/time/system-clock.service.ts` |
 | Test data factories | `apps/api/src/test-utils/factories.ts` |
-| E2E layer with Playwright | `apps/app/e2e/` + `apps/app/playwright.config.ts` (also `apps/internal`, `apps/landing`) |
+| End-to-end (E2E) layer with Playwright | `apps/app/e2e/` + `apps/app/playwright.config.ts` (also `apps/internal`, `apps/landing`) |
 
 ## Finish This Section
 

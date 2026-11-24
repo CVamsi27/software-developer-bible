@@ -11,11 +11,11 @@
 
 ## Read the real logic against a controlled boundary
 
-A dependency replacement makes selected inputs controllable but also removes the real dependency from observation. Test structure makes the resulting claim visible: which state was arranged, which action ran and which result was checked. Start with the boundary, then introduce helpers only where repetition obscures that contract.
+A dependency replacement makes selected inputs controllable but also removes the real dependency from observation. Test structure makes the resulting claim visible: which state was arranged, which action ran, and which result was checked. Start with the boundary, then introduce helpers only where repetition obscures that contract.
 
 ## First pass: choose the replacement and its evidence boundary
 
-Read [Mocking](50.1.4.01-mocking.md). Trace the receipt through the real consumer and a rejecting delivery interface. Then distinguish a received HTTP failure from a transport rejection, configured behavior from recorded calls, and wall-clock changes from timer advancement. A fake provider needs its own contract checks; a mock call alone cannot establish delivery.
+Read [Mocking](50.1.4.01-mocking.md). Trace the receipt through the real consumer and a rejecting delivery interface. Then distinguish a received Hypertext Transfer Protocol (HTTP) failure from a transport rejection, configured behavior from recorded calls, and wall-clock changes from timer advancement. A fake provider needs its own contract checks; a mock call alone cannot establish delivery.
 
 ## Second pass: make the scenario and ownership visible
 
@@ -32,7 +32,7 @@ Complete the [section revision questions](REVISION.md) after both chapters. Chan
 
 ## Cross-References
 
-- [Frameworks](../02-frameworks/INDEX.md) — runner-specific APIs for creating and configuring test doubles.
+- [Frameworks](../02-frameworks/INDEX.md) — runner-specific Application Programming Interfaces (APIs) for creating and configuring test doubles.
 - [Foundations](../01-foundations/INDEX.md) — why boundary mocking follows from test strategy.
 
 ---
@@ -50,7 +50,7 @@ Complete the [section revision questions](REVISION.md) after both chapters. Chan
 | Topic | Docita evidence |
 | --------------------------------------------------------- | ---------------------------------------------------------------------------- |
 | Clock mock | `apps/api/src/test-utils/fixed-clock.mock.ts` |
-| Factories / builders | `apps/api/src/test-utils/factories.ts` |
+| Factories and builders | `apps/api/src/test-utils/factories.ts` |
 | Time injection seam (mock at the port, not the call site) | `apps/api/src/shared/common/ports/clock.port.ts` ← `system-clock.service.ts` |
 | Guard-level spec example | `apps/api/src/shared/modules/auth/auth/ws-jwt-auth.guard.spec.ts` |
 

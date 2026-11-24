@@ -16,11 +16,11 @@ Source: [Serverless Overview](40.7.01-serverless-overview.md)
 
 **Q:** What capacity remains your responsibility in serverless?
 
-**A:** Concurrency quotas, downstream connection/request budgets, cold-start behavior, scaling limits, and cost. Provider-managed servers do not eliminate those constraints.
+**A:** Concurrency quotas, downstream connection and request budgets, cold-start behavior, scaling limits, and cost. Provider-managed servers do not eliminate those constraints.
 
 **Q:** A queue worker writes a resized image, then crashes before acknowledging the message. How do you prevent a retry from creating the wrong or duplicate result?
 
-**A:** Give the input an immutable identity such as object key plus version, include the transform version, and make the output/status operation idempotent or conditional. Let the queue retry, and acknowledge only after durable completion. If the effect is an external API call, reuse a receiver-enforced idempotency key or reconcile its result first.
+**A:** Give the input an immutable identity such as object key plus version, include the transform version, and make the output and status operation idempotent or conditional. Let the queue retry, and acknowledge only after durable completion. If the effect is an external Application Programming Interface (API) call, reuse a receiver-enforced idempotency key or reconcile its result first.
 
 ## AWS Lambda
 
@@ -40,7 +40,7 @@ Source: [AWS Lambda](40.7.02-aws-lambda.md)
 
 **Q:** Is fifteen minutes the maximum for every Lambda invocation?
 
-**A:** No. Default-capacity functions have that ceiling, while Managed Instances support up to ninety minutes for asynchronous invocations and supported mappings. Synchronous calls and Amazon MQ/DocumentDB mappings retain fifteen minutes. A durable workflow also has a separate total execution timeout; mappings constrain the whole execution, not only each handler attempt. Check the actual trigger and capacity mode.
+**A:** No. Default-capacity functions have that ceiling, while Managed Instances support up to ninety minutes for asynchronous invocations and supported mappings. Synchronous calls and Amazon MQ and DocumentDB mappings retain fifteen minutes. A durable workflow also has a separate total execution timeout; mappings constrain the whole execution, not only each handler attempt. Check the actual trigger and capacity mode.
 
 **Q:** Why can retrying immediately after a Managed Instances timeout duplicate an effect?
 
@@ -54,7 +54,7 @@ Source: [Vercel Deployments](40.7.03-vercel-deployments.md)
 
 **A:** Repeated cross-region database round trips can dominate end-to-end latency. Measure the whole dependency path and choose the deployment region accordingly.
 
-**Q:** A preview has its own URL and deployment protection. Is it isolated from production effects?
+**Q:** A preview has its own Uniform Resource Locator (URL) and deployment protection. Is it isolated from production effects?
 
 **A:** Not automatically. The preview can still hold production credentials or call production services. Scope its database, secrets, webhooks, and scheduled work separately; deployment protection controls who can reach the preview, not what systems its code can reach.
 
@@ -70,25 +70,25 @@ Source: [Vercel Deployments](40.7.03-vercel-deployments.md)
 
 Source: [Edge Functions](40.7.04-edge-functions.md)
 
-**Q:** Does Vercel documenting an Edge runtime mean a Next.js 16.3 route can select it?
+**Q:** Does Vercel documenting an Edge runtime mean a Next.js `16.3` route can select it?
 
-**A:** No. The platform runtime and framework support are different contracts. Vercel documents that Next.js 16.3 routes/pages no longer support `runtime = 'edge'`; Proxy already uses Node.js in Next.js 16. Check the deployed minor version. See [the runtime contract](https://vercel.com/docs/functions/runtimes/edge).
+**A:** No. The platform runtime and framework support are different contracts. Vercel documents that Next.js `16.3` routes and pages no longer support `runtime = 'edge'`; Proxy already uses Node.js in Next.js 16. Check the deployed minor version. See [the runtime contract](https://vercel.com/docs/functions/runtimes/edge).
 
 **Q:** Why does running at the edge not guarantee a fixed latency?
 
-**A:** Cache misses, remote data access, network conditions, and compute still contribute. Runtime/API limits and actual dependencies determine the useful latency gain.
+**A:** Cache misses, remote data access, network conditions, and compute still contribute. Runtime and API limits and actual dependencies determine the useful latency gain.
 
 **Q:** Why can a single-threaded Durable Object still lose an invariant between an `await` and the next write?
 
-**A:** Awaiting external I/O yields the event loop, allowing another request to interleave before the first resumes. Put the invariant inside a storage transaction or an input gate; if a successful write can be retried after its response is lost, also persist a stable operation identity. See Cloudflare's [Durable Object concurrency guidance](https://developers.cloudflare.com/durable-objects/best-practices/rules-of-durable-objects/).
+**A:** Awaiting external Input/Output (I/O) yields the event loop, allowing another request to interleave before the first resumes. Put the invariant inside a storage transaction or an input gate; if a successful write can be retried after its response is lost, also persist a stable operation identity. See Cloudflare's [Durable Object concurrency guidance](https://developers.cloudflare.com/durable-objects/best-practices/rules-of-durable-objects/).
 
 **Q:** Why is Workers KV a poor authority for immediate session revocation?
 
-**A:** KV is eventually consistent, and both present and missing reads can be cached. Another location may therefore keep accepting an old value after a write. Use an authority with the consistency required by the security decision or define a bounded token lifetime and its risk window. See Cloudflare's [KV consistency model](https://developers.cloudflare.com/kv/concepts/how-kv-works/).
+**A:** Key-value (KV) storage is eventually consistent, and both present and missing reads can be cached. Another location may therefore keep accepting an old value after a write. Use an authority with the consistency required by the security decision or define a bounded token lifetime and its risk window. See Cloudflare's [KV consistency model](https://developers.cloudflare.com/kv/concepts/how-kv-works/).
 
 **Q:** When is `ctx.waitUntil()` sufficient, and when should work go to a queue?
 
-**A:** Use it for short, bounded work that can be lost without violating the user's operation, such as analytics. Cloudflare currently cancels HTTP `waitUntil()` work after 30 seconds beyond response completion. Work that must retry or survive runtime failure belongs in a durable queue. See the [Worker context lifecycle](https://developers.cloudflare.com/workers/runtime-apis/context/).
+**A:** Use it for short, bounded work that can be lost without violating the user's operation, such as analytics. Cloudflare currently cancels Hypertext Transfer Protocol (HTTP) `waitUntil()` work after 30 seconds beyond response completion. Work that must retry or survive runtime failure belongs in a durable queue. See the [Worker context lifecycle](https://developers.cloudflare.com/workers/runtime-apis/context/).
 
 ## Serverless Patterns
 
@@ -98,9 +98,9 @@ Source: [Serverless Patterns](40.7.05-serverless-patterns.md)
 
 **A:** A crash between the business write and a separate processed flag allows replay to duplicate the effect. Use an atomic transaction or a recoverable operation protocol.
 
-**Q:** In a Standard SQS batch, A succeeds and B fails. What does a partial-batch response save, and what can still repeat?
+**Q:** In a Standard SQS batch, `A` succeeds and `B` fails. What does a partial-batch response save, and what can still repeat?
 
-**A:** With `ReportBatchItemFailures` enabled on the event-source mapping, report B so successfully completed records need not be retried with it. If the invocation crashes before its response is accepted, A may still be delivered again. Make the business effect idempotent using a stable command identity; the SQS message ID identifies a transport record, not the business operation.
+**A:** With `ReportBatchItemFailures` enabled on the event-source mapping, report `B` so successfully completed records need not be retried with it. If the invocation crashes before its response is accepted, `A` may still be delivered again. Make the business effect idempotent using a stable command identity; the SQS message ID identifies a transport record, not the business operation.
 
 **Q:** What failure does a transactional outbox prevent, and why can it still publish twice?
 
@@ -108,7 +108,7 @@ Source: [Serverless Patterns](40.7.05-serverless-patterns.md)
 
 **Q:** Why is `FailedEntryCount === 0` not sufficient evidence that EventBridge received an event?
 
-**A:** It reports entry-level publishing errors, but publishing to a nonexistent bus can return status 200 and silently drop the event. Verify the bus and rule/target path, then monitor delivery after the producer call. See AWS's [`PutEvents` behavior](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevents.html).
+**A:** It reports entry-level publishing errors, but publishing to a nonexistent bus can return HTTP status `200` and silently drop the event. Verify the bus and rule and target path, then monitor delivery after the producer call. See AWS's [`PutEvents` behavior](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevents.html).
 
 **Q:** When would you choose Step Functions Standard instead of Express, and what does its execution guarantee cover?
 
@@ -132,7 +132,7 @@ Source: [Serverless Frameworks (SAM, CDK, SST, Serverless Framework)](40.7.06-se
 
 **Q:** What must a team check before adopting Serverless Framework v4 for a service?
 
-**A:** Confirm that AWS is the target provider, plan for the CLI's required authentication and applicable license terms, and verify that installed plugins support the selected version. The v4 AWS deployment path packages the service and updates its CloudFormation stack; a v3 configuration or provider claim should not be assumed to carry forward. See the [v4 upgrade guide](https://www.serverless.com/framework/docs/guides/upgrading-v4) and [AWS deployment model](https://www.serverless.com/framework/docs/providers/aws/guide/deploying).
+**A:** Confirm that Amazon Web Services (AWS) is the target provider, plan for the Command Line Interface (CLI)'s required authentication and applicable license terms, and verify that installed plugins support the selected version. The v4 AWS deployment path packages the service and updates its CloudFormation stack; a v3 configuration or provider claim should not be assumed to carry forward. See the [v4 upgrade guide](https://www.serverless.com/framework/docs/guides/upgrading-v4) and [AWS deployment model](https://www.serverless.com/framework/docs/providers/aws/guide/deploying).
 
 **Q:** What does SST resource linking provide, and what security review remains necessary?
 
@@ -144,7 +144,7 @@ Source: [Durable Execution: Temporal & Inngest](40.7.07-durable-execution-tempor
 
 **Q:** Which code may be replayed in a durable workflow?
 
-**A:** Deterministic workflow logic can replay against recorded history. External effects belong in supported activities/steps and still need idempotency across retries.
+**A:** Deterministic workflow logic can replay against recorded history. External effects belong in supported activities and steps and still need idempotency across retries.
 
 **Q:** A payment Activity charged the provider, but the Worker crashed before reporting completion. What should its next attempt do?
 
@@ -156,7 +156,7 @@ Source: [Durable Execution: Temporal & Inngest](40.7.07-durable-execution-tempor
 
 **Q:** Must TypeScript Temporal Workflows move every call to `Date.now()` or `Math.random()` into an Activity?
 
-**A:** No. The TypeScript Workflow sandbox replaces them with replay-safe implementations. External I/O and unsupported APIs remain separate concerns. Apply the rules for the actual SDK, and replay recorded histories against changed code.
+**A:** No. The TypeScript Workflow sandbox replaces them with replay-safe implementations. External I/O and unsupported APIs remain separate concerns. Apply the rules for the actual Software Development Kit (SDK), and replay recorded histories against changed code.
 
 **Q:** When can a completed Temporal Activity run again, even though Workflow replay normally reuses its result?
 
@@ -180,11 +180,11 @@ Source: [Fly.io Deployment Patterns](40.7.09-flyio-deployment.md)
 
 **Q:** Why should a stateful Fly application not rely on process memory after scaling or deploy?
 
-**A:** Machines can stop, restart, or be replaced, and each attached Fly Volume belongs to one Machine. Keep durable/shared state in a deliberate data authority; separately plan volume replication, backup, and recovery. See Fly's [Machine suspend/resume](https://docs.fly.io/reference/suspend-resume/) and [volume storage](https://docs.fly.io/launch/volume-storage/) guidance.
+**A:** Machines can stop, restart, or be replaced, and each attached Fly Volume belongs to one Machine. Keep durable or shared state in a deliberate data authority; separately plan volume replication, backup, and recovery. See Fly's [Machine suspend and resume](https://docs.fly.io/reference/suspend-resume/) and [volume storage](https://docs.fly.io/launch/volume-storage/) guidance.
 
 **Q:** Does Fly Proxy autostart create more Machines when all configured Machines are busy?
 
-**A:** It starts existing stopped or suspended Machines; it does not provision another Machine when configured capacity is busy. `min_machines_running` applies in the primary region, so check other regions and failure recovery separately. See Fly's [autostop/autostart contract](https://docs.fly.io/reference/fly-proxy-autostop-autostart/).
+**A:** It starts existing stopped or suspended Machines; it does not provision another Machine when configured capacity is busy. `min_machines_running` applies in the primary region, so check other regions and failure recovery separately. See Fly's [autostop and autostart contract](https://docs.fly.io/reference/fly-proxy-autostop-autostart/).
 
 **Q:** What happens when a Fly service health check fails, and what does not happen automatically?
 
@@ -200,19 +200,19 @@ Source: [Vite SPA on Cloudflare Workers](40.7.10-vite-spa-cloudflare-workers.md)
 
 **Q:** Why must an API proxy request run before an SPA fallback?
 
-**A:** Otherwise an unmatched API request can receive index.html and appear to succeed with the wrong content. Route API paths explicitly and reserve HTML fallback for navigation.
+**A:** Otherwise an unmatched API request can receive `index.html` and appear to succeed with the wrong content. Route API paths explicitly and reserve HyperText Markup Language (HTML) fallback for navigation.
 
 **Q:** Which Worker bundle measurement should be compared with Cloudflare's current platform limit?
 
-**A:** On the limit page checked 2026-10-14, compare Wrangler's uncompressed `Total Upload` with the 64 MiB limit for either plan. Gzip is informational; Static Assets and browser JavaScript have separate limits and performance budgets. See Cloudflare's [Workers limits](https://developers.cloudflare.com/workers/platform/limits/).
+**A:** On the limit page checked October 14, 2026, compare Wrangler's uncompressed `Total Upload` with the 64 MiB limit for either plan. Gzip is informational; Static Assets and browser JavaScript have separate limits and performance budgets. See Cloudflare's [Workers limits](https://developers.cloudflare.com/workers/platform/limits/).
 
 **Q:** Why can a same-origin API proxy still have an authentication or CSRF defect?
 
-**A:** It changes the browser's request origin path but does not enforce backend identity, tenant authorization, cookie scope, Origin policy or CSRF defenses. Those contracts still need explicit implementation and tests.
+**A:** It changes the browser's request origin path, though it does not enforce backend identity, tenant authorization, cookie scope, `Origin` policy, or Cross-Site Request Forgery (CSRF) defenses. Those contracts still need explicit implementation and tests.
 
 **Q:** Why might middleware in the Worker never protect the static application shell?
 
-**A:** Asset-first requests can bypass the script. Protect the relevant asset paths through the intended access/routing policy and test deployed responses; backend data authorization remains its own boundary.
+**A:** Asset-first requests can bypass the script. Protect the relevant asset paths through the intended access and routing policy and test deployed responses; backend data authorization remains its own boundary.
 
 ## Delivery and version-change cases
 

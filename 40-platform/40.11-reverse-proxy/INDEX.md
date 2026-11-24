@@ -31,27 +31,27 @@ A proxy separates client-facing HTTP policy from backend request handling. Read 
 
 - [CDN & Edge](../40.10-cdn/INDEX.md) — caching one layer further out
 - [Docker](../40.1-docker/INDEX.md) — nginx as the containerized edge
-- [Observability](../40.4-observability/INDEX.md) — `$request_time` vs `$upstream_response_time`
-- [System Design Theory](../../30-architecture/30.2-system-design/01-theory/INDEX.md) — transport + LB fundamentals behind every proxy decision
+- [Observability](../40.4-observability/INDEX.md) — `$request_time` versus `$upstream_response_time`
+- [System Design Theory](../../30-architecture/30.2-system-design/01-theory/INDEX.md) — transport and load-balancing (LB) fundamentals behind every proxy decision
 
 ---
 
 ## Navigation
 
-[← Previous: Twelve-Factor](../40.9-twelve-factor/INDEX.md) · [< Back to Platform](../INDEX.md) · [Next: CDN & Edge →](../40.10-cdn/INDEX.md)
+[← Previous: Twelve-Factor](../40.9-twelve-factor/INDEX.md) · [Back to Platform](../INDEX.md) · [Next: CDN & Edge →](../40.10-cdn/INDEX.md)
 
 ---
 
 ## Docita Anchor
 
-These existing [Docita](https://github.com/CVamsi27/docita) pointers describe managed-proxy integration rather than a self-managed NGINX implementation. Inspect code and actual routing/credential policy before making a deployment claim.
+These existing [Docita](https://github.com/CVamsi27/docita) pointers describe managed-proxy integration rather than a self-managed NGINX implementation. Inspect code and actual routing and credential policy before making a deployment claim.
 
 | Topic | Docita evidence |
-| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| TLS termination (managed) | Twice: Cloudflare edge, then Fly's router (`http_service.force_https = true`) — zero nginx config owned by me |
-| Trusting the proxy layer | `shared/common/http/cloudflare-ips.ts` + `client-ip.ts` recover real client IPs from CF headers; ADR 0014 restricts ingress to CF ranges |
-| Proxy behaviors I still own | Timeouts/budgets at the app edge (`timeout.interceptor.ts`, `fetch-with-timeout.ts`) because the platform proxy's knobs are fixed |
-| nginx/HAProxy/Envoy ops stories | _No direct docita implementation yet._ |
+| ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Transport Layer Security (TLS) termination (managed) | Twice: Cloudflare edge, then Fly's router (`http_service.force_https = true`) — zero NGINX config owned by me |
+| Trusting the proxy layer | `shared/common/http/cloudflare-ips.ts` + `client-ip.ts` recover real client Internet Protocol (IP) addresses from Cloudflare (CF) headers; Architecture Decision Record (ADR) 0014 restricts ingress to CF ranges |
+| Proxy behaviors I still own | Timeouts and budgets at the app edge (`timeout.interceptor.ts`, `fetch-with-timeout.ts`) because the platform proxy's knobs are fixed |
+| NGINX, HAProxy, and Envoy operations stories | _No direct Docita implementation yet._ |
 
 ## Finish This Section
 

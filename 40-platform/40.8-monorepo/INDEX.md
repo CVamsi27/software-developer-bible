@@ -1,6 +1,6 @@
 # Monorepo — Index
 
-> **Study time:** ≈ 44 min of reading (7 files, ~6 min average).
+> **Study time:** ≈ 45 min of reading (7 files, ~6 min average).
 > **7 files** — Learn repository and package boundaries, compare task-graph tools, evaluate workspace/build systems, then follow a package change through publication and interview practice.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
@@ -14,11 +14,11 @@
 ## Topic Categories
 
 | Category | Files | Why it matters |
-| -------------------------------------------------- | ----: | --------------------------------------------------------------------------------------- |
-| [Foundations](#foundations) | 1 | Repository boundaries, package/task/release graphs, workspace linking, consumer exports |
+| -------------------------------------------------- | ----: | --------------------------------------------------------------------------------------------- |
+| [Foundations](#foundations) | 1 | Repository boundaries, package, task, and release graphs, workspace linking, consumer exports |
 | [Build Orchestrators](#build-orchestrators) | 2 | Compare task graphs, affected selection, cache contracts, generators, and boundaries |
 | [Tools & Deep-Dive](#tools--deep-dive) | 1 | pnpm, Yarn Berry, Lerna, Rush, Bazel |
-| [Versioning & Publishing](#versioning--publishing) | 1 | Changesets, fixed vs independent versions, provenance |
+| [Versioning & Publishing](#versioning--publishing) | 1 | Changesets, fixed versus independent versions, provenance |
 | [Interview Prep](#interview-prep) | 1 | 30+ interview prompts |
 
 ---
@@ -27,7 +27,7 @@
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Monorepo Overview](40.8.01-monorepo-overview.md) | Monorepo vs polyrepo, pnpm/Yarn/npm workspaces, workspace protocol, when to use | Important | Specialized | 7 min |
+| 01 | [Monorepo Overview](40.8.01-monorepo-overview.md) | Monorepo versus polyrepo, pnpm, Yarn, and npm workspaces, workspace protocol, when to use | Important | Specialized | 7 min |
 
 ---
 
@@ -56,7 +56,7 @@ Monorepo tool?
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 04 | [Monorepo Tools Deep-Dive](40.8.04-monorepo-tools.md) | Workspace resolution, task runners, package-release tooling, declared multi-language builds | Important | Specialized | 7 min |
+| 04 | [Monorepo Tools Deep-Dive](40.8.04-monorepo-tools.md) | Workspace resolution, task runners, package-release tooling, declared multi-language builds | Important | Specialized | 8 min |
 
 ---
 
@@ -79,7 +79,7 @@ Monorepo tool?
 ## Suggested Study Order
 
 1. **Monorepo Overview** — must know
-2. **Turborepo** or **Nx** — for the JD's stack
+2. **Turborepo** or **Nx** — match the job description (JD) stack
 3. **Tools Deep-Dive** — for senior roles
 4. **Versioning & Publishing** — "how do you release from a monorepo?"
 5. **Revision** — explain the mechanisms from memory using [source-linked prompts](REVISION.md)
@@ -89,7 +89,7 @@ Monorepo tool?
 
 ## Common interview topics
 
-- "Monorepo vs polyrepo — when to use which?"
+- "Monorepo versus polyrepo — when to use which?"
 - "How does Turborepo's content-hash caching work?"
 - "What are affected commands in Nx?"
 - "How do you share code between packages?"
@@ -100,28 +100,28 @@ Monorepo tool?
 ## Cross-References
 
 - [Build Tools](../40.5-build-tools/INDEX.md) — bundlers for monorepos
-- [CI/CD](../40.3-ci-cd/INDEX.md) — CI in monorepos (affected-only builds)
+- [CI/CD](../40.3-ci-cd/INDEX.md) — Continuous Integration and Continuous Delivery (CI/CD) in monorepos (affected-only builds)
 - [Git Advanced](../40.6-git-advanced/INDEX.md) — branching for monorepos
 
 ---
 
 ## Navigation
 
-[← Previous: Serverless & Edge](../40.7-serverless-edge/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Twelve-Factor App →](../40.9-twelve-factor/INDEX.md)
+[← Previous: Serverless & Edge](../40.7-serverless-edge/INDEX.md) · [Back to Index](../../INDEX.md) · [Next: Twelve-Factor App →](../40.9-twelve-factor/INDEX.md)
 
 ---
 
 ## Docita Anchor
 
-Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
+Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React, and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
 
 | Topic | Docita evidence |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| pnpm workspaces | `pnpm-workspace.yaml`: `apps/*` (api, app, internal, landing, worker) + `packages/*` (ui, auth, data-access, db, types, utils…) |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| pnpm workspaces | `pnpm-workspace.yaml`: `apps/*` (`api`, `app`, `internal`, `landing`, `worker`) + `packages/*` (`ui`, `auth`, `data-access`, `db`, `types`, `utils`…) |
 | Turborepo task graph | `turbo.json`: `build` depends on `^build` + `check-types` + `lint`; per-app env allowlists scope cache keys |
-| Shared tooling | One `vitest.shared.config.ts`, one `packages/typescript-config`, shared eslint config |
+| Shared tooling | One `vitest.shared.config.ts`, one `packages/typescript-config`, shared ESLint config |
 | Dead-code control | Repo-wide `knip.json`; check the current release report for the actual gate result; configuration alone is not a passing run |
-| Versioning/publishing | Not applicable — private app monorepo, no npm publishing |
+| Versioning and publishing | Not applicable — private app monorepo, no `npm` publishing |
 
 ## Finish This Section
 

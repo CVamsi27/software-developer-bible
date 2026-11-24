@@ -40,7 +40,7 @@ Source: [Nx](40.8.03-nx.md)
 
 **Q:** Why can two Nx 24 workspaces select different tasks for the same change?
 
-**A:** New workspaces default to task-based affected selection, while a migration preserves project-based selection with `affected.legacy: true`. `NX_LEGACY_AFFECTED` can override the mode. In task mode, inputs and consumed outputs propagate changes; a `dependsOn` edge alone only orders work. Check the [affected contract](https://nx.dev/docs/features/ci-features/affected) and the resolved CI mode.
+**A:** New workspaces default to task-based affected selection, while a migration preserves project-based selection with `affected.legacy: true`. `NX_LEGACY_AFFECTED` can override the mode. In task mode, inputs and consumed outputs propagate changes; a `dependsOn` edge alone only orders work. Check the [affected contract](https://nx.dev/docs/features/ci-features/affected) and the resolved Continuous Integration (CI) mode.
 
 ## Monorepo Tools Deep-Dive (Lerna, pnpm, Yarn, Rush, Bazel)
 
@@ -48,15 +48,15 @@ Source: [Monorepo Tools Deep-Dive (Lerna, pnpm, Yarn, Rush, Bazel)](40.8.04-mono
 
 **Q:** What are the three toolchain layers you should keep separate?
 
-**A:** Package management resolves/links dependencies, task orchestration schedules/caches work, and compilers/bundlers produce artifacts. Some tools overlap, but each contract still needs an owner. The [Nx mental model](https://nx.dev/docs/concepts/mental-model) shows why project and task graphs answer different questions.
+**A:** Package management resolves and links dependencies, task orchestration schedules and caches work, and compilers and bundlers produce artifacts. Some tools overlap, but each contract still needs an owner. The [Nx mental model](https://nx.dev/docs/concepts/mental-model) shows why project and task graphs answer different questions.
 
 **Q:** Can engineer count determine whether a repository needs Bazel?
 
-**A:** No. Compare declared toolchains, generated inputs and reproducibility needs with supported rules and maintenance cost. A small repository can need those controls; a large one can still have a simple script graph. Bazel’s [build model](https://bazel.build/) makes targets and actions explicit, so pilot the rules required by your languages.
+**A:** No. Compare declared toolchains, generated inputs, and reproducibility needs with supported rules and maintenance cost. A small repository can need those controls; a large one can still have a simple script graph. Bazel’s [build model](https://bazel.build/) makes targets and actions explicit, so pilot the rules required by your languages.
 
 **Q:** What should a monorepo tooling pilot prove before trusting remote cache hits?
 
-**A:** Prove uncached dependency order and outputs first, then test invalidation for source, configuration, environment and toolchain changes. Protect cache writers and check editor/install compatibility as separate requirements.
+**A:** Prove uncached dependency order and outputs first, then test invalidation for source, configuration, environment, and toolchain changes. Protect cache writers and check editor and install compatibility as separate requirements.
 
 ## Versioning & Publishing Strategies
 
@@ -64,19 +64,19 @@ Source: [Versioning & Publishing Strategies](40.8.05-versioning-publishing-strat
 
 **Q:** Why does a package release need dependency-range changes as well as a new version?
 
-**A:** Consumers need compatible dependency and peer ranges, and the packed manifest must contain registry-resolvable references. Bumping the package alone may leave workspace-only references or incompatible dependents. Review the [Changesets versioning flow](https://changesets.dev/guide/versioning-and-publishing) and the [SemVer contract](https://semver.org/).
+**A:** Consumers need compatible dependency and peer ranges, and the packed manifest must contain registry-resolvable references. Bumping the package alone may leave workspace-only references or incompatible dependents. Review the [Changesets versioning flow](https://changesets.dev/guide/versioning-and-publishing) and the [Semantic Versioning (SemVer) contract](https://semver.org/).
 
 ## Boundaries to Recheck
 
 Source: [Monorepo Overview](40.8.01-monorepo-overview.md)
 
-**Q:** Can CODEOWNERS keep a package's source hidden from another team?
+**Q:** Can `CODEOWNERS` keep a package's source hidden from another team?
 
 **A:** No. It assigns review ownership; repository read permissions govern source access. Use separate repositories when confidential code needs a separate read boundary.
 
 Source: [Nx](40.8.03-nx.md)
 
-**Q:** A UI project may depend on targets tagged UI or util. Why might an API library tagged util pass unexpectedly?
+**Q:** A User Interface (UI) project may depend on targets tagged UI or util. Why might an Application Programming Interface (API) library tagged util pass unexpectedly?
 
 **A:** The allowed tag list is an OR condition. Separate scope constraints from type constraints so a utility label cannot bypass a required scope boundary.
 

@@ -8980,222 +8980,228 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
   },
   "40-platform/40.10-cdn/40.10.01-cdn-architecture.md": {
-   "sha256": "b4c88914caed250f2aa10f44b9182ceff7467a4ce17eac9a371a172eb5fa503d",
-   "lines": 107,
+   "sha256": "a5b4bc5ac93c7fdf53c13f86e2fde0052914c15dfe6cd31879a1897c7a447c28",
+   "lines": 123,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against RFC 9111 (`stale-while-revalidate`, `stale-if-error`), RFC 9213 (`CDN-Cache-Control`), and Surrogate-Key tag invalidation.",
-    "readable": "Full read of 107 lines (1,326 prose words). Opens with a 300ms trans-oceanic TLS+origin latency breakdown before tracing Anycast BGP routing, tiered edge PoPs with Origin Shielding, request collapsing, and RFC 9111/9213 cache headers.",
-    "concise": "1,326 words across 107 lines. Tiered cache diagram and production HTTP response headers.",
+    "readable": "Full read of 123 lines (1352 prose words). (1,326 prose words). Opens with a 300ms trans-oceanic TLS+origin latency breakdown before tracing Anycast BGP routing, tiered edge PoPs with Origin Shielding, request collapsing, and RFC 9111/9213 cache headers.",
+    "concise": "1352 words across 123 lines. 1,326 words across 107 lines. Tiered cache diagram and production HTTP response headers.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for CDN architecture: Anycast vs GeoDNS, Origin Shielding math, cache-key design, `Vary` header explosion, and soft vs hard purges.",
     "fast": "Measured 20.1 KB raw / 7.3 KB gzip. Lightweight ASCII flow and compact header config.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Shows how combining `s-maxage`, `stale-while-revalidate`, request collapsing, and an Origin Shield boundary prevents 200 global edge PoPs from stampeding the origin on cache expiry."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md": {
-   "sha256": "1d97c662dd33ef165d918c966896829e1fd349ffa784692b8e2fcad925ed42f9",
-   "lines": 94,
+   "sha256": "1bb38da5ae5ae26987def51091fc1c277d6151d463407230266cf871f6d06900",
+   "lines": 118,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against NS1/Route53 RUM-based Filter Chains, OCSP/ACME multi-provider TLS automation, and normalized cache headers across Cloudflare/Fastly/CloudFront.",
-    "readable": "Full read of 94 lines (1,411 prose words). Starts with a single-CDN regional BGP outage taking down checkout globally before designing active-active Multi-CDN traffic steering with RUM telemetry, authoritative DNS steering, and consistent origin shielding.",
-    "concise": "1,411 words across 94 lines. Steering comparison table and architectural failure boundaries.",
+    "readable": "Full read of 118 lines (1424 prose words). (1,411 prose words). Starts with a single-CDN regional BGP outage taking down checkout globally before designing active-active Multi-CDN traffic steering with RUM telemetry, authoritative DNS steering, and consistent origin shielding.",
+    "concise": "1424 words across 118 lines. 1,411 words across 94 lines. Steering comparison table and architectural failure boundaries.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for Multi-CDN traffic steering: DNS vs HTTP 302 vs Anycast steering, RUM beacon feedback loops, cache-hit dilution across providers, and IaC header parity.",
     "fast": "Measured 19.2 KB raw / 7.1 KB gzip. Under 100 lines; fast scan.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Quantifies the hidden failure limit of active-active Multi-CDN: splitting traffic 50/50 across two CDNs halves edge cache warmth on long-tail assets unless shared Origin Shielding absorbs the miss amplification."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md": {
-   "sha256": "8d36325c8ab6fa11fd9b54d0ccc982a3aa02da6a7742a893079fbc9e53dc0c8e",
-   "lines": 159,
+   "sha256": "91ad24c151b2377a5cf2a8f5046349061726eb66e133450bd07441b7ebf8c377",
+   "lines": 169,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against AVIF/WebP edge transformation pipelines, CMAF low-latency HLS/DASH segments, and HMAC token / CloudFront Signed Cookie auth.",
-    "readable": "Full read of 159 lines (1,350 prose words). Hooks with a 4MB unoptimized hero PNG and buffering MP4 video before tracing edge image negotiation (AVIF/WebP via normalized `Accept` headers), responsive `srcset`, and adaptive bitrate video (HLS/CMAF) with signed URLs.",
-    "concise": "1,350 words across 159 lines. Worker normalization code, responsive HTML picture markup, and HLS caching rules.",
+    "readable": "Full read of 169 lines (1367 prose words). (1,350 prose words). Hooks with a 4MB unoptimized hero PNG and buffering MP4 video before tracing edge image negotiation (AVIF/WebP via normalized `Accept` headers), responsive `srcset`, and adaptive bitrate video (HLS/CMAF) with signed URLs.",
+    "concise": "1367 words across 169 lines. 1,350 words across 159 lines. Worker normalization code, responsive HTML picture markup, and HLS caching rules.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for edge media delivery: `Vary: Accept` normalization, deterministic image resize tiers, HLS manifest/segment caching TTLs, and signed cookies vs signed URLs.",
     "fast": "Measured 36.1 KB raw / 8.8 KB gzip. Compact code blocks and zero binary assets.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Explains the entitlement boundary why Signed Cookies beat Signed URLs for HLS/DASH streaming: individual `.m4s` segment URLs stay identical across viewers, preserving 99%+ CDN edge cache hit ratios."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.10-cdn/40.10.04-interview-questions.md": {
-   "sha256": "d64f654004892ddd0954f0e2a2330d1690e9b9d7c3b65a34d8c04ba1e282a445",
+   "sha256": "9fea6658274809a0749895710829a577199b34baf051366cc5fe7206e7486875",
    "lines": 178,
    "genre": "interview",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against RFC 9111/9213, HTTP/3 0-RTT connection coalescing, and modern multi-CDN architectures.",
-    "readable": "Full read of 178 lines (1,720 prose words). Senior interview question bank covering CDN internals, cache-key poisoning, thundering-herd shield recovery, `Vary` explosion, dynamic API edge acceleration, and multi-CDN failover.",
-    "concise": "1,720 words across 178 lines. Structured scenario answers.",
+    "readable": "Full read of 178 lines (1891 prose words). (1,720 prose words). Senior interview question bank covering CDN internals, cache-key poisoning, thundering-herd shield recovery, `Vary` explosion, dynamic API edge acceleration, and multi-CDN failover.",
+    "concise": "1891 words across 178 lines. 1,720 words across 178 lines. Structured scenario answers.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical interview drill for 40.10-cdn: 12 deep production debugging and architecture questions with quantitative answers.",
     "fast": "Measured 26.3 KB raw / 9.7 KB gzip. Pure markdown Q&A.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Includes step-by-step incident recovery playbooks for surviving an accidental global cache purge failure (`stale-if-error`, request collapsing, rate-limited origin admission)."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.10-cdn/INDEX.md": {
-   "sha256": "71ed5f87c79729a0cd28d215142e589cbc10f19fb32e8889428c123b11fbc7ee",
+   "sha256": "ce662b6641f5c8bea2a55fddffa006dfbf36da55534ce9bf804d32a6b00c7108",
    "lines": 93,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against HTTP/3 (QUIC), RFC 9111 HTTP Caching, Origin Shielding, and AVIF/HLS/DASH edge pipelines.",
-    "readable": "Full read of 93 lines (209 prose words). Structures the 6-file Content Delivery Networks stack (`40.10.01` to `40.10.04` + `REVISION.md`) across Edge Caching Architecture, Multi-CDN Traffic Steering, Media Optimization, and Interview Prep.",
-    "concise": "209 words across 93 lines. Pass breakdown and chapter summaries.",
+    "readable": "Full read of 93 lines (215 prose words). Structures the 6-file Content Delivery Networks stack (`40.10.01` to `40.10.04` + `REVISION.md`) across Edge Caching Architecture, Multi-CDN Traffic Steering, Media Optimization, and Interview Prep.",
+    "concise": "215 words across 93 lines. Pass breakdown and chapter summaries.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical index for 40.10-cdn: study sequence and cross-links to Browser Networking (10.7), Caching (20.8), Serverless/Edge (40.7), and Reverse Proxies (40.11).",
     "fast": "Measured 15.6 KB raw / 5.2 KB gzip. Under 100 lines; pure markdown.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Frames CDNs as programmable global traffic and media engines with explicit origin-shielding boundaries."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.10-cdn/REVISION.md": {
-   "sha256": "61d539a77cc8f01db4fa6ae6a965dc6a19d027b3f4ec71f55a6f4e61aad2534d",
+   "sha256": "5d0294501f4e43fe161d872d8985571629f2cc2cac62d11f2c714481236ad8e8",
    "lines": 111,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against RFC 9111, RFC 9213 (`CDN-Cache-Control`), and modern RUM-steered multi-CDN architectures.",
-    "readable": "Full read of 111 lines (1,100 prose words). Active-recall revision companion covering Anycast routing, Origin Shielding, `Cache-Control` vs `CDN-Cache-Control`, stale-while-revalidate, multi-CDN DNS/BGP steering, and AVIF/HLS delivery.",
-    "concise": "1,100 words across 111 lines. Crisp failure-mode explanations.",
+    "readable": "Full read of 111 lines (1132 prose words). (1,100 prose words). Active-recall revision companion covering Anycast routing, Origin Shielding, `Cache-Control` vs `CDN-Cache-Control`, stale-while-revalidate, multi-CDN DNS/BGP steering, and AVIF/HLS delivery.",
+    "concise": "1132 words across 111 lines. 1,100 words across 111 lines. Crisp failure-mode explanations.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical revision companion for 40.10-cdn: 8 scenario-linked Q&A pairs spanning all three learning chapters (`40.10.01` to `40.10.03`).",
     "fast": "Measured 16.8 KB raw / 6.0 KB gzip. Pure markdown Q&A.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Tests subtle production failure modes like cache-key poisoning via unnormalized query strings and origin thundering herds during global purge."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md": {
-   "sha256": "c0f191ffb1c0373c8a038513e2da77b2db74d93915724ce1c06efba9b97af958",
-   "lines": 154,
+   "sha256": "bc89250824d9a274dd8e49c4b5d6e691eedf1d4ab736e84efdbc60409253218e",
+   "lines": 186,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: NGINX 1.29.7 (April 2026) built-in upstream HTTP/1.1 keepalive pooling and 1.28 LTS explicit `keepalive` directives.",
-    "readable": "Full read of 154 lines (2,036 prose words). Covers NGINX master/worker `epoll`/`kqueue` state machines, upstream connection pooling (including NGINX 1.29.7 default HTTP/1.1 keepalive cache of 32), `proxy_cache_lock` stampede protection, and `limit_req`.",
-    "concise": "2,036 words across 154 lines. Covers NGINX master/worker `epoll`/`kqueue` state machines, upstream connection pooling (including NGINX 1.29.7 default HTTP/1.1 keepalive cache of 32), `proxy_cache_lock` stampede protection, and `limit_req`.",
+    "readable": "Full read of 186 lines (2083 prose words). (2,036 prose words). Covers NGINX master/worker `epoll`/`kqueue` state machines, upstream connection pooling (including NGINX 1.29.7 default HTTP/1.1 keepalive cache of 32), `proxy_cache_lock` stampede protection, and `limit_req`.",
+    "concise": "2083 words across 186 lines. 2,036 words across 154 lines. Covers NGINX master/worker `epoll`/`kqueue` state machines, upstream connection pooling (including NGINX 1.29.7 default HTTP/1.1 keepalive cache of 32), `proxy_cache_lock` stampede protection, and `limit_req`.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers NGINX master/worker `epoll`/`kqueue` state machines, upstream connection pooling (including NGINX 1.29.7 default HTTP/1.1 keepalive cache of 32), `proxy_cache_lock` stampede protection, and `limit_req`.",
     "fast": "Measured 26.7 KB raw / 8.9 KB gzip. Covers NGINX master/worker `epoll`/`kqueue` state machines, upstream connection pooling (including NGINX 1.29.7 default HTTP/1.1 keepalive cache of 32), `proxy_cache_lock` stampede protection, and `limit_req`.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers NGINX master/worker `epoll`/`kqueue` state machines, upstream connection pooling (including NGINX 1.29.7 default HTTP/1.1 keepalive cache of 32), `proxy_cache_lock` stampede protection, and `limit_req`."
    },
-   "notes": "Covers NGINX master/worker `epoll`/`kqueue` state machines, upstream connection pooling (including NGINX 1.29.7 default HTTP/1.1 keepalive cache of 32), `proxy_cache_lock` stampede protection, and `limit_req`."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.11-reverse-proxy/40.11.02-interview-questions.md": {
-   "sha256": "e4259bd42060c71edfd0cb1f5c073a83e49c98b1593759d1839dbca417061cae",
+   "sha256": "b72a886a90b628261e4c1c8537367a2c9916165cb8136e2711289639d1f7bd2e",
    "lines": 165,
    "genre": "interview",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: NGINX 1.29.7 upstream keepalive behavior, `proxy_buffering off` for streaming responses, and `limit_req` burst tuning.",
-    "readable": "Full read of 165 lines (2,033 prose words). Covers senior NGINX reverse-proxy interview questions on ephemeral port exhaustion, SSE/LLM streaming buffering (`X-Accel-Buffering: no`), thundering-herd microcaching, and zero-downtime reloads.",
-    "concise": "2,033 words across 165 lines. Covers senior NGINX reverse-proxy interview questions on ephemeral port exhaustion, SSE/LLM streaming buffering (`X-Accel-Buffering: no`), thundering-herd microcaching, and zero-downtime reloads.",
+    "readable": "Full read of 165 lines (2135 prose words). (2,033 prose words). Covers senior NGINX reverse-proxy interview questions on ephemeral port exhaustion, SSE/LLM streaming buffering (`X-Accel-Buffering: no`), thundering-herd microcaching, and zero-downtime reloads.",
+    "concise": "2135 words across 165 lines. 2,033 words across 165 lines. Covers senior NGINX reverse-proxy interview questions on ephemeral port exhaustion, SSE/LLM streaming buffering (`X-Accel-Buffering: no`), thundering-herd microcaching, and zero-downtime reloads.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers senior NGINX reverse-proxy interview questions on ephemeral port exhaustion, SSE/LLM streaming buffering (`X-Accel-Buffering: no`), thundering-herd microcaching, and zero-downtime reloads.",
     "fast": "Measured 25.2 KB raw / 8.8 KB gzip. Covers senior NGINX reverse-proxy interview questions on ephemeral port exhaustion, SSE/LLM streaming buffering (`X-Accel-Buffering: no`), thundering-herd microcaching, and zero-downtime reloads.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers senior NGINX reverse-proxy interview questions on ephemeral port exhaustion, SSE/LLM streaming buffering (`X-Accel-Buffering: no`), thundering-herd microcaching, and zero-downtime reloads."
    },
-   "notes": "Covers senior NGINX reverse-proxy interview questions on ephemeral port exhaustion, SSE/LLM streaming buffering (`X-Accel-Buffering: no`), thundering-herd microcaching, and zero-downtime reloads."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.11-reverse-proxy/INDEX.md": {
-   "sha256": "12e4089c51b3cfc359075574fa1ef6c4c340ccf4ff60037e2a735917423a6e2f",
+   "sha256": "fa77b57d08c23f1aa6bb4fb99add5d73ae549b9a282feded8e5412ac5f63e859",
    "lines": 58,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: NGINX 1.29.7 (April 2026) master/worker epoll architecture and default upstream HTTP/1.1 keepalive pooling.",
-    "readable": "Full read of 58 lines (204 prose words). Learning-flow index for NGINX reverse-proxy event-loop internals, upstream keepalive connection pooling, microcaching, and rate limiting.",
-    "concise": "204 words across 58 lines. Learning-flow index for NGINX reverse-proxy event-loop internals, upstream keepalive connection pooling, microcaching, and rate limiting.",
+    "readable": "Full read of 58 lines (206 prose words). Learning-flow index for NGINX reverse-proxy event-loop internals, upstream keepalive connection pooling, microcaching, and rate limiting.",
+    "concise": "206 words across 58 lines. Learning-flow index for NGINX reverse-proxy event-loop internals, upstream keepalive connection pooling, microcaching, and rate limiting.",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for NGINX reverse-proxy event-loop internals, upstream keepalive connection pooling, microcaching, and rate limiting.",
     "fast": "Measured 11.4 KB raw / 3.9 KB gzip. Learning-flow index for NGINX reverse-proxy event-loop internals, upstream keepalive connection pooling, microcaching, and rate limiting.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for NGINX reverse-proxy event-loop internals, upstream keepalive connection pooling, microcaching, and rate limiting."
    },
-   "notes": "Learning-flow index for NGINX reverse-proxy event-loop internals, upstream keepalive connection pooling, microcaching, and rate limiting."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.11-reverse-proxy/REVISION.md": {
-   "sha256": "586da4c0da9b08cde59309354fe50fcaeb8920359fb6c342e87664c92e2dc7d8",
+   "sha256": "1916664830fb3399d8a3ad802717cf680378641da997af5baa22301d0c5995de",
    "lines": 79,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: NGINX 1.29.7 upstream keepalive defaults (HTTP/1.1, 32 idle connections) and `limit_req_zone`.",
-    "readable": "Full read of 79 lines (656 prose words). Active-recall Q&A companion covering NGINX master/worker non-blocking event loops, upstream keepalive pool behavior, `proxy_cache_lock`, and leaky-bucket rate limiting.",
-    "concise": "656 words across 79 lines. Active-recall Q&A companion covering NGINX master/worker non-blocking event loops, upstream keepalive pool behavior, `proxy_cache_lock`, and leaky-bucket rate limiting.",
+    "readable": "Full read of 79 lines (688 prose words). Active-recall Q&A companion covering NGINX master/worker non-blocking event loops, upstream keepalive pool behavior, `proxy_cache_lock`, and leaky-bucket rate limiting.",
+    "concise": "688 words across 79 lines. Active-recall Q&A companion covering NGINX master/worker non-blocking event loops, upstream keepalive pool behavior, `proxy_cache_lock`, and leaky-bucket rate limiting.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering NGINX master/worker non-blocking event loops, upstream keepalive pool behavior, `proxy_cache_lock`, and leaky-bucket rate limiting.",
     "fast": "Measured 12.3 KB raw / 4.3 KB gzip. Active-recall Q&A companion covering NGINX master/worker non-blocking event loops, upstream keepalive pool behavior, `proxy_cache_lock`, and leaky-bucket rate limiting.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering NGINX master/worker non-blocking event loops, upstream keepalive pool behavior, `proxy_cache_lock`, and leaky-bucket rate limiting."
    },
-   "notes": "Active-recall Q&A companion covering NGINX master/worker non-blocking event loops, upstream keepalive pool behavior, `proxy_cache_lock`, and leaky-bucket rate limiting."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md": {
-   "sha256": "ba3c183fede151aa3e3fc552daae6bbd754f7529ed4ae2fb95223a6734c07ad6",
-   "lines": 134,
+   "sha256": "ea2eef8b7f91dd1e291b723e70883916053b594e531de4fe8a648a384960d017",
+   "lines": 156,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Terraform 1.10+/1.11+ native S3 lockfile support, ephemeral credentials, and December 10 2025 CDKTF archive/deprecation.",
-    "readable": "Full read of 134 lines (1,631 prose words). Covers Terraform/OpenTofu declarative resource graph reconciliation, S3 remote state with native `use_lockfile = true`, `create_before_destroy`, `moved`/`import` refactoring, and CDKTF sunset.",
-    "concise": "1,631 words across 134 lines. Covers Terraform/OpenTofu declarative resource graph reconciliation, S3 remote state with native `use_lockfile = true`, `create_before_destroy`, `moved`/`import` refactoring, and CDKTF sunset.",
+    "readable": "Full read of 156 lines (1651 prose words). (1,631 prose words). Covers Terraform/OpenTofu declarative resource graph reconciliation, S3 remote state with native `use_lockfile = true`, `create_before_destroy`, `moved`/`import` refactoring, and CDKTF sunset.",
+    "concise": "1651 words across 156 lines. 1,631 words across 134 lines. Covers Terraform/OpenTofu declarative resource graph reconciliation, S3 remote state with native `use_lockfile = true`, `create_before_destroy`, `moved`/`import` refactoring, and CDKTF sunset.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers Terraform/OpenTofu declarative resource graph reconciliation, S3 remote state with native `use_lockfile = true`, `create_before_destroy`, `moved`/`import` refactoring, and CDKTF sunset.",
     "fast": "Measured 22.7 KB raw / 7.7 KB gzip. Covers Terraform/OpenTofu declarative resource graph reconciliation, S3 remote state with native `use_lockfile = true`, `create_before_destroy`, `moved`/`import` refactoring, and CDKTF sunset.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers Terraform/OpenTofu declarative resource graph reconciliation, S3 remote state with native `use_lockfile = true`, `create_before_destroy`, `moved`/`import` refactoring, and CDKTF sunset."
    },
-   "notes": "Covers Terraform/OpenTofu declarative resource graph reconciliation, S3 remote state with native `use_lockfile = true`, `create_before_destroy`, `moved`/`import` refactoring, and CDKTF sunset."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.12-iac/40.12.02-interview-questions.md": {
-   "sha256": "cd2864b831beae478d0683f3fdb1815377e01e7af133c47f4d329c0382f1fbbf",
+   "sha256": "45101a6fb04647c2ec323d04fff169ca210168c13580f428724e3a69a9e5c269",
    "lines": 165,
    "genre": "interview",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Terraform 1.10+/1.11+ `use_lockfile = true`, `ephemeral` resources, `check` blocks, and OpenTofu.",
-    "readable": "Full read of 165 lines (1,874 prose words). Covers senior IaC interview scenarios on concurrent state corruption, zero-downtime module refactoring with `moved`, secret leakage in state files, and multi-environment blast-radius isolation.",
-    "concise": "1,874 words across 165 lines. Covers senior IaC interview scenarios on concurrent state corruption, zero-downtime module refactoring with `moved`, secret leakage in state files, and multi-environment blast-radius isolation.",
+    "readable": "Full read of 165 lines (1957 prose words). (1,874 prose words). Covers senior IaC interview scenarios on concurrent state corruption, zero-downtime module refactoring with `moved`, secret leakage in state files, and multi-environment blast-radius isolation.",
+    "concise": "1957 words across 165 lines. 1,874 words across 165 lines. Covers senior IaC interview scenarios on concurrent state corruption, zero-downtime module refactoring with `moved`, secret leakage in state files, and multi-environment blast-radius isolation.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers senior IaC interview scenarios on concurrent state corruption, zero-downtime module refactoring with `moved`, secret leakage in state files, and multi-environment blast-radius isolation.",
     "fast": "Measured 23.3 KB raw / 8.2 KB gzip. Covers senior IaC interview scenarios on concurrent state corruption, zero-downtime module refactoring with `moved`, secret leakage in state files, and multi-environment blast-radius isolation.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers senior IaC interview scenarios on concurrent state corruption, zero-downtime module refactoring with `moved`, secret leakage in state files, and multi-environment blast-radius isolation."
    },
-   "notes": "Covers senior IaC interview scenarios on concurrent state corruption, zero-downtime module refactoring with `moved`, secret leakage in state files, and multi-environment blast-radius isolation."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.12-iac/INDEX.md": {
-   "sha256": "7fb216a74002b405e0ac4f8d9443e5541007b86e914c69d14bad58fd43920406",
+   "sha256": "c91f708d7d0401b41860845d9d20fd0032944d5a90cad1f5f95d9aa20094a429",
    "lines": 70,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Terraform 1.10+/1.11+ native S3 state locking (`use_lockfile = true`), OpenTofu, and Dec 2025 CDKTF deprecation.",
-    "readable": "Full read of 70 lines (293 prose words). Learning-flow index for Infrastructure as Code with Terraform and OpenTofu: declarative DAG evaluation, remote state locking, module composition, and drift governance.",
-    "concise": "293 words across 70 lines. Learning-flow index for Infrastructure as Code with Terraform and OpenTofu: declarative DAG evaluation, remote state locking, module composition, and drift governance.",
+    "readable": "Full read of 70 lines (313 prose words). Learning-flow index for Infrastructure as Code with Terraform and OpenTofu: declarative DAG evaluation, remote state locking, module composition, and drift governance.",
+    "concise": "313 words across 70 lines. Learning-flow index for Infrastructure as Code with Terraform and OpenTofu: declarative DAG evaluation, remote state locking, module composition, and drift governance.",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for Infrastructure as Code with Terraform and OpenTofu: declarative DAG evaluation, remote state locking, module composition, and drift governance.",
     "fast": "Measured 11.9 KB raw / 4.1 KB gzip. Learning-flow index for Infrastructure as Code with Terraform and OpenTofu: declarative DAG evaluation, remote state locking, module composition, and drift governance.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for Infrastructure as Code with Terraform and OpenTofu: declarative DAG evaluation, remote state locking, module composition, and drift governance."
    },
-   "notes": "Learning-flow index for Infrastructure as Code with Terraform and OpenTofu: declarative DAG evaluation, remote state locking, module composition, and drift governance."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.12-iac/REVISION.md": {
-   "sha256": "5166cdcee197a105fe6949a851a3fbb59d52cfc724901761945950a47fcd2f7d",
+   "sha256": "08011460eee32a0fa9b4da8212613e03480825c02dcc6e594ee29157e42c35d3",
    "lines": 75,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Terraform 1.10+ `use_lockfile = true`, declarative `import` and `moved` blocks, and ephemeral values.",
-    "readable": "Full read of 75 lines (665 prose words). Active-recall Q&A companion covering Terraform state graph reconciliation, native S3 `.tflock` locking without DynamoDB, `moved`/`import` blocks, and blast-radius state splitting.",
-    "concise": "665 words across 75 lines. Active-recall Q&A companion covering Terraform state graph reconciliation, native S3 `.tflock` locking without DynamoDB, `moved`/`import` blocks, and blast-radius state splitting.",
+    "readable": "Full read of 75 lines (685 prose words). Active-recall Q&A companion covering Terraform state graph reconciliation, native S3 `.tflock` locking without DynamoDB, `moved`/`import` blocks, and blast-radius state splitting.",
+    "concise": "685 words across 75 lines. Active-recall Q&A companion covering Terraform state graph reconciliation, native S3 `.tflock` locking without DynamoDB, `moved`/`import` blocks, and blast-radius state splitting.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering Terraform state graph reconciliation, native S3 `.tflock` locking without DynamoDB, `moved`/`import` blocks, and blast-radius state splitting.",
     "fast": "Measured 12.6 KB raw / 4.4 KB gzip. Active-recall Q&A companion covering Terraform state graph reconciliation, native S3 `.tflock` locking without DynamoDB, `moved`/`import` blocks, and blast-radius state splitting.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering Terraform state graph reconciliation, native S3 `.tflock` locking without DynamoDB, `moved`/`import` blocks, and blast-radius state splitting."
    },
-   "notes": "Active-recall Q&A companion covering Terraform state graph reconciliation, native S3 `.tflock` locking without DynamoDB, `moved`/`import` blocks, and blast-radius state splitting."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.01-pods-replicasets.md": {
    "sha256": "0e7fdaa6c6085f617e4b38578b51519ece630220606615e8eed5f2860337003e",
@@ -10782,387 +10788,391 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md": {
-   "sha256": "935d7dd3cbf69db7e16e64cfe1d438185be38dfe50ac3b2fa8acee3f5cdf7f15",
-   "lines": 97,
+   "sha256": "8fd04b7d5c48f653b3027edb0a79c5843694226adfe14fca351d3475145e4a7c",
+   "lines": 115,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Firecracker microVM cold-start anatomy and concurrency vs utilization break-even economics.",
-    "readable": "Full read of 97 lines (1,353 prose words). Covers FaaS execution lifecycles (cold start vs warm reuse), concurrency-based scaling, statelessness constraints, and break-even cost math against steady containers.",
-    "concise": "1,353 words across 97 lines. Covers FaaS execution lifecycles (cold start vs warm reuse), concurrency-based scaling, statelessness constraints, and break-even cost math against steady containers.",
+    "readable": "Full read of 115 lines (1366 prose words). (1,353 prose words). Covers FaaS execution lifecycles (cold start vs warm reuse), concurrency-based scaling, statelessness constraints, and break-even cost math against steady containers.",
+    "concise": "1366 words across 115 lines. 1,353 words across 97 lines. Covers FaaS execution lifecycles (cold start vs warm reuse), concurrency-based scaling, statelessness constraints, and break-even cost math against steady containers.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers FaaS execution lifecycles (cold start vs warm reuse), concurrency-based scaling, statelessness constraints, and break-even cost math against steady containers.",
     "fast": "Measured 18.9 KB raw / 6.9 KB gzip. Covers FaaS execution lifecycles (cold start vs warm reuse), concurrency-based scaling, statelessness constraints, and break-even cost math against steady containers.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers FaaS execution lifecycles (cold start vs warm reuse), concurrency-based scaling, statelessness constraints, and break-even cost math against steady containers."
    },
-   "notes": "Covers FaaS execution lifecycles (cold start vs warm reuse), concurrency-based scaling, statelessness constraints, and break-even cost math against steady containers."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md": {
-   "sha256": "887b121fff40f7323dffa151e32000c058a3f0ba7b8071afd8c4a4bdcdfdc4e6",
-   "lines": 147,
+   "sha256": "2f7c0b5938b98d1b0af9378ecb56b71473e4210fb2c649ece7f53d44bcd0b851",
+   "lines": 157,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: AWS Lambda 2026 Managed Instances, native Lambda Durable Functions, and Node.js 24.x runtime.",
-    "readable": "Full read of 147 lines (1,676 prose words). Covers AWS Lambda Firecracker execution environments, Provisioned Concurrency vs SnapStart, Lambda Managed Instances (multi-concurrency and 90-min async timeout), and Durable Functions.",
-    "concise": "1,676 words across 147 lines. Covers AWS Lambda Firecracker execution environments, Provisioned Concurrency vs SnapStart, Lambda Managed Instances (multi-concurrency and 90-min async timeout), and Durable Functions.",
+    "readable": "Full read of 157 lines (1696 prose words). (1,676 prose words). Covers AWS Lambda Firecracker execution environments, Provisioned Concurrency vs SnapStart, Lambda Managed Instances (multi-concurrency and 90-min async timeout), and Durable Functions.",
+    "concise": "1696 words across 157 lines. 1,676 words across 147 lines. Covers AWS Lambda Firecracker execution environments, Provisioned Concurrency vs SnapStart, Lambda Managed Instances (multi-concurrency and 90-min async timeout), and Durable Functions.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers AWS Lambda Firecracker execution environments, Provisioned Concurrency vs SnapStart, Lambda Managed Instances (multi-concurrency and 90-min async timeout), and Durable Functions.",
     "fast": "Measured 28.5 KB raw / 8.7 KB gzip. Covers AWS Lambda Firecracker execution environments, Provisioned Concurrency vs SnapStart, Lambda Managed Instances (multi-concurrency and 90-min async timeout), and Durable Functions.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers AWS Lambda Firecracker execution environments, Provisioned Concurrency vs SnapStart, Lambda Managed Instances (multi-concurrency and 90-min async timeout), and Durable Functions."
    },
-   "notes": "Covers AWS Lambda Firecracker execution environments, Provisioned Concurrency vs SnapStart, Lambda Managed Instances (multi-concurrency and 90-min async timeout), and Durable Functions."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md": {
-   "sha256": "0ce53c41779e9b7b51abcc4d3cddbd31a440d77eaf191fa4304f22ae994ac837",
-   "lines": 118,
+   "sha256": "1573fe310a0a52d7ca951d48f8acc91cf1c91e0b140220f49e57853813afb08c",
+   "lines": 126,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Vercel Fluid Compute and Next.js 16.3+ unified Node.js serverless runtime (following removal of `runtime = 'edge'`).",
-    "readable": "Full read of 118 lines (1,354 prose words). Covers Vercel build output synthesis, Fluid Compute in-instance concurrency, Incremental Static Regeneration (ISR), and skew protection.",
-    "concise": "1,354 words across 118 lines. Covers Vercel build output synthesis, Fluid Compute in-instance concurrency, Incremental Static Regeneration (ISR), and skew protection.",
+    "readable": "Full read of 126 lines (1371 prose words). (1,354 prose words). Covers Vercel build output synthesis, Fluid Compute in-instance concurrency, Incremental Static Regeneration (ISR), and skew protection.",
+    "concise": "1371 words across 126 lines. 1,354 words across 118 lines. Covers Vercel build output synthesis, Fluid Compute in-instance concurrency, Incremental Static Regeneration (ISR), and skew protection.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers Vercel build output synthesis, Fluid Compute in-instance concurrency, Incremental Static Regeneration (ISR), and skew protection.",
     "fast": "Measured 19.9 KB raw / 7.0 KB gzip. Covers Vercel build output synthesis, Fluid Compute in-instance concurrency, Incremental Static Regeneration (ISR), and skew protection.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers Vercel build output synthesis, Fluid Compute in-instance concurrency, Incremental Static Regeneration (ISR), and skew protection."
    },
-   "notes": "Covers Vercel build output synthesis, Fluid Compute in-instance concurrency, Incremental Static Regeneration (ISR), and skew protection."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md": {
-   "sha256": "ab432af07e81e025771243d05a740105ac06f6d7d8a3a0341df704b1396534ed",
-   "lines": 132,
+   "sha256": "a3a94c0cc7964d42c3d976969af23cf93bcb54c325731d3be1b8f1e4fd3521a0",
+   "lines": 142,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Cloudflare Workers V8 isolates, 64 MiB uncompressed bundle cap, WinterTC Web APIs, and Hyperdrive/Durable Objects.",
-    "readable": "Full read of 132 lines (1,484 prose words). Covers V8 isolate edge runtimes (Cloudflare Workers), sub-5ms cold starts, the database gravity problem (multi-round-trip latency penalty), and Durable Objects / D1.",
-    "concise": "1,484 words across 132 lines. Covers V8 isolate edge runtimes (Cloudflare Workers), sub-5ms cold starts, the database gravity problem (multi-round-trip latency penalty), and Durable Objects / D1.",
+    "readable": "Full read of 142 lines (1490 prose words). (1,484 prose words). Covers V8 isolate edge runtimes (Cloudflare Workers), sub-5ms cold starts, the database gravity problem (multi-round-trip latency penalty), and Durable Objects / D1.",
+    "concise": "1490 words across 142 lines. 1,484 words across 132 lines. Covers V8 isolate edge runtimes (Cloudflare Workers), sub-5ms cold starts, the database gravity problem (multi-round-trip latency penalty), and Durable Objects / D1.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers V8 isolate edge runtimes (Cloudflare Workers), sub-5ms cold starts, the database gravity problem (multi-round-trip latency penalty), and Durable Objects / D1.",
     "fast": "Measured 23.2 KB raw / 8.0 KB gzip. Covers V8 isolate edge runtimes (Cloudflare Workers), sub-5ms cold starts, the database gravity problem (multi-round-trip latency penalty), and Durable Objects / D1.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers V8 isolate edge runtimes (Cloudflare Workers), sub-5ms cold starts, the database gravity problem (multi-round-trip latency penalty), and Durable Objects / D1."
    },
-   "notes": "Covers V8 isolate edge runtimes (Cloudflare Workers), sub-5ms cold starts, the database gravity problem (multi-round-trip latency penalty), and Durable Objects / D1."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md": {
-   "sha256": "40be89b7db982368bce1ae71b672251943d5905eec275feaf70cfc3469483c26",
-   "lines": 131,
+   "sha256": "bab12768e31f659f3a1d1a86f614184af0dfd6bee1450138a5c69a9baf426988",
+   "lines": 151,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Serverless connection-storm mitigation, SQS `ReportBatchItemFailures`, and presigned object upload flows.",
-    "readable": "Full read of 131 lines (1,504 prose words). Covers API Gateway + SQS queue-based load leveling, S3 presigned direct uploads, RDS Proxy / PgBouncer transaction pooling, and idempotent DLQ consumers.",
-    "concise": "1,504 words across 131 lines. Covers API Gateway + SQS queue-based load leveling, S3 presigned direct uploads, RDS Proxy / PgBouncer transaction pooling, and idempotent DLQ consumers.",
+    "readable": "Full read of 151 lines (1522 prose words). (1,504 prose words). Covers API Gateway + SQS queue-based load leveling, S3 presigned direct uploads, RDS Proxy / PgBouncer transaction pooling, and idempotent DLQ consumers.",
+    "concise": "1522 words across 151 lines. 1,504 words across 131 lines. Covers API Gateway + SQS queue-based load leveling, S3 presigned direct uploads, RDS Proxy / PgBouncer transaction pooling, and idempotent DLQ consumers.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers API Gateway + SQS queue-based load leveling, S3 presigned direct uploads, RDS Proxy / PgBouncer transaction pooling, and idempotent DLQ consumers.",
     "fast": "Measured 24.5 KB raw / 8.1 KB gzip. Covers API Gateway + SQS queue-based load leveling, S3 presigned direct uploads, RDS Proxy / PgBouncer transaction pooling, and idempotent DLQ consumers.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers API Gateway + SQS queue-based load leveling, S3 presigned direct uploads, RDS Proxy / PgBouncer transaction pooling, and idempotent DLQ consumers."
    },
-   "notes": "Covers API Gateway + SQS queue-based load leveling, S3 presigned direct uploads, RDS Proxy / PgBouncer transaction pooling, and idempotent DLQ consumers."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md": {
-   "sha256": "f38699dae56311eb656675a170a9353b052ade8591a926df04fb99e4668e320b",
-   "lines": 135,
+   "sha256": "87e86a5488dac715f58ab66e3733158a9d9bc982a5f107b97694d48f7363a850",
+   "lines": 143,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: SST v3 (`sst.config.ts`) and AWS CDK TypeScript infrastructure constructs.",
-    "readable": "Full read of 135 lines (1,098 prose words). Compares SST v3 (Ion/Pulumi), AWS CDK, AWS SAM, and Serverless Framework v4 across type safety, live local debugging, and CloudFormation drift.",
-    "concise": "1,098 words across 135 lines. Compares SST v3 (Ion/Pulumi), AWS CDK, AWS SAM, and Serverless Framework v4 across type safety, live local debugging, and CloudFormation drift.",
+    "readable": "Full read of 143 lines (1112 prose words). (1,098 prose words). Compares SST v3 (Ion/Pulumi), AWS CDK, AWS SAM, and Serverless Framework v4 across type safety, live local debugging, and CloudFormation drift.",
+    "concise": "1112 words across 143 lines. 1,098 words across 135 lines. Compares SST v3 (Ion/Pulumi), AWS CDK, AWS SAM, and Serverless Framework v4 across type safety, live local debugging, and CloudFormation drift.",
     "focused": "Single canonical home with no duplicate code across chapters. Compares SST v3 (Ion/Pulumi), AWS CDK, AWS SAM, and Serverless Framework v4 across type safety, live local debugging, and CloudFormation drift.",
     "fast": "Measured 25.4 KB raw / 7.3 KB gzip. Compares SST v3 (Ion/Pulumi), AWS CDK, AWS SAM, and Serverless Framework v4 across type safety, live local debugging, and CloudFormation drift.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Compares SST v3 (Ion/Pulumi), AWS CDK, AWS SAM, and Serverless Framework v4 across type safety, live local debugging, and CloudFormation drift."
    },
-   "notes": "Compares SST v3 (Ion/Pulumi), AWS CDK, AWS SAM, and Serverless Framework v4 across type safety, live local debugging, and CloudFormation drift."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md": {
-   "sha256": "01e331259bbc490a48886a8b597c690c89ef621678460e0d663eb1f8227f2d13",
-   "lines": 159,
+   "sha256": "3c186328f99ac21a41f35d1ff56f8b1648135354b38ca8158dd159af97a3342c",
+   "lines": 165,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Inngest TypeScript SDK v4 (March 2026), Temporal deterministic workflow replay, and AWS Lambda Durable Functions.",
-    "readable": "Full read of 159 lines (1,347 prose words). Covers deterministic replay history and checkpointed durable execution across Temporal (Workflows vs Activities), Inngest TypeScript SDK v4 (`step.run`), and AWS Lambda Durable Functions.",
-    "concise": "1,347 words across 159 lines. Covers deterministic replay history and checkpointed durable execution across Temporal (Workflows vs Activities), Inngest TypeScript SDK v4 (`step.run`), and AWS Lambda Durable Functions.",
+    "readable": "Full read of 165 lines (1358 prose words). (1,347 prose words). Covers deterministic replay history and checkpointed durable execution across Temporal (Workflows vs Activities), Inngest TypeScript SDK v4 (`step.run`), and AWS Lambda Durable Functions.",
+    "concise": "1358 words across 165 lines. 1,347 words across 159 lines. Covers deterministic replay history and checkpointed durable execution across Temporal (Workflows vs Activities), Inngest TypeScript SDK v4 (`step.run`), and AWS Lambda Durable Functions.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers deterministic replay history and checkpointed durable execution across Temporal (Workflows vs Activities), Inngest TypeScript SDK v4 (`step.run`), and AWS Lambda Durable Functions.",
     "fast": "Measured 29.8 KB raw / 8.3 KB gzip. Covers deterministic replay history and checkpointed durable execution across Temporal (Workflows vs Activities), Inngest TypeScript SDK v4 (`step.run`), and AWS Lambda Durable Functions.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers deterministic replay history and checkpointed durable execution across Temporal (Workflows vs Activities), Inngest TypeScript SDK v4 (`step.run`), and AWS Lambda Durable Functions."
    },
-   "notes": "Covers deterministic replay history and checkpointed durable execution across Temporal (Workflows vs Activities), Inngest TypeScript SDK v4 (`step.run`), and AWS Lambda Durable Functions."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.7-serverless-edge/40.7.08-interview-questions.md": {
-   "sha256": "e4c2a3b4b313ced42cd3a3f0884f1ce8ff6e8873646c75624f26717a18ddb8f0",
+   "sha256": "144fb9ca7cd65b8b003e46c55a9666acffc179424daf5114277180405ea6d399",
    "lines": 253,
    "genre": "interview",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: AWS Lambda Managed Instances, Cloudflare Workers 64 MiB bundle limits, Inngest v4, and Fly.io Machines.",
-    "readable": "Full read of 253 lines (1,965 prose words). Covers senior serverless and edge interview scenarios on database connection storms, V8 isolate vs microVM trade-offs, durable saga retries, and cost inversions.",
-    "concise": "1,965 words across 253 lines. Covers senior serverless and edge interview scenarios on database connection storms, V8 isolate vs microVM trade-offs, durable saga retries, and cost inversions.",
+    "readable": "Full read of 253 lines (2108 prose words). (1,965 prose words). Covers senior serverless and edge interview scenarios on database connection storms, V8 isolate vs microVM trade-offs, durable saga retries, and cost inversions.",
+    "concise": "2108 words across 253 lines. 1,965 words across 253 lines. Covers senior serverless and edge interview scenarios on database connection storms, V8 isolate vs microVM trade-offs, durable saga retries, and cost inversions.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers senior serverless and edge interview scenarios on database connection storms, V8 isolate vs microVM trade-offs, durable saga retries, and cost inversions.",
     "fast": "Measured 26.9 KB raw / 8.3 KB gzip. Covers senior serverless and edge interview scenarios on database connection storms, V8 isolate vs microVM trade-offs, durable saga retries, and cost inversions.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers senior serverless and edge interview scenarios on database connection storms, V8 isolate vs microVM trade-offs, durable saga retries, and cost inversions."
    },
-   "notes": "Covers senior serverless and edge interview scenarios on database connection storms, V8 isolate vs microVM trade-offs, durable saga retries, and cost inversions."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md": {
-   "sha256": "abc8d1f9aee58739329175d8fb008edb4d60e0afc16f85b3edd42f1f89122667",
-   "lines": 133,
+   "sha256": "b91be79cbe2fd9f293c19d5bb765bd9ce449be2281f8115db5e7bc0d7e92bbc3",
+   "lines": 139,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Fly.io Machines API, `fly.toml` `auto_stop_machines = 'suspend'`, and multi-region LiteFS/Postgres read routing.",
-    "readable": "Full read of 133 lines (980 prose words). Covers Fly.io Firecracker Machine orchestration, Anycast BGP + `fly-Proxy` scale-to-zero autostop/autostart, local NVMe volumes, and `fly-replay` read-replica routing.",
-    "concise": "980 words across 133 lines. Covers Fly.io Firecracker Machine orchestration, Anycast BGP + `fly-Proxy` scale-to-zero autostop/autostart, local NVMe volumes, and `fly-replay` read-replica routing.",
+    "readable": "Full read of 139 lines (988 prose words). Covers Fly.io Firecracker Machine orchestration, Anycast BGP + `fly-Proxy` scale-to-zero autostop/autostart, local NVMe volumes, and `fly-replay` read-replica routing.",
+    "concise": "988 words across 139 lines. Covers Fly.io Firecracker Machine orchestration, Anycast BGP + `fly-Proxy` scale-to-zero autostop/autostart, local NVMe volumes, and `fly-replay` read-replica routing.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers Fly.io Firecracker Machine orchestration, Anycast BGP + `fly-Proxy` scale-to-zero autostop/autostart, local NVMe volumes, and `fly-replay` read-replica routing.",
     "fast": "Measured 19.2 KB raw / 6.5 KB gzip. Covers Fly.io Firecracker Machine orchestration, Anycast BGP + `fly-Proxy` scale-to-zero autostop/autostart, local NVMe volumes, and `fly-replay` read-replica routing.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers Fly.io Firecracker Machine orchestration, Anycast BGP + `fly-Proxy` scale-to-zero autostop/autostart, local NVMe volumes, and `fly-replay` read-replica routing."
    },
-   "notes": "Covers Fly.io Firecracker Machine orchestration, Anycast BGP + `fly-Proxy` scale-to-zero autostop/autostart, local NVMe volumes, and `fly-replay` read-replica routing."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md": {
-   "sha256": "484db5e30e2d50fbbbc8a1df9c30781367e3b1d11e2123eb3714fdd020ce8dd2",
-   "lines": 159,
+   "sha256": "0b92be198363545a7a283c3ac82fa762925e621505997cb333bae50a455b4f27",
+   "lines": 169,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Cloudflare Workers Static Assets (`wrangler.jsonc` / Wrangler 4.20+ `run_worker_first` array) replacing legacy Cloudflare Pages.",
-    "readable": "Full read of 159 lines (874 prose words). Covers deploying a Vite SPA + Hono API on a single Cloudflare Worker using `[assets]` static serving, `not_found_handling = 'single-page-application'`, and `run_worker_first` route arrays.",
-    "concise": "874 words across 159 lines. Covers deploying a Vite SPA + Hono API on a single Cloudflare Worker using `[assets]` static serving, `not_found_handling = 'single-page-application'`, and `run_worker_first` route arrays.",
+    "readable": "Full read of 169 lines (899 prose words). Covers deploying a Vite SPA + Hono API on a single Cloudflare Worker using `[assets]` static serving, `not_found_handling = 'single-page-application'`, and `run_worker_first` route arrays.",
+    "concise": "899 words across 169 lines. Covers deploying a Vite SPA + Hono API on a single Cloudflare Worker using `[assets]` static serving, `not_found_handling = 'single-page-application'`, and `run_worker_first` route arrays.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers deploying a Vite SPA + Hono API on a single Cloudflare Worker using `[assets]` static serving, `not_found_handling = 'single-page-application'`, and `run_worker_first` route arrays.",
     "fast": "Measured 27.1 KB raw / 7.1 KB gzip. Covers deploying a Vite SPA + Hono API on a single Cloudflare Worker using `[assets]` static serving, `not_found_handling = 'single-page-application'`, and `run_worker_first` route arrays.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers deploying a Vite SPA + Hono API on a single Cloudflare Worker using `[assets]` static serving, `not_found_handling = 'single-page-application'`, and `run_worker_first` route arrays."
    },
-   "notes": "Covers deploying a Vite SPA + Hono API on a single Cloudflare Worker using `[assets]` static serving, `not_found_handling = 'single-page-application'`, and `run_worker_first` route arrays."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.7-serverless-edge/INDEX.md": {
-   "sha256": "307a1d8e532f43c5d1e9f0db3204d9667b8ec92f720a6411aca81aeb0549b4f1",
+   "sha256": "4c6eb0e88aa01acf930aee4bd0794421c13a2f4e611f1a0dd55e9ab39c759473",
    "lines": 136,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: AWS Lambda Managed Instances and Durable Functions (2026), Next.js 16.3 Node runtime consolidation, Inngest v4, and Wrangler 4.20+.",
-    "readable": "Full read of 136 lines (281 prose words). Learning-flow index for serverless and edge compute: AWS Lambda, Vercel Fluid Compute, Cloudflare Workers V8 isolates, durable execution (Temporal/Inngest), and Fly.io Firecracker Machines.",
-    "concise": "281 words across 136 lines. Learning-flow index for serverless and edge compute: AWS Lambda, Vercel Fluid Compute, Cloudflare Workers V8 isolates, durable execution (Temporal/Inngest), and Fly.io Firecracker Machines.",
+    "readable": "Full read of 136 lines (293 prose words). Learning-flow index for serverless and edge compute: AWS Lambda, Vercel Fluid Compute, Cloudflare Workers V8 isolates, durable execution (Temporal/Inngest), and Fly.io Firecracker Machines.",
+    "concise": "293 words across 136 lines. Learning-flow index for serverless and edge compute: AWS Lambda, Vercel Fluid Compute, Cloudflare Workers V8 isolates, durable execution (Temporal/Inngest), and Fly.io Firecracker Machines.",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for serverless and edge compute: AWS Lambda, Vercel Fluid Compute, Cloudflare Workers V8 isolates, durable execution (Temporal/Inngest), and Fly.io Firecracker Machines.",
     "fast": "Measured 17.5 KB raw / 5.0 KB gzip. Learning-flow index for serverless and edge compute: AWS Lambda, Vercel Fluid Compute, Cloudflare Workers V8 isolates, durable execution (Temporal/Inngest), and Fly.io Firecracker Machines.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for serverless and edge compute: AWS Lambda, Vercel Fluid Compute, Cloudflare Workers V8 isolates, durable execution (Temporal/Inngest), and Fly.io Firecracker Machines."
    },
-   "notes": "Learning-flow index for serverless and edge compute: AWS Lambda, Vercel Fluid Compute, Cloudflare Workers V8 isolates, durable execution (Temporal/Inngest), and Fly.io Firecracker Machines."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.7-serverless-edge/REVISION.md": {
-   "sha256": "ac8b91b560f10e2fa09459a40c998db0d8439bfa53b178d0b04eb73452e1a277",
+   "sha256": "577c31c3424846f9b64d1a6edf46cc9ea9004ee7be5e9092535d85f2a2abd6c9",
    "lines": 251,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: 2026 serverless and edge architecture boundaries across AWS Lambda, Cloudflare Workers, Vercel, Temporal, and Fly.io.",
-    "readable": "Full read of 251 lines (2,676 prose words). Active-recall Q&A companion covering Firecracker microVMs vs V8 isolates, Lambda SnapStart, RDS Proxy connection pooling, durable step replay, and Cloudflare SPA routing.",
-    "concise": "2,676 words across 251 lines. Active-recall Q&A companion covering Firecracker microVMs vs V8 isolates, Lambda SnapStart, RDS Proxy connection pooling, durable step replay, and Cloudflare SPA routing.",
+    "readable": "Full read of 251 lines (2729 prose words). (2,676 prose words). Active-recall Q&A companion covering Firecracker microVMs vs V8 isolates, Lambda SnapStart, RDS Proxy connection pooling, durable step replay, and Cloudflare SPA routing.",
+    "concise": "2729 words across 251 lines. 2,676 words across 251 lines. Active-recall Q&A companion covering Firecracker microVMs vs V8 isolates, Lambda SnapStart, RDS Proxy connection pooling, durable step replay, and Cloudflare SPA routing.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering Firecracker microVMs vs V8 isolates, Lambda SnapStart, RDS Proxy connection pooling, durable step replay, and Cloudflare SPA routing.",
     "fast": "Measured 31.1 KB raw / 10.0 KB gzip. Active-recall Q&A companion covering Firecracker microVMs vs V8 isolates, Lambda SnapStart, RDS Proxy connection pooling, durable step replay, and Cloudflare SPA routing.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering Firecracker microVMs vs V8 isolates, Lambda SnapStart, RDS Proxy connection pooling, durable step replay, and Cloudflare SPA routing."
    },
-   "notes": "Active-recall Q&A companion covering Firecracker microVMs vs V8 isolates, Lambda SnapStart, RDS Proxy connection pooling, durable step replay, and Cloudflare SPA routing."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md": {
-   "sha256": "c5deb7683575f4e17167da69f69b9d9ef6a5622787b1023ba2b66d18b8cd9820",
-   "lines": 147,
+   "sha256": "1127acfa210890d65a3d9516dee2a6ad44288e42317df38e9faa7edc9de77f3b",
+   "lines": 151,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Monorepo dependency graph invariants, CODEOWNERS boundaries, and affected-only CI execution.",
-    "readable": "Full read of 147 lines (983 prose words). Covers monorepo vs polyrepo trade-offs, atomic cross-package commits, DAG affected-graph computation, and why naive CI fails without remote task caching.",
-    "concise": "983 words across 147 lines. Covers monorepo vs polyrepo trade-offs, atomic cross-package commits, DAG affected-graph computation, and why naive CI fails without remote task caching.",
+    "readable": "Full read of 151 lines (987 prose words). Covers monorepo vs polyrepo trade-offs, atomic cross-package commits, DAG affected-graph computation, and why naive CI fails without remote task caching.",
+    "concise": "987 words across 151 lines. Covers monorepo vs polyrepo trade-offs, atomic cross-package commits, DAG affected-graph computation, and why naive CI fails without remote task caching.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers monorepo vs polyrepo trade-offs, atomic cross-package commits, DAG affected-graph computation, and why naive CI fails without remote task caching.",
     "fast": "Measured 22.0 KB raw / 6.7 KB gzip. Covers monorepo vs polyrepo trade-offs, atomic cross-package commits, DAG affected-graph computation, and why naive CI fails without remote task caching.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers monorepo vs polyrepo trade-offs, atomic cross-package commits, DAG affected-graph computation, and why naive CI fails without remote task caching."
    },
-   "notes": "Covers monorepo vs polyrepo trade-offs, atomic cross-package commits, DAG affected-graph computation, and why naive CI fails without remote task caching."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.8-monorepo/40.8.02-turborepo.md": {
-   "sha256": "43ff83ab81ac6e253763745f7b785b2254f6d8bd90d598a6e654dfa4c724dc9d",
-   "lines": 166,
+   "sha256": "e24c669278642692995bf7fe2c9193fa97d13137e0f48dbc83e284733ca24c0f",
+   "lines": 174,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Turborepo 2.x `tasks` schema, remote cache signature verification, and minimal Docker build contexts.",
-    "readable": "Full read of 166 lines (972 prose words). Covers Turborepo 2.x `turbo.json` `tasks` DAG (`dependsOn: ['^build']`), deterministic input/output hashing, Remote Caching, and `turbo prune --docker`.",
-    "concise": "972 words across 166 lines. Covers Turborepo 2.x `turbo.json` `tasks` DAG (`dependsOn: ['^build']`), deterministic input/output hashing, Remote Caching, and `turbo prune --docker`.",
+    "readable": "Full read of 174 lines (990 prose words). Covers Turborepo 2.x `turbo.json` `tasks` DAG (`dependsOn: ['^build']`), deterministic input/output hashing, Remote Caching, and `turbo prune --docker`.",
+    "concise": "990 words across 174 lines. Covers Turborepo 2.x `turbo.json` `tasks` DAG (`dependsOn: ['^build']`), deterministic input/output hashing, Remote Caching, and `turbo prune --docker`.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers Turborepo 2.x `turbo.json` `tasks` DAG (`dependsOn: ['^build']`), deterministic input/output hashing, Remote Caching, and `turbo prune --docker`.",
     "fast": "Measured 25.0 KB raw / 6.6 KB gzip. Covers Turborepo 2.x `turbo.json` `tasks` DAG (`dependsOn: ['^build']`), deterministic input/output hashing, Remote Caching, and `turbo prune --docker`.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers Turborepo 2.x `turbo.json` `tasks` DAG (`dependsOn: ['^build']`), deterministic input/output hashing, Remote Caching, and `turbo prune --docker`."
    },
-   "notes": "Covers Turborepo 2.x `turbo.json` `tasks` DAG (`dependsOn: ['^build']`), deterministic input/output hashing, Remote Caching, and `turbo prune --docker`."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.8-monorepo/40.8.03-nx.md": {
-   "sha256": "0d9f4a80c9989af477344ce590af98a3a1a97b5b740ec3263ef87ef019c1a2cb",
-   "lines": 138,
+   "sha256": "94cc713872e33d8c26b7d47d69508f65e39fd26bae75b4884edfc05d64d80cc7",
+   "lines": 144,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Nx 24 unified `nx affected -t` CLI (removing legacy `nx affected:test` subcommands) and tag-based boundary enforcement.",
-    "readable": "Full read of 138 lines (1,153 prose words). Covers Nx 24 project graph analysis, `nx affected -t lint test build`, `@nx/enforce-module-boundaries` ESLint architectural tags, and Nx Cloud distributed task execution.",
-    "concise": "1,153 words across 138 lines. Covers Nx 24 project graph analysis, `nx affected -t lint test build`, `@nx/enforce-module-boundaries` ESLint architectural tags, and Nx Cloud distributed task execution.",
+    "readable": "Full read of 144 lines (1162 prose words). (1,153 prose words). Covers Nx 24 project graph analysis, `nx affected -t lint test build`, `@nx/enforce-module-boundaries` ESLint architectural tags, and Nx Cloud distributed task execution.",
+    "concise": "1162 words across 144 lines. 1,153 words across 138 lines. Covers Nx 24 project graph analysis, `nx affected -t lint test build`, `@nx/enforce-module-boundaries` ESLint architectural tags, and Nx Cloud distributed task execution.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers Nx 24 project graph analysis, `nx affected -t lint test build`, `@nx/enforce-module-boundaries` ESLint architectural tags, and Nx Cloud distributed task execution.",
     "fast": "Measured 20.7 KB raw / 6.4 KB gzip. Covers Nx 24 project graph analysis, `nx affected -t lint test build`, `@nx/enforce-module-boundaries` ESLint architectural tags, and Nx Cloud distributed task execution.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers Nx 24 project graph analysis, `nx affected -t lint test build`, `@nx/enforce-module-boundaries` ESLint architectural tags, and Nx Cloud distributed task execution."
    },
-   "notes": "Covers Nx 24 project graph analysis, `nx affected -t lint test build`, `@nx/enforce-module-boundaries` ESLint architectural tags, and Nx Cloud distributed task execution."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md": {
-   "sha256": "a2944047c3c9775f0391993d6155a0f0321281349e8b0051b93a58a70b9627b3",
-   "lines": 186,
+   "sha256": "e5478388f121ffea2a3dc92bb0cc08271f87061b7ac9a69b00ebfb4eee35cfcd",
+   "lines": 190,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: pnpm 10 workspace catalogs (`pnpm-workspace.yaml`), strict symlink layout, and OIDC provenance publishing.",
-    "readable": "Full read of 186 lines (885 prose words). Covers pnpm workspaces (`workspace:*` protocol and `catalog:` shared dependency pinning), hard-link CAS store preventing phantom dependencies, vs npm/Yarn Plug'n'Play and Bazel.",
-    "concise": "885 words across 186 lines. Covers pnpm workspaces (`workspace:*` protocol and `catalog:` shared dependency pinning), hard-link CAS store preventing phantom dependencies, vs npm/Yarn Plug'n'Play and Bazel.",
+    "readable": "Full read of 190 lines (905 prose words). Covers pnpm workspaces (`workspace:*` protocol and `catalog:` shared dependency pinning), hard-link CAS store preventing phantom dependencies, vs npm/Yarn Plug'n'Play and Bazel.",
+    "concise": "905 words across 190 lines. Covers pnpm workspaces (`workspace:*` protocol and `catalog:` shared dependency pinning), hard-link CAS store preventing phantom dependencies, vs npm/Yarn Plug'n'Play and Bazel.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers pnpm workspaces (`workspace:*` protocol and `catalog:` shared dependency pinning), hard-link CAS store preventing phantom dependencies, vs npm/Yarn Plug'n'Play and Bazel.",
     "fast": "Measured 24.2 KB raw / 7.6 KB gzip. Covers pnpm workspaces (`workspace:*` protocol and `catalog:` shared dependency pinning), hard-link CAS store preventing phantom dependencies, vs npm/Yarn Plug'n'Play and Bazel.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers pnpm workspaces (`workspace:*` protocol and `catalog:` shared dependency pinning), hard-link CAS store preventing phantom dependencies, vs npm/Yarn Plug'n'Play and Bazel."
    },
-   "notes": "Covers pnpm workspaces (`workspace:*` protocol and `catalog:` shared dependency pinning), hard-link CAS store preventing phantom dependencies, vs npm/Yarn Plug'n'Play and Bazel."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md": {
-   "sha256": "56c8b1b3309e00cfbcda7fc3b489fa5b66f861bd8e9984d32ac1ed097b985bd2",
-   "lines": 140,
+   "sha256": "6fab9b7cb98962fea70d86445b22ad389cdd0845a780e966a5ab51a4b67a5288",
+   "lines": 146,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: `@changesets/cli` monorepo release pipeline and npm `--provenance` publishing.",
-    "readable": "Full read of 140 lines (1,064 prose words). Covers independent vs lockstep SemVer versioning, Changesets Markdown intent files, automated version-PR generation, and internal JIT TypeScript packages.",
-    "concise": "1,064 words across 140 lines. Covers independent vs lockstep SemVer versioning, Changesets Markdown intent files, automated version-PR generation, and internal JIT TypeScript packages.",
+    "readable": "Full read of 146 lines (1070 prose words). (1,064 prose words). Covers independent vs lockstep SemVer versioning, Changesets Markdown intent files, automated version-PR generation, and internal JIT TypeScript packages.",
+    "concise": "1070 words across 146 lines. 1,064 words across 140 lines. Covers independent vs lockstep SemVer versioning, Changesets Markdown intent files, automated version-PR generation, and internal JIT TypeScript packages.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers independent vs lockstep SemVer versioning, Changesets Markdown intent files, automated version-PR generation, and internal JIT TypeScript packages.",
     "fast": "Measured 19.1 KB raw / 6.5 KB gzip. Covers independent vs lockstep SemVer versioning, Changesets Markdown intent files, automated version-PR generation, and internal JIT TypeScript packages.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers independent vs lockstep SemVer versioning, Changesets Markdown intent files, automated version-PR generation, and internal JIT TypeScript packages."
    },
-   "notes": "Covers independent vs lockstep SemVer versioning, Changesets Markdown intent files, automated version-PR generation, and internal JIT TypeScript packages."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.8-monorepo/40.8.06-interview-questions.md": {
-   "sha256": "374d0c88c8299634552cb28fcd10b34282ad394aea21c0b786bf5291dd074323",
+   "sha256": "f24a23643df9fac3c933c112498fa0fb5665904a71ea7b36bf5fbbd52ca5df8f",
    "lines": 187,
    "genre": "interview",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Turborepo 2.x, Nx 24, pnpm 10 workspaces, and Changesets.",
-    "readable": "Full read of 187 lines (2,156 prose words). Covers senior monorepo interview questions on remote cache poisoning, phantom dependencies, circular workspace imports, and Docker image bloat.",
-    "concise": "2,156 words across 187 lines. Covers senior monorepo interview questions on remote cache poisoning, phantom dependencies, circular workspace imports, and Docker image bloat.",
+    "readable": "Full read of 187 lines (2161 prose words). (2,156 prose words). Covers senior monorepo interview questions on remote cache poisoning, phantom dependencies, circular workspace imports, and Docker image bloat.",
+    "concise": "2161 words across 187 lines. 2,156 words across 187 lines. Covers senior monorepo interview questions on remote cache poisoning, phantom dependencies, circular workspace imports, and Docker image bloat.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers senior monorepo interview questions on remote cache poisoning, phantom dependencies, circular workspace imports, and Docker image bloat.",
     "fast": "Measured 24.9 KB raw / 8.5 KB gzip. Covers senior monorepo interview questions on remote cache poisoning, phantom dependencies, circular workspace imports, and Docker image bloat.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers senior monorepo interview questions on remote cache poisoning, phantom dependencies, circular workspace imports, and Docker image bloat."
    },
-   "notes": "Covers senior monorepo interview questions on remote cache poisoning, phantom dependencies, circular workspace imports, and Docker image bloat."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.8-monorepo/INDEX.md": {
-   "sha256": "a4f62702fc2548e6e0c108a652a485ec95bd51cea991fb9c2d94735a03bb26fd",
+   "sha256": "0e312ed1d7bc78b6b50c4b897d964601dcc6133ff3737992d0a4dd1c5796eb87",
    "lines": 128,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Turborepo 2.x, Nx 24 task-based `nx affected`, pnpm 10 workspaces/catalogs, and Changesets.",
-    "readable": "Full read of 128 lines (240 prose words). Learning-flow index for monorepo architecture: pnpm workspaces, Turborepo task caching, Nx 24 project graphs and module boundaries, and Changesets release automation.",
-    "concise": "240 words across 128 lines. Learning-flow index for monorepo architecture: pnpm workspaces, Turborepo task caching, Nx 24 project graphs and module boundaries, and Changesets release automation.",
+    "readable": "Full read of 128 lines (246 prose words). Learning-flow index for monorepo architecture: pnpm workspaces, Turborepo task caching, Nx 24 project graphs and module boundaries, and Changesets release automation.",
+    "concise": "246 words across 128 lines. Learning-flow index for monorepo architecture: pnpm workspaces, Turborepo task caching, Nx 24 project graphs and module boundaries, and Changesets release automation.",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for monorepo architecture: pnpm workspaces, Turborepo task caching, Nx 24 project graphs and module boundaries, and Changesets release automation.",
     "fast": "Measured 16.0 KB raw / 4.6 KB gzip. Learning-flow index for monorepo architecture: pnpm workspaces, Turborepo task caching, Nx 24 project graphs and module boundaries, and Changesets release automation.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for monorepo architecture: pnpm workspaces, Turborepo task caching, Nx 24 project graphs and module boundaries, and Changesets release automation."
    },
-   "notes": "Learning-flow index for monorepo architecture: pnpm workspaces, Turborepo task caching, Nx 24 project graphs and module boundaries, and Changesets release automation."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.8-monorepo/REVISION.md": {
-   "sha256": "df3fc8689cd411c08e2be0111cf8b929dd73a1dabff3d1dc3decdf31cdda9c17",
+   "sha256": "ebff783920152c448bc31231530fdd7170e17c659368a0b6aeb90e54a81af9e2",
    "lines": 99,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Turborepo `turbo.json` (`tasks`), Nx 24 (`nx affected -t`), pnpm strict node_modules, and Changesets.",
-    "readable": "Full read of 99 lines (670 prose words). Active-recall Q&A companion covering topological task DAGs, content-addressable remote caching, phantom dependencies, and fixed vs independent versioning.",
-    "concise": "670 words across 99 lines. Active-recall Q&A companion covering topological task DAGs, content-addressable remote caching, phantom dependencies, and fixed vs independent versioning.",
+    "readable": "Full read of 99 lines (687 prose words). Active-recall Q&A companion covering topological task DAGs, content-addressable remote caching, phantom dependencies, and fixed vs independent versioning.",
+    "concise": "687 words across 99 lines. Active-recall Q&A companion covering topological task DAGs, content-addressable remote caching, phantom dependencies, and fixed vs independent versioning.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering topological task DAGs, content-addressable remote caching, phantom dependencies, and fixed vs independent versioning.",
     "fast": "Measured 13.5 KB raw / 4.6 KB gzip. Active-recall Q&A companion covering topological task DAGs, content-addressable remote caching, phantom dependencies, and fixed vs independent versioning.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering topological task DAGs, content-addressable remote caching, phantom dependencies, and fixed vs independent versioning."
    },
-   "notes": "Active-recall Q&A companion covering topological task DAGs, content-addressable remote caching, phantom dependencies, and fixed vs independent versioning."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md": {
-   "sha256": "e964922536a2205293b5bd94ac9540b4b9d1c0cb7ab1fc334bf56bfcf98465f5",
-   "lines": 133,
+   "sha256": "2ef21a3e676a095eb245509bb10c059c1a593a8c30dd6fc898ce2748f8a32c4f",
+   "lines": 149,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against OCI image digests, Kubernetes Secrets/ConfigMaps, graceful SIGTERM draining, and OpenTelemetry stdout/OTLP pipelines.",
-    "readable": "Full read of 133 lines (1,621 prose words). Opens with a snowflaked VM deployment that fails during horizontal scaling before walking through all 12 factors grouped by Code & Build (I-V), Runtime & State (VI-IX), and Operations (X-XII), plus modern cloud-native extensions.",
-    "concise": "1,621 words across 133 lines. Complete 12-factor table, SIGTERM drain example, and Beyond-12-Factor extensions.",
+    "readable": "Full read of 149 lines (1689 prose words). (1,621 prose words). Opens with a snowflaked VM deployment that fails during horizontal scaling before walking through all 12 factors grouped by Code & Build (I-V), Runtime & State (VI-IX), and Operations (X-XII), plus modern cloud-native extensions.",
+    "concise": "1689 words across 149 lines. 1,621 words across 133 lines. Complete 12-factor table, SIGTERM drain example, and Beyond-12-Factor extensions.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for the Twelve-Factor App: explains the failure mode behind each factor, its concrete Kubernetes/Docker implementation, and modern secret-delivery adaptations.",
     "fast": "Measured 22.5 KB raw / 8.2 KB gzip. Compact table and single Node.js graceful shutdown snippet.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Calls out the security boundary on Factor III (Config): environment variables leak into crash dumps and `/proc/<pid>/environ`, so sensitive credentials belong in tmpfs volume mounts (`/var/run/secrets`)."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.9-twelve-factor/40.9.02-interview-questions.md": {
-   "sha256": "7346b421660e74ae003b6095d13c1c3328141c82ed78075df9a1cf379e839d95",
+   "sha256": "70bfa3e1a80ef3056d115b573e5c6664cf802e903db958c2b36ff01816e7dea8",
    "lines": 164,
    "genre": "interview",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against the 2024\u20132026 Twelve-Factor community refresh (`12factor.net` and `github.com/twelve-factor/twelve-factor`), OpenTelemetry OTLP vs stdout, and Kubernetes Pod lifecycle contracts.",
-    "readable": "Full read of 164 lines (1,767 prose words). 25-question Twelve-Factor interview bank spanning Beginner, Intermediate, Advanced, Behavioral/Scenario Drills, and The Modern Contract (OpenTelemetry, secret delivery, Kubernetes/serverless mappings).",
-    "concise": "1,767 words across 164 lines. Covers 25 scenario and architecture questions without filler.",
+    "readable": "Full read of 164 lines (1816 prose words). (1,767 prose words). 25-question Twelve-Factor interview bank spanning Beginner, Intermediate, Advanced, Behavioral/Scenario Drills, and The Modern Contract (OpenTelemetry, secret delivery, Kubernetes/serverless mappings).",
+    "concise": "1816 words across 164 lines. 1,767 words across 164 lines. Covers 25 scenario and architecture questions without filler.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical interview drill for 40.9-twelve-factor: frames every answer around Factor name, Mechanism, Failure mode, Fix, and Legitimate deviation boundary.",
     "fast": "Measured 22.5 KB raw / 8.1 KB gzip. Pure markdown Q&A with a single 8-line text answer framework.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Distinguishes reconstructible in-process warmth (connection pools, JIT caches) from durable business state boundaries so candidates do not over-apply Factor VI statelessness."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.9-twelve-factor/INDEX.md": {
-   "sha256": "25d78a57f46c7b20cb290f47120850da0388547bb865c1d88faa5493b114e13d",
+   "sha256": "efa713835f9f30473fa4b39897217d482c3a0358c7b97591adb3652b254b265e",
    "lines": 109,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Beyond the Twelve-Factor App extensions (telemetry, auth/zero-trust, API-first contracts).",
-    "readable": "Full read of 109 lines (315 prose words). Introduces the Twelve-Factor App methodology stack (`40.9.01`, `REVISION.md`, `40.9.02`) and maps each factor to modern Kubernetes, cloud-native CI/CD, and serverless equivalents.",
-    "concise": "315 words across 109 lines. Factor-to-platform mapping table.",
+    "readable": "Full read of 109 lines (322 prose words). Introduces the Twelve-Factor App methodology stack (`40.9.01`, `REVISION.md`, `40.9.02`) and maps each factor to modern Kubernetes, cloud-native CI/CD, and serverless equivalents.",
+    "concise": "322 words across 109 lines. Factor-to-platform mapping table.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical index for 40.9-twelve-factor: provides a two-pass study flow covering the original 12 factors and modern cloud-native evolutions.",
     "fast": "Measured 17.3 KB raw / 5.4 KB gzip. Lightweight index table.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Maps every 2011 Heroku factor boundary directly to its 2026 Kubernetes/cloud primitive (OCI digests, External Secrets Operator, HPA, SIGTERM graceful drain)."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.9-twelve-factor/REVISION.md": {
-   "sha256": "6e08cb44c54d3937b8d163b1ff830e031742bc203d9ba480dc61f89c9733703a",
+   "sha256": "576d06fa0c4a80dcce8a756be1ce5589518dd55f9e0c2dabc268ebd91adecfdc",
    "lines": 83,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Kubernetes Pod lifecycle hooks (`preStop`, `SIGTERM`) and immutable OCI digest deployments.",
-    "readable": "Full read of 83 lines (577 prose words). Active-recall revision companion for the Twelve-Factor App with scenario-driven Q&A covering build/release/run immutability, env config secrets, disposability, and port binding.",
-    "concise": "577 words across 83 lines. 8 high-signal Q&A pairs linked to `40.9.01`.",
+    "readable": "Full read of 83 lines (594 prose words). Active-recall revision companion for the Twelve-Factor App with scenario-driven Q&A covering build/release/run immutability, env config secrets, disposability, and port binding.",
+    "concise": "594 words across 83 lines. 8 high-signal Q&A pairs linked to `40.9.01`.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical revision companion for 40.9-twelve-factor: tests the most frequently violated factors in production migrations.",
     "fast": "Measured 11.7 KB raw / 4.2 KB gzip. Under 90 lines; instant scan.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Focuses on the operational failure modes of violating each factor during autoscaling or spot-instance preemption."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/INDEX.md": {
-   "sha256": "a4fd76c634fb0d1bcdad8d924ff3108293af6873c27acf21dece57278892021e",
+   "sha256": "8f0a47555445f8785253d92aa3d3084dccf0fe48cb8147ad0d66dda06b92413a",
    "lines": 132,
    "genre": "index",
    "status": "read",
@@ -11175,7 +11185,7 @@
     "fast": "Measured 17.1 KB raw / 5.8 KB gzip. Pure markdown navigation table.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Frames platform engineering as a single end-to-end production boundary: build (40.5/40.8) -> containerize (40.1) -> CI/CD (40.3) -> provision & orchestrate (40.12/40.2) -> route & cache (40.11/40.10/40.7) -> observe (40.4)."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "50-quality/50.1-testing/01-foundations/50.1.1.01-testing-overview.md": {
    "sha256": "1798cc8d3a61d77811ec83a8a34670a900b2c8f2f51be703767585c8ad333748",
@@ -14271,7 +14281,7 @@
    }
   },
   "INDEX.md": {
-   "sha256": "7dc260f9047c239ef4a6aa572644e5c9b2c7bfcf43fc34948de989d37d8ac588",
+   "sha256": "33c602c3d6a52244d43f3724d45c42598a9e7c248d982db12b97a82f8a28c022",
    "lines": 206,
    "genre": "index",
    "status": "read",
@@ -14284,7 +14294,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Maintains strict zero-broken-link boundary across 991 tracked markdown files."
    },
-   "notes": "Synced live read-time and counts after Wave 4C (40.5-build-tools and 40.6-git-advanced)."
+   "notes": "Synced live read-time and counts after Wave 4D (40.7-serverless-edge through 40.12-iac)."
   },
   "README.md": {
    "sha256": "d885528e428ea38f115bc62b8bac76e421c317edae2aeb312516f3f01fd17a5f",
@@ -14572,7 +14582,7 @@
    "notes": "Updated section-pass rule 3 to permit full comprehension rewrites while preserving metadata, anchors, and authored REVISION.md pairs."
   },
   "docs/api-contract.md": {
-   "sha256": "9c1691cac60abc2440d7be21c6f3d50dd83890d84a9afaec8f3dcad7eec69a6e",
+   "sha256": "071dda9fb3e5418f22f9418c1313e1ad73c6103e6c2311aa9b2dd566261b54f0",
    "lines": 119,
    "genre": "doc",
    "status": "read",
@@ -14585,7 +14595,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Wave 4C (40.5-build-tools and 40.6-git-advanced)."
+   "notes": "Synced live read-time and counts after Wave 4D (40.7-serverless-edge through 40.12-iac)."
   },
   "docs/deployment.md": {
    "sha256": "ea99a37f317c2a867f6f19756e78b15e15853b729507e8f02c3d9e64d00d59bb",

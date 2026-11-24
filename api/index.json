@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "511f22806eefa0e0832ff040e343700433624b0cb37200defa3dc682b1512ef0",
+ "corpus_digest": "7d3557e3a1e61d775eae33c478d37bcc2e0c974d9f7b9d79bd763da35de02e12",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5398
+  "read_minutes": 5400
  },
  "chapters": [
   {
@@ -5995,7 +5995,7 @@
     "spa",
     "vite"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "40-platform/40.7-serverless-edge/REVISION.html",
@@ -6053,7 +6053,7 @@
     "reference",
     "tool"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.html",

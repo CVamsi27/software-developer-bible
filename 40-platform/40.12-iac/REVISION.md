@@ -28,27 +28,27 @@ Source: [40.12.01 — Infrastructure as Code & Terraform Fundamentals](40.12.01-
 
 **Q:** What is the difference between import and configuration reconciliation?
 
-**A:** Import binds an existing remote ID to a Terraform address. The configuration must still describe the intended settings or a later plan may change or destroy it. A `moved` block handles an address refactor for an object already tracked by Terraform. See [import](https://developer.hashicorp.com/terraform/language/import) and [refactoring](https://developer.hashicorp.com/terraform/language/modules/develop/refactoring).
+**A:** Import binds an existing remote identifier (ID) to a Terraform address. The configuration must still describe the intended settings or a later plan may change or destroy it. A `moved` block handles an address refactor for an object already tracked by Terraform. See [import](https://developer.hashicorp.com/terraform/language/import) and [refactoring](https://developer.hashicorp.com/terraform/language/modules/develop/refactoring).
 
-**Q:** Why are remote API results necessary after a successful apply?
+**Q:** Why are remote Application Programming Interface (API) results necessary after a successful apply?
 
 **A:** The command establishes which provider operations reported success. Service behavior, propagation, access, and readiness need deployment-specific checks; Terraform apply is not a transaction or service-level health test.
 
 **Q:** Plan observes an object, then someone edits it before apply. Does the saved plan stop that edit?
 
-**A:** No. Supported state locks control Terraform operations on that state, not external console writes. Apply can encounter different conditions; verify the target, review changes and inspect actual outcomes.
+**A:** No. Supported state locks control Terraform operations on that state, not external console writes. Apply can encounter different conditions; verify the target, review changes, and inspect actual outcomes.
 
 **Q:** Does reading a secret-manager value keep it out of ordinary state?
 
-**A:** Not necessarily. A provider data result can be persisted. `sensitive` redacts display; supported ephemeral/write-only contracts can omit values from plan and state files. Protect the remaining artifacts. See [sensitive data handling](https://developer.hashicorp.com/terraform/language/manage-sensitive-data).
+**A:** Not necessarily. A provider data result can be persisted. `sensitive` redacts display; supported ephemeral and write-only contracts can omit values from plan and state files. Protect the remaining artifacts. See [sensitive data handling](https://developer.hashicorp.com/terraform/language/manage-sensitive-data).
 
-**Q:** Which Amazon S3 backend setting enables native state locking?
+**Q:** Which Amazon Simple Storage Service (S3) backend setting enables native state locking?
 
-**A:** `use_lockfile = true` opts into S3 lock files and requires read/write/delete permissions on the `.tflock` object. S3 does not enable locking by default; DynamoDB locking is deprecated. See the [S3 backend requirements](https://developer.hashicorp.com/terraform/language/backend/s3).
+**A:** `use_lockfile = true` opts into S3 lock files and requires read, write, and delete permissions on the `.tflock` object. S3 does not enable locking by default; DynamoDB locking is deprecated. See the [S3 backend requirements](https://developer.hashicorp.com/terraform/language/backend/s3).
 
 **Q:** Is the Cloud Development Kit for Terraform (CDKTF) maintained for new projects?
 
-**A:** HashiCorp deprecated it on 10 December 2025 and stopped maintaining it. Existing projects need an explicit support/migration choice. AWS CDK is a different tool and synthesizes CloudFormation.
+**A:** HashiCorp deprecated it on December 10, 2025 and stopped maintaining it. Existing projects need an explicit support and migration choice. Amazon Web Services Cloud Development Kit (AWS CDK) is a different tool and synthesizes CloudFormation.
 
 **Q:** Why might retrying after a partial apply need import rather than another create?
 

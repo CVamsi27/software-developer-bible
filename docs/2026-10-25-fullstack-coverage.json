@@ -19598,7 +19598,7 @@
     },
     {
       "path": "40-platform/40.10-cdn/40.10.01-cdn-architecture.md",
-      "sha256": "b4c88914caed250f2aa10f44b9182ceff7467a4ce17eac9a371a172eb5fa503d",
+      "sha256": "a5b4bc5ac93c7fdf53c13f86e2fde0052914c15dfe6cd31879a1897c7a447c28",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -19623,17 +19623,17 @@
       },
       "review": {
         "path": "40-platform/40.10-cdn/40.10.01-cdn-architecture.md",
-        "sha256": "b4c88914caed250f2aa10f44b9182ceff7467a4ce17eac9a371a172eb5fa503d",
+        "sha256": "a5b4bc5ac93c7fdf53c13f86e2fde0052914c15dfe6cd31879a1897c7a447c28",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read of CDN architecture, steering, media and companion contracts: representation identity and per-hit authorization, stale/cold paths, origin access, independent purge outcomes, DNS/RUM limits, bounded versioned transforms, canonical signed fields and video resources. HHS current primary guidance rechecked for ePHI processing and absence of blanket US residency rule; no legal compliance, CDN deployment or measured savings inferred. Removed unverified Docita deployment assertion in bank."
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 123 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment."
       }
     },
     {
       "path": "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md",
-      "sha256": "1d97c662dd33ef165d918c966896829e1fd349ffa784692b8e2fcad925ed42f9",
+      "sha256": "1bb38da5ae5ae26987def51091fc1c277d6151d463407230266cf871f6d06900",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -19657,17 +19657,17 @@
       },
       "review": {
         "path": "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md",
-        "sha256": "1d97c662dd33ef165d918c966896829e1fd349ffa784692b8e2fcad925ed42f9",
+        "sha256": "1bb38da5ae5ae26987def51091fc1c277d6151d463407230266cf871f6d06900",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read of CDN architecture, steering, media and companion contracts: representation identity and per-hit authorization, stale/cold paths, origin access, independent purge outcomes, DNS/RUM limits, bounded versioned transforms, canonical signed fields and video resources. HHS current primary guidance rechecked for ePHI processing and absence of blanket US residency rule; no legal compliance, CDN deployment or measured savings inferred. Removed unverified Docita deployment assertion in bank."
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 118 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment."
       }
     },
     {
       "path": "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md",
-      "sha256": "8d36325c8ab6fa11fd9b54d0ccc982a3aa02da6a7742a893079fbc9e53dc0c8e",
+      "sha256": "91ad24c151b2377a5cf2a8f5046349061726eb66e133450bd07441b7ebf8c377",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -19689,17 +19689,17 @@
       },
       "review": {
         "path": "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md",
-        "sha256": "8d36325c8ab6fa11fd9b54d0ccc982a3aa02da6a7742a893079fbc9e53dc0c8e",
+        "sha256": "91ad24c151b2377a5cf2a8f5046349061726eb66e133450bd07441b7ebf8c377",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read of CDN architecture, steering, media and companion contracts: representation identity and per-hit authorization, stale/cold paths, origin access, independent purge outcomes, DNS/RUM limits, bounded versioned transforms, canonical signed fields and video resources. HHS current primary guidance rechecked for ePHI processing and absence of blanket US residency rule; no legal compliance, CDN deployment or measured savings inferred. Removed unverified Docita deployment assertion in bank."
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 169 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment."
       }
     },
     {
       "path": "40-platform/40.10-cdn/40.10.04-interview-questions.md",
-      "sha256": "d64f654004892ddd0954f0e2a2330d1690e9b9d7c3b65a34d8c04ba1e282a445",
+      "sha256": "9fea6658274809a0749895710829a577199b34baf051366cc5fe7206e7486875",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -19721,17 +19721,17 @@
       },
       "review": {
         "path": "40-platform/40.10-cdn/40.10.04-interview-questions.md",
-        "sha256": "d64f654004892ddd0954f0e2a2330d1690e9b9d7c3b65a34d8c04ba1e282a445",
+        "sha256": "9fea6658274809a0749895710829a577199b34baf051366cc5fe7206e7486875",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read of CDN architecture, steering, media and companion contracts: representation identity and per-hit authorization, stale/cold paths, origin access, independent purge outcomes, DNS/RUM limits, bounded versioned transforms, canonical signed fields and video resources. HHS current primary guidance rechecked for ePHI processing and absence of blanket US residency rule; no legal compliance, CDN deployment or measured savings inferred. Removed unverified Docita deployment assertion in bank."
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 178 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment."
       }
     },
     {
       "path": "40-platform/40.10-cdn/INDEX.md",
-      "sha256": "71ed5f87c79729a0cd28d215142e589cbc10f19fb32e8889428c123b11fbc7ee",
+      "sha256": "ce662b6641f5c8bea2a55fddffa006dfbf36da55534ce9bf804d32a6b00c7108",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -19753,17 +19753,17 @@
       },
       "review": {
         "path": "40-platform/40.10-cdn/INDEX.md",
-        "sha256": "71ed5f87c79729a0cd28d215142e589cbc10f19fb32e8889428c123b11fbc7ee",
+        "sha256": "ce662b6641f5c8bea2a55fddffa006dfbf36da55534ce9bf804d32a6b00c7108",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read of CDN architecture, steering, media and companion contracts: representation identity and per-hit authorization, stale/cold paths, origin access, independent purge outcomes, DNS/RUM limits, bounded versioned transforms, canonical signed fields and video resources. HHS current primary guidance rechecked for ePHI processing and absence of blanket US residency rule; no legal compliance, CDN deployment or measured savings inferred. Removed unverified Docita deployment assertion in bank."
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 93 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment."
       }
     },
     {
       "path": "40-platform/40.10-cdn/REVISION.md",
-      "sha256": "61d539a77cc8f01db4fa6ae6a965dc6a19d027b3f4ec71f55a6f4e61aad2534d",
+      "sha256": "5d0294501f4e43fe161d872d8985571629f2cc2cac62d11f2c714481236ad8e8",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -19782,17 +19782,17 @@
       },
       "review": {
         "path": "40-platform/40.10-cdn/REVISION.md",
-        "sha256": "61d539a77cc8f01db4fa6ae6a965dc6a19d027b3f4ec71f55a6f4e61aad2534d",
+        "sha256": "5d0294501f4e43fe161d872d8985571629f2cc2cac62d11f2c714481236ad8e8",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read of CDN architecture, steering, media and companion contracts: representation identity and per-hit authorization, stale/cold paths, origin access, independent purge outcomes, DNS/RUM limits, bounded versioned transforms, canonical signed fields and video resources. HHS current primary guidance rechecked for ePHI processing and absence of blanket US residency rule; no legal compliance, CDN deployment or measured savings inferred. Removed unverified Docita deployment assertion in bank."
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 111 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment."
       }
     },
     {
       "path": "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md",
-      "sha256": "c0f191ffb1c0373c8a038513e2da77b2db74d93915724ce1c06efba9b97af958",
+      "sha256": "bc89250824d9a274dd8e49c4b5d6e691eedf1d4ab736e84efdbc60409253218e",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -19815,18 +19815,18 @@
       },
       "review": {
         "path": "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md",
-        "sha256": "c0f191ffb1c0373c8a038513e2da77b2db74d93915724ce1c06efba9b97af958",
+        "sha256": "bc89250824d9a274dd8e49c4b5d6e691eedf1d4ab736e84efdbc60409253218e",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full request/worker/location/upstream trace and all25answers/revision read. Checked1.29.7 defaults, idle versus total timeouts, buffering, TLS/SNI, trusted peers, retry ambiguity and reload boundaries against official docs. Repaired bank502/504/startup-versus-connect-timeout confusion and universal edge ownership claim. No running proxy deployment tested.",
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 186 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.11-reverse-proxy/40.11.02-interview-questions.md",
-      "sha256": "e4259bd42060c71edfd0cb1f5c073a83e49c98b1593759d1839dbca417061cae",
+      "sha256": "b72a886a90b628261e4c1c8537367a2c9916165cb8136e2711289639d1f7bd2e",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -19849,18 +19849,18 @@
       },
       "review": {
         "path": "40-platform/40.11-reverse-proxy/40.11.02-interview-questions.md",
-        "sha256": "e4259bd42060c71edfd0cb1f5c073a83e49c98b1593759d1839dbca417061cae",
+        "sha256": "b72a886a90b628261e4c1c8537367a2c9916165cb8136e2711289639d1f7bd2e",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-14",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content read (2026-11-14): Read end to end: beginner, intermediate, advanced, scenario, edge responsibilities. Each answer is one paragraph; the summary compresses the five senior tells without re-answering.",
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 165 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.11-reverse-proxy/INDEX.md",
-      "sha256": "12e4089c51b3cfc359075574fa1ef6c4c340ccf4ff60037e2a735917423a6e2f",
+      "sha256": "fa77b57d08c23f1aa6bb4fb99add5d73ae549b9a282feded8e5412ac5f63e859",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -19879,18 +19879,18 @@
       },
       "review": {
         "path": "40-platform/40.11-reverse-proxy/INDEX.md",
-        "sha256": "12e4089c51b3cfc359075574fa1ef6c4c340ccf4ff60037e2a735917423a6e2f",
+        "sha256": "fa77b57d08c23f1aa6bb4fb99add5d73ae549b9a282feded8e5412ac5f63e859",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full request/worker/location/upstream trace and all25answers/revision read. Checked1.29.7 defaults, idle versus total timeouts, buffering, TLS/SNI, trusted peers, retry ambiguity and reload boundaries against official docs. Repaired bank502/504/startup-versus-connect-timeout confusion and universal edge ownership claim. No running proxy deployment tested.",
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 58 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.11-reverse-proxy/REVISION.md",
-      "sha256": "586da4c0da9b08cde59309354fe50fcaeb8920359fb6c342e87664c92e2dc7d8",
+      "sha256": "1916664830fb3399d8a3ad802717cf680378641da997af5baa22301d0c5995de",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -19907,18 +19907,18 @@
       },
       "review": {
         "path": "40-platform/40.11-reverse-proxy/REVISION.md",
-        "sha256": "586da4c0da9b08cde59309354fe50fcaeb8920359fb6c342e87664c92e2dc7d8",
+        "sha256": "1916664830fb3399d8a3ad802717cf680378641da997af5baa22301d0c5995de",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full request/worker/location/upstream trace and all25answers/revision read. Checked1.29.7 defaults, idle versus total timeouts, buffering, TLS/SNI, trusted peers, retry ambiguity and reload boundaries against official docs. Repaired bank502/504/startup-versus-connect-timeout confusion and universal edge ownership claim. No running proxy deployment tested.",
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 79 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md",
-      "sha256": "ba3c183fede151aa3e3fc552daae6bbd754f7529ed4ae2fb95223a6734c07ad6",
+      "sha256": "ea2eef8b7f91dd1e291b723e70883916053b594e531de4fe8a648a384960d017",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -19941,18 +19941,18 @@
       },
       "review": {
         "path": "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md",
-        "sha256": "ba3c183fede151aa3e3fc552daae6bbd754f7529ed4ae2fb95223a6734c07ad6",
+        "sha256": "ea2eef8b7f91dd1e291b723e70883916053b594e531de4fe8a648a384960d017",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full configuration/state/provider graph, complete local terraform_data exercise, saved plans, partial apply, locking, modules/secrets and all25bank/revision answers read. Reverified primary S3opt-in locking/CDKTFdeprecation/resource contracts. Removed universal role expectation and implied DocitaTerraform adoption. CLI absent, no Terraform or cloud execution claimed.",
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 156 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.12-iac/40.12.02-interview-questions.md",
-      "sha256": "cd2864b831beae478d0683f3fdb1815377e01e7af133c47f4d329c0382f1fbbf",
+      "sha256": "45101a6fb04647c2ec323d04fff169ca210168c13580f428724e3a69a9e5c269",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -19975,18 +19975,18 @@
       },
       "review": {
         "path": "40-platform/40.12-iac/40.12.02-interview-questions.md",
-        "sha256": "cd2864b831beae478d0683f3fdb1815377e01e7af133c47f4d329c0382f1fbbf",
+        "sha256": "45101a6fb04647c2ec323d04fff169ca210168c13580f428724e3a69a9e5c269",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full configuration/state/provider graph, complete local terraform_data exercise, saved plans, partial apply, locking, modules/secrets and all25bank/revision answers read. Reverified primary S3opt-in locking/CDKTFdeprecation/resource contracts. Removed universal role expectation and implied DocitaTerraform adoption. CLI absent, no Terraform or cloud execution claimed.",
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 165 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.12-iac/INDEX.md",
-      "sha256": "7fb216a74002b405e0ac4f8d9443e5541007b86e914c69d14bad58fd43920406",
+      "sha256": "c91f708d7d0401b41860845d9d20fd0032944d5a90cad1f5f95d9aa20094a429",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -20006,18 +20006,18 @@
       },
       "review": {
         "path": "40-platform/40.12-iac/INDEX.md",
-        "sha256": "7fb216a74002b405e0ac4f8d9443e5541007b86e914c69d14bad58fd43920406",
+        "sha256": "c91f708d7d0401b41860845d9d20fd0032944d5a90cad1f5f95d9aa20094a429",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 70 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.12-iac/REVISION.md",
-      "sha256": "5166cdcee197a105fe6949a851a3fbb59d52cfc724901761945950a47fcd2f7d",
+      "sha256": "08011460eee32a0fa9b4da8212613e03480825c02dcc6e594ee29157e42c35d3",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -20034,12 +20034,12 @@
       },
       "review": {
         "path": "40-platform/40.12-iac/REVISION.md",
-        "sha256": "5166cdcee197a105fe6949a851a3fbb59d52cfc724901761945950a47fcd2f7d",
+        "sha256": "08011460eee32a0fa9b4da8212613e03480825c02dcc6e594ee29157e42c35d3",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full configuration/state/provider graph, complete local terraform_data exercise, saved plans, partial apply, locking, modules/secrets and all25bank/revision answers read. Reverified primary S3opt-in locking/CDKTFdeprecation/resource contracts. Removed universal role expectation and implied DocitaTerraform adoption. CLI absent, no Terraform or cloud execution claimed.",
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 75 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
@@ -23530,7 +23530,7 @@
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md",
-      "sha256": "935d7dd3cbf69db7e16e64cfe1d438185be38dfe50ac3b2fa8acee3f5cdf7f15",
+      "sha256": "8fd04b7d5c48f653b3027edb0a79c5843694226adfe14fca351d3475145e4a7c",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -23552,17 +23552,17 @@
       },
       "review": {
         "path": "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md",
-        "sha256": "935d7dd3cbf69db7e16e64cfe1d438185be38dfe50ac3b2fa8acee3f5cdf7f15",
+        "sha256": "8fd04b7d5c48f653b3027edb0a79c5843694226adfe14fca351d3475145e4a7c",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: acceptance versus completion, trigger-specific delivery, stable transform identity, downstream capacity, locality and total-cost choice are explicit; no invocation or production deployment executed."
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 115 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment."
       }
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md",
-      "sha256": "887b121fff40f7323dffa151e32000c058a3f0ba7b8071afd8c4a4bdcdfdc4e6",
+      "sha256": "2f7c0b5938b98d1b0af9378ecb56b71473e4210fb2c649ece7f53d44bcd0b851",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -23588,18 +23588,18 @@
       },
       "review": {
         "path": "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md",
-        "sha256": "887b121fff40f7323dffa151e32000c058a3f0ba7b8071afd8c4a4bdcdfdc4e6",
+        "sha256": "2f7c0b5938b98d1b0af9378ecb56b71473e4210fb2c649ece7f53d44bcd0b851",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-14",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content read (2026-11-14): Trace follows default-mode environment lifecycle first, then compute modes, then the HTTP handler, then retries. Each section owns one boundary (lifecycle, compute, handler, concurrency, retry, startup, deploy, observe).",
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 157 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md",
-      "sha256": "0ce53c41779e9b7b51abcc4d3cddbd31a440d77eaf191fa4304f22ae994ac837",
+      "sha256": "1573fe310a0a52d7ca951d48f8acc91cf1c91e0b140220f49e57853813afb08c",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -23622,17 +23622,17 @@
       },
       "review": {
         "path": "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md",
-        "sha256": "0ce53c41779e9b7b51abcc4d3cddbd31a440d77eaf191fa4304f22ae994ac837",
+        "sha256": "1573fe310a0a52d7ca951d48f8acc91cf1c91e0b140220f49e57853813afb08c",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: release source/artifact/environment identities, preview effects, Fluid concurrency, cache authority, cron recovery and rollback. Repaired stale Next.js Edge selection to specify pre-16.3 versus 16.3, checked Vercel runtime primary documentation; no live Vercel release claimed."
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 126 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment."
       }
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",
-      "sha256": "ab432af07e81e025771243d05a740105ac06f6d7d8a3a0341df704b1396534ed",
+      "sha256": "a3a94c0cc7964d42c3d976969af23cf93bcb54c325731d3be1b8f1e4fd3521a0",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -23655,12 +23655,12 @@
       },
       "review": {
         "path": "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",
-        "sha256": "ab432af07e81e025771243d05a740105ac06f6d7d8a3a0341df704b1396534ed",
+        "sha256": "a3a94c0cc7964d42c3d976969af23cf93bcb54c325731d3be1b8f1e4fd3521a0",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: placement versus authority, provider event/API distinctions, KV eventual consistency, Durable Object interleaving, cache keys and bounded waitUntil. Repaired Next.js 16.3 runtime boundary in provider table; official Workers lifecycle/limits and Vercel runtime checked.",
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 142 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "metadataReview": {
           "previousReviewedSha256": "9bec18a32585e9d515105545a4b226823f521447f8c7fd4917e282f18ffc2016",
           "reviewDate": "2026-10-26",
@@ -23671,7 +23671,7 @@
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md",
-      "sha256": "40be89b7db982368bce1ae71b672251943d5905eec275feaf70cfc3469483c26",
+      "sha256": "bab12768e31f659f3a1d1a86f614184af0dfd6bee1450138a5c69a9baf426988",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -23694,17 +23694,17 @@
       },
       "review": {
         "path": "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md",
-        "sha256": "40be89b7db982368bce1ae71b672251943d5905eec275feaf70cfc3469483c26",
+        "sha256": "bab12768e31f659f3a1d1a86f614184af0dfd6bee1450138a5c69a9baf426988",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: transactional intent versus effect, keyed payload conflicts, Standard batch algorithm versus FIFO, PutEvents silent nonexistent-bus case, fan-out versus competing queue, workflow contracts, projection replay and manifest-based fan-in. Code is illustrative; no AWS integration executed."
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 151 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment."
       }
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md",
-      "sha256": "f38699dae56311eb656675a170a9353b052ade8591a926df04fb99e4668e320b",
+      "sha256": "87e86a5488dac715f58ab66e3733158a9d9bc982a5f107b97694d48f7363a850",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -23725,17 +23725,17 @@
       },
       "review": {
         "path": "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md",
-        "sha256": "f38699dae56311eb656675a170a9353b052ade8591a926df04fb99e4668e320b",
+        "sha256": "87e86a5488dac715f58ab66e3733158a9d9bc982a5f107b97694d48f7363a850",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: tool declaration to artifact to cloud boundary, SAM HTTP v2 and CDK synthesis/bootstrap, current SST versus historical CDK model, v4 AWS/auth/license and version-pinned plugins, resource ownership and rollback. No synthesis/cloud validation claimed."
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 143 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment."
       }
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md",
-      "sha256": "01e331259bbc490a48886a8b597c690c89ef621678460e0d663eb1f8227f2d13",
+      "sha256": "3c186328f99ac21a41f35d1ff56f8b1648135354b38ca8158dd159af97a3342c",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -23758,17 +23758,17 @@
       },
       "review": {
         "path": "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md",
-        "sha256": "01e331259bbc490a48886a8b597c690c89ef621678460e0d663eb1f8227f2d13",
+        "sha256": "3c186328f99ac21a41f35d1ff56f8b1648135354b38ca8158dd159af97a3342c",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: Temporal replay and effects, signal/query ownership, timed approval expiry, activity timeouts/cancellation, Inngest v4 stable step identity, state history/code compatibility, recovery and privacy. Standalone synthetic activities do not establish real persistence or payment behavior."
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 165 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment."
       }
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.08-interview-questions.md",
-      "sha256": "e4c2a3b4b313ced42cd3a3f0884f1ce8ff6e8873646c75624f26717a18ddb8f0",
+      "sha256": "144fb9ca7cd65b8b003e46c55a9666acffc179424daf5114277180405ea6d399",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -23791,17 +23791,17 @@
       },
       "review": {
         "path": "40-platform/40.7-serverless-edge/40.7.08-interview-questions.md",
-        "sha256": "e4c2a3b4b313ced42cd3a3f0884f1ce8ff6e8873646c75624f26717a18ddb8f0",
+        "sha256": "144fb9ca7cd65b8b003e46c55a9666acffc179424daf5114277180405ea6d399",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read of all 32 preserved prompts and sources. Repaired blanket 15-minute answer and unqualified concurrency controls to distinguish Managed Instances and trigger-specific ceilings. Removed universal cost-effective summary claim; no interview-frequency or actual experience inferred."
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 253 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment."
       }
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md",
-      "sha256": "abc8d1f9aee58739329175d8fb008edb4d60e0afc16f85b3edd42f1f89122667",
+      "sha256": "b91be79cbe2fd9f293c19d5bb765bd9ce449be2281f8115db5e7bc0d7e92bbc3",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -23824,17 +23824,17 @@
       },
       "review": {
         "path": "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md",
-        "sha256": "abc8d1f9aee58739329175d8fb008edb4d60e0afc16f85b3edd42f1f89122667",
+        "sha256": "b91be79cbe2fd9f293c19d5bb765bd9ce449be2281f8115db5e7bc0d7e92bbc3",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: autostart wakes existing capacity, checks versus restart, per-Machine volumes, suspension/stale connections, temporary no-volume release command, drain/idempotency and regional recovery. Example routing budgets are not benchmarks; Fly deployment unexecuted."
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 139 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment."
       }
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md",
-      "sha256": "484db5e30e2d50fbbbc8a1df9c30781367e3b1d11e2123eb3714fdd020ce8dd2",
+      "sha256": "0b92be198363545a7a283c3ac82fa762925e621505997cb333bae50a455b4f27",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -23855,17 +23855,17 @@
       },
       "review": {
         "path": "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md",
-        "sha256": "484db5e30e2d50fbbbc8a1df9c30781367e3b1d11e2123eb3714fdd020ce8dd2",
+        "sha256": "0b92be198363545a7a283c3ac82fa762925e621505997cb333bae50a455b4f27",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: static fallback versus worker-first API routes, configured HTTPS origin, streaming request and manual redirects, backend auth/CSRF/header trust and cookie omissions, generated Env and dry-run boundary. Reverified current 64 MiB uncompressed Workers limit; no deployed proxy assertion."
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 169 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment."
       }
     },
     {
       "path": "40-platform/40.7-serverless-edge/INDEX.md",
-      "sha256": "307a1d8e532f43c5d1e9f0db3204d9667b8ec92f720a6411aca81aeb0549b4f1",
+      "sha256": "4c6eb0e88aa01acf930aee4bd0794421c13a2f4e611f1a0dd55e9ab39c759473",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -23890,17 +23890,17 @@
       },
       "review": {
         "path": "40-platform/40.7-serverless-edge/INDEX.md",
-        "sha256": "307a1d8e532f43c5d1e9f0db3204d9667b8ec92f720a6411aca81aeb0549b4f1",
+        "sha256": "4c6eb0e88aa01acf930aee4bd0794421c13a2f4e611f1a0dd55e9ab39c759473",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read of category flow/revision: staged mechanisms precede separate revision and source-linked interview practice; all chapter groups retain changed-condition questions. Aligned Lambda mode/trigger limits and Next.js 16.3 runtime question. Configuration evidence is not deployed behavior."
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 136 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment."
       }
     },
     {
       "path": "40-platform/40.7-serverless-edge/REVISION.md",
-      "sha256": "ac8b91b560f10e2fa09459a40c998db0d8439bfa53b178d0b04eb73452e1a277",
+      "sha256": "577c31c3424846f9b64d1a6edf46cc9ea9004ee7be5e9092535d85f2a2abd6c9",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -23926,18 +23926,18 @@
       },
       "review": {
         "path": "40-platform/40.7-serverless-edge/REVISION.md",
-        "sha256": "ac8b91b560f10e2fa09459a40c998db0d8439bfa53b178d0b04eb73452e1a277",
+        "sha256": "577c31c3424846f9b64d1a6edf46cc9ea9004ee7be5e9092535d85f2a2abd6c9",
         "status": "reviewed",
         "reviewer": "buffy",
-        "reviewDate": "2026-11-12",
-        "fullContentRead": false,
-        "notes": "move the Edge Functions source link above its first prompt",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 251 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md",
-      "sha256": "c5deb7683575f4e17167da69f69b9d9ef6a5622787b1023ba2b66d18b8cd9820",
+      "sha256": "1127acfa210890d65a3d9516dee2a6ad44288e42317df38e9faa7edc9de77f3b",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -23960,18 +23960,18 @@
       },
       "review": {
         "path": "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md",
-        "sha256": "c5deb7683575f4e17167da69f69b9d9ef6a5622787b1023ba2b66d18b8cd9820",
+        "sha256": "1127acfa210890d65a3d9516dee2a6ad44288e42317df38e9faa7edc9de77f3b",
         "status": "reviewed",
         "reviewer": "platform_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full content read: Reviewed source atomicity versus runtime compatibility, workspace-only resolution, package/task/release graphs, clean consumer checks, ownership and access. Added an explicit ESM type field so the JavaScript format agrees with the import export; no package release was executed.",
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 151 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.8-monorepo/40.8.02-turborepo.md",
-      "sha256": "43ff83ab81ac6e253763745f7b785b2254f6d8bd90d598a6e654dfa4c724dc9d",
+      "sha256": "e24c669278642692995bf7fe2c9193fa97d13137e0f48dbc83e284733ca24c0f",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -23994,18 +23994,18 @@
       },
       "review": {
         "path": "40-platform/40.8-monorepo/40.8.02-turborepo.md",
-        "sha256": "43ff83ab81ac6e253763745f7b785b2254f6d8bd90d598a6e654dfa4c724dc9d",
+        "sha256": "e24c669278642692995bf7fe2c9193fa97d13137e0f48dbc83e284733ca24c0f",
         "status": "reviewed",
         "reviewer": "platform_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full content read: Reviewed task dependency order, declared inputs and outputs, environment hashing, affected base/head, package configuration inheritance and current array-extension marker, remote cache trust, and pruning versus deployment portability. Confirmed inheritance and cache contracts against official Turborepo references; no remote cache or deployment was used.",
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 174 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.8-monorepo/40.8.03-nx.md",
-      "sha256": "0d9f4a80c9989af477344ce590af98a3a1a97b5b740ec3263ef87ef019c1a2cb",
+      "sha256": "94cc713872e33d8c26b7d47d69508f65e39fd26bae75b4884edfc05d64d80cc7",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -24028,18 +24028,18 @@
       },
       "review": {
         "path": "40-platform/40.8-monorepo/40.8.03-nx.md",
-        "sha256": "0d9f4a80c9989af477344ce590af98a3a1a97b5b740ec3263ef87ef019c1a2cb",
+        "sha256": "94cc713872e33d8c26b7d47d69508f65e39fd26bae75b4884edfc05d64d80cc7",
         "status": "reviewed",
         "reviewer": "platform_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full content read: Reviewed project discovery, task graphs, affected selection, cache correctness, generators and tag constraints. Corrected the Nx 24 task-based affected default and migration-preserved project mode against the current official affected guide, including input/output propagation versus dependsOn ordering. Source-verified only; no Nx CI was executed.",
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 144 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md",
-      "sha256": "a2944047c3c9775f0391993d6155a0f0321281349e8b0051b93a58a70b9627b3",
+      "sha256": "e5478388f121ffea2a3dc92bb0cc08271f87061b7ac9a69b00ebfb4eee35cfcd",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -24064,18 +24064,18 @@
       },
       "review": {
         "path": "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md",
-        "sha256": "a2944047c3c9775f0391993d6155a0f0321281349e8b0051b93a58a70b9627b3",
+        "sha256": "e5478388f121ffea2a3dc92bb0cc08271f87061b7ac9a69b00ebfb4eee35cfcd",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 190 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md",
-      "sha256": "56c8b1b3309e00cfbcda7fc3b489fa5b66f861bd8e9984d32ac1ed097b985bd2",
+      "sha256": "6fab9b7cb98962fea70d86445b22ad389cdd0845a780e966a5ab51a4b67a5288",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -24099,18 +24099,18 @@
       },
       "review": {
         "path": "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md",
-        "sha256": "56c8b1b3309e00cfbcda7fc3b489fa5b66f861bd8e9984d32ac1ed097b985bd2",
+        "sha256": "6fab9b7cb98962fea70d86445b22ad389cdd0845a780e966a5ab51a4b67a5288",
         "status": "reviewed",
         "reviewer": "platform_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full content read: Reviewed consumer-driven lockstep versus independent versioning, Changesets release intent, workspace range rewrites, clean tarball validation, prereleases, registry authorization versus provenance, and partial publish recovery. No package publication or credential action was performed.",
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 146 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.8-monorepo/40.8.06-interview-questions.md",
-      "sha256": "374d0c88c8299634552cb28fcd10b34282ad394aea21c0b786bf5291dd074323",
+      "sha256": "f24a23643df9fac3c933c112498fa0fb5665904a71ea7b36bf5fbbd52ca5df8f",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -24132,18 +24132,18 @@
       },
       "review": {
         "path": "40-platform/40.8-monorepo/40.8.06-interview-questions.md",
-        "sha256": "374d0c88c8299634552cb28fcd10b34282ad394aea21c0b786bf5291dd074323",
+        "sha256": "f24a23643df9fac3c933c112498fa0fb5665904a71ea7b36bf5fbbd52ca5df8f",
         "status": "reviewed",
         "reviewer": "platform_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full content read: Read all 31 answers, including source/task/release graphs, cache trust, affected selection, ownership, tarballs, OIDC versus provenance, rollback and CI metrics. Aligned the affected answer with the current Nx 24 default and migration behavior.",
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 187 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.8-monorepo/INDEX.md",
-      "sha256": "a4f62702fc2548e6e0c108a652a485ec95bd51cea991fb9c2d94735a03bb26fd",
+      "sha256": "0e312ed1d7bc78b6b50c4b897d964601dcc6133ff3737992d0a4dd1c5796eb87",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -24168,18 +24168,18 @@
       },
       "review": {
         "path": "40-platform/40.8-monorepo/INDEX.md",
-        "sha256": "a4f62702fc2548e6e0c108a652a485ec95bd51cea991fb9c2d94735a03bb26fd",
+        "sha256": "0e312ed1d7bc78b6b50c4b897d964601dcc6133ff3737992d0a4dd1c5796eb87",
         "status": "reviewed",
         "reviewer": "platform_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full content read: Read the entire learning sequence, decision tree, cross-references, revision placement, interview entry and source-only Docita anchors. Learning flow covers repository boundaries through package publication without claiming deployed behavior.",
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 128 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.8-monorepo/REVISION.md",
-      "sha256": "df3fc8689cd411c08e2be0111cf8b929dd73a1dabff3d1dc3decdf31cdda9c17",
+      "sha256": "ebff783920152c448bc31231530fdd7170e17c659368a0b6aeb90e54a81af9e2",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -24201,18 +24201,18 @@
       },
       "review": {
         "path": "40-platform/40.8-monorepo/REVISION.md",
-        "sha256": "df3fc8689cd411c08e2be0111cf8b929dd73a1dabff3d1dc3decdf31cdda9c17",
+        "sha256": "ebff783920152c448bc31231530fdd7170e17c659368a0b6aeb90e54a81af9e2",
         "status": "reviewed",
         "reviewer": "platform_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full content read: Read every source-linked question group across all five learning chapters and boundary cases. Added a distinct Nx 24 default versus migrated-workspace prompt and the ordering-versus-change-propagation boundary; existing authored prompts were preserved.",
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 99 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md",
-      "sha256": "e964922536a2205293b5bd94ac9540b4b9d1c0cb7ab1fc334bf56bfcf98465f5",
+      "sha256": "2ef21a3e676a095eb245509bb10c059c1a593a8c30dd6fc898ce2748f8a32c4f",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -24240,18 +24240,18 @@
       },
       "review": {
         "path": "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md",
-        "sha256": "e964922536a2205293b5bd94ac9540b4b9d1c0cb7ab1fc334bf56bfcf98465f5",
+        "sha256": "2ef21a3e676a095eb245509bb10c059c1a593a8c30dd6fc898ce2748f8a32c4f",
         "status": "reviewed",
         "reviewer": "buffy",
-        "reviewDate": "2026-11-11",
-        "fullContentRead": false,
-        "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 149 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.9-twelve-factor/40.9.02-interview-questions.md",
-      "sha256": "7346b421660e74ae003b6095d13c1c3328141c82ed78075df9a1cf379e839d95",
+      "sha256": "70bfa3e1a80ef3056d115b573e5c6664cf802e903db958c2b36ff01816e7dea8",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -24274,18 +24274,18 @@
       },
       "review": {
         "path": "40-platform/40.9-twelve-factor/40.9.02-interview-questions.md",
-        "sha256": "7346b421660e74ae003b6095d13c1c3328141c82ed78075df9a1cf379e839d95",
+        "sha256": "70bfa3e1a80ef3056d115b573e5c6664cf802e903db958c2b36ff01816e7dea8",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-14",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full original factors and modern adaptations checked: process-independent durable effects, artifact/config identity, conditional graceful shutdown and separate accepted-work recovery. Original2017 and next-branch community status reverified against primary sources; all25bank answers and every source-linked revision read. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 164 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.9-twelve-factor/INDEX.md",
-      "sha256": "25d78a57f46c7b20cb290f47120850da0388547bb865c1d88faa5493b114e13d",
+      "sha256": "efa713835f9f30473fa4b39897217d482c3a0358c7b97591adb3652b254b265e",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -24307,18 +24307,18 @@
       },
       "review": {
         "path": "40-platform/40.9-twelve-factor/INDEX.md",
-        "sha256": "25d78a57f46c7b20cb290f47120850da0388547bb865c1d88faa5493b114e13d",
+        "sha256": "efa713835f9f30473fa4b39897217d482c3a0358c7b97591adb3652b254b265e",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full original factors and modern adaptations checked: process-independent durable effects, artifact/config identity, conditional graceful shutdown and separate accepted-work recovery. Original2017 and next-branch community status reverified against primary sources; all25bank answers and every source-linked revision read.",
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 109 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.9-twelve-factor/REVISION.md",
-      "sha256": "6e08cb44c54d3937b8d163b1ff830e031742bc203d9ba480dc61f89c9733703a",
+      "sha256": "576d06fa0c4a80dcce8a756be1ce5589518dd55f9e0c2dabc268ebd91adecfdc",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -24336,18 +24336,18 @@
       },
       "review": {
         "path": "40-platform/40.9-twelve-factor/REVISION.md",
-        "sha256": "6e08cb44c54d3937b8d163b1ff830e031742bc203d9ba480dc61f89c9733703a",
+        "sha256": "576d06fa0c4a80dcce8a756be1ce5589518dd55f9e0c2dabc268ebd91adecfdc",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full original factors and modern adaptations checked: process-independent durable effects, artifact/config identity, conditional graceful shutdown and separate accepted-work recovery. Original2017 and next-branch community status reverified against primary sources; all25bank answers and every source-linked revision read.",
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 83 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "40-platform/INDEX.md",
-      "sha256": "a4fd76c634fb0d1bcdad8d924ff3108293af6873c27acf21dece57278892021e",
+      "sha256": "8f0a47555445f8785253d92aa3d3084dccf0fe48cb8147ad0d66dda06b92413a",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -24367,13 +24367,13 @@
       },
       "review": {
         "path": "40-platform/INDEX.md",
-        "sha256": "a4fd76c634fb0d1bcdad8d924ff3108293af6873c27acf21dece57278892021e",
+        "sha256": "8f0a47555445f8785253d92aa3d3084dccf0fe48cb8147ad0d66dda06b92413a",
         "genre": "index",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4C C1-C8 refinement (2026-11-24): Full read of 132 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 132 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "006f685350cac4d3b8150851e252af5b62f433ddc0b206379ba665966a8dda57",
@@ -31021,7 +31021,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "7dc260f9047c239ef4a6aa572644e5c9b2c7bfcf43fc34948de989d37d8ac588",
+      "sha256": "33c602c3d6a52244d43f3724d45c42598a9e7c248d982db12b97a82f8a28c022",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -31039,12 +31039,12 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "7dc260f9047c239ef4a6aa572644e5c9b2c7bfcf43fc34948de989d37d8ac588",
+        "sha256": "33c602c3d6a52244d43f3724d45c42598a9e7c248d982db12b97a82f8a28c022",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4C count/read-time sync (2026-11-24): Full read of 206 lines. Updated generated counts/read-time navigation after Wave 4C.",
+        "notes": "Wave 4D count/read-time sync (2026-11-24): Full read of 206 lines. Updated generated counts/read-time navigation after Wave 4D.",
         "findings": []
       }
     },
@@ -31624,7 +31624,7 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "9c1691cac60abc2440d7be21c6f3d50dd83890d84a9afaec8f3dcad7eec69a6e",
+      "sha256": "071dda9fb3e5418f22f9418c1313e1ad73c6103e6c2311aa9b2dd566261b54f0",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31642,12 +31642,12 @@
       },
       "review": {
         "path": "docs/api-contract.md",
-        "sha256": "9c1691cac60abc2440d7be21c6f3d50dd83890d84a9afaec8f3dcad7eec69a6e",
+        "sha256": "071dda9fb3e5418f22f9418c1313e1ad73c6103e6c2311aa9b2dd566261b54f0",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4C count/read-time sync (2026-11-24): Full read of 119 lines. Updated generated counts/read-time navigation after Wave 4C.",
+        "notes": "Wave 4D count/read-time sync (2026-11-24): Full read of 119 lines. Updated generated counts/read-time navigation after Wave 4D.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

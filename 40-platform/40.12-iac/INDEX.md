@@ -11,7 +11,7 @@
 
 ## Why this sub-stack exists
 
-This section asks **how infrastructure gets created, versioned, and changed safely**. Learn to reason about a `terraform plan` when the role or system uses Terraform. IaC is a broader practice; Fly.io, Cloudflare and GitHub Actions configuration does not establish that a project uses Terraform.
+This section asks **how infrastructure gets created, versioned, and changed safely**. Learn to reason about a `terraform plan` when the role or system uses Terraform. Infrastructure as Code (IaC) is a broader practice; Fly.io, Cloudflare, and GitHub Actions configuration does not establish that a project uses Terraform.
 
 ## Learning flow (passes)
 
@@ -27,7 +27,7 @@ This section asks **how infrastructure gets created, versioned, and changed safe
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [40.12.01-iac-fundamentals-terraform.md](40.12.01-iac-fundamentals-terraform.md) | Configuration, addresses and state, dependency graph, plan/apply, saved artifacts, partial failure, locking, environment boundaries, secrets, modules and tool lifecycle | Optional | Specialized | 9 min |
+| 01 | [40.12.01-iac-fundamentals-terraform.md](40.12.01-iac-fundamentals-terraform.md) | Configuration, addresses and state, dependency graph, plan and apply, saved artifacts, partial failure, locking, environment boundaries, secrets, modules, and tool lifecycle | Optional | Specialized | 9 min |
 | — | [Revision questions](REVISION.md) | Recall checks for identity, stale plans, locking, secrets, imports, and post-apply verification | Optional | Specialized | 2 min |
 | 02 | [40.12.02-interview-questions.md](40.12.02-interview-questions.md) | Applied scenarios for drift, adoption, CI safety, module contracts, workspaces, state migration, and recovery | Optional | Specialized | 5 min |
 
@@ -50,16 +50,16 @@ This section asks **how infrastructure gets created, versioned, and changed safe
 
 ## Cross-References
 
-- [Kubernetes](../40.2-kubernetes/INDEX.md) — declarative infra inside the cluster
-- [CI/CD](../40.3-ci-cd/INDEX.md) — pipelines that run plan/apply; ArgoCD GitOps
-- [Serverless & Edge](../40.7-serverless-edge/INDEX.md) — SAM/CDK (AWS IaC) and Cloudflare Workers
+- [Kubernetes](../40.2-kubernetes/INDEX.md) — declarative infrastructure inside the cluster
+- [CI/CD](../40.3-ci-cd/INDEX.md) — pipelines that run plan and apply; ArgoCD GitOps
+- [Serverless & Edge](../40.7-serverless-edge/INDEX.md) — AWS Serverless Application Model (SAM) and AWS Cloud Development Kit (CDK) for Amazon Web Services (AWS) IaC, and Cloudflare Workers
 - [Git Advanced](../40.6-git-advanced/INDEX.md) — versioning discipline IaC relies on
 
 ---
 
 ## Docita Anchor
 
-The [Docita Anchor note](../INDEX.md#docita-anchor) in the Platform INDEX points to Fly.io, Cloudflare and GitHub Actions configuration. Inspect those source contracts separately from the deployed state. Treat this category's Terraform and infrastructure-as-code examples as study material unless an actual implementation and its validation accompany the claim. Explain how state, plan/apply and drift would change the operating model before proposing an adoption threshold.
+The [Docita Anchor note](../INDEX.md#docita-anchor) in the Platform INDEX points to Fly.io, Cloudflare, and GitHub Actions configuration. Inspect those source contracts separately from the deployed state. Treat this category's Terraform and infrastructure-as-code examples as study material unless an actual implementation and its validation accompany the claim. Explain how state, plan, apply, and drift would change the operating model before proposing an adoption threshold.
 
 ---
 

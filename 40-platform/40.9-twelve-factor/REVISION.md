@@ -24,15 +24,15 @@ Source: [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md) · [Original f
 
 **Q:** What does treating a database as an attached resource enable?
 
-**A:** Its connection/configuration is injected rather than hard-coded into the artifact, so environments can attach different resources under the same application contract.
+**A:** Its connection and configuration are injected rather than hard-coded into the artifact, so environments can attach different resources under the same application contract.
 
 **Q:** Why are logs an event stream instead of an application-managed file rotation job?
 
-**A:** The runtime/platform can collect, route, retain, and query stdout/stderr events consistently across replaceable processes. Sensitive data policy still applies to their contents.
+**A:** The runtime and platform can collect, route, retain, and query `stdout` and `stderr` events consistently across replaceable processes. Sensitive data policy still applies to their contents.
 
 **Q:** Why do one-off admin jobs use the release's code and configuration?
 
-**A:** They need the same dependency/schema/environment contract as the service. Ad-hoc laptop scripts create untracked versions and privilege drift.
+**A:** They need the same dependency, schema, and environment contract as the service. Ad-hoc laptop scripts create untracked versions and privilege drift.
 
 **Q:** Can a stateless process have a connection pool or local cache?
 
@@ -40,7 +40,7 @@ Source: [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md) · [Original f
 
 **Q:** Does redeploying release R−1 undo the database migration from R?
 
-**A:** No. It restores code/configuration identity, not external effects. Check backward-compatible schema/data behavior and the recovery path before rollback.
+**A:** No. It restores code and configuration identity, not external effects. Check backward-compatible schema and data behavior and the recovery path before rollback.
 
 **Q:** Must every web process start within five seconds and stop within thirty?
 
@@ -52,7 +52,7 @@ Source: [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md) · [Original f
 
 **Q:** Is a secret fetched into memory safe from crash dumps?
 
-**A:** No. Delivery avoids embedding it in the artifact but does not remove its in-memory value. Control diagnostics, lifetime, access and redaction.
+**A:** No. Delivery avoids embedding it in the artifact but does not remove its in-memory value. Control diagnostics, lifetime, access, and redaction.
 
 ## Deployment Prompts Moved from the Learning Chapter
 
@@ -60,15 +60,15 @@ Source: [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md) · [Original f
 
 **Q:** Walk me through your deployment pipeline.
 
-**A:** Identify the built artifact, release configuration, compatibility/migration gate, rollout and observed outcome. Use your actual pipeline; separating the stages does not make rollback of external state automatic.
+**A:** Identify the built artifact, release configuration, compatibility and migration gate, rollout, and observed outcome. Use your actual pipeline; separating the stages does not make rollback of external state automatic.
 
 **Q:** How do you handle config?
 
-**A:** Explain deployment-varying inputs, validation, credential delivery and audit. The original factor recommends independent env vars; identify any mounted-config or runtime-service adaptation and its exposure boundary.
+**A:** Explain deployment-varying inputs, validation, credential delivery, and audit. The original factor recommends independent environment variables; identify any mounted-config or runtime-service adaptation and its exposure boundary.
 
 **Q:** What about stateful operations like database migrations?
 
-**A:** Run compatible release tooling under an explicit owner and recoverable one-off execution policy. Prevent unsafe overlap, preserve supported old/new schema behavior and verify the result before admitting dependent code.
+**A:** Run compatible release tooling under an explicit owner and recoverable one-off execution policy. Prevent unsafe overlap, preserve supported old and new schema behavior, and verify the result before admitting dependent code.
 
 ## Summary
 

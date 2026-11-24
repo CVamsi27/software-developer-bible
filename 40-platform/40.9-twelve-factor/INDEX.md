@@ -42,7 +42,7 @@ The original twelve factors are grouped here into four study categories. This gr
 | 11 | **Logs** | Treat logs as event streams |
 | 12 | **Admin processes** | Run admin/maintenance tasks as one-off processes |
 
-**Beyond the original factors:** Kevin Hoffman’s 2016 book discusses API first, telemetry, and authentication/authorization as additional concerns. They are useful topics, not an official replacement factor list. The [community refresh](https://github.com/twelve-factor/twelve-factor) remains in progress.
+**Beyond the original factors:** Kevin Hoffman’s 2016 book discusses Application Programming Interface (API) first, telemetry, and authentication and authorization as additional concerns. They are useful topics, not an official replacement factor list. The [community refresh](https://github.com/twelve-factor/twelve-factor) remains in progress.
 
 ---
 
@@ -52,7 +52,7 @@ The original twelve factors are grouped here into four study categories. This gr
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md) | Original factors, current status, operational examples, and clearly labeled later proposals | Important | Important | 9 min |
 | — | [Section revision](REVISION.md) | Retrieval prompts for release identity, process replacement, configuration, logs, and operational boundaries | Important | Important | 2 min |
-| 02 | [Twelve-Factor App Interview Questions](40.9.02-interview-questions.md) | Diagnostic Q&A: the factors as diagnosis (violation → incident → fix), build/release/run immutability, process-type scaling, migrations as one-off releases, K8s/serverless mapping, scenario drills (slow-boot autoscaling, MemoryStore incident, "is 12-factor obsolete?") | Important | Important | 5 min |
+| 02 | [Twelve-Factor App Interview Questions](40.9.02-interview-questions.md) | Diagnostic Q&A: the factors as diagnosis (violation → incident → fix), build, release, and run immutability, process-type scaling, migrations as one-off releases, Kubernetes and serverless mapping, scenario drills (slow-boot autoscaling, `MemoryStore` incident, "is 12-factor obsolete?") | Important | Important | 5 min |
 
 ---
 
@@ -79,7 +79,7 @@ The full bank with model answers: → [40.9.02 Interview Questions](40.9.02-inte
 
 - [Docker](../40.1-docker/INDEX.md) — Factor 2 (dependencies), Factor 6 (processes)
 - [Kubernetes](../40.2-kubernetes/INDEX.md) — Factor 6 (processes), Factor 8 (concurrency)
-- [CI/CD](../40.3-ci-cd/INDEX.md) — Factor 5 (build/release/run)
+- [CI/CD](../40.3-ci-cd/INDEX.md) — Factor 5 (build, release, and run)
 - [Observability](../40.4-observability/INDEX.md) — Factor 11 (logs)
 - [Microservices](../../20-backend/20.6-microservices/INDEX.md) — Factor 4 (backing services)
 
@@ -87,7 +87,7 @@ The full bank with model answers: → [40.9.02 Interview Questions](40.9.02-inte
 
 ## Navigation
 
-[← Previous: Monorepo](../40.8-monorepo/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Quality →](../../50-quality/INDEX.md)
+[← Previous: Monorepo](../40.8-monorepo/INDEX.md) · [Back to Index](../../INDEX.md) · [Next: Quality →](../../50-quality/INDEX.md)
 
 ---
 
@@ -96,12 +96,12 @@ The full bank with model answers: → [40.9.02 Interview Questions](40.9.02-inte
 These existing [Docita](https://github.com/CVamsi27/docita) pointers locate related configuration and deployment code. They are investigation starting points; the paths alone do not establish production readiness or measured compliance.
 
 | Topic | Docita evidence |
-| ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | III. Config in env | `apps/api/src/shared/modules/config/env-schema.ts` validates runtime env; `turbo.json` declares shared env inputs for task hashing and passthrough, with additional task-level inputs |
-| IV. Backing services as attached resources | Swapped by env: `QUEUE_BACKEND=postgres`, `CACHE_BACKEND=memory`, `STORAGE_PROVIDER=r2` (fly.toml) |
-| VI. Processes | Stateless API + separate worker app; inspect replacement and accepted-work recovery; `auto_stop_machines` alone does not prove disposability |
-| V. Build/release/run | `turbo.json` defines build task inputs/outputs. `.github/workflows/deploy.yml` runs a `migrate-db` job before API/worker deployment; API deploy also depends on startup-smoke and latency gates. The separate migration-validation job in `ci.yml` is manually triggered. |
-| XI. Logs | Pino defaults to stdout; its options disable automatic request logs and configure request serializers plus patient health information (PHI) redaction for payloads and errors in `apps/api/src/shared/modules/observability/`. This code does not establish collector durability or retention. |
+| IV. Backing services as attached resources | Swapped by env: `QUEUE_BACKEND=postgres`, `CACHE_BACKEND=memory`, `STORAGE_PROVIDER=r2` (`fly.toml`) |
+| VI. Processes | Stateless Application Programming Interface (API) and separate worker app; inspect replacement and accepted-work recovery; `auto_stop_machines` alone does not prove disposability |
+| V. Build, release, and run | `turbo.json` defines build task inputs and outputs. `.github/workflows/deploy.yml` runs a `migrate-db` job before API and worker deployment; API deploy also depends on startup-smoke and latency gates. The separate migration-validation job in `ci.yml` is manually triggered. |
+| XI. Logs | Pino defaults to `stdout`; its options disable automatic request logs and configure request serializers plus protected health information (PHI) redaction for payloads and errors in `apps/api/src/shared/modules/observability/`. This code does not establish collector durability or retention. |
 | X. Dev/prod parity | `docker-compose.yml` provides local PostgreSQL 15 with `pg_stat_statements`; this does not prove parity. Compare the deployed database and test production-specific permissions, latency, scale, and failure behavior. |
 
 ## Finish This Section

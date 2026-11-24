@@ -16,15 +16,15 @@ Source: [Nginx Reverse Proxy Internals](40.11.01-nginx-reverse-proxy-internals.m
 
 **Q:** When can one slow operation delay many requests assigned to the same NGINX worker?
 
-**A:** A worker multiplexes many connections. A blocking file operation, CPU-heavy filter, or synchronous plugin occupies that worker and delays its other scheduled work. Supported file operations can use `aio threads`; CPU-heavy application logic belongs downstream. See [NGINX core I/O directives](https://nginx.org/en/docs/http/ngx_http_core_module.html).
+**A:** A worker multiplexes many connections. A blocking file operation, Central Processing Unit (CPU)-heavy filter, or synchronous plugin occupies that worker and delays its other scheduled work. Supported file operations can use `aio threads`; CPU-heavy application logic belongs downstream. See [NGINX core input and output (I/O) directives](https://nginx.org/en/docs/http/ngx_http_core_module.html).
 
-**Q:** Why validate before reloading Nginx?
+**Q:** Why validate before reloading NGINX?
 
 **A:** `nginx -t` catches configuration errors before the reload. A successful reload starts new workers and drains old ones, but valid syntax can still route to the wrong service. Probe the changed behavior after reload. See [NGINX process control](https://nginx.org/en/docs/control.html).
 
 **Q:** When is response buffering useful and when is it harmful?
 
-**A:** It shields upstreams from slow clients for ordinary responses. For streaming/SSE it can delay delivery, so configure the relevant path deliberately.
+**A:** It shields upstreams from slow clients for ordinary responses. For streaming and Server-Sent Events (SSE) it can delay delivery, so configure the relevant path deliberately.
 
 **Q:** Why forward an explicit trusted client-address policy?
 
@@ -32,37 +32,37 @@ Source: [Nginx Reverse Proxy Internals](40.11.01-nginx-reverse-proxy-internals.m
 
 **Q:** Why is upstream keepalive separate from client keepalive?
 
-**A:** They are separate connections on opposite sides of the proxy. NGINX 1.29.7 changed upstream proxying to HTTP/1.1 with keepalive by default; older releases commonly need explicit HTTP/1.1, cleared `Connection`, and an upstream `keepalive` cache. See the [upstream module](https://nginx.org/en/docs/http/ngx_http_upstream_module.html).
+**A:** They are separate connections on opposite sides of the proxy. NGINX 1.29.7 changed upstream proxying to Hypertext Transfer Protocol (HTTP)/1.1 with keepalive by default; older releases commonly need explicit HTTP/1.1, cleared `Connection`, and an upstream `keepalive` cache. See the [upstream module](https://nginx.org/en/docs/http/ngx_http_upstream_module.html).
 
 **Q:** What must be configured before HTTPS upstream traffic is authenticated?
 
-**A:** NGINX encrypts an HTTPS upstream connection, but certificate verification and SNI are off by default. Enable verification, trust the intended CA, and send the expected SNI/name so the certificate is checked for the intended service. See the [proxy TLS directives](https://nginx.org/en/docs/http/ngx_http_proxy_module.html).
+**A:** NGINX encrypts an HTTPS upstream connection, but certificate verification and Server Name Indication (SNI) are off by default. Enable verification, trust the intended Certificate Authority (CA), and send the expected SNI and hostname so the certificate is checked for the intended service. See the [proxy Transport Layer Security (TLS) directives](https://nginx.org/en/docs/http/ngx_http_proxy_module.html).
 
 **Q:** Why is `worker_connections` not a direct estimate of proxied request capacity?
 
 **A:** It counts every connection opened by a worker, including client and upstream sockets, and the open-file limit can lower the actual ceiling. A typical proxied request uses two sockets; HTTP/2 can carry multiple streams on one client connection. See the [NGINX core module](https://nginx.org/en/docs/ngx_core_module.html).
 
-**Q:** Did the ingress-nginx retirement remove Kubernetes Ingress or every NGINX-based controller?
+**Q:** Did the `ingress-nginx` retirement remove Kubernetes Ingress or every NGINX-based controller?
 
-**A:** No. The community ingress-nginx controller retired in March 2026 and no longer receives fixes or security updates. Ingress remains an API, and other products have separate lifecycles. Select a maintained implementation and test policy translation during migration.
+**A:** No. The community `ingress-nginx` controller retired in March 2026 and no longer receives fixes or security updates. Ingress remains an Application Programming Interface (API), and other products have separate lifecycles. Select a maintained implementation and test policy translation during migration.
 
-**Q:** /api/users matches location /api/. How does a trailing slash on proxy_pass change the path?
+**Q:** `/api/users` matches `location /api/`. How does a trailing slash on `proxy_pass` change the path?
 
-**A:** A proxy_pass without a URI preserves /api/users. With a URI /, the ordinary prefix match is replaced, forwarding /users. Rewrites/variables/regex locations have further conditions.
+**A:** A `proxy_pass` without a Uniform Resource Identifier (URI) preserves `/api/users`. With a URI `/`, the ordinary prefix match is replaced, forwarding `/users`. Rewrites, variables, and regular-expression locations have further conditions.
 
-**Q:** An upstream sends a byte every twenty seconds under proxy_read_timeout 30s. Must the response end at thirty seconds?
+**Q:** An upstream sends a byte every twenty seconds under `proxy_read_timeout 30s`. Must the response end at thirty seconds?
 
 **A:** No. The setting measures the interval between upstream reads. A total application deadline needs a separate boundary.
 
-**Q:** Does burst=20 nodelay hold twenty extra requests in a delay queue?
+**Q:** Does `burst=20 nodelay` hold twenty extra requests in a delay queue?
 
-**A:** No. It admits excess immediately while rate accounting drains. Without nodelay, permitted excess may be delayed. Requests beyond the capacity are rejected under the configured response policy.
+**A:** No. It admits excess immediately while rate accounting drains. Without `nodelay`, permitted excess may be delayed. Requests beyond the capacity are rejected under the configured response policy.
 
-**Q:** Why pair proxy_cache_bypass with proxy_no_cache for an authenticated request?
+**Q:** Why pair `proxy_cache_bypass` with `proxy_no_cache` for an authenticated request?
 
 **A:** One controls serving an existing entry; the other controls storing the response. Correct keys and upstream cache controls remain necessary; a public cache must not reuse personalized content across identities.
 
-**Q:** Does successfully reloading workers prove a POST with a lost upstream reply is safe to repeat?
+**Q:** Does successfully reloading workers prove a `POST` with a lost upstream reply is safe to repeat?
 
 **A:** No. The upstream could have committed. Retrying needs stable application operation identity and outcome reconciliation, independently of worker replacement.
 

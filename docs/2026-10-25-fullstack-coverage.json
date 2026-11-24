@@ -28933,7 +28933,7 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/80.01-take-home-playbook.md",
-      "sha256": "f83a5b133dddfb2799e06c80190580ed942a69dad20e70ed74f9ea3835ee8299",
+      "sha256": "77d0c26fbee143d2b22fdb6b6fc7439ba695188f11457a048f2a4871a51acb3d",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -28954,18 +28954,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.01-take-home-playbook.md",
-        "sha256": "f83a5b133dddfb2799e06c80190580ed942a69dad20e70ed74f9ea3835ee8299",
+        "sha256": "77d0c26fbee143d2b22fdb6b6fc7439ba695188f11457a048f2a4871a51acb3d",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 82 lines. Rewrote take-home execution playbook in plain English with clear 4-to-8-hour timebox splits, repository checklist, and senior trade-off framing. Checked against 2026 EU hiring rubrics and internal links; no version-sensitive API claim outside evergreen engineering workflow.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 84 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.02-tech-screen-patterns.md",
-      "sha256": "62f90dd6e6f84ea9d9d02ea35e32c9bc5bbe1dbf267c4675b9bc3d779999b448",
+      "sha256": "dc1a475d666bf3a3b46bed6958b5083d254b12e572cf2a17a187f53d0dd6dda3",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -28985,18 +28985,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.02-tech-screen-patterns.md",
-        "sha256": "62f90dd6e6f84ea9d9d02ea35e32c9bc5bbe1dbf267c4675b9bc3d779999b448",
+        "sha256": "dc1a475d666bf3a3b46bed6958b5083d254b12e572cf2a17a187f53d0dd6dda3",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 67 lines. Rewrote live coding and debugging tech-screen guide with direct walkthroughs for React/Node/TypeScript and SQL debugging patterns. Checked against 2026 EU full-stack live-screen formats; no stale library syntax.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 69 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.03-system-design-eu-patterns.md",
-      "sha256": "31c4885c9e82c7cea78f5fa06f8a0b79cc0d3dcc66b01a3370a9f730d884dd9b",
+      "sha256": "f5ecb964faf713e16dd65be6b21f17c7559b940b0c0d802b315da1a6c75bc7e0",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29005,7 +29005,7 @@
           "1. Start With the One Invariant the System Must Protect",
           "2. Do Simple Back-of-the-Envelope Math That Actually Changes Decisions",
           "3. Six Core Product-Engineering Failure Boundaries to Master",
-          "4. Trace One Request Through Happy Path AND Failure",
+          "4. Trace One Request Through Happy Path and Failure",
           "Summary",
           "See Also"
         ],
@@ -29016,25 +29016,25 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.03-system-design-eu-patterns.md",
-        "sha256": "31c4885c9e82c7cea78f5fa06f8a0b79cc0d3dcc66b01a3370a9f730d884dd9b",
+        "sha256": "f5ecb964faf713e16dd65be6b21f17c7559b940b0c0d802b315da1a6c75bc7e0",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 74 lines. Rewrote EU system design guide into clear end-to-end pacing with pragmatic SaaS trade-offs, GDPR defaults, and concrete capacity math. Checked against 2026 EU system-design expectations and GDPR design norms; no version-sensitive API claim.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 74 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.04-behavioral-eu-style.md",
-      "sha256": "37b83154cea5c2719094b08dae902604be8244fd149f8266b01f90b3f5749b44",
+      "sha256": "e536381d33b916fb32683af3afacda7d2f64be3f275b032fa9e9331bbe0bebab",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
         "headings": [
           "First Principles",
           "1. Anchor Every Story in Real, Verifiable Work",
-          "2. Deliver Crisp STAR + Reflection Answers",
+          "2. Deliver Crisp STAR Plus Reflection Answers",
           "3. Match the Right Mechanism to the Prompt",
           "4. Keep Company Motivation and Practical Terms Honest",
           "Summary",
@@ -29047,18 +29047,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.04-behavioral-eu-style.md",
-        "sha256": "37b83154cea5c2719094b08dae902604be8244fd149f8266b01f90b3f5749b44",
+        "sha256": "e536381d33b916fb32683af3afacda7d2f64be3f275b032fa9e9331bbe0bebab",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 61 lines. Rewrote EU behavioral guide with plain-English contrasts between US and European directness, ownership signals, and structured story templates. Checked against 2026 EU engineering leadership interview patterns; no version-sensitive technical claim.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 61 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.05-comp-eu-benchmarking.md",
-      "sha256": "942cf8270ec6a983fdcd4568c41d8d0d066bc26a58f576a4db955ee8493895ed",
+      "sha256": "839f517325182d76ce69dbaeba8be84189339820e14eb64b8ee85c339f90e22f",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29079,18 +29079,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.05-comp-eu-benchmarking.md",
-        "sha256": "942cf8270ec6a983fdcd4568c41d8d0d066bc26a58f576a4db955ee8493895ed",
+        "sha256": "839f517325182d76ce69dbaeba8be84189339820e14eb64b8ee85c339f90e22f",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 87 lines. Rewritten for clarity: two-offer hook, 5 comparable-evidence qualifiers, 6-bucket offer table, worked EUR 80k/8k/5k breakdown, net budget stress-test, Dutch ruling boundary, and negotiation script. Checked against Dutch Tax Administration 2026 expat threshold (>EUR 48,013 excl. allowance, EUR 78,600 cap, 30% in 2026 -> 27% in 2027) and 80.x REVISION.md offer-comparison Q&A.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 87 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.06-visa-relocation-playbook.md",
-      "sha256": "2fd6dd398223b17ffb438f7a221eba7f8e201e825b4e2085da0512a8aca6dd92",
+      "sha256": "e860db7805ab33340a4dcdf7f0f96444f14f7e370b097bbbf4554ee48753cf2c",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29113,18 +29113,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.06-visa-relocation-playbook.md",
-        "sha256": "2fd6dd398223b17ffb438f7a221eba7f8e201e825b4e2085da0512a8aca6dd92",
+        "sha256": "e860db7805ab33340a4dcdf7f0f96444f14f7e370b097bbbf4554ee48753cf2c",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 126 lines. Rewritten with a scannable 8-country comparison table up front, plain-English country breakdowns, 4-factor household framework, relocation negotiation checklist, and dependency chain. Verified 2026 statutory thresholds (checked 2026-10-09 against official portals for DE, NL, IE, SE, FI, UK, CH, AT: Blue Card EUR 50,700/45,934.20, Chancenkarte EUR 1,091/mo, NL HSM EUR 5,942/4,357, IE EUR 40,904/68,911, SE SEK 34,470, FI EUR 3,937, UK GBP 41,700, AT EUR 3,465).",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 132 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.07-company-profiles.md",
-      "sha256": "d64086b6dcaef37b6bd389cccb93d539a1e76e077e0b5cdc677947f457750e7d",
+      "sha256": "199db945d544e5b310b8101695f7c353ce00e6a1230acef4fcfe415c1a0cf30e",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29144,18 +29144,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.07-company-profiles.md",
-        "sha256": "d64086b6dcaef37b6bd389cccb93d539a1e76e077e0b5cdc677947f457750e7d",
+        "sha256": "199db945d544e5b310b8101695f7c353ce00e6a1230acef4fcfe415c1a0cf30e",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 70 lines. Rewritten with identity/acquisition traps, 30-minute research template, a complete worked public reference profile (n8n), and an honest motivation formula. Checked against live-probed n8n Ashby ATS URL (HTTP 200 on 2026-11-23), Thryve about page, and Langfuse ClickHouse acquisition announcement.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 72 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.08-system-design-case-bank.md",
-      "sha256": "326149f0f8877b8ae32ab16bb68b719938f5cc332bf66dfb38ea54b69635dca9",
+      "sha256": "6c83437efc1a7bc5bdf91ea973732dd5f7d3ee54f2f0795e2560297e1eb3c908",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29183,18 +29183,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.08-system-design-case-bank.md",
-        "sha256": "326149f0f8877b8ae32ab16bb68b719938f5cc332bf66dfb38ea54b69635dca9",
+        "sha256": "6c83437efc1a7bc5bdf91ea973732dd5f7d3ee54f2f0795e2560297e1eb3c908",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 122 lines. Rewrote all five EU system design case studies with readable architecture flows, concrete bottlenecks, and preserved incoming case anchors. Checked against 2026 cloud and database architectures; preserved #case-1-workflow-execution through #case-5-event-processing anchors.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 124 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.09-quick-reference-cards.md",
-      "sha256": "0b99666422102ffd6c9e54b0e27755a140ddeb656ce3e1c204c1dad18e0319d8",
+      "sha256": "825993dde7a742bf2ab8367dce4e228cf8ba73c18395614039cb28ea3d687b6b",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29211,18 +29211,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.09-quick-reference-cards.md",
-        "sha256": "0b99666422102ffd6c9e54b0e27755a140ddeb656ce3e1c204c1dad18e0319d8",
+        "sha256": "825993dde7a742bf2ab8367dce4e228cf8ba73c18395614039cb28ea3d687b6b",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 41 lines. Rewrote pre-interview quick-reference cards into crisp scannable tables and prompts for rapid review before EU full-stack interviews. Checked against sibling 80.x playbooks and current 2026 full-stack defaults; no stale APIs.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 41 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.10-weekly-tracker.md",
-      "sha256": "b7737e0e62187a22edba7e0b5b14aae0ea048e7f49f7fee98f0a4a50ee423b79",
+      "sha256": "3aa61532860c1cd09d64b364e5d379c7531e3e82b2cd7d74a2dc49c8c87ac5b4",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29241,18 +29241,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.10-weekly-tracker.md",
-        "sha256": "b7737e0e62187a22edba7e0b5b14aae0ea048e7f49f7fee98f0a4a50ee423b79",
+        "sha256": "3aa61532860c1cd09d64b364e5d379c7531e3e82b2cd7d74a2dc49c8c87ac5b4",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 54 lines. Rewrote weekly execution tracker into an actionable log template with clear weekly metrics, review cadence, and pipeline health checks. Checked against 2026 EU hiring cycle timelines; no version-sensitive API claim.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 56 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.11-mock-interview-bank.md",
-      "sha256": "da47aa266dd36ec9040dd1467a3de2591acc9f7b18ea068d9ca905ad73f72b6f",
+      "sha256": "8e6a6732828930282c3606dc5f468a0c7f0b0ae092334f357f4c172f57588d59",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29270,18 +29270,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.11-mock-interview-bank.md",
-        "sha256": "da47aa266dd36ec9040dd1467a3de2591acc9f7b18ea068d9ca905ad73f72b6f",
+        "sha256": "8e6a6732828930282c3606dc5f468a0c7f0b0ae092334f357f4c172f57588d59",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 87 lines. Rewrote mock interview prompt bank with clear interviewer rubrics, follow-up probes, and pass/fail signals across all EU rounds. Checked against 2026 EU senior full-stack loops; no stale framework references.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 89 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.12-story-bank.md",
-      "sha256": "c2e5f4a7c33fd1ff9bbe6937e901d1acb75865b2ad147b13ba6a6ae530a2ec4a",
+      "sha256": "93225caac23bcc8e54d54cbb17fdfc792b160bf966e570f9a37a9f9b2ab01334",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29300,18 +29300,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.12-story-bank.md",
-        "sha256": "c2e5f4a7c33fd1ff9bbe6937e901d1acb75865b2ad147b13ba6a6ae530a2ec4a",
+        "sha256": "93225caac23bcc8e54d54cbb17fdfc792b160bf966e570f9a37a9f9b2ab01334",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 55 lines. Rewrote behavioral story bank structure with clear competency mapping, impact framing, and conflict/failure templates without private PII. Checked against 2026 senior engineering behavioral rubrics and public-repo privacy rules; no version-sensitive claim.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 55 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.13-study-plan.md",
-      "sha256": "0cf5160167f91be605a7132a641b9683fdd14854ab3904b7d01be331e3c45f75",
+      "sha256": "e53f0a83cf15136669ec2b13e967b1d1a13fc1be24f6e813312f5795f755e6df",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29319,10 +29319,10 @@
           "Apply in Parallel — Do Not Wait Until Week 4",
           "First Principles",
           "Pick One Sustainable Weekly Rhythm",
-          "Week 1: Establish Stories, Expose Coding Gaps & Start Applying (10 hrs)",
-          "Week 2: Deliver One Clean Vertical Slice Under a Timebox (10 hrs)",
-          "Week 3: Master System Design Invariants & Failure Recovery (10 hrs)",
-          "Week 4: Full-Loop Rehearsal & Role-Specific Polish (10 hrs)",
+          "Week 1: Establish Stories, Expose Coding Gaps, and Start Applying (10 hours)",
+          "Week 2: Deliver One Clean Vertical Slice Under a Timebox (10 hours)",
+          "Week 3: Master System Design Invariants and Failure Recovery (10 hours)",
+          "Week 4: Full-Loop Rehearsal and Role-Specific Polish (10 hours)",
           "Rules for Replanning Without Guilt",
           "Summary",
           "See Also"
@@ -29334,24 +29334,24 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.13-study-plan.md",
-        "sha256": "0cf5160167f91be605a7132a641b9683fdd14854ab3904b7d01be331e3c45f75",
+        "sha256": "e53f0a83cf15136669ec2b13e967b1d1a13fc1be24f6e813312f5795f755e6df",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 81 lines. Rewrote 12-week EU interview study plan into clean week-by-week milestones linking directly to canonical technical and lane chapters. Checked against current repo chapter paths and 2026 full-stack interview scope; all internal links verified.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 83 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.14-berlin-dual-career-plan.md",
-      "sha256": "79f208589d6d028cc6501ea5c95b1af4c7180eae9bd9b4340a2894f692000d59",
+      "sha256": "e1ecf851a91f7deb3289d163f5f2748becf2cd1a1f3a33849b33b2289ac58f6f",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
         "headings": [
           "First Principles",
-          "1. Test City & Career Fit Against Real Offers, Not Assumptions",
+          "1. Test City and Career Fit Against Real Offers, Not Assumptions",
           "2. Follow the Milestone Dependency Chain",
           "3. Model Household Cash Flow Once — Without Double-Counting",
           "4. Check Childcare and Schooling Before Picking a Neighborhood",
@@ -29366,18 +29366,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.14-berlin-dual-career-plan.md",
-        "sha256": "79f208589d6d028cc6501ea5c95b1af4c7180eae9bd9b4340a2894f692000d59",
+        "sha256": "e1ecf851a91f7deb3289d163f5f2748becf2cd1a1f3a33849b33b2289ac58f6f",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 76 lines. Rewrote Berlin dual-career relocation guide with clear Blue Card spouse work-permit rules, Anabin checks, and sequenced timeline steps. Checked against 2026 German Residence Act family-reunification and EU Blue Card rules; links verified against baseline.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 78 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.15-take-home-starter-prompt.md",
-      "sha256": "0fb409250f38322cd2e347374d9e14e7e9a6dd92f579836d026dc96064864170",
+      "sha256": "c4d378a527e8bef9c5ac59eece11878a3ff947a428d14c4981566fc90765cc56",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29386,7 +29386,7 @@
           "1. Start With One Clean, Local Vertical Slice",
           "2. Reusable 4-Hour Practice Budget",
           "3. Add Reliability Features One Contract at a Time",
-          "4. Handoff & Honest Portfolio Hygiene",
+          "4. Handoff and Honest Portfolio Hygiene",
           "Summary",
           "See Also"
         ],
@@ -29397,18 +29397,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.15-take-home-starter-prompt.md",
-        "sha256": "0fb409250f38322cd2e347374d9e14e7e9a6dd92f579836d026dc96064864170",
+        "sha256": "c4d378a527e8bef9c5ac59eece11878a3ff947a428d14c4981566fc90765cc56",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 59 lines. Rewrote take-home starter checklist and architecture scaffold prompt so engineers can bootstrap a clean, tested repo in under 30 minutes. Checked against 2026 TypeScript, Node.js, and React tooling defaults; no deprecated packages.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 59 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.16-docita-resume-defense.md",
-      "sha256": "7687e3e9bb1e121eca2ec1713bb14a57deb19ddd8f34c96370b0dc147f0d69eb",
+      "sha256": "4d8672f8aabd17a5bb3b1e70c6a74797e3203eeecf83724160facae1524d1d81",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29429,18 +29429,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.16-docita-resume-defense.md",
-        "sha256": "7687e3e9bb1e121eca2ec1713bb14a57deb19ddd8f34c96370b0dc147f0d69eb",
+        "sha256": "4d8672f8aabd17a5bb3b1e70c6a74797e3203eeecf83724160facae1524d1d81",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 69 lines. Rewrote Docita flagship project resume-defense guide into plain-English claim-to-architecture Q&As with honest trade-off boundaries. Checked against projects/docita architecture docs and 2026 senior full-stack scrutiny; no private PII.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 71 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.17-docita-interview-evidence-pack.md",
-      "sha256": "37de8359cc82956479d014d7c66d19f20f69386de6395331c03a1aa8c9d6b5d8",
+      "sha256": "d1b1d7d4a4dd86298149e1b07e57575dd1745a6bdc42ce5a983e363e73a8a863",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29448,8 +29448,8 @@
           "First Principles",
           "1. The 5-Line Evidence Card Template",
           "2. Three High-Leverage Cards to Build First",
-          "3. Four Subtle Database & Realtime Traps to Verify Before Interviewing",
-          "4. Document Capacity & Performance Numbers With Full Context",
+          "3. Four Subtle Database and Realtime Traps to Verify Before Interviewing",
+          "4. Document Capacity and Performance Numbers With Full Context",
           "5. Final Hygiene Check Before Sharing",
           "Summary",
           "See Also"
@@ -29461,18 +29461,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.17-docita-interview-evidence-pack.md",
-        "sha256": "37de8359cc82956479d014d7c66d19f20f69386de6395331c03a1aa8c9d6b5d8",
+        "sha256": "d1b1d7d4a4dd86298149e1b07e57575dd1745a6bdc42ce5a983e363e73a8a863",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 64 lines. Rewrote Docita interview evidence pack with concise architecture proofs, failure-mode explanations, and verifiable technical takeaways. Checked against projects/docita chapters and internal links; no stale API signatures.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 64 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.18-resume-claim-crosswalk.md",
-      "sha256": "e7b07298cc7a7a7d1628a0f1025499e27dab6c42b56df6e21c2a693896a5f97d",
+      "sha256": "0cd815b4805d441257a0f4a5c19f2ebe874bf11a319fcc6b0f82a129852ac4bd",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29492,18 +29492,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.18-resume-claim-crosswalk.md",
-        "sha256": "e7b07298cc7a7a7d1628a0f1025499e27dab6c42b56df6e21c2a693896a5f97d",
+        "sha256": "0cd815b4805d441257a0f4a5c19f2ebe874bf11a319fcc6b0f82a129852ac4bd",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 56 lines. Rewrote resume-claim crosswalk into a clear mapping table from resume bullet themes to system mechanisms, metrics, and drill questions. Checked against 80.16, 80.17, and 80.22 links; no version-sensitive technical claim.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 58 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.19-langfuse-interview-prep.md",
-      "sha256": "f9a373d4325a120724d7557d0830d25c6ffadb128e997d017aeb279d9c3827bf",
+      "sha256": "2864c5f7a9f8acfc81b77a80a3a287f732a62a15086259876d39de00737ddb8e",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29511,7 +29511,7 @@
           "First Principles",
           "1. Trace One LLM Request Through the Product",
           "2. Six High-Value Engineering Boundaries to Prepare",
-          "3. Study One Real Source Path & Connect Your Own Experience Honestly",
+          "3. Study One Real Source Path and Connect Your Own Experience Honestly",
           "Summary",
           "See Also"
         ],
@@ -29522,25 +29522,25 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.19-langfuse-interview-prep.md",
-        "sha256": "f9a373d4325a120724d7557d0830d25c6ffadb128e997d017aeb279d9c3827bf",
+        "sha256": "2864c5f7a9f8acfc81b77a80a3a287f732a62a15086259876d39de00737ddb8e",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 58 lines. Rewrote Langfuse engineering interview prep guide covering LLM observability architecture, ClickHouse/Postgres ingestion trade-offs, and TypeScript stack. Checked against 2026 Langfuse open-source architecture and 20.12 AI engineering concepts; all links verified.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 60 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.20-germany-visa-relocation-companies.md",
-      "sha256": "c3c3d51c6f337ab3d4d9f0c1ccffb0bb1b8149de493bd2b910364d1ac13684a7",
+      "sha256": "330c634005224fa751d1c8143e12b839a976790ea2301cdb4d2b624eca43897c",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
         "headings": [
           "First Principles",
           "1. Separate Legal Admission From Employer Support",
-          "2. Verify Your Degree Recognition Early (Anabin vs. ZAB)",
+          "2. Verify Your Degree Recognition Early (Anabin versus ZAB)",
           "3. Plan Around Dependencies, Not an Optimistic 90-Day Countdown",
           "Summary",
           "See Also"
@@ -29552,18 +29552,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.20-germany-visa-relocation-companies.md",
-        "sha256": "c3c3d51c6f337ab3d4d9f0c1ccffb0bb1b8149de493bd2b910364d1ac13684a7",
+        "sha256": "330c634005224fa751d1c8143e12b839a976790ea2301cdb4d2b624eca43897c",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 68 lines. Rewritten with clear legal-admission vs employer-support separation, 4 early confirmation questions, copy-paste recruiter script, Anabin/ZAB walkthrough, and dependency timeline. Checked against make-it-in-germany.com EU Blue Card and foreign academic qualification guidance plus 80.x REVISION.md Anabin H+ vs degree comparability pair.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 68 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.21-docita-google-level-prep.md",
-      "sha256": "188286cc47f20b95d5dfc04f42266bd1925eadb3d6eb9fe5acd0619c53e5ee29",
+      "sha256": "62a1fabbe0f4a4e32579af7351b339da85034007a73f42801964c6232a00cd6a",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29584,18 +29584,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.21-docita-google-level-prep.md",
-        "sha256": "188286cc47f20b95d5dfc04f42266bd1925eadb3d6eb9fe5acd0619c53e5ee29",
+        "sha256": "62a1fabbe0f4a4e32579af7351b339da85034007a73f42801964c6232a00cd6a",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 78 lines. Rewrote high-bar system-design defense for Docita covering multi-tenant isolation, auditability, offline resilience, and staff-level follow-ups. Checked against 2026 high-bar backend/full-stack design rubrics; no stale framework references.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 80 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.22-docita-tech-topic-mapping.md",
-      "sha256": "0340a32ead7ae3ca6b62c6066cf1b94ba2e960573c7f383d8a03ac9da959dbc9",
+      "sha256": "e6aee98539654ff2272e79cdf822ca4276d13e84d978c2867c7daf117bffb808",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29614,24 +29614,24 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.22-docita-tech-topic-mapping.md",
-        "sha256": "0340a32ead7ae3ca6b62c6066cf1b94ba2e960573c7f383d8a03ac9da959dbc9",
+        "sha256": "e6aee98539654ff2272e79cdf822ca4276d13e84d978c2867c7daf117bffb808",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 56 lines. Rewrote Docita technical topic mapping so each production problem links cleanly to its canonical deep-dive chapter in the bible. Checked against live repo chapter paths; 0 broken links.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 56 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.23-german-companies-database.md",
-      "sha256": "584fce33422b663079aab8cb6f326aa5c27f0d6ad09f06183642eccae4bffa50",
+      "sha256": "38634d309c99db2c59e8b0a47f7dbd7d0c8bc930f4ab0383de3e659994042fe4",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
         "headings": [
           "First Principles",
-          "1. Reference Directory: Public German & EU Tech Ecosystems (ATS & Careers Hubs)",
+          "1. Reference Directory: Public German and European Union (EU) Tech Ecosystems (ATS and Careers Hubs)",
           "2. Keep Three Records Cleanly Separated",
           "3. Fields to Track for Every Verified Opening",
           "4. Refresh Rules That Keep Your Database Trustworthy",
@@ -29645,18 +29645,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.23-german-companies-database.md",
-        "sha256": "584fce33422b663079aab8cb6f326aa5c27f0d6ad09f06183642eccae4bffa50",
+        "sha256": "38634d309c99db2c59e8b0a47f7dbd7d0c8bc930f4ab0383de3e659994042fe4",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 94 lines. Rewritten from an empty schema note into a reference directory of 13 verified German/EU tech ecosystems + live ATS discovery JSON/CLI workflow + 3-layer record model + 8-field tracker. Checked against live HTTP 200 probes on 2026-11-23 for all 9 newly added German/EU startup and scale-up careers/ATS URLs (n8n, DeepL, Celonis, N26, GetYourGuide, Linear, Supabase, Adyen, Wise); scripts/job_board_watch.py --discover executed via unit tests.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 96 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.24-eu-regulatory-compliance.md",
-      "sha256": "bd694c6aa3329fd2de1e3f409ebc1f07031de42d12d38bb33678c91add5d2e96",
+      "sha256": "191430ab90dbb65dcc054034ebe1de00ec8dd0ec12318136ac56f27b8dcd1758",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29664,8 +29664,8 @@
           "First Principles",
           "Quick Scope Map",
           "1. GDPR (General Data Protection Regulation)",
-          "2. BaFin & DORA (Fintech / Financial Services in Germany & EU)",
-          "3. EU AI Act (Risk-Based Classification & 2026–2028 Timeline)",
+          "2. BaFin and DORA (Fintech and Financial Services in Germany and EU)",
+          "3. EU AI Act (Risk-Based Classification and 2026–2028 Timeline)",
           "4. Digital Services Act (DSA)",
           "Summary",
           "See Also",
@@ -29678,18 +29678,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.24-eu-regulatory-compliance.md",
-        "sha256": "bd694c6aa3329fd2de1e3f409ebc1f07031de42d12d38bb33678c91add5d2e96",
+        "sha256": "191430ab90dbb65dcc054034ebe1de00ec8dd0ec12318136ac56f27b8dcd1758",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 86 lines. Rewrote EU regulatory compliance guide in plain English covering GDPR engineering controls, EU AI Act risk tiers, PSD2/SCA, and HIPAA-to-EU contrasts. Checked against 2026 GDPR, EU AI Act phased enforcement timeline, and PSD2 rules; no stale legal dates.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 94 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.25-german-workplace-culture.md",
-      "sha256": "1fa9ad535fd33165e0c8cf1207ac28339a3ad745659f7ca5042013a08d1989b3",
+      "sha256": "b75cd80de5a915be27bbb0f8fbbd1c751e84c16989dd4d919b2c48115b2f808c",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29697,7 +29697,7 @@
           "First Principles",
           "1. Clarify Five Working Norms Before Joining",
           "2. Keep Interview Communication Clear and Punctual",
-          "3. Three German Employment Law Basics vs. Contractual Perks",
+          "3. Three German Employment Law Basics Versus Contractual Perks",
           "4. Win the First 30 Days Through Focused Onboarding",
           "Summary",
           "See Also"
@@ -29709,18 +29709,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.25-german-workplace-culture.md",
-        "sha256": "1fa9ad535fd33165e0c8cf1207ac28339a3ad745659f7ca5042013a08d1989b3",
+        "sha256": "b75cd80de5a915be27bbb0f8fbbd1c751e84c16989dd4d919b2c48115b2f808c",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 53 lines. Rewrote German engineering workplace guide covering Probezeit, Betriebsrat, Kündigungsschutz, direct feedback norms, and interview expectations. Checked against 2026 German employment norms and statutory leave/probation structures; no version-sensitive software claim.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 53 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.26-take-home-masterclass.md",
-      "sha256": "bb77851b5a6b8182852f420c314e6ea9d8fa3e095fdb0ac4a6a5f44aa5c46a6c",
+      "sha256": "257a593152ed6e242ef2157def7f8d1925af8571993841d0f4ddfa4c62a2dee8",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29740,25 +29740,25 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.26-take-home-masterclass.md",
-        "sha256": "bb77851b5a6b8182852f420c314e6ea9d8fa3e095fdb0ac4a6a5f44aa5c46a6c",
+        "sha256": "257a593152ed6e242ef2157def7f8d1925af8571993841d0f4ddfa4c62a2dee8",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 62 lines. Rewrote take-home masterclass with reviewer grading criteria, API/UI polish checklists, README structure, and common rejection causes. Checked against 2026 EU senior full-stack take-home expectations; no stale library syntax.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 62 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.27-german-system-design-patterns.md",
-      "sha256": "f68affc86c030702e204b72d5004baeb62fa391725202d70989d71809e683be8",
+      "sha256": "19cf08c3c87ed2443d616076438c70fa0408ec2af17dd19258534353ab201920",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
         "headings": [
           "First Principles",
-          "1. Payments & Fintech: Timeout Means \"Unknown,\" Never \"Failed\"",
-          "2. Logistics & Mobility: Preserve Event Time, Units, and Order",
+          "1. Payments and Fintech: Timeout Means \"Unknown,\" Never \"Failed\"",
+          "2. Logistics and Mobility: Preserve Event Time, Units, and Order",
           "3. Healthcare: Guard Overlapping Intervals and Payload Privacy",
           "4. Workflow SaaS: Pin the Definition Version to Each Run",
           "Summary",
@@ -29771,18 +29771,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.27-german-system-design-patterns.md",
-        "sha256": "f68affc86c030702e204b72d5004baeb62fa391725202d70989d71809e683be8",
+        "sha256": "19cf08c3c87ed2443d616076438c70fa0408ec2af17dd19258534353ab201920",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 70 lines. Rewrote German enterprise and scale-up system design guide focusing on data residency, audit logs, deterministic workflows, and pragmatic scaling. Checked against 2026 German SaaS, FinTech, and HealthTech engineering patterns; all links verified.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 70 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.28-interview-prep-roadmap.md",
-      "sha256": "924fef8de554396ec7c3cb6457d53bca63e0415d87cc27a7f3333194e2052dbc",
+      "sha256": "ca5daabc4b11a0741a6c438e1a0eccd662251cbc776a2f8363fc1a076aa6cee8",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29801,24 +29801,24 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.28-interview-prep-roadmap.md",
-        "sha256": "924fef8de554396ec7c3cb6457d53bca63e0415d87cc27a7f3333194e2052dbc",
+        "sha256": "ca5daabc4b11a0741a6c438e1a0eccd662251cbc776a2f8363fc1a076aa6cee8",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 48 lines. Rewrote prioritized interview prep roadmap with clear phase gates from fundamentals through mocks and active EU pipeline execution. Checked against current repo index structure; all internal links verified.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 50 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.29-topic-brushup-roadmap.md",
-      "sha256": "9a428863775dd6ba2b9cd708e8ed1dc19dc70b74ea1f8b298156e1580680d8b9",
+      "sha256": "59ac488b8399e01366fef346654c09bc4d3eebc050c07affdf47c139c4b42fcc",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
         "headings": [
           "First Principles",
-          "1. Nine-Pass Full-Stack Resume Route (TypeScript / React / Node.js / PostgreSQL)",
+          "1. Nine-Pass Full-Stack Resume Route (TypeScript, React, Node.js, PostgreSQL)",
           "2. Reuse One Tiny Practice App Across All Nine Passes",
           "Check senior readiness with changed constraints",
           "3. Route Quickly to Any Stack by Observed Gap",
@@ -29832,24 +29832,24 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.29-topic-brushup-roadmap.md",
-        "sha256": "9a428863775dd6ba2b9cd708e8ed1dc19dc70b74ea1f8b298156e1580680d8b9",
+        "sha256": "59ac488b8399e01366fef346654c09bc4d3eebc050c07affdf47c139c4b42fcc",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 71 lines. Rewrote topic brush-up roadmap with diagnostic drills, senior readiness checks under changed constraints, and preserved incoming anchor. Checked against current bible chapters and preserved #check-senior-readiness-with-changed-constraints anchor.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 73 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.30-mock-interview-script.md",
-      "sha256": "453177ff6c494719751a47d8f2effac92c7b237d062b478046936c0134ec9bf4",
+      "sha256": "d1bb313b18f8feb83474fca9de219e8a708e252073b9ed1baa7a65201f594482",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
         "headings": [
           "First Principles",
-          "1. Set Up a Clean 60-Minute Architecture / Project Mock",
+          "1. Set Up a Clean 60-Minute Architecture or Project Mock",
           "2. How to Probe Like a Senior Interviewer",
           "3. Write Observable Debrief Notes (Not Vague Labels)",
           "4. Turn Feedback Into One Verified Repair",
@@ -29863,18 +29863,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.30-mock-interview-script.md",
-        "sha256": "453177ff6c494719751a47d8f2effac92c7b237d062b478046936c0134ec9bf4",
+        "sha256": "d1bb313b18f8feb83474fca9de219e8a708e252073b9ed1baa7a65201f594482",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 59 lines. Rewrote structured mock interview script with timed phases, realistic interviewer prompts, and concrete debrief rubrics. Checked against 2026 EU 45-to-60-minute senior interview formats; no stale tooling references.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 59 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.31-salary-negotiation-guide.md",
-      "sha256": "75be9ad24ea5ae69aca4cb55eae8f4754b0bc9b482a1c04b7415fc8e3f0af531",
+      "sha256": "57f892ae2e39f430df3384015c79ae7d5754c958b182bf5eede15197de0c8b5e",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29895,18 +29895,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.31-salary-negotiation-guide.md",
-        "sha256": "75be9ad24ea5ae69aca4cb55eae8f4754b0bc9b482a1c04b7415fc8e3f0af531",
+        "sha256": "57f892ae2e39f430df3384015c79ae7d5754c958b182bf5eede15197de0c8b5e",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 77 lines. Rewritten with 9-point pre-counter audit, lever priority table, 3 copy-paste negotiation scripts (base gap, sign-on/relocation bridge, ESOP/VSOP terms), and contract sign-off checklist. No version-sensitive claim; checked against 80.05 compensation arithmetic, 80.25 statutory contract boundaries, and 80.x REVISION.md sign-on vs base Q&A.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 79 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.32-company-prep-sheets.md",
-      "sha256": "35d33dd52708e9663e55778695cd8114f3f56ce4dfa375cb59c7e6c19ab36918",
+      "sha256": "fb169ce8238e1735e5b8967b82815d09f99c7460f74b3f52c1ec61acd49cfe41",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29924,18 +29924,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.32-company-prep-sheets.md",
-        "sha256": "35d33dd52708e9663e55778695cd8114f3f56ce4dfa375cb59c7e6c19ab36918",
+        "sha256": "fb169ce8238e1735e5b8967b82815d09f99c7460f74b3f52c1ec61acd49cfe41",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 76 lines. Rewritten with 1-page prep sheet template and 6 punchy product workflow traces showing failure angles and honest gap framing. Checked against official product URLs (LiveEO, Snke, MVST, Redcare Pharmacy, Tanso, n8n — checked 2026-10-01) and preserved anchor links into 80.34 domain primer.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 78 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.33-weekly-study-tracker.md",
-      "sha256": "a4cf03e7eacbac692a374f98ed595bf984b456d8aa79bd5563c4ae3a4b790d4b",
+      "sha256": "a53544751e67bb4e6f14fc924d87a07cbe0f3649a4e5bd63839bd1e6753050de",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29953,18 +29953,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.33-weekly-study-tracker.md",
-        "sha256": "a4cf03e7eacbac692a374f98ed595bf984b456d8aa79bd5563c4ae3a4b790d4b",
+        "sha256": "a53544751e67bb4e6f14fc924d87a07cbe0f3649a4e5bd63839bd1e6753050de",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 48 lines. Rewrote weekly study tracker template with measurable topic checkboxes, mock scores, and weekly retrospective prompts. Checked against 80.13 study milestones and 80.10 pipeline tracker; no version-sensitive technical claim.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 48 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.34-germany-target-domain-primer.md",
-      "sha256": "cdd087b2406cacce243618e45d883efe7195ebba199c36033270dc6fba6a2ad1",
+      "sha256": "3a835a7b95175109620a455622a792ddd34292d18569bc858112285fcc9d818e",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29983,18 +29983,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.34-germany-target-domain-primer.md",
-        "sha256": "cdd087b2406cacce243618e45d883efe7195ebba199c36033270dc6fba6a2ad1",
+        "sha256": "3a835a7b95175109620a455622a792ddd34292d18569bc858112285fcc9d818e",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 126 lines. Rewritten in plain English with clinical acronym table, simplified FHIR Observation JSON excerpt, PostGIS geometry-vs-geography SQL example, STAC/COG raster table, and detection-to-alert trace. Checked against HL7 FHIR R5 overview, PostGIS ST_DWithin/ST_Intersects/ST_AsMVT docs, STAC spec, and OGC COG standard; preserved both incoming anchors from 80.32.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 130 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.35-germany-target-engine.md",
-      "sha256": "e804d4232dacae648dcb38ebd8ec8467feed7d3e6824b6aaefe07e08993029fd",
+      "sha256": "18d41f93f5b374a230cb1b350a833263755a4166a7196f6f931df81fb5268537",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30016,18 +30016,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.35-germany-target-engine.md",
-        "sha256": "e804d4232dacae648dcb38ebd8ec8467feed7d3e6824b6aaefe07e08993029fd",
+        "sha256": "18d41f93f5b374a230cb1b350a833263755a4166a7196f6f931df81fb5268537",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 77 lines. Rewritten into a practical 6-step weekly search operating loop: live req check, 5-minute constraint screen, 4-record private layout, automation review boundary, honest rejection diagnosis, and weekly funnel math. No version-sensitive claim; checked against scripts/job_board_watch.py --discover workflow, AGENTS.md private-workspace rules, and 80.x REVISION.md rejection-diagnosis Q&A.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 77 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.36-docita-complete-interview-defense.md",
-      "sha256": "4f133c2a8dbdbf4845e7343b9097e6468521ecee73edb019ef71aaacea7d7e3f",
+      "sha256": "5aadc9ed7cb0327f06be94f5eaa10963cf430f5cbe207b23db855ebc8c6c2da7",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30048,18 +30048,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.36-docita-complete-interview-defense.md",
-        "sha256": "4f133c2a8dbdbf4845e7343b9097e6468521ecee73edb019ef71aaacea7d7e3f",
+        "sha256": "5aadc9ed7cb0327f06be94f5eaa10963cf430f5cbe207b23db855ebc8c6c2da7",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 94 lines. Rewrote complete Docita interview defense handbook into a unified, readable narrative covering architecture, trade-offs, incidents, and tough follow-ups. Checked against 80.16, 80.17, 80.21, and projects/docita; no private PII or stale links.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 96 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/INDEX.md",
-      "sha256": "17d2eb1a18d094322a67181455eca1c6d5ddddcf65fb7106d16969dd32843283",
+      "sha256": "33c9aaa81c6063e4ab7227422d3e4946106ddedadfb5e1d4000a1336bd8c15eb",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -30082,18 +30082,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/INDEX.md",
-        "sha256": "17d2eb1a18d094322a67181455eca1c6d5ddddcf65fb7106d16969dd32843283",
+        "sha256": "33c9aaa81c6063e4ab7227422d3e4946106ddedadfb5e1d4000a1336bd8c15eb",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 119 lines. Reviewed and updated Lane 80 index labels and navigation descriptions to match rewritten startup, workplace, and targeting guides. Checked against live files in 80-lanes-abroad-full-stack/; all 38 links and #lane-decision--is-this-the-right-lane-for-you anchor verified.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 119 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/REVISION.md",
-      "sha256": "a5b69fb227fc4fb1b7edbf783de9e26225a077cbf61871cd33d60a7e77bb8f1f",
+      "sha256": "c45d49449d693f802faad13af71a3f6f52517d928b8395fad82b208a29e741ce",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -30147,12 +30147,12 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/REVISION.md",
-        "sha256": "a5b69fb227fc4fb1b7edbf783de9e26225a077cbf61871cd33d60a7e77bb8f1f",
+        "sha256": "c45d49449d693f802faad13af71a3f6f52517d928b8395fad82b208a29e741ce",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 378 lines. Full read verified all authored Q&A pairs remain accurate, well-structured, and aligned with the rewritten 80.01-80.36 guides. Checked against rewritten 80-lanes-abroad-full-stack/ chapters and 2026 EU hiring/visa thresholds; all source links verified.",
+        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 378 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },

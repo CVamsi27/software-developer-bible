@@ -34,7 +34,7 @@ Source: [Design approach](80.03-system-design-eu-patterns.md)
 
 **Q:** Ten thousand daily users make twenty requests each. What is average traffic, and what else is needed for a capacity plan?
 
-**A:** About 2.3 requests/second, from 200,000 divided by 86,400. Peak distribution, request cost, latency targets, growth, and failure capacity still need assumptions or measurement. A chosen peak multiplier is not a measured p99.
+**A:** About `2.3` requests per second, from `200,000` divided by `86,400`. Peak distribution, request cost, latency targets, growth, and failure capacity still need assumptions or measurement. A chosen peak multiplier is not a measured `p99`.
 
 ## Behavioral evidence
 
@@ -50,15 +50,15 @@ Source: [Compensation guide](80.05-comp-eu-benchmarking.md)
 
 **Q:** An offer has €80,000 base, €8,000 target bonus, €5,000 signing payment, and private options. What is recurring guaranteed cash?
 
-**A:** €80,000 gross annually. The target first-year cash could be €93,000 under its payout conditions, but the bonus is conditional and signing payment is one-time. Private options require a separate risk and liquidity model; none of these figures is net income.
+**A:** €80,000 gross annually. The target first-year cash could be €93,000 under its payout conditions, but the bonus is conditional and the signing payment is one-time. Private options require a separate risk and liquidity model; none of these figures is net income.
 
 ## Immigration scope
 
 Source: [Relocation playbook](80.06-visa-relocation-playbook.md)
 
-**Q:** Why does earning above a remembered “EU Blue Card minimum” not prove eligibility for a particular offer?
+**Q:** Why does earning above a remembered "European Union (EU) Blue Card minimum" not prove eligibility for a particular offer?
 
-**A:** Thresholds and qualifying routes are country- and date-specific. Qualifications, role, contract, employer requirements, application procedure, and dependent permissions can differ. UK and Swiss work routes are outside the EU Blue Card system. Verify the current exact route.
+**A:** Thresholds and qualifying routes are country- and date-specific. Qualifications, role, contract, employer requirements, application procedure, and dependent permissions can differ. United Kingdom (UK) and Swiss work routes sit outside the EU Blue Card system, so verify the current exact route.
 
 ## Employer research
 
@@ -66,7 +66,7 @@ Source: [Company profiles](80.07-company-profiles.md)
 
 **Q:** A company repository uses a framework. What can you safely infer about an opening?
 
-**A:** That the repository uses it at the observed version/date. It does not establish the hiring team's entire production stack, interview questions, work policy, salary, or sponsorship. Confirm role-scoped facts and record unresolved questions.
+**A:** That the repository uses it at the observed version and date. It does not establish the hiring team's entire production stack, interview questions, work policy, salary, or sponsorship. Confirm role-scoped facts and record unresolved questions.
 
 ## Failure boundaries
 
@@ -88,7 +88,7 @@ Source: [Quick reference](80.09-quick-reference-cards.md)
 
 Source: [Weekly tracker](80.10-weekly-tracker.md)
 
-**Q:** Five applications have no response and your self-score is 7/10. What do these observations establish?
+**Q:** Five applications have no response and your self-score is 7 out of 10. What do these observations establish?
 
 **A:** They record a small, delayed sample and your confidence. They do not prove interview readiness, the cause of rejection, or when callbacks will arrive. Track stage dates and assess skill through unseen tasks and follow-ups, then choose a bounded corrective action.
 
@@ -120,7 +120,7 @@ Source: [Berlin planning](80.14-berlin-dual-career-plan.md)
 
 Source: [Workflow starter](80.15-take-home-starter-prompt.md)
 
-**Q:** Why can a deterministic local workflow be a stronger first deliverable than a generic HTTP workflow engine?
+**Q:** Why can a deterministic local workflow be a stronger first deliverable than a generic Hypertext Transfer Protocol (HTTP) workflow engine?
 
 **A:** It makes the input-to-result contract inspectable within a bounded scope. Arbitrary destinations, retries, worker recovery, and remote side effects introduce separate failure and security contracts. Add those features when you can explain and verify them rather than implying their correctness through a feature list.
 
@@ -128,7 +128,7 @@ Source: [Workflow starter](80.15-take-home-starter-prompt.md)
 
 Source: [Docita walkthrough](80.16-docita-resume-defense.md)
 
-**Q:** A deployment file enables RLS. What further evidence is needed before saying tenant isolation works in production?
+**Q:** A deployment file enables Row-Level Security (RLS). What further evidence is needed before saying tenant isolation works in production?
 
 **A:** Confirm the deployed artifact and effective configuration, database policies and runtime role, scoped operations, bypass paths, and relevant denial behavior. A source flag proves neither deployment nor successful enforcement across all paths.
 
@@ -146,7 +146,7 @@ Source: [Claim crosswalk](80.18-resume-claim-crosswalk.md)
 
 **Q:** An index exists in the source, but the old dashboard is missing. Can you claim a particular historical latency reduction?
 
-**A:** No. Describe the implementation and your supported contribution. A before/after claim requires comparable observations with a workload, environment, period, and metric definition; source code alone cannot reconstruct that outcome.
+**A:** No. Describe the implementation and your supported contribution. A before-and-after claim requires comparable observations with a workload, environment, period, and metric definition; source code alone cannot reconstruct that outcome.
 
 ## Product preparation
 
@@ -160,9 +160,9 @@ Source: [Langfuse preparation](80.19-langfuse-interview-prep.md)
 
 Source: [German employer support](80.20-germany-visa-relocation-companies.md)
 
-**Q:** Why do “English-speaking team” and an H+ university entry not establish that a specific opening can hire you under the Blue Card route?
+**Q:** Why do "English-speaking team" and an `H+` university entry not establish that a specific opening can hire you under the Blue Card route?
 
-**A:** Working language does not establish hiring or relocation support, and H+ concerns the institution rather than proving the degree's comparability or every route condition. Verify this opening's employing entity, required offer and qualification evidence, current route conditions, and the actual admission process.
+**A:** Working language does not establish hiring or relocation support, and `H+` concerns the institution rather than proving the degree's comparability or every route condition. Verify this opening's employing entity, required offer and qualification evidence, current route conditions, and the actual admission process.
 
 ## Advanced failure rehearsal
 
@@ -178,7 +178,7 @@ Source: [Topic mapping](80.22-docita-tech-topic-mapping.md)
 
 **Q:** How should you use a project-to-pattern map when the pattern is absent from the actual implementation?
 
-**A:** Study the mechanism and explain a proposal with its trigger, preconditions, costs and failure boundaries. Do not turn a useful domain example into a claim of current implementation or personal operating experience.
+**A:** Study the mechanism and explain a proposal with its trigger, preconditions, costs, and failure boundaries. Do not turn a useful domain example into a claim of current implementation or personal operating experience.
 
 ## Research record freshness
 
@@ -186,15 +186,15 @@ Source: [Role research database](80.23-german-companies-database.md)
 
 **Q:** A recruiter confirmed relocation for a role that later closed. How should the record affect a new opening at the same company?
 
-**A:** Preserve the old answer with its role, date and historical status. Treat the new opening's support as unknown until confirmed. Company identity, role evidence and personal application history have different scopes; copying one answer into a permanent company-wide visa flag would erase those boundaries.
+**A:** Preserve the old answer with its role, date, and historical status. Treat the new opening's support as unknown until confirmed. Company identity, role evidence, and personal application history have different scopes; copying one answer into a permanent company-wide visa flag would erase those boundaries.
 
 ## Compliance scope
 
 Source: [EU compliance](80.24-eu-regulatory-compliance.md)
 
-**Q:** Does a scheduling feature used by a clinic automatically make its developer a high-risk AI provider or establish a universal EU-only hosting rule?
+**Q:** Does a scheduling feature used by a clinic automatically make its developer a high-risk artificial intelligence (AI) provider or establish a universal EU-only hosting rule?
 
-**A:** No. Determine the intended use, actual AI behavior, organizational role, data, and relevant law. Health-related personal data needs appropriate GDPR conditions and controls; permitted transfers have their own mechanisms. Do not infer every regulatory obligation from an industry label.
+**A:** No. Determine the intended use, actual AI behavior, organizational role, data, and relevant law. Health-related personal data needs appropriate General Data Protection Regulation (GDPR) conditions and controls; permitted transfers have their own mechanisms. Do not infer every regulatory obligation from an industry label.
 
 ## Team norms and employment terms
 
@@ -242,7 +242,7 @@ Source: [Mock facilitation](80.30-mock-interview-script.md)
 
 **Q:** A second attempt at the same mock scores better. What should you check before treating that as transferable improvement?
 
-**A:** Identify the specific behavior that improved and try a changed case. Memorization and familiarity can improve the same prompt's result. Use concrete correctness, evidence, tradeoff and communication observations rather than an unvalidated score-to-job-level label.
+**A:** Identify the specific behavior that improved and try a changed case. Memorization and familiarity can improve the same prompt's result. Use concrete correctness, evidence, trade-off, and communication observations rather than an unvalidated score-to-job-level label.
 
 ## Offer conversation
 
@@ -250,7 +250,7 @@ Source: [Offer negotiation](80.31-salary-negotiation-guide.md)
 
 **Q:** An employer cannot increase base but offers a signing payment. Which concern does that address, and which does it leave unchanged?
 
-**A:** It can improve first-year or upfront cash, subject to payment and repayment terms, but does not increase recurring base. Compare it against your actual priority and keep uncertain equity, contingent bonus, one-time payments and guaranteed recurring cash separate.
+**A:** It can improve first-year or upfront cash, subject to payment and repayment terms, but does not increase recurring base. Compare it against your actual priority and keep uncertain equity, contingent bonus, one-time payments, and guaranteed recurring cash separate.
 
 ## Company product context
 
@@ -258,7 +258,7 @@ Source: [Product preparation sheets](80.32-company-prep-sheets.md)
 
 **Q:** A company's product page describes satellite risk analysis. What can that establish for your preparation, and what remains unknown?
 
-**A:** It supplies a product workflow to investigate, including provenance, spatial cost and user decisions. It does not establish the opening's stack, interview format, location, hiring support, or your professional geospatial experience. Verify those separately and label the suggested study angle as preparation.
+**A:** It supplies a product workflow to investigate, including provenance, spatial cost, and user decisions. It does not establish the opening's stack, interview format, location, hiring support, or your professional geospatial experience. Verify those separately and label the suggested study angle as preparation.
 
 ## Weekly review
 
@@ -274,7 +274,7 @@ Source: [Healthtech and geospatial primer](80.34-germany-target-domain-primer.md
 
 **Q:** Why does combining an intersection test with a thirty-meter proximity test fail to find all nearby alerts?
 
-**A:** A nearby object can be within thirty meters without directly intersecting the asset. Choose the distance predicate, units and compatible coordinates for the intended corridor, then apply authorization and query bounds. Intersection answers a narrower spatial relationship.
+**A:** A nearby object can be within thirty meters without directly intersecting the asset. Choose the distance predicate, units, and compatible coordinates for the intended corridor, then apply authorization and query bounds. Intersection answers a narrower spatial relationship.
 
 ## Full-Stack Resume Route
 
@@ -286,23 +286,23 @@ Source: [Role-focused brushup](80.29-topic-brushup-roadmap.md).
 
 **Q:** Why does a successful response from the older search request sometimes need to be discarded?
 
-**A:** It may arrive after a newer request and overwrite the latest user intent. Associate state updates with the active query/request identity; cancellation alone is not every provider's completion guarantee.
+**A:** It may arrive after a newer request and overwrite the latest user intent. Associate state updates with the active query or request identity; cancellation alone is not every provider's completion guarantee.
 
-**Q:** How can a TypeScript DTO still accept invalid runtime data?
+**Q:** How can a TypeScript data transfer object (DTO) still accept invalid runtime data?
 
-**A:** Its type is erased at runtime. Parse untrusted input with the actual schema/input boundary and authorize the resource before relying on the resulting value.
+**A:** Its type is erased at runtime. Parse untrusted input with the actual schema and input boundary and authorize the resource before relying on the resulting value.
 
 **Q:** What does a mocked locking-query assertion leave unverified?
 
-**A:** It can inspect the intended SQL shape without executing real locks, transaction isolation or competing connections. Database concurrency guarantees need controlled interleavings against the database.
+**A:** It can inspect the intended Structured Query Language (SQL) shape without executing real locks, transaction isolation, or competing connections. Database concurrency guarantees need controlled interleavings against the database.
 
-**Q:** What makes a performance-improvement number defendable?
+**Q:** What makes a performance-improvement number defensible?
 
-**A:** An explicit workload, environment, statistic, sample period, error rate and comparable before/after result. A configuration constant or faster test runner is not a production-latency improvement.
+**A:** An explicit workload, environment, statistic, sample period, error rate, and comparable before-and-after result. A configuration constant or faster test runner is not a production-latency improvement.
 
 **Q:** How should Next.js working depth be demonstrated without misrepresenting Docita?
 
-**A:** Explain a separate implementation exercise and its rendering/cache boundaries, then compare with the actual React/Vite SPA. Do not substitute a studied framework for production experience.
+**A:** Explain a separate implementation exercise and its rendering and cache boundaries, then compare with the actual React and Vite Single-Page Application (SPA). Do not substitute a studied framework for production experience.
 
 **Q:** What is a useful readiness check after reading a topic?
 
@@ -314,23 +314,23 @@ Source: [Role-focused brushup](80.29-topic-brushup-roadmap.md#check-senior-readi
 
 **Q:** You can recite an outbox definition but cannot explain a crash after provider success. What should you practice next?
 
-**A:** Trace durable intent, the external effect and acknowledgment separately. Reproduce the ambiguous result with a controlled provider substitute, then explain the idempotency or reconciliation contract. Correct terminology establishes only the opening explanation; the changed failure case exposes the recovery gap.
+**A:** Trace durable intent, the external effect, and acknowledgment separately. Reproduce the ambiguous result with a controlled provider substitute, then explain the idempotency or reconciliation contract. Correct terminology establishes only the opening explanation; the changed failure case exposes the recovery gap.
 
 ## [Germany Target Engine](80.35-germany-target-engine.md)
 
 **Q:** A promising company rejected you immediately. What can you conclude, and what should you change?
 
-**A:** The rejection is observed; its cause may be unknown. Check the exact vacancy and submitted answers, correct demonstrable mismatches, and preserve truthful claims rather than treating an ATS hypothesis as proven.
+**A:** The rejection is observed; its cause may be unknown. Check the exact vacancy and submitted answers, correct demonstrable mismatches, and preserve truthful claims rather than treating an Applicant Tracking System (ATS) hypothesis as proven.
 
 ## [Docita Interview Defense](80.36-docita-complete-interview-defense.md)
 
-**Q:** What can you establish from a source file, a passing test and a production measurement?
+**Q:** What can you establish from a source file, a passing test, and a production measurement?
 
 **A:** Respectively, an implementation path, the exercised behavior on the tested revision, and a dated observed outcome. None substitutes for the others.
 
 **Q:** Why can a relay repeat an event even when the business write and outbox row commit atomically?
 
-**A:** It may crash after delivery but before recording success. Atomic local persistence prevents a missing event record; consumers still need protection against repeated delivery and remote effects need the provider’s contract.
+**A:** It may crash after delivery but before recording success. Atomic local persistence prevents a missing event record; consumers still need protection against repeated delivery and remote effects need the provider's contract.
 
 **Q:** What makes a queue replacement decision defensible?
 
@@ -346,23 +346,23 @@ Source: [Twenty mock prompts](80.11-mock-interview-bank.md)
 
 **Q:** A design answer names a cache and a queue but does not explain a failed write. What should the interviewer ask next?
 
-**A:** Ask where the authoritative state becomes durable, which work may repeat and how recovery discovers the incomplete operation. Follow one concrete failure instead of adding another component.
+**A:** Ask where the authoritative state becomes durable, which work may repeat, and how recovery discovers the incomplete operation. Follow one concrete failure instead of adding another component.
 
 **Q:** Why should a coding follow-up change a precondition rather than merely increase the input length?
 
-**A:** Negative values, duplicate identities or a changed output can invalidate the original invariant. Deriving the consequence tests reasoning; a larger input alone may only retest the same complexity claim.
+**A:** Negative values, duplicate identities, or a changed output can invalidate the original invariant. Deriving the consequence tests reasoning; a larger input alone may only retest the same complexity claim.
 
 **Q:** What remains unproved when a take-home has many passing unit tests but no clean setup rehearsal?
 
-**A:** The reviewer may be unable to install, seed and start the submitted artifact. Run its documented path from clean prerequisites and record the actual result.
+**A:** The reviewer may be unable to install, seed, and start the submitted artifact. Run its documented path from clean prerequisites and record the actual result.
 
 **Q:** How should a candidate handle a project follow-up asking for a metric they never measured?
 
-**A:** Describe the supported behavior and contribution, state the measurement gap and explain how it could be measured. Do not convert a design estimate into a historical result.
+**A:** Describe the supported behavior and contribution, state the measurement gap, and explain how it could be measured. Do not convert a design estimate into a historical result.
 
 **Q:** Why does mock feedback belong to the observed attempt rather than a permanent seniority label?
 
-**A:** It samples particular work under a chosen format. Record the specific correct or missing mechanism, repair it and try a changed case before drawing broader conclusions.
+**A:** It samples particular work under a chosen format. Record the specific correct or missing mechanism, repair it, and try a changed case before drawing broader conclusions.
 
 ## Summary
 

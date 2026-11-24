@@ -1,30 +1,30 @@
 # Abroad Full-Stack Lane — Prepare for the Actual Role
 
-> Use this lane to prepare practical coding, take-home work, architecture discussions and evidence-backed experience stories. Confirm the employer’s interview format, location and work-authorization requirements before choosing your study work.
+> Use this lane to prepare practical coding, take-home work, architecture discussions, and evidence-backed experience stories. Confirm the employer's interview format, location, and work-authorization requirements before choosing your study work.
 
 [![Files](https://img.shields.io/badge/files-37-blue)](../INDEX.md)
 
 ## Lane Decision — Is This the Right Lane for You?
 
-Choose by the assessed work, not a company’s country or funding stage. Use this lane for practical full-stack work and role research. Add the [coding patterns](../70-interview-toolkit/70.2-coding-patterns/INDEX.md) or [SDE preparation lane (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) when the confirmed process includes algorithmic coding. Both can apply to the same vacancy.
+Choose by the assessed work, not a company's country or funding stage. Use this lane for practical full-stack work and role research. Add the [coding patterns](../70-interview-toolkit/70.2-coding-patterns/INDEX.md) or [Software Development Engineer (SDE) preparation lane (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) when the confirmed process includes algorithmic coding. Both can apply to the same vacancy.
 
 For an imminent interview, start with its brief and a gap diagnosis below. For a broader preparation period, follow the stages in order. Technical concepts live in the shared stack chapters; these guides help choose and practice them.
 
 ## 1. Establish the role and constraints
 
-**Result:** a live vacancy, known requirements and explicit uncertainties. Personal statuses stay in the canonical workspace.
+**Result:** a live vacancy, known requirements, and explicit uncertainties. Personal statuses stay in the canonical workspace.
 
 | Read | Purpose | Role priority | General importance |
-| ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------- | ------------- | ------------------ |
+| ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ |
 | [Find Startup and Product Roles Without a Stale Job List](../00-strategy/00.05-find-startup-roles.md) | Discover companies and verify a current opening | Essential | Important |
 | [Company Profiles — Research the Employer and the Role](80.07-company-profiles.md) | Research the exact company and vacancy | Important | Specialized |
-| [Maintain a German & EU Startup Role Research Database](80.23-german-companies-database.md) | Verified public ATS hubs + dated role database | Important | Specialized |
+| [Maintain a German & EU Startup Role Research Database](80.23-german-companies-database.md) | Verified public Applicant Tracking System (ATS) hubs plus dated role database | Important | Specialized |
 | [Germany Target Engine — Turn Live Vacancies Into High-Fit Applications](80.35-germany-target-engine.md) | Evaluate live roles and maintain application funnel | Important | Specialized |
 | [Visa & Relocation Playbook — Eight European Countries](80.06-visa-relocation-playbook.md) | Check 2026 immigration routes and thresholds | Important | Specialized |
-| [Check German Employer Relocation Support](80.20-germany-visa-relocation-companies.md) | Clarify employer relocation support and Anabin/ZAB | Important | Specialized |
+| [Check German Employer Relocation Support](80.20-germany-visa-relocation-companies.md) | Clarify employer relocation support, `Anabin`, and Central Office for Foreign Education (ZAB) | Important | Specialized |
 | [Compensation Benchmarking — Compare the Actual Offer](80.05-comp-eu-benchmarking.md) | Compare compensation on equivalent terms | Important | Specialized |
 | [Berlin Dual-Career Planning — Verify the Dependencies](80.14-berlin-dual-career-plan.md) | Plan household relocation dependencies | Important | Specialized |
-| [EU Regulatory Compliance — GDPR, BaFin, EU AI Act, Digital Services Act](80.24-eu-regulatory-compliance.md) | Identify applicable regulatory responsibilities | Important | Specialized |
+| [EU Regulatory Compliance — GDPR, BaFin, EU AI Act, Digital Services Act](80.24-eu-regulatory-compliance.md) | Identify applicable European Union (EU), General Data Protection Regulation (GDPR), and Federal Financial Supervisory Authority (BaFin) duties | Important | Specialized |
 | [Learn a Team's Working Norms & German Employment Basics](80.25-german-workplace-culture.md) | Confirm team practices and statutory contract floors | Important | Specialized |
 
 ## 2. Diagnose gaps and choose a study plan
@@ -55,7 +55,7 @@ For an imminent interview, start with its brief and a gap diagnosis below. For a
 
 ## 4. Explain experience with evidence
 
-**Result:** a short account distinguishing implementation, tested behavior and measured outcomes. Read the Docita workflow before its evidence and follow-up guides.
+**Result:** a short account distinguishing implementation, tested behavior, and measured outcomes. Read the Docita workflow before its evidence and follow-up guides.
 
 | Read | Purpose | Role priority | General importance |
 | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- | ------------- | ------------------ |
@@ -104,16 +104,16 @@ After the learning stages, use [category revision](REVISION.md) to test the deci
 | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | Name lookup and JavaScript execution | [JavaScript](../10-frontend/10.1-javascript/INDEX.md) |
 | Types and runtime boundaries | [TypeScript](../10-frontend/10.2-typescript/INDEX.md) |
-| Rendering, state and data flow | [React](../10-frontend/10.3-react/INDEX.md), [Next.js](../10-frontend/10.4-next.js/INDEX.md) |
+| Rendering, state, and data flow | [React](../10-frontend/10.3-react/INDEX.md), [Next.js](../10-frontend/10.4-next.js/INDEX.md) |
 | Runtime behavior and request handling | [Node.js](../20-backend/20.1-node.js/INDEX.md), [NestJS](../20-backend/20.2-nestjs/INDEX.md) |
 | API contracts and data correctness | [REST APIs](../20-backend/20.3-rest-apis/INDEX.md), [Databases](../20-backend/20.4-database/INDEX.md) |
 | Trust boundaries | [Security](../20-backend/20.5-security/INDEX.md) |
-| Failure, consistency and delivery | [System design](../30-architecture/30.2-system-design/INDEX.md), [Microservices](../20-backend/20.6-microservices/INDEX.md) |
+| Failure, consistency, and delivery | [System design](../30-architecture/30.2-system-design/INDEX.md), [Microservices](../20-backend/20.6-microservices/INDEX.md) |
 | Verification and operations | [Testing](../50-quality/50.1-testing/INDEX.md), [Observability](../40-platform/40.4-observability/INDEX.md) |
 | Product implementation details | [Docita deep dives](../projects/docita/INDEX.md) |
 
-Keep personal CVs, application versions, contacts, relocation records and outcomes in the private workspace (kept outside this repository). Add general teaching material here only when it has a distinct purpose and links back to the appropriate shared concept.
+Keep personal curriculum vitae (CV) copies, application versions, contacts, relocation records, and outcomes in the private workspace (kept outside this repository). Add general teaching material here only when it has a distinct purpose and links back to the appropriate shared concept.
 
 ---
 
-[Back to the Bible](../INDEX.md) · [Sibling lane: SDE / FAANG (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md)
+[Back to the Bible](../INDEX.md) · [Sibling lane: SDE and FAANG (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md)

@@ -30158,7 +30158,7 @@
     },
     {
       "path": "81-lanes-indian-sde-faang/81.01-complete-guide.md",
-      "sha256": "5b0a3ed9bcbc3eb5b156ce500fbd6f96ec5e654c119f86a0ddcbbbcfa0a69ca3",
+      "sha256": "8f4f83e03638631fdc9c96fac0742c3ee43ddfafb308ad419f7f1b802aad4d1d",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30181,18 +30181,18 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/81.01-complete-guide.md",
-        "sha256": "5b0a3ed9bcbc3eb5b156ce500fbd6f96ec5e654c119f86a0ddcbbbcfa0a69ca3",
+        "sha256": "8f4f83e03638631fdc9c96fac0742c3ee43ddfafb308ad419f7f1b802aad4d1d",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Establish the actual assessment; fixed negative-window trace, Big O versus case analysis, numeric and output-space boundaries, fresh-task readiness evidence.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 101 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "81-lanes-indian-sde-faang/81.02-core-cs-fundamentals.md",
-      "sha256": "ab4d8949a87177b1793ec9c0d9862fa713412ce1bc97d9e7d92742b45055da9c",
+      "sha256": "d65adb09635a34358941e2169db3b92c040c94a18fa05d1e70d403b987fa0f0b",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30218,18 +30218,18 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/81.02-core-cs-fundamentals.md",
-        "sha256": "ab4d8949a87177b1793ec9c0d9862fa713412ce1bc97d9e7d92742b45055da9c",
+        "sha256": "d65adb09635a34358941e2169db3b92c040c94a18fa05d1e70d403b987fa0f0b",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Process/thread memory and CPU scheduling, lock acquisition ownership, deadlock conditions, virtual-memory faults, framed IPC, TCP versus committed operations and flow versus congestion control.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 149 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "81-lanes-indian-sde-faang/81.03-system-design-apis-security.md",
-      "sha256": "128ff0b84e2b84f583d4fe57b98fd8c31dc3b5e9f431f391712945a497403576",
+      "sha256": "281882c33d1d84ae6ba6dce1a87ca7071eb7f0d8c1156c7073a9e801587f7455",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30249,18 +30249,18 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/81.03-system-design-apis-security.md",
-        "sha256": "128ff0b84e2b84f583d4fe57b98fd8c31dc3b5e9f431f391712945a497403576",
+        "sha256": "281882c33d1d84ae6ba6dce1a87ca7071eb7f0d8c1156c7073a9e801587f7455",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: User operation and invariant before services; trust, authorization, storage and remote-outcome boundaries; canonical mechanism links avoid duplicate teaching.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 67 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "81-lanes-indian-sde-faang/81.04-devops-behavioral-career.md",
-      "sha256": "d2c91ad1b4b4f039c25bbedbdbe7c6813160397f5ca34dc83fd7e016588293b1",
+      "sha256": "8b521102f6bca047105e41c13b44c25bbf6a268630386a59d28019fed7639a18",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30282,18 +30282,18 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/81.04-devops-behavioral-career.md",
-        "sha256": "d2c91ad1b4b4f039c25bbedbdbe7c6813160397f5ca34dc83fd7e016588293b1",
+        "sha256": "8b521102f6bca047105e41c13b44c25bbf6a268630386a59d28019fed7639a18",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Actual contribution through review, tested artifact, rollout and observation; Git history/revert versus data recovery, mitigation versus diagnosis and no invented impact.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 81 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "81-lanes-indian-sde-faang/81.05-advanced-topics.md",
-      "sha256": "479a23ab34a2ed652cbe3e47771e4ee1214ea8f0f3538bc081809fbc190ab592",
+      "sha256": "2e1259ee9bda5503b4427ca9c8c4db6cdefa4fe413e749209f83e4dcdf0f7830",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30315,18 +30315,18 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/81.05-advanced-topics.md",
-        "sha256": "479a23ab34a2ed652cbe3e47771e4ee1214ea8f0f3538bc081809fbc190ab592",
+        "sha256": "2e1259ee9bda5503b4427ca9c8c4db6cdefa4fe413e749209f83e4dcdf0f7830",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Prefix versus mutable range aggregates, Fenwick index-zero boundary, AVL rotations and height metadata, parking resource ownership and role-driven deeper study.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 94 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "81-lanes-indian-sde-faang/81.06-leetcode-study-plan.md",
-      "sha256": "777b5ad70eb742e482b5adc6b54a126a4a6ea91ef0b86aef580a33a7ec584f19",
+      "sha256": "bea4cca42e54b0ebdf82cc0075c628481ccf51a1566e5611213434d475831e29",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30347,18 +30347,18 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/81.06-leetcode-study-plan.md",
-        "sha256": "777b5ad70eb742e482b5adc6b54a126a4a6ea91ef0b86aef580a33a7ec584f19",
+        "sha256": "bea4cca42e54b0ebdf82cc0075c628481ccf51a1566e5611213434d475831e29",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Complete contract/invariant/implementation/test/complexity cycle, assistance logging, changed signs/weights and delayed transfer; no fixed problem quota.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 80 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "81-lanes-indian-sde-faang/81.07-cheat-sheet.md",
-      "sha256": "deb2cc550d3f90de2b888bb5431e8990d12c62944403c4d98c6ea213ec1d9c41",
+      "sha256": "1fbf85d40f930988fe960c0000673ab994b21cd82e003bac08d0579f8ef482a3",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30380,18 +30380,18 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/81.07-cheat-sheet.md",
-        "sha256": "deb2cc550d3f90de2b888bb5431e8990d12c62944403c4d98c6ea213ec1d9c41",
+        "sha256": "1fbf85d40f930988fe960c0000673ab994b21cd82e003bac08d0579f8ef482a3",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Last-minute recall retains hash/search/BFS/list preconditions, CAP partition scope, stale caches and remote transaction boundaries; actual evidence for experience.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 81 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "81-lanes-indian-sde-faang/81.08-progress-tracker.md",
-      "sha256": "ae4337231449f174eb16847a51db0b99bd2b7660cbfc8d606cd63b412af3cd50",
+      "sha256": "3b4ca2909b2ccd891158a4c2a3a558ce6c199326389d4316b08e3ae7cc696386",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30413,18 +30413,18 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/81.08-progress-tracker.md",
-        "sha256": "ae4337231449f174eb16847a51db0b99bd2b7660cbfc8d606cd63b412af3cd50",
+        "sha256": "3b4ca2909b2ccd891158a4c2a3a558ce6c199326389d4316b08e3ae7cc696386",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Attempt/assistance/result/gap/next action, planned versus actual effort, mock observation versus unvalidated hiring score, one canonical log.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 75 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "81-lanes-indian-sde-faang/81.09-mock-interview-question-bank.md",
-      "sha256": "2156dceeb2b02accdaab1f1078cb7f3119f98bbf533e8a4a42ec834145a0f8e8",
+      "sha256": "9e619876c833d5fe791848625b6cd12cbf617dcf6e39354378c85b396126c789",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30446,18 +30446,18 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/81.09-mock-interview-question-bank.md",
-        "sha256": "2156dceeb2b02accdaab1f1078cb7f3119f98bbf533e8a4a42ec834145a0f8e8",
+        "sha256": "9e619876c833d5fe791848625b6cd12cbf617dcf6e39354378c85b396126c789",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: All 90 practice slots read: 50 coding slots include two explicit changed-contract repeats, 20 design and 20 behavioral. Counts, 45-minute allocation and algorithm cues checked; uniqueness, replay, driver ownership and uncertain payment outcomes traced.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 274 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "81-lanes-indian-sde-faang/81.10-spaced-repetition-schedule.md",
-      "sha256": "977f919a8c121146dc4719ee5563e875394e5a0825d85943b279a521c7fe1768",
+      "sha256": "4c1ce10d6d8cf6c1fbbfcdd3728800194cc5bce322fbdc2f1703f37c5cb919f5",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30479,18 +30479,18 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/81.10-spaced-repetition-schedule.md",
-        "sha256": "977f919a8c121146dc4719ee5563e875394e5a0825d85943b279a521c7fe1768",
+        "sha256": "4c1ce10d6d8cf6c1fbbfcdd3728800194cc5bce322fbdc2f1703f37c5cb919f5",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Delayed recall versus recognition and changed-case transfer, explicit due-date origin, adaptive intervals without universal retention percentages, one card scheduler.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 77 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "81-lanes-indian-sde-faang/81.11-daily-study-timer.md",
-      "sha256": "153c29e51f6b0a12a97bd26358dfa61af5b4b5344c4f1587b9309bba71e1c9fb",
+      "sha256": "bc6755948697b2b70c880e133cbe872595ad71b65c3f4a6d332594926bb6934b",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30511,18 +30511,18 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/81.11-daily-study-timer.md",
-        "sha256": "153c29e51f6b0a12a97bd26358dfa61af5b4b5344c4f1587b9309bba71e1c9fb",
+        "sha256": "bc6755948697b2b70c880e133cbe872595ad71b65c3f4a6d332594926bb6934b",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Session arithmetic: 5+25+5+20+5=60 minutes with 45 focused; eight 25-minute blocks=200 minutes. Timer command is accurately bounded, interrupted work remains incomplete.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 80 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "81-lanes-indian-sde-faang/81.12-quick-reference-cards.md",
-      "sha256": "b7d5c418d8d036139daf41f733ac3fc6d753e06af4e612473298ee9633c6167c",
+      "sha256": "d9f6ca29434184445314f6e944b996da927624a87abef6266be605ddafa06152",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30543,18 +30543,18 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/81.12-quick-reference-cards.md",
-        "sha256": "b7d5c418d8d036139daf41f733ac3fc6d753e06af4e612473298ee9633c6167c",
+        "sha256": "d9f6ca29434184445314f6e944b996da927624a87abef6266be605ddafa06152",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Half-open prefix example and all nine invariant cards checked, expected hash cost and BFS/graph/tree conditions retained, saga compensation not atomic rollback.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 77 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "81-lanes-indian-sde-faang/81.13-learning-guarantee-system.md",
-      "sha256": "f09e9530842c45d3c9efc1600beb0bdc749e16c77b99306eda8b4ac2b1bb2f1d",
+      "sha256": "2b9f18c65360f0c4ffb328df5548c9b791460141c53dea9992e6138469926b65",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30576,18 +30576,18 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/81.13-learning-guarantee-system.md",
-        "sha256": "f09e9530842c45d3c9efc1600beb0bdc749e16c77b99306eda8b4ac2b1bb2f1d",
+        "sha256": "2b9f18c65360f0c4ffb328df5548c9b791460141c53dea9992e6138469926b65",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Retrieval/feedback/changed-case/delay loop and 40-minute allocation checked; research support is conditional, no fixed retention or hiring guarantee.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 103 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "81-lanes-indian-sde-faang/81.14-flashcard-decks.md",
-      "sha256": "7cee62b7e8d86b1473ee6c5f41c615142fc3e411811738e99745fe33fd9eca52",
+      "sha256": "0f90f12725d5edcfc6426a7e856ab397d571158b3cf9f6b789f1e90f85c953ef",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30608,18 +30608,18 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/81.14-flashcard-decks.md",
-        "sha256": "7cee62b7e8d86b1473ee6c5f41c615142fc3e411811738e99745fe33fd9eca52",
+        "sha256": "0f90f12725d5edcfc6426a7e856ab397d571158b3cf9f6b789f1e90f85c953ef",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Flashcard context and DP work per state, actual UTF-8/tab import preview and duplicate settings. Current official Anki import documentation reverified.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 69 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "81-lanes-indian-sde-faang/81.15-resume-negotiation.md",
-      "sha256": "d66999923fed46569b311cf4ccfc9ddc7a22d62518fef6d0e60e37a4ebc8b05d",
+      "sha256": "e4670d650cc4c119ed474afcd8deca85450861b480f765eb9c1b7693bcf5bfc3",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30642,18 +30642,18 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/81.15-resume-negotiation.md",
-        "sha256": "d66999923fed46569b311cf4ccfc9ddc7a22d62518fef6d0e60e37a4ebc8b05d",
+        "sha256": "e4670d650cc4c119ed474afcd8deca85450861b480f765eb9c1b7693bcf5bfc3",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Truthful resume examples, PDF visual/text verification, conditional equity and recurring versus one-time pay, supported negotiation and written agreement.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 98 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "81-lanes-indian-sde-faang/81.16-microsoft-azure-interview-guide.md",
-      "sha256": "c674634eafaa01e1262b596cb870cab20e2cdf764dd49a9731455246120f809a",
+      "sha256": "655b297b0645966b590b66c8944a985405beefa1f0d769b5e8d1b4af4edd0c36",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30677,18 +30677,18 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/81.16-microsoft-azure-interview-guide.md",
-        "sha256": "c674634eafaa01e1262b596cb870cab20e2cdf764dd49a9731455246120f809a",
+        "sha256": "655b297b0645966b590b66c8944a985405beefa1f0d769b5e8d1b4af4edd0c36",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Azure guide full read: settlement versus local effect, Cosmos consistency/session and multi-write restriction, blob lease 15–60 seconds versus external fencing. Current Microsoft primary contracts reverified.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 92 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "81-lanes-indian-sde-faang/81.17-google-interview-guide.md",
-      "sha256": "6ba4c74eecb68e9e05bb43f5942de4962f9a567843a0ba3c34108677690093ec",
+      "sha256": "454c7d952c614e103830539e41a63d36f81e6be3ce9210fb6339c7e726c679d2",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30711,18 +30711,18 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/81.17-google-interview-guide.md",
-        "sha256": "6ba4c74eecb68e9e05bb43f5942de4962f9a567843a0ba3c34108677690093ec",
+        "sha256": "454c7d952c614e103830539e41a63d36f81e6be3ce9210fb6339c7e726c679d2",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Weighted-graph counterexample, LRU combined invariant, freshness and actual assessment. Current Spanner documentation confirms serializable/default external consistency versus optional repeatable read.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 85 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "81-lanes-indian-sde-faang/81.18-amazon-interview-guide.md",
-      "sha256": "e7fc933439d81884b9ac90f143033e6fe5caf9dac26b6fc15dcc20501af65c60",
+      "sha256": "a471cad22fe3170b3a26de082f74bf23c17c75840eff3ea2a382da9494a65b03",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30744,18 +30744,18 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/81.18-amazon-interview-guide.md",
-        "sha256": "e7fc933439d81884b9ac90f143033e6fe5caf9dac26b6fc15dcc20501af65c60",
+        "sha256": "a471cad22fe3170b3a26de082f74bf23c17c75840eff3ea2a382da9494a65b03",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Actual role guidance versus company-wide assumptions, supported principle stories, expired receiver versus visibility timeout and asynchronous DynamoDB TTL. Official SDE II page refreshed; no personal interview outcome inferred.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 87 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "81-lanes-indian-sde-faang/81.19-meta-interview-guide.md",
-      "sha256": "36159b030a00494785c2e8652f3a20485c37f101b03600f237e188f470adf100",
+      "sha256": "baa295b0528043b370049ec5c0f3b5fbfb00480710d779f93c7c62ba72b81f42",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30778,18 +30778,18 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/81.19-meta-interview-guide.md",
-        "sha256": "36159b030a00494785c2e8652f3a20485c37f101b03600f237e188f470adf100",
+        "sha256": "baa295b0528043b370049ec5c0f3b5fbfb00480710d779f93c7c62ba72b81f42",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Hypothetical feed access/freshness/pagination/deletion, fan-out tradeoffs and idempotent reaction state; dated ranking article separated from current architecture.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 85 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "81-lanes-indian-sde-faang/81.20-apple-interview-guide.md",
-      "sha256": "97e5820d14082db64bd8344c1d44148d2f8a9508b25dee233b2b2ef6f859339b",
+      "sha256": "8caec1641b4e73591bda8f8e6cf514dc9d25b35c54b201129582f48f7d359622",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30812,18 +30812,18 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/81.20-apple-interview-guide.md",
-        "sha256": "97e5820d14082db64bd8344c1d44148d2f8a9508b25dee233b2b2ef6f859339b",
+        "sha256": "8caec1641b4e73591bda8f8e6cf514dc9d25b35c54b201129582f48f7d359622",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Swift ARC/value semantics, actor suspension and cooperative cancellation. Exact Inventory code extracted, compiled with swiftc -parse-as-library and executed; output 1 confirms the demonstrated single-item invariant.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 114 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "81-lanes-indian-sde-faang/81.21-week-study-schedule.md",
-      "sha256": "bbe626a58997e2b31f07b372b9836db4276ec7a18813fa92c113c1a10e68a65b",
+      "sha256": "c1049f38fca5bee4a85613da2acb1a5e4a293533a79c17fade689a6abd41b27e",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30845,18 +30845,18 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/81.21-week-study-schedule.md",
-        "sha256": "bbe626a58997e2b31f07b372b9836db4276ec7a18813fa92c113c1a10e68a65b",
+        "sha256": "c1049f38fca5bee4a85613da2acb1a5e4a293533a79c17fade689a6abd41b27e",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Ten-hour illustrative budget and 80-hour eight-week arithmetic, actual-stage diagnosis and replacement within capacity, evidence rather than problem quotas.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 83 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "81-lanes-indian-sde-faang/81.22-compensation-benchmarking.md",
-      "sha256": "33c32b52c07a368d57c9ff83525f8a8957a42f9026338b3ddc412d4c098e321e",
+      "sha256": "8fbf3fdadbd746c9a10f92c630fa1c55207d3153854c263b964120cee5a06974",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30866,7 +30866,7 @@
           "Collect comparable evidence before choosing a range",
           "Build a year-by-year comparison",
           "Distinguish the equity instrument from its headline valuation",
-          "Keep gross pay, withholding and final tax separate",
+          "Keep gross pay, withholding, and final tax separate",
           "Turn the comparison into a decision",
           "Summary",
           "See Also",
@@ -30879,18 +30879,18 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/81.22-compensation-benchmarking.md",
-        "sha256": "33c32b52c07a368d57c9ff83525f8a8957a42f9026338b3ddc412d4c098e321e",
+        "sha256": "8fbf3fdadbd746c9a10f92c630fa1c55207d3153854c263b964120cee5a06974",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Four-year compensation example recomputed: 150000+3*130000=540000. Vesting, instruments, liquidity, withholding and final tax remain conditional and separate.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 90 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "81-lanes-indian-sde-faang/INDEX.md",
-      "sha256": "8699eb46559b0286cd6774c7256a6a974545e31f733d814fab449e13170ef9f0",
+      "sha256": "e050545d2f7abc14143ac21961704f7bf1bfe7e8f199d4c778e0e16093f159f9",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -30912,18 +30912,18 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/INDEX.md",
-        "sha256": "8699eb46559b0286cd6774c7256a6a974545e31f733d814fab449e13170ef9f0",
+        "sha256": "e050545d2f7abc14143ac21961704f7bf1bfe7e8f199d4c778e0e16093f159f9",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Four-pass assessment/mechanism/practice/role/revision flow, fresh-task senior evidence and conditional role selection; revision precedes separate mock practice.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 121 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "81-lanes-indian-sde-faang/README.md",
-      "sha256": "fd819fe51be35b53bb80c512a5c4a616506fef5586ba10837dc71017f4342aea",
+      "sha256": "2a17abb820815bce39e0bcaf60c7f62ce6a6243e1e4b1c6d1e7fcb40a0cf3d68",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30935,18 +30935,18 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/README.md",
-        "sha256": "fd819fe51be35b53bb80c512a5c4a616506fef5586ba10837dc71017f4342aea",
+        "sha256": "2a17abb820815bce39e0bcaf60c7f62ce6a6243e1e4b1c6d1e7fcb40a0cf3d68",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Short navigation to the maintained lane flow, diagnostics, log and shared teaching; personal records remain outside the public repository.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 9 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "81-lanes-indian-sde-faang/REVISION.md",
-      "sha256": "a01cfd671fdacc63782204385b147aafb2cdf02f9acc828bf11d7ee9d49080b2",
+      "sha256": "ff93be51a3b1eebffe6ca3d8be3612dbc0c69c9cbda616cacbc9f870a8e14139",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -30983,12 +30983,12 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/REVISION.md",
-        "sha256": "a01cfd671fdacc63782204385b147aafb2cdf02f9acc828bf11d7ee9d49080b2",
+        "sha256": "ff93be51a3b1eebffe6ca3d8be3612dbc0c69c9cbda616cacbc9f870a8e14139",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: All source-linked question/answer groups checked against the 22 guides, including algorithms, Azure, Spanner, Swift, repeated mock contracts, numerical and evidence boundaries.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 432 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -32830,7 +32830,7 @@
     },
     {
       "path": "lanes/INDEX.md",
-      "sha256": "1a748a0a73fb6ef546154b16c2bad86f94c365b99a7715460c2eabe6ef3ee8d9",
+      "sha256": "95b05d4ab69f6299bca2b97f98dd0344bddb443371380124ef88db81b136f9d5",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -32847,12 +32847,12 @@
       },
       "review": {
         "path": "lanes/INDEX.md",
-        "sha256": "1a748a0a73fb6ef546154b16c2bad86f94c365b99a7715460c2eabe6ef3ee8d9",
+        "sha256": "95b05d4ab69f6299bca2b97f98dd0344bddb443371380124ef88db81b136f9d5",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 37 lines. Rewritten for plain-English clarity: explains lane selection by assessed format, 5-step study-to-readiness loop, and canonical stack-vs-lane separation. No version-sensitive claim; verified 2-lane table, 991-file badge, and links to 00-strategy, 80-lanes-abroad-full-stack, and 81-lanes-indian-sde-faang.",
+        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 37 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },

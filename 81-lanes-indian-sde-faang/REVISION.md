@@ -15,11 +15,11 @@ Complete the learning stages in [the index](INDEX.md), then answer from memory. 
 
 **Q:** How can a page fault occur without reading a page from disk?
 
-**A:** The OS may allocate a zero-filled page, handle copy-on-write or reject an invalid access. A fault means the current mapping or permission did not complete the access.
+**A:** The operating system (OS) may allocate a zero-filled page, handle copy-on-write, or reject an invalid access. A fault means the current mapping or permission did not complete the access.
 
-**Q:** Why does reliable TCP transport not establish that an order was recorded?
+**Q:** Why does reliable Transmission Control Protocol (TCP) transport not establish that an order was recorded?
 
-**A:** TCP transports an ordered byte stream; the application’s commit and acknowledgment are separate events. Failure can leave the business outcome uncertain.
+**A:** TCP transports an ordered byte stream; the application's commit and acknowledgment are separate events. Failure can leave the business outcome uncertain.
 
 **Q:** What distinguishes flow control from congestion control?
 
@@ -53,7 +53,7 @@ Complete the learning stages in [the index](INDEX.md), then answer from memory. 
 
 **Q:** Which difference can make two equal headline offers incomparable?
 
-**A:** One may include a one-time payment, conditional bonus or illiquid equity. Compare annual recurring cash, first-year extras and equity conditions separately.
+**A:** One may include a one-time payment, conditional bonus, or illiquid equity. Compare annual recurring cash, first-year extras, and equity conditions separately.
 
 **Q:** Must you have a competing offer or reject the first offer to negotiate well?
 
@@ -71,7 +71,7 @@ Complete the learning stages in [the index](INDEX.md), then answer from memory. 
 
 **Q:** Is a bonus withholding percentage the final tax rate on that bonus?
 
-**A:** Not necessarily. Withholding is a payment toward tax; final liability depends on applicable rules and the person’s circumstances.
+**A:** Not necessarily. Withholding is a payment toward tax; final liability depends on applicable rules and the person's circumstances.
 
 ## [Weekly Study Schedule](81.21-week-study-schedule.md)
 
@@ -87,7 +87,7 @@ Complete the learning stages in [the index](INDEX.md), then answer from memory. 
 
 **Q:** Why should a due date specify which attempt the delay is measured from?
 
-**A:** “Review after seven days” is ambiguous without a starting date. A calendar date tied to the last relevant attempt keeps the schedule consistent and auditable.
+**A:** "Review after seven days" is ambiguous without a starting date. A calendar date tied to the last relevant attempt keeps the schedule consistent and auditable.
 
 **Q:** Does successful card recall establish competence on a whole coding task?
 
@@ -97,21 +97,21 @@ Complete the learning stages in [the index](INDEX.md), then answer from memory. 
 
 **Q:** What does completing eight twenty-five-minute blocks establish?
 
-**A:** Two hundred minutes of timed focus if all blocks were completed as recorded. It does not establish correct solutions, retention or interview readiness.
+**A:** Two hundred minutes of timed focus if all blocks were completed as recorded. It does not establish correct solutions, retention, or interview readiness.
 
 **Q:** What should you preserve when a timed session ends before the task is finished?
 
-**A:** The current hypothesis, failing case and next action, along with actual duration and assistance. Schedule the continuation rather than recording the task as solved.
+**A:** The current hypothesis, failing case, and next action, along with actual duration and assistance. Schedule the continuation rather than recording the task as solved.
 
 ## [Advanced Topics](81.05-advanced-topics.md)
 
 **Q:** Why does a point-update segment tree not automatically support efficient range changes?
 
-**A:** Its update operation changes one leaf and its ancestors. Range changes need a compatible aggregate/tag design, such as suitable lazy propagation, or another specialized method.
+**A:** Its update operation changes one leaf and its ancestors. Range changes need a compatible aggregate and tag design, such as suitable lazy propagation, or another specialized method.
 
 **Q:** What does a right rotation preserve while repairing the 30 → 20 → 10 left-heavy chain?
 
-**A:** Key order remains 10, 20, 30 while 20 becomes the local root. Rewiring and height updates restore the AVL condition in this case; the LL case needs a right rotation.
+**A:** Key order remains 10, 20, 30 while 20 becomes the local root. Rewiring and height updates restore the Adelson-Velsky and Landis (AVL) condition in this case; the left-left (LL) case needs a right rotation.
 
 **Q:** Why is a ParkingSpot class with an isAvailable method insufficient to prevent double assignment?
 
@@ -125,13 +125,13 @@ Complete the learning stages in [the index](INDEX.md), then answer from memory. 
 
 **Q:** What should a mock debrief produce besides an activity count or confidence score?
 
-**A:** A specific observed gap, the evidence for it, a focused repair and a changed prompt for rechecking. Those guide the next session without pretending to establish an employer’s bar.
+**A:** A specific observed gap, the evidence for it, a focused repair, and a changed prompt for rechecking. Those guide the next session without pretending to establish an employer's bar.
 
 ## [Coding Study Plan](81.06-leetcode-study-plan.md)
 
 **Q:** What makes a changed problem useful for testing transfer?
 
-**A:** It changes a condition the mechanism relies on, such as permitted signs, ordering or edge weights. Merely renaming variables leaves the old reasoning untested.
+**A:** It changes a condition the mechanism relies on, such as permitted signs, ordering, or edge weights. Merely renaming variables leaves the old reasoning untested.
 
 **Q:** Why can a sliding-window argument for positive sums fail when negative elements are allowed?
 
@@ -139,13 +139,13 @@ Complete the learning stages in [the index](INDEX.md), then answer from memory. 
 
 **Q:** What should you record after using a hint to solve a problem?
 
-**A:** The missing step, the assistance and the observed result, followed by a focused repair and later unaided variant. Hinted correctness is useful evidence but not the same as independent derivation.
+**A:** The missing step, the assistance, and the observed result, followed by a focused repair and later unaided variant. Hinted correctness is useful evidence but not the same as independent derivation.
 
 ## [Last-Minute Review](81.07-cheat-sheet.md)
 
 **Q:** What makes a technique worth rehearsing before the interview?
 
-**A:** You can explain its invariant, assumptions, complexity and a boundary case. Familiar syntax alone does not establish that you can use it correctly.
+**A:** You can explain its invariant, assumptions, complexity, and a boundary case. Familiar syntax alone does not establish that you can use it correctly.
 
 **Q:** Why can a variable-length sum window fail when negative values are allowed?
 
@@ -167,7 +167,7 @@ Complete the learning stages in [the index](INDEX.md), then answer from memory. 
 
 **Q:** What information makes a compressed algorithm reminder usable?
 
-**A:** The state meaning, invariant, assumptions and a boundary trace. An undefined condition hides the central decision.
+**A:** The state meaning, invariant, assumptions, and a boundary trace. An undefined condition hides the central decision.
 
 **Q:** How does a prefix-sum card prevent endpoint confusion?
 
@@ -177,7 +177,7 @@ Complete the learning stages in [the index](INDEX.md), then answer from memory. 
 
 **A:** If correctly computed indegrees yield fewer than V emitted vertices, a directed cycle prevents a topological order.
 
-**Q:** Why is a parent-only check insufficient for BST validation?
+**Q:** Why is a parent-only check insufficient for Binary Search Tree (BST) validation?
 
 **A:** A node must satisfy bounds inherited from every ancestor, not just its immediate parent; the duplicate policy also matters.
 
@@ -187,7 +187,7 @@ Complete the learning stages in [the index](INDEX.md), then answer from memory. 
 
 ## [Flashcard Decks](81.14-flashcard-decks.md)
 
-**Q:** Why does the number of DP dimensions not determine its running time?
+**Q:** Why does the number of Dynamic Programming (DP) dimensions not determine its running time?
 
 **A:** Count reachable states and work per state. A two-dimensional interval table with a linear split loop can require cubic time.
 
@@ -195,7 +195,7 @@ Complete the learning stages in [the index](INDEX.md), then answer from memory. 
 
 **A:** The empty-subarray policy and initialization. If a nonempty result is required, initializing the best sum to zero incorrectly permits an empty answer.
 
-**Q:** What must an LCA answer distinguish from returning a node found on one side?
+**Q:** What must a Lowest Common Ancestor (LCA) answer distinguish from returning a node found on one side?
 
 **A:** The lowest common ancestor must contain both targets beneath it or be one target ancestral to the other. An algorithm assuming both exist needs additional presence checks when that guarantee is absent.
 
@@ -205,7 +205,7 @@ Complete the learning stages in [the index](INDEX.md), then answer from memory. 
 
 **Q:** Why must a prefix-frequency map on a tree be updated during backtracking?
 
-**A:** Remove the current path’s contribution when returning so a sibling does not inherit frequencies from a different root-to-node path.
+**A:** Remove the current path's contribution when returning so a sibling does not inherit frequencies from a different root-to-node path.
 
 **Q:** What preserves decreasing stack order for a next-greater-value scan?
 
@@ -247,11 +247,11 @@ Complete the learning stages in [the index](INDEX.md), then answer from memory. 
 
 **A:** The assumption supporting its invariant, then the implementation and complexity that depend on it.
 
-**Q:** Why can BFS choose the wrong cheapest route in a weighted graph?
+**Q:** Why can Breadth-First Search (BFS) choose the wrong cheapest route in a weighted graph?
 
 **A:** BFS minimizes the number of edges, not the sum of arbitrary edge costs. A longer route can cost less.
 
-**Q:** Why is an LRU cache hit a write to shared state?
+**Q:** Why is a Least Recently Used (LRU) cache hit a write to shared state?
 
 **A:** It updates recency. Synchronization must preserve the relationship between the lookup structure and eviction order.
 
@@ -281,27 +281,27 @@ Complete the learning stages in [the index](INDEX.md), then answer from memory. 
 
 **A:** Distinguishing personal responsibility from shared work is more accurate than claiming every team action as your own.
 
-**Q:** Does an SQS visibility timeout stop the previous receiver from executing?
+**Q:** Does an Amazon Simple Queue Service (SQS) visibility timeout stop the previous receiver from executing?
 
 **A:** No. A delayed receiver can resume after another receiver obtains the message, so business effects need appropriate duplicate and stale-owner protection.
 
-**Q:** Why is DynamoDB TTL deletion insufficient to implement a timely lock expiry?
+**Q:** Why is DynamoDB Time to Live (TTL) deletion insufficient to implement a timely lock expiry?
 
 **A:** Cleanup is asynchronous and can occur days after expiration. Application ownership and expiry checks must govern the protocol.
 
-**Q:** What is the scope of the public SDE II loop schedule cited in the guide?
+**Q:** What is the scope of the public Software Development Engineer (SDE) II loop schedule cited in the guide?
 
-**A:** The named role’s dated public guidance. Confirm the actual invitation rather than extending it to every level or route.
+**A:** The named role's dated public guidance. Confirm the actual invitation rather than extending it to every level or route.
 
 ## [Meta Interviews](81.19-meta-interview-guide.md)
 
 **Q:** Why should authorization be part of a feed trace rather than a later feature?
 
-**A:** Candidate retrieval, caches and ranking must not expose posts outside the viewer’s permitted audience; current access can differ from cached eligibility.
+**A:** Candidate retrieval, caches, and ranking must not expose posts outside the viewer's permitted audience; current access can differ from cached eligibility.
 
 **Q:** Does fan-out on read guarantee fresh results?
 
-**A:** No. Source replication, caches and ranking inputs can still be stale. State the actual freshness contract.
+**A:** No. Source replication, caches, and ranking inputs can still be stale. State the actual freshness contract.
 
 **Q:** Which costs can make fan-out on write unattractive?
 
@@ -315,9 +315,9 @@ Complete the learning stages in [the index](INDEX.md), then answer from memory. 
 
 **A:** Repeating the same state-setting operation can preserve the intended effect, whereas an unconditional increment repeats the effect.
 
-**Q:** What authorizes AI tool use in a rehearsal intended to match the interview?
+**Q:** What authorizes artificial intelligence (AI) tool use in a rehearsal intended to match the interview?
 
-**A:** The actual assessment instructions or recruiting confirmation, rather than another candidate’s reported format.
+**A:** The actual assessment instructions or recruiting confirmation, rather than another candidate's reported format.
 
 ## [Apple Interviews](81.20-apple-interview-guide.md)
 
@@ -343,7 +343,7 @@ Complete the learning stages in [the index](INDEX.md), then answer from memory. 
 
 **Q:** Why can local computation still need a privacy review?
 
-**A:** Stored data, permissions, synchronization and outbound telemetry can expose information even when the central computation runs on the device.
+**A:** Stored data, permissions, synchronization, and outbound telemetry can expose information even when the central computation runs on the device.
 
 ## [SDE Interview Preparation](81.01-complete-guide.md)
 
@@ -353,7 +353,7 @@ Complete the learning stages in [the index](INDEX.md), then answer from memory. 
 
 **Q:** Does Big O specify which input case was analyzed?
 
-**A:** No. It describes an asymptotic upper bound; separately state whether the bound is worst-case, expected, amortized or another analysis.
+**A:** No. It describes an asymptotic upper bound; separately state whether the bound is worst-case, expected, amortized, or another analysis.
 
 **Q:** Why can printing every subset require more than constant work per subset?
 
@@ -365,7 +365,7 @@ Complete the learning stages in [the index](INDEX.md), then answer from memory. 
 
 **Q:** What should follow a mock interview mistake?
 
-**A:** Identify its cause, repair the relevant mechanism and try a changed case; log the assistance required and observed behavior.
+**A:** Identify its cause, repair the relevant mechanism, and try a changed case; log the assistance required and observed behavior.
 
 **Q:** Which evidence is stronger than a completed problem quota?
 
@@ -373,7 +373,7 @@ Complete the learning stages in [the index](INDEX.md), then answer from memory. 
 
 ## [Engineering Experience](81.04-devops-behavioral-career.md)
 
-**Q:** What distinguishes intended, tested and observed behavior in an experience answer?
+**Q:** What distinguishes intended, tested, and observed behavior in an experience answer?
 
 **A:** Intended behavior is the goal; tested behavior is what a stated check established; observed behavior is what actually occurred in the running system.
 
@@ -385,7 +385,7 @@ Complete the learning stages in [the index](INDEX.md), then answer from memory. 
 
 **A:** No. A merge can fast-forward when the history and options permit it.
 
-**Q:** Why should a restart be distinguished from fixing an incident’s cause?
+**Q:** Why should a restart be distinguished from fixing an incident's cause?
 
 **A:** It can mitigate the symptom without establishing or removing the underlying cause. Explain the evidence and follow-up separately.
 
@@ -395,7 +395,7 @@ Complete the learning stages in [the index](INDEX.md), then answer from memory. 
 
 **Q:** What prevents a local benchmark from becoming an unsupported business-impact claim?
 
-**A:** State its environment, input, measurement and scope; do not infer production latency, churn or savings without separate evidence.
+**A:** State its environment, input, measurement, and scope; do not infer production latency, churn, or savings without separate evidence.
 
 ## [Mock Interview Question Bank](81.09-mock-interview-question-bank.md)
 
@@ -425,7 +425,7 @@ Complete the learning stages in [the index](INDEX.md), then answer from memory. 
 
 ## Summary
 
-A useful answer identifies the shared resource, enforcing mechanism and failure boundary. Revisit its source when those are unclear.
+A useful answer identifies the shared resource, enforcing mechanism, and failure boundary. Revisit its source when those are unclear.
 
 ## See Also
 

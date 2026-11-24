@@ -15633,52 +15633,52 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 10B projects/docita 15-24)."
   },
   "projects/docita/25-launch-to-growth.md": {
-   "sha256": "93b1901c0b7bb74696388dd72f51fd5b4dc7ea3da6501d791350b6dac963de25",
-   "lines": 426,
+   "sha256": "84abbe91c3d7d877dcaaf281d35a7a1da702557840968d2cc8f7ece60a6e842d",
+   "lines": 448,
    "genre": "project",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita healthcare SaaS case study (25 launch to growth) verified against current PostgreSQL/Node/Next.js patterns.",
-    "readable": "Full read of 426 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "2655 words. Concrete production architecture walkthrough for 25 launch to growth with real schema and flow detail.",
+    "readable": "Full read of 448 lines (2734 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "2734 words across 448 lines. Concrete production architecture walkthrough for 25 launch to growth with real schema and flow detail.",
     "focused": "Canonical home for Docita 25 launch to growth; links to related chapters without duplication.",
-    "fast": "67.3 KB raw / 21.0 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 67.3 KB raw / 21.0 KB gzip (fast scan via headings and direct links.)",
     "best": "Documents concrete failure mode, tenant/security boundary, and operational trade-off for 25 launch to growth."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 10C projects/docita 25-27 and REVISION)."
   },
   "projects/docita/26-monthly-operating-costs.md": {
-   "sha256": "18b5546fbaf125df178e39c35b35802ca32a5855a73f7e3ebbe26405c49eaaf6",
-   "lines": 339,
+   "sha256": "95cc70a2f93dbb4aeaaafe4adacb9796886d5d10a937a5066882280b10fab1ee",
+   "lines": 387,
    "genre": "project",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita healthcare SaaS case study (26 monthly operating costs) verified against current PostgreSQL/Node/Next.js patterns.",
-    "readable": "Full read of 339 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "3600 words. Concrete production architecture walkthrough for 26 monthly operating costs with real schema and flow detail.",
+    "readable": "Full read of 387 lines (3855 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "3855 words across 387 lines. Concrete production architecture walkthrough for 26 monthly operating costs with real schema and flow detail.",
     "focused": "Canonical home for Docita 26 monthly operating costs; links to related chapters without duplication.",
-    "fast": "65.5 KB raw / 18.9 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 65.5 KB raw / 18.9 KB gzip (fast scan via headings and direct links.)",
     "best": "Documents concrete failure mode, tenant/security boundary, and operational trade-off for 26 monthly operating costs."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 10C projects/docita 25-27 and REVISION)."
   },
   "projects/docita/27-operating-evidence-workbook.md": {
-   "sha256": "44e4685970d22df5da4f431b7e64ce73871ed75d7b8fd7c355969830cbb347a0",
-   "lines": 331,
+   "sha256": "826962d9dacd62eb74da1eee6bccf47113064f67550463c75fff94a264c1e1f2",
+   "lines": 385,
    "genre": "project",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita healthcare SaaS case study (27 operating evidence workbook) verified against current PostgreSQL/Node/Next.js patterns.",
-    "readable": "Full read of 331 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "3586 words. Concrete production architecture walkthrough for 27 operating evidence workbook with real schema and flow detail.",
+    "readable": "Full read of 385 lines (3698 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "3698 words across 385 lines. Concrete production architecture walkthrough for 27 operating evidence workbook with real schema and flow detail.",
     "focused": "Canonical home for Docita 27 operating evidence workbook; links to related chapters without duplication.",
-    "fast": "63.7 KB raw / 20.2 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 63.7 KB raw / 20.2 KB gzip (fast scan via headings and direct links.)",
     "best": "Documents concrete failure mode, tenant/security boundary, and operational trade-off for 27 operating evidence workbook."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 10C projects/docita 25-27 and REVISION)."
   },
   "projects/docita/INDEX.md": {
    "sha256": "b6bff1ef8c06cb34a6c23d294da5507921bc3f5e40b4dd46a051753af89320c0",
@@ -15697,20 +15697,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
   },
   "projects/docita/REVISION.md": {
-   "sha256": "5a0c7544b106bb0d7c1fa5555ec3f8a4816890fefc6e25562094435e2e734478",
+   "sha256": "8cb0b9b3474ab17881dbb8d01dee8391314dc99fc5a98c80b191c23ae95540e6",
    "lines": 1402,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita interview-defense drill verified against all 27 architecture and product chapters.",
-    "readable": "Full read of 1402 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "13318 words. Source-linked Q/A defense bank for senior full-stack and system-design interviews.",
+    "readable": "Full read of 1402 lines (13589 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "13589 words across 1402 lines. Source-linked Q/A defense bank for senior full-stack and system-design interviews.",
     "focused": "Canonical revision companion for projects/docita.",
-    "fast": "118.4 KB raw / 36.8 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 118.4 KB raw / 36.8 KB gzip (fast scan via headings and direct links.)",
     "best": "Probes multi-tenant isolation failure, payment idempotency risk, and scale limit."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 10C projects/docita 25-27 and REVISION)."
   },
   "projects/maq/01-product-engineering.md": {
    "sha256": "e9b172780f548dd3aae0d48ca7021b94991f8f29e2f4b50e1abdcf0a986fb4d7",

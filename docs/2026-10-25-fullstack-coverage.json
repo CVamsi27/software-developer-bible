@@ -33773,7 +33773,7 @@
     },
     {
       "path": "projects/docita/25-launch-to-growth.md",
-      "sha256": "93b1901c0b7bb74696388dd72f51fd5b4dc7ea3da6501d791350b6dac963de25",
+      "sha256": "84abbe91c3d7d877dcaaf281d35a7a1da702557840968d2cc8f7ece60a6e842d",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -33802,18 +33802,18 @@
       },
       "review": {
         "path": "projects/docita/25-launch-to-growth.md",
-        "sha256": "93b1901c0b7bb74696388dd72f51fd5b4dc7ea3da6501d791350b6dac963de25",
+        "sha256": "84abbe91c3d7d877dcaaf281d35a7a1da702557840968d2cc8f7ece60a6e842d",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-28",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Reviewed workbook navigation addition against exact previously reviewed full content at HEAD; no mechanism or operating-state change.",
+        "notes": "Wave 10C C1-C8 refinement (2026-11-24): Full read of 448 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "projects/docita/26-monthly-operating-costs.md",
-      "sha256": "18b5546fbaf125df178e39c35b35802ca32a5855a73f7e3ebbe26405c49eaaf6",
+      "sha256": "95cc70a2f93dbb4aeaaafe4adacb9796886d5d10a937a5066882280b10fab1ee",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -33824,7 +33824,7 @@
           "Translate the Infrastructure Into Billing Units",
           "Compare Concrete Monthly Infrastructure Scenarios",
           "Retained Data Grows Even When Clinic Count Does Not",
-          "Budget Messages, Email and Payments Against Their Actual Units",
+          "Budget Messages, Email, and Payments Against Their Actual Units",
           "Complete the Budget Beyond the Infrastructure Table",
           "Reproduce the Infrastructure Arithmetic",
           "Let Usage and Service Risk Trigger the Next Change",
@@ -33839,18 +33839,18 @@
       },
       "review": {
         "path": "projects/docita/26-monthly-operating-costs.md",
-        "sha256": "18b5546fbaf125df178e39c35b35802ca32a5855a73f7e3ebbe26405c49eaaf6",
+        "sha256": "95cc70a2f93dbb4aeaaafe4adacb9796886d5d10a937a5066882280b10fab1ee",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-28",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content read by cost reviewer and root; exact example720/744assertions executed, narrative cashflow/retention/sensitivity calculations checked. All7old720totals preserved; allhourlymeters scale, monthlymeterbasis explicitly heldconstant. Payer/revenue/processedvalue, backupcostfanout, accountallowance, cohorts and liquidity boundaries reviewed. Existing officialrates rechecked28October.",
+        "notes": "Wave 10C C1-C8 refinement (2026-11-24): Full read of 387 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "projects/docita/27-operating-evidence-workbook.md",
-      "sha256": "44e4685970d22df5da4f431b7e64ce73871ed75d7b8fd7c355969830cbb347a0",
+      "sha256": "826962d9dacd62eb74da1eee6bccf47113064f67550463c75fff94a264c1e1f2",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -33879,12 +33879,12 @@
       },
       "review": {
         "path": "projects/docita/27-operating-evidence-workbook.md",
-        "sha256": "44e4685970d22df5da4f431b7e64ce73871ed75d7b8fd7c355969830cbb347a0",
+        "sha256": "826962d9dacd62eb74da1eee6bccf47113064f67550463c75fff94a264c1e1f2",
         "status": "reviewed",
         "reviewer": "root + full-content evidence reviewers",
-        "reviewDate": "2026-10-29",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review against current source and sanitized final checks: published646source and49file implementation;4394API/2015other units,21capacity/213standards,15SQLfixture,508E2E/63suites in four local CI-layout shards; lint/types/build/Knip/runtime/internalCF scope. Retained original DB-name guard failure and later OOM in same incomplete invocation, corrected target/4GiB/shards and stoppedownedPG. Intentional exact-state hold exemption is not active drain; optional absent baseline skip is not required performance-release evidence. No provider, production capacity/resource, full tenant-policy or restore conclusion inferred.",
+        "notes": "Wave 10C C1-C8 refinement (2026-11-24): Full read of 385 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -33917,7 +33917,7 @@
     },
     {
       "path": "projects/docita/REVISION.md",
-      "sha256": "5a0c7544b106bb0d7c1fa5555ec3f8a4816890fefc6e25562094435e2e734478",
+      "sha256": "8cb0b9b3474ab17881dbb8d01dee8391314dc99fc5a98c80b191c23ae95540e6",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -33930,7 +33930,7 @@
           "Upload Capabilities and Stored Objects",
           "Workflow State and Scheduling",
           "Retrospective Decisions",
-          "Stock, Movements and Read Freshness",
+          "Stock, Movements, and Read Freshness",
           "Metric Meaning and Historical Snapshots",
           "Invoice Context and Collections",
           "Subscription Entitlements and Usage",
@@ -33949,13 +33949,13 @@
           "Actual Production Metrics and Their Limits",
           "Read a Fly Machine Before Describing Its Capacity",
           "Choose a Database Profile Without Inventing Its Hardware",
-          "Budget Connections, Memory and Storage Together",
+          "Budget Connections, Memory, and Storage Together",
           "Derive Traffic Before Selecting a Machine Count",
           "Interpret P95 and P99 With Their Population",
           "Count the Workflow Rather Than Borrowing a Dashboard Label",
           "Explain the Worker at the Effect Boundary",
           "Diagnose the Resource That Actually Delays the Operation",
-          "Release, Restore and Cost Need Separate Acceptance Checks",
+          "Release, Restore, and Cost Need Separate Acceptance Checks",
           "Reproduce the Capacity Claim Safely",
           "Explain the Executed Monthly Aggregate Fixture",
           "Operate From the First Clinic Through Growth",
@@ -33974,12 +33974,12 @@
       },
       "review": {
         "path": "projects/docita/REVISION.md",
-        "sha256": "5a0c7544b106bb0d7c1fa5555ec3f8a4816890fefc6e25562094435e2e734478",
+        "sha256": "8cb0b9b3474ab17881dbb8d01dee8391314dc99fc5a98c80b191c23ae95540e6",
         "status": "reviewed",
         "reviewer": "root + full-content evidence reviewers",
-        "reviewDate": "2026-10-29",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content independent review: all305questiontexts preserved byte-for-byte,304answers unchanged; only source-availability answer275 updated for published646source or same reviewed changes on main. Root clarified squash-compatible wording. No new readiness or mastery assertion; historical Q/A evidence scope retained.",
+        "notes": "Wave 10C C1-C8 refinement (2026-11-24): Full read of 1402 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },

@@ -1,7 +1,7 @@
 # Architectural Patterns
 
 > **Study time:** ≈ 52 min of reading (9 files, ~6 min average).
-> **9 files.** Modern, distributed-systems patterns plus DDD tactical design and UI architecture. These are NOT part of the original GoF set — they emerged as software engineering evolved to handle scale, distributed systems, domain-driven design, and rich frontends.
+> **9 files.** Modern distributed-systems patterns plus Domain-Driven Design (DDD) tactical design and UI architecture. These are NOT part of the original Gang of Four (GoF) set — they emerged as software engineering evolved to handle scale, distributed systems, and rich frontends.
 
 [![Files](https://img.shields.io/badge/files-9-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architectural-red)](#)
@@ -25,12 +25,12 @@ These show up heavily in:
 
 | # | Pattern | Intent | Use when | Avoid when | Role priority | General importance |
 | --: | --------- | -------- | ---------- | ------------ | --- | --- |
-| 1 | [Repository](30.1.5.01-repository.md) | Data access abstraction | Domain-oriented persistence contracts | Simple CRUD with one model | Important | Foundational |
-| 2 | [CQRS & DI](30.1.5.02-cqrs-di.md) | Read/write separation + explicit dependencies | Complex domains, asymmetric read/write load | One read/write model already fits | Important | Specialized |
+| 1 | [Repository](30.1.5.01-repository.md) | Data access abstraction | Domain-oriented persistence contracts | Simple create, read, update, and delete (CRUD) with one model | Important | Foundational |
+| 2 | [CQRS and DI](30.1.5.02-cqrs-di.md) | Command Query Responsibility Segregation (CQRS) + Dependency Injection (DI) | Complex domains, asymmetric read/write load | One read/write model already fits | Important | Specialized |
 | 3 | [Event Sourcing](30.1.5.03-event-sourcing.md) | Store events, derive state | Accepted event history must be authoritative | Current records with audit/history satisfy the need | Important | Specialized |
-| 4 | [Saga](30.1.5.04-saga.md) | Recoverable workflows across local commits | Multi-service business flows | Single DB transaction works | Important | Specialized |
+| 4 | [Saga](30.1.5.04-saga.md) | Recoverable workflows across local commits | Multi-service business flows | Single database transaction works | Important | Specialized |
 | 5 | [DDD Tactical Patterns](30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md) | Entities, value objects, aggregate boundaries | Complex domains with invariants to enforce | CRUD apps without business rules | Important | Specialized |
-| 6 | [Anti-Corruption Layer](30.1.5.06-anti-corruption-layer.md) | Isolate legacy/external models from your domain | Integrating legacy systems, vendors, strangler migrations | Models already share the required meaning | Important | Specialized |
+| 6 | [Anti-Corruption Layer](30.1.5.06-anti-corruption-layer.md) | Isolate legacy/external models behind an Anti-Corruption Layer (ACL) | Integrating legacy systems, vendors, strangler migrations | Models already share the required meaning | Important | Specialized |
 | 7 | [Service Locator vs Dependency Injection](30.1.5.07-service-locator-vs-dependency-injection.md) | Direct collaborator supply vs on-demand lookup | Making fixed requirements visible or selecting an approved capability at runtime | A whole-container lookup hides fixed requirements | Important | Foundational |
 | 8 | [Presentation Patterns MVC/MVP/MVVM](30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md) | Separating UI state, logic, and rendering | Frontend architecture discussions and refactors | Trivial static UIs | Important | Specialized |
 
@@ -38,7 +38,9 @@ These show up heavily in:
 
 ## Read the boundaries in a useful order
 
-Start with Repository and dependency wiring to identify where persistence and construction belong. Then use DDD and the Anti-Corruption Layer to define the model being protected. CQRS separates read/write responsibilities; Event Sourcing changes the authoritative record. Saga addresses recoverable coordination across local commits. Presentation patterns bring the same ownership questions to UI interaction.
+Start with Repository and dependency wiring to identify where persistence and construction belong. Then use DDD and the Anti-Corruption Layer to define the model being protected.
+
+CQRS separates read/write responsibilities, and Event Sourcing changes the authoritative record. Saga addresses recoverable coordination across local commits, while presentation patterns bring the same ownership questions to UI interaction.
 
 Use the table to select the problem, then follow that chapter's concrete trace. The patterns compose where their contracts meet; they are not a package that every application must adopt.
 
@@ -84,7 +86,7 @@ These patterns are often used together in real systems:
 ## When NOT to use architectural patterns
 
 **Choose each boundary for a demonstrated problem, including in an early product. Plain dependency injection or a focused repository can be small; distributed projections and workflows introduce larger operational responsibilities.** Choose them when:
-- You've identified a specific problem (read/write asymmetry, audit, distributed tx)
+- You've identified a specific problem (read/write asymmetry, audit, distributed transactions)
 - You have team capacity to maintain the new moving parts
 - The scale or compliance requirement justifies the cost
 
@@ -100,7 +102,7 @@ Explain which changes must succeed together to preserve a rule, when events are 
 
 ## Cross-References
 
-- [Microservices & Distributed Patterns](../../../20-backend/20.6-microservices/INDEX.md) — Saga, Outbox, Event Sourcing are covered in depth there
+- [Microservices and Distributed Patterns](../../../20-backend/20.6-microservices/INDEX.md) — Saga, Outbox, Event Sourcing are covered in depth there
 - [NestJS](../../../20-backend/20.2-nestjs/INDEX.md) — DI, CQRS modules, Repository pattern
 - [System Design](../../30.2-system-design/INDEX.md) — event-driven architecture, eventual consistency
 
@@ -114,13 +116,13 @@ Explain which changes must succeed together to preserve a rule, when events are 
 
 ## Docita Anchor
 
-Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
+Reference locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React, and TypeScript. Check the target revision and tests when verifying how each boundary is implemented and enforced.
 
-| Topic | Docita evidence |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Repository | `shared/common/repositories/base.repository.ts` (+ `prisma-read-base.ts`), per-domain repos bound via DI tokens (CI-enforced) |
-| CQRS & DI | CQRS-lite command/query split in `domains/appointments/application/services/*`; explicit constructor/provider wiring; inspect the relevant module |
-| Ports & Adapters (hexagonal) | `domains/*/application/ports/*` + `infrastructure/repositories/*`; boundary-check scripts express restrictions; this review did not rerun Docita CI |
-| Anti-Corruption Layer | `abdm/core/repositories/abdm.repository.interface.ts` and `abdm/infrastructure/abdm-abha.client.ts` show a local port and foreign client; inspect mappings before calling the whole integration an ACL |
-| Service Locator vs DI | Constructor/provider wiring and focused registries are concrete examples; these pointers do not prove an exhaustive absence of service lookup |
-| Event Sourcing / Saga / MVC-MVP-MVVM | Transactional outbox is a related publishing mechanism; these pointers do not establish or rule out authoritative event history, durable saga coordination or a presentation pattern |
+| Topic | Docita reference |
+| ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Repository | `shared/common/repositories/base.repository.ts` (`prisma-read-base.ts`), per-domain repositories bound via DI tokens |
+| CQRS and DI | CQRS-lite command/query split in `domains/appointments/application/services/*` with explicit constructor and provider wiring |
+| Ports and Adapters (hexagonal) | `domains/*/application/ports/*` + `infrastructure/repositories/*` guarded by boundary-check scripts |
+| Anti-Corruption Layer | `abdm/core/repositories/abdm.repository.interface.ts` isolating the domain port from `abdm/infrastructure/abdm-abha.client.ts` |
+| Service Locator vs DI | Constructor/provider wiring and narrow registries in application modules |
+| Event Sourcing / Saga / MVC-MVP-MVVM | Transactional outbox handles event publishing; authoritative event sourcing, durable sagas, and UI patterns stay reference topics |

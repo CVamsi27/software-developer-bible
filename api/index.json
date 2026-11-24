@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "2b82b7d525ebc7295d9cac2139bcd95c8f1c5b5ab2fc2614c8e5fa0279a0a5ae",
+ "corpus_digest": "166bcb44e2ad992d54c88e571be506470e2d6024593572429200249810b118dc",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5383
+  "read_minutes": 5385
  },
  "chapters": [
   {
@@ -3744,7 +3744,7 @@
   },
   {
    "p": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.04-state.html",
-   "t": "State Pattern & State Machines",
+   "t": "State Pattern and State Machines",
    "s": "Design Patterns",
    "c": "Architecture",
    "g": [
@@ -3862,7 +3862,7 @@
   },
   {
    "p": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.02-cqrs-di.html",
-   "t": "CQRS & Dependency Injection",
+   "t": "CQRS and Dependency Injection",
    "s": "Design Patterns",
    "c": "Architecture",
    "g": [
@@ -3897,7 +3897,7 @@
   },
   {
    "p": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.html",
-   "t": "DDD Tactical Patterns — Aggregates & Value Objects",
+   "t": "DDD Tactical Patterns — Aggregates and Value Objects",
    "s": "Design Patterns",
    "c": "Architecture",
    "g": [
@@ -3956,7 +3956,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 9
+   "m": 11
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.html",

@@ -8,7 +8,7 @@
 
 # Architectural — Revision
 
-Read the section's learning chapters first. Close them, explain each answer with a concrete failure or tradeoff, then use the source link to check what you missed.
+Read the section's learning chapters first. Close them, explain each answer with a concrete failure or trade-off, then use the source link to check what you missed.
 
 ## Repository Pattern
 
@@ -18,23 +18,23 @@ Source: [Repository Pattern](30.1.5.01-repository.md)
 
 **A:** Expose operations expressed in business terms, such as finding unpaid orders or saving an approved change, rather than every database feature. Merely wrapping an ORM—the tool that maps records to application objects—does not help unless the wrapper simplifies what callers need to know.
 
-**Q:** Trace markPaid when the stored order is pending at version 4.
+**Q:** Trace `markPaid` when the stored order is `pending` at version 4.
 
-**A:** The service loads the record, validates pending, and saves paid with expected version 4. An adapter must atomically check 4, persist the change and return an incremented version.
+**A:** The service loads the record, validates `pending`, and saves `paid` with expected version 4. An adapter must atomically check 4, persist the change and return an incremented version.
 
 **Q:** What if another writer changes version 4 before save?
 
 **A:** The conditional write conflicts. Reload and reevaluate the domain operation; injection and an in-memory test double do not make the database update atomic.
 
-## CQRS & Dependency Injection
+## CQRS and Dependency Injection
 
-Source: [CQRS & Dependency Injection](30.1.5.02-cqrs-di.md)
+Source: [CQRS and Dependency Injection](30.1.5.02-cqrs-di.md)
 
 **Q:** Does CQRS require separate databases or event sourcing?
 
 **A:** No. Separating command and query models can begin in one process and datastore. Separate stores and event sourcing are additional architectural choices.
 
-**Q:** Trace a rename followed by details when both contracts use one store.
+**Q:** Trace a `rename` followed by `details` when both contracts use one store.
 
 **A:** The command trims and validates the name, then invokes the supplied write adapter. The query invokes the supplied read adapter. The visibility guarantee follows that store and transaction contract.
 
@@ -46,7 +46,7 @@ Source: [CQRS & Dependency Injection](30.1.5.02-cqrs-di.md)
 
 **A:** The compiler erases interfaces. Register a runtime class, symbol or other explicit token with the implementation at the composition root; keep the container optional when direct wiring is clearer.
 
-**Q:** What changes when details uses an asynchronous projection?
+**Q:** What changes when `details` uses an asynchronous projection?
 
 **A:** Define write-to-projection propagation, durable progress, duplicates and read-after-write behavior. Return accepted state, use an authoritative read or wait for a known projection version when required.
 
@@ -58,11 +58,11 @@ Source: [Event Sourcing Pattern](30.1.5.03-event-sourcing.md)
 
 **A:** Snapshots accelerate reconstruction but do not preserve every historical transition. Their schema and consistency point must remain tied to the authoritative event stream.
 
-**Q:** Fold opened, deposited(100), withdrawn(30) in order.
+**Q:** Fold `Opened`, `Deposited` (100), and `Withdrawn` (30) in order.
 
 **A:** Opening creates balance 0, deposit produces 100 and withdrawal produces 70. Replay derives state and must not charge or email again.
 
-**Q:** What if two commands loaded stream version N?
+**Q:** What if two commands loaded stream version `N`?
 
 **A:** Only an atomic expected-version append can accept the first without losing concurrency evidence. The other reloads and reevaluates; blindly retrying an obsolete accepted decision is unsafe.
 
@@ -98,9 +98,9 @@ Source: [Saga Pattern](30.1.5.04-saga.md)
 
 **A:** Use it when every participant supports a compatible atomic commit protocol and the business requires global atomicity. Coordinator failure can block participants; a saga instead accepts visible partial commits and compensating work.
 
-## DDD Tactical Patterns — Aggregates & Value Objects
+## DDD Tactical Patterns — Aggregates and Value Objects
 
-Source: [DDD Tactical Patterns — Aggregates & Value Objects](30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md)
+Source: [DDD Tactical Patterns — Aggregates and Value Objects](30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md)
 
 **Q:** Billing and delivery both use the word `Customer`. Should they share one domain class?
 
@@ -112,7 +112,7 @@ Source: [DDD Tactical Patterns — Aggregates & Value Objects](30.1.5.05-ddd-tac
 
 **Q:** Trace USD 250 cents multiplied by 2 and compare USD 500.
 
-**A:** Quantity validation succeeds; construction validates the product 500 as a safe nonnegative integer. Equal amount and currency produce true without requiring object identity.
+**A:** Quantity validation succeeds; construction validates the product 500 as a safe nonnegative integer. Equal amount and currency produce `true` without requiring object identity.
 
 **Q:** What if two valid order instances modify the same stored version?
 
@@ -134,11 +134,11 @@ Source: [Anti-Corruption Layer (ACL)](30.1.5.06-anti-corruption-layer.md)
 
 **A:** Its purpose is to protect the local domain model from the external model's assumptions. Renaming fields alone still leaves local code dependent on what those external fields mean and how they behave.
 
-**Q:** Translate CU-000123, a spaced Clinic name and status A. What does the result establish?
+**Q:** Translate `CU-000123`, a spaced `Clinic` name, and status `A`. What does the result establish?
 
-**A:** Validate the identity and name, map A to `profileState: open`, preserve string 000123, trim Clinic and freeze the local record. This says the vendor profile is open; it does not establish that a product invoice is paid.
+**A:** Validate the identity and name, map `A` to `profileState: open`, preserve string `000123`, trim `Clinic`, and freeze the local record. This says the vendor profile is open; it does not establish that a product invoice is paid.
 
-**Q:** What if status becomes a new code or a second vendor uses CU-000123?
+**Q:** What if status becomes a new code or a second vendor uses `CU-000123`?
 
 **A:** Reject or deliberately extend the unknown status mapping. Preserve vendor namespace or use an explicit identity map; identical foreign strings do not establish the same local entity.
 
@@ -160,7 +160,7 @@ Source: [Service Locator vs Dependency Injection](30.1.5.07-service-locator-vs-d
 
 **Q:** Trace the two reports returning count 3.
 
-**A:** LocatedReport requests Orders from its injected registry during run. InjectedReport calls its already supplied Orders. Both can use the same fake and neither needs a global.
+**A:** `LocatedReport` requests `Orders` from its injected registry during `run`. `InjectedReport` calls its already supplied `Orders`. Both can use the same fake and neither needs a global.
 
 **Q:** What if dependency construction is lazy or selection depends on an uploaded format?
 
@@ -178,9 +178,9 @@ Source: [Presentation Patterns — MVC, MVP, MVVM](30.1.5.08-presentation-patter
 
 **A:** A Presenter typically directs a view through an interface. A ViewModel exposes presentation state and commands for binding; concrete framework implementations may blend them.
 
-**Q:** Trace the passive-view presenter with totalCents 1250.
+**Q:** Trace the passive-view presenter with `totalCents` 1250.
 
-**A:** It reads the model, validates safe nonnegative integer cents, formats USD 12.50 and calls showTotal. The view does not compute the price.
+**A:** It reads the model, validates safe nonnegative integer cents, formats USD 12.50 and calls `showTotal`. The view does not compute the price.
 
 **Q:** What if an earlier asynchronous refresh completes after a newer one?
 

@@ -535,7 +535,7 @@
         "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged.",
         "previousReviewDate": null,
         "previousReviewer": "frontend",
-        "previousNotes": "Full category learning flow/topic mapping and source pointers reviewed; values→collections→copy→timers→retainers→GC→lookup/equality progression coherent. Counts delegated to final restamper. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS."
+        "previousNotes": "Full category learning flow/topic mapping and source pointers reviewed; values\u2192collections\u2192copy\u2192timers\u2192retainers\u2192GC\u2192lookup/equality progression coherent. Counts delegated to final restamper. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS."
       },
       "reviewDate": "2026-11-24",
       "fullContentRead": true
@@ -4517,7 +4517,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read resolver trace→Server5/Express5 boundary→separate revision→clients→bank; project comparison explicitly study fixture versus deployed claim. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read resolver trace\u2192Server5/Express5 boundary\u2192separate revision\u2192clients\u2192bank; project comparison explicitly study fixture versus deployed claim. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4572,7 +4572,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read entity/optimistic/list transition→variable-aware admission→actual generated consumer→revision→bank. Distinguishes REST source evidence from proposed GraphQL design and role-specific learning goals. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read entity/optimistic/list transition\u2192variable-aware admission\u2192actual generated consumer\u2192revision\u2192bank. Distinguishes REST source evidence from proposed GraphQL design and role-specific learning goals. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4605,7 +4605,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read prerequisite revision groups→all50 authored prompts→role-specific followups→source return when unsupported. Explicit experience boundary prevents proposed design from becoming fabricated implementation/deployment evidence. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read prerequisite revision groups\u2192all50 authored prompts\u2192role-specific followups\u2192source return when unsupported. Explicit experience boundary prevents proposed design from becoming fabricated implementation/deployment evidence. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4616,7 +4616,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read: staged contract→execution→consumers/operations→source-linked revision→all50 authored drills. Role-specific authority/cache/governance emphasis and REST project comparison avoid unverified GraphQL deployment claims. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read: staged contract\u2192execution\u2192consumers/operations\u2192source-linked revision\u2192all50 authored drills. Role-specific authority/cache/governance emphasis and REST project comparison avoid unverified GraphQL deployment claims. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4770,461 +4770,507 @@
     },
     {
       "path": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md",
-      "sha256": "40b2fd1d96a1c2c924ab9c3463bcc640124b21e8e86402d16b501ef9230bc2c3",
+      "sha256": "065e2b7d573b2298550d061453667084b1d010e6fadf07f903f6fdd34a8e5185",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: actor-driven SRP, known-axis OCP, mutable-square LSP counterexample, client ISP and policy-owned DIP. Omitted sketches labelled; no inference that interfaces or patterns alone prove design quality. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read: actor-driven SRP, known-axis OCP, mutable-square LSP counterexample, client ISP and policy-owned DIP. Omitted sketches labelled; no inference that interfaces or patterns alone prove design quality. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.02-dry-kiss-yagni.md",
-      "sha256": "a71901c7b2f872e3cdcdfaf3c1c23faf7527797f83383ebad2d1657afa1852c2",
+      "sha256": "57b4a9de7a5be42d8bb93fb6ea9bb55522dc71a7ccee3dee369b4d3c0a820fda",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: shared knowledge not incidental duplication; adequate constraints vs speculation; cents/range assumptions, effects/transaction boundaries and RFC9413 tolerance limits. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read: shared knowledge not incidental duplication; adequate constraints vs speculation; cents/range assumptions, effects/transaction boundaries and RFC9413 tolerance limits. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.md",
-      "sha256": "74ec4fbe1046c796a86332dfabfb8386ca369864c07e728827ded62634bc251f",
+      "sha256": "8b4775e0e75a8a7b7d83b49841f94f5bfbdb5ce3f1a382ccbe0b687c7ab8d1d9",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: state/contract ownership, validated account safe integers and rejection-before-write, persisted concurrency caveat, polymorphism/inheritance/composition/UML semantics. Actual balance invalid/overflow fixture passed. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read: state/contract ownership, validated account safe integers and rejection-before-write, persisted concurrency caveat, polymorphism/inheritance/composition/UML semantics. Actual balance invalid/overflow fixture passed. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.04-uml-basics.md",
-      "sha256": "aaf1b2ab3c7e51196cf48d93ad11889128ab64d6159f9b0e2eeca900d79ffa65",
+      "sha256": "e12bbd0948480b5649c9ca568e82b54604b8e0e08d4e1218bf49c222416290cf",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: relationship directions/multiplicity and lifecycle distinction, Mermaid vs exact UML tokens, library copy/current-loan model, ATM uncertain dispense and parking recovery, 60min budget sums correctly. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read: relationship directions/multiplicity and lifecycle distinction, Mermaid vs exact UML tokens, library copy/current-loan model, ATM uncertain dispense and parking recovery, 60min budget sums correctly. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/01-foundations/INDEX.md",
-      "sha256": "ab78382b78b459d498a454b829a03f4a8883ef9fdc983ced7611228f2fe5a344",
+      "sha256": "6a584d5aaed35e63ffc0b8ffbcc7311650ca2a859faf324a0dc36fcce8d0c31f",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full read foundational prerequisite flow OOP→principles→UML, tradeoff completion drill before revision, qualified Docita locations; study estimates illustrative, disk totals writer owned. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read foundational prerequisite flow OOP\u2192principles\u2192UML, tradeoff completion drill before revision, qualified Docita locations; study estimates illustrative, disk totals writer owned. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/01-foundations/REVISION.md",
-      "sha256": "c1633a907de64b3654708cd8d7976f7b3d9f70f3a9d045925b4f9c1eb0a2259d",
+      "sha256": "37d2a746760d9a91d053b39eea6d5e87a5a5d194c749e6ecf3d7ca74f6935dc7",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Full read all source-linked and preserved authored questions: stakeholder/extension/substitution boundaries, knowledge/complexity choices, OOP state/runtime privacy and UML diagram outcomes agree. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read all source-linked and preserved authored questions: stakeholder/extension/substitution boundaries, knowledge/complexity choices, OOP state/runtime privacy and UML diagram outcomes agree. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/02-creational/30.1.2.01-singleton.md",
-      "sha256": "34fcce9a73dea8e924e62f3617fac77c286cbca1c17e9fa62ec309edbc9fc030",
+      "sha256": "b3e2658fff02d6a3626f36d8721ecc891bccf0d81ba5a55a03ad7c504c19268f",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: runtime/module scope, TS private versus runtime, sync-agent construction and async single-flight, shutdown/tenant ownership. Actual canonical concurrent identity and failure retry fixture passed. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read: runtime/module scope, TS private versus runtime, sync-agent construction and async single-flight, shutdown/tenant ownership. Actual canonical concurrent identity and failure retry fixture passed. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/02-creational/30.1.2.02-factory-method.md",
-      "sha256": "b426a6676b4b29888e800e6d35e3f6da681460154f596de1f25f8a38d638ce07",
+      "sha256": "fbffc42cf6fb700926d5c019b2be49d08141f3ed4e891ad7de7b2ac07fc1526a",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: simple selector vs overridable creator workflow vs registry; erased generic, duplicate/missing registration and scope/resource policies; toy notification calls explicitly log only. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read: simple selector vs overridable creator workflow vs registry; erased generic, duplicate/missing registration and scope/resource policies; toy notification calls explicitly log only. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/02-creational/30.1.2.03-builder.md",
-      "sha256": "941210032609191743cf25f7a9481509e8c1be35b6c27a1334360b9c38da7a24",
+      "sha256": "d48ada8296be614a5d5050e5198bd873237b93e3ea77ba810fe7731445f7ef88",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: optional director/reset, domain vs assembly validation, shallow body sharing, copied normalized headers and Fetch GET/HEAD compatibility. Actual builder validation/alias fixture passed. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read: optional director/reset, domain vs assembly validation, shallow body sharing, copied normalized headers and Fetch GET/HEAD compatibility. Actual builder validation/alias fixture passed. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/02-creational/30.1.2.04-abstract-factory.md",
-      "sha256": "00d62ca19dde50202bc143e4c603803dad30a18b92f9ced47fdf73776086a991",
+      "sha256": "8076ebceee8b343488a8f9d9d5d025a52d57a8e44adda54593d8a8b4af29a78a",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: family compatibility versus structural shape, family vs product-kind extension costs, DI/factory/builder distinctions, illustrative labels only. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read: family compatibility versus structural shape, family vs product-kind extension costs, DI/factory/builder distinctions, illustrative labels only. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/02-creational/30.1.2.05-prototype.md",
-      "sha256": "b5138ffe4edaf58e666e8769f8070247f2c2c2bfd287fb9a5448fec0cced9cb1",
+      "sha256": "c1e3fd849f5eb041e7c4851555cfd85261ea07cf81d00ac48ef1457c9678a398",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: explicit clone depth/identity/resource policy; structured-clone unsupported classes and transfer limits, JS delegation distinct. Actual retry/header independence fixture passed. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read: explicit clone depth/identity/resource policy; structured-clone unsupported classes and transfer limits, JS delegation distinct. Actual retry/header independence fixture passed. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/02-creational/INDEX.md",
-      "sha256": "9ab9b755e526b1d021f9092840867e0e955be295f35b4f4b25953773c5be2dc9",
+      "sha256": "5c5076b4ee502c6b85858a4b711508ff2e7fc814306ae2ce7cdd19a080d72ac5",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full read learning sequence, variation decision tree, pattern comparisons, completion/revision ordering and qualified Docita candidate pointers; disk totals remain metadata-writer owned. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read learning sequence, variation decision tree, pattern comparisons, completion/revision ordering and qualified Docita candidate pointers; disk totals remain metadata-writer owned. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/02-creational/REVISION.md",
-      "sha256": "9aed72a4bb489ca1cd1de23c1ae2089181bc5ba0973d932d209facb6a42057a6",
+      "sha256": "c1a6fd3b7b3304ed067bc15c80046b25ea75acf80c081cfc09cb0f2672110365",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Full-content read (2026-11-14): Question order follows Singleton, Factory Method, Abstract Factory, Builder, Prototype. One or two prompts per pattern; no prompt repeats the previous pattern's tradeoff.",
+      "notes": "Full-content read (2026-11-14): Question order follows Singleton, Factory Method, Abstract Factory, Builder, Prototype. One or two prompts per pattern; no prompt repeats the previous pattern's tradeoff. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
       "reviewer": "root",
-      "reviewDate": "2026-11-14",
+      "reviewDate": "2026-11-24",
       "fullContentRead": true
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.01-adapter.md",
-      "sha256": "bca17f1db9f0058b9f2345bb0465e5e84f7f3771d64ba3d3877d3ee5e46650de",
+      "sha256": "7f25a420e4a4b6adccf0752acbb94790525f3c182da9fd5665a81c311bf93ff8",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: target/adaptee semantic mapping, units, strict unknown profile decoder/null/name/date policies, payment uncertainty and unsupported behavior. Actual malformed-date/blank-email decoder fixture passed. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read: target/adaptee semantic mapping, units, strict unknown profile decoder/null/name/date policies, payment uncertainty and unsupported behavior. Actual malformed-date/blank-email decoder fixture passed. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.02-facade.md",
-      "sha256": "f85d3141a7057c842ad5ff6414c120f64a0ba795b6ea04b4dc907e45faed370e",
+      "sha256": "35344e364bb1a59c99de0a4c823c227463a4b77fc64c1a3d07e2530a60390496",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: dependent boot-data trace, simulation caveat, sequence not distributed transaction, Saga/idempotency/authorization ownership and independent Promise.all failures. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read: dependent boot-data trace, simulation caveat, sequence not distributed transaction, Saga/idempotency/authorization ownership and independent Promise.all failures. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.03-decorator.md",
-      "sha256": "c08a0980d739431eed9e203432757648a5fa43d2c7a6af21e1ef5eac08ca1034",
+      "sha256": "d52bb98257a60303da8fc86e6eff948f1cc85384b47f1c709bf3c61cbcde7da8",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: wrapper call/result ordering, floating-point price caveat, cache auth bypass, logger/retry positions, async/resource preservation and modern/legacy TS syntax distinct. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read: wrapper call/result ordering, floating-point price caveat, cache auth bypass, logger/retry positions, async/resource preservation and modern/legacy TS syntax distinct. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.04-proxy.md",
-      "sha256": "5c1cf57b47f7aa05423171bd5984d6a5fa1a149ae07db169a66a1137f14bb9f4",
+      "sha256": "030fc34c1c00ebc4353bccf2ccf2169218105276294ac53ff8ed10bf1e983e08",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: lazy subject lifecycle, sync constructor failure retry, async single-flight link, protection/cache/remote contracts and JS Proxy distinction. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read: lazy subject lifecycle, sync constructor failure retry, async single-flight link, protection/cache/remote contracts and JS Proxy distinction. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.05-module-pattern.md",
-      "sha256": "2d8d6bd6c607698069ad3842930c1cd0ad3dab9feaf8783f6aa75225b446d9c5",
+      "sha256": "e76d90ce8dd4f79f10091427e015a5440268c81b91dc1874c5ad27282deaed56",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: ESM vs historical closure modules, hidden bindings vs returned references, per-instance shared state, factories, imports/paths/exports, tree-shaking and cycle limitations. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read: ESM vs historical closure modules, hidden bindings vs returned references, per-instance shared state, factories, imports/paths/exports, tree-shaking and cycle limitations. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.06-composite.md",
-      "sha256": "f888e6bfe30954dec7fbc5dfb7e9f5ad0775ca6eafb11ecc69960ac259311e6a",
+      "sha256": "23c46e33b57e4aeb3bdd3024177b5cfd118e43590b51969a6aea809fdf508896",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: safe/transparent contracts, recursive sum, concrete cycle guard, per-path DAG counting and construction/traversal complexity. Actual cycle/duplicate/shared-count/remove fixture passed. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read: safe/transparent contracts, recursive sum, concrete cycle guard, per-path DAG counting and construction/traversal complexity. Actual cycle/duplicate/shared-count/remove fixture passed. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.07-bridge.md",
-      "sha256": "9218d7a2182fd4ed9d4c2e41cb8e2543969e32c4e29764a3ff7f00c3a3092687",
+      "sha256": "da33caaaad0741528feca179db9ae64420756a0eba8bacfd622230285b6cbace",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: two variation axes, small-class-count caveat, renderer contract still changes for new shape, Adapter/Strategy/Abstract Factory distinctions. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read: two variation axes, small-class-count caveat, renderer contract still changes for new shape, Adapter/Strategy/Abstract Factory distinctions. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.08-flyweight.md",
-      "sha256": "472b30b514b6d89ddb799824400e611ce146abdb4afea0425d2d4ac0da5002ee",
+      "sha256": "ef3efa2d8db62a54e29e9f14d9b56f252d361064c4e64203957d86226db7829e",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: intrinsic/extrinsic modeling, complete tuple key, string-field freeze, illustrative payload assumptions, cache bounds and external resources. Actual identity/version/limit/clear fixture passed. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read: intrinsic/extrinsic modeling, complete tuple key, string-field freeze, illustrative payload assumptions, cache bounds and external resources. Actual identity/version/limit/clear fixture passed. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/INDEX.md",
-      "sha256": "22f781a6beec4a753b13dfe045bd6194f8ec7a707236213e91da13285a0921fc",
+      "sha256": "a5497a030bfc2755832fd208a58025751e7dc9cf642d0edc4468aef3b86bb3d7",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full read learning flow, wrapper intent and contract comparison, recursive/shared/two-axis decisions, revision ordering and qualified source pointers; no blocking teaching contradiction. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read learning flow, wrapper intent and contract comparison, recursive/shared/two-axis decisions, revision ordering and qualified source pointers; no blocking teaching contradiction. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/REVISION.md",
-      "sha256": "937e5d0dc295696e83693f09dc62b7226d54f4e523d222fe2f8b34a6e0f1872e",
+      "sha256": "00089c33cd171ac8ebd61ee1082e9146d83132ae009297e9a590dd755957d777",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Full read all source-linked questions: numeric adapter, facade partial failure, decorator order/auth, proxy lifecycle, module refs/paths, composite DAG, bridge contract and flyweight clear agree. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read all source-linked questions: numeric adapter, facade partial failure, decorator order/auth, proxy lifecycle, module refs/paths, composite DAG, bridge contract and flyweight clear agree. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.01-strategy.md",
-      "sha256": "825f6a345b0f87bc3bfcd08d813daf5ccb1aa027e5e1fc2050eb322b3e84d690",
+      "sha256": "a679cfc4bdc00694fd098777cdd44c80bb08ada2af07a369177fb439c2672ef9",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Trusted policy vs external decoder, validation/errors and object lifecycle, function strategy/State/Template distinctions. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment.",
+      "notes": "Full-content review: Trusted policy vs external decoder, validation/errors and object lifecycle, function strategy/State/Template distinctions. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.02-observer.md",
-      "sha256": "0996740423d89ed84b00a58d2c515895e8ff37b711e7389b00c2f9a104e111fd",
+      "sha256": "6af1328d454582f130af2db16639d8408396385b5dbaf8079d08632729518172",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Node synchronous registration order/once reentrancy, duplicate cleanup/current dispatch snapshot, rejection/error policy and broker distinction. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment.",
+      "notes": "Full-content review: Node synchronous registration order/once reentrancy, duplicate cleanup/current dispatch snapshot, rejection/error policy and broker distinction. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.03-chain-of-responsibility.md",
-      "sha256": "c6a659e8b08bf9b7c965ec1681d1ea66a2be224692bef387e32dfdf25c604cc9",
+      "sha256": "f35806c3b6c7c2fa86d079cedafb0a563f14779a1ae6131de9ef9a1dde7f048f",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: First-match priority and fallthrough/errors; Express4/5 returned promises, next vs awaited onion, per-request state. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment.",
+      "notes": "Full-content review: First-match priority and fallthrough/errors; Express4/5 returned promises, next vs awaited onion, per-request state. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.04-state.md",
-      "sha256": "ae737ca81562b93699f3d754c66ce5c5aa39cf2e97f202e67b412992e201c0a2",
+      "sha256": "85cf8b105fdc8e779ab16af5a2c71bfb07cf7dbf43eebebe2f70b652c819cbff",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: GoF delegates vs pure union, accepted/rejected events, mutable Date alias, concurrent versioned persistence, effects/outbox and XState snapshots. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment.",
+      "notes": "Full-content review: GoF delegates vs pure union, accepted/rejected events, mutable Date alias, concurrent versioned persistence, effects/outbox and XState snapshots. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.05-template-method.md",
-      "sha256": "aa2bce83b2be6b122dfac2523315f04161c2bc3124654324712f8bf407339426",
+      "sha256": "920303482c2999c1b4d2b37603f6df0116eb83ef3c91dec9b72180d9130bdb9f",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Inherited sequence/dispatch and hook failures, TS lacks final, async contracts and cleanup error precedence, framework callback distinction. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment.",
+      "notes": "Full-content review: Inherited sequence/dispatch and hook failures, TS lacks final, async contracts and cleanup error precedence, framework callback distinction. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.06-iterator.md",
-      "sha256": "90cbcc2ca1fed8b3964acbd144875fb0f5457b9fd13734ac091fa7b20c8a41b0",
+      "sha256": "59ed991509c8986fa52b51f62e5d21f3006d5ebead216712c8c4c853dd1158a7",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Inclusive bounds/generator closing, ES2025 lazy helpers support, async return vs abort, live Array/Map/Set mutation and resource limits. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment.",
+      "notes": "Full-content review: Inclusive bounds/generator closing, ES2025 lazy helpers support, async return vs abort, live Array/Map/Set mutation and resource limits. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.07-mediator.md",
-      "sha256": "bb649b35132bd23ef5bcffe6302a8f0cf244f542602f52c233d74da2b15fb834",
+      "sha256": "88329b58c35e9d22a98d5d2da062078206901936ede6fb3fba5ea01ed8d9f4fd",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Cohesive interaction rule/initial disabled form, feedback loops and stale results; bus transport not coordination/auth. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment.",
+      "notes": "Full-content review: Cohesive interaction rule/initial disabled form, feedback loops and stale results; bus transport not coordination/auth. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.08-memento.md",
-      "sha256": "af3ee84e5fe38296bc2f15dd42ceb6e19a7b4ded79433c8d16d41bf5f27d43af",
+      "sha256": "618144ef7a311752b3594550acb29da190280b629c2cf267b78bf7de001ad153",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Opaque identity token WeakMap/text snapshot, unknown token, undo/redo lifetime, portable schema and distributed rollback distinction. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment.",
+      "notes": "Full-content review: Opaque identity token WeakMap/text snapshot, unknown token, undo/redo lifetime, portable schema and distributed rollback distinction. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.09-command.md",
-      "sha256": "7b229c91a19e100e8406df248d234ba3ecd8801244471930676b2f5cc9998da8",
+      "sha256": "ee4a175878f24b42b11d85abffd5c4593eb97b76db549421d2470e82cb56a0c6",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Captured previous state, execution/undo guards, order/concurrency, durable allowlisted data and execution authority/idempotency. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment.",
+      "notes": "Full-content review: Captured previous state, execution/undo guards, order/concurrency, durable allowlisted data and execution authority/idempotency. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.10-visitor.md",
-      "sha256": "0d4c307d3f6f4543e1d760ccf26cd1583798f2cb1d2cd94ac062b414dd1a969c",
+      "sha256": "3a1f13b0b1489440233f71e1a6feb3fe498b13902b956bc7033f5de68d65ac5c",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Explicit two-step named dispatch and stable node family, operation/type extension tradeoff, traversal owner and validated heading level. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment.",
+      "notes": "Full-content review: Explicit two-step named dispatch and stable node family, operation/type extension tradeoff, traversal owner and validated heading level. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.11-interpreter.md",
-      "sha256": "8584d5a95dd936d357317982ab222437880490cac3432845f4c0f26353142a29",
+      "sha256": "b9b55fc6878a01a3cdb31a02ac03e608580a72ac0c8e879055155f5fc11315d4",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Constructed AST, environment and missing binding, syntax vs meaning, shape/finite/depth/work/capability controls and parser tooling. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment.",
+      "notes": "Full-content review: Constructed AST, environment and missing binding, syntax vs meaning, shape/finite/depth/work/capability controls and parser tooling. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.12-null-object.md",
-      "sha256": "cb945b5c53e898c31cb84f2e50be656435542b0b0718b309a4619eed1c56ade6",
+      "sha256": "461b9db9b63ee595e31c27c8189e78ff8bf5ce46751ec6535b77bc3fc506eabf",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Later pattern, optional configured silence vs initialization failure, neutral semantics/identity and no false delivery/refund. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment.",
+      "notes": "Full-content review: Later pattern, optional configured silence vs initialization failure, neutral semantics/identity and no false delivery/refund. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/INDEX.md",
-      "sha256": "c2859fbc2b9598ed0dfcc2c9190c58d816561b404d4a007e90213da57d83dea4",
+      "sha256": "d73a10294b1d5e9d36d37bc5e05191d08199995f18a3bed0393f71f6bf81f8ce",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full-content review: Full learning flow and decision/comparison tables, separate revision/drill placement, qualified Docita source pointers; no blocking contradiction. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment.",
+      "notes": "Full-content review: Full learning flow and decision/comparison tables, separate revision/drill placement, qualified Docita source pointers; no blocking contradiction. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/REVISION.md",
-      "sha256": "28e4a60a665e7e67bc0449ebebb4354aa9dc953b5b2eabad9ea00e7ccdef2c5f",
+      "sha256": "9309dc7c062cb005d3c7a03ff71dabefee60a9f3cddd840b42e7a74c21c6158e",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Full-content review: Every source-linked Q/A fully read against canonical chapter; traces and changed-condition answers preserve policy/state/delivery/cleanup and external effects boundaries. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment.",
+      "notes": "Full-content review: Every source-linked Q/A fully read against canonical chapter; traces and changed-condition answers preserve policy/state/delivery/cleanup and external effects boundaries. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.01-repository.md",
-      "sha256": "9f0a1164a5bd1d0fc5bb8633ab193dfbd503c1f61bb5599b44618184a307a9ad",
+      "sha256": "41fb25e392f7d0c3d8f57c65ad19fb4fc99097aeddff0c3a079aaaf88fc9a486",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Domain persistence port, not-found/storage/conflict, atomic version contract, shared transaction client, bounded query/cache and actual-store test boundary. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity).",
+      "notes": "Full-content review: Domain persistence port, not-found/storage/conflict, atomic version contract, shared transaction client, bounded query/cache and actual-store test boundary. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.02-cqrs-di.md",
-      "sha256": "7822185c219d1e17052e49eefb288d5954bd4f27ef822185845162f915c3813c",
+      "sha256": "e63674193d0a0db5f8ac67a5dc515de68a90632a5eb31b2dc1cfe6ef1e91cc8a",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Read/write vs dependency construction, one-store option, asynchronous projection atomic progress and freshness, token erasure/decorator version differences. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity).",
+      "notes": "Full-content review: Read/write vs dependency construction, one-store option, asynchronous projection atomic progress and freshness, token erasure/decorator version differences. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.03-event-sourcing.md",
-      "sha256": "315924d283e2d570d683e34c86123e0ca9f8a784b22df945b1deccda28f99fe9",
+      "sha256": "091cc3423a1db0419d912afa64ec28c3729894c61a382c54a8fe7c3a01e9b4be",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Accepted authoritative event stream, trusted fold runtime boundaries, atomic expected-version appends, snapshots/projection checkpoints, schema/retention/effect-safe replay. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity).",
+      "notes": "Full-content review: Accepted authoritative event stream, trusted fold runtime boundaries, atomic expected-version appends, snapshots/projection checkpoints, schema/retention/effect-safe replay. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.04-saga.md",
-      "sha256": "9dabb7d99cb48c149e2a91cc26f2d119842643f81abce48414e897a21bd255b7",
+      "sha256": "4d5c839ce5a98451d0fdd710348e5dc969b0a188ce23c057efd82e70377abf6b",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Local committed steps vs global isolation, definitive/uncertain outcomes, durable intent/compensation identity and pivot-forward recovery, choreography/2PC tradeoffs. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity).",
+      "notes": "Full-content review: Local committed steps vs global isolation, definitive/uncertain outcomes, durable intent/compensation identity and pivot-forward recovery, choreography/2PC tradeoffs. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md",
-      "sha256": "21ff3d12dcd19b6d68fc7c9780392e40aaa8f7a90c1546434d4648b04e14e504",
+      "sha256": "f3712a3207e6dd89d62ae97eddaa31634a7d85492dfa62e5e7bc674765c66a52",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Bounded contexts, value/identity/root consistency, flat frozen Money safe integer/currency rules, hydration and write concurrency, events after commit not prematurely drained. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity).",
+      "notes": "Full-content review: Bounded contexts, value/identity/root consistency, flat frozen Money safe integer/currency rules, hydration and write concurrency, events after commit not prematurely drained. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.06-anti-corruption-layer.md",
-      "sha256": "d67c7a537343149724fff11e4297cedc28d79175ad54439a458d12bc8964aee3",
+      "sha256": "fadd1fda3a593b94707ac87fbac617efcd3f3ca391d6bdb7ace51165f93366d9",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Unknown decoder, ID string/namespace, vendor open not entitlement, units/calendar/null semantics, failure/atomic upstream limitations and consumer-owned boundary. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity).",
+      "notes": "Full-content review: Unknown decoder, ID string/namespace, vendor open not entitlement, units/calendar/null semantics, failure/atomic upstream limitations and consumer-owned boundary. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.07-service-locator-vs-dependency-injection.md",
-      "sha256": "e807c288620a176f9a30f293c6d15b024502d1cb886767859f09f5d4a5ddf057",
+      "sha256": "7ca053a6ee6f0da6ebe191ecc3db7cffdd6125b33ebc73f6a89fd791c52f6e08",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Injected registry still lookup vs direct fixed collaborator, runtime-selected allowlist, lazy errors, erased tokens and scoped lifetime. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity).",
+      "notes": "Full-content review: Injected registry still lookup vs direct fixed collaborator, runtime-selected allowlist, lazy errors, erased tokens and scoped lifetime. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md",
-      "sha256": "8047a21312f9c9ee845ba5be942098b2b54e6859aa826569fb2ff17fa942a020",
+      "sha256": "edc83de653d39cbfa528e7e3c8af27261d40e7ab971600213c8b123ba26d1136",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Classic vs web MVC, passive/supervising MVP, bound MVVM, validated USD presentation, React derived values/effect boundaries and async obsolete-result handling. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity).",
+      "notes": "Full-content review: Classic vs web MVC, passive/supervising MVP, bound MVVM, validated USD presentation, React derived values/effect boundaries and async obsolete-result handling. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/INDEX.md",
-      "sha256": "6fc2a12a6c77186735c5e6c04482df7eb25f8b426c81915031908434bdd24613",
+      "sha256": "1a1b612a2568843ac9176e143580d78f5cff07212fd40aa5e96b880ac6a7451c",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full-content review: Full learning flow and decision/composition tables, complexity caveats and separately qualified candidate source pointers; revision follows chapters. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity).",
+      "notes": "Full-content review: Full learning flow and decision/composition tables, complexity caveats and separately qualified candidate source pointers; revision follows chapters. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/REVISION.md",
-      "sha256": "edfe4ca0f83f8e3a770d88495ab9ec6eea17fafae7c254ca9328ce6b1350d44f",
+      "sha256": "94bdda0df2985bbd77492f1015f2a135bc80342b5e995a6d5ec9ed09d21b20c2",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Full-content review: All source-linked authored Q/A fully read and compared with canonical traces: expected version, read lag, stream replay, Saga pivot/uncertainty, aggregate boundary, vendor meaning, DI and presenter behavior. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity).",
+      "notes": "Full-content review: All source-linked authored Q/A fully read and compared with canonical traces: expected version, read lag, stream replay, Saga pivot/uncertainty, aggregate boundary, vendor meaning, DI and presenter behavior. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "architecture-final",
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/06-interview-prep/30.1.6.01-interview-questions.md",
-      "sha256": "06670889e9f45db1ad1dcce26c73d6ac84a222b66fe0e6f1a7cdfb52dc46b55d",
+      "sha256": "ef788d7769b24796ea8853e92eefb0ee65c03350ffe71faa1e4b5f7fbcb769ae",
       "genre": "interview",
       "status": "reviewed",
-      "notes": "Design-patterns bank: mechanism and failure boundary for eleven answers",
+      "notes": "Design-patterns bank: mechanism and failure boundary for eleven answers | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
       "fullContentRead": true,
       "reviewer": "resume_portfolio",
-      "reviewDate": "2026-11-12"
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/06-interview-prep/INDEX.md",
-      "sha256": "fa37d9540f11ed71a672a9caa70959ffd8f368c29daf2e441befba892e5cf8b6",
+      "sha256": "6eaf81d74686499c8778d71d7c20eb9d9e7fa0acd5fbbaf16080b1bb968acc8a",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Design-patterns bank: eleven one-line definitions now name the mechanism and the failure boundary (adapter translation cost, builder invariant, facade ordering, proxy obligations, strategy substitution, chain path failures, template ordering, command contracts, composite totality, iterator mutation)",
+      "notes": "Design-patterns bank: eleven one-line definitions now name the mechanism and the failure boundary (adapter translation cost, builder invariant, facade ordering, proxy obligations, strategy substitution, chain path failures, template ordering, command contracts, composite totality, iterator mutation) | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
       "fullContentRead": true,
       "reviewer": "resume_portfolio",
-      "reviewDate": "2026-11-12"
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.1-design-patterns/INDEX.md",
-      "sha256": "3ff9e8b7760a6a661f1b2fefcbcf0427fec8dc11cc44b9b067b784ade6fb27f1",
+      "sha256": "d64108bd4197645e986a5ec061d3367fb58f50ac85e2a508deb341c7a6fd1c61",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Design-patterns bank: eleven one-line definitions now name the mechanism and the failure boundary (adapter translation cost, builder invariant, facade ordering, proxy obligations, strategy substitution, chain path failures, template ordering, command contracts, composite totality, iterator mutation)",
+      "notes": "Design-patterns bank: eleven one-line definitions now name the mechanism and the failure boundary (adapter translation cost, builder invariant, facade ordering, proxy obligations, strategy substitution, chain path failures, template ordering, command contracts, composite totality, iterator mutation) | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
       "fullContentRead": true,
       "reviewer": "resume_portfolio",
-      "reviewDate": "2026-11-12"
+      "reviewDate": "2026-11-24"
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.md",
@@ -5661,7 +5707,7 @@
       "sha256": "d5fc9f000f6da2b906bdd789269e74cd5f5710320eb358661ed5f141bcf0c8ed",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Full read: origin-coordinated demand and current claim, RFCrobots vs SSRF/actualsocket validation, narrow ASCII URL decoder, content vs URL/revisit separation and bounded stream/parser. FIXED empty query delimiter /? lost by urlunsplit, aligned companion; RFC3986§6.2.3 primary verified. /tmp/check-crawler-query-identity.py RED→GREEN preserving absent/empty/fragment query, params/ports/IPv6/rejections.",
+      "notes": "Full-content review: Full read: origin-coordinated demand and current claim, RFCrobots vs SSRF/actualsocket validation, narrow ASCII URL decoder, content vs URL/revisit separation and bounded stream/parser. FIXED empty query delimiter /? lost by urlunsplit, aligned companion; RFC3986\u00a76.2.3 primary verified. /tmp/check-crawler-query-identity.py RED\u2192GREEN preserving absent/empty/fragment query, params/ports/IPv6/rejections.",
       "findings": [],
       "fullContentRead": true,
       "reviewer": "resume_portfolio",
@@ -6201,10 +6247,10 @@
     },
     {
       "path": "30-architecture/INDEX.md",
-      "sha256": "ac371115a48ff7085f2589d5f410c9c9f4fa806dc3b052186b35f8ccdf3da28f",
+      "sha256": "93e238d2752c94be72eb55c5490d773c3a38e1282c2323ad31e73129904df38c",
       "genre": "index",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
+      "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
       "fullContentRead": true,
       "reviewer": "root",
@@ -9615,7 +9661,7 @@
       "reviewer": "root",
       "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 53 lines. Rewrote German engineering workplace guide covering Probezeit, Betriebsrat, Kündigungsschutz, direct feedback norms, and interview expectations. Checked against 2026 German employment norms and statutory leave/probation structures; no version-sensitive software claim.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 53 lines. Rewrote German engineering workplace guide covering Probezeit, Betriebsrat, K\u00fcndigungsschutz, direct feedback norms, and interview expectations. Checked against 2026 German employment norms and statutory leave/probation structures; no version-sensitive software claim.",
       "findings": []
     },
     {
@@ -9685,7 +9731,7 @@
       "reviewer": "root",
       "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 76 lines. Rewritten with 1-page prep sheet template and 6 punchy product workflow traces showing failure angles and honest gap framing. Checked against official product URLs (LiveEO, Snke, MVST, Redcare Pharmacy, Tanso, n8n — checked 2026-10-01) and preserved anchor links into 80.34 domain primer.",
+      "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 76 lines. Rewritten with 1-page prep sheet template and 6 punchy product workflow traces showing failure angles and honest gap framing. Checked against official product URLs (LiveEO, Snke, MVST, Redcare Pharmacy, Tanso, n8n \u2014 checked 2026-10-01) and preserved anchor links into 80.34 domain primer.",
       "findings": []
     },
     {
@@ -9905,7 +9951,7 @@
       "reviewer": "root",
       "reviewDate": "2026-10-25",
       "fullContentRead": true,
-      "notes": "Full-content review: Azure guide full read: settlement versus local effect, Cosmos consistency/session and multi-write restriction, blob lease 15–60 seconds versus external fencing. Current Microsoft primary contracts reverified.",
+      "notes": "Full-content review: Azure guide full read: settlement versus local effect, Cosmos consistency/session and multi-write restriction, blob lease 15\u201360 seconds versus external fencing. Current Microsoft primary contracts reverified.",
       "findings": []
     },
     {
@@ -10010,12 +10056,12 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "2c1b2c3f349cd5079854f931d23c559ef527b72d9b2ec2e3d1e5ac93b75233ab",
+      "sha256": "3881f19b5cabaa5ce417cdd41cece1ed45e726f72124bc5e64839e9f72556754",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+      "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": []
     },
     {
@@ -10181,7 +10227,7 @@
       "reviewer": "root-continuation",
       "reviewDate": "2026-10-27",
       "fullContentRead": true,
-      "notes": "Authored and reread final 25–26 October report. Current inventory and review records are exact-byte evidence; scoped runtime checks and source inspection remain distinct. Content review coverage does not imply every snippet execution, candidate mastery, adoption or absolute absence of errors. Release gates and generated metadata must be checked separately. 2026-10-27 maintenance delta inspected: standing exact-byte enforcement and bounded durable replays extend historical evidence without claiming every example executed or learner mastery."
+      "notes": "Authored and reread final 25\u201326 October report. Current inventory and review records are exact-byte evidence; scoped runtime checks and source inspection remain distinct. Content review coverage does not imply every snippet execution, candidate mastery, adoption or absolute absence of errors. Release gates and generated metadata must be checked separately. 2026-10-27 maintenance delta inspected: standing exact-byte enforcement and bounded durable replays extend historical evidence without claiming every example executed or learner mastery."
     },
     {
       "path": "docs/2026-11-frontend-review.md",
@@ -10205,12 +10251,12 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "2b4083d1ea7cdd7cc670f23d0195757d557807123853e8884074ffcc32e755e4",
+      "sha256": "7ad5f7de5b31b8e1220a4be5d9e27d89c038231edb8514313b66b5097cd8caed",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+      "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

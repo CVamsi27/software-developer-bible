@@ -56,7 +56,7 @@ Source: [Builder Pattern](30.1.2.03-builder.md)
 
 **Q:** Where should a builder enforce that required values form a valid product?
 
-**A:** At the construction boundary, usually build(), with earlier feedback where useful. A fluent API alone does not guarantee an immutable or valid result.
+**A:** At the construction boundary, usually `build()`, with earlier feedback where useful. A fluent API alone does not guarantee an immutable or valid result.
 
 **Q:** Trace the simple-house director followed by the full-house director on the same builder. Why does the first result remain separate?
 

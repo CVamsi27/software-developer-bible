@@ -39,7 +39,7 @@ The client receives a product contract; setup and its construction owner retain 
 ## Pattern Index
 
 ### [Singleton](30.1.2.01-singleton.md)
-Shares one instance within a defined runtime scope. A module export or dependency-injection container may provide the required lifetime without a global class accessor. Neither mechanism coordinates separate processes.
+Shares one instance within a defined runtime scope. A module export or dependency injection (DI) container may provide the required lifetime without a global class accessor. Neither mechanism coordinates separate processes.
 
 **When to use:**
 - Logger (one place, all writes go there)
@@ -53,7 +53,7 @@ Shares one instance within a defined runtime scope. A module export or dependenc
 - An explicit injected shared instance already makes its lifetime clearer
 
 ### [Factory Method](30.1.2.02-factory-method.md)
-An overridable creation operation lets a base workflow use a product contract without choosing its concrete type. A configuration switch is a simple factory, not this GoF mechanism.
+An overridable creation operation lets a base workflow use a product contract without choosing its concrete type. A configuration switch is a simple factory, not this Gang of Four (GoF) mechanism.
 
 **When to use:**
 - A class can't anticipate the class of objects it must create
@@ -76,9 +76,9 @@ Keeps partial choices behind named steps and returns the product at a final cons
 ### [Abstract Factory](30.1.2.04-abstract-factory.md)
 Selects a compatible family once and exposes one creation operation per product kind. Use it when related products must vary together; two products can be enough.
 
-**Use when:** Several related product kinds must come from one configured platform, provider, or dialect. The factory implementation and tests establish the family promise; the interface alone does not.
+**When to use:** Several related product kinds must come from one configured platform, provider, or dialect. The factory implementation and tests establish the family promise; the interface alone does not.
 
-**Illustrative applications:** matching UI components, themed component families, or provider capabilities that require the same protocol/account context. Confirm the actual factory mechanism before naming a framework as an implementation.
+**Illustrative applications:** matching UI components, themed component families, or provider capabilities that require the same protocol and account context.
 
 ### [Prototype](30.1.2.05-prototype.md)
 Copies a configured instance through an explicit `clone()` contract, so callers can request a similar object without choosing its constructor. The contract must define mutable state, shared resources, and identity; cloning is not automatically cheaper than construction.
@@ -140,7 +140,7 @@ If construction is expensive and most new objects look like existing ones, Proto
 - A global Singleton accessor can hide dependencies and retain unscoped mutable state. Explicit injection can preserve a shared owner while exposing the dependency.
 - **Factory Method** for a single concrete class is over-engineering.
 - **Abstract Factory** when there is no compatibility invariant across product kinds is overkill.
-- **Builder** for a 2-field DTO is noise. Use a plain object literal.
+- **Builder** for a 2-field data transfer object (DTO) is noise. Use a plain object literal.
 - **Prototype** when your classes are simple value objects — just use `new`.
 
 ---
@@ -153,7 +153,7 @@ Choose a creation pattern from a concrete variation axis and name the extra coup
 
 ## Cross-References
 
-- [Foundations](../01-foundations/INDEX.md) — DIP and OOP concepts are prerequisites.
+- [Foundations](../01-foundations/INDEX.md) — Dependency Inversion Principle (DIP) and object-oriented programming (OOP) concepts are prerequisites.
 - [Structural Patterns](../03-structural/INDEX.md) — Facade often wraps a Factory.
 - [Architectural Patterns](../05-architectural/INDEX.md) — Repository abstracts domain collection access; DI supplies dependencies and their lifetimes.
 
@@ -167,12 +167,12 @@ Choose a creation pattern from a concrete variation axis and name the extra coup
 
 ## Docita Anchor
 
-Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
+Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests to confirm deployed behavior.
 
 | Topic | Docita evidence |
-| ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Factory techniques | FHIR resource factories (`shared/modules/fhir/factories/fhir-patient.factory.ts`…), analytics factories (`domains/analytics/core/factories/*`), compliance factories (`anonymization.factory.ts`, `data-export.factory.ts`) |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Factory techniques | Fast Healthcare Interoperability Resources (FHIR) resource factories (`shared/modules/fhir/factories/fhir-patient.factory.ts`…), analytics factories (`domains/analytics/core/factories/*`), compliance factories (`anonymization.factory.ts`, `data-export.factory.ts`) |
 | Factory families | `apps/api/src/domains/payments/infrastructure/factories/payment-gateway.factory.ts`, `apps/api/src/shared/modules/monitoring/monitoring/factories/monitoring.factory.ts` |
 | Builder | FHIR observation builders: `fhir/factories/observations/builders/*.builder.ts` (blood pressure, heart rate, SpO₂…) behind a shared port |
 | Construction ownership guard | Construction/value-import restricted to one source file by `scripts/checks/check-openai-client-singleton.mjs` over `shared/modules/ai/openai.service.ts` |
-| Abstract Factory / Prototype | Do not infer these GoF mechanisms from a filename; the cited factories and builders are implementation pointers, not an exhaustive architecture audit. |
+| Abstract Factory / Prototype | Check each factory and builder implementation directly to confirm whether its pattern uses Abstract Factory, Prototype, or a simpler factory. |

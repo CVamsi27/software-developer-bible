@@ -1,7 +1,7 @@
-# Foundations — Principles, OOP & UML
+# Foundations — Principles, OOP and UML
 
 > **Study time:** ≈ 51 min of reading (5 files, ~10 min average).
-> **5 files.** Read these BEFORE any design pattern. SOLID, OOP, and UML are the language every GoF pattern is written in. Use them to explain the state, caller promises, and relationships a pattern is meant to protect.
+> **5 files.** Read these BEFORE any design pattern. SOLID, Object-Oriented Programming (OOP), and Unified Modeling Language (UML) are the language every GoF pattern is written in. Use them to explain the state, caller promises, and relationships a pattern is meant to protect.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
@@ -15,11 +15,11 @@ Begin with state ownership and caller contracts. Then assess a real change using
 **Read order:** OOP → SOLID → Other principles → UML.
 
 | Order | File | Time | What it unlocks | Role priority | General importance |
-| ----: | ------------------------------------------------------ | -----: | ----------------------------------------------------------------------------------- | ------------- | ------------------ |
+| ----: | -------------------------------------------------------- | -----: | ----------------------------------------------------------------------------------- | ------------- | ------------------ |
 | 1 | [OOP Concepts](30.1.1.03-oop-concepts.md) | 25 min | The 4 pillars + "has-a" relationships | Important | Specialized |
 | 2 | [SOLID Principles](30.1.1.01-solid-principles.md) | 30 min | Five heuristics for evaluating dependency and change boundaries | Important | Foundational |
-| 3 | [DRY, KISS, YAGNI & More](30.1.1.02-dry-kiss-yagni.md) | 20 min | Decide when knowledge should be shared and which complexity a requirement justifies | Important | Foundational |
-| 4 | [UML Basics](30.1.1.04-uml-basics.md) | 25 min | Sketch class & sequence diagrams on a whiteboard | Important | Specialized |
+| 3 | [DRY, KISS, YAGNI and More](30.1.1.02-dry-kiss-yagni.md) | 20 min | Decide when knowledge should be shared and which complexity a requirement justifies | Important | Foundational |
+| 4 | [UML Basics](30.1.1.04-uml-basics.md) | 25 min | Sketch class and sequence diagrams on a whiteboard | Important | Specialized |
 
 **Total: ~1.5 hours** to read all 4 once. After that, treat them as a reference.
 
@@ -36,7 +36,7 @@ Five diagnostics for responsibility, extension, substitution, client contracts, 
 - **ISP** — Interface Segregation: clients depend on the operations they need
 - **DIP** — Dependency Inversion: depend on abstractions, not concretions
 
-### [DRY, KISS, YAGNI & More](30.1.1.02-dry-kiss-yagni.md)
+### [DRY, KISS, YAGNI and More](30.1.1.02-dry-kiss-yagni.md)
 Heuristics for comparing coordination, reading, maintenance, and speculative-feature costs.
 
 - **DRY** — Don't Repeat Yourself
@@ -57,7 +57,7 @@ State invariants, caller contracts, dispatch, and explicitly modeled ownership.
 - **Association, Aggregation, Composition** — distinguish references, grouping, and modeled ownership
 
 ### [UML Basics](30.1.1.04-uml-basics.md)
-The visual language of software design. LLD interviews expect you to sketch these on a whiteboard.
+The visual language of software design. Low-level design (LLD) interviews expect you to sketch these on a whiteboard.
 
 - **Class diagrams** — classes, attributes, methods, relationships, multiplicities
 - **Sequence diagrams** — object interactions over time
@@ -101,4 +101,4 @@ Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a he
 | OCP | Strategy registries (`search-strategy.registry.ts`, `bulk-import-strategy.registry.ts`) — examples of registration boundaries; callers still need stable strategy contracts |
 | SRP | Command/query service split: `appointment-command.service.ts` vs `appointment-query.service.ts` |
 | ISP | Narrow per-domain ports: `domains/*/application/ports/*`, `shared/common/ports/clock.port.ts` |
-| SoC / module boundaries | Domain layout enforced in CI by `scripts/checks/check-api-domain-layout.mjs` + cross-domain import checks |
+| SoC / module boundaries | Domain layout enforced in continuous integration (CI) by `scripts/checks/check-api-domain-layout.mjs` + cross-domain import checks |

@@ -1,6 +1,6 @@
 # Design Patterns — Index
 
-> **Study time:** ≈ 4 h 43 m of reading (43 files, ~7 min average).
+> **Study time:** ≈ 4 h 45 m of reading (43 files, ~7 min average).
 > **43 files — all 23 GoF patterns plus modern architectural ones, classified by GoF category and purpose.** Design patterns are reusable solutions to recurring problems in software design. The Gang of Four (GoF) formalized 23 classic patterns; we cover all 23 plus modern architectural patterns. Use the catalog to explain responsibilities and trade-offs in low-level and high-level design discussions.
 
 [![Files](https://img.shields.io/badge/files-43-blue)](../../INDEX.md)
@@ -8,7 +8,7 @@
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 [![GoF Coverage](https://img.shields.io/badge/GoF%20Coverage-23%2F23-success)](#)
 
-**Why patterns matter in interviews:** A senior engineer is expected to (1) recognize the pattern in unfamiliar code, (2) choose a pattern for a low-level design (LLD) problem about classes and their interactions, and (3) explain its tradeoffs against alternatives. Memorizing the catalog is not enough: every pattern in this index is paired with common misuses, real-world examples, and guidance on when to avoid it.
+**Why patterns matter in interviews:** A senior engineer is expected to (1) recognize the pattern in unfamiliar code, (2) choose a pattern for a low-level design (LLD) problem about classes and their interactions, and (3) explain its trade-offs against alternatives. Memorizing the catalog is not enough: every pattern in this index is paired with common misuses, real-world examples, and guidance on when to avoid it.
 
 ---
 
@@ -33,7 +33,7 @@ Module and Null Object are additional patterns in this catalog. The GoF set has 
 
 ### If you're new to design patterns
 
-1. Start with [Foundations](01-foundations/INDEX.md) — SOLID, OOP, UML. These principles help explain the contracts and tradeoffs in later chapters.
+1. Start with [Foundations](01-foundations/INDEX.md) — SOLID, OOP, UML. These principles help explain the contracts and trade-offs in later chapters.
 2. Read one pattern from each category (start with the iconic ones: Singleton, Adapter, Observer).
 3. Then go deep on the patterns that map to your daily work.
 
@@ -103,7 +103,7 @@ Object collaboration. Manage algorithms, responsibilities, and communication bet
 Persistence, domain, coordination and UI boundaries. Some remain in one process; these are outside the original GoF set.
 
 - [Repository](05-architectural/30.1.5.01-repository.md) — data access abstraction
-- [CQRS & DI](05-architectural/30.1.5.02-cqrs-di.md) — command/query separation + dependency injection
+- [CQRS and DI](05-architectural/30.1.5.02-cqrs-di.md) — command/query separation + dependency injection
 - [Event Sourcing](05-architectural/30.1.5.03-event-sourcing.md) — events as the authoritative state history
 - [Saga](05-architectural/30.1.5.04-saga.md) — recoverable workflows across committed local transactions
 - [DDD Tactical Patterns](05-architectural/30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md) — entities, value objects, aggregate boundaries
@@ -135,4 +135,4 @@ After each category, use its separate revision companion. Finish with the interv
 
 ## Navigation
 
-[← Back: Architecture](../INDEX.md) · [ Bible Index](../../INDEX.md) · [Next: System Design →](../30.2-system-design/INDEX.md)
+[← Back: Architecture](../INDEX.md) · [Bible Index](../../INDEX.md) · [Next: System Design →](../30.2-system-design/INDEX.md)

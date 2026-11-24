@@ -26,12 +26,12 @@ Inheritance couples a subtype to a base contract and implementation. Structural 
 
 | # | Pattern | Intent | Use when | Avoid when | Role priority | General importance |
 | --: | --------- | -------- | ---------- | ------------ | --- | --- |
-| 1 | [Adapter](30.1.3.01-adapter.md) | Translate an existing interface to the client's contract | 3rd-party SDK, legacy integration | Refactoring both sides already preserves compatibility | Important | Foundational |
+| 1 | [Adapter](30.1.3.01-adapter.md) | Translate an existing interface to the client's contract | 3rd-party software development kit (SDK), legacy integration | Refactoring both sides already preserves compatibility | Important | Foundational |
 | 2 | [Facade](30.1.3.02-facade.md) | Simplify common access to a complex subsystem | Library/SDK, multi-subsystem workflow | Single subsystem, already simple | Important | Specialized |
 | 3 | [Decorator](30.1.3.03-decorator.md) | Add a responsibility around a component | Per-instance logging, metrics or transformation | Wrapper order obscures the contract | Important | Specialized |
-| 4 | [Proxy](30.1.3.04-proxy.md) | Controlled access (lazy, protection, remote, caching) | Image/DB lazy loading, RBAC checks, network stubs | Direct access is fine | Important | Specialized |
+| 4 | [Proxy](30.1.3.04-proxy.md) | Controlled access (lazy, protection, remote, caching) | Image/DB lazy loading, role-based access control (RBAC) checks, network stubs | Direct access is fine | Important | Specialized |
 | 5 | [Module](30.1.3.05-module-pattern.md) | Encapsulation at the file level | File/package visibility boundaries | N/A | Important | Specialized |
-| 6 | [Composite](30.1.3.06-composite.md) | Apply shared operations across a part-whole tree | File and directory aggregation, AST operations, nested menus | Flat data or no meaningful common operation | Important | Specialized |
+| 6 | [Composite](30.1.3.06-composite.md) | Apply shared operations across a part-whole tree | File and directory aggregation, abstract syntax tree (AST) operations, nested menus | Flat data or no meaningful common operation | Important | Specialized |
 | 7 | [Bridge](30.1.3.07-bridge.md) | Separate a client abstraction from a varying implementation | Independent abstraction and implementation axes (shape × renderer) | One varying axis or a direct function suffices | Important | Specialized |
 | 8 | [Flyweight](30.1.3.08-flyweight.md) | Share state to support many fine-grained objects | Text rendering (chars), particle systems, glyph caches | Few objects, no memory pressure | Important | Specialized |
 
@@ -102,7 +102,7 @@ Both use recursive composition, but Composite's recursion is structural, Decorat
 - **Module** organizes code at the file/package level (language-level encapsulation).
 - **Facade** is a client-facing entry point that coordinates subsystem behavior; it can be a class, function or module export.
 
-Modern TS: a `module.ts` file often *contains* a Facade.
+Modern TypeScript: a `module.ts` file often *contains* a Facade.
 
 ---
 
@@ -115,7 +115,7 @@ Modern TS: a `module.ts` file often *contains* a Facade.
 - **Composite** when the structure is flat and never recursive.
 - **Bridge** when there is no independently varying implementation axis.
 - **Flyweight** when measured state sharing does not justify lookup, lifetime and indirection costs.
-- **Module** implemented with extra IIFE ceremony when ES modules already provide the required boundary.
+- **Module** implemented with extra immediately invoked function expression (IIFE) ceremony when ECMAScript (ES) modules already provide the required boundary.
 
 ---
 
@@ -127,7 +127,7 @@ Explain a wrapper by its contract and a shared/tree structure by the state it ow
 
 ## Cross-References
 
-- [Foundations](../01-foundations/INDEX.md) — DIP and ISP make these patterns click.
+- [Foundations](../01-foundations/INDEX.md) — Dependency Inversion Principle (DIP) and Interface Segregation Principle (ISP) make these patterns click.
 - [Creational Patterns](../02-creational/INDEX.md) — Facade often hides a Factory.
 - [Behavioral Patterns](../04-behavioral/INDEX.md) — Composite and Decorator both use recursive composition; Iterator works on Composite.
 
@@ -141,12 +141,12 @@ Explain a wrapper by its contract and a shared/tree structure by the state it ow
 
 ## Docita Anchor
 
-Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
+Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests to confirm deployed behavior.
 
 | Topic | Docita evidence |
-| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Facade | `shared/modules/imports/ocr-facade.service.ts` hides the OCR pipeline; `shared/whatsapp/templates-facade.service.ts` hides template resolution — construction/delegation guard source: `scripts/checks/check-facade-delegation.mjs` |
-| Adapter | India's ABDM government API wrapped by `domains/abdm/infrastructure/abdm-abha.client.ts`; Razorpay SDK behind `payments/infrastructure/adapters/razorpay/` |
-| Decorator (framework-shaped) | NestJS interceptor/guard pipelines in `shared/common/interceptors/*` add logging, CSRF, tenant-context around handlers |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Facade | `shared/modules/imports/ocr-facade.service.ts` hides the optical character recognition (OCR) pipeline; `shared/whatsapp/templates-facade.service.ts` hides template resolution — construction/delegation guard source: `scripts/checks/check-facade-delegation.mjs` |
+| Adapter | India's Ayushman Bharat Digital Mission (ABDM) government API wrapped by `domains/abdm/infrastructure/abdm-abha.client.ts`; Razorpay SDK behind `payments/infrastructure/adapters/razorpay/` |
+| Decorator (framework-shaped) | NestJS interceptor/guard pipelines in `shared/common/interceptors/*` add logging, Cross-Site Request Forgery (CSRF), tenant-context around handlers |
 | Module | ES module scope and curated entry points; a barrel alone does not enforce every import boundary |
-| Proxy / Flyweight / Composite / Bridge | No exhaustive implementation audit is implied by these pointers; confirm a claimed GoF mechanism in the actual source. |
+| Proxy / Flyweight / Composite / Bridge | Confirm which Gang of Four (GoF) mechanism applies directly in the relevant source files. |

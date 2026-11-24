@@ -1,6 +1,6 @@
 # Interview Prep — Design Patterns
 
-> **Study time:** ≈ 9 min of reading (1 file, ~9 min average).
+> **Study time:** ≈ 11 min of reading (1 file, ~11 min average).
 > **1 file, 50 curated questions with answers.** The pattern catalog is only useful if you can recall and apply it under pressure. This is the drill.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](../../INDEX.md)
@@ -33,13 +33,13 @@ The [question bank](30.1.6.01-interview-questions.md) supplies prompts and conci
 
 ## Docita Anchor
 
-Concrete source pointers in [docita](https://github.com/CVamsi27/docita) — the hospital-management NestJS monorepo — supply examples to inspect. A registry is not an untrusted-plugin sandbox, and the pointers do not establish production readiness.
+Concrete source pointers in [Docita](https://github.com/CVamsi27/docita) — the hospital-management NestJS monorepo — supply examples to inspect. Verify runtime registration and execution boundaries rather than treating a registry as an untrusted-plugin sandbox.
 
 | Topic | Docita evidence |
-| ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
 | "Design a plugin system" → Strategy + Registry | `search-strategy.registry.ts`, `bulk-import-strategy.registry.ts` with per-entity strategy files |
-| "Builder for complex documents" → Builder | `fhir/factories/observations/builders/*.builder.ts` composing FHIR observations |
+| "Builder for complex documents" → Builder | `fhir/factories/observations/builders/*.builder.ts` composing Fast Healthcare Interoperability Resources (FHIR) observations |
 | "Product creation" → factory techniques | `fhir/factories/*`, `analytics/core/factories/*`, `payment-gateway.factory.ts` |
-| "Template Method pipeline" → base-class skeleton | `base-pdf.service.ts` PDF generation, `base-websocket.gateway.ts` realtime, `base-pdf.processor.ts` queue jobs |
-| "Facade over a subsystem" → Facade | `ocr-facade.service.ts` (OCR pipeline), `templates-facade.service.ts` (WhatsApp templates) |
-| "Repository + DI for testability" → Repository | `base.repository.ts` + DI-token binding checked by `check-repository-di-tokens.mjs` |
+| "Template Method pipeline" → base-class skeleton | `base-pdf.service.ts` PDF generation, `base-websocket.gateway.ts` real-time, `base-pdf.processor.ts` queue jobs |
+| "Facade over a subsystem" → Facade | `ocr-facade.service.ts` (optical character recognition (OCR) pipeline), `templates-facade.service.ts` (WhatsApp templates) |
+| "Repository + DI for testability" → Repository | `base.repository.ts` + Dependency Injection (DI) token binding checked by `check-repository-di-tokens.mjs` |

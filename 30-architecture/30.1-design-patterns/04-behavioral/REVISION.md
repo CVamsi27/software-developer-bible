@@ -8,7 +8,7 @@
 
 # Behavioral — Revision
 
-Read the section's learning chapters first. Close them, explain each answer with a concrete failure or tradeoff, then use the source link to check what you missed.
+Read the section's learning chapters first. Close them, explain each answer with a concrete failure or trade-off, then use the source link to check what you missed.
 
 ## Strategy Pattern
 
@@ -20,11 +20,11 @@ Source: [Strategy Pattern](30.1.4.01-strategy.md)
 
 **Q:** Trace the standard quote for weight 2 and distance 100.
 
-**A:** The client validates input, invokes standard, obtains 5 + 2 × 2 + 100 × 0.01 = 10, validates the result, and returns it. Pickup uses the same workflow and returns zero.
+**A:** The client validates input, invokes `standard`, obtains 5 + 2 × 2 + 100 × 0.01 = 10, validates the result, and returns it. Pickup uses the same workflow and returns zero.
 
-**Q:** What if the chosen policy returns NaN or begins calling a carrier API?
+**Q:** What if the chosen policy returns `NaN` or begins calling a carrier API?
 
-**A:** The current workflow rejects NaN, and an exception thrown by the selected policy propagates unchanged. An I/O-backed policy needs a compatible asynchronous contract with deadlines, failure, and cancellation rules; a shared function signature alone is insufficient.
+**A:** The current workflow rejects `NaN`, and an exception thrown by the selected policy propagates unchanged. An I/O-backed policy needs a compatible asynchronous contract with deadlines, failure, and cancellation rules; a shared function signature alone is insufficient.
 
 ## Observer Pattern
 
@@ -34,9 +34,9 @@ Source: [Observer Pattern](30.1.4.02-observer.md)
 
 **A:** A retained subscriber can keep objects alive and receive events after its lifetime. Registration cleanup also prevents duplicated callbacks after remount or reconnect.
 
-**Q:** Trace the once-listener that emits the price recursively.
+**Q:** Trace the `once`-listener that emits the price recursively.
 
-**A:** The outer call runs display(100), then the once listener. That registration is removed before its callback, so the recursive emission runs only display(101). Later cleanup leaves no listeners.
+**A:** The outer call runs `display(100)`, then the `once` listener. That registration is removed before its callback, so the recursive emission runs only `display(101)`. Later cleanup leaves no listeners.
 
 **Q:** What if an ordinary listener throws or returns an unresolved promise?
 
@@ -58,9 +58,9 @@ Source: [Chain of Responsibility](30.1.4.03-chain-of-responsibility.md)
 
 **A:** It can handle the urgent billing ticket first and bypass the emergency policy. Ordered routing is observable; handler order is part of correctness.
 
-## State Pattern & State Machines
+## State Pattern and State Machines
 
-Source: [State Pattern & State Machines](30.1.4.04-state.md)
+Source: [State Pattern and State Machines](30.1.4.04-state.md)
 
 **Q:** When is a State pattern more appropriate than a Strategy?
 
@@ -70,9 +70,9 @@ Source: [State Pattern & State Machines](30.1.4.04-state.md)
 
 **A:** No. It can model the same finite states and legal transitions, but GoF State specifically delegates behavior from a context to a replaceable state object. Choose the representation that keeps the lifecycle rules clear.
 
-**Q:** Trace PAY then SHIP from pending.
+**Q:** Trace `PAY` then `SHIP` from `pending`.
 
-**A:** PAY returns paid with the supplied timestamp; SHIP from paid returns shipped with tracking and timestamp. SHIP directly from pending throws because no legal transition accepts it.
+**A:** `PAY` returns `paid` with the supplied timestamp; `SHIP` from `paid` returns `shipped` with tracking and timestamp. `SHIP` directly from `pending` throws because no legal transition accepts it.
 
 **Q:** What if two requests validate against the same persisted version?
 
@@ -88,11 +88,11 @@ Source: [Template Method Pattern](30.1.4.05-template-method.md)
 
 **Q:** Trace the JSON exporter from spaced records to output.
 
-**A:** The base trims records, calls the subclass format, invokes its optional hook, and returns the JSON string. Subclass dispatch changes formatting without copying the sequence.
+**A:** The base trims records, calls the subclass `format`, invokes its optional hook, and returns the JSON string. Subclass dispatch changes formatting without copying the sequence.
 
 **Q:** What if formatting or the success hook throws?
 
-**A:** A formatting failure skips the success hook. A hook failure makes the call fail even after output exists. Resource cleanup requires its own try/finally and error precedence policy.
+**A:** A formatting failure skips the success hook. A hook failure makes the call fail even after output exists. Resource cleanup requires its own `try/finally` and error precedence policy.
 
 ## Iterator Pattern
 
@@ -100,9 +100,9 @@ Source: [Iterator Pattern](30.1.4.06-iterator.md)
 
 **Q:** What happens if a collection changes while an iterator is in use?
 
-**A:** The collection defines the rule. JavaScript Array iterators can visit appended elements; Map and Set iterators can visit new entries and skip entries deleted before visitation. Snapshot and fail-fast behavior are separate contracts a custom iterator may provide.
+**A:** The collection defines the rule. JavaScript `Array` iterators can visit appended elements; `Map` and `Set` iterators can visit new entries and skip entries deleted before visitation. Snapshot and fail-fast behavior are separate contracts a custom iterator may provide.
 
-**Q:** Trace range(1,3) when the consumer breaks at 2.
+**Q:** Trace `range(1, 3)` when the consumer breaks at 2.
 
 **A:** The generator's `<=` condition makes 3 the inclusive endpoint. Creating it runs no body; requests yield 1 and 2, and `break` closes it before 3 is produced.
 
@@ -168,7 +168,7 @@ Source: [Command Pattern](30.1.4.09-command.md)
 
 **Q:** Trace turn-on execution and undo when the light began off.
 
-**A:** The command captures false, changes the receiver to true, then restores false and clears its execution guard during undo. It can execute again after that undo.
+**A:** The command captures `false`, changes the receiver to `true`, then restores `false` and clears its execution guard during undo. It can execute again after that undo.
 
 **Q:** What if another actor changes the light before undo, or a job worker redelivers the request?
 
@@ -188,7 +188,7 @@ Source: [Visitor Pattern](30.1.4.10-visitor.md)
 
 **Q:** Trace one heading through plain-text and outline visitors.
 
-**A:** The heading accept method chooses visitor.heading; the selected visitor supplies the operation. Plain text and outline are different operations over the same node contract.
+**A:** The heading `accept` method chooses `visitor.heading`; the selected visitor supplies the operation. Plain text and outline are different operations over the same node contract.
 
 **Q:** What if an image node type is added?
 
@@ -202,13 +202,13 @@ Source: [Interpreter Pattern](30.1.4.11-interpreter.md)
 
 **A:** Parsing and evaluation are separate jobs. Complex grammar or diagnostics can justify parser tooling, while an evaluator still supplies meaning. Exposed languages also need validation and capability/work limits; a small Interpreter example is not a full language implementation.
 
-**Q:** Trace the directly built multiplication/addition tree with x=3.
+**Q:** Trace the directly built multiplication/addition tree with `x = 3`.
 
-**A:** Multiplication evaluates its left addition, which resolves x and adds 5 to get 8; its right literal is 2, giving 16. No string parsing occurred.
+**A:** Multiplication evaluates its left addition, which resolves `x` and adds 5 to get 8; its right literal is 2, giving 16. No string parsing occurred.
 
-**Q:** What if x is missing, or an incoming tree has unsupported/deep nodes?
+**Q:** What if `x` is missing, or an incoming tree has unsupported/deep nodes?
 
-**A:** Missing x throws. External trees require shape/operator/finite-value checks and size/depth/work limits; the typed recursive example alone does not enforce those boundaries.
+**A:** Missing `x` throws. External trees require shape/operator/finite-value checks and size/depth/work limits; the typed recursive example alone does not enforce those boundaries.
 
 ## Null Object Pattern
 
@@ -218,9 +218,9 @@ Source: [Null Object Pattern](30.1.4.12-null-object.md)
 
 **A:** When absence should be an error or requires caller attention. Use a benign default only where the domain explicitly allows doing nothing.
 
-**Q:** Trace the two logger choices through processOrder.
+**Q:** Trace the two logger choices through `processOrder`.
 
-**A:** The chosen logger is invoked in both cases. The no-op deliberately emits nothing; consoleLogging writes the second order message. The order operation returns normally in both.
+**A:** The chosen logger is invoked in both cases. The no-op deliberately emits nothing; `consoleLogging` writes the second order message. The order operation returns normally in both.
 
 **Q:** What if the logger is absent because required initialization failed?
 

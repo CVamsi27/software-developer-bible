@@ -162,8 +162,7 @@ Source: [UML Basics — Class & Sequence Diagrams](30.1.1.04-uml-basics.md)
 
 **A:** It describes allowed relationships, not the operation's recovery policy. The sequence exposes the failure point; the implementation must release the reservation or recover the same operation, and serialize competing reservations through the appropriate shared mechanism.
 
-
-**Q:** The parking-lot class diagram returns `Optional~Ticket~`, and the sequence includes a “no space” branch. What does the optional result allow, and when should it become an explicit result type?
+**Q:** The parking-lot class diagram returns `Optional~Ticket~`, and the sequence includes a "no space" branch. What does the optional result allow, and when should it become an explicit result type?
 
 **A:** The operation must represent both outcomes, such as an optional ticket or an explicit result type. If callers need to distinguish a full lot, conflict, or service failure, model those cases instead of promising a ticket on every path.
 

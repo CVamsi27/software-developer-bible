@@ -132,11 +132,11 @@ Source: [Bridge Pattern](30.1.3.07-bridge.md)
 
 **Q:** Trace two circles with the same radius and different renderers.
 
-**A:** Each circle owns its radius and delegates draw to its chosen renderer. Vector and raster implementations return different descriptions while the circle API stays stable. Neither description creates a real image.
+**A:** Each circle owns its radius and delegates `draw()` to its chosen renderer. Vector and raster implementations return different descriptions while the circle API stays stable. Neither description creates a real image.
 
-**Q:** What if this Renderer contract gains a triangle shape operation?
+**Q:** What if this `Renderer` contract gains a triangle shape operation?
 
-**A:** Add the triangle class, change Renderer, and implement the operation in every renderer. Reducing combination classes does not remove this shared-contract cost. A primitive path interface could trade that cost for a more complex geometry contract.
+**A:** Add the triangle class, change `Renderer`, and implement the operation in every renderer. Reducing combination classes does not remove this shared-contract cost. A primitive path interface could trade that cost for a more complex geometry contract.
 
 ## Flyweight Pattern
 
@@ -144,11 +144,11 @@ Source: [Flyweight Pattern](30.1.3.08-flyweight.md)
 
 **Q:** Which state belongs outside a shared Flyweight?
 
-**A:** Keep usage-specific state, called extrinsic state, outside the shared object—for example, a glyph’s position. State shared by every use, called intrinsic state, must be safely reusable and is usually immutable.
+**A:** Keep usage-specific state, called extrinsic state, outside the shared object — for example, a glyph's position. State shared by every use, called intrinsic state, must be safely reusable and is usually immutable.
 
 **Q:** Trace two oak lookups with the same appearance tuple and two different positions.
 
-**A:** The factory returns one shared TreeType for the same name/color/texture version. Each Tree owns its coordinates and passes them to that type during drawing. Shared type identity does not merge logical placement identity.
+**A:** The factory returns one shared `TreeType` for the same name/color/texture version. Each `Tree` owns its coordinates and passes them to that type during drawing. Shared type identity does not merge logical placement identity.
 
 **Q:** What if texture version changes but the cache key omits it, or the factory clears while trees remain alive?
 

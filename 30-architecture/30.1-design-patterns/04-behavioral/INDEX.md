@@ -36,7 +36,7 @@ Creational and structural patterns are about "what" (objects) and "how" (composi
 | 7 | [Mediator](30.1.4.07-mediator.md) | Coordinate interactions within a cohesive group | Peer dependencies spread across a form or workflow | Few participants with clear, stable direct calls | Important | Specialized |
 | 8 | [Memento](30.1.4.08-memento.md) | Originator-owned snapshots; caretaker-managed history | Undo while keeping state representation private | No restore/history requirement | Important | Specialized |
 | 9 | [Command](30.1.4.09-command.md) | Encapsulate a request as an object | Undo/redo, queueing, macro recording, transactional ops | Simple one-shot operations | Important | Specialized |
-| 10 | [Visitor](30.1.4.10-visitor.md) | Add operations without modifying classes | ASTs, compilers, complex object structures | Class hierarchy is unstable | Important | Specialized |
+| 10 | [Visitor](30.1.4.10-visitor.md) | Add operations without modifying classes | Abstract syntax trees (ASTs), compilers, complex object structures | Class hierarchy is unstable | Important | Specialized |
 | 11 | [Interpreter](30.1.4.11-interpreter.md) | Define and evaluate a small language | Rules, filters, formulas | A standard language implementation is already suitable | Important | Specialized |
 | 12 | [Null Object](30.1.4.12-null-object.md) | Encapsulated no-op behavior instead of null | Sensible neutral defaults (no-op loggers), branch-free chains | Absence must surface (silence hides bugs) | Important | Specialized |
 
@@ -44,7 +44,9 @@ Creational and structural patterns are about "what" (objects) and "how" (composi
 
 ## Follow responsibility through the system
 
-Start with Strategy and State: one chooses a policy, the other constrains lifecycle behavior. Observer introduces delivery and cleanup; Chain and Mediator show where routing and coordination live. Template Method owns a fixed sequence. Command and Memento separate requested actions from recoverable state. Iterator, Visitor and Interpreter then separate traversal, operations and meaning.
+Start with Strategy and State: one chooses a policy, the other constrains lifecycle behavior. Observer introduces delivery and cleanup; Chain and Mediator show where routing and coordination live.
+
+Template Method owns a fixed sequence. Command and Memento separate requested actions from recoverable state. Iterator, Visitor and Interpreter then separate traversal, operations and meaning.
 
 The table is a map to the relevant chapter. Read a chapter's execution trace before comparing it with its neighbor.
 
@@ -75,7 +77,7 @@ Need to manage object interaction / control flow?
 │
 ├─ Add operations without modifying class structure? ──→ Visitor
 │
-├─ Interpret a grammar / DSL? ──→ Interpreter
+├─ Interpret a grammar / domain-specific language (DSL)? ──→ Interpreter
 │
 └─ Need a harmless default instead of null? ──→ Null Object
 ```
@@ -116,7 +118,7 @@ Use Command for "do this later" / "undo what I did". Use Memento for "go back to
 
 Both work on composite structures. Iterator is about *movement*, Visitor is about *work*.
 
-### Chain of Responsibility vs Decorator
+### Chain of Responsibility (CoR) vs Decorator
 
 - **CoR** defines forwarding and termination across handlers; middleware variants may run several.
 - **Decorator** adds behavior around a wrapped interface; its contract determines delegation.
@@ -159,7 +161,7 @@ Trace one request or transition across collaborators and identify who owns order
 
 - [Foundations](../01-foundations/INDEX.md) — OOP concepts and SOLID are prerequisites.
 - [Structural Patterns](../03-structural/INDEX.md) — Iterator often traverses a Composite; Visitor does too.
-- [Architectural Patterns](../05-architectural/INDEX.md) — CQRS separates writes from reads; Command can represent write requests, while Event Sourcing chooses an authoritative history.
+- [Architectural Patterns](../05-architectural/INDEX.md) — Command Query Responsibility Segregation (CQRS) separates writes from reads; Command can represent write requests, while Event Sourcing chooses an authoritative history.
 
 ---
 
@@ -171,13 +173,12 @@ Trace one request or transition across collaborators and identify who owns order
 
 ## Docita Anchor
 
-Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
+Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests to confirm deployed behavior.
 
 | Topic | Docita evidence |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Strategy | Import strategies (`apps/api/src/shared/modules/imports/strategies/patient-import.strategy.ts`…) and search strategies (`search/strategies/*-search.strategy.ts`) behind registries |
 | Template Method | `apps/api/src/shared/modules/document-generation/pdf/base-pdf.service.ts`, `websockets/base-websocket.gateway.ts`, `apps/api/src/shared/modules/queue/base-pdf.processor.ts`, `search-strategy.base.ts` |
-| Observer / domain events | `shared/common/events/{domain-events,event.service}.ts`, `ops-alert.listener.ts`, transactional outbox (`outbox-relay.scheduler.ts`, ADR 0010) |
+| Observer / domain events | `shared/common/events/{domain-events,event.service}.ts`, `ops-alert.listener.ts`, transactional outbox (`outbox-relay.scheduler.ts`, Architecture Decision Record (ADR) 0010) |
 | Command (CQRS-lite) | `appointment-command.service.ts` vs `appointment-query.service.ts` (+ queue/follow-up twins); queue jobs as command objects |
 | Chain of Responsibility | Nest guard→interceptor→pipe request pipeline (tenant-context, CSRF, rate-limit) |
-| Null Object | These pointers do not constitute an exhaustive implementation audit or prove absence of a neutral implementation. |

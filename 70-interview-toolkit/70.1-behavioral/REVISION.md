@@ -20,13 +20,13 @@ Source: [Stakeholder Management Stories: Product Partnership, Influence, and Tra
 
 **Q:** When does escalation support partnership rather than undermine it?
 
-**A:** When the decision exceeds your authority, a material requirement remains unresolved, or urgent risk needs the responsible owner. Present constraints, evidence and options; seek joint framing where feasible without delaying mandatory escalation.
+**A:** When the decision exceeds your authority, a material requirement remains unresolved, or urgent risk needs the responsible owner. Present constraints, evidence, and options; seek joint framing where feasible without delaying mandatory escalation.
 
 ## Leadership Questions: Decisions, Influence & Team Outcomes
 
 Source: [Leadership Questions: Decisions, Influence & Team Outcomes](70.1.02-leadership-questions.md)
 
-**Q:** What keeps a STAR example credible when adapting it to a leadership question?
+**Q:** What keeps a Situation, Task, Action, and Result (STAR) example credible when adapting it to a leadership question?
 
 **A:** Use your actual role, decisions, evidence, and outcome. Sample stories demonstrate structure; they should not be presented as experiences you did not have.
 
@@ -40,7 +40,7 @@ Source: [Judgment Calls & Ambiguity: Deciding Under Incomplete Data](70.1.03-jud
 
 **Q:** Why does a feature flag not automatically make a trial reversible?
 
-**A:** Turning it off changes future exposure, but cannot undo every data write, user commitment or external effect already created. Bound those consequences and establish actual recovery before calling the trial safe to reverse.
+**A:** Turning it off changes future exposure, but cannot undo every data write, user commitment, or external effect already created. Bound those consequences and establish actual recovery before calling the trial safe to reverse.
 
 ## Technical Decision Stories: From Constraint to Verified Outcome
 
@@ -48,7 +48,7 @@ Source: [Technical Decision Stories: From Constraint to Verified Outcome](70.1.0
 
 **Q:** What does a technical-decision story need beyond the selected technology?
 
-**A:** The binding requirements, rejected options and trade-offs, migration/operational consequences, your contribution, and evidence of the result.
+**A:** The binding requirements, rejected options and trade-offs, migration and operational consequences, your contribution, and evidence of the result.
 
 ## Behavioral Anti-Patterns: Make the Evidence Easy to Follow
 

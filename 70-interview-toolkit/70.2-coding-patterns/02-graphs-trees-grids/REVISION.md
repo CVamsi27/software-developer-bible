@@ -14,7 +14,7 @@ Read the chapters in the [section learning flow](INDEX.md), then close them and 
 
 Source: [DFS & BFS](70.2.2.01-dfs-bfs.md)
 
-**Q:** Why mark an unweighted BFS node when enqueuing it?
+**Q:** Why mark an unweighted Breadth-First Search (BFS) node when enqueuing it?
 
 **A:** BFS explores an unweighted graph one distance level at a time. The first time it reaches a node, it has found a shortest path by number of edges. Mark the node when adding it to the queue so other neighbors do not add it again. This rule alone is not sufficient when edges have different weights.
 
@@ -32,7 +32,7 @@ Source: [Union-Find](70.2.2.03-union-find.md)
 
 **Q:** What do path compression and union by size change about Union-Find?
 
-**A:** Path compression makes visited nodes point closer to their group representative. Union by size attaches the smaller tree under the larger one, limiting depth. Together, they make a sequence of find and union operations almost constant time per operation on average. Union-Find tracks connected groups; it does not return paths or directly support removing edges.
+**A:** Path compression makes visited nodes point closer to their group representative. Union by size attaches the smaller tree under the larger one, limiting depth. Together, they make a sequence of `find` and `union` operations almost constant time per operation on average. Union-Find tracks connected groups; it does not return paths or directly support removing edges.
 
 ## Topological Sort
 
@@ -80,7 +80,7 @@ Source: [Shortest Paths](70.2.2.02-shortest-paths-dijkstra-bellman-ford.md)
 
 Source: [Union-Find](70.2.2.03-union-find.md)
 
-**Q:** Why is the DSU component total different from the number of newly activated islands?
+**Q:** Why is the Disjoint Set Union (DSU) component total different from the number of newly activated islands?
 
 **A:** The DSU allocates inactive cells too. Track land separately: activation adds one island, and each successful union with active adjacent land removes one. Duplicate activation does neither.
 
@@ -90,7 +90,7 @@ Source: [Topological Sort](70.2.2.04-topological-sort.md)
 
 **Q:** Does a valid topological order determine an optimal parallel schedule?
 
-**A:** It only respects prerequisites. Capacity limits, task durations and other resources still determine which available tasks can run together; the semester helper assumes unlimited parallelism and equal durations.
+**A:** It only respects prerequisites. Capacity limits, task durations, and other resources still determine which available tasks can run together; the semester helper assumes unlimited parallelism and equal durations.
 
 ### Trie
 

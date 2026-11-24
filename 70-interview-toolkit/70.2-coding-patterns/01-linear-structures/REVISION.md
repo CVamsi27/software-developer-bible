@@ -38,9 +38,9 @@ Source: [Binary Search](70.2.1.03-binary-search.md)
 
 Source: [Linked List Manipulation Patterns](70.2.1.04-linked-list-manipulation-patterns.md)
 
-**Q:** Why save next before reversing a linked-list pointer?
+**Q:** Why save `next` before reversing a linked-list pointer?
 
-**A:** Reversing a node changes its next pointer to point backward. Save the original next node first, or you lose the link to the remaining list. Then move to the saved node and repeat.
+**A:** Reversing a node changes its `next` pointer to point backward. Save the original `next` node first, or you lose the link to the remaining list. Then move to the saved node and repeat.
 
 ## Intervals
 
@@ -48,7 +48,7 @@ Source: [Intervals](70.2.1.05-intervals.md)
 
 **Q:** Why can sorting intervals by start simplify merging?
 
-**A:** Sorting by start puts possible overlaps together. Keep the furthest end reached by the current merged interval. When the next start no longer overlaps, save that interval and begin another. Decide whether touching endpoints count as an overlap: [1, 3] and [3, 5] overlap as closed intervals, while [1, 3) and [3, 5) do not.
+**A:** Sorting by start puts possible overlaps together. Keep the furthest end reached by the current merged interval. When the next start no longer overlaps, save that interval and begin another. Decide whether touching endpoints count as an overlap: `[1, 3]` and `[3, 5]` overlap as closed intervals, while `[1, 3)` and `[3, 5)` do not.
 
 ## Greedy & Prefix Sum
 
@@ -62,9 +62,9 @@ Source: [Greedy & Prefix Sum](70.2.1.06-greedy-prefix-sum.md)
 
 Source: [String Search — KMP & Rabin-Karp](70.2.1.07-string-search-kmp-rabin-karp.md)
 
-**Q:** What information lets KMP avoid comparing an already matched prefix again?
+**Q:** What information lets Knuth-Morris-Pratt (KMP) avoid comparing an already matched prefix again?
 
-**A:** For the characters matched so far, the LPS table records the longest beginning part that also matches an ending part, excluding the whole matched string. After a mismatch, that overlap tells KMP how much of the match it can keep. It need not compare those characters again.
+**A:** For the characters matched so far, the longest proper prefix that is also a suffix (`LPS`) table records the longest beginning part that also matches an ending part, excluding the whole matched string. After a mismatch, that overlap tells KMP how much of the match it can keep. It need not compare those characters again.
 
 ## Check the Changed Conditions
 
@@ -88,9 +88,9 @@ Source: [Two Pointers](70.2.1.02-two-pointers.md)
 
 Source: [Binary Search](70.2.1.03-binary-search.md)
 
-**Q:** Why keep mid when finding a rotated minimum, and what changes with duplicate values?
+**Q:** Why keep `mid` when finding a rotated minimum, and what changes with duplicate values?
 
-**A:** Mid itself may be the minimum, so the right boundary becomes mid rather than mid minus one. Equal mid and right values do not identify the sorted side; a duplicates-aware search may need to remove one endpoint and take linear time.
+**A:** `mid` itself may be the minimum, so the right boundary becomes `mid` rather than `mid - 1`. Equal `mid` and `right` values do not identify the sorted side; a duplicates-aware search may need to remove one endpoint and take linear time.
 
 ### Linked Lists
 
@@ -104,9 +104,9 @@ Source: [Linked Lists](70.2.1.04-linked-list-manipulation-patterns.md)
 
 Source: [Intervals](70.2.1.05-intervals.md)
 
-**Q:** Can a meeting ending at 10 and another starting at 10 use one room?
+**Q:** Can a meeting ending at `10` and another starting at `10` use one room?
 
-**A:** Yes under half-open meeting ranges: the room becomes free before the next meeting starts. Closed ranges would overlap at 10. Endpoint rules determine both the comparison and how simultaneous start/end events are ordered.
+**A:** Yes under half-open meeting ranges: the room becomes free before the next meeting starts. Closed ranges would overlap at `10`. Endpoint rules determine both the comparison and how simultaneous start and end events are ordered.
 
 ### Greedy and Prefix Sums
 

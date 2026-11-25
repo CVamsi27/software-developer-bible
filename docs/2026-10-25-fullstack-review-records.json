@@ -140,12 +140,12 @@
     },
     {
       "path": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md",
-      "sha256": "bb025033caa36415bfde4a2d6da14e57ad0f2acc6714cb19c20dd4161af60b84",
+      "sha256": "5648250f74e83bcd496c2e2f9a3d66a2f15d8c450949495c2776381bf6c42a53",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-24",
+      "reviewDate": "2026-11-25",
       "fullContentRead": true,
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Rewrote for readability after V8 flag: Full read of 211 lines (~1497 prose words). Opening states the problem directly instead of asking; tightened hedges while keeping version caveats; smoothed section transitions; kept all technical content, code examples, and references.",
       "findings": []
     },
     {

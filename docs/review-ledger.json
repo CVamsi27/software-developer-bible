@@ -219,20 +219,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md": {
-   "sha256": "bb025033caa36415bfde4a2d6da14e57ad0f2acc6714cb19c20dd4161af60b84",
+   "sha256": "5648250f74e83bcd496c2e2f9a3d66a2f15d8c450949495c2776381bf6c42a53",
    "lines": 211,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-24",
+   "reviewed": "2026-11-15",
    "evidence": {
-    "current": "The Ignition/Sparkplug/Maglev/Turboshaft tiers and pointer-compression slot size were checked against V8's published compiler posts and current Node diagnostics.",
-    "readable": "Full read of 211 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1489 words of prose after removing redundant opener/callout repetition and stale phrasing.",
-    "focused": "V8's implementation is owned here; language semantics and GC reachability point at their own chapters.",
-    "fast": "28.8 KB raw / 8.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
-    "best": "Thresholds, tiers and deopt destinations cannot transfer between engine versions; the chapter says to measure the end-to-end path before reshaping data."
+    "current": "Checked against https://v8.dev/blog/maglev, https://v8.dev/blog/sparkplug, https://v8.dev/blog/fast-properties, https://v8.dev/blog/leaving-the-sea-of-nodes, and https://tc39.es/ecma262/.",
+    "readable": "Full read of 211 lines. The chapter opens with a concrete performance symptom, then traces the JIT pipeline, hidden classes, inline caches, and speculative optimization with deoptimization, ending with measurement guidance.",
+    "concise": "1497 words of prose after removing YAML fences, badge links and metadata rows.",
+    "focused": "Owned: this is the canonical V8 engine chapter; it links out to Execution Context, Call Stack, Prototypes, and Garbage Collection rather than retelling them.",
+    "fast": "28.8 KB raw / 8.5 KB gzip; no separate page weight measured beyond source bytes.",
+    "best": "Does not promise universal performance numbers; engine thresholds, timings, and transitions depend on the V8 build and cannot be quoted as fixed limits."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "Rewrote for readability after user flagged the chapter as hard to read: direct opening states the problem instead of asking, tightened hedges while keeping version caveats, smoothed section transitions, kept all technical content, code examples, and references."
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/INDEX.md": {
    "sha256": "36733a595585ac137c3f06236c5e4bd92ac4d24faf727822ed4aebab4d1f6902",

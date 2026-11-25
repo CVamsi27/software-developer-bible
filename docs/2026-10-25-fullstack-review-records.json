@@ -10056,22 +10056,22 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "4aeb736751cb506b8f4803b8e28676ee933a1e531e7a65ea80a462c9a1b97cd9",
+      "sha256": "2a461a4a858085091b4ba510afea19604e0f4e2745cd0573855a12c85635d0e5",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-24",
+      "reviewDate": "2026-11-25",
       "fullContentRead": true,
-      "notes": "Wave 11D-3 organic reading flow plan count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Wave 11D-3 organic reading flow plan.",
+      "notes": "Re-read after count restamp; Full read of 207 lines. Root navigation index, no version-sensitive claims, links out to stack indexes.",
       "findings": []
     },
     {
       "path": "README.md",
-      "sha256": "35fd7906c9f051882eea7b6d0c73a5d360e4bfe624f61d8c95990bf378102cb4",
+      "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-24",
+      "reviewDate": "2026-11-25",
       "fullContentRead": true,
-      "notes": "Wave 11A C1-C8 refinement (2026-11-24): Full read of 112 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+      "notes": "Re-read after count restamp; Full read of 112 lines. Project landing page, no version-sensitive claims, orientation only.",
       "findings": []
     },
     {
@@ -10086,12 +10086,12 @@
     },
     {
       "path": "contributing.md",
-      "sha256": "b4314731214ec8fe97af3974a8cc1fbd877dad59e93e3e0abea6ce75fd4f4ce2",
+      "sha256": "4b73cf1fc1e8995b4c32c2f2bb6c32b50723c29aeb65aad8194f8cc3d2ea884a",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-24",
+      "reviewDate": "2026-11-25",
       "fullContentRead": true,
-      "notes": "Wave 11D-3 organic reading flow plan count/read-time sync (2026-11-24): Full read of 948 lines. Updated generated counts/read-time navigation after Wave 11D-3 organic reading flow plan.",
+      "notes": "Re-read after count restamp; Full read of 948 lines. Contributor contract, no version-sensitive claims, process only.",
       "findings": []
     },
     {
@@ -10608,22 +10608,22 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "63da7d8729fda4a393d723347e00ee3d59940561d008019d0928e6576ad7fa69",
+      "sha256": "6f1ba022de027aa5d9f67d114850e9773c1e990a50da96051873dfaa4a831857",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-24",
+      "reviewDate": "2026-11-25",
       "fullContentRead": true,
-      "notes": "Wave 11D-3 organic reading flow plan count/read-time sync (2026-11-24): Full read of 137 lines. Updated generated counts/read-time navigation after Wave 11D-3 organic reading flow plan.",
+      "notes": "Re-read after count restamp; Full read of 137 lines. Gate registry, no version-sensitive claims, documentation only.",
       "findings": []
     },
     {
       "path": "lanes/INDEX.md",
-      "sha256": "95b05d4ab69f6299bca2b97f98dd0344bddb443371380124ef88db81b136f9d5",
+      "sha256": "c644b6e72d032c28309afec9141ec84c7489f4a6819c209b90073e97d8d489a5",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-24",
+      "reviewDate": "2026-11-25",
       "fullContentRead": true,
-      "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 37 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+      "notes": "Re-read after count restamp; Full read of 37 lines. Lanes navigation index, no version-sensitive claims, navigation only.",
       "findings": []
     },
     {
@@ -10964,6 +10964,16 @@
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
       "notes": "Wave 11D-2 historical implementation plans C1-C8 refinement (2026-11-24): Full read of 496 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+      "findings": []
+    },
+    {
+      "path": "docs/superpowers/plans/2026-11-25-phase-0-full-rework-plan.md",
+      "sha256": "79f99c137772ded34035e52461cace0e5c06d289b1538b5e5a1ded81a459d803",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-25",
+      "fullContentRead": true,
+      "notes": "New file; Full read of 143 lines. Phase 0 rework plan, no version-sensitive claims, planning only.",
       "findings": []
     }
   ]

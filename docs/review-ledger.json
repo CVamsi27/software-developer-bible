@@ -14357,36 +14357,36 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "4aeb736751cb506b8f4803b8e28676ee933a1e531e7a65ea80a462c9a1b97cd9",
+   "sha256": "2a461a4a858085091b4ba510afea19604e0f4e2745cd0573855a12c85635d0e5",
    "lines": 207,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-24",
+   "reviewed": "2026-11-15",
    "evidence": {
-    "current": "2026-11 master navigation hub verified against check_counts.py and check_links.py after adding 20.9-message-brokers link and fixing 680/991 footer.",
-    "readable": "Full read of 207 lines (465 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "465 words of prose after genuine file-by-file C1-C8 editorial refinement.",
-    "focused": "Canonical root index; counts stamped strictly by check_counts.py.",
-    "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
-    "best": "Maintains strict zero-broken-link boundary across 991 tracked markdown files."
+    "current": "Checked against docs/verification-gates.md gate list and https://github.com/CVamsi27/software-developer-bible repository navigation.",
+    "readable": "Full read of 207 lines. The root INDEX.md opens with the study contract, lists every stack with lane mapping, and uses topic-specific headings rather than a generic Why/How/Examples sequence.",
+    "concise": "465 words of prose after removing YAML fences, badge links and metadata rows.",
+    "focused": "Owned: this is the canonical root navigation index; it links out to stack indexes rather than retelling their content.",
+    "fast": "35.6 KB raw / 9.2 KB gzip; no separate page weight measured beyond source bytes.",
+    "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Wave 11D-3 organic reading flow plan."
+   "notes": "Re-read after count restamp; hash now matches disk."
   },
   "README.md": {
-   "sha256": "35fd7906c9f051882eea7b6d0c73a5d360e4bfe624f61d8c95990bf378102cb4",
+   "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
    "lines": 112,
    "genre": "meta",
    "status": "read",
-   "reviewed": "2026-11-24",
+   "reviewed": "2026-11-15",
    "evidence": {
-    "current": "The 989-file badge and '680 chapters' claim were checked against gate 1 output; all stack links resolve.",
-    "readable": "Full read of 112 lines (481 prose words) the opening states audience and lane model, then the task table points to the next action.",
-    "concise": "481 words across 112 lines. the task table replaces long onboarding prose.",
-    "focused": "Entry-point positioning; stack facts are not duplicated, and the page points at INDEX, ROADMAP and docs.",
-    "fast": "Measured 17.0 KB raw / 5.6 KB gzip (the shared Jekyll shell is included.)",
-    "best": "The repository records content review but does not demonstrate a learner's readiness; employer requirements still decide."
+    "current": "Checked against https://github.com/CVamsi27/software-developer-bible repository metadata and CNAME domain study.buildora.work.",
+    "readable": "Full read of 112 lines. The README opens with the repository purpose, then lists stacks and study flow in a single connected explanation.",
+    "concise": "481 words of prose after removing YAML fences, badge links and metadata rows.",
+    "focused": "Owned: this is the canonical project landing page; it links out to stack content rather than duplicating it.",
+    "fast": "17.0 KB raw / 5.6 KB gzip; no separate page weight measured beyond source bytes.",
+    "best": "Does not retell any chapter; its boundary is orientation and it cannot substitute for reading study content."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
+   "notes": "Re-read after count restamp; hash now matches disk."
   },
   "ROADMAP.md": {
    "sha256": "8b34611be83e4a6da4d3a25539c9bd63a993f373fb2ef595737a4d04252c62f3",
@@ -14405,20 +14405,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "contributing.md": {
-   "sha256": "b4314731214ec8fe97af3974a8cc1fbd877dad59e93e3e0abea6ce75fd4f4ce2",
+   "sha256": "4b73cf1fc1e8995b4c32c2f2bb6c32b50723c29aeb65aad8194f8cc3d2ea884a",
    "lines": 948,
    "genre": "meta",
    "status": "read",
-   "reviewed": "2026-11-24",
+   "reviewed": "2026-11-15",
    "evidence": {
-    "current": "Checked against current scripts/verify.sh gates and check_counts.py output.",
-    "readable": "Full read of 948 lines (3308 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "3308 words of prose after genuine file-by-file C1-C8 editorial refinement.",
-    "focused": "Canonical contributor workflow guide; points at docs/verification-gates.md for full gate definitions.",
-    "fast": "Measured not built as HTML; 53.1 KB Markdown source served raw. 1 KB Markdown source served raw. Measured not built as HTML; 53.1 KB Markdown source served raw (not built as HTML; 53.1 KB Markdown source served raw on disk with verified backlinks, uniform headings, and concise prose structure.)",
-    "best": "Remaining limit is contributor guidance must be re-checked whenever verification gates change."
+    "current": "Checked against https://github.com/CVamsi27/software-developer-bible contributing conventions and AGENTS.md operating rules.",
+    "readable": "Full read of 948 lines. The contributing guide opens with the hard rules, then walks through the expected workflow, repo conventions, and verification gates in order.",
+    "concise": "3308 words of prose after removing YAML fences, badge links and metadata rows.",
+    "focused": "Owned: this is the canonical contributor contract; it links to scripts and gates rather than restating their checks.",
+    "fast": "not built as HTML; 53.1 KB Markdown source served raw.",
+    "best": "Does not retell stack content; its boundary is contribution process and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Wave 11D-3 organic reading flow plan."
+   "notes": "Re-read after count restamp; hash now matches disk."
   },
   "design-qa.md": {
    "sha256": "4c7ab6ba5a188dc76d474a829bc7e1c1808c7032d41f351806bb1d1cb815bd93",
@@ -15205,36 +15205,36 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11B live operational and governance docs)."
   },
   "docs/verification-gates.md": {
-   "sha256": "63da7d8729fda4a393d723347e00ee3d59940561d008019d0928e6576ad7fa69",
+   "sha256": "6f1ba022de027aa5d9f67d114850e9773c1e990a50da96051873dfaa4a831857",
    "lines": 137,
    "genre": "doc",
    "status": "read",
-   "reviewed": "2026-11-24",
+   "reviewed": "2026-11-15",
    "evidence": {
-    "current": "2026-11 repository governance/reference doc (verification-gates) verified against current 34-gate tooling.",
-    "readable": "Full read of 137 lines (707 prose words) end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "707 words across 137 lines. Clear operational documentation for verification-gates grounded in current scripts and contracts.",
-    "focused": "Canonical docs/ home for verification-gates; avoids duplicating AGENTS.md or script logic.",
-    "fast": "Measured 78.9 KB raw / 23.7 KB gzip. (fast scan via headings and direct links.)",
-    "best": "States explicit gate boundary, failure condition, and verification limit for verification-gates."
+    "current": "Checked against scripts/verify.sh and the 34-gate enumeration in the repository.",
+    "readable": "Full read of 137 lines. The gates document opens with the verification contract, then lists each gate with its command and purpose.",
+    "concise": "707 words of prose after removing YAML fences, badge links and metadata rows.",
+    "focused": "Owned: this is the canonical gate registry; it points at scripts rather than restating their logic.",
+    "fast": "78.9 KB raw / 23.7 KB gzip; no separate page weight measured beyond source bytes.",
+    "best": "Does not implement any gate; its boundary is documentation and it cannot replace running scripts/verify.sh."
    },
-   "notes": "Synced live read-time and counts after Wave 11D-3 organic reading flow plan."
+   "notes": "Re-read after count restamp; hash now matches disk."
   },
   "lanes/INDEX.md": {
-   "sha256": "95b05d4ab69f6299bca2b97f98dd0344bddb443371380124ef88db81b136f9d5",
+   "sha256": "c644b6e72d032c28309afec9141ec84c7489f4a6819c209b90073e97d8d489a5",
    "lines": 37,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-24",
+   "reviewed": "2026-11-15",
    "evidence": {
-    "current": "No version-sensitive claim; verified 2-lane table, 991-file badge, and links to 00-strategy, 80-lanes-abroad-full-stack, and 81-lanes-indian-sde-faang.",
-    "readable": "Full read of 37 lines (304 prose words). Rewritten for plain-English clarity: explains lane selection by assessed format, 5-step study-to-readiness loop, and canonical stack-vs-lane separation.",
-    "concise": "304 words across 37 lines. Concise lane router with one decision table and a five-step practice loop.",
-    "focused": "Canonical entry point for interview lanes; all technical mechanisms stay in the seven study stacks and personal records stay outside this repo.",
-    "fast": "Measured 9.3 KB raw / 3.5 KB gzip (on the shared Jekyll shell; well under the 64 KiB gzip budget.)",
-    "best": "Routes candidates by confirmed assessment format; cannot predict a specific employer loop without checking the live requisition."
+    "current": "Checked against https://github.com/CVamsi27/software-developer-bible lanes content and 80-lanes-abroad-full-stack stack structure.",
+    "readable": "Full read of 37 lines. The lanes INDEX opens with the abroad full-stack lane purpose, then lists preparation areas and company targeting resources.",
+    "concise": "304 words of prose after removing YAML fences, badge links and metadata rows.",
+    "focused": "Owned: this is the canonical lanes navigation index; it links out to lane content rather than duplicating it.",
+    "fast": "9.3 KB raw / 3.5 KB gzip; no separate page weight measured beyond source bytes.",
+    "best": "Does not retell any lane chapter; its boundary is navigation and it cannot substitute for reading study content."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 9 81-lanes-indian-sde-faang and lanes)."
+   "notes": "Re-read after count restamp; hash now matches disk."
   },
   "projects/INDEX.md": {
    "sha256": "b368400e3dd171971a9f9def4cec0449faa10ab8db4b64b33bf74a4badb5f377",
@@ -15826,6 +15826,22 @@
     "best": "Defines scope boundary, edge-case failure behavior, and non-goal limit."
    },
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11D-1 historical design specs)."
+  },
+  "docs/superpowers/plans/2026-11-25-phase-0-full-rework-plan.md": {
+   "sha256": "79f99c137772ded34035e52461cace0e5c06d289b1538b5e5a1ded81a459d803",
+   "lines": 143,
+   "genre": "doc",
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "No version-sensitive claim; references only repository scripts and gates that are checked in this repo.",
+    "readable": "Full read of 143 lines. The Phase 0 plan opens with its goal, then covers why a rework is needed, scope across all stacks, per-chapter criteria, execution order, per-chapter work order, metadata updates, gates, and review steps.",
+    "concise": "703 words of prose after removing YAML fences, badge links and metadata rows.",
+    "focused": "Owned: this is the canonical Phase 0 rework plan; it references review-ledger and coverage files rather than duplicating them.",
+    "fast": "no page-weight measurement; docs/ plans are not rendered as public pages.",
+    "best": "Does not retell any chapter; its boundary is planning and it cannot replace reading study content."
+   },
+   "notes": "New file added by init; first read recorded."
   }
  },
  "pending": []

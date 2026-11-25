@@ -3,7 +3,7 @@
 Both interview lanes draw from the same seven technical study stacks. Start with [Interview Strategy](../00-strategy/INDEX.md) to sharpen your resume, communication, Situation, Task, Action, Result (STAR) stories, and startup discovery workflow, then pick the lane that matches the interview loop you are actually preparing for.
 
 [![Lanes](https://img.shields.io/badge/lanes-2-blue)](#choose-the-assessed-work)
-[![Files](https://img.shields.io/badge/files-991-orange)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-992-orange)](../INDEX.md)
 
 ## Choose the assessed work
 

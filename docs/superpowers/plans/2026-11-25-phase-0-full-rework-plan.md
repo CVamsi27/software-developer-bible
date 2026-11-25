@@ -22,7 +22,7 @@ The corpus passed all structural, link, template, and count gates — but the us
 The last analysis pass (`2026-11-25 13:23`) scanned all technical concept chapters (stacks 10–70) and found:
 
 | Signal | Count | Example chapters |
-|--------|-------|------------------|
+| -------------------------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | Thin (<130 lines) | 99 | `20.3.1.04-rest-maturity-model`, `40.1.06-production-patterns`, `50.2.01-wcag-overview`, `10.3.1.03-reconciliation` |
 | Hedged (≥3 hedge phrases) | 47 | `10.1.1.07-v8-execution-and-optimization` (10), `40.4.4.03-ebpf-observability` (7), `40.1.08-image-signing-sbom-supply-chain` (7) |
 | No real code block | 47 | Same set overlapping thin + hedged |
@@ -36,7 +36,7 @@ The V8 chapter itself (211 lines, referenced by the user) opens with a question 
 ## Scope: Every Topic Chapter Across All Stacks
 
 | Stack | Dir | Concept files (est.) | Primary audience |
-|-------|-----|---------------------|------------------|
+| ----------------- | ----------------------------- | --------------------- | ------------------------------------------------------------------------ |
 | Strategy | `00-strategy/` | 5 | Resume, communication, STAR, startup roles |
 | Frontend | `10-frontend/` | 127 | JavaScript, TypeScript, React, Next.js, HTML/CSS/PWA, mobile |
 | Backend | `20-backend/` | 149 | Node.js, NestJS, REST, databases, auth, security, AI engineering |
@@ -72,7 +72,7 @@ Each chapter must pass all of these before it is marked done:
 Work in groups so each re-read uses previously fixed chapters as reference:
 
 | Phase | Group | Stacks / focus | Est. chapters |
-|-------|-------|---------------|---------------|
+| ------- | ----------------------- | ------------------------------------------------------------------------------------------ | --------------- |
 | P1 | Foundations | `00-strategy` + `10-frontend/10.1-javascript` (execution, scope, closures, V8, prototypes) | ~40 |
 | P2 | Frontend UI | `10-frontend` remaining (React, Next.js, HTML/CSS, Tailwind, mobile) | ~87 |
 | P3 | Backend runtime | `20-backend/20.1-node.js`, `20.2-nestjs`, `20.3-rest-apis` | ~60 |
@@ -119,7 +119,7 @@ After each group completes:
 All 34 gates in `scripts/verify.sh` must pass before any commit, including:
 
 | Gate | What it checks |
-|------|----------------|
+| --------------------------------------- | ----------------------------------- |
 | `check_counts.py` | File/line/badge counts match disk |
 | `check_links.py` | 0 broken links, anchors verified |
 | `check_freshness.py` | No stale API signatures |

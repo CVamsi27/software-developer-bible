@@ -9,7 +9,7 @@
 
 [![Lanes](https://img.shields.io/badge/lanes-2-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](#the-7-study-stacks-numbered-for-study-order)
-[![Files](https://img.shields.io/badge/files-991-orange)](#the-7-study-stacks-numbered-for-study-order)
+[![Files](https://img.shields.io/badge/files-992-orange)](#the-7-study-stacks-numbered-for-study-order)
 [![Design Patterns](https://img.shields.io/badge/GoF%20Coverage-23%2F23-success)](30-architecture/30.1-design-patterns/INDEX.md)
 [![Last Updated](https://img.shields.io/badge/last%20updated-November%202026-purple)](#)
 
@@ -204,4 +204,4 @@ projects → Docita architecture deep-dives, interview defense
 
 ---
 
-*Last updated: November 2026 — 991 files, 162K lines, 0 broken links — folders numbered for study order. 680 of the 991 files are learning chapters; the rest are indexes, revision companions, interview banks, and review records. Every large stack is organized into numbered category subfolders; the auth track covers passkeys and Security Assertion Markup Language (SAML); sequences are contiguous inside each stack folder. The 80.x lane numbering intentionally leaves room for project-preparation chapters.*
+*Last updated: November 2026 — 992 files, 162K lines, 0 broken links — folders numbered for study order. 680 of the 991 files are learning chapters; the rest are indexes, revision companions, interview banks, and review records. Every large stack is organized into numbered category subfolders; the auth track covers passkeys and Security Assertion Markup Language (SAML); sequences are contiguous inside each stack folder. The 80.x lane numbering intentionally leaves room for project-preparation chapters.*

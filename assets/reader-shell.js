@@ -1,4 +1,10 @@
   document.addEventListener("DOMContentLoaded", function() {
+    // Ensure main content has ID for skip link
+    var mainContent = document.querySelector('.post-content, .page-content, .search-main');
+    if (mainContent && !mainContent.id) {
+      mainContent.id = 'main-content';
+    }
+
     // 1. Reading progress indicator
     var progressBar = document.createElement("div");
     progressBar.className = "reading-progress-bar";
@@ -77,10 +83,30 @@
     var codeContainers = document.querySelectorAll("div.highlighter-rouge, pre.highlight");
     var copyIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="12" rx="2.5"></rect><path d="M5 15V5.5A2.5 2.5 0 0 1 7.5 3H16"></path></svg>';
     var copiedIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"></path></svg>';
+    var languageNames = {
+      javascript: 'JavaScript', typescript: 'TypeScript', jsx: 'JSX', tsx: 'TSX',
+      json: 'JSON', html: 'HTML', css: 'CSS', sql: 'SQL', python: 'Python',
+      bash: 'Bash', shell: 'Shell', sh: 'Shell', go: 'Go', rust: 'Rust',
+      java: 'Java', cpp: 'C++', c: 'C', ruby: 'Ruby', php: 'PHP',
+      swift: 'Swift', kotlin: 'Kotlin', dart: 'Dart', yaml: 'YAML',
+      markdown: 'Markdown', dockerfile: 'Dockerfile', plaintext: 'Plain text'
+    };
     codeContainers.forEach(function(container) {
       if (container.tagName === "PRE" && container.closest("div.highlighter-rouge")) return;
       var pre = container.tagName === "PRE" ? container : container.querySelector("pre");
       if (!pre || container.querySelector(".copy-code-btn")) return;
+
+      // Add language label if not present
+      if (!container.querySelector('.code-caption')) {
+        var language = Array.from(container.classList).find(function (name) { return name.indexOf('language-') === 0; });
+        if (language) {
+          var caption = document.createElement('span');
+          caption.className = 'code-caption';
+          var value = language.slice(9);
+          caption.textContent = languageNames[value] || (value.charAt(0).toUpperCase() + value.slice(1)) + ':';
+          container.prepend(caption);
+        }
+      }
 
       var btn = document.createElement("button");
       btn.className = "copy-code-btn";
@@ -88,31 +114,34 @@
       btn.setAttribute("aria-label", "Copy code");
       btn.innerHTML = copyIcon;
       var feedback = document.createElement("span");
-      feedback.className = "read-aloud-status copy-feedback";
+      feedback.className = "copy-feedback";
       feedback.setAttribute("role", "status");
       feedback.setAttribute("aria-live", "polite");
 
       btn.addEventListener("click", function() {
-        feedback.textContent = "";
         var code = pre.querySelector("code") || pre;
         var text = code.innerText || code.textContent;
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(text).then(function() {
             btn.innerHTML = copiedIcon;
             btn.setAttribute("aria-label", "Code copied");
-            feedback.textContent = "Code copied to clipboard.";
             btn.classList.add("copied");
+            feedback.textContent = "Code copied";
+            feedback.classList.add("visible");
             setTimeout(function() {
               btn.innerHTML = copyIcon;
               btn.setAttribute("aria-label", "Copy code");
               btn.classList.remove("copied");
+              feedback.classList.remove("visible");
             }, 2000);
           }).catch(function() {
             btn.setAttribute("aria-label", "Copy failed");
-            feedback.textContent = "Copy failed. Select the code and copy it manually.";
+            feedback.textContent = "Copy failed";
+            feedback.classList.add("visible");
           });
         } else {
-          feedback.textContent = "Clipboard access is unavailable. Select the code and copy it manually.";
+          feedback.textContent = "Clipboard unavailable";
+          feedback.classList.add("visible");
         }
       });
 

@@ -161,10 +161,15 @@
     top: 0;
     left: 0;
     height: 3px;
-    background: var(--theme-link);
+    background: linear-gradient(90deg, var(--theme-link), var(--theme-accent));
     width: 0%;
     z-index: 99999;
-    transition: width 0.08s ease-out;
+    transition: width 0.08s ease-out, opacity 0.2s ease;
+    box-shadow: 0 0 8px var(--theme-link);
+  }
+
+  .reading-progress-bar:empty {
+    opacity: 0;
   }
 
   /* --------------------------------------------------------------------------
@@ -218,8 +223,43 @@
     z-index: 1000;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    /* Theme text and its surface must switch together to preserve contrast. */
-    transition: none;
+    /* Smooth theme transition for header */
+    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  }
+
+  /* Theme transition for key elements */
+  :root,
+  html[data-theme] {
+    transition: --theme-bg 0.25s ease,
+                --theme-text 0.25s ease,
+                --theme-text-muted 0.25s ease,
+                --theme-heading 0.25s ease,
+                --theme-border 0.25s ease,
+                --theme-link 0.25s ease,
+                --theme-link-hover 0.25s ease,
+                --card-bg 0.25s ease,
+                --code-bg 0.25s ease,
+                --code-border 0.25s ease,
+                --code-text 0.25s ease,
+                --table-header-bg 0.25s ease,
+                --table-stripe-bg 0.25s ease,
+                --table-border 0.25s ease,
+                --nav-pill-bg 0.25s ease,
+                --nav-pill-hover 0.25s ease,
+                --header-bg 0.25s ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root,
+    html[data-theme] {
+      transition: none;
+    }
+    .site-header {
+      transition: none;
+    }
+    .reading-progress-bar {
+      transition: width 0.08s ease-out;
+    }
   }
 
   .site-header .wrapper {
@@ -495,6 +535,51 @@
     overflow: hidden;
   }
 
+  /* Language label in code block header */
+  .code-caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 48px;
+    padding: 8px 16px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--theme-text-muted);
+    background: var(--code-inline-bg);
+    border-bottom: 1px solid var(--code-border);
+    border-radius: 13px 13px 0 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: 5;
+  }
+
+  .code-caption + pre.highlight,
+  .code-caption + div.highlighter-rouge pre {
+    padding-top: 40px;
+  }
+
+  /* Line numbers */
+  .code-line-numbers {
+    position: absolute;
+    left: 16px;
+    top: 40px;
+    color: var(--theme-text-muted);
+    opacity: 0.5;
+    text-align: right;
+    white-space: pre;
+    user-select: none;
+    pointer-events: none;
+    font: 0.88rem/1.62 var(--font-mono);
+    width: 2.5em;
+  }
+
+  .has-line-numbers pre {
+    padding-left: 72px !important;
+  }
+
   /* A right-edge fade marks horizontal overflow without covering the code. */
   div.highlighter-rouge.is-scrollable::after {
     content: "";
@@ -545,7 +630,7 @@
     border-radius: 50%;
     cursor: pointer;
     opacity: 0;
-    transition: opacity 0.15s ease, background 0.15s ease, color 0.15s ease;
+    transition: opacity 0.15s ease, background 0.15s ease, color 0.15s ease, transform 0.15s ease;
     z-index: 10;
   }
 
@@ -556,19 +641,71 @@
   }
 
   div.highlighter-rouge:hover .copy-code-btn,
-  pre.highlight:hover .copy-code-btn {
+  pre.highlight:hover .copy-code-btn,
+  div.highlighter-rouge:focus-within .copy-code-btn,
+  pre.highlight:focus-within .copy-code-btn {
     opacity: 1;
   }
 
   .copy-code-btn:hover {
     background: var(--nav-pill-hover);
     color: var(--theme-heading);
+    transform: scale(1.1);
   }
 
   .copy-code-btn.copied {
     opacity: 1;
     color: var(--theme-success);
     background: transparent;
+    transform: scale(1);
+  }
+
+  /* Toast feedback for copy */
+  .copy-feedback {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    font-weight: 550;
+    color: var(--theme-text-muted);
+    background: var(--card-bg);
+    border: 1px solid var(--theme-border);
+    border-radius: 6px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+    z-index: 10;
+    white-space: nowrap;
+  }
+
+  .copy-feedback.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    .copy-code-btn {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
+      opacity: 1;
+    }
+    .code-caption {
+      right: 56px;
+    }
+    .code-caption + pre.highlight,
+    .code-caption + div.highlighter-rouge pre {
+      padding-top: 48px;
+    }
+    .code-line-numbers {
+      top: 48px;
+    }
+    .has-line-numbers pre {
+      padding-left: 54px !important;
+    }
   }
 
   /* --------------------------------------------------------------------------
@@ -846,6 +983,60 @@
       margin-left: 0.35em;
       opacity: 0.45;
     }
+  }
+
+  .heading-anchor:focus-visible {
+    opacity: 1;
+    color: var(--theme-link) !important;
+    outline: 2px solid var(--theme-link);
+    outline-offset: 2px;
+  }
+
+  /* --------------------------------------------------------------------------
+     Focus Management & Skip Links
+     -------------------------------------------------------------------------- */
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 24px;
+    background: var(--theme-action-bg);
+    color: var(--theme-action-text);
+    border-radius: 0 0 8px 8px;
+    font-weight: 600;
+    text-decoration: none;
+    z-index: 100000;
+    transition: top 0.2s ease;
+  }
+
+  .skip-link:focus {
+    top: 0;
+    outline: 3px solid var(--theme-link);
+    outline-offset: 2px;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--theme-link);
+    outline-offset: 2px;
+  }
+
+  .site-nav .page-link:focus-visible,
+  .theme-toggle-btn:focus-visible,
+  .copy-code-btn:focus-visible,
+  .back-to-top:focus-visible,
+  .heading-anchor:focus-visible,
+  .chapter-nav-footer a:focus-visible,
+  .reader-meta-chip:focus-visible,
+  .search-shortcut-badge:focus-visible {
+    outline: 2px solid var(--theme-link);
+    outline-offset: 2px;
+  }
+
+  /* High contrast focus for tables */
+  .table-scroll-wrapper:focus-visible {
+    outline: 2px solid var(--theme-link);
+    outline-offset: 2px;
   }
 
   /* --------------------------------------------------------------------------

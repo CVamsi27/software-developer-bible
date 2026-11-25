@@ -174,6 +174,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
     background: var(--nav-pill-bg);
     border: 1px solid var(--theme-border);
     border-radius: 8px;
+    transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
   }
   .site-header > .wrapper > .theme-toggle-btn:hover {
     background: var(--nav-pill-hover);
@@ -183,6 +184,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .site-header .site-nav label[for="nav-trigger"] {
     display: block; float: none; width: 44px; height: 44px; margin: 0; padding: 0; box-sizing: border-box;
     background: var(--nav-pill-bg); border: 1px solid var(--theme-border); border-radius: 8px;
+    transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+  }
+  .site-header .site-nav label[for="nav-trigger"]:hover {
+    background: var(--nav-pill-hover);
+    transform: scale(1.02);
   }
   .site-header .site-nav label[for="nav-trigger"]:focus-visible {
     outline: 2px solid var(--theme-link); outline-offset: 4px;
@@ -190,6 +196,10 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .site-header .site-nav .menu-icon {
     float: none; display: flex; align-items: center; justify-content: center;
     width: 100%; height: 100%; padding: 0;
+    transition: transform 0.2s ease;
+  }
+  .site-header .site-nav #nav-trigger:checked + label .menu-icon {
+    transform: rotate(90deg);
   }
   .site-header .site-nav #nav-trigger ~ .trigger {
     position: absolute; top: calc(100% + 6px); right: 18px; left: auto;
@@ -198,10 +208,31 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
     margin: 0; padding: 8px; z-index: 20;
     background: var(--card-bg); border: 1px solid var(--theme-border); border-radius: 10px;
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+    animation: slideDown 0.2s ease forwards;
   }
   .site-header .site-nav #nav-trigger:checked ~ .trigger { display: flex; }
   .site-header .site-nav .trigger .page-link { width: 100%; padding: 0 12px; border-radius: 6px; box-sizing: border-box; }
   .site-header .site-nav .trigger .page-link:hover { background: var(--nav-pill-hover); }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header .site-nav label[for="nav-trigger"],
+  .site-header .site-nav .menu-icon,
+  .site-header .site-nav #nav-trigger ~ .trigger {
+    animation: none;
+    transition: none;
+  }
 }
 @media (max-width: 359px) {
   body .site-header > .wrapper { padding-left: 16px; padding-right: 16px; }

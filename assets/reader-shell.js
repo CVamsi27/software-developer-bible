@@ -89,21 +89,22 @@
       bash: 'Bash', shell: 'Shell', sh: 'Shell', go: 'Go', rust: 'Rust',
       java: 'Java', cpp: 'C++', c: 'C', ruby: 'Ruby', php: 'PHP',
       swift: 'Swift', kotlin: 'Kotlin', dart: 'Dart', yaml: 'YAML',
-      markdown: 'Markdown', dockerfile: 'Dockerfile', plaintext: 'Plain text'
+      markdown: 'Markdown', dockerfile: 'Dockerfile', text: 'Plain text',
+      plaintext: 'Plain text'
     };
     codeContainers.forEach(function(container) {
       if (container.tagName === "PRE" && container.closest("div.highlighter-rouge")) return;
       var pre = container.tagName === "PRE" ? container : container.querySelector("pre");
       if (!pre || container.querySelector(".copy-code-btn")) return;
 
-      // Add language label if not present
       if (!container.querySelector('.code-caption')) {
         var language = Array.from(container.classList).find(function (name) { return name.indexOf('language-') === 0; });
         if (language) {
+          var value = language.slice(9);
+          var label = languageNames[value] || value.charAt(0).toUpperCase() + value.slice(1);
           var caption = document.createElement('span');
           caption.className = 'code-caption';
-          var value = language.slice(9);
-          caption.textContent = languageNames[value] || (value.charAt(0).toUpperCase() + value.slice(1)) + ':';
+          caption.textContent = label + ':';
           container.prepend(caption);
         }
       }
@@ -119,6 +120,7 @@
       feedback.setAttribute("aria-live", "polite");
 
       btn.addEventListener("click", function() {
+        feedback.textContent = "";
         var code = pre.querySelector("code") || pre;
         var text = code.innerText || code.textContent;
         if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -126,7 +128,7 @@
             btn.innerHTML = copiedIcon;
             btn.setAttribute("aria-label", "Code copied");
             btn.classList.add("copied");
-            feedback.textContent = "Code copied";
+            feedback.textContent = "Code copied to clipboard.";
             feedback.classList.add("visible");
             setTimeout(function() {
               btn.innerHTML = copyIcon;
@@ -136,11 +138,11 @@
             }, 2000);
           }).catch(function() {
             btn.setAttribute("aria-label", "Copy failed");
-            feedback.textContent = "Copy failed";
+            feedback.textContent = "Copy failed. Select the code and copy it manually.";
             feedback.classList.add("visible");
           });
         } else {
-          feedback.textContent = "Clipboard unavailable";
+          feedback.textContent = "Clipboard access is unavailable. Select the code and copy it manually.";
           feedback.classList.add("visible");
         }
       });

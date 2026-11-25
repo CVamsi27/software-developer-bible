@@ -535,17 +535,14 @@
     overflow: hidden;
   }
 
-  /* Language label in code block header */
+  /* Language label in code block header. It stays in normal flow so the
+     code below it is never covered; the copy action sits in the same row. */
   .code-caption {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 48px;
-    padding: 8px 16px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    display: block;
+    box-sizing: border-box;
+    padding: 8px 48px 8px 16px;
+    font: 500 0.75rem/1.5 var(--font-mono);
+    letter-spacing: 0.01em;
     color: var(--theme-text-muted);
     background: var(--code-inline-bg);
     border-bottom: 1px solid var(--code-border);
@@ -553,31 +550,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    z-index: 5;
-  }
-
-  .code-caption + pre.highlight,
-  .code-caption + div.highlighter-rouge pre {
-    padding-top: 40px;
-  }
-
-  /* Line numbers */
-  .code-line-numbers {
-    position: absolute;
-    left: 16px;
-    top: 40px;
-    color: var(--theme-text-muted);
-    opacity: 0.5;
-    text-align: right;
-    white-space: pre;
-    user-select: none;
-    pointer-events: none;
-    font: 0.88rem/1.62 var(--font-mono);
-    width: 2.5em;
-  }
-
-  .has-line-numbers pre {
-    padding-left: 72px !important;
   }
 
   /* A right-edge fade marks horizontal overflow without covering the code. */
@@ -665,6 +637,7 @@
     position: absolute;
     bottom: 8px;
     right: 8px;
+    max-width: calc(100% - 16px);
     padding: 6px 12px;
     font-size: 0.75rem;
     font-weight: 550;
@@ -677,7 +650,7 @@
     transition: opacity 0.2s ease, transform 0.2s ease;
     pointer-events: none;
     z-index: 10;
-    white-space: nowrap;
+    white-space: normal;
   }
 
   .copy-feedback.visible {
@@ -694,17 +667,7 @@
       opacity: 1;
     }
     .code-caption {
-      right: 56px;
-    }
-    .code-caption + pre.highlight,
-    .code-caption + div.highlighter-rouge pre {
-      padding-top: 48px;
-    }
-    .code-line-numbers {
-      top: 48px;
-    }
-    .has-line-numbers pre {
-      padding-left: 54px !important;
+      padding-right: 56px;
     }
   }
 

@@ -73,7 +73,7 @@ PAGE = """<!DOCTYPE html>
 <link rel="stylesheet" href="assets/reference-reader.css?v=reference-20">
 <script src="assets/study-state.js" defer></script>
 <script src="assets/roadmap-return.js?v=study-flow-19" defer></script>
-<script src="assets/reading-ui.js?v=study-flow-23" defer></script>
+<script src="assets/reading-ui.js?v=study-flow-24" defer></script>
 <script src="api/search-index.js" defer></script>
 <script src="assets/search-ui.js?v=study-flow-23" defer></script>
 </head>

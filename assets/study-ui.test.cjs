@@ -9,6 +9,7 @@ const chapter='/10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.05-lex
 const next=chapter.replace('05-lexical-environment','06-closures');
 const revision=chapter.slice(0,chapter.lastIndexOf('/')+1)+'REVISION.html';
 const paths=[chapter,next,revision,'/INDEX.html'];
+const settleSearch=()=>new Promise(resolve=>setTimeout(resolve,100));
 function boot(html, route, scripts, setup){
  const dom=new JSDOM(html,{url:'https://study.buildora.work'+route,runScripts:'outside-only',pretendToBeVisual:true});
  const w=dom.window; w.StudyPublishedPaths=paths; w.matchMedia=()=>({matches:false,addEventListener(){}}); w.scrollTo=()=>{};
@@ -115,25 +116,31 @@ test('resume validates catalog and strips unrelated fields; denied storage still
  assert.equal(store.write({...old,path:'/removed.html'}),false);
  assert.equal(store.write({...old,version:2}),false);dom.window.close();
 });
-test('search filters material, clears filters without clearing query and restores Back state',()=>{
+test('search filters material, clears filters without clearing query and restores Back state',async()=>{
   let html=fs.readFileSync(path.join(root,'search.html'),'utf8').replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,'');
   const rows=[{p:chapter.slice(1),t:'Scope lesson',s:'JavaScript',c:'Core',g:['concept'],m:15},{p:revision.slice(1),t:'Scope revision',s:'JavaScript',c:'Reference',g:['revision'],m:4},{p:'other.html',t:'Other topic',s:'Node.js',c:'Core',g:[],m:5}];
   const dom=boot(html,'/search.html?q=scope',['search-ui.js'],w=>{w.__SDB_SEARCH_DATA__=rows;w.StudyPublishedPaths=rows.map(r=>'/'+r.p);});const w=dom.window,d=w.document;
   assert.equal(d.querySelector('#search-status').hidden,true,'Loading status is cleared after catalog readiness');
   const material=d.querySelector('#material');assert.ok(material,'Material filter is available');
  material.value='revision';material.dispatchEvent(new w.Event('change'));
+ await settleSearch();
  assert.equal(d.querySelectorAll('.search-result').length,1);assert.ok(d.querySelector('.search-result').textContent.includes('Scope revision'));
- d.querySelector('[data-clear-filters]').click();assert.equal(d.querySelector('#q').value,'scope');assert.equal(d.querySelectorAll('.search-result').length,2);
+ d.querySelector('[data-clear-filters]').click();
+ await settleSearch();
+ assert.equal(d.querySelector('#q').value,'scope');assert.equal(d.querySelectorAll('.search-result').length,2);
  w.history.replaceState(null,'','?q=scope&material=revision');w.dispatchEvent(new w.PopStateEvent('popstate'));
+ await settleSearch();
  assert.equal(material.value,'revision');assert.equal(d.querySelectorAll('.search-result').length,1);dom.window.close();
 });
-test('revision search distinguishes categories with the same authored title',()=>{
+test('revision search distinguishes categories with the same authored title',async()=>{
   let html=fs.readFileSync(path.join(root,'search.html'),'utf8').replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,'');
   const rows=['01-foundations','02-frameworks'].map(group=>({p:'50-quality/50.1-testing/'+group+'/REVISION.html',t:'Testing — Section Revision',s:'Testing',c:'Reference',g:['revision'],m:2}));
   const dom=boot(html,'/search.html?material=revision',['search-ui.js'],w=>{w.__SDB_SEARCH_DATA__=rows;w.StudyPublishedPaths=rows.map(r=>'/'+r.p);});
+ await settleSearch();
  assert.deepEqual([...dom.window.document.querySelectorAll('.result-context')].map(p=>p.textContent),['Testing / Foundations','Testing / Frameworks']);
  dom.window.document.querySelector('#q').value='foundations';
  dom.window.document.querySelector('#q').dispatchEvent(new dom.window.Event('input'));
+ await settleSearch();
  assert.equal(dom.window.document.querySelectorAll('.search-result').length,1,'The displayed category is searchable');
   dom.window.close();
 });

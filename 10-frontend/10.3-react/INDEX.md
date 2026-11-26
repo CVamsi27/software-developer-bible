@@ -1,13 +1,13 @@
 # React — Index
 
-> **Study time:** ≈ 3 h 9 m of reading (28 files, ~7 min average).
+> **Study time:** ≈ 3 h 13 m of reading (28 files, ~7 min average).
 > **28 files** — React internals from Virtual DOM to Fiber, hooks, patterns, custom hooks, portals, compound components, external stores, server-state ownership with TanStack Query, React Router data routers, React 18/19 concurrent APIs, performance, state management, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-28-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-Senior React roles test the runtime model and the choices built on it: render and commit, component identity, Suspense, concurrent updates and the server/client boundary. This section builds from internals through Hooks and composition patterns to interview practice.
+Senior React roles test the runtime model and the choices built on it: render and commit, component identity, Suspense, concurrent updates, and the server and client boundary. This section builds from internals through Hooks and composition patterns to interview practice.
 
 ---
 
@@ -16,8 +16,8 @@ Senior React roles test the runtime model and the choices built on it: render an
 The categories follow prerequisite order; read each learning flow before its revision drill.
 
 | Category | Chapters | Why it matters |
-| -------------------------------------------------------------------- | -------: | ---------------------------------------------------------------------------------------------------------------------- |
-| [React Internals](01-react-internals/INDEX.md) | 5 | How React turns updates into committed UI, and how identity, scheduling and state ownership change observable behavior |
+| -------------------------------------------------------------------- | -------: | ----------------------------------------------------------------------------------------------------------------------- |
+| [React Internals](01-react-internals/INDEX.md) | 5 | How React turns updates into committed UI, and how identity, scheduling, and state ownership change observable behavior |
 | [Core Hooks](02-core-hooks/INDEX.md) | 5 | The 5 essential hooks (state, effect, memo, ref, context) — used daily |
 | [Advanced Hooks & Patterns](03-advanced-hooks-and-patterns/INDEX.md) | 7 | Suspense, Error Boundary, Custom Hooks, `useSyncExternalStore`, Performance, State Management, TanStack Query |
 | [Modern React](04-modern-react/INDEX.md) | 3 | Concurrent rendering, transitions, server components, `use(promise)`, React Router data routers |
@@ -38,15 +38,15 @@ Read categories in numeric order — each builds on the previous:
 
 ## React Internals
 
-Understand how React turns updates into committed UI, and how identity, scheduling and state ownership change observable behavior.
+Understand how React turns updates into committed UI, and how identity, scheduling, and state ownership change observable behavior.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Virtual DOM](01-react-internals/10.3.1.01-virtual-dom.md) | VDOM concept, diffing, batching, React elements vs components | Essential | Foundational | 9 min |
-| 02 | [Fiber](01-react-internals/10.3.1.02-fiber.md) | Fiber architecture, work loop, priority lanes, time slicing | Important | Important | 5 min |
-| 03 | [Reconciliation](01-react-internals/10.3.1.03-reconciliation.md) | Diffing algorithm, keys, component types, bailout | Essential | Foundational | 4 min |
-| 04 | [Rendering](01-react-internals/10.3.1.04-rendering.md) | Render phases, commit phase, batching in React 18, automatic batching | Essential | Foundational | 5 min |
-| 05 | [Lifecycle](01-react-internals/10.3.1.05-lifecycle.md) | Class lifecycle, hooks lifecycle, `useEffect` cleanup, strict mode double-invoke | Essential | Foundational | 4 min |
+| 01 | [Virtual DOM](01-react-internals/10.3.1.01-virtual-dom.md) | Element descriptions, `$$typeof` XSS protection, Fiber vs. DOM layers, and `{children}` stability | Essential | Foundational | 9 min |
+| 02 | [Fiber](01-react-internals/10.3.1.02-fiber.md) | Twin `current` and `workInProgress` trees, begin and complete traversal, lanes, and cooperative yielding | Important | Important | 6 min |
+| 03 | [Reconciliation](01-react-internals/10.3.1.03-reconciliation.md) | Type, position, and `key` identity, conditional slots, deliberate resets, and fiber bailout | Essential | Foundational | 5 min |
+| 04 | [Rendering](01-react-internals/10.3.1.04-rendering.md) | Render, commit, and browser paint, React 18+ batching, `Object.is` bailout, hydration, and `flushSync` | Essential | Foundational | 5 min |
+| 05 | [Lifecycle](01-react-internals/10.3.1.05-lifecycle.md) | Effect start-and-stop cycles, `AbortController` + `ignore` guards, bottom-up timing, and React 19 ref cleanups | Essential | Foundational | 5 min |
 
 **Read order:** Virtual DOM → Fiber → Reconciliation → Rendering → Lifecycle.
 
@@ -123,7 +123,7 @@ Reusable component patterns + interview drills.
 4. Interview Questions (focus on the 20 harder Qs)
 
 ### Path C — Interview tomorrow
-- Review each chapter’s definition, example and summary; focus on the topics listed above
+- Review each chapter's definition, example, and summary; focus on the topics listed above
 - Re-read Custom Hooks → State Management → TanStack Query, then the category revision
 - Run through the interview questions
 

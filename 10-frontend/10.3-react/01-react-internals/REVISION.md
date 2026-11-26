@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-React-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -16,7 +16,7 @@ Source: [Virtual DOM](10.3.1.01-virtual-dom.md)
 
 **Q:** What does React keep in memory in addition to the live DOM?
 
-**A:** Element descriptions express desired output, while fibers retain identities, state and pending work. The browser still owns the actual document nodes.
+**A:** Element descriptions express desired output, while fibers retain identities, state, and pending work. The browser still owns the actual document nodes.
 
 **Q:** Why can a component run again without its DOM changing?
 
@@ -40,7 +40,11 @@ Source: [Virtual DOM](10.3.1.01-virtual-dom.md)
 
 **Q:** How should you compare direct DOM code with declarative rendering?
 
-**A:** Measure the same interaction on comparable hardware, separating React computation, commit work and browser layout or paint. Fixed universal timings hide differences in workload.
+**A:** Measure the same interaction on comparable hardware, separating React computation, commit work, and browser layout or paint. Fixed universal timings hide differences in workload.
+
+**Q:** How does `$$typeof` prevent JSON-based XSS in React elements, and how does `{children}` let a subtree bail out without `React.memo`?
+
+**A:** Untrusted `JSON.parse` output cannot encode a JavaScript `Symbol`, so React rejects elements lacking `Symbol.for('react.transitional.element')` (or `Symbol.for('react.element')`). Passing a pre-built subtree via `{children}` keeps the same element reference (`oldProps === newProps`) across wrapper renders, allowing React to skip re-rendering that child subtree.
 
 ## React Fiber
 
@@ -48,7 +52,7 @@ Source: [React Fiber](10.3.1.02-fiber.md)
 
 **Q:** Why does a fiber contain more information than a React element?
 
-**A:** A fiber persists a component identity together with its state, pending updates and scheduling metadata. An element only describes what should be rendered.
+**A:** A fiber persists a component identity together with its state, pending updates, and scheduling metadata. An element only describes what should be rendered.
 
 **Q:** What makes the current tree usable while another render is being prepared?
 
@@ -64,7 +68,7 @@ Source: [React Fiber](10.3.1.02-fiber.md)
 
 **Q:** Does fetching in an Effect activate a surrounding Suspense fallback?
 
-**A:** No. Suspense responds to work that suspends during render, such as lazy code or a supported framework/data source. Fetching in an Effect does not suspend the render.
+**A:** No. Suspense responds to work that suspends during render, such as lazy code or a supported framework or data source. Fetching in an Effect does not suspend the render.
 
 **Q:** Why does filtering data inside a transition callback still delay typing?
 
@@ -76,7 +80,7 @@ Source: [React Fiber](10.3.1.02-fiber.md)
 
 **Q:** Why are lane bitmasks and fiber sizes poor application contracts?
 
-**A:** They are internal details that depend on React versions, build settings and runtimes. Supported scheduling APIs express intent without depending on those layouts.
+**A:** They are internal details that depend on React versions, build settings, and runtimes. Supported scheduling APIs express intent without depending on those layouts.
 
 ## Reconciliation
 
@@ -108,7 +112,11 @@ Source: [Reconciliation](10.3.1.03-reconciliation.md)
 
 **Q:** What costs are outside the heuristic linear-diff description?
 
-**A:** Component calculations, sorting, repeated render attempts and browser layout or paint can dominate total time. Linear matching alone does not bound the entire interaction.
+**A:** Component calculations, sorting, repeated render attempts, and browser layout or paint can dominate total time. Linear matching alone does not bound the entire interaction.
+
+**Q:** Why does `{showBanner && <Banner />} <CheckoutForm />` keep `<CheckoutForm />` mounted across toggles, and what conditions let React bail out of re-rendering a fiber?
+
+**A:** JSX gives the conditional expression slot `0` (`false` or `<Banner />`) and leaves `<CheckoutForm />` at slot `1`, so identity matches under the same parent. React bails out of re-rendering a fiber when `type` matches, no state updates or consumed Context changes are pending on it, and `oldProps === newProps` (or `React.memo` shallow equality passes).
 
 ## Rendering
 
@@ -142,6 +150,10 @@ Source: [Rendering](10.3.1.04-rendering.md)
 
 **A:** Strict Mode checks and concurrent restarts can execute components without separate commits. Profile committed work and browser activity alongside render attempts.
 
+**Q:** Why can an `Object.is` state bailout still invoke the updating component once, and why does calling `Date.now()` or reading `window.innerWidth` in render break SSR hydration?
+
+**A:** When queued updates edge-check state equality, React may invoke the updating component once before seeing an identical `Object.is` result and discarding child renders and commit work. Reading `Date.now()` or browser-only globals in render produces different markup on server and client, triggering hydration mismatches — defer client-only reads to `useEffect` or `useSyncExternalStore`.
+
 ## Lifecycle
 
 Source: [Lifecycle](10.3.1.05-lifecycle.md)
@@ -160,7 +172,7 @@ Source: [Lifecycle](10.3.1.05-lifecycle.md)
 
 **Q:** Why should one effect own fetching a user rather than separate mount and update effects?
 
-**A:** Both effect setups would run on mount and issue duplicate requests. A single dependency-based effect can also own cancellation, loading and error updates.
+**A:** Both effect setups would run on mount and issue duplicate requests. A single dependency-based effect can also own cancellation, loading, and error updates.
 
 **Q:** What keeps a subscription tied to the currently selected channel?
 
@@ -173,6 +185,10 @@ Source: [Lifecycle](10.3.1.05-lifecycle.md)
 **Q:** When should DOM measurement use a layout effect?
 
 **A:** Use it when the measurement changes what must be displayed before paint. Ordinary external synchronization can use a passive effect after commit.
+
+**Q:** Why do child Effects run before parent Effects, and how do `AbortController` and an `ignore` flag work together in async Effects?
+
+**A:** React runs child setups before parent setups (bottom-up) so child DOM nodes and refs exist by the time a parent Effect reads them. In async Effects, cleanup aborts in-flight requests to save bandwidth while setting `ignore = true` stops a response that already resolved right before abort arrived from setting stale state.
 
 ## Editable-row identity
 
@@ -196,7 +212,7 @@ Source: [Virtual DOM](10.3.1.01-virtual-dom.md), [Fiber](10.3.1.02-fiber.md), [R
 
 **Q:** A fiber has no child and no sibling. How does traversal find the next work item?
 
-**A:** Completion follows its parent link, completes that parent and seeks the parent's sibling, continuing upward if necessary. These links encode a tree, not one flat list.
+**A:** Completion follows its parent link, completes that parent, and seeks the parent's sibling, continuing upward if necessary. These links encode a tree, not one flat list.
 
 **Q:** Why does a memoized results view help separate urgent input from deferred filtering?
 
@@ -204,7 +220,7 @@ Source: [Virtual DOM](10.3.1.01-virtual-dom.md), [Fiber](10.3.1.02-fiber.md), [R
 
 **Q:** Does `act()` automatically finish a fetch controlled by an unresolved promise?
 
-**A:** No. The test must resolve or reject the promise and coordinate the resulting React work. `act()` is not a network, timer or elapsed-time guarantee.
+**A:** No. The test must resolve or reject the promise and coordinate the resulting React work. `act()` is not a network, timer, or elapsed-time guarantee.
 
 **Q:** Why can cancellation alone fail to keep the right profile visible?
 
@@ -212,7 +228,7 @@ Source: [Virtual DOM](10.3.1.01-virtual-dom.md), [Fiber](10.3.1.02-fiber.md), [R
 
 ## Summary
 
-Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
+Revisit the linked chapter when an answer misses the mechanism, a boundary, or a failure case.
 
 ---
 

@@ -1,6 +1,6 @@
 # React Internals — React
 
-> **Study time:** ≈ 31 min of reading (6 files, ~5 min average).
+> **Study time:** ≈ 35 min of reading (6 files, ~6 min average).
 > Follow one accepted UI update from its element description, through retained identity and commit, to the external resources that must stay synchronized.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](#files)
@@ -13,11 +13,11 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Virtual DOM](10.3.1.01-virtual-dom.md) | Element descriptions versus committed host nodes | Essential | Foundational | 9 min |
-| 02 | [Fiber](10.3.1.02-fiber.md) | Retained work, cooperative scheduling and its limits | Important | Important | 5 min |
-| 03 | [Reconciliation](10.3.1.03-reconciliation.md) | Type, position and keys determine state identity | Essential | Foundational | 4 min |
-| 04 | [Rendering](10.3.1.04-rendering.md) | Render, commit and browser work are separate costs | Essential | Foundational | 5 min |
-| 05 | [Lifecycle](10.3.1.05-lifecycle.md) | Component lifetime versus Effect setup and cleanup | Essential | Foundational | 4 min |
+| 01 | [Virtual DOM](10.3.1.01-virtual-dom.md) | Element descriptions, `$$typeof` XSS protection, Fiber vs. DOM layers, and `{children}` stability | Essential | Foundational | 9 min |
+| 02 | [Fiber](10.3.1.02-fiber.md) | Twin `current` and `workInProgress` trees, begin and complete traversal, lanes, and cooperative yielding | Important | Important | 6 min |
+| 03 | [Reconciliation](10.3.1.03-reconciliation.md) | Type, position, and `key` identity, conditional slots, deliberate resets, and fiber bailout | Essential | Foundational | 5 min |
+| 04 | [Rendering](10.3.1.04-rendering.md) | Render, commit, and browser paint, React 18+ batching, `Object.is` bailout, hydration, and `flushSync` | Essential | Foundational | 5 min |
+| 05 | [Lifecycle](10.3.1.05-lifecycle.md) | Effect start-and-stop cycles, `AbortController` + `ignore` guards, bottom-up timing, and React 19 ref cleanups | Essential | Foundational | 5 min |
 
 ---
 
@@ -31,7 +31,7 @@
 
 ## Docita Anchor
 
-Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
+Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React, and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
 
 | Topic in this category | Docita evidence |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |

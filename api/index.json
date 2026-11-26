@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "5b0ae02901799d343a60654fbfd801520a633051fbe13d494fcc32741a30a9d6",
+ "corpus_digest": "9a5e9aade2484fc0a53ca4cf002ad471dd40403c94b6c23cbdf8eee5348290c7",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5472
+  "read_minutes": 5476
  },
  "chapters": [
   {
@@ -767,7 +767,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "10-frontend/10.3-react/01-react-internals/10.3.1.03-reconciliation.html",
@@ -777,7 +777,7 @@
    "g": [
     "concept"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "10-frontend/10.3-react/01-react-internals/10.3.1.04-rendering.html",
@@ -797,7 +797,7 @@
    "g": [
     "concept"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "10-frontend/10.3-react/01-react-internals/REVISION.html",
@@ -808,7 +808,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "10-frontend/10.3-react/02-core-hooks/10.3.2.01-usestate.html",

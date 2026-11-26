@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "8b414b78b2d7b8b62cc0d6430f4c06ebf3fe8ede45738f4f2bee9625db451ea4",
+ "corpus_digest": "15acc230a7c53ca4e8267bcd7b405676205258699307336dd7c6b93ec49b3832",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5453
+  "read_minutes": 5458
  },
  "chapters": [
   {
@@ -573,7 +573,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.02-infer.html",
@@ -583,7 +583,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.03-advanced-generics.html",
@@ -593,7 +593,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.04-type-variance.html",
@@ -603,7 +603,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.2-typescript/02-generics-and-inference/REVISION.html",
@@ -614,7 +614,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.01-utility-types.html",

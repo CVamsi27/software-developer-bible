@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26",
- "url_count": 2810,
+ "url_count": 2812,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -9348,8 +9348,14 @@
   "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-4.html#defaulting-to-the-unknown-type-in-catch-variables": [
    "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.04-error-handling.md"
   ],
+  "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-5.html#tail-recursion-elimination-on-conditional-types": [
+   "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.03-advanced-generics.md"
+  ],
   "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-7.html": [
    "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.04-type-variance.md"
+  ],
+  "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-7.html#extends-constraints-on-infer-type-variables": [
+   "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.02-infer.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-9.html": [
    "70-interview-toolkit/70.3-cheatsheets/70.3.02-typescript-cheat-sheet.md"
@@ -9373,6 +9379,7 @@
    "30-architecture/30.1-design-patterns/05-architectural/30.1.5.02-cqrs-di.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-4.html#the-noinfer-utility-type": [
+   "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.01-generics.md",
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.02-branded-types.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-5.html#inferred-type-predicates": [

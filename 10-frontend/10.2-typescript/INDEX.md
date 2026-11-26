@@ -1,6 +1,6 @@
 # TypeScript — Index
 
-> **Study time:** ≈ 3 h 14 m of reading (23 files, ~8 min average).
+> **Study time:** ≈ 3 h 19 m of reading (23 files, ~9 min average).
 > **23 files** — TypeScript type system mastery from basic types to branded types, template literals, declaration files, advanced generics, variance, decorators, the `satisfies` operator, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-23-blue)](../../INDEX.md)
@@ -57,10 +57,10 @@ Reusable type operations.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 05 | [Generics](02-generics-and-inference/10.2.2.01-generics.md) | Generic functions, constraints, default type parameters, conditional generics | Essential | Foundational | 10 min |
-| 06 | [Infer](02-generics-and-inference/10.2.2.02-infer.md) | Type inference in conditional types, `ReturnType`, `Parameters`, `Awaited`, custom utility types | Important | Specialized | 7 min |
-| 07 | [Advanced Generics](02-generics-and-inference/10.2.2.03-advanced-generics.md) | Template literal types, variadic tuples, recursive types, builder patterns | Important | Specialized | 9 min |
-| 08 | [Type Variance](02-generics-and-inference/10.2.2.04-type-variance.md) | Covariance/contravariance/invariance, `strictFunctionTypes` bivariance, unsound covariant arrays, `in`/`out` annotations, assignability puzzles | Important | Specialized | 7 min |
+| 05 | [Generics](02-generics-and-inference/10.2.2.01-generics.md) | Generic functions, `const` and `NoInfer` inference, constraints, default type parameters, and validated decoders | Essential | Foundational | 11 min |
+| 06 | [Infer](02-generics-and-inference/10.2.2.02-infer.md) | Conditional `infer` extraction, `ReturnType` and `Parameters`, constrained and repeated `infer`, and recursive unwrapping | Important | Specialized | 8 min |
+| 07 | [Advanced Generics](02-generics-and-inference/10.2.2.03-advanced-generics.md) | Keyed container encodings, nested dot-path types, variadic pipelines, and tail-recursive transforms | Important | Specialized | 10 min |
+| 08 | [Type Variance](02-generics-and-inference/10.2.2.04-type-variance.md) | Producer and consumer direction, strict callback constraints, method bivariance, mutable array holes, and variance annotations | Important | Specialized | 8 min |
 
 ---
 

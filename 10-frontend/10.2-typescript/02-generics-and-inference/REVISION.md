@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-TypeScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -28,7 +28,7 @@ Source: [Generics](10.2.2.01-generics.md)
 
 **Q:** What is the result type of a `merge({ name: "Alice" }, { age: 30 })` contract returning `T & U`, and when is that contract misleading?
 
-**A:** The disjoint plain-property case fits both member sets. If inputs share an incompatible key, spread overwrites it rather than satisfying both types; inherited/nonenumerable members are not all copied either. The chapter instead uses `pair<A, B>` to preserve two input types without inventing an intersection guarantee.
+**A:** The disjoint plain-property case fits both member sets. If inputs share an incompatible key, spread overwrites it rather than satisfying both types; inherited and nonenumerable members are not all copied either. The chapter instead uses `pair<A, B>` to preserve two input types without inventing an intersection guarantee.
 
 **Q:** Why does `function add<T>(a: T, b: T): T { return a + b; }` fail, and does `T extends number | string` fix it?
 
@@ -41,6 +41,14 @@ Source: [Generics](10.2.2.01-generics.md)
 **Q:** Your team writes `map<string, number>(arr, fn)` at most call sites. What does that signal?
 
 **A:** Either the signature is fighting inference (fix the signature or the callback's annotation) or it's cargo-cult verbosity — inference should resolve both parameters from the arguments, and explicit type arguments are the fallback, not the default.
+
+**Q:** Why does `NoInfer<T>` matter in `pickColor<C extends string>(palette: readonly C[], fallback: NoInfer<C>)`, and how do you work around TypeScript lacking partial type-argument inference?
+
+**A:** Without `NoInfer<C>`, a wrong fallback argument acts as an extra inference site and widens `C` instead of failing type checking. When one type parameter must be supplied explicitly while another is inferred, currying into an outer factory (`createRegistry<Value>()(entries)`) or passing a runtime decoder separates explicit arguments from call-site inference.
+
+**Q:** Why does returning `{ id: item.id.trim() }` inside `<T extends { id: string }>(item: T): T` fail `TS2322`?
+
+**A:** `T` can be instantiated as a narrower subtype with extra required fields or a literal `id` type, so a freshly constructed `{ id: string }` object does not satisfy `T`. Return `item` unchanged when only reading, or return an explicit derived contract such as `T & { normalizedId: string }` instead of masking missing fields with `as T`.
 
 ## Infer
 
@@ -74,13 +82,21 @@ Source: [Infer](10.2.2.02-infer.md)
 
 **A:** The capture in the `extends` pattern, a transformation of what was captured, and a base case (`never` or the pass-through type) so recursion terminates instead of hitting TS2589.
 
+**Q:** Why does `ReturnValue<T>` match `(...args: never[]) => infer Result` instead of `(...args: unknown[]) => infer Result`, and how do repeated `infer` positions combine?
+
+**A:** Parameter positions are contravariant, so specific handlers such as `(name: string) => Promise<number>` accept `never` inputs and reject `unknown` inputs. Repeated `infer U` candidates combine into a union in covariant positions (properties or return types) and an intersection in contravariant positions (function parameters), which enables `UnionToIntersection<U>`.
+
+**Q:** What does constrained `infer` (`infer Head extends string` in TypeScript 4.7+) solve compared to an extra nested conditional?
+
+**A:** It rejects nonmatching captures directly inside the `extends` pattern, eliminating a boilerplate inner `Head extends string ? Head : never` branch.
+
 ## Advanced Generics
 
 Source: [Advanced Generics](10.2.2.03-advanced-generics.md)
 
 **Q:** What makes a generic "advanced" beyond ordinary type parameters?
 
-**A:** Multi-step type-level programs — HKT encodings, variadic tuple manipulation, recursive conditional/mapped types, and deep path-based constraints — where types are computed from other types rather than merely parameterized.
+**A:** Multi-step type-level programs — HKT encodings, variadic tuple manipulation, recursive conditional and mapped types, and deep path-based constraints — where types are computed from other types rather than merely parameterized.
 
 **Q:** Why can't you write `interface Functor<F> { map: <A, B>(fa: F<A>, …): F<B> }`, and what is the workaround?
 
@@ -105,6 +121,10 @@ Source: [Advanced Generics](10.2.2.03-advanced-generics.md)
 **Q:** What should you do when a recursive generic or a large union slows type checking?
 
 **A:** Measure the consuming project with `tsc --extendedDiagnostics`, then bound recursion or remove branches the data model does not need. Keep a complicated helper only when its safety benefit justifies the checker and editor cost.
+
+**Q:** How does an accumulator parameter enable TypeScript 4.5+ tail-recursion elimination on a recursive conditional type?
+
+**A:** Returning `ReverseTuple<Rest, [Head, ...Acc]>` directly in tail position without wrapping the call inside another tuple or conditional lets TypeScript drop intermediate stack frames, raising the instantiation depth limit from roughly 50 to roughly 1,000 before `TS2589`.
 
 ## Type Variance
 
@@ -140,7 +160,7 @@ Source: [Type Variance](10.2.2.04-type-variance.md)
 
 **Q:** When can explicit variance annotations improve compilation work, and what must they agree with?
 
-**A:** They can help comparisons of the same generic type when recursive variance inference is expensive or ambiguous. They must match the type's structural input/output use; they do not force unrelated structural types to become invariant. Profile before attributing a speedup to them.
+**A:** They can help comparisons of the same generic type when recursive variance inference is expensive or ambiguous. They must match the type's structural input and output use; they do not force unrelated structural types to become invariant. Profile before attributing a speedup to them.
 
 ## Changed-condition checks
 
@@ -170,7 +190,7 @@ Source: [Type Variance](10.2.2.04-type-variance.md)
 
 ## Summary
 
-Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
+Revisit the linked chapter when an answer misses the mechanism, a boundary, or a failure case.
 
 ---
 

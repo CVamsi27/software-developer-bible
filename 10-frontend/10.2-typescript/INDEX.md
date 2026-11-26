@@ -1,6 +1,6 @@
 # TypeScript — Index
 
-> **Study time:** ≈ 3 h 29 m of reading (23 files, ~9 min average).
+> **Study time:** ≈ 3 h 33 m of reading (23 files, ~9 min average).
 > **23 files** — TypeScript type system mastery from basic types to branded types, template literals, declaration files, advanced generics, variance, decorators, the `satisfies` operator, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-23-blue)](../../INDEX.md)
@@ -21,7 +21,7 @@ The categories follow prerequisite order; complete each learning flow before its
 | [Generics & Inference](02-generics-and-inference/INDEX.md) | 4 | Generics, `infer`, advanced generics, variance — the heart of reusable TS code |
 | [Type Transformations](03-type-transformations/INDEX.md) | 4 | Utility types, conditional types, mapped types, template literals — composable type operations |
 | [Advanced Patterns](04-advanced-patterns/INDEX.md) | 6 | `satisfies`, branded types, decorators, declaration files — the senior toolkit |
-| [Interview Prep](05-interview-prep/INDEX.md) | 1 | 50 curated Q&A |
+| [Interview Prep](05-interview-prep/INDEX.md) | 1 | 55 curated Q&A |
 
 ---
 
@@ -96,7 +96,7 @@ Senior-level TS — types as a design tool.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 19 | [Interview Questions](05-interview-prep/10.2.5.01-interview-questions.md) | 50 curated questions with answers | Essential | Foundational | 40 min |
+| 19 | [Interview Questions](05-interview-prep/10.2.5.01-interview-questions.md) | 55 curated questions with answers | Essential | Foundational | 44 min |
 
 ---
 
@@ -106,7 +106,7 @@ Senior-level TS — types as a design tool.
 2. **Generics & Inference** (4 files, ~2 hrs) — must know
 3. **Type Transformations** (4 files, ~1.5 hrs) — must know
 4. **Advanced Patterns** — follow validated brands, decorator and declaration contracts, typed dispatch, then the compiler pipeline
-5. **Interview Questions** (39 min to read; reserve 3 hours for timed practice and review)
+5. **Interview Questions** — reserve 3 hours for timed practice and review
 
 ---
 

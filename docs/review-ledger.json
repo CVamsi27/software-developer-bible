@@ -1323,52 +1323,52 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns)."
   },
   "10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.md": {
-   "sha256": "39b574d3087387c754ee551e838edd74ed82a54e5856a86442af56558686dd17",
-   "lines": 1203,
+   "sha256": "d301efce1a1ea44fedcab62958c85eeeda2474d896c6db7058bedad091ca5a42",
+   "lines": 1317,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "All 50 Q/A pairs were read; the self-contained generics, reducer, path, validation, middleware, API-client, state-machine, DI, config, query-builder, WebSocket and async examples were compiled with TypeScript 5.9.3 under --strict, several also with 7.0.2; the module-mode pairing was checked against compiler acceptance, and React snippets were reviewed but not compiled because React types are not installed here.",
-    "readable": "Full read of 1203 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "3920 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 1317 lines (4377 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "4377 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Each drill stays in one place; repeated topics (events, middleware, validation, plugins, config, query building) are variants with explicit cross-references, and Q28/Q36/Q38 point at their canonical implementations rather than retelling them.",
-    "fast": "178.9 KB raw / 25.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 178.9 KB raw / 25.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "The bank is practice, not a substitute for the chapters: it cannot validate that a reader explanation is correct, and the opening says to revisit the linked source when an answer misses a mechanism, boundary or failure case."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep)."
   },
   "10-frontend/10.2-typescript/05-interview-prep/INDEX.md": {
-   "sha256": "6daf3bfd8176d87ce0cfd04b3aac77edef01472d001bec0a031d156763c84bbd",
+   "sha256": "30128dbd8dc4f5fbc0e28409f542d7a31dd2ceb455ec0af6bb740c7b39f80add",
    "lines": 42,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The 1-file badge and 39-minute study time were checked against the single bank row and its 39-minute badge; the 50-question count was checked against the bank's 50 numbered questions.",
-    "readable": "Full read of 42 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 42 lines (129 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "129 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Category flow only; the bank owns each drill and its canonical chapter links, and this index points at revision companions rather than retelling them.",
-    "fast": "9.2 KB raw / 3.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 9.2 KB raw / 3.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "The bank is practice, not a replacement for the chapters: the index says to answer without the explanation and revisit the linked canonical chapter when a boundary is unclear."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep)."
   },
   "10-frontend/10.2-typescript/INDEX.md": {
-   "sha256": "83a19d3ddbf08c99eff2520d1cc858638bbe16f4ac4c2cbfae328fe3924e07fe",
+   "sha256": "4a6df97c0617ddd065051f10a3350b2dbce9c4272ae70e19281ee9194079a5e0",
    "lines": 129,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The 23-file badge was checked against 19 chapter rows plus four revision companions, and the quoted 50-question bank was checked against the interview file's 50 numbered questions.",
-    "readable": "Full read of 129 lines (356 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "356 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 129 lines (353 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "353 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Section flow only; each chapter's mechanism is owned by its file and linked once, and revision companions are pointed at rather than summarized.",
     "fast": "Measured 20.9 KB raw / 5.3 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The Chapters column counts 19 learning chapters while the badge counts 23 content files, a limit of the table: the four revision companions must be found in each category index."
    },
-   "notes": "Synced live read-time and counts after Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns."
+   "notes": "Synced live read-time and counts after Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep."
   },
   "10-frontend/10.3-react/01-react-internals/10.3.1.01-virtual-dom.md": {
    "sha256": "01645452f07517a51b27f63934d8dbdce8041127b4c0be948f0ae1849297c870",
@@ -2986,7 +2986,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/INDEX.md": {
-   "sha256": "cdcb08c2c2530c7d71aa75c7e0c8cb4395d32e53c4377effdf3bbb05918eb5f5",
+   "sha256": "53df8843dda082ea8172ae064c1e5c8dca1d7dc8e7a415304527e1c870bfdd55",
    "lines": 75,
    "genre": "index",
    "status": "read",
@@ -2999,7 +2999,7 @@
     "fast": "Measured 14.7 KB raw / 4.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Sets the frontend study order from execution to optional capabilities; it limits itself to navigation and does not teach any mechanism."
    },
-   "notes": "Synced live read-time and counts after Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns."
+   "notes": "Synced live read-time and counts after Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep."
   },
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md": {
    "sha256": "cbb48962f1b1c976f33493d3398af0e10c4deb7f49db4537cb50b8af762ebfe1",
@@ -14364,7 +14364,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "6971ae4fd4ccc95db00ff3913d77d30bd0c9ee6b708f358ffc34d399bf03cc64",
+   "sha256": "669e197c4babbfdd82165d418f119dc561fd1c835aced7288c40cdcbc96e1c55",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14377,7 +14377,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns."
+   "notes": "Synced live read-time and counts after Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14412,7 +14412,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "contributing.md": {
-   "sha256": "60b623e4fa582f9f45e83c1000a5ec2586e854f81b3eb70c3fdca8b020272168",
+   "sha256": "0272bec4f30d6b6c8b6e6f948e28f028d3230b9b132f6436fe4fc67639659896",
    "lines": 948,
    "genre": "meta",
    "status": "read",
@@ -14422,10 +14422,10 @@
     "readable": "Full read of 948 lines (3308 prose words). The contributing guide opens with the hard rules, then walks through the expected workflow, repo conventions, and verification gates in order.",
     "concise": "3308 words of prose after removing YAML fences, badge links and metadata rows.",
     "focused": "Owned: this is the canonical contributor contract; it links to scripts and gates rather than restating their checks.",
-    "fast": "Measured not built as HTML; 53.1 KB Markdown source served raw. 1 KB Markdown source served raw.",
+    "fast": "Measured not built as HTML; 53.1 KB Markdown source served raw. 1 KB Markdown source served raw. 1 KB Markdown source served raw.",
     "best": "Does not retell stack content; its boundary is contribution process and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 2B D1-D7 rework: 03-async-concurrency."
+   "notes": "Synced live read-time and counts after Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep."
   },
   "design-qa.md": {
    "sha256": "4c7ab6ba5a188dc76d474a829bc7e1c1808c7032d41f351806bb1d1cb815bd93",
@@ -14668,7 +14668,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "400ea8883f83445b1e4d2ce0f1df8ca4981906b7380a5e65cf69b65c78bbbb17",
+   "sha256": "7f2087859de171a90ce8d5cbe6df515d9b1ee9cadbf6ae3f189abfbd7bd55d5c",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14681,7 +14681,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns."
+   "notes": "Synced live read-time and counts after Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",
@@ -15212,7 +15212,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11B live operational and governance docs)."
   },
   "docs/verification-gates.md": {
-   "sha256": "21c2f592061b6fd5479f27897109325f48f1d5f6c86d06c85a8416b5a09b1f88",
+   "sha256": "eb32a0844dbb2cf295f6c843f6d1ab8a785a669b040ff33b6f7ed987c01c53c1",
    "lines": 137,
    "genre": "doc",
    "status": "read",
@@ -15222,10 +15222,10 @@
     "readable": "Full read of 137 lines (707 prose words). The gates document opens with the verification contract, then lists each gate with its command and purpose.",
     "concise": "707 words of prose after removing YAML fences, badge links and metadata rows.",
     "focused": "Owned: this is the canonical gate registry; it points at scripts rather than restating their logic.",
-    "fast": "Measured 78.9 KB raw / 23.7 KB gzip (no separate page weight measured beyond source bytes.)",
+    "fast": "Measured 78.9 KB raw / 23.7 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not implement any gate; its boundary is documentation and it cannot replace running scripts/verify.sh."
    },
-   "notes": "Synced live read-time and counts after Phase 2B D1-D7 rework: 03-async-concurrency."
+   "notes": "Synced live read-time and counts after Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep."
   },
   "lanes/INDEX.md": {
    "sha256": "c644b6e72d032c28309afec9141ec84c7489f4a6819c209b90073e97d8d489a5",

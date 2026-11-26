@@ -1077,10 +1077,10 @@
     },
     {
       "path": "10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.md",
-      "sha256": "39b574d3087387c754ee551e838edd74ed82a54e5856a86442af56558686dd17",
+      "sha256": "d301efce1a1ea44fedcab62958c85eeeda2474d896c6db7058bedad091ca5a42",
       "genre": "interview",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep C1-C8 refinement (2026-11-24): Full read of 1317 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-24",
@@ -1088,10 +1088,10 @@
     },
     {
       "path": "10-frontend/10.2-typescript/05-interview-prep/INDEX.md",
-      "sha256": "6daf3bfd8176d87ce0cfd04b3aac77edef01472d001bec0a031d156763c84bbd",
+      "sha256": "30128dbd8dc4f5fbc0e28409f542d7a31dd2ceb455ec0af6bb740c7b39f80add",
       "genre": "index",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep C1-C8 refinement (2026-11-24): Full read of 42 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-24",
@@ -1099,10 +1099,10 @@
     },
     {
       "path": "10-frontend/10.2-typescript/INDEX.md",
-      "sha256": "83a19d3ddbf08c99eff2520d1cc858638bbe16f4ac4c2cbfae328fe3924e07fe",
+      "sha256": "4a6df97c0617ddd065051f10a3350b2dbce9c4272ae70e19281ee9194079a5e0",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns count/read-time sync (2026-11-24): Full read of 129 lines. Updated generated counts/read-time navigation after Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns.",
+      "notes": "Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep count/read-time sync (2026-11-24): Full read of 129 lines. Updated generated counts/read-time navigation after Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-24",
@@ -2245,10 +2245,10 @@
     },
     {
       "path": "10-frontend/INDEX.md",
-      "sha256": "cdcb08c2c2530c7d71aa75c7e0c8cb4395d32e53c4377effdf3bbb05918eb5f5",
+      "sha256": "53df8843dda082ea8172ae064c1e5c8dca1d7dc8e7a415304527e1c870bfdd55",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns count/read-time sync (2026-11-24): Full read of 75 lines. Updated generated counts/read-time navigation after Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns.",
+      "notes": "Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep count/read-time sync (2026-11-24): Full read of 75 lines. Updated generated counts/read-time navigation after Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep.",
       "findings": [],
       "reviewer": "root",
       "metadataReview": {
@@ -10064,12 +10064,12 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "6971ae4fd4ccc95db00ff3913d77d30bd0c9ee6b708f358ffc34d399bf03cc64",
+      "sha256": "669e197c4babbfdd82165d418f119dc561fd1c835aced7288c40cdcbc96e1c55",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns.",
+      "notes": "Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep.",
       "findings": []
     },
     {
@@ -10094,12 +10094,12 @@
     },
     {
       "path": "contributing.md",
-      "sha256": "60b623e4fa582f9f45e83c1000a5ec2586e854f81b3eb70c3fdca8b020272168",
+      "sha256": "0272bec4f30d6b6c8b6e6f948e28f028d3230b9b132f6436fe4fc67639659896",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 2B D1-D7 rework: 03-async-concurrency count/read-time sync (2026-11-24): Full read of 948 lines. Updated generated counts/read-time navigation after Phase 2B D1-D7 rework: 03-async-concurrency.",
+      "notes": "Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep count/read-time sync (2026-11-24): Full read of 948 lines. Updated generated counts/read-time navigation after Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep.",
       "findings": []
     },
     {
@@ -10259,12 +10259,12 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "400ea8883f83445b1e4d2ce0f1df8ca4981906b7380a5e65cf69b65c78bbbb17",
+      "sha256": "7f2087859de171a90ce8d5cbe6df515d9b1ee9cadbf6ae3f189abfbd7bd55d5c",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns.",
+      "notes": "Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",
@@ -10616,12 +10616,12 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "21c2f592061b6fd5479f27897109325f48f1d5f6c86d06c85a8416b5a09b1f88",
+      "sha256": "eb32a0844dbb2cf295f6c843f6d1ab8a785a669b040ff33b6f7ed987c01c53c1",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 2B D1-D7 rework: 03-async-concurrency count/read-time sync (2026-11-24): Full read of 137 lines. Updated generated counts/read-time navigation after Phase 2B D1-D7 rework: 03-async-concurrency.",
+      "notes": "Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep count/read-time sync (2026-11-24): Full read of 137 lines. Updated generated counts/read-time navigation after Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep.",
       "findings": []
     },
     {

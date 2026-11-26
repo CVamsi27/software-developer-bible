@@ -16,7 +16,7 @@ Source: [Types vs Interfaces](10.2.1.01-types-vs-interfaces.md)
 
 **Q:** What can `type` declare that `interface` cannot, and vice versa?
 
-**A:** `type` covers unions, intersections, tuples, mapped/conditional types and primitive aliases; `interface` adds declaration merging and the `extends` form libraries use for augmentation. Their common object shapes are often mutually assignable; merging and conflict handling still differ.
+**A:** `type` covers unions, intersections, tuples, mapped and conditional types, and primitive aliases; `interface` adds declaration merging and the `extends` form libraries use for augmentation. Their common object shapes are often mutually assignable; merging and conflict handling still differ.
 
 **Q:** Why do two declarations with the same name collide for `type` but merge for `interface`?
 
@@ -28,11 +28,11 @@ Source: [Types vs Interfaces](10.2.1.01-types-vs-interfaces.md)
 
 **Q:** What does structural typing imply about a `type Point` and an identically-shaped `interface PointInterface`?
 
-**A:** They are interchangeable: a value typed one is assignable to the other, because these plain object contracts compare their members. Private/protected class members and brands impose additional compatibility conditions.
+**A:** They are interchangeable: a value typed one is assignable to the other, because these plain object contracts compare their members. Private and protected class members and brands impose additional compatibility conditions.
 
 **Q:** Why does `const p: Point = { x: 1, y: 2, z: 3 }` fail while assigning an object literal *variable* with an extra `z` succeeds?
 
-**A:** Object literals get an excess-property check against the target type; a variable already typed elsewhere is only checked structurally, and a compatible existing value can have extra members. This is not an exact runtime schema, and other contexts/index signatures/weak targets have their own checks.
+**A:** Object literals get an excess-property check against the target type; a variable already typed elsewhere is only checked structurally, and a compatible existing value can have extra members. This is not an exact runtime schema, and other contexts, index signatures, and weak targets have their own checks.
 
 **Q:** What error do you get from `interface Status = "active" | "inactive"`, and what is the fix?
 
@@ -41,6 +41,10 @@ Source: [Types vs Interfaces](10.2.1.01-types-vs-interfaces.md)
 **Q:** When a shape must be extended later by consumers of your library, which keyword should you reach for and why?
 
 **A:** `interface` — declaration merging lets downstream code add members to the same contract without editing (or forking) your source.
+
+**Q:** Why does passing an `interface UserShape` variable to `Record<string, unknown>` fail while passing a closed `type UserAlias` variable succeeds?
+
+**A:** Because an `interface` remains open to declaration merging in another module, TypeScript refuses to synthesize an implicit index signature for it; a `type` alias is closed after declaration so TypeScript knows every property type upfront.
 
 ## Keyof & Typeof
 
@@ -74,6 +78,10 @@ Source: [Keyof & Typeof](10.2.1.02-keyof-typeof.md)
 
 **A:** Nothing for the keys — but the values widen to `string`, so `routes[route]` no longer pins you to the exact path literals; add `as const` when the values matter too.
 
+**Q:** Why does `Object.keys(obj)` return `string[]` rather than `(keyof typeof obj)[]`, and how do you derive a union from an array constant?
+
+**A:** Structural subtyping lets any object variable carry extra runtime keys beyond its static type, so typing `Object.keys` as `keyof T` would be unsound — validate keys with a type guard or iterate a closed `as const` tuple instead. Index an `as const` array with `[number]` (`(typeof ROLES)[number]`) to derive the union of its literal elements.
+
 ## Type Narrowing
 
 Source: [Type Narrowing](10.2.1.03-type-narrowing.md)
@@ -106,25 +114,29 @@ Source: [Type Narrowing](10.2.1.03-type-narrowing.md)
 
 **A:** Yes. `trim()` returns a string, so this assignment leaves the current flow type as `string`. An assignment updates the flow type according to the assigned value; assigning a value that may be `null` can broaden it again. The declared type still limits which assignments are allowed.
 
+**Q:** How does an assertion function (`asserts v is T`) differ from a boolean type predicate (`v is T`), and why does a narrowed `let` variable lose narrowing inside a callback?
+
+**A:** A type predicate returns a boolean for conditional branching (`if`), whereas an assertion function throws on invalid inputs and narrows the remainder of the caller's enclosing block without an `if`. Mutable `let` variables lose narrowing inside nested callbacks because TypeScript cannot rule out reassignment before the callback runs; bind the narrowed value to a local `const` first.
+
 ## tsconfig & Compiler Options
 
 Source: [tsconfig & Compiler Options](10.2.1.04-tsconfig-compiler-options.md)
 
 **Q:** What does a `tsconfig` guarantee, and where does that guarantee stop?
 
-**A:** It selects source files and sets the compiler’s checking, resolution and optional emit behavior. Strict checks can expose issues represented in the types, but explicit `any`, assertions, unvalidated input and the actual bundler/runtime remain outside that guarantee.
+**A:** It selects source files and sets the compiler's checking, resolution, and optional emit behavior. Strict checks can expose issues represented in the types, but explicit `any`, assertions, unvalidated input, and the actual bundler or runtime remain outside that guarantee.
 
-**Q:** How do bundled, fixed Node and current Node module settings differ, and how should a team choose?
+**Q:** How do bundled, fixed Node, and current Node module settings differ, and how should a team choose?
 
-**A:** Use `module: "preserve"` or `"esnext"` with `moduleResolution: "bundler"` when a bundler loads the application. For a fixed Node 16/18/20 contract, use the matching `module` mode with `moduleResolution: "node16"`; the `node20` module mode models `require(ESM)` support available in newer Node 20 releases. Use `nodenext` for both settings when following current Node rules. Node ESM relative imports need runtime-valid extensions such as `.js`; package `exports` conditions and the actual loader must agree with the checker.
+**A:** Use `module: "preserve"` or `"esnext"` with `moduleResolution: "bundler"` when a bundler loads the application. For a fixed Node 16, 18, or 20 contract, use the matching `module` mode with `moduleResolution: "node16"`; the `node20` module mode models `require(ESM)` support available in newer Node 20 releases. Use `nodenext` for both settings when following current Node rules. Node ESM relative imports need runtime-valid extensions such as `.js`; package `exports` conditions and the actual loader must agree with the checker.
 
-**Q:** Which type/value boundary errors does `isolatedModules` catch, and what must a project still verify?
+**Q:** Which type and value boundary errors does `isolatedModules` catch, and what must a project still verify?
 
 **A:** It reports constructs that a file-at-a-time transform cannot interpret safely, including a type-only re-export written as a value export and ambient const-enum access. Ordinary const-enum emission depends on the tool; run `tsc --noEmit` and inspect the actual transform output.
 
 **Q:** How does `verbatimModuleSyntax` go further than `isolatedModules`?
 
-**A:** It requires `import type`/`export type` for every type-only import (not just re-exports) and prevents the emitter from rewriting module syntax, while explicitly type-only imports/exports and annotations are erased. It does not preserve every source byte.
+**A:** It requires `import type` and `export type` for every type-only import (not just re-exports) and prevents the emitter from rewriting module syntax, while explicitly type-only imports, exports, and annotations are erased. It does not preserve every source byte.
 
 **Q:** What happens if you set `composite: true, declaration: false`, and why?
 
@@ -162,7 +174,7 @@ Source: [Compiler Options](10.2.1.04-tsconfig-compiler-options.md)
 
 **Q:** With `noUncheckedIndexedAccess` enabled, why must `labels[0]` be guarded, and what happens if `paths` is configured only in `tsc`?
 
-**A:** The array type admits an empty array, so the index can be `undefined`. `paths` helps static resolution but does not rewrite emitted imports; the bundler/loader needs the matching alias contract.
+**A:** The array type admits an empty array, so the index can be `undefined`. `paths` helps static resolution but does not rewrite emitted imports; the bundler or loader needs the matching alias contract.
 
 Source: [tsconfig & Compiler Options](10.2.1.04-tsconfig-compiler-options.md)
 
@@ -172,7 +184,7 @@ Source: [tsconfig & Compiler Options](10.2.1.04-tsconfig-compiler-options.md)
 
 ## Summary
 
-Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
+Revisit the linked chapter when an answer misses the mechanism, a boundary, or a failure case.
 
 ---
 

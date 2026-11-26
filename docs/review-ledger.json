@@ -907,97 +907,100 @@
    "notes": "Synced live read-time and counts after Phase 2E D1-D7 rework: 06-modern-and-interview."
   },
   "10-frontend/10.2-typescript/01-foundations/10.2.1.01-types-vs-interfaces.md": {
-   "sha256": "4233ced19e1b8532cd21769a6a491e52064d03fd11888b1284fe74378c428b8e",
-   "lines": 146,
+   "sha256": "4e4909bc2db5e0db97fdbf47ecd4e88caac2a5c16395b93149afa7d286275ff1",
+   "lines": 163,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Every example and expected error was executed with TypeScript 5.9.3 under --strict, and the excess-property, extension-conflict, impossible-intersection and duplicate-alias diagnostics were checked against the compiler output.",
-    "readable": "Full read of 146 lines; a request/result contract opens, then definition, first principles, five numbered decisions and a summary keep one line from syntax choice to runtime boundary.",
-    "concise": "561 words; each of the five sections carries one decision with a short example, and the runtime/DI boundary appears once at the end.",
+    "readable": "Full read of 163 lines (592 prose words) a request/result contract opens, then definition, first principles, five numbered decisions and a summary keep one line from syntax choice to runtime boundary.",
+    "concise": "592 words across 163 lines. each of the five sections carries one decision with a short example, and the runtime/DI boundary appears once at the end.",
     "focused": "Alias/interface choice and merging are owned here; unions, mapped types and declaration files point at their advanced chapters.",
-    "fast": "26.7 KB raw / 5.8 KB gzip built page; the shared Jekyll shell is included.",
+    "fast": "Measured 26.7 KB raw / 5.8 KB gzip (the shared Jekyll shell is included.)",
     "best": "Neither syntax validates runtime data: excess-property checks catch fresh-literal typos but cannot make the object an exact schema, and an interface is erased before NestJS resolves a provider token."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2F D1-D7 rework: 10.2-typescript/01-foundations)."
   },
   "10-frontend/10.2-typescript/01-foundations/10.2.1.02-keyof-typeof.md": {
-   "sha256": "a098499cf2023a817409f6d67067f11487e67b42b640f519d47621590b1305ad",
-   "lines": 145,
+   "sha256": "8b6ab264fef1ae6547358185014de30e395e7e9c429cb76de903bfa56bced070",
+   "lines": 170,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "The index-signature, Record, optional-property and as-const widening claims were compiled with TypeScript 5.9.3 under --strict; the Object.hasOwn and noUncheckedIndexedAccess boundaries were checked against the official TSConfig reference.",
-    "readable": "Full read of 145 lines; a settings lookup opens, then definition, first principles, three uses (keys and values, value-derived unions, key-driven transforms) and a summary.",
-    "concise": "635 words; one generic accessor, one route map and one mapped-type filter carry the key/value relationship without repeating the keyof rules.",
+    "readable": "Full read of 170 lines (669 prose words) a settings lookup opens, then definition, first principles, three uses (keys and values, value-derived unions, key-driven transforms) and a summary.",
+    "concise": "669 words across 170 lines. one generic accessor, one route map and one mapped-type filter carry the key/value relationship without repeating the keyof rules.",
     "focused": "Key and value-type derivation are owned here; mapped-type transformation and narrowing point at their chapters.",
-    "fast": "25.1 KB raw / 5.7 KB gzip built page; the shared Jekyll shell is included.",
+    "fast": "Measured 25.1 KB raw / 5.7 KB gzip (the shared Jekyll shell is included.)",
     "best": "A derived key union proves only the static contract: Record<string, V> admits absent keys, Object.keys() omits symbols and inherited properties, and as const does not freeze the runtime object."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2F D1-D7 rework: 10.2-typescript/01-foundations)."
   },
   "10-frontend/10.2-typescript/01-foundations/10.2.1.03-type-narrowing.md": {
-   "sha256": "767d4e16376919ac226b6188f1a7d9927ae905b124eef819e17e565e44b2b192",
-   "lines": 142,
+   "sha256": "eb5c8af6abe1e9dc33f66509848b7372a756483d67bf11a658a77c5e711d1f3b",
+   "lines": 174,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "The parseUser/assertNever switch and the inferred-predicate filters were executed with TypeScript 5.9.3 under --strict; predicate-inference conditions were checked against the official TypeScript 5.5 release notes.",
-    "readable": "Full read of 142 lines; an unvalidated response opens, then definition, first principles, validated-result handling, a guard table, assignment flow and predicate inference.",
-    "concise": "654 words; the parse/validate/route example carries the mechanism, the guard table compares evidence, and the predicate section adds the changed condition.",
+    "readable": "Full read of 174 lines (727 prose words) an unvalidated response opens, then definition, first principles, validated-result handling, a guard table, assignment flow and predicate inference.",
+    "concise": "727 words across 174 lines. the parse/validate/route example carries the mechanism, the guard table compares evidence, and the predicate section adds the changed condition.",
     "focused": "Narrowing and guard selection are owned here; unions, branded types and runtime schema validation point at their chapters.",
-    "fast": "29.3 KB raw / 6.5 KB gzip built page; the shared Jekyll shell is included.",
+    "fast": "Measured 29.3 KB raw / 6.5 KB gzip (the shared Jekyll shell is included.)",
     "best": "Narrowing cannot convert a value or validate it: typeof null passes an object check, instanceof can fail across realms, and an authored predicate is trusted even when its runtime check is wrong."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2F D1-D7 rework: 10.2-typescript/01-foundations)."
   },
   "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md": {
-   "sha256": "903d411b14ccd1b345a7b5aa8ccfd7cfff431f0ad0e3f835a7b89d35345f0b0c",
-   "lines": 133,
+   "sha256": "687a666a612aa1e3f0996d40d0157da20d5c2ac06b70ed4414d34d015e9e9f3a",
+   "lines": 148,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The six module/moduleResolution pairs (node16, node18, node20, preserve with bundler, esnext with bundler, nodenext) compiled with TypeScript 5.9.3; the TypeScript 6 defaults, TypeScript 7 removals and the @typescript/typescript6 package were checked against the official 6.0 release notes, 7.0 announcement and npm.",
-    "readable": "Full read of 133 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1008 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 148 lines (1028 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1028 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Project configuration and checker/loader agreement are owned here; module resolution details point at the Node and monorepo chapters.",
-    "fast": "24.4 KB raw / 6.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 24.4 KB raw / 6.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "A green tsc run describes only the files and options it saw: lib and types declare APIs without installing them, paths does not rewrite imports, and the deployed loader can still reject the emitted graph."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2F D1-D7 rework: 10.2-typescript/01-foundations)."
   },
   "10-frontend/10.2-typescript/01-foundations/INDEX.md": {
-   "sha256": "df18213f33c531d3270c587b0a30b29ff975f350e423781fd48c0591c0b40ae2",
+   "sha256": "f8a6d3cb8472c8a7f10f95096c33a01547282b78e8db94f386687d77428e05d7",
    "lines": 47,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The 5-file badge was checked against four chapter rows plus the revision companion; the Docita rows are labelled as candidate evidence that needs a checkout and tests before use.",
-    "readable": "Full read of 47 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 47 lines (114 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "114 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Category flow only; each chapter's mechanism is owned by its file and linked once, while Docita evidence is kept to three candidate rows.",
-    "fast": "10.4 KB raw / 3.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 10.4 KB raw / 3.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "The Docita rows name candidate source locations, and the page says a path does not establish deployed behavior; inspect the checked-out revision and tests before citing it as implementation evidence."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2F D1-D7 rework: 10.2-typescript/01-foundations)."
   },
   "10-frontend/10.2-typescript/01-foundations/REVISION.md": {
-   "sha256": "0eceacef189b9b3d1fe4db6c711f84096c420f4083e7adac6dac95975a8f7b04",
-   "lines": 185,
+   "sha256": "be9f2f001f7f2be9d9cae5bc2cc551c6aee8c594a0c47984cdfba1291b26b943",
+   "lines": 197,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Every prompt was checked against its source chapter; the predicate-inference conditions, TS6304 composite conflict, TypeScript 6 defaults and TypeScript 7 removals were checked against the official release notes, and the inference and switch examples were compiled with TypeScript 5.9.3.",
-    "readable": "Full read of 185 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1765 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 197 lines (2007 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "2007 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Revision companion; each mechanism stays in one source group and points at its chapter rather than retelling it.",
-    "fast": "26.4 KB raw / 7.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 26.4 KB raw / 7.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Retrieval practice cannot replace the chapters: the opening says to answer without reopening them and revisit the linked source when an answer misses a mechanism, boundary or failure case."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2F D1-D7 rework: 10.2-typescript/01-foundations)."
   },
   "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.01-generics.md": {
    "sha256": "48d6857feb7cac919b98ac18e340b27a5b4d5223e6f49f00d45b8e463d1bd8b7",
@@ -1351,20 +1354,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/10.2-typescript/INDEX.md": {
-   "sha256": "4ca394667341c77de2a83311da959c2f3534be91bdedfce1bb5d03f1206101c1",
+   "sha256": "51d0d50de8a0b7c28a14ff093c8a27de44fa130b5cadcb925422e0fa34441bbe",
    "lines": 129,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The 23-file badge was checked against 19 chapter rows plus four revision companions, and the quoted 50-question bank was checked against the interview file's 50 numbered questions.",
-    "readable": "Full read of 129 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "353 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 129 lines (356 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "356 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Section flow only; each chapter's mechanism is owned by its file and linked once, and revision companions are pointed at rather than summarized.",
-    "fast": "20.9 KB raw / 5.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 20.9 KB raw / 5.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "The Chapters column counts 19 learning chapters while the badge counts 23 content files, a limit of the table: the four revision companions must be found in each category index."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "Synced live read-time and counts after Phase 2F D1-D7 rework: 10.2-typescript/01-foundations."
   },
   "10-frontend/10.3-react/01-react-internals/10.3.1.01-virtual-dom.md": {
    "sha256": "01645452f07517a51b27f63934d8dbdce8041127b4c0be948f0ae1849297c870",
@@ -2982,7 +2985,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/INDEX.md": {
-   "sha256": "4301c15323da104a642510e46cdf87911a4dd3a9feeca681b757be0d242457ae",
+   "sha256": "525ee5181bbfb1833bc8abca75d00377500d4247d940610e158d0cabf1dedb6d",
    "lines": 75,
    "genre": "index",
    "status": "read",
@@ -2995,7 +2998,7 @@
     "fast": "Measured 14.7 KB raw / 4.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Sets the frontend study order from execution to optional capabilities; it limits itself to navigation and does not teach any mechanism."
    },
-   "notes": "Synced live read-time and counts after Phase 2E D1-D7 rework: 06-modern-and-interview."
+   "notes": "Synced live read-time and counts after Phase 2F D1-D7 rework: 10.2-typescript/01-foundations."
   },
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md": {
    "sha256": "cbb48962f1b1c976f33493d3398af0e10c4deb7f49db4537cb50b8af762ebfe1",
@@ -14360,7 +14363,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "e93e689b38636d8ba975de99675e2619736ddef07d552e19d85d781111ca82eb",
+   "sha256": "19ccc6b6c413112a26d28d92f43162698e38de92ae87d57d904a7e4196fbaaf9",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14373,7 +14376,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 2E D1-D7 rework: 06-modern-and-interview."
+   "notes": "Synced live read-time and counts after Phase 2F D1-D7 rework: 10.2-typescript/01-foundations."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14664,7 +14667,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "8f63874b404717dac58c5bbccd0b16e40ba7d1b5d101cbb02c2271eefb7e2f6f",
+   "sha256": "2473e795330a1b09e5a540b721c65b505339df0c60050370e605667d8c0bd0c1",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14677,7 +14680,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 2E D1-D7 rework: 06-modern-and-interview."
+   "notes": "Synced live read-time and counts after Phase 2F D1-D7 rework: 10.2-typescript/01-foundations."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

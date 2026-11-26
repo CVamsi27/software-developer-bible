@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "a1c2f73b3e932a866948874241ae9430a25e7a246dd20d59fd0449938d64460a",
+ "corpus_digest": "8b414b78b2d7b8b62cc0d6430f4c06ebf3fe8ede45738f4f2bee9625db451ea4",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5449
+  "read_minutes": 5453
  },
  "chapters": [
   {
@@ -522,7 +522,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.2-typescript/01-foundations/10.2.1.02-keyof-typeof.html",
@@ -532,7 +532,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.2-typescript/01-foundations/10.2.1.03-type-narrowing.html",
@@ -542,7 +542,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.html",
@@ -552,7 +552,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.2-typescript/01-foundations/REVISION.html",

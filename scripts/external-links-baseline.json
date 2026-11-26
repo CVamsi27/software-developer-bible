@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26",
- "url_count": 2808,
+ "url_count": 2810,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -9336,6 +9336,9 @@
   "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#conditional-types": [
    "10-frontend/10.2-typescript/03-type-transformations/10.2.3.02-conditional-types.md"
   ],
+  "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-7.html#assertion-functions": [
+   "10-frontend/10.2-typescript/01-foundations/10.2.1.03-type-narrowing.md"
+  ],
   "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-0.html#variadic-tuple-types": [
    "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.03-advanced-generics.md"
   ],
@@ -9399,6 +9402,9 @@
   "https://www.typescriptlang.org/tsconfig/": [
    "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md",
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.06-typescript-compiler-pipeline.md"
+  ],
+  "https://www.typescriptlang.org/tsconfig/exactOptionalPropertyTypes.html": [
+   "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md"
   ],
   "https://www.typescriptlang.org/tsconfig/noUncheckedIndexedAccess.html": [
    "10-frontend/10.2-typescript/01-foundations/10.2.1.02-keyof-typeof.md"

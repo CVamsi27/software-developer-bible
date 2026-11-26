@@ -1,13 +1,13 @@
 # TypeScript — Index
 
-> **Study time:** ≈ 3 h 10 m of reading (23 files, ~8 min average).
+> **Study time:** ≈ 3 h 14 m of reading (23 files, ~8 min average).
 > **23 files** — TypeScript type system mastery from basic types to branded types, template literals, declaration files, advanced generics, variance, decorators, the `satisfies` operator, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-23-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Core-blueviolet)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why TypeScript:** TypeScript checks relationships between values before the program runs. A discriminated union connects a tag to the fields available for that case. A branded type separates IDs with otherwise identical representations. Conditional types derive related types from one source. JavaScript can implement the same runtime behavior; TypeScript adds checks that help callers use it correctly. Generics, narrowing and these relationships are common frontend and backend interview topics.
+**Why TypeScript:** TypeScript checks relationships between values before the program runs. A discriminated union connects a tag to the fields available for that case. A branded type separates IDs with otherwise identical representations. Conditional types derive related types from one source. JavaScript can implement the same runtime behavior; TypeScript adds checks that help callers use it correctly. Generics, narrowing, and these relationships are common frontend and backend interview topics.
 
 ---
 
@@ -16,8 +16,8 @@
 The categories follow prerequisite order; complete each learning flow before its revision drill.
 
 | Category | Chapters | Why it matters |
-| ---------------------------------------------------------- | -------: | ------------------------------------------------------------------------------------------------------- |
-| [Foundations](01-foundations/INDEX.md) | 4 | Types vs interfaces, `keyof`/`typeof`, type narrowing, `tsconfig` options — every interview starts here |
+| ---------------------------------------------------------- | -------: | ------------------------------------------------------------------------------------------------------------------------ |
+| [Foundations](01-foundations/INDEX.md) | 4 | Types versus interfaces, `keyof` and `typeof`, narrowing and `asserts`, `tsconfig` options — every interview starts here |
 | [Generics & Inference](02-generics-and-inference/INDEX.md) | 4 | Generics, `infer`, advanced generics, variance — the heart of reusable TS code |
 | [Type Transformations](03-type-transformations/INDEX.md) | 4 | Utility types, conditional types, mapped types, template literals — composable type operations |
 | [Advanced Patterns](04-advanced-patterns/INDEX.md) | 6 | `satisfies`, branded types, decorators, declaration files — the senior toolkit |
@@ -27,9 +27,9 @@ The categories follow prerequisite order; complete each learning flow before its
 
 ## Study Flow
 
-Read categories in numeric order. First explain which shapes are compatible and how a checked branch narrows unknown input. Then carry an input/output relationship through generics, compare assignability under variance, and derive new records or string grammars with transformations.
+Read categories in numeric order. First explain which shapes are compatible and how a checked branch narrows unknown input. Then carry an input and output relationship through generics, compare assignability under variance, and derive new records or string grammars with transformations.
 
-In Advanced Patterns, follow validated constructors, decorator phases and separate runtime/declaration exports before combining them in a typed event bus. After each category, complete its separate revision companion; finish with the interview bank and change one condition per answer.
+In Advanced Patterns, follow validated constructors, decorator phases, and separate runtime and declaration exports before combining them in a typed event bus. After each category, complete its separate revision companion; finish with the interview bank and change one condition per answer.
 
 ```text
 01-foundations ─▶ 02-generics-and-inference ─▶ 03-type-transformations
@@ -44,10 +44,10 @@ How TypeScript represents types.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Types vs Interfaces](01-foundations/10.2.1.01-types-vs-interfaces.md) | Type aliases, interfaces, declaration merging, when to use each, performance | Essential | Foundational | 6 min |
-| 02 | [keyof / typeof](01-foundations/10.2.1.02-keyof-typeof.md) | Key unions, value-derived types, indexed access, safe dynamic lookup, mapped-type filtering | Essential | Foundational | 6 min |
-| 03 | [Type Narrowing](01-foundations/10.2.1.03-type-narrowing.md) | `typeof` guards, `instanceof`, discriminated unions, type predicates, control flow analysis | Essential | Foundational | 6 min |
-| 04 | [tsconfig & Compiler Options](01-foundations/10.2.1.04-tsconfig-compiler-options.md) | `strict` flag family, bundler and Node module modes, `isolatedModules`, `incremental`/`composite`, `skipLibCheck`, TypeScript 6/7 migration | Essential | Foundational | 7 min |
+| 01 | [Types vs Interfaces](01-foundations/10.2.1.01-types-vs-interfaces.md) | Type aliases, interfaces, declaration merging, `Record` index-signature assignability, and performance | Essential | Foundational | 7 min |
+| 02 | [keyof / typeof](01-foundations/10.2.1.02-keyof-typeof.md) | Key unions, `(typeof T)[number]` tuple unions, `Object.keys` `string[]` semantics, and safe dynamic lookup | Essential | Foundational | 7 min |
+| 03 | [Type Narrowing](01-foundations/10.2.1.03-type-narrowing.md) | `typeof` guards, `asserts value is T` assertion functions, discriminated unions, and callback flow narrowing | Essential | Foundational | 7 min |
+| 04 | [tsconfig & Compiler Options](01-foundations/10.2.1.04-tsconfig-compiler-options.md) | `strict`, `exactOptionalPropertyTypes`, `noUncheckedIndexedAccess`, module modes, and TypeScript 6 and 7 upgrades | Essential | Foundational | 8 min |
 
 ---
 
@@ -114,7 +114,7 @@ Senior-level TS — types as a design tool.
 
 An Email brand records construction discipline; only its constructor validates the string. A route type derives parameter names; only the router or builder implements the matching grammar. A declaration describes an exported function; only its JavaScript supplies the behavior. Explain those connections before adding a more complicated type.
 
-For each learning pass, predict one accepted call, one rejected call and one runtime boundary. The category revision companions check those distinctions before [interview practice](05-interview-prep/10.2.5.01-interview-questions.md).
+For each learning pass, predict one accepted call, one rejected call, and one runtime boundary. The category revision companions check those distinctions before [interview practice](05-interview-prep/10.2.5.01-interview-questions.md).
 
 ## Cross-References
 
@@ -126,4 +126,4 @@ For each learning pass, predict one accepted call, one rejected call and one run
 
 ## Navigation
 
-[← Previous: JavaScript](../10.1-javascript/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: React →](../10.3-react/INDEX.md)
+[← Previous: JavaScript](../10.1-javascript/INDEX.md) · [Back to Index](../../INDEX.md) · [Next: React →](../10.3-react/INDEX.md)

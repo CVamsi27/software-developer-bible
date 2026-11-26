@@ -163,13 +163,14 @@
     height: 3px;
     background: linear-gradient(90deg, var(--theme-link), var(--theme-accent));
     width: 0%;
+    opacity: 0;
     z-index: 99999;
     transition: width 0.08s ease-out, opacity 0.2s ease;
     box-shadow: 0 0 8px var(--theme-link);
   }
 
-  .reading-progress-bar:empty {
-    opacity: 0;
+  .reading-progress-bar.is-active {
+    opacity: 1;
   }
 
   /* --------------------------------------------------------------------------
@@ -227,34 +228,24 @@
     transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
   }
 
-  /* Theme transition for key elements */
-  :root,
-  html[data-theme] {
-    transition: --theme-bg 0.25s ease,
-                --theme-text 0.25s ease,
-                --theme-text-muted 0.25s ease,
-                --theme-heading 0.25s ease,
-                --theme-border 0.25s ease,
-                --theme-link 0.25s ease,
-                --theme-link-hover 0.25s ease,
-                --card-bg 0.25s ease,
-                --code-bg 0.25s ease,
-                --code-border 0.25s ease,
-                --code-text 0.25s ease,
-                --table-header-bg 0.25s ease,
-                --table-stripe-bg 0.25s ease,
-                --table-border 0.25s ease,
-                --nav-pill-bg 0.25s ease,
-                --nav-pill-hover 0.25s ease,
-                --header-bg 0.25s ease;
+  /* Smooth theme transitions on concrete paint properties */
+  html,
+  body,
+  .site-footer,
+  div.highlighter-rouge,
+  blockquote,
+  table {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    :root,
-    html[data-theme] {
-      transition: none;
-    }
-    .site-header {
+    html,
+    body,
+    .site-header,
+    .site-footer,
+    div.highlighter-rouge,
+    blockquote,
+    table {
       transition: none;
     }
     .reading-progress-bar {

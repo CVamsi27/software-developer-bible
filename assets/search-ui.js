@@ -27,11 +27,29 @@ document.addEventListener('DOMContentLoaded', function () {
     return name.charAt(0).toUpperCase() + name.slice(1);
   }
 
-  function highlightText(text, query) {
-    if (!query || !text) return text;
+  function appendHighlighted(element, text, query) {
+    if (!text) return;
+    if (!query) {
+      element.textContent = text;
+      return;
+    }
     var escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    var regex = new RegExp('(' + escaped + ')', 'gi');
-    return text.replace(regex, '<mark>$1</mark>');
+    var regex = new RegExp(escaped, 'gi');
+    var lastIndex = 0;
+    var match;
+    while ((match = regex.exec(text)) !== null) {
+      if (match.index > lastIndex) {
+        element.append(document.createTextNode(text.slice(lastIndex, match.index)));
+      }
+      var mark = document.createElement('mark');
+      mark.textContent = match[0];
+      element.append(mark);
+      lastIndex = regex.lastIndex;
+      if (match[0].length === 0) break;
+    }
+    if (lastIndex < text.length) {
+      element.append(document.createTextNode(text.slice(lastIndex)));
+    }
   }
 
   ['sec', 'cat', 'tag'].forEach(function (key) {
@@ -64,20 +82,6 @@ document.addEventListener('DOMContentLoaded', function () {
     history.replaceState(null, '', location.pathname + (params.size ? '?' + params : '') + location.hash);
   }
 
-  function showSkeletons(count) {
-    resultList.replaceChildren();
-    for (var i = 0; i < count; i++) {
-      var skeleton = document.createElement('li');
-      skeleton.className = 'search-skeleton';
-      skeleton.innerHTML = '<div class="skeleton-title"></div><div class="skeleton-context"></div><div class="skeleton-meta"></div>';
-      resultList.appendChild(skeleton);
-    }
-    if (status) {
-      status.textContent = 'Searching…';
-      status.classList.add('loading');
-    }
-  }
-
   function render() {
     var query = state.q.trim().toLocaleLowerCase();
     var paths = window.StudyPublishedPaths;
@@ -89,14 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
         (!state.material || window.StudyState.material(r) === state.material);
     });
 
-    // Show skeletons briefly for better perceived performance
-    if (query || state.sec.length || state.cat.length || state.tag.length || state.material) {
-      showSkeletons(Math.min(matches.length, 5));
-      // Small delay to show skeletons, then render actual results
-      setTimeout(function() { renderResults(matches, query); }, 80);
-    } else {
-      renderResults(matches, query);
-    }
+    renderResults(matches, query);
   }
 
   function renderResults(matches, query) {
@@ -104,11 +101,11 @@ document.addEventListener('DOMContentLoaded', function () {
     matches.forEach(function (r) {
       var item = document.createElement('li'); item.className = 'search-result';
       var link = document.createElement('a'); link.className = 'result-title';
-      link.innerHTML = highlightText(r.t, query);
+      appendHighlighted(link, r.t, query);
       var href = new URL(r.p, location.href).href;
       link.href = window.GermanyRoadmapReturn ? window.GermanyRoadmapReturn.chapterWithContext(href, location.search) : href;
       var context = document.createElement('p'); context.className = 'result-context';
-      context.innerHTML = highlightText([r.s, topicGroup(r)].filter(Boolean).join(' / '), query);
+      appendHighlighted(context, [r.s, topicGroup(r)].filter(Boolean).join(' / '), query);
       var meta = document.createElement('p'); meta.className = 'result-meta'; meta.textContent = labels[window.StudyState.material(r)] + ' · ' + r.m + ' min read';
       item.append(link, context, meta); resultList.append(item);
     });

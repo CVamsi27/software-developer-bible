@@ -11,12 +11,14 @@
     document.body.appendChild(progressBar);
 
     var updateProgress = function() {
-      var winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      var winScroll = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
       var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      var scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      var scrolled = height > 0 ? Math.min(100, Math.max(0, (winScroll / height) * 100)) : 0;
       progressBar.style.width = scrolled + "%";
+      progressBar.classList.toggle("is-active", scrolled > 0.5);
     };
     window.addEventListener("scroll", updateProgress, { passive: true });
+    updateProgress();
 
     // 2. Back to top button
     var btt = document.createElement("button");

@@ -15828,20 +15828,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11D-1 historical design specs)."
   },
   "docs/superpowers/plans/2026-11-25-phase-0-full-rework-plan.md": {
-   "sha256": "79f99c137772ded34035e52461cace0e5c06d289b1538b5e5a1ded81a459d803",
-   "lines": 143,
+   "sha256": "d8498e343868a6ad02b77c76213022a0d85e8a77895d4f2b548ef8176165bde9",
+   "lines": 144,
    "genre": "doc",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "No version-sensitive claim; references only repository scripts and gates that are checked in this repo.",
-    "readable": "Full read of 143 lines. The Phase 0 plan opens with its goal, then covers why a rework is needed, scope across all stacks, per-chapter criteria, execution order, per-chapter work order, metadata updates, gates, and review steps.",
-    "concise": "703 words of prose after removing YAML fences, badge links and metadata rows.",
+    "readable": "Full read of 144 lines (725 prose words). The Phase 0 plan opens with its goal, then covers why a rework is needed, scope across all stacks, per-chapter criteria, execution order, per-chapter work order, metadata updates, gates, and review steps.",
+    "concise": "725 words of prose after removing YAML fences, badge links and metadata rows.",
     "focused": "Owned: this is the canonical Phase 0 rework plan; it references review-ledger and coverage files rather than duplicating them.",
-    "fast": "no page-weight measurement; docs/ plans are not rendered as public pages.",
+    "fast": "Measured no page-weight measurement (no page-weight measurement; docs/ plans are not rendered as public pages.)",
     "best": "Does not retell any chapter; its boundary is planning and it cannot replace reading study content."
    },
-   "notes": "New file added by init; first read recorded."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 0 UI/UX fixes and plan correction)."
   }
  },
  "pending": []

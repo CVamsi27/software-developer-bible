@@ -182,15 +182,25 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!language) return;
     var names = {javascript: 'JavaScript', typescript: 'TypeScript', jsx: 'JSX', tsx: 'TSX', json: 'JSON', html: 'HTML', css: 'CSS', sql: 'SQL', text: 'Plain text', plaintext: 'Plain text'};
     var value = language.slice(9);
+    var isPlainText = value === 'text' || value === 'plaintext';
     var label = names[value] || value.charAt(0).toUpperCase() + value.slice(1);
+    var pre = block.querySelector('pre');
+    if (isPlainText) {
+      if (pre) {
+        pre.setAttribute('tabindex', '0');
+        pre.setAttribute('role', 'region');
+        pre.setAttribute('aria-label', 'Diagram or plain text');
+      }
+      return;
+    }
     if (!block.querySelector('.code-caption')) {
       var caption = document.createElement('span'); caption.className = 'code-caption';
       caption.textContent = label + ':'; block.prepend(caption);
     }
     var code = block.querySelector('pre code');
-    if (code) {
+    if (code && pre) {
       var numbers = document.createElement('span'); numbers.className = 'code-line-numbers'; numbers.setAttribute('aria-hidden', 'true');
-      var pre = block.querySelector('pre'); pre.setAttribute('tabindex', '0'); pre.setAttribute('role', 'region'); pre.setAttribute('aria-label', label + ' code');
+      pre.setAttribute('tabindex', '0'); pre.setAttribute('role', 'region'); pre.setAttribute('aria-label', label + ' code');
       var count = code.textContent.replace(/\n$/, '').split('\n').length;
       numbers.textContent = Array.from({length: count}, function (_, index) { return index + 1; }).join('\n');
       pre.before(numbers); block.classList.add('has-line-numbers');

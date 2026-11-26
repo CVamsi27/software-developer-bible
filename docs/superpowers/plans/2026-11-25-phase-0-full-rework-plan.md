@@ -35,21 +35,22 @@ The V8 chapter itself (211 lines, referenced by the user) opens with a question 
 
 ## Scope: Every Topic Chapter Across All Stacks
 
-| Stack | Dir | Concept files (est.) | Primary audience |
-| ----------------- | ----------------------------- | --------------------- | ------------------------------------------------------------------------ |
+| Stack | Dir | Concept / guide files | Primary audience |
+| ------------------ | ----------------------------- | --------------------- | ------------------------------------------------------------------------ |
 | Strategy | `00-strategy/` | 5 | Resume, communication, STAR, startup roles |
-| Frontend | `10-frontend/` | 127 | JavaScript, TypeScript, React, Next.js, HTML/CSS/PWA, mobile |
-| Backend | `20-backend/` | 149 | Node.js, NestJS, REST, databases, auth, security, AI engineering |
-| Architecture | `30-architecture/` | 109 | System design, design patterns, infrastructure decisions |
-| Platform | `40-platform/` | 95 | Docker, Kubernetes, CI/CD, observability, Git, serverless, monorepo, CDN |
-| Quality | `50-quality/` | 39 | Testing, accessibility, performance, production engineering |
-| Real-Time | `60-realtime/` | 11 | WebSockets, SSE, scaling patterns |
-| Interview Toolkit | `70-interview-toolkit/` | 34 | Coding patterns, behavioral, revision |
+| Frontend | `10-frontend/` | 119 (+8 interview) | JavaScript, TypeScript, React, Next.js, HTML/CSS/PWA, mobile |
+| Backend | `20-backend/` | 137 (+12 interview) | Node.js, NestJS, REST, databases, auth, security, AI engineering, Java |
+| Architecture | `30-architecture/` | 106 (+3 interview) | System design, design patterns, infrastructure decisions |
+| Platform | `40-platform/` | 83 (+12 interview) | Docker, Kubernetes, CI/CD, observability, Git, serverless, monorepo, CDN |
+| Quality | `50-quality/` | 35 (+4 interview) | Testing, accessibility, performance, production engineering |
+| Real-Time | `60-realtime/` | 10 (+1 interview) | WebSockets, SSE, scaling patterns |
+| Interview Toolkit | `70-interview-toolkit/` | 34 | Coding patterns, behavioral, cheat sheets |
 | Abroad Full-Stack | `80-lanes-abroad-full-stack/` | 36 | Company prep sheets, Germany domain primer, target engine |
+| Indian SDE / FAANG | `81-lanes-indian-sde-faang/` | 21 (+1 interview) | DSA/SDE study plan, company interview guides, mocks |
 
-**Excluded:** `81-lanes-indian-sde-faang/` (external fork, not part of this repo's build).
+**Excluded:** the external `~/repos/career-ops` tool fork and private `~/repos/personal` workspace (kept strictly out of this repository by Gate 7).
 
-Total ~565–580 numbered concept chapters, plus revision companions, interview banks, and indexes.
+Total 565 concept chapters (plus 21 Indian-SDE lane guides, 36 abroad-lane guides, revision companions, interview banks, indexes, projects, and docs across 992 repository Markdown files).
 
 ---
 

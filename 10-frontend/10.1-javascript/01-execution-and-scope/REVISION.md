@@ -2,13 +2,13 @@
 [![Section](https://img.shields.io/badge/section-JavaScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-6_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
 # Execution & Scope — Revision
 
-Finish the category’s learning chapters, then answer without reopening them. Check the linked source when an answer misses the mechanism or boundary.
+Finish the category's learning chapters, then answer without reopening them. Check the linked source when an answer misses the mechanism or boundary.
 
 ## Execution Context
 
@@ -40,7 +40,7 @@ Source: [Scope](10.1.1.02-scope.md)
 
 **Q:** Does calling a function from a different scope change which enclosing variable its body refers to?
 
-**A:** No. Ordinary lexical lookup follows the environment associated with the function’s definition, not the caller’s local declarations. Dynamic mechanisms such as `eval` have additional rules.
+**A:** No. Ordinary lexical lookup follows the environment associated with the function's definition, not the caller's local declarations. Dynamic mechanisms such as `eval` have additional rules.
 
 **Q:** Why does a block constrain `let` and `const` but not an ordinary `var` declaration?
 
@@ -50,7 +50,7 @@ Source: [Scope](10.1.1.02-scope.md)
 
 **A:** A strict-mode assignment raises `ReferenceError`. In ordinary sloppy code it can create a global-object property. Declare the intended binding rather than relying on that behavior.
 
-**Q:** Does `const` prevent changes to an object’s properties, and does `Object.freeze` make every nested object immutable?
+**Q:** Does `const` prevent changes to an object's properties, and does `Object.freeze` make every nested object immutable?
 
 **A:** `const` prevents reassignment of that binding. `Object.freeze` is shallow: the frozen object's own properties cannot be replaced, but a referenced nested object can still change. Deep immutability needs a deliberate policy for the whole relevant graph.
 
@@ -60,7 +60,7 @@ Source: [Call Stack](10.1.1.03-call-stack.md)
 
 **Q:** Why does a synchronous nested call return before its caller continues?
 
-**A:** The caller’s evaluation waits while the nested call runs. The conceptual stack represents that last-in-first-out sequence; engines may optimize physical frames.
+**A:** The caller's evaluation waits while the nested call runs. The conceptual stack represents that last-in-first-out sequence; engines may optimize physical frames.
 
 **Q:** Why can a loop freeze a page without deep recursion?
 
@@ -150,7 +150,7 @@ Source: [Closures](10.1.1.06-closures.md)
 
 **A:** One call supplies a shared set of enclosing bindings to the functions it creates. Separate calls create separate bindings.
 
-**Q:** Why do callbacks from a `var` loop commonly observe the same final index, while a `let` loop can preserve each iteration’s index?
+**Q:** Why do callbacks from a `var` loop commonly observe the same final index, while a `let` loop can preserve each iteration's index?
 
 **A:** The `var` callbacks share one binding; the `let` loop supplies separate iteration bindings. The result also depends on when callbacks execute, so trace both binding identity and timing.
 
@@ -186,6 +186,18 @@ Source: [V8 Execution and Optimization](10.1.1.07-v8-execution-and-optimization.
 
 **A:** Profile representative startup and steady-state workloads, identify whether JavaScript CPU is material, and compare end-to-end latency and memory after the change. Source-level intuition or a narrow microbenchmark is insufficient evidence.
 
+**Q:** Why do V8 Elements Kinds never transition backward after `[1, 2, 3]` receives a float or hole, and why does `new Array(n)` start slower for dense reads?
+
+**A:** Transitions from `PACKED_SMI_ELEMENTS` toward `PACKED_DOUBLE_ELEMENTS`, `PACKED_ELEMENTS`, or `HOLEY_*` are one-way so optimizing compilers never have to re-check shrunken representations. `new Array(n)` creates unpopulated holes (`HOLEY_SMI_ELEMENTS`), so reading an unassigned index forces V8 to check `Array.prototype` and `Object.prototype`.
+
+**Q:** How do pointer compression, Small Integers (Smi), and HeapNumbers reduce memory overhead without breaking IEEE-754 numbers?
+
+**A:** V8 stores 31-bit signed integers directly inline via low-bit pointer tagging (`Smi`) with zero heap allocation, boxing out-of-range integers and floats into heap `HeapNumber` objects only when needed. Pointer compression stores 32-bit offsets inside a 4 GB heap cage on 64-bit builds, shrinking tagged slots from 8 bytes to 4.
+
+**Q:** When can an escaping closure keep an unrelated large object alive through V8's heap `Context`, and what does escape analysis avoid?
+
+**A:** Sibling closures in the same outer scope share one heap-allocated `Context`, so a long-lived lightweight callback can retain an oversized binding captured by a sibling closure unless cleared or separated. Conversely, when a temporary object is created inside an inlined helper and never escapes, escape analysis eliminates the heap allocation via scalar replacement.
+
 ## Evaluation and Representation Boundaries
 
 Source: [Execution Context](10.1.1.01-execution-context.md), [Call Stack](10.1.1.03-call-stack.md), [Hoisting](10.1.1.04-hoisting.md), [Lexical Environment](10.1.1.05-lexical-environment.md), [Closures](10.1.1.06-closures.md)
@@ -200,11 +212,11 @@ Source: [Execution Context](10.1.1.01-execution-context.md), [Call Stack](10.1.1
 
 **Q:** Does function inlining break the language's nested-call behavior?
 
-**A:** No. An engine may use fewer physical frames while preserving return values, observable effects and exception behavior. Context diagrams specify semantics, not one frame per source call.
+**A:** No. An engine may use fewer physical frames while preserving return values, observable effects, and exception behavior. Context diagrams specify semantics, not one frame per source call.
 
-**Q:** Is declaration instantiation the engine's mandatory parse/bytecode pass?
+**Q:** Is declaration instantiation the engine's mandatory parse and bytecode pass?
 
-**A:** No. It establishes bindings under the applicable language algorithms before statement evaluation. Parsing, lazy compilation and JIT tiering are separate implementation choices.
+**A:** No. It establishes bindings under the applicable language algorithms before statement evaluation. Parsing, lazy compilation, and JIT tiering are separate implementation choices.
 
 **Q:** Does `await` turn earlier synchronous computation into background work?
 
@@ -216,7 +228,7 @@ Source: [Execution Context](10.1.1.01-execution-context.md), [Call Stack](10.1.1
 
 ## Summary
 
-Distinguish active evaluation, lexical binding identity and callback timing. If an answer relies on a drawing of engine memory or a memorized phase count, return to the chapter’s observable example.
+Distinguish active evaluation, lexical binding identity, and callback timing. If an answer relies on a drawing of engine memory or a memorized phase count, return to the chapter's observable example.
 
 ## See Also
 

@@ -123,148 +123,148 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 6 60-realtime and 00-strategy)."
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.01-execution-context.md": {
-   "sha256": "f460b86a82a1ec4942a47d9dd59af4621a6b52a5031bf2c73abb5b62fbd4aa63",
+   "sha256": "786cc873f4fbe7efb490dedca6dcfdb0af6795c032577606d85e51b2bb6d43f7",
    "lines": 150,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The execution-context components and block LE/VE behavior were checked against ECMA-262's execution-context section and MDN's execution model.",
-    "readable": "Full read of 150 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "941 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 150 lines (944 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "944 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Execution-context state is owned here; scope, hoisting and closures are linked rather than re-taught.",
-    "fast": "23.9 KB raw / 6.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 23.9 KB raw / 6.7 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Contexts and environment records are specification structures; the chapter does not prescribe a memory layout and says engines may use registers, heap contexts or inlining."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework)."
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.02-scope.md": {
-   "sha256": "047cf0ab45101d8c6253893505748d5a537b2476246906fd66a753f5d3867feb",
+   "sha256": "9402555b56b1d56ce745eaae4a04b89f6244f81fb151a10b6e51deff820028e7",
    "lines": 190,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The var/let boundary, per-iteration binding and switch/catch rules were checked against ECMA-262 and MDN's block-scoping reference.",
-    "readable": "Full read of 190 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "948 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 190 lines (949 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "949 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Scope boundaries are owned here; declaration timing points at Hoisting and closure lifetime points at Closures.",
-    "fast": "31.7 KB raw / 7.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 31.7 KB raw / 7.4 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Scope is not lifetime: a returned closure keeps a binding alive after the block exits, so visibility does not predict retention."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework)."
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.03-call-stack.md": {
-   "sha256": "623e92f9e7360957b39075991b44cc45fa3f0ff96ec6139f8f3816a000a14f46",
+   "sha256": "58c386cbf0a352b6409209c560071c408232511c76443737e3808195e385b879",
    "lines": 173,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The LIFO model, TCO support and async suspension were checked against ECMA-262 and current engine behavior; no portable depth limit is claimed.",
-    "readable": "Full read of 173 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "818 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 173 lines (819 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "819 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Call, return and suspension state are owned here; event-loop scheduling and lexical lookup point at their own chapters.",
-    "fast": "23.4 KB raw / 6.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 23.4 KB raw / 6.3 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "There is no portable recursion limit and no guaranteed one-native-frame-per-call; the chapter cannot give a fixed depth and says to use iteration for unbounded nesting."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework)."
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.04-hoisting.md": {
-   "sha256": "469d8c30799dc36060fb8981b985473bd1e39d00e5732d8060b52cd9061d942d",
+   "sha256": "7b348de576e5d76a52fa5cb57a455142534e1a169dccf9bc185519031a85d3bd",
    "lines": 172,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The declaration matrix and Annex B behavior were checked against ECMA-262's declaration-instantiation algorithms and MDN's hoisting reference.",
-    "readable": "Full read of 172 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "681 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 172 lines (687 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "687 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Declaration setup and TDZ are owned here; scope boundaries and module linking point at their own chapters.",
-    "fast": "26.4 KB raw / 6.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 26.4 KB raw / 6.0 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Hoisting does not move source; it is an observable setup effect, not a rewrite or a mandatory two-pass compiler behavior."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework)."
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.05-lexical-environment.md": {
-   "sha256": "66dd386ea68a8e9bbcbbe31e449c179c08dd48a0bc8d42218afb526a3c6d8751",
+   "sha256": "5d07634877a70864a050cd2209825ce34f7644fa5ada6cc464507900432d3b50",
    "lines": 174,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The record family and global/module boundaries were checked against ECMA-262's Environment Record section and MDN's let/TDZ reference.",
-    "readable": "Full read of 174 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1203 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 174 lines (1204 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1204 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Environment records and identifier resolution are owned here; engine representation points at the V8 chapter.",
-    "fast": "27.9 KB raw / 7.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 27.9 KB raw / 7.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The lookup diagram does not show memory layout; an engine can use slots, registers or heap storage while preserving the same resolution."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework)."
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.06-closures.md": {
-   "sha256": "b5b8a056137c2d23eaafbf2e55564f3d2a399c5427d736d4def5edf6031081c3",
+   "sha256": "7026f7a607a3be0c2da5f824316cf3f3ca798ddd0b26153d1c9694c0ce63829f",
    "lines": 201,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "No version-sensitive claim; the [[Environment]] model was checked against ECMA-262 and the React stale-closure example against current functional-update behavior.",
-    "readable": "Full read of 201 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "704 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 201 lines (730 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "730 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Closure lifetime is owned here; scope, lexical environment and garbage collection are linked, not retold.",
-    "fast": "27.7 KB raw / 6.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 27.7 KB raw / 6.6 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "A closure does not prove every nearby local is retained; the chapter says to inspect a heap snapshot's retaining path before calling it a leak."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework)."
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md": {
-   "sha256": "5648250f74e83bcd496c2e2f9a3d66a2f15d8c450949495c2776381bf6c42a53",
-   "lines": 211,
+   "sha256": "91260caadb6d90980149e630da252f73bf24ba3aa005bd29db92ff16df7067ff",
+   "lines": 269,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against https://v8.dev/blog/maglev, https://v8.dev/blog/sparkplug, https://v8.dev/blog/fast-properties, https://v8.dev/blog/leaving-the-sea-of-nodes, and https://tc39.es/ecma262/.",
-    "readable": "Full read of 211 lines. The chapter opens with a concrete performance symptom, then traces the JIT pipeline, hidden classes, inline caches, and speculative optimization with deoptimization, ending with measurement guidance.",
-    "concise": "1497 words of prose after removing YAML fences, badge links and metadata rows.",
+    "readable": "Full read of 269 lines (1985 prose words). The chapter opens with a concrete performance symptom, then traces the JIT pipeline, hidden classes, inline caches, and speculative optimization with deoptimization, ending with measurement guidance.",
+    "concise": "1985 words of prose after removing YAML fences, badge links and metadata rows.",
     "focused": "Owned: this is the canonical V8 engine chapter; it links out to Execution Context, Call Stack, Prototypes, and Garbage Collection rather than retelling them.",
-    "fast": "28.8 KB raw / 8.5 KB gzip; no separate page weight measured beyond source bytes.",
+    "fast": "Measured 28.8 KB raw / 8.5 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not promise universal performance numbers; engine thresholds, timings, and transitions depend on the V8 build and cannot be quoted as fixed limits."
    },
-   "notes": "Rewrote for readability after user flagged the chapter as hard to read: direct opening states the problem instead of asking, tightened hedges while keeping version caveats, smoothed section transitions, kept all technical content, code examples, and references."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework)."
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/INDEX.md": {
-   "sha256": "36733a595585ac137c3f06236c5e4bd92ac4d24faf727822ed4aebab4d1f6902",
+   "sha256": "0b3d7044d17a45b7f85d44de1236aa26a431a96df3b30fbf5becf5542eec9e67",
    "lines": 53,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The 8-file badge was checked against 7 chapter rows plus the revision companion; anchors were updated from #files to #chapters.",
-    "readable": "Full read of 53 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "147 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 53 lines (146 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "146 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Category flow only; mechanisms are owned by separate chapters and the revision drill is linked separately.",
-    "fast": "11.1 KB raw / 3.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 11.1 KB raw / 3.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The Docita table cites candidate source paths that cannot establish deployed behavior; the page says to inspect the revision and tests first."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework)."
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/REVISION.md": {
-   "sha256": "0a2811baaa86d19554113cfbb2f0922308bf30be7a9c4b33f4967eda27082053",
-   "lines": 227,
+   "sha256": "3caa22890ffc1b1da797dc63bc3da73e4e23a43f5c8ed7193e394c8388242f4f",
+   "lines": 239,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Every prompt was checked against its source chapter; the V8, TDZ, Annex B and using/await using answers were verified against the linked specification sections.",
-    "readable": "Full read of 227 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "2077 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 239 lines (2289 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "2289 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Revision companion; it points at source chapters and keeps each mechanism in one group.",
-    "fast": "25.7 KB raw / 7.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 25.7 KB raw / 7.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Retrieval practice cannot replace the chapters; the opening says to answer without reopening them and return when the mechanism is missing."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework)."
   },
   "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.01-this.md": {
    "sha256": "318b4762660eebfda3b30d4123cff8e5e8ad9cdfeaaede174f65b9fad67f842d",
@@ -824,20 +824,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md": {
-   "sha256": "067d2f84b3a6aa0f08f88dbb840a25123a5acf259036f16207e09d17919abeef",
-   "lines": 416,
+   "sha256": "b3a794112ac07f50780c22b35b574519b32f25969e18be7c13f9f01d2220e839",
+   "lines": 438,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The 62 questions were checked against their source chapters; iterator-helper availability was re-executed on Node 26.13.0 (Iterator.concat present, AsyncIterator absent), JSON reviver source access was executed, and the edition claims were checked against the TC39 finished-proposals table.",
-    "readable": "Full read of 416 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "4300 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 438 lines (4649 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "4649 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Interview bank with grouped sources; implementations and mechanisms point at their canonical chapters, which own the full explanations.",
-    "fast": "57.5 KB raw / 15.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 57.5 KB raw / 15.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The bank cannot substitute for the chapters: several answers are deliberately short, and the opening says to use the source links when an answer misses a mechanism or boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework)."
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.06-regexp-and-text.md": {
    "sha256": "8b524fc3b7bd2f401169a3a82df252e7e8efcc8dc7b9d754b7746a1f2b57c27d",
@@ -856,20 +856,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/INDEX.md": {
-   "sha256": "9d87decaff5f5a45d0e9959212ca7b1426fe07c1765a1f1e94b7393363f868bd",
+   "sha256": "19ec9faa0cf8dea90f7ee5ce2c1449f0be47ae02e5525e4f57ad9e6a6138a376",
    "lines": 50,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The 7-file badge was checked against 6 chapter rows plus the revision companion, and the quoted 62-question bank was checked against the question file's 62 Q/A pairs.",
-    "readable": "Full read of 50 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 50 lines (134 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "134 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Category flow only; each API family and the interview bank are owned by their own files and linked once.",
-    "fast": "11.3 KB raw / 3.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 11.3 KB raw / 3.6 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The Order column follows study order while the file prefixes put the interview bank first; readers cannot infer sequence from numbers and must follow the links."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework)."
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/REVISION.md": {
    "sha256": "e1252645b2979c09d3b2c058c8cf6fab4d975d70bbe509fe1ae560c8a3d47e16",
@@ -888,20 +888,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/10.1-javascript/INDEX.md": {
-   "sha256": "000c7daabf4a6f9582b03194a5d18b313067168dca0158529ddfd1d519533127",
+   "sha256": "886354950fa52700fe15875b9ce328260b01a33c995456682542bdecdfda1afe",
    "lines": 170,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The 42-file badge and 36-chapter table were checked against scripts/check_counts.py; the new note reconciles 36 chapters plus 6 revision companions.",
-    "readable": "Full read of 170 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 170 lines (444 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "444 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Section navigation; each mechanism is owned by its chapter and category index, not retold here.",
-    "fast": "29.1 KB raw / 6.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 29.1 KB raw / 6.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The path cannot guarantee interview coverage; the opening says it is a study order, not a coverage guarantee, and reading time is approximate."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework)."
   },
   "10-frontend/10.2-typescript/01-foundations/10.2.1.01-types-vs-interfaces.md": {
    "sha256": "4233ced19e1b8532cd21769a6a491e52064d03fd11888b1284fe74378c428b8e",
@@ -2979,20 +2979,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/INDEX.md": {
-   "sha256": "d03dc60165c56c81854fbcb595903637549f8fc02ff50be2e774953a059cf6db",
+   "sha256": "8f6352a88e6d392d2790bad47ee28a5aa20eb1efb2c8f6c1f1ec70d75850a285",
    "lines": 75,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "No version-sensitive claim; the 150-file total, 8 sub-stack rows, 127-chapter split and restamped study-time sum were checked against read_time.py on 2026-11-23.",
-    "readable": "Full read of 75 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 75 lines (355 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "355 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Section map: points at eight sub-stack indexes and their passes without retelling their chapters.",
-    "fast": "14.7 KB raw / 4.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 14.7 KB raw / 4.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Sets the frontend study order from execution to optional capabilities; it limits itself to navigation and does not teach any mechanism."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "Synced live read-time and counts after Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework."
   },
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md": {
    "sha256": "cbb48962f1b1c976f33493d3398af0e10c4deb7f49db4537cb50b8af762ebfe1",
@@ -14357,20 +14357,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "2a461a4a858085091b4ba510afea19604e0f4e2745cd0573855a12c85635d0e5",
+   "sha256": "3de0ec366903958460c7fe0e60dc08350aca9b1db1dffa8379439cd0b239cd44",
    "lines": 207,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against docs/verification-gates.md gate list and https://github.com/CVamsi27/software-developer-bible repository navigation.",
-    "readable": "Full read of 207 lines. The root INDEX.md opens with the study contract, lists every stack with lane mapping, and uses topic-specific headings rather than a generic Why/How/Examples sequence.",
+    "readable": "Full read of 207 lines (465 prose words). The root INDEX.md opens with the study contract, lists every stack with lane mapping, and uses topic-specific headings rather than a generic Why/How/Examples sequence.",
     "concise": "465 words of prose after removing YAML fences, badge links and metadata rows.",
     "focused": "Owned: this is the canonical root navigation index; it links out to stack indexes rather than retelling their content.",
-    "fast": "35.6 KB raw / 9.2 KB gzip; no separate page weight measured beyond source bytes.",
+    "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Re-read after count restamp; hash now matches disk."
+   "notes": "Synced live read-time and counts after Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14661,7 +14661,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "a424392dda87ac7b913498496a3584a8b0715e9ee0a9bfbdbea693aa9ecfee41",
+   "sha256": "cb5b6da5ec021bfb913e39bcf3053361d49b572093d312491046130776c64b88",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14674,7 +14674,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 11B live operational and governance docs)."
+   "notes": "Synced live read-time and counts after Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

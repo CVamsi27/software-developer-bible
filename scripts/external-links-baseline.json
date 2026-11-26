@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-23",
- "url_count": 2790,
+ "generated": "2026-11-26",
+ "url_count": 2794,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -7294,6 +7294,12 @@
   "https://v8.dev/": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.03-call-stack.md"
   ],
+  "https://v8.dev/blog/code-caching-for-devs": [
+   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md"
+  ],
+  "https://v8.dev/blog/elements-kinds": [
+   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md"
+  ],
   "https://v8.dev/blog/fast-properties": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md",
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md"
@@ -7305,6 +7311,12 @@
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md"
   ],
   "https://v8.dev/blog/maglev": [
+   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md"
+  ],
+  "https://v8.dev/blog/pointer-compression": [
+   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md"
+  ],
+  "https://v8.dev/blog/preparser": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md"
   ],
   "https://v8.dev/blog/sparkplug": [

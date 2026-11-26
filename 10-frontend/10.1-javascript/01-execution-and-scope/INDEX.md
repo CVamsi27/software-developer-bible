@@ -1,6 +1,6 @@
 # Execution & Scope — JavaScript
 
-> **Study time:** ≈ 1 h 3 m of reading (8 files, ~8 min average).
+> **Study time:** ≈ 1 h 8 m of reading (8 files, ~8 min average).
 > Follow a JavaScript evaluation from its active call to the names it can read, then see how declaration timing and closures change what remains accessible.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](#chapters)
@@ -16,12 +16,12 @@ The Files badge counts these 7 chapters plus the revision companion.
 | Order | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Execution Context](10.1.1.01-execution-context.md) | Evaluation and realm lifetime, LE/VE roles, block transitions, parameter-expression boundaries | Essential | Foundational | 7 min |
-| 02 | [Scope](10.1.1.02-scope.md) | Global, function, block and module boundaries, binding lookup, lifetime | Essential | Foundational | 9 min |
-| 03 | [Call Stack](10.1.1.03-call-stack.md) | Logical call nesting, physical-frame limits, recursion, exceptions and async suspension | Essential | Foundational | 7 min |
+| 02 | [Scope](10.1.1.02-scope.md) | Global, function, block, and module boundaries, binding lookup, lifetime | Essential | Foundational | 9 min |
+| 03 | [Call Stack](10.1.1.03-call-stack.md) | Logical call nesting, physical-frame limits, recursion, exceptions, and async suspension | Essential | Foundational | 7 min |
 | 04 | [Hoisting](10.1.1.04-hoisting.md) | Declaration setup, temporal dead zone, function and resource declarations | Essential | Foundational | 7 min |
 | 05 | [Lexical Environment](10.1.1.05-lexical-environment.md) | One lookup trace, the record roles behind names, global and module boundaries | Essential | Foundational | 9 min |
 | 06 | [Closures](10.1.1.06-closures.md) | Lexical scoping, closure lifecycle, module pattern, memory implications | Essential | Foundational | 8 min |
-| 07 | [V8 Execution and Optimization](10.1.1.07-v8-execution-and-optimization.md) | Interpreter and compiler tiers, feedback, inline caches, object shapes, and deoptimization | Important | Specialized | 11 min |
+| 07 | [V8 Execution and Optimization](10.1.1.07-v8-execution-and-optimization.md) | Pre-parsing, bytecode caching, JIT tiers, Smi and pointer compression, Hidden Classes, Elements Kinds, inline caches, closure contexts, OSR, and deoptimization | Important | Specialized | 15 min |
 
 ---
 
@@ -29,13 +29,13 @@ The Files badge counts these 7 chapters plus the revision companion.
 
 Execution Context → Scope → Call Stack → Hoisting → Lexical Environment → Closures → V8 Execution and Optimization.
 
-Why this order: **Execution Context** introduces the state of one evaluation. **Scope** answers where names are visible, and **Call Stack** follows active calls and returns. **Hoisting** explains when bindings are established and initialized; **Lexical Environment** traces how a read finds one. **Closures** finishes the language-level lifetime path. **V8 Execution and Optimization** then separates that portable model from one engine's changing implementation choices.
+Why this order: **Execution Context** introduces the state of one evaluation. **Scope** answers where names are visible, and **Call Stack** follows active calls and returns. **Hoisting** explains when bindings are established and initialized; **Lexical Environment** traces how a read finds one. **Closures** finishes the language-level lifetime path. **V8 Execution and Optimization** then separates that portable model from one engine's implementation choices.
 
 ---
 
 ## Docita Anchor
 
-Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
+Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React, and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
 
 | Topic in this category | Docita evidence |
 | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |

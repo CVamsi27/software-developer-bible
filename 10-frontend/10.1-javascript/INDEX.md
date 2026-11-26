@@ -1,6 +1,6 @@
 # JavaScript — Index
 
-> **Study time:** ≈ 5 h 20 m of reading (42 files, ~8 min average).
+> **Study time:** ≈ 5 h 26 m of reading (42 files, ~8 min average).
 > Core JavaScript concepts from execution context through async patterns, memory management, functional techniques, modern language APIs, cancellation, browser events, cross-tab coordination, and interview practice.
 
 [![Files](https://img.shields.io/badge/files-42-blue)](../../INDEX.md)
@@ -51,7 +51,7 @@ Start with the language's evaluation and binding model, then distinguish it from
 | 04 | [Hoisting](01-execution-and-scope/10.1.1.04-hoisting.md) | `var`/`let`/`const` hoisting, temporal dead zone, function hoisting | Essential | Foundational | 7 min |
 | 05 | [Lexical Environment](01-execution-and-scope/10.1.1.05-lexical-environment.md) | Record hierarchy, outer lookup, global object versus module bindings | Essential | Foundational | 9 min |
 | 06 | [Closures](01-execution-and-scope/10.1.1.06-closures.md) | Lexical scoping, closure lifecycle, module pattern, memory implications | Essential | Foundational | 8 min |
-| 07 | [V8 Execution and Optimization](01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md) | Parsing, interpreter/compiler tiers, conditional optimization, deoptimization and measurement | Important | Specialized | 11 min |
+| 07 | [V8 Execution and Optimization](01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md) | Pre-parsing, bytecode caching, JIT tiers, Smi and pointer compression, Hidden Classes, Elements Kinds, inline caches, closure contexts, OSR, and deoptimization | Important | Specialized | 15 min |
 
 **Read order:** Execution Context → Scope → Call Stack → Hoisting → Lexical Environment → Closures → V8 execution and optimization (matches the category's numbering and its read-order rationale — see [01-execution-and-scope/INDEX.md](01-execution-and-scope/INDEX.md)).
 
@@ -129,7 +129,7 @@ Selected recent APIs, browser execution/event models and interview practice.
 | 33 | [DOM Events & Delegation](06-modern-and-interview/10.1.6.03-dom-events-delegation.md) | Event path, target and listener ownership, delegation, propagation, default actions, and cleanup | Essential | Foundational | 6 min |
 | 34 | [Cross-Tab Communication](06-modern-and-interview/10.1.6.04-cross-tab-communication.md) | Transient messages, persistent recovery, shared owners, locks, and safe cross-tab session updates | Important | Specialized | 7 min |
 | 35 | [Regular Expressions and Text Matching](06-modern-and-interview/10.1.6.06-regexp-and-text.md) | Character classes, flags, `lastIndex` state, backtracking risk, Unicode and a redaction trace | Essential | Important | 9 min |
-| 36 | [Interview Questions](06-modern-and-interview/10.1.6.05-interview-questions.md) | 62 questions with model answers, implementation prompts and changed-condition checks | Essential | Foundational | 13 min |
+| 36 | [Interview Questions](06-modern-and-interview/10.1.6.05-interview-questions.md) | 66 questions with model answers, implementation prompts, and changed-condition checks | Essential | Foundational | 14 min |
 
 ---
 

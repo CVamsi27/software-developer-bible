@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "bb012b413a7227e5471044b280863df286005c13ca27f75d3e9695e2699b13ba",
+ "corpus_digest": "666d97fb669d66ed8d2f3435e8111acb20a78ae58ded6fabe8c51a340ac0e74d",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5405
+  "read_minutes": 5411
  },
  "chapters": [
   {
@@ -149,7 +149,7 @@
     "concept",
     "runtime"
    ],
-   "m": 11
+   "m": 15
   },
   {
    "p": "10-frontend/10.1-javascript/01-execution-and-scope/REVISION.html",
@@ -160,7 +160,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.01-this.html",
@@ -491,7 +491,7 @@
     "interview-questions",
     "reference"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.06-regexp-and-text.html",

@@ -2511,7 +2511,7 @@
     },
     {
       "path": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.01-utility-types.md",
-      "sha256": "bc184c143348f6ea88eba84634cc8f699dec46e49e22470d4d1d0bd7e606da02",
+      "sha256": "950e640129222d4676caf9e524ca3a40246b9c66b1701e256e2694fe7e83e8f6",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -2527,17 +2527,17 @@
           "See Also",
           "References & Learn More"
         ],
-        "code_fences": 5,
+        "code_fences": 6,
         "revision_questions": 0,
         "has_summary": true,
         "has_first_principles": true
       },
       "review": {
         "path": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.01-utility-types.md",
-        "sha256": "bc184c143348f6ea88eba84634cc8f699dec46e49e22470d4d1d0bd7e606da02",
+        "sha256": "950e640129222d4676caf9e524ca3a40246b9c66b1701e256e2694fe7e83e8f6",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 2H D1-D7 rework: 10.2-typescript/03-type-transformations C1-C8 refinement (2026-11-24): Full read of 205 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -2546,7 +2546,7 @@
     },
     {
       "path": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.02-conditional-types.md",
-      "sha256": "d34c00e840ff2fc9db96fa8e68a956db9d5ed45d804aa815bfa9f24600dc0709",
+      "sha256": "b7702e5aee871d8570849492287cf6a0685f3c5adc51c32160a0253b306df953",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -2564,17 +2564,17 @@
           "See Also",
           "References & Learn More"
         ],
-        "code_fences": 8,
+        "code_fences": 9,
         "revision_questions": 0,
         "has_summary": true,
         "has_first_principles": true
       },
       "review": {
         "path": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.02-conditional-types.md",
-        "sha256": "d34c00e840ff2fc9db96fa8e68a956db9d5ed45d804aa815bfa9f24600dc0709",
+        "sha256": "b7702e5aee871d8570849492287cf6a0685f3c5adc51c32160a0253b306df953",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 2H D1-D7 rework: 10.2-typescript/03-type-transformations C1-C8 refinement (2026-11-24): Full read of 225 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -2583,7 +2583,7 @@
     },
     {
       "path": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.03-mapped-types.md",
-      "sha256": "5dbd4a3c1147e960cb015929ed86666ba781c64731fc7f1bc620d76ca4da7c6d",
+      "sha256": "5a1079e55669f4ffbdad5106efb8ffff5a8b0fca9d50b622dea8e7638fbffa28",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -2599,17 +2599,17 @@
           "See Also",
           "References & Learn More"
         ],
-        "code_fences": 6,
+        "code_fences": 8,
         "revision_questions": 0,
         "has_summary": true,
         "has_first_principles": true
       },
       "review": {
         "path": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.03-mapped-types.md",
-        "sha256": "5dbd4a3c1147e960cb015929ed86666ba781c64731fc7f1bc620d76ca4da7c6d",
+        "sha256": "5a1079e55669f4ffbdad5106efb8ffff5a8b0fca9d50b622dea8e7638fbffa28",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 2H D1-D7 rework: 10.2-typescript/03-type-transformations C1-C8 refinement (2026-11-24): Full read of 220 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -2618,7 +2618,7 @@
     },
     {
       "path": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.04-template-literal-types.md",
-      "sha256": "38152a4342bbf1560e3b1d1e2f34eeb09bac39023e5af4242297e988626d9e3b",
+      "sha256": "f41401731b45df500eff7ececbf6853fdf15f036603a3fadaa32e08faa06663d",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -2636,17 +2636,17 @@
           "See Also",
           "References & Learn More"
         ],
-        "code_fences": 10,
+        "code_fences": 11,
         "revision_questions": 0,
         "has_summary": true,
         "has_first_principles": true
       },
       "review": {
         "path": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.04-template-literal-types.md",
-        "sha256": "38152a4342bbf1560e3b1d1e2f34eeb09bac39023e5af4242297e988626d9e3b",
+        "sha256": "f41401731b45df500eff7ececbf6853fdf15f036603a3fadaa32e08faa06663d",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 2H D1-D7 rework: 10.2-typescript/03-type-transformations C1-C8 refinement (2026-11-24): Full read of 315 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -2655,7 +2655,7 @@
     },
     {
       "path": "10-frontend/10.2-typescript/03-type-transformations/INDEX.md",
-      "sha256": "6bef7a7e8165876fea63a89c0c1895da19d8351c6434e3c852dbc1360ec6002e",
+      "sha256": "ceca3489e16ec53f82ecea9829fd10f52c0e84fb349cd553551bab3e74d4f79f",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -2673,10 +2673,10 @@
       },
       "review": {
         "path": "10-frontend/10.2-typescript/03-type-transformations/INDEX.md",
-        "sha256": "6bef7a7e8165876fea63a89c0c1895da19d8351c6434e3c852dbc1360ec6002e",
+        "sha256": "ceca3489e16ec53f82ecea9829fd10f52c0e84fb349cd553551bab3e74d4f79f",
         "genre": "index",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 2H D1-D7 rework: 10.2-typescript/03-type-transformations C1-C8 refinement (2026-11-24): Full read of 47 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -2685,7 +2685,7 @@
     },
     {
       "path": "10-frontend/10.2-typescript/03-type-transformations/REVISION.md",
-      "sha256": "0d6159105b1bbe1f85f15248700f0e094bfbe6348e164e15c51e854ab9cdbc3a",
+      "sha256": "c72f7ce53aa193412006fe8f7d2a30de9060a36b63f4e534bdc87b92ae998b65",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -2700,16 +2700,16 @@
           "References & Learn More"
         ],
         "code_fences": 0,
-        "revision_questions": 39,
+        "revision_questions": 43,
         "has_summary": true,
         "has_first_principles": false
       },
       "review": {
         "path": "10-frontend/10.2-typescript/03-type-transformations/REVISION.md",
-        "sha256": "0d6159105b1bbe1f85f15248700f0e094bfbe6348e164e15c51e854ab9cdbc3a",
+        "sha256": "c72f7ce53aa193412006fe8f7d2a30de9060a36b63f4e534bdc87b92ae998b65",
         "genre": "revision",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 2H D1-D7 rework: 10.2-typescript/03-type-transformations C1-C8 refinement (2026-11-24): Full read of 223 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -3050,7 +3050,7 @@
     },
     {
       "path": "10-frontend/10.2-typescript/INDEX.md",
-      "sha256": "bb76268c5705a694ff12f96e0e77b837fafe6e083466dceab900980b68500267",
+      "sha256": "3ab2fb92975ba7dcbff0495c17c08ee36c0712bb154420f3f5de2fa14f8548cf",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -3074,10 +3074,10 @@
       },
       "review": {
         "path": "10-frontend/10.2-typescript/INDEX.md",
-        "sha256": "bb76268c5705a694ff12f96e0e77b837fafe6e083466dceab900980b68500267",
+        "sha256": "3ab2fb92975ba7dcbff0495c17c08ee36c0712bb154420f3f5de2fa14f8548cf",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Phase 2G D1-D7 rework: 10.2-typescript/02-generics-and-inference count/read-time sync (2026-11-24): Full read of 129 lines. Updated generated counts/read-time navigation after Phase 2G D1-D7 rework: 10.2-typescript/02-generics-and-inference.",
+        "notes": "Phase 2H D1-D7 rework: 10.2-typescript/03-type-transformations count/read-time sync (2026-11-24): Full read of 129 lines. Updated generated counts/read-time navigation after Phase 2H D1-D7 rework: 10.2-typescript/03-type-transformations.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -6553,7 +6553,7 @@
     },
     {
       "path": "10-frontend/INDEX.md",
-      "sha256": "9c449ce015b3dc1d5666d96eedf49164f2c785a2e055648133c7bb9e8255d954",
+      "sha256": "a82bbea7a1259ebe03ae8ce8424146def2a85d6e0667e55453263356688dc286",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -6575,10 +6575,10 @@
       },
       "review": {
         "path": "10-frontend/INDEX.md",
-        "sha256": "9c449ce015b3dc1d5666d96eedf49164f2c785a2e055648133c7bb9e8255d954",
+        "sha256": "a82bbea7a1259ebe03ae8ce8424146def2a85d6e0667e55453263356688dc286",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Phase 2G D1-D7 rework: 10.2-typescript/02-generics-and-inference count/read-time sync (2026-11-24): Full read of 75 lines. Updated generated counts/read-time navigation after Phase 2G D1-D7 rework: 10.2-typescript/02-generics-and-inference.",
+        "notes": "Phase 2H D1-D7 rework: 10.2-typescript/03-type-transformations count/read-time sync (2026-11-24): Full read of 75 lines. Updated generated counts/read-time navigation after Phase 2H D1-D7 rework: 10.2-typescript/03-type-transformations.",
         "findings": [],
         "reviewer": "root",
         "metadataReview": {
@@ -31032,7 +31032,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "546300cdc2072e419cf8abc671c483e93cc5dfcc5f3d7b9d8d7553a47bfb5ecb",
+      "sha256": "0ec478d1a46c8b24c9860b2afeab064e5853b7189f68cc9dd7431a7e0c1310ab",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -31050,12 +31050,12 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "546300cdc2072e419cf8abc671c483e93cc5dfcc5f3d7b9d8d7553a47bfb5ecb",
+        "sha256": "0ec478d1a46c8b24c9860b2afeab064e5853b7189f68cc9dd7431a7e0c1310ab",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 2G D1-D7 rework: 10.2-typescript/02-generics-and-inference count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 2G D1-D7 rework: 10.2-typescript/02-generics-and-inference.",
+        "notes": "Phase 2H D1-D7 rework: 10.2-typescript/03-type-transformations count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 2H D1-D7 rework: 10.2-typescript/03-type-transformations.",
         "findings": []
       }
     },
@@ -31635,7 +31635,7 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "3b04c72804669a4fc67b5f9600cda6eda4fe9d09a31acd4fc1d3b737e7cad971",
+      "sha256": "822ac1c7088a5d8755f3251b44c4e9b6ad7922a13269ead38a4e0a4516c0853f",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31653,12 +31653,12 @@
       },
       "review": {
         "path": "docs/api-contract.md",
-        "sha256": "3b04c72804669a4fc67b5f9600cda6eda4fe9d09a31acd4fc1d3b737e7cad971",
+        "sha256": "822ac1c7088a5d8755f3251b44c4e9b6ad7922a13269ead38a4e0a4516c0853f",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 2G D1-D7 rework: 10.2-typescript/02-generics-and-inference count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 2G D1-D7 rework: 10.2-typescript/02-generics-and-inference.",
+        "notes": "Phase 2H D1-D7 rework: 10.2-typescript/03-type-transformations count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 2H D1-D7 rework: 10.2-typescript/03-type-transformations.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

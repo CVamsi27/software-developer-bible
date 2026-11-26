@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-TypeScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -36,7 +36,7 @@ Source: [Utility Types](10.2.3.01-utility-types.md)
 
 **Q:** Why separate an update ID from optional changes?
 
-**A:** A partial entity permits the identifier to be absent. A separate required ID identifies the target; an explicit `Pick` allowlist prevents optional changes from also granting writes to IDs, secrets or server-controlled fields.
+**A:** A partial entity permits the identifier to be absent. A separate required ID identifies the target; an explicit `Pick` allowlist prevents optional changes from also granting writes to IDs, secrets, or server-controlled fields.
 
 **Q:** Does `Omit<User, 'password'>` remove a password from an actual object?
 
@@ -45,6 +45,10 @@ Source: [Utility Types](10.2.3.01-utility-types.md)
 **Q:** Which overload does `Parameters` or `ReturnType` extract from an overloaded function?
 
 **A:** It uses the last declared signature. It does not perform overload selection from hypothetical call arguments.
+
+**Q:** How do `StrictOmit<T, K extends keyof T>` and `DistributiveOmit<T, K>` improve on built-in `Omit`?
+
+**A:** Built-in `Omit<T, K>` silently accepts nonexistent keys such as `'typo'` and collapses a discriminated union to its shared fields only. `StrictOmit` catches misspelled keys by constraining `K` to `keyof T`, and `DistributiveOmit` distributes across union members so each variant retains its own discriminant fields.
 
 ## Conditional Types
 
@@ -82,6 +86,10 @@ Source: [Conditional Types](10.2.3.02-conditional-types.md)
 
 **A:** Keys in `K` remain required while other keys may be omitted. Making only `K` partial implements the opposite policy.
 
+**Q:** Why does returning a concrete branch value such as `DEFAULTS.user` fail inside a function typed with a deferred conditional `ConditionalResponse<T>`, and how does `ResourceMap[T]` fix it?
+
+**A:** While `T` is still unresolved inside the generic body, TypeScript defers evaluating `ConditionalResponse<T>` even after a runtime `if (resource === 'user')` branch, so concrete returns fail assignability. An indexed lookup signature (`ResourceMap[T]`) resolves `DEFAULTS[resource]` directly against the map without casts.
+
 ## Mapped Types
 
 Source: [Mapped Types](10.2.3.03-mapped-types.md)
@@ -116,7 +124,11 @@ Source: [Mapped Types](10.2.3.03-mapped-types.md)
 
 **Q:** Why keep `Date` and functions as leaves in the deep transform example?
 
-**A:** Mapping their members as ordinary data can destroy their usable signatures. Keeping them as leaves preserves those APIs, while leaving runtime mutation behavior unchanged. `Map`/`Set`/host classes require additional domain-specific leaf or readonly-container rules.
+**A:** Mapping their members as ordinary data can destroy their usable signatures. Keeping them as leaves preserves those APIs, while leaving runtime mutation behavior unchanged. `Map`, `Set`, and host classes require additional domain-specific leaf or readonly-container rules.
+
+**Q:** What breaks homomorphism in `[K in Extract<keyof T, string>]`, and how can `as` remapping turn a discriminated union into an object map?
+
+**A:** Replacing `keyof T` with a derived union such as `Extract<keyof T, string>` breaks homomorphism, causing mapped properties to lose source `?` and `readonly` modifiers as well as tuple shape. Iterating `[Item in E as Item['type']]` over a union of objects uses the `as` clause to project each union variant directly into a `PropertyKey` while keeping its narrowed `Item` payload.
 
 ## Template Literal Types
 
@@ -158,6 +170,10 @@ Source: [Template Literal Types](10.2.3.04-template-literal-types.md)
 
 **A:** Inference now consumes Unicode code points, so `HeadTail<'😀abc'>` yields `['😀', 'abc']`. TypeScript 6 and earlier captured UTF-16 halves (`'\ud83d'` and `'\ude00abc'`). Runtime indexing still uses UTF-16 code units, so type-level and runtime splits can disagree. [Unicode inference](10.2.3.04-template-literal-types.md#7-account-for-unicode-code-point-inference).
 
+**Q:** What does TypeScript 4.8+ constrained `infer` (`${infer N extends number}px`) produce compared to unconstrained `${infer N}px`?
+
+**A:** Unconstrained `infer N` extracts the string literal `'16'`, whereas `infer N extends number` parses the matched characters and yields the numeric literal type `16` (or `never` for non-numeric input such as `'auto'`).
+
 ## Changed-condition checks
 
 Source: [Utility Types](10.2.3.01-utility-types.md)
@@ -176,7 +192,7 @@ Source: [Mapped Types](10.2.3.03-mapped-types.md)
 
 **Q:** What is created for `name` and `age` in `Getters`, and does that add functions to a real user?
 
-**A:** Static members `getName: () => string` and `getAge: () => number` are derived from their corresponding values. No runtime functions are installed. Numeric/symbol keys omitted by the string template stay omitted from the type only.
+**A:** Static members `getName: () => string` and `getAge: () => number` are derived from their corresponding values. No runtime functions are installed. Numeric and symbol keys omitted by the string template stay omitted from the type only.
 
 Source: [Template Literal Types](10.2.3.04-template-literal-types.md)
 
@@ -194,7 +210,7 @@ Source: [Template Literal Types](10.2.3.04-template-literal-types.md)
 
 ## Summary
 
-Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
+Revisit the linked chapter when an answer misses the mechanism, a boundary, or a failure case.
 
 ---
 

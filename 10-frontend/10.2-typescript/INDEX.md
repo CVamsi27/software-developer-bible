@@ -1,6 +1,6 @@
 # TypeScript — Index
 
-> **Study time:** ≈ 3 h 19 m of reading (23 files, ~9 min average).
+> **Study time:** ≈ 3 h 25 m of reading (23 files, ~9 min average).
 > **23 files** — TypeScript type system mastery from basic types to branded types, template literals, declaration files, advanced generics, variance, decorators, the `satisfies` operator, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-23-blue)](../../INDEX.md)
@@ -70,10 +70,10 @@ The composable operations that make TS powerful.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 09 | [Utility Types](03-type-transformations/10.2.3.01-utility-types.md) | `Partial`, `Required`, `Pick`, `Omit`, `Record`, `Exclude`, `Extract`, `NonNullable` | Essential | Foundational | 8 min |
-| 10 | [Conditional Types](03-type-transformations/10.2.3.02-conditional-types.md) | Ternary types, distributive conditional types, `infer` keyword, `never` | Important | Specialized | 8 min |
-| 11 | [Mapped Types](03-type-transformations/10.2.3.03-mapped-types.md) | Index signatures, mapping modifiers, `as` clause, key remapping | Essential | Foundational | 8 min |
-| 12 | [Template Literal Types](03-type-transformations/10.2.3.04-template-literal-types.md) | String manipulation, infer patterns, CSS types, route builders, recursive string types | Important | Specialized | 13 min |
+| 09 | [Utility Types](03-type-transformations/10.2.3.01-utility-types.md) | `Pick`, `Omit`, `Partial`, `Required`, `Readonly`, `Record`, `Exclude`, `Extract`, `Awaited`, and `StrictOmit` | Essential | Foundational | 9 min |
+| 10 | [Conditional Types](03-type-transformations/10.2.3.02-conditional-types.md) | Distributive vs. tuple-wrapped tests, `never` and `any`, deferred conditionals, lookup maps, and `infer` | Important | Specialized | 10 min |
+| 11 | [Mapped Types](03-type-transformations/10.2.3.03-mapped-types.md) | Homomorphic modifiers, `as` key remapping, union-to-map transforms, and `Reflect.ownKeys` runtime mapping | Essential | Foundational | 9 min |
+| 12 | [Template Literal Types](03-type-transformations/10.2.3.04-template-literal-types.md) | Intrinsic casing types, typed `${infer N extends number}`, route builders, deep paths, and TS 7 Unicode inference | Important | Specialized | 14 min |
 
 ---
 

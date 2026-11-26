@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "15acc230a7c53ca4e8267bcd7b405676205258699307336dd7c6b93ec49b3832",
+ "corpus_digest": "3fed5b284768dbd55fc53903ebaf8d239f0ee227eecc9ccbe0b143d0b9bc0f91",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5458
+  "read_minutes": 5464
  },
  "chapters": [
   {
@@ -624,7 +624,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.02-conditional-types.html",
@@ -634,7 +634,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 10
   },
   {
    "p": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.03-mapped-types.html",
@@ -644,7 +644,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.04-template-literal-types.html",
@@ -654,7 +654,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "10-frontend/10.2-typescript/03-type-transformations/REVISION.html",
@@ -665,7 +665,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.01-satisfies-operator.html",

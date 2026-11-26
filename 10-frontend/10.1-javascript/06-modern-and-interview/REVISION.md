@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-JavaScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-7_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-8_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -20,7 +20,7 @@ Source: [Recent ECMAScript Features](10.1.6.01-es2024-features.md)
 
 **Q:** Which completion paths must a `Promise.withResolvers` owner preserve?
 
-**A:** Return the promise and retain the functions needed to report the owned operation's outcomes. Resolve can fulfill with a value or adopt another promise's result, while reject reports a rejection reason. The owner must ensure completion/error paths settle appropriately; the API neither starts nor cancels work.
+**A:** Return the promise and retain the functions needed to report the owned operation's outcomes. Resolve can fulfill with a value or adopt another promise's result, while reject reports a rejection reason. The owner must ensure completion and error paths settle appropriately; the API neither starts nor cancels work.
 
 **Q:** What does `/^[\w--\d]+$/v` reject that the same pattern without `v` accepts, and what does that tell you about `v`?
 
@@ -44,7 +44,7 @@ Source: [Recent ECMAScript Features](10.1.6.01-es2024-features.md)
 
 **Q:** Is `structuredClone` uniformly faster than the JSON round-trip, and if not why does it still win?
 
-**A:** No; measure the actual data and runtime. JSON serialization and structured cloning have different contracts. Structured cloning supports cycles and types such as `Date`, `Map`, `Set` and typed arrays that a JSON round-trip loses or changes. Choose the required behavior first, then compare timings for data supported by both.
+**A:** No; measure the actual data and runtime. JSON serialization and structured cloning have different contracts. Structured cloning supports cycles and types such as `Date`, `Map`, `Set`, and typed arrays that a JSON round-trip loses or changes. Choose the required behavior first, then compare timings for data supported by both.
 
 **Q:** When does `Array.fromAsync` unwrap values from an async iterable, and what does a mapper change?
 
@@ -108,7 +108,11 @@ Source: [Web Workers](10.1.6.02-web-workers.md)
 
 **Q:** Why pool a worker instead of spawning one per task?
 
-**A:** Startup and script evaluation add overhead, so reuse can help a sequence of tasks. Measure the actual workload; `hardwareConcurrency` is a hint, not an instruction to occupy every logical processor. Bound queued work, define per-task replies/errors, and stop idle workers when their owner ends.
+**A:** Startup and script evaluation add overhead, so reuse can help a sequence of tasks. Measure the actual workload; `hardwareConcurrency` is a hint, not an instruction to occupy every logical processor. Bound queued work, define per-task replies and errors, and stop idle workers when their owner ends.
+
+**Q:** Which browser HTTP response headers unlock `SharedArrayBuffer`, and why are `Atomics` operations still required?
+
+**A:** The page must be cross-origin isolated via `Cross-Origin-Opener-Policy: same-origin` paired with `Cross-Origin-Embedder-Policy: require-corp` (or `credentialless`), verifiable through `globalThis.crossOriginIsolated === true`. `Atomics` (`Atomics.add`, `Atomics.load`, `Atomics.waitAsync`) prevents data races when workers read and mutate shared bytes concurrently.
 
 ## DOM Events & Delegation
 
@@ -116,7 +120,7 @@ Source: [DOM Events & Delegation](10.1.6.03-dom-events-delegation.md)
 
 **Q:** Why is event delegation something the platform hands you rather than an optimization you bolt on?
 
-**A:** A bubbling event already travels along its dispatch path, so one stable parent listener can route clicks from children added later. Non-bubbling events, shadow retargeting and stopped propagation change that visibility. Routing still requires validated target/closest/containment checks.
+**A:** A bubbling event already travels along its dispatch path, so one stable parent listener can route clicks from children added later. Non-bubbling events, shadow retargeting, and stopped propagation change that visibility. Routing still requires validated target, `closest`, and containment checks.
 
 **Q:** Put the three propagation phases in order, and say where a `{ capture: true }` listener fires.
 
@@ -144,7 +148,11 @@ Source: [DOM Events & Delegation](10.1.6.03-dom-events-delegation.md)
 
 **Q:** Why pair `closest(selector)` with `root.contains(...)` inside a delegated handler?
 
-**A:** `closest` walks up from whatever was actually hit, so a click on an icon inside a button still matches the button; `contains` rejects a `closest` match above/outside the delegated root. A neighboring subtree does not normally bubble through this root; the guard limits the match search, rather than changing propagation.
+**A:** `closest` walks up from whatever was actually hit, so a click on an icon inside a button still matches the button; `contains` rejects a `closest` match above or outside the delegated root. A neighboring subtree does not normally bubble through this root; the guard limits the match search, rather than changing propagation.
+
+**Q:** When does a `CustomEvent` cross a Shadow DOM boundary, and how does `stopImmediatePropagation()` differ from `stopPropagation()`?
+
+**A:** Only when constructed with `{ bubbles: true, composed: true }` (ordinary `bubbles: true` stops at the shadow host). `stopPropagation()` halts later nodes along the dispatch path while allowing remaining listeners on the current node to run, whereas `stopImmediatePropagation()` cancels remaining listeners on the current node too.
 
 ## Cross-Tab Communication
 
@@ -152,11 +160,11 @@ Source: [Cross-Tab Communication](10.1.6.04-cross-tab-communication.md)
 
 **Q:** Why can't two same-origin tabs simply share an object instead of messaging?
 
-**A:** Tabs independently initialize globals; a shared origin does not unify their models. Eligible same-origin windows with direct references can access objects, and explicit shared byte buffers have their own rules. Message transports copy supported data, constrain recipients and require a recovery policy for missing messages.
+**A:** Tabs independently initialize globals; a shared origin does not unify their models. Eligible same-origin windows with direct references can access objects, and explicit shared byte buffers have their own rules. Message transports copy supported data, constrain recipients, and require a recovery policy for missing messages.
 
 **Q:** You need one WebSocket serving five tabs. Which transport fits, and why doesn't `BroadcastChannel`?
 
-**A:** A `SharedWorker` can own the single socket and accept a `MessagePort` from each tab; the worker's application code defines request ordering, queuing, backpressure and reconnect behavior. `BroadcastChannel` only fans messages out to eligible peers; it does not elect a socket owner, so each tab would otherwise manage its own connection.
+**A:** A `SharedWorker` can own the single socket and accept a `MessagePort` from each tab; the worker's application code defines request ordering, queuing, backpressure, and reconnect behavior. `BroadcastChannel` only fans messages out to eligible peers; it does not elect a socket owner, so each tab would otherwise manage its own connection.
 
 **Q:** What are the two `storage`-event gotchas that break naive cross-tab code?
 
@@ -176,7 +184,7 @@ Source: [Cross-Tab Communication](10.1.6.04-cross-tab-communication.md)
 
 **Q:** Why shouldn't the megabyte report itself travel over the channel?
 
-**A:** Large fan-out adds serialization/copy and repeated processing costs. Commit the report in `IndexedDB`, then signal its ID; receivers validate the notification and read the stored result. Storage still has read/clone costs and quota/eviction limits, and the signal is not durable.
+**A:** Large fan-out adds serialization and copy overhead alongside repeated processing costs. Commit the report in `IndexedDB`, then signal its ID; receivers validate the notification and read the stored result. Storage still has read and clone costs plus quota and eviction limits, and the signal is not durable.
 
 **Q:** Why version a changed message schema across deployments?
 
@@ -192,7 +200,7 @@ Source: [Cross-Tab Communication](10.1.6.04-cross-tab-communication.md)
 
 Source: [DOM Events](10.1.6.03-dom-events-delegation.md)
 
-**Q:** With outer/inner capture and non-capture click listeners, what runs first, and what changes when the inner listener cancels default?
+**Q:** With outer and inner capture and non-capture click listeners, what runs first, and what changes when the inner listener cancels default?
 
 **A:** Outer capture, inner capture, inner non-capture, then outer bubble. Canceling a cancelable non-passive click suppresses its default action without changing that propagation order. Stopping propagation is a separate operation.
 
@@ -218,7 +226,7 @@ Source: [Regular Expressions and Text Matching](10.1.6.06-regexp-and-text.md)
 
 **A:** The default JavaScript matching model counts UTF-16 code units, so a plane-2 emoji occupies two units; with the `u` flag the engine interprets the pattern in Unicode code-point mode and reports a single match. Omitting `u` around astral or supplementary-plane characters is a correctness bug before it is a performance one.
 
-**Q:** What is the difference between the `i`, `m` and `s` flags in terms of what they change about matching?
+**Q:** What is the difference between the `i`, `m`, and `s` flags in terms of what they change about matching?
 
 **A:** `i` makes the match case-insensitive, so `A` and `a` are equivalent; `m` changes `^` and `$` to match at line boundaries instead of only at the start and end of the entire string; `s` makes `.` also match a newline character, so multi-line input no longer stops the dot at the line break.
 
@@ -230,9 +238,13 @@ Source: [Regular Expressions and Text Matching](10.1.6.06-regexp-and-text.md)
 
 **A:** `String.prototype.matchAll` throws `TypeError: String.prototype.matchAll called with a non-global RegExp argument` if the regex is not global (`g`). The shared `/g` `test` statefulness bug — `lastIndex` not being reset — causes a second string's first match to be skipped even though `test` succeeds on the second message, because the regex is still parked past the first match's end. Use a fresh global regex for `matchAll`; reset `lastIndex` or create a fresh regex for the shared-`test` bug.
 
+**Q:** What does the ES2022 `/d` (`hasIndices`) flag add to regex matches, and why does that help redaction or highlighters?
+
+**A:** `/d` populates `.indices` and `.indices.groups` with `[start, end]` UTF-16 index tuples for the full match and every capture group, letting highlighters or redactors slice the original string without re-searching for the matched substring.
+
 ## Summary
 
-Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
+Revisit the linked chapter when an answer misses the mechanism, a boundary, or a failure case.
 
 ---
 

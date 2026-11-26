@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "706f6937e23b25be06de07f924a171a304d1854357e47ab8090552cd0643f002",
+ "corpus_digest": "a1c2f73b3e932a866948874241ae9430a25e7a246dd20d59fd0449938d64460a",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5447
+  "read_minutes": 5449
  },
  "chapters": [
   {
@@ -460,7 +460,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.03-dom-events-delegation.html",
@@ -512,7 +512,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.2-typescript/01-foundations/10.2.1.01-types-vs-interfaces.html",

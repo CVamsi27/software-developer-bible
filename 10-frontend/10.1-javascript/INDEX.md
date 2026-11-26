@@ -1,6 +1,6 @@
 # JavaScript — Index
 
-> **Study time:** ≈ 6 h 2 m of reading (42 files, ~9 min average).
+> **Study time:** ≈ 6 h 4 m of reading (42 files, ~9 min average).
 > Core JavaScript concepts from execution context through async patterns, memory management, functional techniques, modern language APIs, cancellation, browser events, cross-tab coordination, and interview practice.
 
 [![Files](https://img.shields.io/badge/files-42-blue)](../../INDEX.md)
@@ -124,12 +124,12 @@ Selected recent APIs, browser execution/event models and interview practice.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 31 | [Recent ECMAScript Features](06-modern-and-interview/10.1.6.01-es2024-features.md) | Selected ES2022–2026 built-ins; compare ownership, evaluation, and runtime support | Important | Specialized | 8 min |
-| 32 | [Web Workers](06-modern-and-interview/10.1.6.02-web-workers.md) | Dedicated, shared, and service workers; message ownership and cancellation limits | Important | Important | 7 min |
-| 33 | [DOM Events & Delegation](06-modern-and-interview/10.1.6.03-dom-events-delegation.md) | Event path, target and listener ownership, delegation, propagation, default actions, and cleanup | Essential | Foundational | 6 min |
-| 34 | [Cross-Tab Communication](06-modern-and-interview/10.1.6.04-cross-tab-communication.md) | Transient messages, persistent recovery, shared owners, locks, and safe cross-tab session updates | Important | Specialized | 7 min |
-| 35 | [Regular Expressions and Text Matching](06-modern-and-interview/10.1.6.06-regexp-and-text.md) | Character classes, flags, `lastIndex` state, backtracking risk, Unicode and a redaction trace | Essential | Important | 9 min |
-| 36 | [Interview Questions](06-modern-and-interview/10.1.6.05-interview-questions.md) | 74 questions with model answers, implementation prompts, and changed-condition checks | Essential | Foundational | 17 min |
+| 31 | [Recent ECMAScript Features](06-modern-and-interview/10.1.6.01-es2024-features.md) | Selected ES2022–2026 built-ins, `Iterator.concat`, `JSON.rawJSON`, `Uint8Array.fromBase64`, and host boundaries | Important | Specialized | 8 min |
+| 32 | [Web Workers](06-modern-and-interview/10.1.6.02-web-workers.md) | Dedicated, shared, and service workers; `ArrayBuffer` transfer, `SharedArrayBuffer` COOP/COEP, and cancellation | Important | Important | 8 min |
+| 33 | [DOM Events & Delegation](06-modern-and-interview/10.1.6.03-dom-events-delegation.md) | Event path, Shadow DOM `composed: true`, delegation, propagation, passive listeners, and cleanup | Essential | Foundational | 6 min |
+| 34 | [Cross-Tab Communication](06-modern-and-interview/10.1.6.04-cross-tab-communication.md) | `BroadcastChannel`, stored recovery, shared owners, Web Locks, and safe cross-tab session updates | Important | Specialized | 7 min |
+| 35 | [Regular Expressions and Text Matching](06-modern-and-interview/10.1.6.06-regexp-and-text.md) | Character classes, `g`/`u`/`v`/`d` flags, capture indices, ReDoS backtracking risk, and log redaction | Essential | Important | 9 min |
+| 36 | [Interview Questions](06-modern-and-interview/10.1.6.05-interview-questions.md) | 76 questions with model answers, implementation prompts, and changed-condition checks | Essential | Foundational | 17 min |
 
 ---
 

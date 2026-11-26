@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-JavaScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-10_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-11_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -46,9 +46,9 @@ Source: [Pass by Value vs Pass by Reference](10.1.4.01-pass-by-value.md)
 
 Source: [Map, Set, WeakMap, WeakSet](10.1.4.02-map-set-weakmap-weakset.md)
 
-**Q:** What do `Map`, `Set`, `WeakMap` and `WeakSet` share, and where do they split?
+**Q:** What do `Map`, `Set`, `WeakMap`, and `WeakSet` share, and where do they split?
 
-**A:** They provide keyed entries or unique membership, with different ownership and observation rules. `Map`/`Set` retain entries and expose size and iteration; weak collections do not retain eligible keys/members by themselves and cannot be enumerated. ECMAScript requires average sublinear access for `Map`/`Set`, rather than mandating a hash table or worst-case `O(1)`.
+**A:** They provide keyed entries or unique membership, with different ownership and observation rules. `Map` and `Set` retain entries and expose size and iteration; weak collections do not retain eligible keys and members by themselves and cannot be enumerated. ECMAScript requires average sublinear access for `Map` and `Set`, rather than mandating a hash table or worst-case `O(1)`.
 
 **Q:** Why does using an object as a plain object's key break identity?
 
@@ -60,7 +60,7 @@ Source: [Map, Set, WeakMap, WeakSet](10.1.4.02-map-set-weakmap-weakset.md)
 
 **Q:** What does "insertion order" buy you in a `Map` that a plain object cannot promise?
 
-**A:** Iterators visit insertion order. Updating an existing key leaves its position unchanged; delete/reinsert moves it to the end. The LRU example moves a hit to the end, so the first key represents least recently used rather than merely earliest original insertion.
+**A:** Iterators visit insertion order. Updating an existing key leaves its position unchanged; deleting and reinserting moves it to the end. The LRU example moves a hit to the end, so the first key represents least recently used rather than merely earliest original insertion.
 
 **Q:** What does `[...new Set(list)]` give you over a hand-written dedupe loop?
 
@@ -74,13 +74,17 @@ Source: [Map, Set, WeakMap, WeakSet](10.1.4.02-map-set-weakmap-weakset.md)
 
 **A:** When the keys are a fixed set of known string names and JSON is the transport — object spreads and `JSON.stringify` work for free, while a `Map` stringifies to `{}`.
 
+**Q:** What do `Map.prototype.getOrInsertComputed` and `WeakMap`'s symbol restriction each solve or enforce?
+
+**A:** `getOrInsertComputed(key, fn)` invokes `fn` only when `!map.has(key)`, cleanly handling keys mapped to `undefined` without computing defaults on cache hits. `WeakMap` accepts non-registered symbols (`Symbol('local')`) because they can become unreachable, but rejects registered `Symbol.for(...)` values with `TypeError` because global symbol registry entries persist forever.
+
 ## Shallow Copy vs Deep Copy
 
 Source: [Shallow Copy vs Deep Copy](10.1.4.03-shallow-vs-deep-copy.md)
 
 **Q:** State the difference between a shallow copy and a deep copy in one sentence.
 
-**A:** A shallow copy separates the outer container and shares nested object values; a deep clone separates the supported graph while preserving its internal aliases/cycles. The API decides which object types and properties can be copied.
+**A:** A shallow copy separates the outer container and shares nested object values; a deep clone separates the supported graph while preserving its internal aliases and cycles. The API decides which object types and properties can be copied.
 
 **Q:** Why does a deep clone need an identity map (`WeakMap` of original → copy)?
 
@@ -100,7 +104,7 @@ Source: [Shallow Copy vs Deep Copy](10.1.4.03-shallow-vs-deep-copy.md)
 
 **Q:** Which copy routine should you use when a value is about to cross a worker boundary?
 
-**A:** Worker messaging uses structured cloning, so design a cloneable payload and let `postMessage` clone it; pre-cloning is usually unnecessary. Transfer lists, ownership and context restrictions still matter: local cloning success alone is not a universal transport guarantee.
+**A:** Worker messaging uses structured cloning, so design a cloneable payload and let `postMessage` clone it; pre-cloning is usually unnecessary. Transfer lists, ownership, and context restrictions still matter: local cloning success alone is not a universal transport guarantee.
 
 **Q:** What should decide between a shallow and a deep copy on a hot path?
 
@@ -124,7 +128,7 @@ Source: [Debounce](10.1.4.04-debounce.md)
 
 **Q:** What does `.cancel()` actually destroy?
 
-**A:** It drops the pending invocation, including timer and saved arguments. It does not stop a callback/request that already started; in-flight cancellation and obsolete-result checks are separate policies.
+**A:** It drops the pending invocation, including timer and saved arguments. It does not stop a callback or request that already started; in-flight cancellation and obsolete-result checks are separate policies.
 
 **Q:** Why does the chapter's React hook call `debounced.cancel()` in an effect cleanup?
 
@@ -152,7 +156,7 @@ Source: [Throttle](10.1.4.05-throttle.md)
 
 **Q:** What does a throttled function promise its caller?
 
-**A:** The chapter’s ordinary throttle spaces callback starts by at least the configured interval and can retain the latest suppressed arguments for trailing execution. Cancel resets timing and flush can override spacing; promises already started can overlap.
+**A:** The chapter's ordinary throttle spaces callback starts by at least the configured interval and can retain the latest suppressed arguments for trailing execution. Cancel resets timing and flush can override spacing; promises already started can overlap.
 
 **Q:** When does the trailing invocation fire, and whose arguments does it carry?
 
@@ -160,9 +164,9 @@ Source: [Throttle](10.1.4.05-throttle.md)
 
 **Q:** Why is `requestAnimationFrame` often a better throttle than a timer for scroll-driven work?
 
-**A:** It schedules work at a browser rendering opportunity. Keep one pending callback to combine incoming events before it runs. This coordinates visual work with rendering, but does not guarantee a displayed frame, a fixed rate or that none of the work is wasted.
+**A:** It schedules work at a browser rendering opportunity. Keep one pending callback to combine incoming events before it runs. This coordinates visual work with rendering, but does not guarantee a displayed frame, a fixed rate, or that none of the work is wasted.
 
-**Q:** Why does the leading/trailing implementation stash `lastArgs` instead of invoking right away?
+**Q:** Why does the leading and trailing implementation stash `lastArgs` instead of invoking right away?
 
 **A:** A call arriving mid-window has to be remembered so exactly one trailing invocation can replay it — that is the difference between a throttle that preserves the last event and a naive gate that loses it.
 
@@ -172,7 +176,7 @@ Source: [Throttle](10.1.4.05-throttle.md)
 
 **Q:** What limits make sense for the usual event types?
 
-**A:** Those intervals are experiments, not guarantees. Coalesce visual work at rendering opportunities; measure mouse/scroll/resize latency. Prevent concurrent writes with an in-flight guard/idempotency, because a one-second window cannot guarantee request completion.
+**A:** Those intervals are experiments, not guarantees. Coalesce visual work at rendering opportunities; measure mouse, scroll, and resize latency. Prevent concurrent writes with an in-flight guard or idempotency, because a one-second window cannot guarantee request completion.
 
 **Q:** What is the cleanup contract for a throttled event handler?
 
@@ -188,7 +192,7 @@ Source: [Memory Leaks](10.1.4.06-memory-leaks.md)
 
 **Q:** What is the practical test for "is this a leak?"
 
-**A:** Find the retaining path and ask whether it should still exist. Reachable obsolete data suggests a leak; unreachable data is eligible for collection, which may happen later. A wanted cache still needs a deliberate size/lifetime policy.
+**A:** Find the retaining path and ask whether it should still exist. Reachable obsolete data suggests a leak; unreachable data is eligible for collection, which may happen later. A wanted cache still needs a deliberate size and lifetime policy.
 
 **Q:** What are the chapter's five causes, and what is the single move that repairs each?
 
@@ -196,11 +200,11 @@ Source: [Memory Leaks](10.1.4.06-memory-leaks.md)
 
 **Q:** How do you tell a growing heap apart from a leak while the app is running?
 
-**A:** Repeat a controlled lifecycle and compare snapshots/retaining paths after equivalent collection opportunities. Growth can also be wanted cache warm-up or delayed collection; distinguish retained obsolete objects from expected live state before calling it a leak.
+**A:** Repeat a controlled lifecycle and compare snapshots and retaining paths after equivalent collection opportunities. Growth can also be wanted cache warm-up or delayed collection; distinguish retained obsolete objects from expected live state before calling it a leak.
 
 **Q:** Why can an isolated detached node be collected while the chapter's retained-cell example keeps a tree alive?
 
-**A:** An isolated node/listener cycle can become unreachable. The retained-cell example stores a leaf in a longer-lived binding, keeping its still-linked detached tree reachable. Clear that owner when finished; the separate window-listener example also requires removing its registration and retiring the disposer.
+**A:** An isolated node and listener cycle can become unreachable. The retained-cell example stores a leaf in a longer-lived binding, keeping its still-linked detached tree reachable. Clear that owner when finished; the separate window-listener example also requires removing its registration and retiring the disposer.
 
 **Q:** Why does the chapter's snapshot disposer clear `snapshots.length = 0` as well as removing the listener?
 
@@ -216,7 +220,7 @@ Source: [Memory Leaks](10.1.4.06-memory-leaks.md)
 
 **Q:** What makes a cache safe to keep in module scope?
 
-**A:** A policy matching ownership: bounded entry/byte count, expiry that is actually enforced, and resource cleanup where needed. TTL checked only on reads leaves unread entries retained; weak keys leave values alive while keys remain externally reachable.
+**A:** A policy matching ownership: bounded entry and byte count, expiry that is actually enforced, and resource cleanup where needed. TTL checked only on reads leaves unread entries retained; weak keys leave values alive while keys remain externally reachable.
 
 ## Garbage Collection
 
@@ -236,11 +240,11 @@ Source: [Garbage Collection](10.1.4.07-garbage-collection.md)
 
 **Q:** What happens in a scavenge, and what is promotion?
 
-**A:** In a copying young collector, reachable survivors move into available survivor/old storage; promotion makes an object old-generation data. This is one collector strategy, not a guarantee that every young collection copies every survivor or uses a fixed age threshold.
+**A:** In a copying young collector, reachable survivors move into available survivor or old storage; promotion makes an object old-generation data. This is one collector strategy, not a guarantee that every young collection copies every survivor or uses a fixed age threshold.
 
 **Q:** How do incremental and concurrent marking reduce jank?
 
-**A:** Incremental marking interleaves portions of collection with application work; concurrent marking performs supported work alongside the application. Remaining pauses and synchronization depend on the collector/workload, so neither guarantees only short begin/end pauses.
+**A:** Incremental marking interleaves portions of collection with application work; concurrent marking performs supported work alongside the application. Remaining pauses and synchronization depend on the collector and workload, so neither guarantees only short begin and end pauses.
 
 **Q:** When can assigning `null` release retained state, and why is it not a collection command?
 
@@ -252,7 +256,11 @@ Source: [Garbage Collection](10.1.4.07-garbage-collection.md)
 
 **Q:** What does allocation rate actually control?
 
-**A:** Allocation contributes to heap pressure and collection work, alongside live size, object kinds and engine policy. Hot-loop allocation can cause pauses, but measured traces must establish whether it causes the observed frame drops.
+**A:** Allocation contributes to heap pressure and collection work, alongside live size, object kinds, and engine policy. Hot-loop allocation can cause pauses, but measured traces must establish whether it causes the observed frame drops.
+
+**Q:** When should resource teardown use ES2026 `using` (`Symbol.dispose`) instead of `FinalizationRegistry`, and how can Node inspect heap spaces?
+
+**A:** Use `using` (or `try...finally`) whenever file handles, locks, or sockets require deterministic release when control leaves a lexical block, because `FinalizationRegistry` runs non-deterministically if ever. In Node, `v8.getHeapSpaceStatistics()` inspects live region usage and `v8.writeHeapSnapshot()` captures an importable `.heapsnapshot` file.
 
 ## Hash Tables and Hash Maps
 
@@ -260,7 +268,7 @@ Source: [Hash Tables and Hash Maps](10.1.4.08-hash-tables-internals.md)
 
 **Q:** Why can a hash table never promise worst-case `O(1)` the way an array does?
 
-**A:** Direct indexing already has a bounded integer position. A hash table maps many possible keys to fewer candidate positions and must compare full keys to resolve collisions; growth can also move all entries. The examples provide expected/amortized, not per-operation worst-case constant bounds.
+**A:** Direct indexing already has a bounded integer position. A hash table maps many possible keys to fewer candidate positions and must compare full keys to resolve collisions; growth can also move all entries. The examples provide expected and amortized bounds, not per-operation worst-case constant bounds.
 
 **Q:** What does "amortized" buy you that a worst-case claim wouldn't?
 
@@ -272,13 +280,13 @@ Source: [Hash Tables and Hash Maps](10.1.4.08-hash-tables-internals.md)
 
 **Q:** Two implementations both report "α = 0.5", but one still feels slow. Why?
 
-**A:** Load describes occupancy, not a bound on probes. Poor key distribution, clusters, tombstones or long string hashing can make a half-full table slow. Investigate the actual operation mix and collision paths.
+**A:** Load describes occupancy, not a bound on probes. Poor key distribution, clusters, tombstones, or long string hashing can make a half-full table slow. Investigate the actual operation mix and collision paths.
 
 **Q:** Why does linear probing collapse at high load while chaining only degrades gently?
 
 **A:** Occupied runs attract more displaced entries in linear probing, and a miss must traverse the run before finding an empty slot. Chaining searches the selected bucket without needing a vacancy in the main array. These are qualitative mechanisms, not measurements performed by this chapter.
 
-**Q:** What can the JavaScript contract tell you about V8's `Map`/`Set` collision strategy and load threshold?
+**Q:** What can the JavaScript contract tell you about V8's `Map` and `Set` collision strategy and load threshold?
 
 **A:** Nothing about their physical strategy or threshold. ECMAScript specifies observable key behavior and average sublinear access; inspect the source for the exact V8 version when investigating a measured performance issue.
 
@@ -296,7 +304,7 @@ Source: [Equality & Type Coercion](10.1.4.09-equality-and-coercion.md)
 
 **Q:** If `===` exists, why does JavaScript still ship loose equality at all?
 
-**A:** Loose equality is an existing language contract retained for compatibility and deliberate type-dependent comparisons. It is not general input validation: boundary data still needs an explicit parsing/range policy before comparison.
+**A:** Loose equality is an existing language contract retained for compatibility and deliberate type-dependent comparisons. It is not general input validation: boundary data still needs an explicit parsing and range policy before comparison.
 
 **Q:** How can `[]` be truthy at the same time as `[] == false` being `true`?
 
@@ -376,7 +384,7 @@ Sources: [Copying](10.1.4.03-shallow-vs-deep-copy.md), [Debounce](10.1.4.04-debo
 
 **Q:** A search request is active when the input changes, but the replacement waits for debounce. When must the old result lose publication authority?
 
-**A:** Immediately on the input change. Cancel/invalidate the old generation then, rather than waiting for the next request to start; otherwise an old response can publish during the quiet-time gap.
+**A:** Immediately on the input change. Cancel or invalidate the old generation then, rather than waiting for the next request to start; otherwise an old response can publish during the quiet-time gap.
 
 **Q:** Why should a structured clone be attempted before replacing current state?
 
@@ -388,7 +396,7 @@ Sources: [Copying](10.1.4.03-shallow-vs-deep-copy.md), [Debounce](10.1.4.04-debo
 
 ## Summary
 
-Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
+Revisit the linked chapter when an answer misses the mechanism, a boundary, or a failure case.
 
 ---
 

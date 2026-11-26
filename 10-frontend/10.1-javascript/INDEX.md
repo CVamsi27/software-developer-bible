@@ -1,6 +1,6 @@
 # JavaScript — Index
 
-> **Study time:** ≈ 5 h 45 m of reading (42 files, ~8 min average).
+> **Study time:** ≈ 5 h 55 m of reading (42 files, ~8 min average).
 > Core JavaScript concepts from execution context through async patterns, memory management, functional techniques, modern language APIs, cancellation, browser events, cross-tab coordination, and interview practice.
 
 [![Files](https://img.shields.io/badge/files-42-blue)](../../INDEX.md)
@@ -92,15 +92,15 @@ Choosing the right collection and avoiding memory leaks.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 17 | [Pass by Value](04-memory-and-data/10.1.4.01-pass-by-value.md) | Primitive vs reference, value/reference semantics, mutation gotchas | Essential | Foundational | 5 min |
-| 18 | [Map, Set, WeakMap, WeakSet](04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md) | Key identity and order, weak metadata, conversion, bounded eviction | Essential | Foundational | 6 min |
-| 19 | [Shallow vs Deep Copy](04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md) | Reference graphs, structured cloning, transfer, JSON boundary, path copying | Essential | Foundational | 7 min |
-| 20 | [Debounce](04-memory-and-data/10.1.4.04-debounce.md) | Quiet-time scheduling, edge policies, cancellation, stale async results | Essential | Foundational | 10 min |
-| 21 | [Throttle](04-memory-and-data/10.1.4.05-throttle.md) | Periodic scheduling, edge policies, cancellation, concurrency boundaries | Essential | Foundational | 9 min |
-| 22 | [Memory Leaks](04-memory-and-data/10.1.4.06-memory-leaks.md) | Retaining paths, cleanup ownership, bounded caches, heap diagnosis | Essential | Foundational | 7 min |
-| 23 | [Garbage Collection](04-memory-and-data/10.1.4.07-garbage-collection.md) | Tracing, generations, scheduling, weak references, process memory | Essential | Foundational | 6 min |
-| 24 | [Hash Tables and Hash Maps](04-memory-and-data/10.1.4.08-hash-tables-internals.md) | Hashing, collision strategies, load factor, rehashing, JavaScript collection guarantees | Important | Specialized | 6 min |
-| 25 | [Equality & Coercion](04-memory-and-data/10.1.4.09-equality-and-coercion.md) | Equality, object-to-primitive conversion, truthiness, nullish defaults | Essential | Foundational | 7 min |
+| 17 | [Pass by Value](04-memory-and-data/10.1.4.01-pass-by-value.md) | Primitive vs. reference, call-by-sharing, shallow immutability (`freeze`/`seal`), and pure `toSorted` arrays | Essential | Foundational | 6 min |
+| 18 | [Map, Set, WeakMap, WeakSet](04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md) | Key identity, insertion order, `getOrInsert` and `getOrInsertComputed`, set methods, and weak symbol boundaries | Essential | Foundational | 7 min |
+| 19 | [Shallow vs Deep Copy](04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md) | Reference graphs, `structuredClone`, transferable buffers, JSON coercion limits, and path copying | Essential | Foundational | 7 min |
+| 20 | [Debounce](04-memory-and-data/10.1.4.04-debounce.md) | Quiet-time scheduling, leading/trailing/maxWait policies, cancellation, and React lifecycle cleanup | Essential | Foundational | 11 min |
+| 21 | [Throttle](04-memory-and-data/10.1.4.05-throttle.md) | Periodic scheduling, hybrid edge policies, `requestAnimationFrame` gating, cancellation, and concurrency limits | Essential | Foundational | 10 min |
+| 22 | [Memory Leaks](04-memory-and-data/10.1.4.06-memory-leaks.md) | Retaining paths, `{ signal }` listener cleanup, bounded caches, DevTools retainers, and `v8.writeHeapSnapshot()` | Essential | Foundational | 8 min |
+| 23 | [Garbage Collection](04-memory-and-data/10.1.4.07-garbage-collection.md) | Tracing, V8 spaces (`getHeapSpaceStatistics`), Orinoco, `WeakRef`, and ES2026 `using` deterministic disposal | Essential | Foundational | 7 min |
+| 24 | [Hash Tables and Hash Maps](04-memory-and-data/10.1.4.08-hash-tables-internals.md) | Hash lookup, probing tombstones, object integer-key hoisting vs. `Map`, V8 `OrderedHashTable`, and resize pauses | Important | Specialized | 7 min |
+| 25 | [Equality & Coercion](04-memory-and-data/10.1.4.09-equality-and-coercion.md) | Equality algorithms, `Symbol.toPrimitive`, `BigInt` rules, `??`, and explicit string/boolean boundary parsing | Essential | Foundational | 8 min |
 
 ---
 
@@ -129,7 +129,7 @@ Selected recent APIs, browser execution/event models and interview practice.
 | 33 | [DOM Events & Delegation](06-modern-and-interview/10.1.6.03-dom-events-delegation.md) | Event path, target and listener ownership, delegation, propagation, default actions, and cleanup | Essential | Foundational | 6 min |
 | 34 | [Cross-Tab Communication](06-modern-and-interview/10.1.6.04-cross-tab-communication.md) | Transient messages, persistent recovery, shared owners, locks, and safe cross-tab session updates | Important | Specialized | 7 min |
 | 35 | [Regular Expressions and Text Matching](06-modern-and-interview/10.1.6.06-regexp-and-text.md) | Character classes, flags, `lastIndex` state, backtracking risk, Unicode and a redaction trace | Essential | Important | 9 min |
-| 36 | [Interview Questions](06-modern-and-interview/10.1.6.05-interview-questions.md) | 70 questions with model answers, implementation prompts, and changed-condition checks | Essential | Foundational | 15 min |
+| 36 | [Interview Questions](06-modern-and-interview/10.1.6.05-interview-questions.md) | 72 questions with model answers, implementation prompts, and changed-condition checks | Essential | Foundational | 16 min |
 
 ---
 

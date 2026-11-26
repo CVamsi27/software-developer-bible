@@ -363,10 +363,10 @@
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.01-pass-by-value.md",
-      "sha256": "96d66bd8c977cae49b616a5824972d58726a59a6f210a777058afc67245caf5f",
+      "sha256": "efdff64e1f0476c5fcff57e5098963cf6342c017b3ab7b72077acf03555b6be6",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read of 146 lines; binding-versus-object identity, spread/destructuring and ES2023 copy methods checked against ECMA-262 and MDN. Replaced the mislabeled passing-arguments citation with the Functions guide anchor. Prior exact-byte review retained in metadataReview.",
+      "notes": "Phase 2C D1-D7 rework: 04-memory-and-data C1-C8 refinement (2026-11-24): Full read of 176 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "deepseek-v4.1-flash-free",
       "metadataReview": {
@@ -378,15 +378,15 @@
         "previousReviewer": "frontend",
         "previousNotes": "Full-content review; corrected pointer/heap/bit-width universals to binding/object-identity contract and implementation-dependent representation. Distinguished destructuring from container copying and corrected source link. Mutation/rebinding trace preserved. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS."
       },
-      "reviewDate": "2026-11-17",
+      "reviewDate": "2026-11-24",
       "fullContentRead": true
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md",
-      "sha256": "60f926ee90503a0fdc773804c0d407d2116e35e5769d3776ae01cb544ad5e599",
+      "sha256": "5f50234176f192dee9a2098003a3801d4f49be9a4b225544c93c03307586a0ec",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 2C D1-D7 rework: 04-memory-and-data C1-C8 refinement (2026-11-24): Full read of 172 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "metadataReview": {
@@ -403,10 +403,10 @@
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md",
-      "sha256": "5333ddaf0abc49bf8877b58eb784a77e9ea487e1870e1c6a55b5fe99e5d7d99e",
+      "sha256": "376247e47b94e103a296dd60700a7209cbae3782ad105a30ab75f370f9d3fc21",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 2C D1-D7 rework: 04-memory-and-data C1-C8 refinement (2026-11-24): Full read of 180 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "metadataReview": {
@@ -420,10 +420,10 @@
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.04-debounce.md",
-      "sha256": "c2ec0b0d645339be26dc9145f2f357f56af0c12f6311f0920b07af6068780553",
+      "sha256": "6f572dfb45d291b2daa83bbdf1d51cd16e73968da8660f74f2ead9721d199a4c",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 2C D1-D7 rework: 04-memory-and-data C1-C8 refinement (2026-11-24): Full read of 296 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "metadataReview": {
@@ -440,10 +440,10 @@
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.05-throttle.md",
-      "sha256": "2d28cff690851872b5f7befc3234f6b001f5a7722a1a909ad42b68b737df9f05",
+      "sha256": "b897375c8bac2f15b78088b44b0f2baca502c46e2e86e1da7ce53d379c4f496f",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 2C D1-D7 rework: 04-memory-and-data C1-C8 refinement (2026-11-24): Full read of 272 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "metadataReview": {
@@ -460,10 +460,10 @@
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.06-memory-leaks.md",
-      "sha256": "0921634cbca37e3743e455bb68c4933254a4dbe9596886ebedb167194f69312a",
+      "sha256": "47eb5f62bfec1ec547c4c54424e9ec54167cfeea05a83b5207953fc4ec44b461",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 2C D1-D7 rework: 04-memory-and-data C1-C8 refinement (2026-11-24): Full read of 187 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-24",
@@ -471,10 +471,10 @@
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.07-garbage-collection.md",
-      "sha256": "299d71bce6ae65a099ccc2b15d9a8fab273119f76110d222ad7e93e0a8a9475d",
+      "sha256": "555488f5dcbc6d76373b327eef95e9c352e7176597c5ee9ecb333060210130f7",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 2C D1-D7 rework: 04-memory-and-data C1-C8 refinement (2026-11-24): Full read of 170 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "metadataReview": {
@@ -488,10 +488,10 @@
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md",
-      "sha256": "a960298f92fb1d6689743e30735bf9912bb5748d7e94e514c73b8c3fef52aec9",
+      "sha256": "b4e487a29ed46465e9a57421ff7ebd6f538f251b273e4f9a6689cfc155e2717c",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 2C D1-D7 rework: 04-memory-and-data C1-C8 refinement (2026-11-24): Full read of 172 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "metadataReview": {
@@ -505,10 +505,10 @@
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.09-equality-and-coercion.md",
-      "sha256": "3402e5895a50f667af98d1a81969860ce57c99f4bb67c0c42308651a0a8d9650",
+      "sha256": "525615c550989c26651e82bcb734c9cfd3b6a1ba9ebb8f0b2ed42d9bcb218175",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 2C D1-D7 rework: 04-memory-and-data C1-C8 refinement (2026-11-24): Full read of 200 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "metadataReview": {
@@ -522,10 +522,10 @@
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/INDEX.md",
-      "sha256": "dbcfe08d49c4b4ae044a8a8deaf66368b1434d0465f70d6367dcad529b288330",
+      "sha256": "038207eb163b8abe7118e2b1e179a1d8378ed289d04eb90ef0ac3aca631171f8",
       "genre": "index",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 2C D1-D7 rework: 04-memory-and-data C1-C8 refinement (2026-11-24): Full read of 56 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "metadataReview": {
@@ -542,10 +542,10 @@
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/REVISION.md",
-      "sha256": "2de4718ee4ecd43ca60e5ae486c1b554e2f46b41b71f8bc9a16e63dfa1562032",
+      "sha256": "f6dd88fb9b7ea86a50c886c2e5017ac6b863a84d43f21abebacf232d1aae8071",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 2C D1-D7 rework: 04-memory-and-data C1-C8 refinement (2026-11-24): Full read of 409 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-24",
@@ -702,10 +702,10 @@
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md",
-      "sha256": "d5ebae065536e06237bb044012b8c2932d8007b6f99605e6b08bcec67dd72d48",
+      "sha256": "3eae1e72ee5ba55ccccc7e1c4eceb917ca880c670257b94e525b80ee20734a77",
       "genre": "interview",
       "status": "reviewed",
-      "notes": "Phase 2B D1-D7 rework: 03-async-concurrency count/read-time sync (2026-11-24): Full read of 466 lines. Updated generated counts/read-time navigation after Phase 2B D1-D7 rework: 03-async-concurrency.",
+      "notes": "Phase 2C D1-D7 rework: 04-memory-and-data count/read-time sync (2026-11-24): Full read of 480 lines. Updated generated counts/read-time navigation after Phase 2C D1-D7 rework: 04-memory-and-data.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-24",
@@ -735,10 +735,10 @@
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/INDEX.md",
-      "sha256": "2e3a52712cf1c177a5672a7e083c8ecea1079e1ee5f7545cc9a70f6e5f37f95c",
+      "sha256": "7d88c285497a4042c7a1e8dba223be8329fcc5f000731b45928520f0cf853e7b",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Phase 2B D1-D7 rework: 03-async-concurrency count/read-time sync (2026-11-24): Full read of 50 lines. Updated generated counts/read-time navigation after Phase 2B D1-D7 rework: 03-async-concurrency.",
+      "notes": "Phase 2C D1-D7 rework: 04-memory-and-data count/read-time sync (2026-11-24): Full read of 50 lines. Updated generated counts/read-time navigation after Phase 2C D1-D7 rework: 04-memory-and-data.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-24",
@@ -769,10 +769,10 @@
     },
     {
       "path": "10-frontend/10.1-javascript/INDEX.md",
-      "sha256": "366d09a39c94304acfc695dd6b4548d1ba630a15d0d10f5c111c493b8de85f0d",
+      "sha256": "5b26cb0893c1d8a68d2905d331806ead1ba4de6aece6b7c17628c714a6c8b393",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Phase 2B D1-D7 rework: 03-async-concurrency count/read-time sync (2026-11-24): Full read of 170 lines. Updated generated counts/read-time navigation after Phase 2B D1-D7 rework: 03-async-concurrency.",
+      "notes": "Phase 2C D1-D7 rework: 04-memory-and-data count/read-time sync (2026-11-24): Full read of 170 lines. Updated generated counts/read-time navigation after Phase 2C D1-D7 rework: 04-memory-and-data.",
       "findings": [],
       "reviewer": "root",
       "metadataReview": {
@@ -2237,10 +2237,10 @@
     },
     {
       "path": "10-frontend/INDEX.md",
-      "sha256": "1e036b6d9139c4e3b74d51b89747bc2a83b457c7bb8940c2476ee827cb900367",
+      "sha256": "00b2b5f10d9e66c20650f41f7ee5cd53b37c4abefa4da316adc60138037f3eb7",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Phase 2B D1-D7 rework: 03-async-concurrency count/read-time sync (2026-11-24): Full read of 75 lines. Updated generated counts/read-time navigation after Phase 2B D1-D7 rework: 03-async-concurrency.",
+      "notes": "Phase 2C D1-D7 rework: 04-memory-and-data count/read-time sync (2026-11-24): Full read of 75 lines. Updated generated counts/read-time navigation after Phase 2C D1-D7 rework: 04-memory-and-data.",
       "findings": [],
       "reviewer": "root",
       "metadataReview": {
@@ -10056,12 +10056,12 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "b72b15270f1759594aa27b869456a017d23a3302492ba1047bbb07a884d5b192",
+      "sha256": "9bbf5f8d22be05a5d3cde49d7c424285e089cff793a3481129026b2407526405",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 2B D1-D7 rework: 03-async-concurrency count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 2B D1-D7 rework: 03-async-concurrency.",
+      "notes": "Phase 2C D1-D7 rework: 04-memory-and-data count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 2C D1-D7 rework: 04-memory-and-data.",
       "findings": []
     },
     {
@@ -10251,12 +10251,12 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "5c2ddbd395398b11956c3650ecbfe2739236e13b47421277e2f59ec4c5541633",
+      "sha256": "46643970a36e3a14651c89c184d9254694ff664e50cbb83d39f2cbfc13018abd",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 2B D1-D7 rework: 03-async-concurrency count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 2B D1-D7 rework: 03-async-concurrency.",
+      "notes": "Phase 2C D1-D7 rework: 04-memory-and-data count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 2C D1-D7 rework: 04-memory-and-data.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

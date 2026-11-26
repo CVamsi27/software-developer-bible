@@ -16,19 +16,19 @@ Source: [Modules](10.1.5.01-modules.md)
 
 **Q:** What three properties separate a module from "a script in a wrapper"?
 
-**A:** A separately scoped unit, an explicit public surface and dependencies resolved by a host/toolchain. Unexported names are not directly addressable from imports. State is normally shared for one resolved identity within a loader; different URLs/realms/bundled copies can create separate instances.
+**A:** A separately scoped unit, an explicit public surface, and dependencies resolved by a host or toolchain. Unexported names are not directly addressable from imports. State is normally shared for one resolved identity within a loader; different URLs, realms, or bundled copies can create separate instances.
 
 **Q:** Why does ESM insist that dependencies be static, and what does that buy?
 
-**A:** Static imports let tools discover dependency edges before evaluating bodies, while the host still resolves specifiers. Dynamic import supports computed/conditional loading. Removing unused code requires side-effect and usage analysis plus build configuration; static syntax alone is insufficient.
+**A:** Static imports let tools discover dependency edges before evaluating bodies, while the host still resolves specifiers. Dynamic import supports computed or conditional loading. Removing unused code requires side-effect and usage analysis plus build configuration; static syntax alone is insufficient.
 
 **Q:** Why is module top-level state a singleton, and when is that a hazard?
 
-**A:** Within a loader, one resolved identity normally shares an instance. Different realms/URLs/bundled copies can differ. Shared config/client state may fit; per-request mutable session state needs a separate owner.
+**A:** Within a loader, one resolved identity normally shares an instance. Different realms, URLs, or bundled copies can differ. Shared configuration or client state may fit; per-request mutable session state needs a separate owner.
 
 **Q:** Put the ESM loading pipeline in order.
 
-**A:** Discover dependencies while parsing/loading, resolve identities, obtain their source, link bindings, then evaluate the graph with cycle/await rules. Fetching can overlap, and evaluation sharing is per resolved identity/loader rather than universally once.
+**A:** Discover dependencies while parsing and loading, resolve identities, obtain their source, link bindings, then evaluate the graph with cycle and await rules. Fetching can overlap, and evaluation sharing is per resolved identity and loader rather than universally once.
 
 **Q:** What can CommonJS `require()` do that a static `import` cannot, and what is ESM's escape hatch?
 
@@ -40,11 +40,15 @@ Source: [Modules](10.1.5.01-modules.md)
 
 **Q:** Why can `import { foo } from './utils'` fail in Node ESM yet work in a bundler?
 
-**A:** Node's ESM resolver requires the full path with an extension and does no directory/index guessing; bundlers apply their own `resolve.extensions` config — so dual-target code needs a deliberate strategy (`exports` map, or always ship explicit paths).
+**A:** Node's ESM resolver requires the full path with an extension and does no directory or index guessing; bundlers apply their own `resolve.extensions` config — so dual-target code needs a deliberate strategy (`exports` map, or always ship explicit paths).
 
 **Q:** What must a module provide before a bundler can tree-shake its exports away?
 
 **A:** The build must prove removal preserves behavior. Static named usage often helps; a statically accessed namespace can also be analyzed, and default-object property elimination varies. Package `sideEffects` metadata controls module-level removal in tools such as webpack; incorrect metadata can delete required initialization.
+
+**Q:** What causes the dual-package hazard in Node, and how do ESM live bindings differ from CommonJS destructuring?
+
+**A:** Loading one package via both `import` and `require()` evaluates two separate module instances, splitting singleton state and breaking `instanceof`; ship a single canonical backing build exposed via an ESM wrapper and `"exports"` conditions. ESM imports remain read-only live bindings to the exporter's variable, whereas CommonJS destructuring copies only the initial primitive value.
 
 ## Memoization
 
@@ -68,7 +72,7 @@ Source: [Memoization](10.1.5.02-memoization.md)
 
 **Q:** Object-identity keying vs structural keying — when is each the right choice?
 
-**A:** Identity keying fits a stable immutable instance; mutating it can make a cached result stale. Structural keying requires a defined equivalence rule, such as the complete tenant/query/page tuple in the chapter. JSON serialization is not universal: it can reorder distinctions, discard values or throw.
+**A:** Identity keying fits a stable immutable instance; mutating it can make a cached result stale. Structural keying requires a defined equivalence rule, such as the complete tenant, query, and page tuple in the chapter. JSON serialization is not universal: it can reorder distinctions, discard values, or throw.
 
 **Q:** What goes wrong if an async function's rejected promise gets cached?
 
@@ -112,7 +116,7 @@ Source: [Generators](10.1.5.03-generators.md)
 
 **Q:** Why prefer `for...of` over a manual `while (!done)` loop when both can print the same values?
 
-**A:** A body `break`/`return`/`throw` invokes an available iterator `return()`. Producer `next()` failures differ, and a yielding `finally` may require more pulls, so mandatory cleanup must not depend on that pattern. A manual loop needs its own owned close on early exit.
+**A:** A body `break`, `return`, or `throw` invokes an available iterator `return()`. Producer `next()` failures differ, and a yielding `finally` may require more pulls, so mandatory cleanup must not depend on that pattern. A manual loop needs its own owned close on early exit.
 
 **Q:** An object has a `next()` method but no `Symbol.iterator`. Does `for...of` accept it?
 
@@ -124,7 +128,7 @@ Source: [Generators](10.1.5.03-generators.md)
 
 **Q:** Which iterator helpers exist in Node 26.13.0, and what is missing?
 
-**A:** `Iterator.from`, `map`, `filter`, `take`, `drop`, `toArray`, `Iterator.concat` and their siblings work. The `AsyncIterator` global is absent, so async helper pipelines must use `for await...of` or a library, and every helper must be checked against the target runtime rather than assumed.
+**A:** `Iterator.from`, `map`, `filter`, `take`, `drop`, `toArray`, `Iterator.concat`, and their siblings work. The `AsyncIterator` global is absent, so async helper pipelines must use `for await...of` or a library, and every helper must be checked against the target runtime rather than assumed.
 
 **Q:** What does lazy evaluation change about space, and what does it leave alone?
 
@@ -192,7 +196,7 @@ Source: [Recursion and Tail Calls](10.1.5.05-recursion-tail-call.md)
 
 **Q:** What breaks when you forget `return` in front of the recursive call?
 
-**A:** When a function should return the child’s result but simply calls it and falls through, the caller receives `undefined`. Side-effect-only traversals can correctly omit `return`; the intended result contract decides.
+**A:** When a function should return the child's result but simply calls it and falls through, the caller receives `undefined`. Side-effect-only traversals can correctly omit `return`; the intended result contract decides.
 
 **Q:** At what point should you stop trusting recursion and convert to iteration?
 
@@ -200,7 +204,11 @@ Source: [Recursion and Tail Calls](10.1.5.05-recursion-tail-call.md)
 
 **Q:** ECMAScript mandates proper tail calls, so why can't production code rely on them?
 
-**A:** Qualifying strict-mode tail positions have specified behavior, and WebKit documents its implementation. Support is not portable across deployed engines/configurations; tail-recursive syntax alone cannot establish a safe depth budget. Use a loop, explicit stack or trampoline when the application must handle unbounded depth.
+**A:** Qualifying strict-mode tail positions have specified behavior, and WebKit documents its implementation. Support is not portable across deployed engines and configurations; tail-recursive syntax alone cannot establish a safe depth budget. Use a loop, explicit stack, or trampoline when the application must handle unbounded depth.
+
+**Q:** How does a trampoline keep call-stack space `O(1)` across engines lacking PTC, and why can bottom-up `BigInt` iteration beat memoized recursion?
+
+**A:** A trampoline returns a thunk closure instead of recursing directly, letting an iterative `while (typeof step === 'function')` loop execute arbitrary step counts with one stack frame. Bottom-up `BigInt` iteration avoids both call-stack overflow and `Number.MAX_SAFE_INTEGER` precision loss in constant heap state.
 
 ## Changed conditions
 
@@ -228,7 +236,7 @@ Sources: [Modules](10.1.5.01-modules.md), [Memoization](10.1.5.02-memoization.md
 
 ## Summary
 
-Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
+Revisit the linked chapter when an answer misses the mechanism, a boundary, or a failure case.
 
 ---
 

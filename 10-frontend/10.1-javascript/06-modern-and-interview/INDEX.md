@@ -1,7 +1,7 @@
 # Modern JS & Interview Prep — JavaScript
 
-> **Study time:** ≈ 1 h of reading (7 files, ~9 min average).
-> **7 files.** Selected ECMAScript 2022–2026 features and separate host APIs, Web Workers, DOM events, cross-tab coordination, regular expressions, and a 72-question interview bank.
+> **Study time:** ≈ 1 h 1 m of reading (7 files, ~9 min average).
+> **7 files.** Selected ECMAScript 2022–2026 features and separate host APIs, Web Workers, DOM events, cross-tab coordination, regular expressions, and a 74-question interview bank.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](#chapters)
 [![Category](https://img.shields.io/badge/category-Modern_JS_Interview-orange)](../INDEX.md)
@@ -20,7 +20,7 @@ The Files badge counts these 6 chapters plus the revision companion.
 | 03 | [DOM Events & Delegation](10.1.6.03-dom-events-delegation.md) | Event path, target and listener ownership, delegated actions, propagation, defaults, and cleanup | Essential | Foundational | 6 min |
 | 04 | [Cross-Tab Communication](10.1.6.04-cross-tab-communication.md) | Transient messages, stored recovery, shared owners, locks, and safe cross-tab session updates | Important | Specialized | 7 min |
 | 05 | [Regular Expressions and Text Matching](10.1.6.06-regexp-and-text.md) | Character classes, flags, capture groups, backtracking risk, `lastIndex` state, Unicode and `u` flag, and a redactor example with real stdout | Essential | Important | 9 min |
-| 06 | [Interview Questions](10.1.6.05-interview-questions.md) | 72 curated questions with answers and changed-condition checks | Essential | Foundational | 16 min |
+| 06 | [Interview Questions](10.1.6.05-interview-questions.md) | 74 curated questions with answers and changed-condition checks | Essential | Foundational | 17 min |
 
 ---
 

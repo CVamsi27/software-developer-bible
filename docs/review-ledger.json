@@ -347,132 +347,132 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 2A D1-D7 rework: 02-objects-prototypes-this)."
   },
   "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.md": {
-   "sha256": "eadc603c9204f64b9c6c14f27d39a4fe289cff9d834cba4a84331c2d80d9bfae",
-   "lines": 220,
+   "sha256": "3f016fedf79968883faca8c1c56fb0876cea82b74f1c32aacc02a0512b5b65e4",
+   "lines": 242,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Microtask checkpoints, rendering opportunities, timer clamping and Node's nextTick/libuv phases were checked against the HTML event-loop specification and current Node documentation.",
-    "readable": "Full read of 220 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "862 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 242 lines (952 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "952 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Task and microtask scheduling is owned here; promise settlement and await suspension point at their own chapters.",
-    "fast": "30.5 KB raw / 7.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 30.5 KB raw / 7.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "A tick count cannot guarantee a paint or a timer order; the chapter says rendering does not follow every task and Node phases differ from browser turns."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2B D1-D7 rework: 03-async-concurrency)."
   },
   "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.02-promises.md": {
-   "sha256": "179b6dac77c6e4c5e4da6127605c89d9cf85458eac60604b152ed3f76742bb4d",
-   "lines": 273,
+   "sha256": "c17f69be0136fe62ac81fc41793349ea9a687b4b2e47d96c5ac3a3f32dcf999b",
+   "lines": 304,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Promise states, the resolution procedure, combinator failure semantics and finally behavior were checked against ECMA-262's Promise section and MDN.",
-    "readable": "Full read of 273 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "616 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 304 lines (690 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "690 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Promise state, chaining and combinators are owned here; await suspension and cancellation point at their chapters.",
-    "fast": "41.8 KB raw / 7.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 41.8 KB raw / 7.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "A promise does not start, parallelize or cancel work by itself; the chapter separates initiation from observation and says all short-circuiting leaves other I/O running."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2B D1-D7 rework: 03-async-concurrency)."
   },
   "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.03-async-await.md": {
-   "sha256": "7b8e81e80bb12b82264ee052b6f6f1d09fbe442fc77c2a26e26c6c4afcface3c",
-   "lines": 302,
+   "sha256": "43446bf2d6503f7a5cff2080a7bea2092c3b729cfa2832dc15ff0cb3e8187030",
+   "lines": 341,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Async return adoption, the return await boundary, for await cleanup and the generator-runner caveat were checked against ECMA-262 and MDN.",
-    "readable": "Full read of 302 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "624 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 341 lines (797 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "797 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Await suspension and async iteration are owned here; promise internals, abort and bounded pools point at their chapters.",
-    "fast": "43.1 KB raw / 8.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 43.1 KB raw / 8.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "await does not yield the thread and an async function does not run atomically; the chapter says only event-loop work can interleave, while remote effects can still commit."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2B D1-D7 rework: 03-async-concurrency)."
   },
   "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.04-error-handling.md": {
-   "sha256": "8bae16159b5519bf8295952f2c67ef9d9651be995d4de0213228d1c5f70d18f7",
-   "lines": 267,
+   "sha256": "2173342a661ff9ea9ecf48e1a107abcf53caca6f4d38b78a6bc02e0698080c20",
+   "lines": 308,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "fetch fulfillment on 4xx/5xx, Error.cause, finally overrides and Node unhandled-rejection modes were checked against MDN, ECMA-262 and current Node docs; all three linked pattern chapters exist.",
-    "readable": "Full read of 267 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "721 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 308 lines (798 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "798 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Failure classification and recovery boundaries are owned here; retry policy and idempotency are linked as the canonical implementations.",
-    "fast": "40.9 KB raw / 8.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 40.9 KB raw / 8.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "A catch cannot observe a killed process, certain OOM conditions or a committed remote write; the chapter separates one read from write reconciliation."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2B D1-D7 rework: 03-async-concurrency)."
   },
   "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.05-abort-and-cancellation.md": {
-   "sha256": "0e88d00e85a8dcaeea1590ccef37001b6844bbd8dd0d15b82996931fa9425cde",
-   "lines": 223,
+   "sha256": "af44b6c96316c1b0699715fd6e85c3ced24bfecc3ef607b01a32c8b229ed02bd",
+   "lines": 250,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "AbortSignal.timeout, AbortSignal.any, reason propagation and listener cleanup were checked against MDN and Node's AbortController documentation.",
-    "readable": "Full read of 223 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "532 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 250 lines (591 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "591 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Cooperative cancellation is owned here; promise short-circuiting and pool aborts are linked rather than retold.",
-    "fast": "33.9 KB raw / 6.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 33.9 KB raw / 6.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "A signal cannot preempt a blocked loop, close a remote commit or roll back effects; the chapter says cancellation requests cooperation."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2B D1-D7 rework: 03-async-concurrency)."
   },
   "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.06-bounded-concurrency.md": {
-   "sha256": "423316c9ac89698636670b1830d4fc462b4c97860698ca0e0ba00f0e44fcaa38",
-   "lines": 197,
+   "sha256": "5cafd150314e8f98b3328c13c7d695a40fe9aa5def7fe7acc64a04d186f0f4ec",
+   "lines": 267,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The pool helpers and p-map 7.1.1 API (pMapSettled, pMapIterable backpressure, stopOnError) were checked against the official README; the note was corrected to name pMapSettled.",
-    "readable": "Full read of 197 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "517 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 267 lines (556 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "556 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Start-time budgeting and pool outcomes are owned here; promise aggregation and abort signaling point at their chapters.",
-    "fast": "33.0 KB raw / 6.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 33.0 KB raw / 6.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "A concurrency limit does not rate-limit starts, cancel claimed work or bound response bodies; the chapter names each as a separate policy."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2B D1-D7 rework: 03-async-concurrency)."
   },
   "10-frontend/10.1-javascript/03-async-concurrency/INDEX.md": {
-   "sha256": "0d0099bb38480d5e156acf075586277d30d9ecfecf947ef2887545fc75daba87",
+   "sha256": "67e4ee5217b23ee942e402345cb8c28abd5f578424960aa5e461b6b45cbd71aa",
    "lines": 51,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The 7-file badge was checked against 6 chapter rows plus the revision companion; the Files badge now targets #chapters.",
-    "readable": "Full read of 51 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 51 lines (118 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "118 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Category flow only; each scheduling and failure mechanism is owned by its chapter, and revision is linked separately.",
-    "fast": "11.2 KB raw / 3.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 11.2 KB raw / 3.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "The Docita table cites candidate source paths that cannot prove deployed behavior; the page says to inspect the revision and tests first."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2B D1-D7 rework: 03-async-concurrency)."
   },
   "10-frontend/10.1-javascript/03-async-concurrency/REVISION.md": {
-   "sha256": "42744c174a2860c4174c29895d449ce9318fd2a2614249ef147828677e58a8a4",
-   "lines": 269,
+   "sha256": "4608cbd272b007dc26fef2334de6b6376741dbe4aeb483b48c3d47e88539670a",
+   "lines": 285,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Every prompt was checked against its source chapter; the p-map, AbortSignal.any and unhandled-rejection answers were verified against the linked official documentation.",
-    "readable": "Full read of 269 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "2590 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 285 lines (2836 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "2836 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Revision companion; each mechanism stays in one group and points at its source chapter.",
-    "fast": "30.1 KB raw / 9.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 30.1 KB raw / 9.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Retrieval practice cannot replace the chapters; the opening says to answer without reopening them and revisit when an answer misses a mechanism or boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2B D1-D7 rework: 03-async-concurrency)."
   },
   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.01-pass-by-value.md": {
    "sha256": "96d66bd8c977cae49b616a5824972d58726a59a6f210a777058afc67245caf5f",
@@ -824,20 +824,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md": {
-   "sha256": "b8567444f42737da822398c6afbd0d5eac80c832ee2e79558b3acc97f4b3cb92",
-   "lines": 452,
+   "sha256": "d5ebae065536e06237bb044012b8c2932d8007b6f99605e6b08bcec67dd72d48",
+   "lines": 466,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The 62 questions were checked against their source chapters; iterator-helper availability was re-executed on Node 26.13.0 (Iterator.concat present, AsyncIterator absent), JSON reviver source access was executed, and the edition claims were checked against the TC39 finished-proposals table.",
-    "readable": "Full read of 452 lines (4915 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "4915 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 466 lines (5154 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "5154 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Interview bank with grouped sources; implementations and mechanisms point at their canonical chapters, which own the full explanations.",
     "fast": "Measured 57.5 KB raw / 15.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The bank cannot substitute for the chapters: several answers are deliberately short, and the opening says to use the source links when an answer misses a mechanism or boundary."
    },
-   "notes": "Synced live read-time and counts after Phase 2A D1-D7 rework: 02-objects-prototypes-this."
+   "notes": "Synced live read-time and counts after Phase 2B D1-D7 rework: 03-async-concurrency."
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.06-regexp-and-text.md": {
    "sha256": "8b524fc3b7bd2f401169a3a82df252e7e8efcc8dc7b9d754b7746a1f2b57c27d",
@@ -856,7 +856,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/INDEX.md": {
-   "sha256": "9387174ef5d1b221ba5cf463e498f1be9b80acea85f007edda15630a88a1b792",
+   "sha256": "2e3a52712cf1c177a5672a7e083c8ecea1079e1ee5f7545cc9a70f6e5f37f95c",
    "lines": 50,
    "genre": "index",
    "status": "read",
@@ -869,7 +869,7 @@
     "fast": "Measured 11.3 KB raw / 3.6 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The Order column follows study order while the file prefixes put the interview bank first; readers cannot infer sequence from numbers and must follow the links."
    },
-   "notes": "Synced live read-time and counts after Phase 2A D1-D7 rework: 02-objects-prototypes-this."
+   "notes": "Synced live read-time and counts after Phase 2B D1-D7 rework: 03-async-concurrency."
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/REVISION.md": {
    "sha256": "e1252645b2979c09d3b2c058c8cf6fab4d975d70bbe509fe1ae560c8a3d47e16",
@@ -888,7 +888,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/10.1-javascript/INDEX.md": {
-   "sha256": "1ae981a9d2ef053265f4a69a35f1ca846ec919b31fe755cd2f1c04ed345b4019",
+   "sha256": "366d09a39c94304acfc695dd6b4548d1ba630a15d0d10f5c111c493b8de85f0d",
    "lines": 170,
    "genre": "index",
    "status": "read",
@@ -901,7 +901,7 @@
     "fast": "Measured 29.1 KB raw / 6.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The path cannot guarantee interview coverage; the opening says it is a study order, not a coverage guarantee, and reading time is approximate."
    },
-   "notes": "Synced live read-time and counts after Phase 2A D1-D7 rework: 02-objects-prototypes-this."
+   "notes": "Synced live read-time and counts after Phase 2B D1-D7 rework: 03-async-concurrency."
   },
   "10-frontend/10.2-typescript/01-foundations/10.2.1.01-types-vs-interfaces.md": {
    "sha256": "4233ced19e1b8532cd21769a6a491e52064d03fd11888b1284fe74378c428b8e",
@@ -2979,7 +2979,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/INDEX.md": {
-   "sha256": "8c614f05f16886610d9440739cd8360d10e04478a1f91661b20ede9c7d432bbe",
+   "sha256": "1e036b6d9139c4e3b74d51b89747bc2a83b457c7bb8940c2476ee827cb900367",
    "lines": 75,
    "genre": "index",
    "status": "read",
@@ -2992,7 +2992,7 @@
     "fast": "Measured 14.7 KB raw / 4.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Sets the frontend study order from execution to optional capabilities; it limits itself to navigation and does not teach any mechanism."
    },
-   "notes": "Synced live read-time and counts after Phase 2A D1-D7 rework: 02-objects-prototypes-this."
+   "notes": "Synced live read-time and counts after Phase 2B D1-D7 rework: 03-async-concurrency."
   },
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md": {
    "sha256": "cbb48962f1b1c976f33493d3398af0e10c4deb7f49db4537cb50b8af762ebfe1",
@@ -14357,7 +14357,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "a03220edbf6d6d10fff2ebcd4288e6b28fe728af46663b29f707c4911515f9d5",
+   "sha256": "b72b15270f1759594aa27b869456a017d23a3302492ba1047bbb07a884d5b192",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14370,7 +14370,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 2A D1-D7 rework: 02-objects-prototypes-this."
+   "notes": "Synced live read-time and counts after Phase 2B D1-D7 rework: 03-async-concurrency."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14405,20 +14405,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "contributing.md": {
-   "sha256": "4b73cf1fc1e8995b4c32c2f2bb6c32b50723c29aeb65aad8194f8cc3d2ea884a",
+   "sha256": "60b623e4fa582f9f45e83c1000a5ec2586e854f81b3eb70c3fdca8b020272168",
    "lines": 948,
    "genre": "meta",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against https://github.com/CVamsi27/software-developer-bible contributing conventions and AGENTS.md operating rules.",
-    "readable": "Full read of 948 lines. The contributing guide opens with the hard rules, then walks through the expected workflow, repo conventions, and verification gates in order.",
+    "readable": "Full read of 948 lines (3308 prose words). The contributing guide opens with the hard rules, then walks through the expected workflow, repo conventions, and verification gates in order.",
     "concise": "3308 words of prose after removing YAML fences, badge links and metadata rows.",
     "focused": "Owned: this is the canonical contributor contract; it links to scripts and gates rather than restating their checks.",
-    "fast": "not built as HTML; 53.1 KB Markdown source served raw.",
+    "fast": "Measured not built as HTML; 53.1 KB Markdown source served raw. 1 KB Markdown source served raw.",
     "best": "Does not retell stack content; its boundary is contribution process and it cannot replace reading any chapter."
    },
-   "notes": "Re-read after count restamp; hash now matches disk."
+   "notes": "Synced live read-time and counts after Phase 2B D1-D7 rework: 03-async-concurrency."
   },
   "design-qa.md": {
    "sha256": "4c7ab6ba5a188dc76d474a829bc7e1c1808c7032d41f351806bb1d1cb815bd93",
@@ -14661,7 +14661,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "e9b04f9772324d83c98a5032b3207d8b0efcd69841af634e1f23f2dde534a83f",
+   "sha256": "5c2ddbd395398b11956c3650ecbfe2739236e13b47421277e2f59ec4c5541633",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14674,7 +14674,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 2A D1-D7 rework: 02-objects-prototypes-this."
+   "notes": "Synced live read-time and counts after Phase 2B D1-D7 rework: 03-async-concurrency."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",
@@ -15205,20 +15205,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11B live operational and governance docs)."
   },
   "docs/verification-gates.md": {
-   "sha256": "6f1ba022de027aa5d9f67d114850e9773c1e990a50da96051873dfaa4a831857",
+   "sha256": "21c2f592061b6fd5479f27897109325f48f1d5f6c86d06c85a8416b5a09b1f88",
    "lines": 137,
    "genre": "doc",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against scripts/verify.sh and the 34-gate enumeration in the repository.",
-    "readable": "Full read of 137 lines. The gates document opens with the verification contract, then lists each gate with its command and purpose.",
+    "readable": "Full read of 137 lines (707 prose words). The gates document opens with the verification contract, then lists each gate with its command and purpose.",
     "concise": "707 words of prose after removing YAML fences, badge links and metadata rows.",
     "focused": "Owned: this is the canonical gate registry; it points at scripts rather than restating their logic.",
-    "fast": "78.9 KB raw / 23.7 KB gzip; no separate page weight measured beyond source bytes.",
+    "fast": "Measured 78.9 KB raw / 23.7 KB gzip (no separate page weight measured beyond source bytes.)",
     "best": "Does not implement any gate; its boundary is documentation and it cannot replace running scripts/verify.sh."
    },
-   "notes": "Re-read after count restamp; hash now matches disk."
+   "notes": "Synced live read-time and counts after Phase 2B D1-D7 rework: 03-async-concurrency."
   },
   "lanes/INDEX.md": {
    "sha256": "c644b6e72d032c28309afec9141ec84c7489f4a6819c209b90073e97d8d489a5",

@@ -1,6 +1,6 @@
 # JavaScript — Index
 
-> **Study time:** ≈ 5 h 36 m of reading (42 files, ~8 min average).
+> **Study time:** ≈ 5 h 45 m of reading (42 files, ~8 min average).
 > Core JavaScript concepts from execution context through async patterns, memory management, functional techniques, modern language APIs, cancellation, browser events, cross-tab coordination, and interview practice.
 
 [![Files](https://img.shields.io/badge/files-42-blue)](../../INDEX.md)
@@ -75,12 +75,12 @@ Async behavior is subtle and commonly tested. One agent runs one active synchron
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 11 | [Event Loop](03-async-concurrency/10.1.3.01-event-loop.md) | Synchronous tasks, microtask checkpoints, browser rendering, Node host loop | Essential | Foundational | 9 min |
-| 12 | [Promises](03-async-concurrency/10.1.3.02-promises.md) | Promise states, chaining, error handling, `Promise.all`/`race`/`allSettled`/`any` | Essential | Foundational | 10 min |
-| 13 | [Async/Await](03-async-concurrency/10.1.3.03-async-await.md) | Suspension, serial dependencies vs overlapping I/O, rejection paths and iterator cleanup | Essential | Foundational | 11 min |
-| 14 | [Error Handling](03-async-concurrency/10.1.3.04-error-handling.md) | `try`/`catch`/`finally`, custom errors, error propagation, async error handling, unhandled rejections | Essential | Foundational | 10 min |
-| 15 | [Aborting & Cancellation](03-async-concurrency/10.1.3.05-abort-and-cancellation.md) | `AbortController`/`AbortSignal`, stale-request races, `AbortSignal.timeout`/`any`, listener cleanup, cooperative cancellation | Essential | Foundational | 8 min |
-| 16 | [Bounded Concurrency](03-async-concurrency/10.1.3.06-bounded-concurrency.md) | Task-start limit, failure policy, cancellation, result order and backpressure | Essential | Foundational | 8 min |
+| 11 | [Event Loop](03-async-concurrency/10.1.3.01-event-loop.md) | Synchronous tasks, microtask checkpoints, `MessageChannel` yielding, browser rendering, and Node host loop | Essential | Foundational | 10 min |
+| 12 | [Promises](03-async-concurrency/10.1.3.02-promises.md) | Promise states, `[[PromiseIsHandled]]`, chaining, `Promise.withResolvers` and `Promise.try`, combinators, and deduplication | Essential | Foundational | 11 min |
+| 13 | [Async/Await](03-async-concurrency/10.1.3.03-async-await.md) | Async suspension, `forEach(async)` pitfalls, Top-Level `await`, error boundaries, and payload validation | Essential | Foundational | 13 min |
+| 14 | [Error Handling](03-async-concurrency/10.1.3.04-error-handling.md) | `try`, `catch`, and `finally`, `Error.isError`, `AggregateError`, `Error.cause`, JSON serialization, and retry boundaries | Essential | Foundational | 12 min |
+| 15 | [Aborting & Cancellation](03-async-concurrency/10.1.3.05-abort-and-cancellation.md) | `AbortController` and `AbortSignal`, `AbortSignal.abort`, `{ signal }` teardown, stale-request guards, and limits | Essential | Foundational | 9 min |
+| 16 | [Bounded Concurrency](03-async-concurrency/10.1.3.06-bounded-concurrency.md) | Start limits, fail-fast abort propagation or collect-all outcomes, cancellation, ordered results, and backpressure | Essential | Foundational | 10 min |
 
 **Read order:** Event Loop → Promises → Async/Await → Error Handling → Aborting & Cancellation → Bounded Concurrency. Together, these chapters explain scheduling, failure, cancellation and limits on parallel work.
 
@@ -129,7 +129,7 @@ Selected recent APIs, browser execution/event models and interview practice.
 | 33 | [DOM Events & Delegation](06-modern-and-interview/10.1.6.03-dom-events-delegation.md) | Event path, target and listener ownership, delegation, propagation, default actions, and cleanup | Essential | Foundational | 6 min |
 | 34 | [Cross-Tab Communication](06-modern-and-interview/10.1.6.04-cross-tab-communication.md) | Transient messages, persistent recovery, shared owners, locks, and safe cross-tab session updates | Important | Specialized | 7 min |
 | 35 | [Regular Expressions and Text Matching](06-modern-and-interview/10.1.6.06-regexp-and-text.md) | Character classes, flags, `lastIndex` state, backtracking risk, Unicode and a redaction trace | Essential | Important | 9 min |
-| 36 | [Interview Questions](06-modern-and-interview/10.1.6.05-interview-questions.md) | 68 questions with model answers, implementation prompts, and changed-condition checks | Essential | Foundational | 15 min |
+| 36 | [Interview Questions](06-modern-and-interview/10.1.6.05-interview-questions.md) | 70 questions with model answers, implementation prompts, and changed-condition checks | Essential | Foundational | 15 min |
 
 ---
 

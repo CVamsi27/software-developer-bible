@@ -80,7 +80,7 @@ Source: [Promises](10.1.3.02-promises.md)
 
 **Q:** What actually happens to a rejected promise nobody attached a handler to?
 
-**A:** The host reports an unhandled rejection. Browser `unhandledrejection` and Node behavior depend on host policy, installed handlers and Node's flags; do not rely on one universal warning or termination outcome.
+**A:** The host reports an unhandled rejection. Browser `unhandledrejection` and Node behavior depend on host policy, installed handlers, and Node's flags; do not rely on one universal warning or termination outcome.
 
 **Q:** Three independent requests are awaited in sequence; what does that cost you, and what replaces it?
 
@@ -116,7 +116,7 @@ Source: [Async/Await](10.1.3.03-async-await.md)
 
 **Q:** A loop awaits 100 independent requests; what does that cost, and what is the fix?
 
-**A:** Calling and awaiting one request at a time prevents overlap. Schedule independent work with an explicit concurrency budget so connection limits, upstream quotas and memory stay controlled. An unbounded `Promise.all` is appropriate only when that workload is safe to start together.
+**A:** Calling and awaiting one request at a time prevents overlap. Schedule independent work with an explicit concurrency budget so connection limits, upstream quotas, and memory stay controlled. An unbounded `Promise.all` is appropriate only when that workload is safe to start together.
 
 **Q:** When is a sequential chain of awaits the *right* choice?
 
@@ -124,11 +124,15 @@ Source: [Async/Await](10.1.3.03-async-await.md)
 
 **Q:** What does an explicit `Promise<T>` return type check, and what does it fail to detect?
 
-**A:** It checks the eventual fulfilled value against `T`. Returning another `Promise<T>` is valid because async return adopts it, so this signature does not detect every missing `await`. Await inside a local `try`/`catch` when that `catch` must handle the eventual rejection.
+**A:** It checks the eventual fulfilled value against `T`. Returning another `Promise<T>` is valid because async return adopts it, so this signature does not detect every missing `await`. Await inside a local `try` and `catch` when that `catch` must handle the eventual rejection.
 
 **Q:** Does the conceptual generator runner describe V8's exact native async implementation?
 
 **A:** No. It exposes suspension and error propagation for learning. Native `await` uses specification promise operations, and engines choose their own optimized representation; it need not call a user-overridden `then` on a native promise.
+
+**Q:** Why does `items.forEach(async (item) => ...)` drop execution order and rejections, and when can Top-Level `await` deadlock an ES module graph?
+
+**A:** `Array.prototype.forEach` ignores every returned Promise, so the caller returns before iterations settle and rejections escape the enclosing `try` and `catch`; use `for...of` for sequence or `Promise.all(items.map(...))` for overlap. Top-Level `await` pauses the module and all importing parent modules until settlement, so cyclic imports awaiting each other at top level deadlock initialization.
 
 ## Error Handling
 
@@ -160,11 +164,11 @@ Source: [Error Handling](10.1.3.04-error-handling.md)
 
 **Q:** Why is `throw 'not found'` a review-blocking habit?
 
-**A:** JavaScript permits it, but a string has no standard error name, cause or stack fields. Prefer an `Error` with the diagnostic/category fields the owner needs; callers must still safely handle unknown thrown values.
+**A:** JavaScript permits it, but a string has no standard error name, cause, or stack fields. Prefer an `Error` with the diagnostic and category fields the owner needs; callers must still safely handle unknown thrown values.
 
-**Q:** Where should a `try/catch` sit, and where is it just noise?
+**Q:** Where should a `try` and `catch` block sit, and where is it just noise?
 
-**A:** Place it where code can recover, clean up, translate or choose a Result. A local handler can be appropriate when it owns such a decision; redundant catches that only relog or suppress should let the owning boundary handle it.
+**A:** Place it where code can recover, clean up, translate, or choose a Result. A local handler can be appropriate when it owns such a decision; redundant catches that only relog or suppress should let the owning boundary handle it.
 
 **Q:** A payload parses as JSON but contains a numeric theme. Has `parseJsonSafe` established `ThemeConfig`?
 
@@ -172,7 +176,11 @@ Source: [Error Handling](10.1.3.04-error-handling.md)
 
 **Q:** What does the single-read helper do after cancellation or a malformed payload?
 
-**A:** It propagates the cancellation, parsing or decoder failure and makes no repeated attempt. Retry ownership belongs to the canonical bounded read policy; writes need an additional operation identity and uncertain-outcome policy.
+**A:** It propagates the cancellation, parsing, or decoder failure and makes no repeated attempt. Retry ownership belongs to the canonical bounded read policy; writes need an additional operation identity and uncertain-outcome policy.
+
+**Q:** Why does `JSON.stringify(new Error('boom'))` return `"{}"`, and how should `.cause` chains be logged?
+
+**A:** `name`, `message`, `stack`, and `cause` are non-enumerable on `Error` instances, so JSON serialization omits them unless mapped explicitly. Walk `err` with `Error.isError` and a `WeakSet` visited guard to extract `{ name, message, stack }` and recursively serialize `.cause`.
 
 ## Aborting & Cancellation
 
@@ -214,6 +222,10 @@ Source: [Aborting & Cancellation](10.1.3.05-abort-and-cancellation.md)
 
 **A:** Signal state changes and `abort`-event dispatch happen during that call. Promise observers run later; non-cooperating work and remote effects may still finish. A busy same-agent loop can delay the other task that would call `abort()`, rather than making `abort()` itself asynchronous.
 
+**Q:** How can you clean up many `EventTarget` listeners together on teardown, and when do you use `AbortSignal.abort(reason)`?
+
+**A:** Pass `{ signal: controller.signal }` to each `addEventListener` call so one `controller.abort()` detaches all subscribed handlers automatically without tracking handler references. Use `AbortSignal.abort(reason)` when an API expects an `AbortSignal` and the failure or denial is already known before starting work.
+
 ## Bounded Concurrency & Promise Pools
 
 Source: [Bounded Concurrency & Promise Pools](10.1.3.06-bounded-concurrency.md)
@@ -252,11 +264,15 @@ Source: [Bounded Concurrency & Promise Pools](10.1.3.06-bounded-concurrency.md)
 
 **Q:** Does a pool whose mapper returns `fetch` responses bound complete response-body transfers?
 
-**A:** No. `fetch` resolves when headers arrive; unconsumed bodies can remain active after a slot is released. Consume or cancel each body before mapper completion when that is the bounded unit, and add size/buffer limits.
+**A:** No. `fetch` resolves when headers arrive; unconsumed bodies can remain active after a slot is released. Consume or cancel each body before mapper completion when that is the bounded unit, and add size and buffer limits.
+
+**Q:** How does a fail-fast worker pool stop queued work and interrupt already in-flight siblings on the first failure?
+
+**A:** Create an internal `failController` inside the pool, pass `AbortSignal.any([callerSignal, failController.signal])` (or `failController.signal` when no caller signal exists) to every task and loop condition, and call `failController.abort(err)` on the first caught rejection.
 
 ## Summary
 
-Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
+Revisit the linked chapter when an answer misses the mechanism, a boundary, or a failure case.
 
 ---
 

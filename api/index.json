@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "3fed5b284768dbd55fc53903ebaf8d239f0ee227eecc9ccbe0b143d0b9bc0f91",
+ "corpus_digest": "f51471137298897fe574581a79ea1611d5aff7ef3c300b2340ab01558e454a4f",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5464
+  "read_minutes": 5468
  },
  "chapters": [
   {
@@ -675,7 +675,7 @@
    "g": [
     "concept"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.02-branded-types.html",
@@ -695,7 +695,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.04-declaration-files.html",
@@ -705,7 +705,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.05-advanced-patterns.html",
@@ -715,7 +715,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.06-typescript-compiler-pipeline.html",

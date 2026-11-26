@@ -50,6 +50,10 @@ Source: [The `satisfies` Operator](10.2.4.01-satisfies-operator.md)
 
 **A:** No. Its string index signature accepts that entry if the value has the required shape. A finite key union catches a typo in the table; retained inferred keys catch a typo in later property access.
 
+**Q:** How does `mode satisfies never` verify `switch` exhaustiveness without leaving an unused placeholder binding?
+
+**A:** Writing `mode satisfies never` in the `default` branch asks TypeScript directly whether the narrowed value is `never`, failing compilation if any union member goes unhandled without declaring a variable.
+
 ## Branded Types
 
 Source: [Branded Types](10.2.4.02-branded-types.md)
@@ -88,11 +92,15 @@ Source: [Branded Types](10.2.4.02-branded-types.md)
 
 **Q:** Why check numeric bounds before asserting a unit brand?
 
-**A:** The assertion adds no numeric safety. The constructor or operation must reject non-finite, out-of-range or overflowed results before returning the branded value.
+**A:** The assertion adds no numeric safety. The constructor or operation must reject non-finite, out-of-range, or overflowed results before returning the branded value.
 
 **Q:** How can a parser reject an invalid canonical date such as February 30?
 
 **A:** Parse the YYYY-MM-DD value as UTC and format it back; require the canonical string to equal the input. Also keep calendar dates distinct from instants and local-day calculations.
+
+**Q:** How does `Flavor<T, Name>` differ from `Branded<T, Name>`?
+
+**A:** Because `Flavor` uses an optional phantom property (`readonly [tag]?: Name`), a raw value still satisfies the type without a constructor call while two distinct flavors still reject each other; a strict `Branded` type requires callers to pass through a validating constructor.
 
 ## Decorators
 
@@ -122,7 +130,7 @@ Source: [Decorators](10.2.4.03-decorators.md)
 
 **A:** No; the supplied descriptor remains in use when the decorator returns nothing. Returning is needed when supplying a replacement descriptor.
 
-**Q:** In what order do stacked decorator factories, applications and wrappers run?
+**Q:** In what order do stacked decorator factories, applications, and wrappers run?
 
 **A:** Factory expressions evaluate from top to bottom, decorators apply from bottom to top, and the outer replacement runs first when the method is called.
 
@@ -148,7 +156,7 @@ Source: [Declaration Files (.d.ts)](10.2.4.04-declaration-files.md)
 
 **Q:** Why are imports and exports useful in declarations?
 
-**A:** They connect types and values to a module's public surface. A declaration file's script/module scope determines whether `declare module` declares a runtime-provided module or augments an existing one; its `.d.ts`, `.d.mts` or `.d.cts` module format is a separate Node resolution concern. [Scope and format](10.2.4.04-declaration-files.md#scope-determines-whether-a-declaration-adds-or-extends-names).
+**A:** They connect types and values to a module's public surface. A declaration file's script or module scope determines whether `declare module` declares a runtime-provided module or augments an existing one; its `.d.ts`, `.d.mts`, or `.d.cts` module format is a separate Node resolution concern. [Scope and format](10.2.4.04-declaration-files.md#scope-determines-whether-a-declaration-adds-or-extends-names).
 
 **Q:** Why does the Express example augment `express-serve-static-core`?
 
@@ -172,7 +180,7 @@ Source: [Declaration Files (.d.ts)](10.2.4.04-declaration-files.md)
 
 **Q:** Why should a library test a consumer as well as checking its own declarations?
 
-**A:** A consumer exercises the published entry path, imports and inferred types together. A valid declaration file can still be absent from the package or describe behavior the JavaScript never implements.
+**A:** A consumer exercises the published entry path, imports, and inferred types together. A valid declaration file can still be absent from the package or describe behavior the JavaScript never implements.
 
 **Q:** Why keep a new ambient package declaration separate from its consumer import?
 
@@ -182,13 +190,17 @@ Source: [Declaration Files (.d.ts)](10.2.4.04-declaration-files.md)
 
 **A:** It checks against the declaration's promise. Execute the exported JavaScript as well, and verify both entry paths in the package. [Two-path fixture](10.2.4.04-declaration-files.md#describe-existing-javascript).
 
+**Q:** Why must `"types"` come first inside a `package.json` `exports` branch, and what does `isolatedDeclarations: true` enable?
+
+**A:** TypeScript walks `exports` conditions top-to-bottom and stops on the first matching branch, so placing `"import"` or `"default"` ahead of `"types"` hides declaration paths. `isolatedDeclarations: true` requires explicit annotations on public exports so parallel tools like `oxc` or `swc` can emit `.d.ts` files without running the full type checker.
+
 ## Composing Advanced TypeScript Patterns
 
 Source: [Composing Advanced TypeScript Patterns](10.2.4.05-advanced-patterns.md)
 
 **Q:** What makes a type pattern a composition rather than a new language feature?
 
-**A:** It relates existing generic parameters, key lookups and conditional transforms to enforce an API contract. The runtime implementation must still maintain that relationship.
+**A:** It relates existing generic parameters, key lookups, and conditional transforms to enforce an API contract. The runtime implementation must still maintain that relationship.
 
 **Q:** How does the emitter select the listener's payload type?
 
@@ -222,7 +234,7 @@ Source: [Composing Advanced TypeScript Patterns](10.2.4.05-advanced-patterns.md)
 
 **A:** The copied list still invokes that listener in the current dispatch; removal changes the next emit. A thrown exception instead stops the remaining current calls. [Dispatch policy](10.2.4.05-advanced-patterns.md#dispatch-policy-is-part-of-the-api).
 
-**Q:** Why build a union of event/payload tuples rather than two independent union parameters?
+**Q:** Why build a union of event and payload tuples rather than two independent union parameters?
 
 **A:** Each tuple retains a valid pairing. Independent unions could admit a name from one case with a payload from another. [Correlated contract](10.2.4.05-advanced-patterns.md#first-principles).
 
@@ -254,9 +266,13 @@ Source: [TypeScript Compiler Pipeline](10.2.4.06-typescript-compiler-pipeline.md
 
 **A:** The language service serves incremental editor requests and may use an inferred or different configured project. A clean build applies the selected project graph and build options; run it as a separate release gate.
 
+**Q:** Why do project references require `composite: true`, and why do single-file transpilers (`esbuild`, `swc`, Node native type-stripping) still need `tsc --noEmit` in CI?
+
+**A:** `composite: true` enables declaration emit and enforces root boundaries so downstream projects type-check against emitted `.d.ts` outputs rather than re-checking upstream files. Single-file transpilers strip annotations one file at a time without running the binder or checker, so only a separate `tsc --noEmit` gate validates cross-file contracts.
+
 ## Summary
 
-Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
+Revisit the linked chapter when an answer misses the mechanism, a boundary, or a failure case.
 
 ---
 

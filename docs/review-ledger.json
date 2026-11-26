@@ -1195,132 +1195,132 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 2H D1-D7 rework: 10.2-typescript/03-type-transformations)."
   },
   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.01-satisfies-operator.md": {
-   "sha256": "31cea20b6f75c2012fc8d7eccc4bb356400c75537022c417d797d893097b3b41",
-   "lines": 102,
+   "sha256": "be3b4346fa548311d54e991cb3659bd755d9e5eeb5cd023466b78a31be70f56a",
+   "lines": 125,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The finite/open key, excess/missing key, literal-widening and as-const probes were executed with TypeScript 5.9.3 and 7.0.2 under --strict; the operator's introduction was checked against the official TypeScript 4.9 release notes.",
-    "readable": "Full read of 102 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "493 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 125 lines (535 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "535 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "The satisfies choice is owned here; mapped and utility contracts, generic constraints and narrowing point at their chapters.",
-    "fast": "20.1 KB raw / 4.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 20.1 KB raw / 4.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "satisfies is erased and cannot validate runtime data; an open record accepts any key and an annotation still widens the variable to the declared contract."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns)."
   },
   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.02-branded-types.md": {
-   "sha256": "523b58605e983b9a1a9ac13dacae261351fe1c883c6e318a808e24aca476b4e8",
-   "lines": 156,
+   "sha256": "c26386f92486107525dff12084e06e02dffd99d6028f2b1db8ae01ee4490cbe0",
+   "lines": 168,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The ID, unit, currency and flavor examples were executed with TypeScript 5.9.3 and 7.0.2 under --strict, including every expected error; NoInfer was checked against the official 5.4 release notes and the date round trip was run under Node 26.13.0.",
-    "readable": "Full read of 156 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "598 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 168 lines (621 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "621 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Brand construction and domain invariants are owned here; narrowing, generics, NoInfer and type transformations point at their chapters.",
-    "fast": "28.8 KB raw / 6.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 28.8 KB raw / 6.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "A brand cannot validate or authenticate anything by itself: assertions and serialization bypass it, units need explicit operations, and an optional flavor still admits raw values."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns)."
   },
   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.md": {
-   "sha256": "da692e5f1a3fe9acb24f53beb39144c4d7cf87e0b290caecac0b457fc1cd3824",
-   "lines": 166,
+   "sha256": "a2f535b2a344d9c378ef4047b3c837effb5eeb58b058c96bb41da40c7ecfc8ed",
+   "lines": 196,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The newer-convention method wrapper and accessor validator were compiled and executed with TypeScript 5.9.3 and compiled with 7.0.2 under --strict; the convention split and metadata limits were checked against the official TypeScript 5.0 and 5.2 release notes.",
-    "readable": "Full read of 166 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "792 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 196 lines (827 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "827 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Decorator phases and conventions are owned here; class behavior points at JavaScript and NestJS metadata handling points at its backend chapter.",
-    "fast": "25.6 KB raw / 6.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 25.6 KB raw / 6.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "A decorator cannot execute a framework request or validate later writes by itself: metadata needs a consumer, a field decorator cannot intercept every assignment, and a synchronous wrapper does not await a promise."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns)."
   },
   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.04-declaration-files.md": {
-   "sha256": "632896466587c7a79eadee2a21090a5ef75323b273de0e7d421c3300f31b6228",
-   "lines": 156,
+   "sha256": "29045f0779854791dc0a6e8f834fe1f801dfc0f2b24ad4072ae890631a5dad25",
+   "lines": 159,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Ambient-module, module-augmentation, global-scope and triple-slash-position fixtures were compiled with TypeScript 5.9.3; the scope rules were checked against the compiler output and the official declaration-file handbook.",
-    "readable": "Full read of 156 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "765 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 159 lines (836 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "836 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Declaration scope, augmentation and packaging are owned here; narrowing, generics and module basics point at their chapters.",
-    "fast": "21.6 KB raw / 5.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 21.6 KB raw / 5.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "A declaration cannot supply an implementation or prove runtime behavior: manual .d.ts inputs are not copied into dist, and a packed consumer must still execute the JavaScript."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns)."
   },
   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.05-advanced-patterns.md": {
-   "sha256": "bfab519b360a61f03a99b9f6375fd089ca68b4685e4addc812c04444d14a1267",
-   "lines": 140,
+   "sha256": "5bd5228aa166ed5bbaadd796414863f1862a0a7869e53b5c4e01206171d363e1",
+   "lines": 158,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The typed event bus was compiled with TypeScript 5.9.3 and 7.0.2 under --strict and executed under Node 26.13.0; the unsubscribe, thrown-listener and promise-return traces were checked at runtime.",
-    "readable": "Full read of 140 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "564 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 158 lines (614 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "614 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Correlated event typing and dispatch policy are owned here; conditional, mapped, template and compiler pages are linked as separate mechanisms, not retold.",
-    "fast": "25.5 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 25.5 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "The type cannot validate an emitted message or control delivery: any bypasses the tuple union, a thrown listener stops later calls, and promises are not awaited."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns)."
   },
   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.06-typescript-compiler-pipeline.md": {
-   "sha256": "e82af75cdb71d9d534d46464e8195ed10dbbb9aa03c01bbe7cb223d7028c4d64",
-   "lines": 106,
+   "sha256": "34b68a679ecb502a4774a9750bb3851f257a761872b07243308d1390cea27f23",
+   "lines": 107,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The noEmitOnError and emit-with-errors behavior was executed with TypeScript 5.9.3; the TypeScript 7 package layout was inspected from npm typescript@7.0.2, and the no-API claim was checked against the official 7.0 announcement.",
-    "readable": "Full read of 106 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "956 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 107 lines (1039 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1039 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Program construction, checking/emit boundaries and API generations are owned here; tsconfig options, declaration packaging and module resolution point at their chapters.",
-    "fast": "17.7 KB raw / 5.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 17.7 KB raw / 5.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "A green check cannot prove runtime loading: diagnostics and output have separate controls, editor state is not a clean build, and TypeScript 7 does not ship the classic JavaScript Compiler API."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns)."
   },
   "10-frontend/10.2-typescript/04-advanced-patterns/INDEX.md": {
-   "sha256": "65a27dc6852bfdf9c08606cbc588adc24dbbb3899ecd363fe4b5d5980016c6a4",
+   "sha256": "f3196d98dcbc8651606810ec831af2e593500b7e1564d02b19782939c2418f06",
    "lines": 54,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The 7-file badge was checked against six chapter rows plus the revision companion; the 42-minute study time was checked against chapter badges (4 + 7 + 7 + 6 + 6 + 6) plus the 6-minute revision.",
-    "readable": "Full read of 54 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 54 lines (160 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "160 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Category flow only; each chapter's mechanism is owned by its file and linked once, while revision is pointed at rather than summarized.",
-    "fast": "12.0 KB raw / 3.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 12.0 KB raw / 3.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "The Docita rows name candidate source locations, and the page says a path does not establish deployed behavior; inspect the checked-out revision and tests before citing it as implementation evidence."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns)."
   },
   "10-frontend/10.2-typescript/04-advanced-patterns/REVISION.md": {
-   "sha256": "1cecb7cc828c73ca23bb3cf88864053d2c9be0c27a624f51ab256bfde22711fa",
-   "lines": 269,
+   "sha256": "5d2e96711f945c7d02d9ad862971ccaec17c965a5b2e093d50c8ea78ea5176ac",
+   "lines": 285,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Every prompt was checked against its source chapter; the satisfies, brand, decorator, event-bus and compiler-API claims were re-executed or re-inspected with TypeScript 5.9.3 and 7.0.2, and the 7.0 package layout was checked from npm.",
-    "readable": "Full read of 269 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "2225 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 285 lines (2463 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "2463 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Revision companion; each mechanism stays in one source group and points at its chapter rather than retelling it.",
-    "fast": "26.3 KB raw / 8.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 26.3 KB raw / 8.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Retrieval practice cannot replace the chapters: the opening says to answer without reopening them and revisit the linked source when an answer misses a mechanism, boundary or failure case."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns)."
   },
   "10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.md": {
    "sha256": "39b574d3087387c754ee551e838edd74ed82a54e5856a86442af56558686dd17",
@@ -1355,7 +1355,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/10.2-typescript/INDEX.md": {
-   "sha256": "3ab2fb92975ba7dcbff0495c17c08ee36c0712bb154420f3f5de2fa14f8548cf",
+   "sha256": "83a19d3ddbf08c99eff2520d1cc858638bbe16f4ac4c2cbfae328fe3924e07fe",
    "lines": 129,
    "genre": "index",
    "status": "read",
@@ -1368,7 +1368,7 @@
     "fast": "Measured 20.9 KB raw / 5.3 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The Chapters column counts 19 learning chapters while the badge counts 23 content files, a limit of the table: the four revision companions must be found in each category index."
    },
-   "notes": "Synced live read-time and counts after Phase 2H D1-D7 rework: 10.2-typescript/03-type-transformations."
+   "notes": "Synced live read-time and counts after Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns."
   },
   "10-frontend/10.3-react/01-react-internals/10.3.1.01-virtual-dom.md": {
    "sha256": "01645452f07517a51b27f63934d8dbdce8041127b4c0be948f0ae1849297c870",
@@ -2986,7 +2986,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/INDEX.md": {
-   "sha256": "a82bbea7a1259ebe03ae8ce8424146def2a85d6e0667e55453263356688dc286",
+   "sha256": "cdcb08c2c2530c7d71aa75c7e0c8cb4395d32e53c4377effdf3bbb05918eb5f5",
    "lines": 75,
    "genre": "index",
    "status": "read",
@@ -2999,7 +2999,7 @@
     "fast": "Measured 14.7 KB raw / 4.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Sets the frontend study order from execution to optional capabilities; it limits itself to navigation and does not teach any mechanism."
    },
-   "notes": "Synced live read-time and counts after Phase 2H D1-D7 rework: 10.2-typescript/03-type-transformations."
+   "notes": "Synced live read-time and counts after Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns."
   },
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md": {
    "sha256": "cbb48962f1b1c976f33493d3398af0e10c4deb7f49db4537cb50b8af762ebfe1",
@@ -14364,7 +14364,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "0ec478d1a46c8b24c9860b2afeab064e5853b7189f68cc9dd7431a7e0c1310ab",
+   "sha256": "6971ae4fd4ccc95db00ff3913d77d30bd0c9ee6b708f358ffc34d399bf03cc64",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14377,7 +14377,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 2H D1-D7 rework: 10.2-typescript/03-type-transformations."
+   "notes": "Synced live read-time and counts after Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14668,7 +14668,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "822ac1c7088a5d8755f3251b44c4e9b6ad7922a13269ead38a4e0a4516c0853f",
+   "sha256": "400ea8883f83445b1e4d2ce0f1df8ca4981906b7380a5e65cf69b65c78bbbb17",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14681,7 +14681,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 2H D1-D7 rework: 10.2-typescript/03-type-transformations."
+   "notes": "Synced live read-time and counts after Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

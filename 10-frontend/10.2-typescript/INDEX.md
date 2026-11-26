@@ -1,6 +1,6 @@
 # TypeScript — Index
 
-> **Study time:** ≈ 3 h 25 m of reading (23 files, ~9 min average).
+> **Study time:** ≈ 3 h 29 m of reading (23 files, ~9 min average).
 > **23 files** — TypeScript type system mastery from basic types to branded types, template literals, declaration files, advanced generics, variance, decorators, the `satisfies` operator, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-23-blue)](../../INDEX.md)
@@ -83,12 +83,12 @@ Senior-level TS — types as a design tool.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 13 | [The `satisfies` Operator](04-advanced-patterns/10.2.4.01-satisfies-operator.md) | Type validation without widening, literal preservation, config objects, route tables | Essential | Foundational | 4 min |
-| 14 | [Branded Types](04-advanced-patterns/10.2.4.02-branded-types.md) | Nominal-like branding, units, boundary validation, flavoring, discriminated unions | Important | Specialized | 7 min |
-| 15 | [Decorators](04-advanced-patterns/10.2.4.03-decorators.md) | Newer and legacy conventions, wrappers, accessors and metadata consumers | Important | Specialized | 7 min |
-| 16 | [Declaration Files](04-advanced-patterns/10.2.4.04-declaration-files.md) | `.d.ts` syntax, module augmentation, global types, asset declarations, triple-slash directives | Important | Specialized | 6 min |
-| 17 | [Advanced Patterns](04-advanced-patterns/10.2.4.05-advanced-patterns.md) | Composed event/payload contracts, dispatch, cleanup and failure policy | Important | Specialized | 6 min |
-| 18 | [TypeScript Compiler Pipeline](04-advanced-patterns/10.2.4.06-typescript-compiler-pipeline.md) | Program graph, resolution, parse/bind/check/emit, build and editor boundaries | Important | Specialized | 6 min |
+| 13 | [The `satisfies` Operator](04-advanced-patterns/10.2.4.01-satisfies-operator.md) | Finite and open keys, contextual inference, `as const satisfies`, and `satisfies never` | Essential | Foundational | 5 min |
+| 14 | [Branded Types](04-advanced-patterns/10.2.4.02-branded-types.md) | Opaque `unique symbol` IDs, validated units and currency, flavors, and runtime trust boundaries | Important | Specialized | 7 min |
+| 15 | [Decorators](04-advanced-patterns/10.2.4.03-decorators.md) | Newer TC39 and legacy modes, `@bound` initializers, accessors, metadata consumers, and `erasableSyntaxOnly` | Important | Specialized | 8 min |
+| 16 | [Declaration Files](04-advanced-patterns/10.2.4.04-declaration-files.md) | `.d.ts` scope, module augmentation, `exports` `"types"` order, and `isolatedDeclarations` | Important | Specialized | 7 min |
+| 17 | [Advanced Patterns](04-advanced-patterns/10.2.4.05-advanced-patterns.md) | Correlated event and payload tuples, `void` events, dispatch, cleanup, and failure policy | Important | Specialized | 7 min |
+| 18 | [TypeScript Compiler Pipeline](04-advanced-patterns/10.2.4.06-typescript-compiler-pipeline.md) | Program graph, resolution, parse, bind, check, emit, `composite` references, and transpiler boundaries | Important | Specialized | 6 min |
 
 ---
 

@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27",
- "url_count": 2813,
+ "url_count": 2814,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -9387,6 +9387,9 @@
   ],
   "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-5.html#inferred-type-predicates": [
    "10-frontend/10.2-typescript/01-foundations/10.2.1.03-type-narrowing.md"
+  ],
+  "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-5.html#isolated-declarations": [
+   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.04-declaration-files.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-9.html": [
    "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md"

@@ -1,6 +1,6 @@
 # Objects, Prototypes & `this` — JavaScript
 
-> **Study time:** ≈ 28 min of reading (4 files, ~7 min average).
+> **Study time:** ≈ 37 min of reading (4 files, ~9 min average).
 > **4 files.** JavaScript's object model: how `this` binding really works, the prototype chain behind every property lookup, and metaprogramming with `Proxy` and `Reflect`.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](#chapters)
@@ -15,9 +15,9 @@ The Files badge counts these 3 chapters plus the revision companion.
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [`this` Keyword](10.1.2.01-this.md) | Invocation receiver, lexical arrows, `call`/`apply`/`bind`, callbacks and construction | Essential | Foundational | 9 min |
-| 02 | [Prototypes](10.1.2.02-prototypes.md) | Prototype chain, `__proto__`, `Object.create`, class-based inheritance, `class` keyword | Essential | Foundational | 8 min |
-| 03 | [Proxy & Reflect](10.1.2.03-proxy-reflect.md) | Metaprogramming, traps, validation, reactive patterns (Vue 3 uses these) | Important | Specialized | 8 min |
+| 01 | [`this` Keyword](10.1.2.01-this.md) | Implicit and explicit binding, sloppy boxing, `.bind()` slots, arrow functions, callbacks, and construction | Essential | Foundational | 11 min |
+| 02 | [Prototypes](10.1.2.02-prototypes.md) | Prototype chain, 4-step `new`, descriptors, `__proto__`, `Object.create`, `instanceof`, `class`, and pollution | Essential | Foundational | 11 min |
+| 03 | [Proxy & Reflect](10.1.2.03-proxy-reflect.md) | Metaprogramming traps, receiver forwarding, invariants, internal slots, and lazy `WeakMap` wrapping | Important | Specialized | 11 min |
 
 ---
 
@@ -33,7 +33,7 @@ Trace one shared method called on two objects, then explain what changes when a 
 
 ## Docita Anchor
 
-Examples in [Docita](https://github.com/CVamsi27/docita), a healthcare-platform repository with a NestJS API and React/Astro apps in a TypeScript monorepo. Study the chapter, then locate the implementation:
+Examples in [Docita](https://github.com/CVamsi27/docita), a healthcare-platform repository with a NestJS API and React and Astro apps in a TypeScript monorepo. Study the chapter, then locate the implementation:
 
 | Topic in this category | Docita evidence |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |

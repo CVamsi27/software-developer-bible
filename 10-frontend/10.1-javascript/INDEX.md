@@ -1,6 +1,6 @@
 # JavaScript — Index
 
-> **Study time:** ≈ 5 h 26 m of reading (42 files, ~8 min average).
+> **Study time:** ≈ 5 h 36 m of reading (42 files, ~8 min average).
 > Core JavaScript concepts from execution context through async patterns, memory management, functional techniques, modern language APIs, cancellation, browser events, cross-tab coordination, and interview practice.
 
 [![Files](https://img.shields.io/badge/files-42-blue)](../../INDEX.md)
@@ -63,9 +63,9 @@ JavaScript object properties resolve through prototype chains; class syntax buil
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 08 | [`this` Keyword](02-objects-prototypes-this/10.1.2.01-this.md) | Implicit/explicit binding, arrow functions, `call`/`apply`/`bind` | Essential | Foundational | 9 min |
-| 09 | [Prototypes](02-objects-prototypes-this/10.1.2.02-prototypes.md) | Prototype chain, `__proto__`, `Object.create`, inheritance and `class` syntax | Essential | Foundational | 8 min |
-| 10 | [Proxy & Reflect](02-objects-prototypes-this/10.1.2.03-proxy-reflect.md) | Operation interception, receiver forwarding, invariants, reactive dependencies | Important | Specialized | 8 min |
+| 08 | [`this` Keyword](02-objects-prototypes-this/10.1.2.01-this.md) | Implicit and explicit binding, sloppy boxing, `.bind()` slots, arrow functions, callbacks, and construction | Essential | Foundational | 11 min |
+| 09 | [Prototypes](02-objects-prototypes-this/10.1.2.02-prototypes.md) | Prototype chain, 4-step `new`, descriptors, `__proto__`, `Object.create`, `instanceof`, `class`, and pollution | Essential | Foundational | 11 min |
+| 10 | [Proxy & Reflect](02-objects-prototypes-this/10.1.2.03-proxy-reflect.md) | Metaprogramming traps, receiver forwarding, invariants, internal slots, and lazy `WeakMap` wrapping | Important | Specialized | 11 min |
 
 ---
 
@@ -129,7 +129,7 @@ Selected recent APIs, browser execution/event models and interview practice.
 | 33 | [DOM Events & Delegation](06-modern-and-interview/10.1.6.03-dom-events-delegation.md) | Event path, target and listener ownership, delegation, propagation, default actions, and cleanup | Essential | Foundational | 6 min |
 | 34 | [Cross-Tab Communication](06-modern-and-interview/10.1.6.04-cross-tab-communication.md) | Transient messages, persistent recovery, shared owners, locks, and safe cross-tab session updates | Important | Specialized | 7 min |
 | 35 | [Regular Expressions and Text Matching](06-modern-and-interview/10.1.6.06-regexp-and-text.md) | Character classes, flags, `lastIndex` state, backtracking risk, Unicode and a redaction trace | Essential | Important | 9 min |
-| 36 | [Interview Questions](06-modern-and-interview/10.1.6.05-interview-questions.md) | 66 questions with model answers, implementation prompts, and changed-condition checks | Essential | Foundational | 14 min |
+| 36 | [Interview Questions](06-modern-and-interview/10.1.6.05-interview-questions.md) | 68 questions with model answers, implementation prompts, and changed-condition checks | Essential | Foundational | 15 min |
 
 ---
 

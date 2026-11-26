@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-JavaScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -40,7 +40,7 @@ Source: [This](10.1.2.01-this.md)
 
 **Q:** Inside `setInterval(function () { this.seconds++; })` on a `Timer`, which object does `this` refer to?
 
-**A:** The host supplies the receiver, not the owning `Timer`: browser timers supply the window/global receiver even for a strict callback, while Node has its own timer receiver behavior. A closure or bound callback can explicitly retain the `Timer` instance.
+**A:** The host supplies the receiver, not the owning `Timer`: browser timers supply the global `window` receiver even for a strict callback, while Node has its own timer receiver behavior. A closure or bound callback can explicitly retain the `Timer` instance.
 
 **Q:** Why does a plain `function inner()` nested inside a method ignore that method's `this`, and what is the fix?
 
@@ -80,11 +80,15 @@ Source: [Prototypes](10.1.2.02-prototypes.md)
 
 **Q:** Two quick checks settle most "which object is on the chain?" questions — what are they?
 
-**A:** `Object.getPrototypeOf` reports the immediate link. Default `instanceof` checks for the constructor's prototype in the chain, but custom `Symbol.hasInstance`, altered chains and cross-realm values can change the interpretation.
+**A:** `Object.getPrototypeOf` reports the immediate link. Default `instanceof` checks for the constructor's prototype in the chain, but custom `Symbol.hasInstance`, altered chains, and cross-realm values can change the interpretation.
 
 **Q:** Does every write to an inherited primitive value create an own property?
 
 **A:** No. An inherited writable data descriptor can allow an own receiver property, while an inherited setter receives the receiver and a non-writable data descriptor blocks assignment. Primitive versus object value is not the deciding condition.
+
+**Q:** What are the four runtime steps of `new Constructor(...args)`, and when does an explicit `return` win?
+
+**A:** First allocate a new object linked to `Constructor.prototype`, second call `Constructor` with `this` set to that object and `new.target` set to the constructor, third inspect any explicit return value, and fourth return that explicit value if it is an object or function — otherwise return the newly constructed `this` object (returned primitives are ignored).
 
 ## Proxy & Reflect
 
@@ -108,7 +112,7 @@ Source: [Proxy & Reflect](10.1.2.03-proxy-reflect.md)
 
 **Q:** What happens to a proxy after `revoke()` runs?
 
-**A:** Further trapped object operations such as `get`/`has` throw `TypeError`, while the raw target remains usable. Values previously returned from the proxy are not recursively revoked.
+**A:** Further trapped object operations such as `get` and `has` throw `TypeError`, while the raw target remains usable. Values previously returned from the proxy are not recursively revoked.
 
 **Q:** Why is `new Proxy(42, {})` rejected, and when is the `apply` trap consulted?
 
@@ -116,7 +120,7 @@ Source: [Proxy & Reflect](10.1.2.03-proxy-reflect.md)
 
 **Q:** Where should a proxy sit relative to a hot loop?
 
-**A:** Measure the workload before optimizing: overhead depends on engine, handler and operation, not a fixed multiplier. Raw-target access bypasses interception and must not skip required validation or tracking.
+**A:** Measure the workload before optimizing: overhead depends on engine, handler, and operation, not a fixed multiplier. Raw-target access bypasses interception and must not skip required validation or tracking.
 
 **Q:** What do you gain by writing `Reflect.set(target, prop, value, receiver)` inside the trap instead of `target[prop] = value`?
 
@@ -124,15 +128,19 @@ Source: [Proxy & Reflect](10.1.2.03-proxy-reflect.md)
 
 **Q:** Why is tracking a synchronous property read not enough to define a production reactive effect's lifecycle?
 
-**A:** The runtime also needs rules for reads after `await`, stale dependency cleanup, errors, re-entry and scheduling. A Proxy `get`/`set` sketch explains dependency capture and notification, but it does not decide those lifecycle contracts.
+**A:** The runtime also needs rules for reads after `await`, stale dependency cleanup, errors, re-entry, and scheduling. A Proxy `get` and `set` sketch explains dependency capture and notification, but it does not decide those lifecycle contracts.
 
 **Q:** In the `fullName` getter example, does `target[prop]` bind `this` to the parent prototype?
 
 **A:** No; the target is `child`, so both approaches produce `'Alice Smith'`. `Reflect.get` preserves the proxy receiver and therefore traps the nested `firstName` and `lastName` reads too; direct target access skips those nested traps.
 
+**Q:** Why does `new Proxy(new Map(), {}).get('a')` throw `TypeError`, and why must deep proxy wrappers cache nested objects in a `WeakMap`?
+
+**A:** Native collections verify internal slots such as `[[MapData]]` (and classes verify private `#field` brands) on `this`, which fails when `this` is the proxy wrapper rather than the raw `Map` — fix it in the `get` trap by binding methods to `target` (`val.bind(target)`). Because proxies only wrap one object shallowly, lazy nested wrapping uses a `WeakMap` cache so repeated reads return the same proxy identity (`proxy.nested === proxy.nested`) without pinning target memory.
+
 ## Summary
 
-Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
+Revisit the linked chapter when an answer misses the mechanism, a boundary, or a failure case.
 
 ---
 

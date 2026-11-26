@@ -267,84 +267,84 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework)."
   },
   "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.01-this.md": {
-   "sha256": "318b4762660eebfda3b30d4123cff8e5e8ad9cdfeaaede174f65b9fad67f842d",
-   "lines": 224,
+   "sha256": "eb39c27359e164a65827e46c503e3c21d341f2af28b563b00a2b37112001d6f7",
+   "lines": 272,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The invocation rules, arrow [[ThisBindingStatus]], host timer receivers and TypeScript this-parameter behavior were checked against ECMA-262 and MDN; the title now reads The `this` Keyword.",
-    "readable": "Full read of 224 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "711 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 272 lines (838 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "838 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Receiver selection is owned here; prototype method sharing and closure capture point at their own chapters.",
-    "fast": "32.4 KB raw / 7.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 32.4 KB raw / 7.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "The precedence table cannot be reduced to one universal order: bound functions, arrows, construction and host callbacks add rules, and the chapter says so before the table."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2A D1-D7 rework: 02-objects-prototypes-this)."
   },
   "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.md": {
-   "sha256": "4cc172d7d8475b99c62c92ac99ce83107c98f9a7361250b606bfe74aa9521c95",
-   "lines": 213,
+   "sha256": "dfeede1606c444d119fe1694b632e46e4faef98fa50706141d50f72e003a9a82",
+   "lines": 286,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The [[Prototype]] chain, class dual chains, descriptor write rules and prototype-pollution payload were checked against ECMA-262 and MDN.",
-    "readable": "Full read of 213 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "605 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 286 lines (852 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "852 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Prototype delegation and pollution are owned here; this-binding and Proxy traps point at their own chapters.",
-    "fast": "37.1 KB raw / 7.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 37.1 KB raw / 7.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "A write to an inherited value does not always create an own property; inherited setters and non-writable descriptors can change the result."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2A D1-D7 rework: 02-objects-prototypes-this)."
   },
   "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.03-proxy-reflect.md": {
-   "sha256": "0f2c1f6133576e303e8ae76db42e1c83dd7e2b65ac15055562b6a775cc5dabd8",
-   "lines": 204,
+   "sha256": "48a741f45219eabe9530279f19dbcf4382113415dafe692985c1be30a004b336",
+   "lines": 280,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The 13 traps, Reflect receiver forwarding and invariant checks were checked against ECMA-262's Proxy section and MDN; private-field brand checks were corrected.",
-    "readable": "Full read of 204 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "675 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 280 lines (795 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "795 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Proxy and Reflect semantics are owned here; the architectural Proxy pattern is linked as a separate pattern.",
-    "fast": "33.2 KB raw / 7.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 33.2 KB raw / 7.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "A proxy does not preserve identity and cannot act as a sandbox: raw-target references bypass traps, revoked proxies throw, and proxy !== target."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2A D1-D7 rework: 02-objects-prototypes-this)."
   },
   "10-frontend/10.1-javascript/02-objects-prototypes-this/INDEX.md": {
-   "sha256": "8ae3fe9ab21240fee57736d5839aae390b4fcb5daebc08ac2434f21b9b3b6215",
+   "sha256": "b3d85565ebd0dabee49756c014c646cfb17b4d3dbb4cc59cba261bb4cb2a7f47",
    "lines": 51,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The 4-file badge was checked against 3 chapter rows plus the revision companion; the anchor now targets #chapters.",
-    "readable": "Full read of 51 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "124 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 51 lines (126 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "126 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Category flow only; chapters own the receiver, prototype and trap mechanics, and revision is linked separately.",
-    "fast": "10.7 KB raw / 3.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 10.7 KB raw / 3.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "The Docita table lists candidate source paths that cannot prove deployed behavior; the page says to inspect the revision and tests."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2A D1-D7 rework: 02-objects-prototypes-this)."
   },
   "10-frontend/10.1-javascript/02-objects-prototypes-this/REVISION.md": {
-   "sha256": "06766b57b94f4afe3eb88934ce2add63125bee5d1f0c9f33dd8ee8a0f2c0d0f7",
-   "lines": 145,
+   "sha256": "26cae995ada0ffec57286fee802aa104029f1e8c478d9773c1659e787b696a1f",
+   "lines": 153,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Every prompt was checked against its source chapter; the receiver, prototype-write and proxy-revocation answers were verified against the linked specification sections.",
-    "readable": "Full read of 145 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1300 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 153 lines (1470 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1470 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Revision companion; it points at source chapters and keeps each mechanism in one group.",
-    "fast": "19.9 KB raw / 6.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 19.9 KB raw / 6.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Retrieval practice cannot replace the chapters; the opening says to answer without reopening them and return when a mechanism or boundary is missing."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 2A D1-D7 rework: 02-objects-prototypes-this)."
   },
   "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.md": {
    "sha256": "eadc603c9204f64b9c6c14f27d39a4fe289cff9d834cba4a84331c2d80d9bfae",
@@ -824,20 +824,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md": {
-   "sha256": "b3a794112ac07f50780c22b35b574519b32f25969e18be7c13f9f01d2220e839",
-   "lines": 438,
+   "sha256": "b8567444f42737da822398c6afbd0d5eac80c832ee2e79558b3acc97f4b3cb92",
+   "lines": 452,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The 62 questions were checked against their source chapters; iterator-helper availability was re-executed on Node 26.13.0 (Iterator.concat present, AsyncIterator absent), JSON reviver source access was executed, and the edition claims were checked against the TC39 finished-proposals table.",
-    "readable": "Full read of 438 lines (4649 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "4649 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 452 lines (4915 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "4915 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Interview bank with grouped sources; implementations and mechanisms point at their canonical chapters, which own the full explanations.",
     "fast": "Measured 57.5 KB raw / 15.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The bank cannot substitute for the chapters: several answers are deliberately short, and the opening says to use the source links when an answer misses a mechanism or boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework)."
+   "notes": "Synced live read-time and counts after Phase 2A D1-D7 rework: 02-objects-prototypes-this."
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.06-regexp-and-text.md": {
    "sha256": "8b524fc3b7bd2f401169a3a82df252e7e8efcc8dc7b9d754b7746a1f2b57c27d",
@@ -856,7 +856,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/INDEX.md": {
-   "sha256": "19ec9faa0cf8dea90f7ee5ce2c1449f0be47ae02e5525e4f57ad9e6a6138a376",
+   "sha256": "9387174ef5d1b221ba5cf463e498f1be9b80acea85f007edda15630a88a1b792",
    "lines": 50,
    "genre": "index",
    "status": "read",
@@ -869,7 +869,7 @@
     "fast": "Measured 11.3 KB raw / 3.6 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The Order column follows study order while the file prefixes put the interview bank first; readers cannot infer sequence from numbers and must follow the links."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework)."
+   "notes": "Synced live read-time and counts after Phase 2A D1-D7 rework: 02-objects-prototypes-this."
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/REVISION.md": {
    "sha256": "e1252645b2979c09d3b2c058c8cf6fab4d975d70bbe509fe1ae560c8a3d47e16",
@@ -888,7 +888,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/10.1-javascript/INDEX.md": {
-   "sha256": "886354950fa52700fe15875b9ce328260b01a33c995456682542bdecdfda1afe",
+   "sha256": "1ae981a9d2ef053265f4a69a35f1ca846ec919b31fe755cd2f1c04ed345b4019",
    "lines": 170,
    "genre": "index",
    "status": "read",
@@ -901,7 +901,7 @@
     "fast": "Measured 29.1 KB raw / 6.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The path cannot guarantee interview coverage; the opening says it is a study order, not a coverage guarantee, and reading time is approximate."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework)."
+   "notes": "Synced live read-time and counts after Phase 2A D1-D7 rework: 02-objects-prototypes-this."
   },
   "10-frontend/10.2-typescript/01-foundations/10.2.1.01-types-vs-interfaces.md": {
    "sha256": "4233ced19e1b8532cd21769a6a491e52064d03fd11888b1284fe74378c428b8e",
@@ -2979,7 +2979,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/INDEX.md": {
-   "sha256": "8f6352a88e6d392d2790bad47ee28a5aa20eb1efb2c8f6c1f1ec70d75850a285",
+   "sha256": "8c614f05f16886610d9440739cd8360d10e04478a1f91661b20ede9c7d432bbe",
    "lines": 75,
    "genre": "index",
    "status": "read",
@@ -2992,7 +2992,7 @@
     "fast": "Measured 14.7 KB raw / 4.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Sets the frontend study order from execution to optional capabilities; it limits itself to navigation and does not teach any mechanism."
    },
-   "notes": "Synced live read-time and counts after Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework."
+   "notes": "Synced live read-time and counts after Phase 2A D1-D7 rework: 02-objects-prototypes-this."
   },
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md": {
    "sha256": "cbb48962f1b1c976f33493d3398af0e10c4deb7f49db4537cb50b8af762ebfe1",
@@ -14357,7 +14357,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "3de0ec366903958460c7fe0e60dc08350aca9b1db1dffa8379439cd0b239cd44",
+   "sha256": "a03220edbf6d6d10fff2ebcd4288e6b28fe728af46663b29f707c4911515f9d5",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14370,7 +14370,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework."
+   "notes": "Synced live read-time and counts after Phase 2A D1-D7 rework: 02-objects-prototypes-this."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14661,7 +14661,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "cb5b6da5ec021bfb913e39bcf3053361d49b572093d312491046130776c64b88",
+   "sha256": "e9b04f9772324d83c98a5032b3207d8b0efcd69841af634e1f23f2dde534a83f",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14674,7 +14674,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework."
+   "notes": "Synced live read-time and counts after Phase 2A D1-D7 rework: 02-objects-prototypes-this."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

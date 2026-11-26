@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "9a5e9aade2484fc0a53ca4cf002ad471dd40403c94b6c23cbdf8eee5348290c7",
+ "corpus_digest": "96a2c6459cb2a8025f063e2cd5c21ec7c0fd2f55b224b5f4c52bb9c03c7c5426",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5476
+  "read_minutes": 5481
  },
  "chapters": [
   {
@@ -818,7 +818,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "10-frontend/10.3-react/02-core-hooks/10.3.2.02-useeffect.html",
@@ -828,7 +828,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.3-react/02-core-hooks/10.3.2.03-usememo-usecallback.html",
@@ -848,7 +848,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 8
   },
   {
    "p": "10-frontend/10.3-react/02-core-hooks/10.3.2.05-context-api.html",
@@ -858,7 +858,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "10-frontend/10.3-react/02-core-hooks/REVISION.html",

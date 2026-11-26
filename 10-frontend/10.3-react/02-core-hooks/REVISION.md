@@ -42,6 +42,10 @@ Source: [useState](10.3.2.01-usestate.md)
 
 **A:** It avoids rerunning the initial calculation merely because the component updates. A remount initializes again, and prop changes alone do not reinitialize state.
 
+**Q:** Why does passing a function directly to `useState(fn)` or `setFn(fn)` surprise callers who want to store a callback in state?
+
+**A:** React treats a function passed directly as a lazy initializer or functional updater rather than the stored value itself. Wrapping it in an outer arrow (`useState(() => defaultFormat)` and `setFormatter(() => customFormat)`) stores the inner function safely.
+
 ## useEffect
 
 Source: [useEffect](10.3.2.02-useeffect.md)
@@ -73,6 +77,10 @@ Source: [useEffect](10.3.2.02-useeffect.md)
 **Q:** Does `useEffect` guarantee that its code never delays paint?
 
 **A:** No; passive effects may flush before paint, and their callbacks execute synchronously when called. Keep them small and use layout effects only for work that must precede paint.
+
+**Q:** What does `useEffectEvent` (React 19.2+) solve inside an Effect, and how do functional updaters break Effect dependency loops?
+
+**A:** `useEffectEvent` reads the latest reactive values (such as a changing UI `theme`) inside an Effect callback without making them dependencies that tear down and reconnect the subscription. Wrapping a state write in a functional updater such as `setCount((c) => c + 1)` removes `count` from the dependency list so incrementing inside an Effect does not re-trigger itself.
 
 ## useMemo & useCallback
 
@@ -110,7 +118,7 @@ Source: [React Compiler 1.0](https://react.dev/blog/2025/10/07/react-compiler-1)
 
 **Q:** How do you decide whether caching is worth its bookkeeping?
 
-**A:** Measure the cost and frequency of the work it actually skips. Dependency checks, retained data and complexity should earn a useful improvement.
+**A:** Measure the cost and frequency of the work it actually skips. Dependency checks, retained data, and complexity should earn a useful improvement.
 
 ## useRef
 
@@ -134,7 +142,7 @@ Source: [useRef](10.3.2.04-useref.md)
 
 **Q:** Why should a video control label follow media events?
 
-**A:** Playback can fail or change outside the button handler. Updating state from `play`, `pause` and `ended` events keeps the label aligned with the media element.
+**A:** Playback can fail or change outside the button handler. Updating state from `play`, `pause`, and `ended` events keeps the label aligned with the media element.
 
 **Q:** Why can reading a previous-value ref during render violate purity?
 
@@ -144,13 +152,17 @@ Source: [useRef](10.3.2.04-useref.md)
 
 **A:** It does not remove browser layout costs or ensure an imperative update is faster. The retained ref data also has a memory cost and needs appropriate cleanup.
 
+**Q:** How do you attach refs to a dynamic `.map()` list without violating Rules of Hooks?
+
+**A:** Store one lazily initialized `Map` in `useRef<Map<string, HTMLLIElement> | null>(null)` via a `getMap()` helper and pass a callback `ref` on each list item that registers the node and returns a React 19 cleanup (plus removing the entry when called with `null` in React 18).
+
 ## Context API
 
 Source: [Context API](10.3.2.05-context-api.md)
 
 **Q:** What responsibility does context add to a local state owner?
 
-**A:** It transports the owner’s value to distant descendants. Updates and state transitions still belong to the owner’s state Hook, reducer or external store.
+**A:** It transports the owner's value to distant descendants. Updates and state transitions still belong to the owner's state Hook, reducer, or external store.
 
 **Q:** When is the value passed to `createContext` used?
 
@@ -182,11 +194,15 @@ Source: [Context API](10.3.2.05-context-api.md)
 
 **Q:** What must be true of a value a Server Component provides to client consumers?
 
-**A:** It must be serializable across the server/client boundary and safe to expose to browser code. Context does not make private server data secret once it is sent to a Client Component.
+**A:** It must be serializable across the server and client boundary and safe to expose to browser code. Context does not make private server data secret once it is sent to a Client Component.
+
+**Q:** Why does `<ThemeProvider>{children}</ThemeProvider>` skip re-rendering non-consuming intermediates when `theme` changes, and how does React 19 `use(Context)` differ from `useContext`?
+
+**A:** Passing `{children}` from an ancestor keeps the exact same child element references when `ThemeProvider` re-renders, so React skips unaffected branches and only updates actual `useContext` readers. Unlike `useContext`, `use(Context)` can read Context conditionally after early `return`s or inside loops.
 
 ## Changed contracts
 
-Source: [useMemo/useCallback](10.3.2.03-usememo-usecallback.md), [useRef](10.3.2.04-useref.md), [Context](10.3.2.05-context-api.md)
+Source: [useMemo and useCallback](10.3.2.03-usememo-usecallback.md), [useRef](10.3.2.04-useref.md), [Context](10.3.2.05-context-api.md)
 
 **Q:** What happens to cached sorting when the parent allocates an equivalent new array?
 
@@ -198,7 +214,7 @@ Source: [useMemo/useCallback](10.3.2.03-usememo-usecallback.md), [useRef](10.3.2
 
 **Q:** How does a React 19 callback ref release a `ResizeObserver`?
 
-**A:** It returns cleanup from attachment. Detachment invokes that cleanup; stable callback identity avoids unnecessary detach/attach cycles.
+**A:** It returns cleanup from attachment. Detachment invokes that cleanup; stable callback identity avoids unnecessary detach and attach cycles.
 
 **Q:** Can a component read a context provider it returns around its own children?
 
@@ -210,7 +226,7 @@ Source: [useMemo/useCallback](10.3.2.03-usememo-usecallback.md), [useRef](10.3.2
 
 ## Summary
 
-Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
+Revisit the linked chapter when an answer misses the mechanism, a boundary, or a failure case.
 
 ---
 

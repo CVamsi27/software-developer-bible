@@ -1,6 +1,6 @@
 # React — Index
 
-> **Study time:** ≈ 3 h 13 m of reading (28 files, ~7 min average).
+> **Study time:** ≈ 3 h 18 m of reading (28 files, ~7 min average).
 > **28 files** — React internals from Virtual DOM to Fiber, hooks, patterns, custom hooks, portals, compound components, external stores, server-state ownership with TanStack Query, React Router data routers, React 18/19 concurrent APIs, performance, state management, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-28-blue)](../../INDEX.md)
@@ -54,15 +54,15 @@ Understand how React turns updates into committed UI, and how identity, scheduli
 
 ## Core Hooks
 
-The core state, synchronization, caching, handle and context APIs.
+The core state, synchronization, caching, handle, and context APIs.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 06 | [useState](02-core-hooks/10.3.2.01-usestate.md) | State initialization, batching, functional updates, lazy init | Essential | Foundational | 5 min |
-| 07 | [useEffect](02-core-hooks/10.3.2.02-useeffect.md) | Dependencies, cleanup, effect timing, strict mode, race conditions | Essential | Foundational | 7 min |
-| 08 | [useMemo / useCallback](02-core-hooks/10.3.2.03-usememo-usecallback.md) | Memoization, dependency tracking, when to use (and when not to) | Important | Important | 7 min |
-| 09 | [`useRef`](02-core-hooks/10.3.2.04-useref.md) | DOM refs, mutable refs, `forwardRef`, callback refs, `useImperativeHandle` | Essential | Foundational | 6 min |
-| 10 | [Context API](02-core-hooks/10.3.2.05-context-api.md) | Provider scope, value ownership, update propagation, consumer boundaries | Important | Important | 8 min |
+| 06 | [useState](02-core-hooks/10.3.2.01-usestate.md) | Render snapshots, queued updaters, lazy init, function-in-state, and ownership | Essential | Foundational | 6 min |
+| 07 | [useEffect](02-core-hooks/10.3.2.02-useeffect.md) | External synchronization, dependency loops, stale-result guards, and `useEffectEvent` | Essential | Foundational | 8 min |
+| 08 | [useMemo / useCallback](02-core-hooks/10.3.2.03-usememo-usecallback.md) | Measured render caches, `{children}` composition, and React Compiler 1.0 | Important | Important | 7 min |
+| 09 | [`useRef`](02-core-hooks/10.3.2.04-useref.md) | Imperative handles, lazy init, list ref `Map`s, callback cleanup, and React 19 ref props | Essential | Foundational | 8 min |
+| 10 | [Context API](02-core-hooks/10.3.2.05-context-api.md) | Provider scope, `{children}` isolation, split channels, React 19 `use(Context)`, and React 19.3 Server Components | Important | Important | 9 min |
 
 ---
 

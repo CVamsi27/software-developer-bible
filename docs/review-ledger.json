@@ -1483,116 +1483,116 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 3A D1-D7 rework: 10.3-react/01-react-internals)."
   },
   "10-frontend/10.3-react/02-core-hooks/10.3.2.01-usestate.md": {
-   "sha256": "488fa601135dd6919cd8b698037e796b0821406ebd67870df0b100e7880e39d3",
-   "lines": 119,
+   "sha256": "4090fd2e1d1d2a6c77bca8682f43f754d07ced6f440472422acda7457d300d7a",
+   "lines": 128,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against react.dev/reference/react/useState; functional updates, batching and the render-snapshot model match the current React 19 docs (URL 200 on 2026-11-18).",
-    "readable": "Full read of 119 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "584 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 128 lines (666 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "666 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "State update semantics and immutable replacement are owned here; cross-source ownership belongs to the state-management chapter.",
-    "fast": "16.4 KB raw / 4.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 16.4 KB raw / 4.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Traces why a state update appears on the next render and when a functional update is required; it does not attempt to cover shared or server state."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 3B D1-D7 rework: 10.3-react/02-core-hooks)."
   },
   "10-frontend/10.3-react/02-core-hooks/10.3.2.02-useeffect.md": {
-   "sha256": "af1eec852ac19ea0e9ba875ca58fd62c5417fc304c2684325f83844c41f7f108",
-   "lines": 160,
+   "sha256": "2afa5688266304e1d038014e14c27d22abed161f82171ae939853d706738a20c",
+   "lines": 181,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against react.dev/reference/react/useEffect and lifecycle-of-reactive-effects; the ignore-flag pattern and dependency rules match the official guidance (URLs 200 on 2026-11-18).",
-    "readable": "Full read of 160 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "694 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 181 lines (805 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "805 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Dependency and async-cleanup mechanics are owned here; the lifecycle chapter owns the conceptual start/stop model and is linked, not retold.",
-    "fast": "25.5 KB raw / 6.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 25.5 KB raw / 6.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Teaches dependency-driven setup/cleanup and cancellation of stale async results; it does not present effects as a place for every side effect."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 3B D1-D7 rework: 10.3-react/02-core-hooks)."
   },
   "10-frontend/10.3-react/02-core-hooks/10.3.2.03-usememo-usecallback.md": {
-   "sha256": "d3d5a9e7247a3d16b69da6c6484e06034bf01967040fef86feabcab3fc6e299a",
+   "sha256": "b6a2f5c584f0e62e14581bce506b21409fbfe6064de31eca0243dbf430eab9e6",
    "lines": 146,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against react.dev/reference/react/useMemo, useCallback and the React Compiler 1.0 release notes (2025-10-07); the identity and Compiler claims match those sources (URLs 200 on 2026-11-18).",
-    "readable": "Full read of 146 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "727 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 146 lines (774 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "774 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Memoization and callback-identity mechanics are owned here; the performance chapter owns profiling and deferral and links back.",
-    "fast": "27.1 KB raw / 6.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 27.1 KB raw / 6.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Explains when identity changes matter and when the Compiler removes the manual choice; memoizing without measurement is the stated failure."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 3B D1-D7 rework: 10.3-react/02-core-hooks)."
   },
   "10-frontend/10.3-react/02-core-hooks/10.3.2.04-useref.md": {
-   "sha256": "75218be09736098467a7cbbc4d3b24db261aaa6858e328a8c60e362628005e95",
-   "lines": 164,
+   "sha256": "10619875c2e222d4c71e463d6c7ab9b589518070c705c6d363666fb2958888a2",
+   "lines": 202,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against react.dev/reference/react/useRef and the React 19 release notes on ref cleanup; the mutable-handle and cleanup claims match those sources (URLs 200 on 2026-11-18).",
-    "readable": "Full read of 164 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "557 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 202 lines (599 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "599 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Ref lifetime and DOM identity are owned here; portals and custom hooks link here for handles instead of restating ref semantics.",
-    "fast": "24.0 KB raw / 5.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 24.0 KB raw / 5.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Distinguishes retained values from rendered state and covers ref-callback cleanup; it explicitly does not treat refs as a state substitute."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 3B D1-D7 rework: 10.3-react/02-core-hooks)."
   },
   "10-frontend/10.3-react/02-core-hooks/10.3.2.05-context-api.md": {
-   "sha256": "7aaac5a5e2d26f5e1c920a95a8a5cac2d68b7251b6e84c52f9f12bc91add8cea",
-   "lines": 194,
+   "sha256": "a29a2c06258c56d3eb39000e3b9f18e5cefb55efaaff86f07754e93bc3424aa3",
+   "lines": 195,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against react.dev/learn/passing-data-deeply-with-context and the React 19 notes on rendering Context as a provider; the scope claims match the current docs (URLs 200 on 2026-11-18).",
-    "readable": "Full read of 194 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "845 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 195 lines (913 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "913 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Context value scope and update propagation are owned here; compound components use the contract but do not retell provider mechanics.",
-    "fast": "31.5 KB raw / 6.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 31.5 KB raw / 6.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Shows how provider placement limits re-renders and when context is the wrong tool; server-state caches are explicitly out of scope."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 3B D1-D7 rework: 10.3-react/02-core-hooks)."
   },
   "10-frontend/10.3-react/02-core-hooks/INDEX.md": {
-   "sha256": "480928c5eb54d542e4f720433259f375ec6abc588517391611008f0bdae0a38c",
+   "sha256": "76d3b70dcd9ec5ae930d7860bc397d2fa41a800d000cbab4e692489dd8f73752",
    "lines": 51,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "No version-sensitive claim; the 6-file count, 40-minute total and status badge were re-derived from disk and the table sums on 2026-11-18.",
-    "readable": "Full read of 51 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 51 lines (121 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "121 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Navigation only: it points at the five hook chapters and their revision drill without duplicating their rules.",
-    "fast": "10.3 KB raw / 3.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 10.3 KB raw / 3.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Orders hooks from state through effects, memoization, refs and context; it does not try to teach any hook itself."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 3B D1-D7 rework: 10.3-react/02-core-hooks)."
   },
   "10-frontend/10.3-react/02-core-hooks/REVISION.md": {
-   "sha256": "2d003005da6a5b33db17116820103446ddb4db3eb2de6c916b571e337cb8f79b",
-   "lines": 223,
+   "sha256": "75fe629e4dabede9905d22931fd36cd0db3faadd070fedb5e594ad8653273913",
+   "lines": 239,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Answers checked against the five source chapters and the official React hook references; the changed-contract questions match React 19 behavior (2026-11-18).",
-    "readable": "Full read of 223 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1740 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 239 lines (2003 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "2003 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Retrieval drill: each group links its chapter as the canonical explanation and does not restate it.",
-    "fast": "20.7 KB raw / 6.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 20.7 KB raw / 6.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Tests the hook rules under changed conditions; it does not replace the chapters."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 3B D1-D7 rework: 10.3-react/02-core-hooks)."
   },
   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.01-suspense.md": {
    "sha256": "a24e7b1c6610b4c2628637dc21e85e4add64479cf9abc3e029dfb489acfd9727",
@@ -1898,7 +1898,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/10.3-react/INDEX.md": {
-   "sha256": "0640fd457956c6959b0b282307cd4938a1ec4e16bc738ce1feef039fc5a28bdc",
+   "sha256": "1870a4d0b47e4fb8cd05f1cf88e62769b89a78b6fc81d69105e78d4f0deb140d",
    "lines": 145,
    "genre": "index",
    "status": "read",
@@ -1908,10 +1908,10 @@
     "readable": "Full read of 145 lines (310 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "310 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Section map: points at five category indexes and cross-references without retelling their chapters.",
-    "fast": "Measured 21.2 KB raw / 5.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 21.2 KB raw / 5.4 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Sets the senior-level scope and a study order; it does not try to be a sixth tutorial."
    },
-   "notes": "Synced live read-time and counts after Phase 3A D1-D7 rework: 10.3-react/01-react-internals."
+   "notes": "Synced live read-time and counts after Phase 3B D1-D7 rework: 10.3-react/02-core-hooks."
   },
   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md": {
    "sha256": "4643edcd97314081446d567f5cbe9fa93195f4412ad852e51e17e56cff5ef39e",
@@ -2986,7 +2986,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/INDEX.md": {
-   "sha256": "d5cc906a61e8f2702d37200a91aafd359bc5ee9aae0c33bef26a2601eefbccea",
+   "sha256": "45dd7621e45f05dcd169883de426b21916d4a5cb679984b7941e71f796004062",
    "lines": 75,
    "genre": "index",
    "status": "read",
@@ -2999,7 +2999,7 @@
     "fast": "Measured 14.7 KB raw / 4.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Sets the frontend study order from execution to optional capabilities; it limits itself to navigation and does not teach any mechanism."
    },
-   "notes": "Synced live read-time and counts after Phase 3A D1-D7 rework: 10.3-react/01-react-internals."
+   "notes": "Synced live read-time and counts after Phase 3B D1-D7 rework: 10.3-react/02-core-hooks."
   },
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md": {
    "sha256": "cbb48962f1b1c976f33493d3398af0e10c4deb7f49db4537cb50b8af762ebfe1",
@@ -14364,7 +14364,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "acaea0fd3f481b78defcc3c20adf64ed05e9409988c3bbbfbce3a734acda07b2",
+   "sha256": "fabd4b6868a7249eabb77a5361fd358e76914ece55d92d577af81361fd623356",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14377,7 +14377,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 3A D1-D7 rework: 10.3-react/01-react-internals."
+   "notes": "Synced live read-time and counts after Phase 3B D1-D7 rework: 10.3-react/02-core-hooks."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14668,7 +14668,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "d4f05b58fc6ba67b8fe9f8f32937769f7e7ddf53ecbfa68000f4261483315939",
+   "sha256": "21ef4948aaa01822c6b018cd28a964f0dc958a8154328b823ddee0998feb39e1",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14681,7 +14681,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 3A D1-D7 rework: 10.3-react/01-react-internals."
+   "notes": "Synced live read-time and counts after Phase 3B D1-D7 rework: 10.3-react/02-core-hooks."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

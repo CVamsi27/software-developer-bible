@@ -40,7 +40,7 @@ Source: [Leader Election & Consensus — Raft, Paxos, Practical Patterns](30.3.3
 
 **Q:** Does rejecting an old fencing epoch prove the caller still owns a live lease?
 
-**A:** No. It rejects stale epochs after a newer one reaches the resource. Current ownership needs a checked owner/epoch/expiry boundary serialized with replacement, and an external effect needs its own contract.
+**A:** No. It rejects stale epochs after a newer one reaches the resource. Current ownership needs a checked owner, epoch, and expiry boundary serialized with replacement, and an external effect needs its own contract.
 
 **Q:** What does etcd's `LeaderKey.rev` prove, and what does it not prove about a database write?
 

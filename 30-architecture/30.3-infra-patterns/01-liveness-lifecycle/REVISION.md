@@ -40,11 +40,11 @@ Source: [Health Checks & Graceful Shutdown — Liveness, Readiness, SIGTERM](30.
 
 **Q:** A `preStop` hook sleeps twenty seconds inside a thirty-second termination grace. How much application drain time remains?
 
-**A:** The hook uses the same grace countdown, leaving roughly ten seconds before scheduling/cleanup margins. The sleep does not prove routing propagation completed.
+**A:** The hook uses the same grace countdown, leaving roughly ten seconds before scheduling and cleanup margins. The sleep does not prove routing propagation completed.
 
 **Q:** An optional cache is down but the service has a safe database path. Must every readiness check fail?
 
-**A:** Not automatically. Decide readiness from actual serving/admission capability, degrade safely and observe downstream capacity. Removing the whole fleet can worsen a shared outage.
+**A:** Not automatically. Decide readiness from actual serving and admission capability, degrade safely and observe downstream capacity. Removing the whole fleet can worsen a shared outage.
 
 **Q:** What's the difference between liveness and readiness probes?
 
@@ -52,15 +52,19 @@ Source: [Health Checks & Graceful Shutdown — Liveness, Readiness, SIGTERM](30.
 
 **Q:** How do you handle graceful shutdown in Node.js?
 
-**A:** Use one shutdown owner, withdraw/stop admission, await accepted HTTP/work drain within a deadline, then close dependencies. Handle streams/workers separately and preserve abrupt-death recovery.
+**A:** Use one shutdown owner, withdraw or stop admission, await accepted HTTP and in-flight work drain within a deadline, then close dependencies. Handle streams and workers separately and preserve abrupt-death recovery.
 
 **Q:** What happens if you don't have graceful shutdown?
 
-**A:** Accepted work may be interrupted and replies lost. Durable transactions can survive while callers remain uncertain; recovery/deduplication matters rather than assuming every interruption is an HTTP `500` or data corruption.
+**A:** Accepted work may be interrupted and replies lost. Durable transactions can survive while callers remain uncertain; recovery and deduplication matter rather than assuming every interruption is an HTTP `500` or data corruption.
 
 **Q:** Does a Kubernetes `preStop` hook add time before the termination grace period starts?
 
 **A:** No. The hook runs inside the same termination budget. A twenty-second sleep in a thirty-second grace period leaves roughly ten seconds for signal handling and application cleanup, so measure the real drain instead. See [Pod termination lifecycle](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/).
+
+**Q:** Why does draining multiplexed HTTP/2 or gRPC connections during shutdown require a two-phase `GOAWAY` sequence instead of closing the socket?
+
+**A:** A single HTTP/2 TCP connection carries many concurrent streams, so resetting the socket abruptly fails in-flight requests. Sending a first `GOAWAY` frame with the maximum stream ID tells peers to stop opening new streams while racing streams already in flight still arrive, and a second `GOAWAY` with the real last accepted stream ID completes the drain cleanly.
 
 ## Summary
 

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "9307d56b7c96672ac8720773410170e18e1e1e9c461a187097aed763a9b418ee",
+ "corpus_digest": "f00bc704d3fd656e4e91f618ab30996fc556ccbb4dcc466d7badb2f627c88b47",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5606
+  "read_minutes": 5607
  },
  "chapters": [
   {
@@ -4649,7 +4649,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.06-idempotency-retry-deep-dive.html",

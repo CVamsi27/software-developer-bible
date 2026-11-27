@@ -47,9 +47,9 @@ Distinguish a dependency outage from a stuck process and show why the two produc
 Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
 
 | Topic | Docita evidence |
-| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Health endpoints | `shared/common/controllers/health-check.controller.ts` + `apps/api/src/shared/modules/monitoring/monitoring/health.service.ts`, `apps/api/src/shared/modules/monitoring/monitoring/health/prisma.health.ts` |
 | Orchestrator probes | Fly `[[http_service.checks]]` requests `/api/health/live` every 15s, with a 5s timeout and 30s grace in the inspected `fly.toml` |
 | Liveness vs DB readiness | Live probe kept separate from the Prisma health indicator so a DB blip doesn't kill the machine |
 | Scheduler lifecycle | API scheduler disablement separates process roles; heartbeat records runs without preventing concurrent worker execution |
-| Suspend/resume lifecycle | `fly.toml` sets suspend, auto-start and `min_machines_running = 0`; this permits cold/resume latency and does not guarantee a warm API |
+| Suspend and resume lifecycle | `fly.toml` sets suspend, auto-start and `min_machines_running = 0`; this permits cold-start and resume latency and does not guarantee a warm API |

@@ -18,8 +18,8 @@ Running five application instances can cause a scheduled job to run five times o
 ## File Index
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| ----: | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------- | ------------------ | ----------: |
-| 01 | [Leader Election & Consensus](30.3.3.01-leader-election-consensus.md) | Leases, fencing tokens, Raft/Paxos at a distance, split brain, cron and queue coordination | Important | Specialized | 10 min |
+| ----: | --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------- | ------------------ | ----------: |
+| 01 | [Leader Election & Consensus](30.3.3.01-leader-election-consensus.md) | Leases, fencing tokens, Raft and Paxos at a distance, split brain, cron and queue coordination | Important | Specialized | 10 min |
 
 ---
 
@@ -49,8 +49,8 @@ The inspected Docita source separates scheduler telemetry, process placement and
 | Topic | Docita evidence |
 | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Distributed locks (Postgres advisory) | `apps/api/src/shared/common/utils/postgres-advisory-lock.ts` — a transaction-scoped try-lock for callers using this helper, not a universal scheduler lock |
-| Scheduler telemetry | `apps/api/src/shared/modules/schedule/cron-heartbeat.ts` — records success/failure; it does not acquire a lock or elect a leader |
+| Scheduler telemetry | `apps/api/src/shared/modules/schedule/cron-heartbeat.ts` — records success and failure; it does not acquire a lock or elect a leader |
 | Process-level coordination | `fly.toml` disables API schedulers; worker placement does not serialize multiple worker replicas |
 | Transactional outbox | `shared/modules/outbox/outbox-relay.scheduler.ts` + ADR 0010; CI gate `check-event-emit-via-outbox.mjs` |
 
-The helper holds a PostgreSQL transaction-scoped lock while awaiting its callback; its timeout argument is unused and the callback does not receive the transaction. Inspect actual callers before claiming protected database writes, fencing or bounded execution. See [async processing](../../../projects/docita/03-async-processing.md) for queue/outbox boundaries.
+The helper holds a PostgreSQL transaction-scoped lock while awaiting its callback; its timeout argument is unused and the callback does not receive the transaction. Inspect actual callers before claiming protected database writes, fencing or bounded execution. See [async processing](../../../projects/docita/03-async-processing.md) for queue and outbox boundaries.

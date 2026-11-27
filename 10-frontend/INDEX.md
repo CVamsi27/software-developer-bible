@@ -1,7 +1,7 @@
 # Frontend Stack
 
-> **Study time:** ≈ 21 h 24 m of reading (150 files, ~9 min average).
-> **JavaScript, TypeScript, React, Next.js, Form Handling, Animation, HTML/CSS/PWA, Mobile** — the frontend foundation for the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
+> **Study time:** ≈ 21 h 30 m of reading (150 files, ~9 min average).
+> **JavaScript, TypeScript, React, Next.js, Form Handling, Animation, HTML/CSS & PWA, Mobile** — the frontend foundation for the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
 > 150 files across 8 sub-stacks, organized by what you need to know in what order.
 
@@ -15,7 +15,7 @@
 
 ## Start with one product flow
 
-Use a public page and an authenticated edit form as a running example. Explain how JavaScript runs the handler, TypeScript constrains its inputs, React updates the interface, and the server validates and persists the edit. Include loading, rejected input, expired authorization and a slow response; the happy path alone hides the important boundaries.
+Use a public page and an authenticated edit form as a running example. Explain how JavaScript runs the handler, TypeScript constrains its inputs, React updates the interface, and the server validates and persists the edit. Include loading, rejected input, expired authorization, and a slow response; the happy path alone hides the important boundaries.
 
 The category indexes below guide each mechanism in study order. Their source-linked revision companions come after the learning chapters, followed by separate interview practice.
 
@@ -31,34 +31,34 @@ The category indexes below guide each mechanism in study order. Their source-lin
 | 4 | [Next.js](10.4-next.js/INDEX.md) | 17 | 5 categories | [Rendering Fundamentals](10.4-next.js/01-rendering-fundamentals/INDEX.md), [Routing & Middleware](10.4-next.js/02-routing-and-middleware/INDEX.md), [Data & Caching](10.4-next.js/03-data-and-caching/INDEX.md), [Production](10.4-next.js/04-production/INDEX.md), [Interview Prep](10.4-next.js/05-interview-prep/INDEX.md) |
 | 5 | [Form Handling](10.5-form-handling/INDEX.md) | 7 | — | React Hook Form, Zod, Formik, TanStack Form, Server Actions, Autosave & Draft Recovery |
 | 6 | [Animation](10.6-animation/INDEX.md) | 8 | — | Motion for React, CSS Animations, GSAP, React Spring, View Transitions, Canvas & SVG |
-| 7 | [HTML/CSS & PWA](10.7-html-css/INDEX.md) | 10 | — | Semantic HTML, CSS layout/responsive, CSS architecture (layers, BEM, Modules/Tailwind/CSS-in-JS), theming & design tokens, PWA/service workers, browser storage, SEO, browser rendering |
-| 8 | [Mobile & Cross-Platform](10.8-mobile/INDEX.md) | 7 | — | React Native architecture (JSI/Fabric), Expo decision, RN vs native vs PWA matrix, deep linking/universal links, RN testing (Detox/Maestro), EAS builds, OTA updates, store release automation, interview questions |
+| 7 | [HTML/CSS & PWA](10.7-html-css/INDEX.md) | 10 | — | Semantic HTML, CSS layout and responsive design, CSS architecture (layers, BEM, CSS Modules, Tailwind, and CSS-in-JS), theming & design tokens, PWA and service workers, browser storage, SEO, browser rendering |
+| 8 | [Mobile & Cross-Platform](10.8-mobile/INDEX.md) | 7 | — | React Native architecture (JSI and Fabric), Expo decision, RN vs native vs PWA matrix, deep linking and universal links, RN testing (Detox and Maestro), EAS builds, OTA updates, store release automation, interview questions |
 
 ---
 
 ## Pass 1 — make execution and data boundaries explicit
 
-Read [JavaScript](10.1-javascript/INDEX.md) for execution/scope, objects, asynchronous work and memory. Follow with [TypeScript](10.2-typescript/INDEX.md) for narrowing, generics and transformations. Trace actual values before constructing advanced types; TypeScript's static guarantees do not validate network data at runtime.
+Read [JavaScript](10.1-javascript/INDEX.md) for execution and scope, objects, asynchronous work, and memory. Follow with [TypeScript](10.2-typescript/INDEX.md) for narrowing, generics, and transformations. Trace actual values before constructing advanced types; TypeScript's static guarantees do not validate network data at runtime.
 
 ## Pass 2 — connect React rendering to user behavior
 
-[React](10.3-react/INDEX.md) explains render/commit, component identity, hooks and server-state coordination. Keep local UI state distinct from cached server state and test the loading/error/race behavior of the running edit form.
+[React](10.3-react/INDEX.md) explains render and commit, component identity, hooks, and server-state coordination. Keep local UI state distinct from cached server state and test the loading, error, and race behavior of the running edit form.
 
-[HTML/CSS & PWA](10.7-html-css/INDEX.md) supplies semantic controls, keyboard relationships, layout and browser rendering. These remain part of the product when a framework owns the components.
+[HTML/CSS & PWA](10.7-html-css/INDEX.md) supplies semantic controls, keyboard relationships, layout, and browser rendering. These remain part of the product when a framework owns the components.
 
 ## Pass 3 — follow requests through a full-stack framework
 
-[Next.js](10.4-next.js/INDEX.md) connects routes, Server Components, client boundaries, data caching and mutations. Explain where authentication and validation execute, which data a cache may share, and how a successful write makes the next read fresh.
+[Next.js](10.4-next.js/INDEX.md) connects routes, Server Components, client boundaries, data caching, and mutations. Explain where authentication and validation execute, which data a cache may share, and how a successful write makes the next read fresh.
 
-[Form Handling](10.5-form-handling/INDEX.md) completes the edit flow with runtime schemas, field state, submission and durable drafts. Select a library for the form behavior, then exercise retries, reset and recovery.
+[Form Handling](10.5-form-handling/INDEX.md) completes the edit flow with runtime schemas, field state, submission, and durable drafts. Select a library for the form behavior, then exercise retries, reset, and recovery.
 
 ## Pass 4 — add the capabilities the role requires
 
-[Animation](10.6-animation/INDEX.md) connects visual changes to lifecycle, reduced motion and rendering cost. [Mobile & Cross-Platform](10.8-mobile/INDEX.md) adds native runtime, linking and release boundaries. Use these when the product or role requires them; preserve the same correctness and accessibility standards.
+[Animation](10.6-animation/INDEX.md) connects visual changes to lifecycle, reduced motion, and rendering cost. [Mobile & Cross-Platform](10.8-mobile/INDEX.md) adds native runtime, linking, and release boundaries. Use these when the product or role requires them; preserve the same correctness and accessibility standards.
 
 ## Before an interview
 
-Use each category's revision companion to recall mechanisms. Then answer its interview bank with a concrete trace, a failure case and a decision boundary. Reopen the canonical chapter for a missed mechanism rather than rereading several overlapping summaries.
+Use each category's revision companion to recall mechanisms. Then answer its interview bank with a concrete trace, a failure case, and a decision boundary. Reopen the canonical chapter for a missed mechanism rather than rereading several overlapping summaries.
 
 ---
 

@@ -6247,7 +6247,7 @@
     },
     {
       "path": "10-frontend/10.8-mobile/10.8.01-react-native-cross-platform.md",
-      "sha256": "85db24d878f2cbba2dbe89e6e6b6a7b5f2cfa88a4126c4d448cd3965dfe8fae4",
+      "sha256": "f4912cdb0aae6d77dc99230a44509229950a7a005c6ed00c62ece3f39ce55dce",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -6271,10 +6271,10 @@
       },
       "review": {
         "path": "10-frontend/10.8-mobile/10.8.01-react-native-cross-platform.md",
-        "sha256": "85db24d878f2cbba2dbe89e6e6b6a7b5f2cfa88a4126c4d448cd3965dfe8fae4",
+        "sha256": "f4912cdb0aae6d77dc99230a44509229950a7a005c6ed00c62ece3f39ce55dce",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 8 D1-D7 rework: 10.8-mobile and 10-frontend/INDEX (completes 10-frontend) C1-C8 refinement (2026-11-24): Full read of 211 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -6283,7 +6283,7 @@
     },
     {
       "path": "10-frontend/10.8-mobile/10.8.02-deep-linking-universal-links.md",
-      "sha256": "c27ae21d827afdb991934407a2e2c90ea7aa9b53f1887048ba019b48bd590cdd",
+      "sha256": "ebf74702ac10f7e4ac812981bc907dea8264c6baed89d2f19b9c6c9e360f6c6a",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -6308,10 +6308,10 @@
       },
       "review": {
         "path": "10-frontend/10.8-mobile/10.8.02-deep-linking-universal-links.md",
-        "sha256": "c27ae21d827afdb991934407a2e2c90ea7aa9b53f1887048ba019b48bd590cdd",
+        "sha256": "ebf74702ac10f7e4ac812981bc907dea8264c6baed89d2f19b9c6c9e360f6c6a",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 8 D1-D7 rework: 10.8-mobile and 10-frontend/INDEX (completes 10-frontend) C1-C8 refinement (2026-11-24): Full read of 282 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -6320,7 +6320,7 @@
     },
     {
       "path": "10-frontend/10.8-mobile/10.8.03-testing-react-native-apps.md",
-      "sha256": "1dc5cf795f557832aa05a71b8fbf413df16d9f558f16e4453c370bbe49b4352f",
+      "sha256": "7768cb82616e0a6a689671ff13b7c82f9a4e07ee4f8de11b418fa1222422fdd5",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -6344,10 +6344,10 @@
       },
       "review": {
         "path": "10-frontend/10.8-mobile/10.8.03-testing-react-native-apps.md",
-        "sha256": "1dc5cf795f557832aa05a71b8fbf413df16d9f558f16e4453c370bbe49b4352f",
+        "sha256": "7768cb82616e0a6a689671ff13b7c82f9a4e07ee4f8de11b418fa1222422fdd5",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 8 D1-D7 rework: 10.8-mobile and 10-frontend/INDEX (completes 10-frontend) C1-C8 refinement (2026-11-24): Full read of 196 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -6356,7 +6356,7 @@
     },
     {
       "path": "10-frontend/10.8-mobile/10.8.04-expo-eas-builds.md",
-      "sha256": "3d55f4b3515bd3b7c2fb0a4f11b0101893dbac66daec115d72f17c5111cd66f3",
+      "sha256": "b5193f6423df2acc917263de92db390738c81e0d32631d549eca8eca9cbd79e2",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -6376,10 +6376,10 @@
       },
       "review": {
         "path": "10-frontend/10.8-mobile/10.8.04-expo-eas-builds.md",
-        "sha256": "3d55f4b3515bd3b7c2fb0a4f11b0101893dbac66daec115d72f17c5111cd66f3",
+        "sha256": "b5193f6423df2acc917263de92db390738c81e0d32631d549eca8eca9cbd79e2",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 8 D1-D7 rework: 10.8-mobile and 10-frontend/INDEX (completes 10-frontend) C1-C8 refinement (2026-11-24): Full read of 135 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -6388,7 +6388,7 @@
     },
     {
       "path": "10-frontend/10.8-mobile/10.8.05-codepush-ota-updates.md",
-      "sha256": "c5ebeabf14a06380ad47a3f5d24260066084139f3f4ad2352cc8cff1a7e3a915",
+      "sha256": "c663897c5d73a1c23a19194cf4f65c4078b4fca9602924e89f2e86ee9c3f536c",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -6410,10 +6410,10 @@
       },
       "review": {
         "path": "10-frontend/10.8-mobile/10.8.05-codepush-ota-updates.md",
-        "sha256": "c5ebeabf14a06380ad47a3f5d24260066084139f3f4ad2352cc8cff1a7e3a915",
+        "sha256": "c663897c5d73a1c23a19194cf4f65c4078b4fca9602924e89f2e86ee9c3f536c",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 8 D1-D7 rework: 10.8-mobile and 10-frontend/INDEX (completes 10-frontend) C1-C8 refinement (2026-11-24): Full read of 120 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -6422,7 +6422,7 @@
     },
     {
       "path": "10-frontend/10.8-mobile/10.8.06-app-store-release-automation.md",
-      "sha256": "d4336c36fd9075000db0fb28a1e4af8274a7bbd04bf153f1f51ac85654beaa84",
+      "sha256": "9572bed3dbb25a804b67db51023bb30a1d6104082b5a85c2066628af5669f046",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -6442,10 +6442,10 @@
       },
       "review": {
         "path": "10-frontend/10.8-mobile/10.8.06-app-store-release-automation.md",
-        "sha256": "d4336c36fd9075000db0fb28a1e4af8274a7bbd04bf153f1f51ac85654beaa84",
+        "sha256": "9572bed3dbb25a804b67db51023bb30a1d6104082b5a85c2066628af5669f046",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 8 D1-D7 rework: 10.8-mobile and 10-frontend/INDEX (completes 10-frontend) C1-C8 refinement (2026-11-24): Full read of 92 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -6454,7 +6454,7 @@
     },
     {
       "path": "10-frontend/10.8-mobile/10.8.07-interview-questions.md",
-      "sha256": "3252d6deb25b40d1770fbb3b1edebff04b45fe60095715bde70b97b8bc72e095",
+      "sha256": "5d3445665b997bed72e03e2ae881c12bbbefbc7e4c1e1cd1d10c8731576d0910",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -6478,10 +6478,10 @@
       },
       "review": {
         "path": "10-frontend/10.8-mobile/10.8.07-interview-questions.md",
-        "sha256": "3252d6deb25b40d1770fbb3b1edebff04b45fe60095715bde70b97b8bc72e095",
+        "sha256": "5d3445665b997bed72e03e2ae881c12bbbefbc7e4c1e1cd1d10c8731576d0910",
         "genre": "interview",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 8 D1-D7 rework: 10.8-mobile and 10-frontend/INDEX (completes 10-frontend) C1-C8 refinement (2026-11-24): Full read of 224 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -6490,7 +6490,7 @@
     },
     {
       "path": "10-frontend/10.8-mobile/INDEX.md",
-      "sha256": "827c81691a0fb2774e87e3a14626e95bcd878e04707dfd83b824d6090de4ecce",
+      "sha256": "b66825d2049bf179ee2cf8c35bc97abad0e67ff842a71dc4ed6b6fbcc30d7daa",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -6509,10 +6509,10 @@
       },
       "review": {
         "path": "10-frontend/10.8-mobile/INDEX.md",
-        "sha256": "827c81691a0fb2774e87e3a14626e95bcd878e04707dfd83b824d6090de4ecce",
+        "sha256": "b66825d2049bf179ee2cf8c35bc97abad0e67ff842a71dc4ed6b6fbcc30d7daa",
         "genre": "index",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 8 D1-D7 rework: 10.8-mobile and 10-frontend/INDEX (completes 10-frontend) C1-C8 refinement (2026-11-24): Full read of 53 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -6521,7 +6521,7 @@
     },
     {
       "path": "10-frontend/10.8-mobile/REVISION.md",
-      "sha256": "b10cdfb2c90fc5089cdd5d88511bc59545d0d68dd8fc41f5a7b2e4c82b0d32d2",
+      "sha256": "0cfeadb5cd82fa0c9a2912b44d45960da9654bc4c07c458b1b3646cef19e081a",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -6537,16 +6537,16 @@
           "References"
         ],
         "code_fences": 0,
-        "revision_questions": 19,
+        "revision_questions": 22,
         "has_summary": true,
         "has_first_principles": false
       },
       "review": {
         "path": "10-frontend/10.8-mobile/REVISION.md",
-        "sha256": "b10cdfb2c90fc5089cdd5d88511bc59545d0d68dd8fc41f5a7b2e4c82b0d32d2",
+        "sha256": "0cfeadb5cd82fa0c9a2912b44d45960da9654bc4c07c458b1b3646cef19e081a",
         "genre": "revision",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 8 D1-D7 rework: 10.8-mobile and 10-frontend/INDEX (completes 10-frontend) C1-C8 refinement (2026-11-24): Full read of 137 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -6555,7 +6555,7 @@
     },
     {
       "path": "10-frontend/INDEX.md",
-      "sha256": "472f2eab563403c9478a23372ff0b601ea50c72c23beccbf92d16824e3079869",
+      "sha256": "9be62b1225d420acd96553fe8473994ebc7211f538bfcceef244ea0a971033e5",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -6577,10 +6577,10 @@
       },
       "review": {
         "path": "10-frontend/INDEX.md",
-        "sha256": "472f2eab563403c9478a23372ff0b601ea50c72c23beccbf92d16824e3079869",
+        "sha256": "9be62b1225d420acd96553fe8473994ebc7211f538bfcceef244ea0a971033e5",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css) count/read-time sync (2026-11-24): Full read of 75 lines. Updated generated counts/read-time navigation after Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css).",
+        "notes": "Phase 8 D1-D7 rework: 10.8-mobile and 10-frontend/INDEX (completes 10-frontend) C1-C8 refinement (2026-11-24): Full read of 75 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "metadataReview": {
@@ -31034,7 +31034,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "663c73ddaddc1e3fc8f97b474cfaac889af46797fe35d9c9d039e03ecc01f21d",
+      "sha256": "c69a42145fe3d3cbb3f6f25b8d339414a5c8197e605f891bed307cd97df3ad71",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -31052,12 +31052,12 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "663c73ddaddc1e3fc8f97b474cfaac889af46797fe35d9c9d039e03ecc01f21d",
+        "sha256": "c69a42145fe3d3cbb3f6f25b8d339414a5c8197e605f891bed307cd97df3ad71",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css) count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css).",
+        "notes": "Phase 8 D1-D7 rework: 10.8-mobile and 10-frontend/INDEX (completes 10-frontend) count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 8 D1-D7 rework: 10.8-mobile and 10-frontend/INDEX (completes 10-frontend).",
         "findings": []
       }
     },
@@ -31637,7 +31637,7 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "672404e5705cc4ee3130be262cddb530be265fa757b138453c0b71c99abef751",
+      "sha256": "0acc76f807c35c78c0979b2b376303a74120b368673de5cde1d1befd84af6781",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31655,12 +31655,12 @@
       },
       "review": {
         "path": "docs/api-contract.md",
-        "sha256": "672404e5705cc4ee3130be262cddb530be265fa757b138453c0b71c99abef751",
+        "sha256": "0acc76f807c35c78c0979b2b376303a74120b368673de5cde1d1befd84af6781",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css) count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css).",
+        "notes": "Phase 8 D1-D7 rework: 10.8-mobile and 10-frontend/INDEX (completes 10-frontend) count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 8 D1-D7 rework: 10.8-mobile and 10-frontend/INDEX (completes 10-frontend).",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

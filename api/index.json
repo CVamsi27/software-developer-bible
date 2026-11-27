@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "b68e8c6e007199b933fbc4c8a19783e9465d169638da988e82205bd780f98325",
+ "corpus_digest": "c82902c6c7377a65da25cb08a80ea201f92c37e502a777ad9e7420f8513b3485",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5533
+  "read_minutes": 5539
  },
  "chapters": [
   {
@@ -1562,7 +1562,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "10-frontend/10.8-mobile/10.8.02-deep-linking-universal-links.html",
@@ -1584,7 +1584,7 @@
     "concept",
     "guide"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "10-frontend/10.8-mobile/10.8.04-expo-eas-builds.html",
@@ -1595,7 +1595,7 @@
     "concept",
     "guide"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.8-mobile/10.8.05-codepush-ota-updates.html",
@@ -1606,7 +1606,7 @@
     "concept",
     "guide"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.8-mobile/10.8.06-app-store-release-automation.html",
@@ -1617,7 +1617,7 @@
     "concept",
     "guide"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "10-frontend/10.8-mobile/10.8.07-interview-questions.html",
@@ -1628,7 +1628,7 @@
     "interview-questions",
     "practice"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "10-frontend/10.8-mobile/REVISION.html",

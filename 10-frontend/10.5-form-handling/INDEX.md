@@ -1,6 +1,6 @@
 # Form Handling — Index
 
-> **Study time:** ≈ 1 h 7 m of reading (8 files, ~8 min average).
+> **Study time:** ≈ 1 h 10 m of reading (8 files, ~9 min average).
 > **8 files** — Form handling in React from React Hook Form and Zod to Formik, TanStack Form, Server Actions, autosave/draft recovery, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
@@ -29,7 +29,7 @@ Zod parses runtime values and can derive TypeScript types from its schemas.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 02 | [Zod](10.5.02-zod.md) | Schemas, `z.infer`, transforms, refines, API boundary validation, env validation, error formatting | Essential | Important | 10 min |
+| 02 | [Zod](10.5.02-zod.md) | Schemas, `z.infer`, transforms, refines, API boundary validation, env validation, error formatting | Essential | Important | 11 min |
 
 `z.infer<typeof schema>` describes parsed output; `z.input<typeof schema>` describes accepted input when transforms or coercion change its type. Parsing does not establish authorization.
 
@@ -42,8 +42,8 @@ Three main form libraries — pick the right one for the job.
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
 | 01 | [React Hook Form](10.5.01-react-hook-form.md) | Native registration, controlled widgets, Zod resolver, `useFieldArray`, `FormProvider` | Existing integrations or forms that benefit from native field registration | Essential | Important | 12 min |
-| 03 | [Formik](10.5.03-formik.md) | Controlled fields, context and validation integration | Existing Formik forms or requirements suited to controlled state | Optional | Specialized | 8 min |
-| 04 | [TanStack Form](10.5.04-tanstack-form.md) | Typed fields, granular subscriptions, framework adapters, Standard Schema | Forms that need selected subscriptions or a non-React adapter | Optional | Specialized | 10 min |
+| 03 | [Formik](10.5.03-formik.md) | Controlled fields, context and validation integration | Existing Formik forms or requirements suited to controlled state | Optional | Specialized | 9 min |
+| 04 | [TanStack Form](10.5.04-tanstack-form.md) | Typed fields, granular subscriptions, framework adapters, Standard Schema | Forms that need selected subscriptions or a non-React adapter | Optional | Specialized | 11 min |
 
 Compare the existing integration, native or controlled widgets, required subscriptions and normalized output. Prototype a representative form and measure it before choosing or migrating; no library name establishes a universal performance or maintenance conclusion.
 

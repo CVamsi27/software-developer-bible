@@ -10,7 +10,7 @@
 
 ## Reading flow
 
-1. Follow one request through the event loop; predict the CommonJS/I/O scheduling example before reading its result.
+1. Follow one request through the event loop; predict the CommonJS and I/O scheduling example before reading its result.
 2. Follow the same resource-ownership idea into Web Streams: trace pressure, cancellation, and split-byte decoding through a pipeline.
 3. Run the small test-runner example to see how the runner observes completion, then answer [Revision](REVISION.md) without the sources open.
 
@@ -18,8 +18,8 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Event Loop](20.1.1.01-event-loop.md) | Phases (timers, pending callbacks, idle/prepare, poll, check, close), microtasks vs macrotasks, `setImmediate` vs `nextTick`, blocking vs non-blocking | Essential | Foundational | 7 min |
-| 02 | [Web Streams & Test Runner](20.1.1.02-web-streams-and-test-runner.md) | Versioned WHATWG stream interfaces, pressure/cancellation, split-byte decoding, Node adapters, `node:test`, mocking, watch mode, TAP output | Important | Important | 10 min |
+| 01 | [Event Loop](20.1.1.01-event-loop.md) | Phases (timers, pending callbacks, idle and prepare, poll, check, close), microtasks vs macrotasks, `setImmediate` vs `nextTick`, blocking vs non-blocking | Essential | Foundational | 7 min |
+| 02 | [Web Streams & Test Runner](20.1.1.02-web-streams-and-test-runner.md) | Versioned WHATWG stream interfaces, pressure and cancellation, split-byte decoding, Node adapters, `node:test`, mocking, watch mode, TAP output | Important | Important | 10 min |
 
 ---
 
@@ -29,7 +29,7 @@
 
 ## Docita Anchor
 
-The [Docita case study](../../../projects/docita/INDEX.md) provides code pointers to inspect for these mechanisms. Current pool, cancellation and operational behavior requires runtime evidence; the paths do not alone establish production guarantees.
+The [Docita case study](../../../projects/docita/INDEX.md) provides code pointers to inspect for these mechanisms. Current pool, cancellation, and operational behavior requires runtime evidence; the paths do not alone establish production guarantees.
 
 | Topic | Docita evidence |
 | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

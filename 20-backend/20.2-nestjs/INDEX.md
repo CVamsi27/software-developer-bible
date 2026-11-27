@@ -1,6 +1,6 @@
 # NestJS — Index
 
-> **Study time:** ≈ 3 h 8 m of reading (24 files, ~8 min average).
+> **Study time:** ≈ 3 h 11 m of reading (24 files, ~8 min average).
 > **24 files** — NestJS framework from modules and controllers to guards, pipes, interceptors, CQRS, microservices, testing, configuration, lifecycle/shutdown, scheduling, OpenAPI docs, custom decorators, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-24-blue)](../../INDEX.md)
@@ -74,8 +74,8 @@ The patterns NestJS supports out of the box. Category INDEX: [Patterns](03-patte
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [CQRS](03-patterns/20.2.3.01-cqrs.md) | Commands, queries, events, sagas, command/query buses, `@nestjs/cqrs` | Essential | Important | 7 min |
-| 02 | [Microservices](03-patterns/20.2.3.02-microservices.md) | TCP, Redis, RabbitMQ, Kafka, gRPC transports, hybrid apps, message patterns | Important | Important | 7 min |
+| 01 | [CQRS](03-patterns/20.2.3.01-cqrs.md) | Commands, queries, events, sagas, command/query buses, `@nestjs/cqrs` | Essential | Important | 8 min |
+| 02 | [Microservices](03-patterns/20.2.3.02-microservices.md) | TCP, Redis, RabbitMQ, Kafka, gRPC transports, hybrid apps, message patterns | Important | Important | 8 min |
 
 ---
 
@@ -85,7 +85,7 @@ Production hygiene. Category INDEX: [Quality & Operations](04-quality-and-operat
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Configuration & Validation](04-quality-and-operations/20.2.4.01-configuration-validation.md) | `ConfigModule`, `ValidationPipe`, `StandardSchemaValidationPipe`, Zod, `class-validator`, Joi, DTOs, env validation | Essential | Important | 8 min |
+| 01 | [Configuration & Validation](04-quality-and-operations/20.2.4.01-configuration-validation.md) | `ConfigModule`, `ValidationPipe`, `StandardSchemaValidationPipe`, Zod, `class-validator`, Joi, DTOs, env validation | Essential | Important | 9 min |
 | 02 | [Testing](04-quality-and-operations/20.2.4.02-testing.md) | Jest, `TestingModule`, supertest, Testcontainers, e2e/integration/unit | Essential | Important | 12 min |
 | 03 | [Lifecycle Hooks & Graceful Shutdown](04-quality-and-operations/20.2.4.03-lifecycle-hooks-graceful-shutdown.md) | Lifecycle hook map + ordering, `enableShutdownHooks()`, `SIGTERM`, Kubernetes `terminationGracePeriodSeconds`, draining connections, closing pools in order | Essential | Important | 13 min |
 | 04 | [Scheduling & Background Jobs](04-quality-and-operations/20.2.4.04-scheduling-background-jobs.md) | `@nestjs/schedule` + dynamic API, distributed cron locks (Redis NX), BullMQ queues, retries/backoff/rate limits, idempotent handlers, job observability | Essential | Important | 19 min |

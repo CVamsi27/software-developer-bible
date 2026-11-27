@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "b583f7285434afb441bec13a92a4a0b4c53a6e43d9e5097e3d752d3055cc1ff2",
+ "corpus_digest": "6844691041eb19ea343794b198b22db18111c67154baf2f9b490c1c501b6c203",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5549
+  "read_minutes": 5552
  },
  "chapters": [
   {
@@ -2113,7 +2113,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "20-backend/20.2-nestjs/03-patterns/20.2.3.02-microservices.html",
@@ -2123,7 +2123,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "20-backend/20.2-nestjs/03-patterns/REVISION.html",
@@ -2143,7 +2143,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.02-testing.html",

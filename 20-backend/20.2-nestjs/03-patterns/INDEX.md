@@ -1,6 +1,6 @@
 # Patterns — NestJS
 
-> **Study time:** ≈ 16 min of reading (3 files, ~5 min average).
+> **Study time:** ≈ 18 min of reading (3 files, ~6 min average).
 > **3 files.** The architectural patterns NestJS supports out of the box: CQRS (commands, queries, events, sagas) and microservice transports (TCP, Redis, RabbitMQ, Kafka, gRPC).
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
@@ -18,8 +18,8 @@ Next, follow [Microservices](20.2.3.02-microservices.md) from subscription to a 
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [CQRS](20.2.3.01-cqrs.md) | Commands, queries, events, sagas, command/query buses, `@nestjs/cqrs` | Essential | Important | 7 min |
-| 02 | [Microservices](20.2.3.02-microservices.md) | TCP, Redis, RabbitMQ, Kafka, gRPC transports, hybrid apps, message patterns | Important | Important | 7 min |
+| 01 | [CQRS](20.2.3.01-cqrs.md) | Commands, queries, events, sagas, command and query buses, `@nestjs/cqrs` | Essential | Important | 8 min |
+| 02 | [Microservices](20.2.3.02-microservices.md) | TCP, Redis, RabbitMQ, Kafka, gRPC transports, hybrid apps, message patterns | Important | Important | 8 min |
 
 ---
 
@@ -37,12 +37,12 @@ Real-world pointers from [docita](https://github.com/CVamsi27/docita) — health
 Docita ships neither `@nestjs/cqrs` nor `@nestjs/microservices` — both patterns appear in pragmatic form:
 
 | Topic | Docita evidence |
-| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | CQRS-lite commands | `apps/api/src/domains/appointments/application/use-cases/create-appointment.use-case.ts` — command-style use case against repository ports, no cqrs bus |
-| Query / read side | `apps/api/src/domains/analytics/core/factories/base-analytics.factory.ts` — cached analytics projections act as read models |
+| Query and read side | `apps/api/src/domains/analytics/core/factories/base-analytics.factory.ts` — cached analytics projections act as read models |
 | Domain events | `apps/api/src/shared/common/events/event.service.ts` — typed in-process `EventEmitter2` bus (in-memory only, separate from durable persistence) |
 
-TCP/Redis/Kafka/gRPC transports are not used here. They could be introduced when a domain becomes a separate deployable service. The transactional outbox and PostgreSQL queue already carry asynchronous work between components.
+TCP, Redis, Kafka, and gRPC transports are not used here. They could be introduced when a domain becomes a separate deployable service. The transactional outbox and PostgreSQL queue already carry asynchronous work between components.
 
 ---
 

@@ -58,6 +58,10 @@ Source: [Testing NestJS Applications](20.2.4.02-testing.md)
 
 **A:** No. Current CLI defaults select Vitest for ESM projects and Jest for CommonJS projects. Existing projects may choose either; Nest's `@nestjs/testing` APIs are runner-agnostic, while mocks and test globals use runner-specific APIs.
 
+**Q:** What extra startup step do NestJS Fastify E2E tests need before calling `app.inject()`, and what blind spot does `.overrideGuard()` create?
+
+**A:** After `await app.init()`, a `NestFastifyApplication` test must await `app.getHttpAdapter().getInstance().ready()` so Fastify finishes registering plugins and routes before the first request. Overriding a guard with `.overrideGuard()` isolates business routes but removes real authentication coverage, so keep separate tests that run the real guard for allowed and denied paths.
+
 ## Lifecycle Hooks & Graceful Shutdown
 
 Source: [Lifecycle Hooks & Graceful Shutdown](20.2.4.03-lifecycle-hooks-graceful-shutdown.md)
@@ -98,6 +102,10 @@ Source: [Scheduling & Background Jobs](20.2.4.04-scheduling-background-jobs.md)
 
 **A:** Use `queue.upsertJobScheduler` with a stable scheduler ID. The `Queue.add({ repeat })` and legacy repeat-management APIs were deprecated in v5.16 and removed in v6; plan the documented migration before upgrading.
 
+**Q:** When should a BullMQ worker throw `UnrecoverableError`, and why must `lockDuration` align with job execution time?
+
+**A:** Throw `UnrecoverableError` for permanent failures such as a deleted account or malformed recipient so BullMQ moves the job directly to failed instead of wasting retries. Keep `lockDuration` safely above expected processing pauses so a legitimately running handler does not expire its lease and trigger duplicate stalled-job recovery.
+
 ## Swagger & OpenAPI in NestJS
 
 Source: [Swagger & OpenAPI in NestJS](20.2.4.05-swagger-openapi-nestjs.md)
@@ -118,6 +126,10 @@ Source: [Swagger & OpenAPI in NestJS](20.2.4.05-swagger-openapi-nestjs.md)
 
 **A:** Response types, error codes, and examples need explicit documentation. A generated specification may still be incomplete or promise behavior the handler does not provide.
 
+**Q:** What benefit and build-pipeline caveat comes with enabling the `@nestjs/swagger` CLI plugin?
+
+**A:** Enabling `@nestjs/swagger/plugin` in `nest-cli.json` infers `@ApiProperty` metadata from TypeScript types and comments in DTO files at compile time, reducing repetitive decorators. Because it hooks into TypeScript compilation, builds using SWC or `ts-node` do not run the plugin unless SWC metadata generation is explicitly configured.
+
 ## Recovery and contract checks
 
 Sources: [Configuration](20.2.4.01-configuration-validation.md), [Testing](20.2.4.02-testing.md), [Lifecycle](20.2.4.03-lifecycle-hooks-graceful-shutdown.md), [Jobs](20.2.4.04-scheduling-background-jobs.md), [OpenAPI](20.2.4.05-swagger-openapi-nestjs.md)
@@ -128,7 +140,7 @@ Sources: [Configuration](20.2.4.01-configuration-validation.md), [Testing](20.2.
 
 **Q:** Why share bootstrap configuration with an E2E application's setup?
 
-**A:** Importing the root module does not run `main.ts`, so a test that builds only the module graph omits the global pipes, filters and route prefix that `main.ts` installs. Share the bootstrap setup so the test exercises the pipeline production actually serves.
+**A:** Importing the root module does not run `main.ts`, so a test that builds only the module graph omits the global pipes, filters, and route prefix that `main.ts` installs. Share the bootstrap setup so the test exercises the pipeline production actually serves.
 
 **Q:** What happens if a `preStop` hook uses 10 seconds of a 30-second termination period?
 
@@ -152,7 +164,7 @@ Sources: [Configuration](20.2.4.01-configuration-validation.md), [Testing](20.2.
 
 **Q:** Why must a spec export reuse the application's named security-scheme configuration?
 
-**A:** Route security metadata refers to schemes by name. If the exporter rebuilds a smaller configuration, an operation can refer to `jwt` while `components.securitySchemes.jwt` is absent. Share the builder and any prefix/versioning setup so the exported contract matches the served one.
+**A:** Route security metadata refers to schemes by name. If the exporter rebuilds a smaller configuration, an operation can refer to `jwt` while `components.securitySchemes.jwt` is absent. Share the builder and any prefix and versioning setup so the exported contract matches the served one.
 
 **Q:** Why can a forced HTTP socket close leave work that still needs the database?
 
@@ -164,11 +176,11 @@ Sources: [Configuration](20.2.4.01-configuration-validation.md), [Testing](20.2.
 
 **Q:** Does a password containing an uppercase letter and digit necessarily resist guessing?
 
-**A:** No. Length or composition alone does not establish unpredictability or reject common and compromised choices. A real policy also screens those values, controls authentication attempts and bounds verification cost; deployment-secret length validation is a separate contract.
+**A:** No. Length or composition alone does not establish unpredictability or reject common and compromised choices. A real policy also screens those values, controls authentication attempts, and bounds verification cost; deployment-secret length validation is a separate contract.
 
 **Q:** Why is the retained failed-job count different from a recent failure rate?
 
-**A:** Retained failed jobs remain until cleanup/review, so that count describes a backlog. A time-windowed failure counter/rate describes new failures and avoids treating one old job as evidence of an ongoing outage.
+**A:** Retained failed jobs remain until cleanup or review, so that count describes a backlog. A time-windowed failure counter or rate describes new failures and avoids treating one old job as evidence of an ongoing outage.
 
 ## Summary
 

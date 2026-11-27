@@ -1,6 +1,6 @@
 # Quality & Operations — NestJS
 
-> **Study time:** ≈ 1 h 11 m of reading (6 files, ~12 min average).
+> **Study time:** ≈ 1 h 12 m of reading (6 files, ~12 min average).
 > **6 files.** Follow application settings from startup into request handling, choose tests by the behavior they can prove, then trace shutdown and background work through recovery. Finish by comparing generated OpenAPI with runtime behavior.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
@@ -11,7 +11,7 @@
 ## Reading flow
 
 1. Validate startup settings before constructing their clients, then distinguish those checks from request validation in [Configuration](20.2.4.01-configuration-validation.md).
-2. Use [Testing](20.2.4.02-testing.md) to choose which graph, request path or database contract needs real components. A mocked success is evidence only for that configured collaboration.
+2. Use [Testing](20.2.4.02-testing.md) to choose which graph, request path, or database contract needs real components. A mocked success is evidence only for that configured collaboration.
 3. Follow [Lifecycle](20.2.4.03-lifecycle-hooks-graceful-shutdown.md) from stopped admission through tracked work to dependency closure. Then trace [Jobs](20.2.4.04-scheduling-background-jobs.md) through lease loss and an uncertain external effect.
 4. Generate [OpenAPI](20.2.4.05-swagger-openapi-nestjs.md) and compare it with runtime validation and responses. Use [Revision](REVISION.md) after these operational traces, before interview practice.
 
@@ -19,10 +19,10 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Configuration & Validation](20.2.4.01-configuration-validation.md) | Startup schemas with Zod/Standard Schema (Joi 18+ supported); class DTO or schema-first request validation; settings vs authorization | Essential | Important | 8 min |
-| 02 | [Testing](20.2.4.02-testing.md) | Vitest/Jest, `TestingModule`, Supertest, Testcontainers; evidence at unit, integration, and HTTP boundaries | Essential | Important | 12 min |
-| 03 | [Lifecycle Hooks & Graceful Shutdown](20.2.4.03-lifecycle-hooks-graceful-shutdown.md) | Startup/shutdown phases, Nest 12 hook-order migration, `enableShutdownHooks()`, `SIGTERM`, Kubernetes termination budget, draining connections, closing pools in order | Essential | Important | 13 min |
-| 04 | [Scheduling & Background Jobs](20.2.4.04-scheduling-background-jobs.md) | `@nestjs/schedule` (cron/interval/timeout + dynamic API), distributed cron locks (Redis `NX` / leader election), BullMQ queues, retries with backoff, rate limits, idempotent handlers, job observability | Essential | Important | 19 min |
+| 01 | [Configuration & Validation](20.2.4.01-configuration-validation.md) | Startup schemas with Zod and Standard Schema (Joi 18+ supported); class DTO or schema-first request validation; settings vs authorization | Essential | Important | 9 min |
+| 02 | [Testing](20.2.4.02-testing.md) | Vitest and Jest, `TestingModule`, Supertest, Testcontainers; evidence at unit, integration, and HTTP boundaries | Essential | Important | 12 min |
+| 03 | [Lifecycle Hooks & Graceful Shutdown](20.2.4.03-lifecycle-hooks-graceful-shutdown.md) | Startup and shutdown phases, Nest 12 hook-order migration, `enableShutdownHooks()`, `SIGTERM`, Kubernetes termination budget, draining connections, closing pools in order | Essential | Important | 13 min |
+| 04 | [Scheduling & Background Jobs](20.2.4.04-scheduling-background-jobs.md) | `@nestjs/schedule` (cron, interval, timeout, and dynamic API), distributed cron locks (Redis `NX` or leader election), BullMQ queues, retries with backoff, rate limits, idempotent handlers, job observability | Essential | Important | 19 min |
 | 05 | [Swagger & OpenAPI](20.2.4.05-swagger-openapi-nestjs.md) | `@nestjs/swagger`, DTO and Standard Schema metadata, generics + `@ApiExtraModels`, security requirements, runtime validation boundaries, spec snapshots and CI contract checks | Essential | Important | 15 min |
 
 ---
@@ -39,7 +39,7 @@ Real-world pointers from [docita](https://github.com/CVamsi27/docita) — health
 | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Configuration & validation | `apps/api/src/shared/modules/config/env-schema.ts` — Zod env schema parsed fail-fast at boot |
 | Testing | `apps/api/test/seed-contract.parity.e2e-spec.ts` — e2e suite running against seed factories from `src/test-utils/` |
-| Lifecycle hooks & graceful shutdown | `apps/api/src/prisma/prisma.service.ts` — `OnModuleInit`/`OnModuleDestroy` around the `pg` pool; worker drains on `SIGTERM` |
+| Lifecycle hooks & graceful shutdown | `apps/api/src/prisma/prisma.service.ts` — `OnModuleInit` and `OnModuleDestroy` around the `pg` pool; worker drains on `SIGTERM` |
 | Scheduling | `apps/api/src/shared/modules/schedule/cron-heartbeat.ts` — `@TrackHeartbeat` on every cron; a CI check enforces coverage |
 | Background jobs | `apps/api/src/shared/modules/queue/postgres-queue.service.ts` — Postgres-backed queue with manual DLQ replay; automatic replay policy is not wired |
 | Swagger & OpenAPI | `apps/api/src/main.ts` — `DocumentBuilder` spec generated from Zod-typed DTOs via `nestjs-zod` |

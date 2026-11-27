@@ -26,21 +26,29 @@ Source: [CQRS in NestJS](20.2.3.01-cqrs.md)
 
 **A:** An asynchronously updated projection can lag behind a committed write. Dashboards may tolerate this, but a reservation confirmation may need the authoritative result or a version barrier. Separate storage is optional.
 
+**Q:** How does `@nestjs/cqrs` v11+ infer return types on `CommandBus` and `QueryBus`, and what happens if an unhandled error escapes inside a `@Saga()` stream?
+
+**A:** Extending the generic `Command<T>` and `Query<T>` base classes lets `commandBus.execute()` and `queryBus.execute()` infer `Promise<T>` automatically. Inside a `@Saga()`, an uncaught exception terminates that saga's RxJS subscription permanently unless handled per inner observable with `catchError` and monitored via `UnhandledExceptionBus`.
+
 ## NestJS Microservices
 
 Source: [NestJS Microservices](20.2.3.02-microservices.md)
 
 **Q:** Why should transport handlers delegate business rules to shared services?
 
-**A:** HTTP and message handlers translate their transport inputs and outcomes, then call the same application operation. This keeps product rules in one owner while each adapter retains its own authentication, acknowledgment and retry contract.
+**A:** HTTP and message handlers translate their transport inputs and outcomes, then call the same application operation. This keeps product rules in one owner while each adapter retains its own authentication, acknowledgment, and retry contract.
 
 **Q:** Which delivery behavior should be checked before choosing a Nest transport?
 
-**A:** Check reply loss for TCP/gRPC, offline loss for Redis pub/sub/Core NATS, and persistence, offsets or acknowledgments for Kafka/RabbitMQ. A consumer group alone does not guarantee at-least-once business processing: committing progress before an effect can lose that effect; committing afterward can repeat it. These transports need different recovery contracts.
+**A:** Check reply loss for TCP and gRPC, offline loss for Redis Pub/Sub and Core NATS, and persistence, offsets, or acknowledgments for Kafka and RabbitMQ. A consumer group alone does not guarantee at-least-once business processing: committing progress before an effect can lose that effect; committing afterward can repeat it. These transports need different recovery contracts.
 
 **Q:** What connection and failure responsibilities does `ClientProxy` introduce?
 
-**A:** The client owns connection setup/cleanup, subscriptions, serialization and deadlines. HTTP clients also need failure and retry policies; neither protocol knows whether a timed-out write committed.
+**A:** The client owns connection setup and cleanup, subscriptions, serialization, and deadlines. HTTP clients also need failure and retry policies; neither protocol knows whether a timed-out write committed.
+
+**Q:** Why should mutating RabbitMQ consumers in NestJS set `{ noAck: false }` and acknowledge via `RmqContext`?
+
+**A:** With Nest's default automatic acknowledgment, RabbitMQ marks a message delivered as soon as it reaches the consumer before the database write finishes, so a crash loses the job. Setting `{ noAck: false }` and calling `channel.ack(originalMsg)` only after the durable write completes (or `channel.nack(originalMsg, false, false)` to dead-letter) preserves delivery guarantees.
 
 ## Dispatch and delivery boundaries
 
@@ -62,9 +70,9 @@ Sources: [CQRS](20.2.3.01-cqrs.md), [Microservices](20.2.3.02-microservices.md)
 
 **A:** Its Observable is cold. Subscribe directly or use `firstValueFrom`, with a bounded deadline.
 
-**Q:** Can Redis persistence recover a Nest pub/sub event missed by an offline subscriber?
+**Q:** Can Redis persistence recover a Nest Pub/Sub event missed by an offline subscriber?
 
-**A:** No. This transport uses pub/sub, not a durable backlog for that subscriber.
+**A:** No. This transport uses Pub/Sub, not a durable backlog for that subscriber.
 
 **Q:** The client times out after a reservation commits. What should a retry preserve?
 

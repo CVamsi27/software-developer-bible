@@ -6388,199 +6388,199 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 15A D1-D7 rework of 20.7-graphql)."
   },
   "20-backend/20.8-caching/20.8.01-caching-deep-dive.md": {
-   "sha256": "1d650cf79fc9fb8929130d90a1b17172c43835110384bf92a2fe6e82b591454e",
-   "lines": 291,
+   "sha256": "47422d4fb54603e3bc7fb11fe5ec77e5ae8e35d65cb22fd90d638bb509eaac5c",
+   "lines": 293,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Executed createReadCache() in Node v26.13.0 (verified in-flight coalescing, TTL reuse, and post-expiry reload); checked against node-redis 6.3.0 and AWS/Redis caching docs.",
-    "readable": "Full read of 291 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1329 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 293 lines (1413 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1413 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical cache strategy chapter; points at 20.8.02 for Redis client/lease mechanics and 20.3.2.04 for HTTP caching.",
-    "fast": "42.0 KB raw / 10.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 42.0 KB raw / 10.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that the local createReadCache helper uses FIFO count bounds without byte budgets, distributed coordination, or cancellation."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers)."
   },
   "20-backend/20.8-caching/20.8.02-redis-fundamentals.md": {
-   "sha256": "a7422873221d8cdcf20731f1e8b69f21e7743f9699580af20d08f724ae8a93e2",
+   "sha256": "916605bf328a399d4459d3a38225632c1b2ce879c4a3376b46d2ab6d84e0085d",
    "lines": 298,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against Redis Open Source 8.10.1 release notes, Redis 8 licenses (AGPLv3/RSALv2/SSPLv1), and node-redis 6.3.0 API.",
-    "readable": "Full read of 298 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1606 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 298 lines (1688 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1688 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical Redis fundamentals chapter; points at 20.8.01 for cache invalidation patterns and 20.8.03 for advanced Lua/Streams.",
-    "fast": "49.9 KB raw / 10.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 49.9 KB raw / 10.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that client snippets were verified against node-redis 6.3.0 docs rather than executed against a live Redis 8.10.1 cluster."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers)."
   },
   "20-backend/20.8-caching/20.8.03-advanced-redis-patterns.md": {
-   "sha256": "41f2ed6bb37de064bad16da2cd0a2ba4a614fb48e2de0bc31ed50d5a371918be",
+   "sha256": "f1b9917e00d416b7fe027f42d36aaa30b74732e8a77aa504494d2c05387ef472",
    "lines": 218,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against Redis 8.2/8.8 stream features (KEEPREF/XACKDEL/XNACK), node-redis 6.3.0 pSubscribe/xReadGroup API, and Kleppmann's Redlock analysis.",
-    "readable": "Full read of 218 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1086 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 218 lines (1147 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1147 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical advanced Redis patterns chapter; points at 30.2.1.14 and 30.3.2.03 for general distributed-locking and idempotency theory.",
-    "fast": "41.5 KB raw / 9.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 41.5 KB raw / 9.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that Lua atomicity does not roll back partial writes on runtime error and never creates an atomic transaction with an external database."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers)."
   },
   "20-backend/20.8-caching/20.8.04-interview-questions.md": {
-   "sha256": "78ba919a5f5b57b255e9133badea0bfdb962225ab08d660d24fc259a10b70483",
+   "sha256": "01f5004fb74ca4091ef6a4ec1ef46d479270a1714fa40dffc93fa2b600fb8268",
    "lines": 176,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against 20.8.01-03 chapters and current Redis 8 / Cluster / client-side caching documentation.",
-    "readable": "Full read of 176 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "2363 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 176 lines (2415 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "2415 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical Caching interview drill; kept separate from REVISION.md recall questions.",
-    "fast": "30.6 KB raw / 11.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 30.6 KB raw / 11.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that model answers illustrate boundary-first reasoning and must be adapted to the interviewer's exact workload and freshness SLA."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers)."
   },
   "20-backend/20.8-caching/INDEX.md": {
-   "sha256": "0aa79a338db8aa6704d1232902efa1d9714ee9842ab9c67d518e698c70523177",
+   "sha256": "7d63c2bef6efeb277d79fc2000207a2f871dd17bdbed9c18a5ce64e19b68cb7e",
    "lines": 103,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against all 5 files in 20.8-caching/; all internal links verified.",
-    "readable": "Full read of 103 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "178 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 103 lines (177 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "177 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical Caching index; points at 20.8.01-04 and REVISION.md without duplicating mechanics.",
-    "fast": "14.1 KB raw / 4.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 14.1 KB raw / 4.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is Docita cache pointers identify code to inspect and require verifying current deployed backend and TTLs."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers)."
   },
   "20-backend/20.8-caching/REVISION.md": {
-   "sha256": "347da101a5ab9040971c50798dc51729a2fe6613de8efd26e92f8e20be722f56",
-   "lines": 143,
+   "sha256": "37e2c501f21b5a854f2d7185ea606b23177ec95c001f61028cda2711a2868f8f",
+   "lines": 155,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against 20.8.01-03 chapters and linked anchors (#cache-aside-with-one-complete-local-trace, #expiring-session-and-owner-token-lease, #4-redis-streams-with-consumer-groups).",
-    "readable": "Full read of 143 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1265 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 155 lines (1409 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1409 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical Caching revision companion; kept separate from concept chapters and 20.8.04 interview bank.",
-    "fast": "17.9 KB raw / 6.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 17.9 KB raw / 6.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that written recall checks conceptual boundaries and does not substitute for benchmarking eviction or failover under load."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers)."
   },
   "20-backend/20.9-message-brokers/20.9.01-message-brokers.md": {
-   "sha256": "7d258fd131e969b6376136605fe6ae124f4b5f40388b3948add1902ca3522c54",
+   "sha256": "0497f99b30ba0fb8c7692ec7e1e8b464ee7f130164042de6dd1dba38d4027546",
    "lines": 174,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against Kafka 4.3.1, RabbitMQ 4.3.6, and @confluentinc/kafka-javascript 1.11.0 release notes.",
-    "readable": "Full read of 174 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1447 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 174 lines (1466 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1466 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical broker model and delivery-semantics chapter; points at 20.9.02 for Kafka ops and 30.3.2.03 for full idempotency protocol.",
-    "fast": "29.1 KB raw / 9.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 29.1 KB raw / 9.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that broker client examples were verified against Confluent 1.11.0 docs rather than executed against a live Kafka cluster."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers)."
   },
   "20-backend/20.9-message-brokers/20.9.02-kafka-internals-and-operations.md": {
-   "sha256": "13481e0044f5f4b49762eed516837a37821e6ad207bd880f3cc1bde8f7f007f1",
+   "sha256": "17d8d707ed646a499eed0fd7302e9c1bda8d9f0f699090218cd1d1b40fdb2f89",
    "lines": 190,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Executed offsetLag() in Node v26.13.0 (verified normal lag, >MAX_SAFE_INTEGER BigInt precision, and reset-or-truncated negative distance); checked against Kafka 4.3 KIP-848 and Confluent 1.11.0 docs.",
-    "readable": "Full read of 190 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1637 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 190 lines (1701 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1701 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical Kafka internals and ops chapter; points at 20.9.03 for schemas/DLQs and 20.6.2.03 for transactional consume-transform-produce.",
-    "fast": "34.1 KB raw / 9.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 34.1 KB raw / 9.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that offset lag measures offset distance rather than elapsed time and does not apply to Share Groups' per-record acknowledgments."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers)."
   },
   "20-backend/20.9-message-brokers/20.9.03-event-driven-patterns.md": {
-   "sha256": "d325fb037d1edb534a9e8d0a5f63fc5b39ed8bc61ecdb4deb47a15edad380903",
-   "lines": 168,
+   "sha256": "5568fa1adbdab7e6c847750756d20c12b063722c667326deb7e62c099398232f",
+   "lines": 170,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Executed processOrQuarantine() in Node v26.13.0 (verified transient retry recovery and permanent malformed-JSON quarantine); checked against RabbitMQ 4.3 quorum delayed-retry docs.",
-    "readable": "Full read of 168 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1258 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 170 lines (1336 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1336 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical broker event-patterns chapter; points at 20.6.3.06 for full transactional outbox and 30.3.2.03 for idempotency keys.",
-    "fast": "28.7 KB raw / 8.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 28.7 KB raw / 8.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that quarantining a poison entity event to a DLQ can allow later events for that entity to proceed out of order unless blocked explicitly."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers)."
   },
   "20-backend/20.9-message-brokers/20.9.04-interview-questions.md": {
-   "sha256": "05b872d7955fc5a3c714bfaccd4686c075229b7274032242aa237bf150fe5b91",
+   "sha256": "258fdef921655d31ac0a99c758232847e0eee2c114793f0a2e655d4e31c28ffa",
    "lines": 148,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against 20.9.01-03 chapters, Kafka 4.3, and RabbitMQ 4.3.6 docs.",
-    "readable": "Full read of 148 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "2174 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 148 lines (2230 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "2230 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical Message Brokers interview drill; kept separate from REVISION.md recall questions.",
-    "fast": "27.9 KB raw / 10.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 27.9 KB raw / 10.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that short interview answers rely on workload-specific failure bounds that candidates must verify for their own systems."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers)."
   },
   "20-backend/20.9-message-brokers/INDEX.md": {
-   "sha256": "1c43ed378bb45f285d28b5e3420597e234177cb5041a690d8d17f4cee08267d9",
+   "sha256": "a46018f7181447083412fda91de143011612ff04f8cfcbfcbff4083603c5f175",
    "lines": 81,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against Kafka 4.2/4.3 upgrade notes, RabbitMQ 4.3.6 docs, and all 5 stack files.",
-    "readable": "Full read of 81 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "220 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 81 lines (223 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "223 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical Message Brokers index; points at 20.9.01-04, REVISION.md, and 20.6-microservices without duplicating lessons.",
-    "fast": "15.1 KB raw / 5.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 15.1 KB raw / 5.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is Docita anchor reflects PostgreSQL worker patterns and requires inspecting live checkout before citing deployed behavior."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers)."
   },
   "20-backend/20.9-message-brokers/REVISION.md": {
-   "sha256": "13bcc3562621c54755f49804bb9e48edb1675f787644cba4cd981ed555777307",
-   "lines": 107,
+   "sha256": "4ce58a49c315e924f8d4e3fc0f42f7b3379e1a1bc3142e94a278a57b566affd7",
+   "lines": 119,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against 20.9.01-03 chapters and Kafka 4.3 / RabbitMQ 4.3 / Confluent 1.11.0 behavior.",
-    "readable": "Full read of 107 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "805 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 119 lines (933 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "933 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical Message Brokers revision companion; kept separate from concept chapters and 20.9.04 interview bank.",
-    "fast": "13.7 KB raw / 4.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 13.7 KB raw / 4.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that conceptual recall does not replace running broker failover and consumer-rebalance game days."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers)."
   },
   "20-backend/INDEX.md": {
-   "sha256": "16568c3e66692a5a225be59ea58a45fc001ae547f4b0ddcd5a281d63fc493275",
+   "sha256": "f3b053d30f37e230654b7b237141de0ee43e43d3bc1af4abbac233eea49a922e",
    "lines": 122,
    "genre": "index",
    "status": "read",
@@ -6593,7 +6593,7 @@
     "fast": "Measured 15.4 KB raw / 5.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Remaining limit is study-hour path estimates are rough guides and depend on each reader's prior backend background."
    },
-   "notes": "Synced live read-time and counts after Phase 15A D1-D7 rework of 20.7-graphql."
+   "notes": "Synced live read-time and counts after Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers."
   },
   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md": {
    "sha256": "065e2b7d573b2298550d061453667084b1d010e6fadf07f903f6fdd34a8e5185",
@@ -14386,7 +14386,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "0c8ca31ffa1e4cba78dba929881990cfd66b0bd02cf46a61b6b68cc46c7575d7",
+   "sha256": "757190b0f2599c718ba1d32f7a3cbe03285da6c4a85e9374a47a717459c824e2",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14399,7 +14399,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 15A D1-D7 rework of 20.7-graphql."
+   "notes": "Synced live read-time and counts after Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14690,7 +14690,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "6fe80a5e62d97ed8e30f1e595ed0bcd90b5e1e925684010c818c2645b617182f",
+   "sha256": "149a1249385ca34697e4abdb1336d5a42825ed108c39e26965f690a694c64e47",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14703,7 +14703,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 15A D1-D7 rework of 20.7-graphql."
+   "notes": "Synced live read-time and counts after Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

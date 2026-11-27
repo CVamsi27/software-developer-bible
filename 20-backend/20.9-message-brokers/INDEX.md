@@ -1,6 +1,6 @@
 # Message Brokers — Index
 
-> **Study time:** ≈ 38 min of reading (5 files, ~8 min average).
+> **Study time:** ≈ 39 min of reading (5 files, ~8 min average).
 > The transport layer of event-driven systems: Kafka's log model and RabbitMQ's queue model, delivery semantics, durability configuration, consumer-group operations, and the patterns (envelopes, DLQs, outbox, idempotency) that make async pipelines production-safe. Pairs with [Microservices](../20.6-microservices/INDEX.md) (the architecture that uses brokers) and [Queues & Async](../../30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md) (the theory).
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
@@ -14,9 +14,9 @@
 The 4 content files classify into 3 conceptual categories + drills.
 
 | Category | Files | Why it matters |
-| --------------------- | ----: | --------------------------------------------------------------------------------------------------------- |
+| --------------------- | ----: | ------------------------------------------------------------------------------------------------------------- |
 | **Model & Semantics** | 1 | Log vs queue, delivery guarantees, when a broker is the wrong tool |
-| **Operations** | 1 | Replication/ISR, produce durability, classic groups, KIP-848, Share Groups, rebalances and lag boundaries |
+| **Operations** | 1 | Replication and ISR, produce durability, classic groups, KIP-848, Share Groups, rebalances and lag boundaries |
 | **Patterns** | 1 | Envelopes, schema evolution, DLQ policy, outbox, idempotent consumers |
 | **Interview Drills** | 1 | 25 Q&A with follow-up traps |
 
@@ -66,15 +66,15 @@ The [Docita study material](../../projects/docita/03-async-processing.md) descri
 
 | Topic | Docita evidence | Role priority | General importance |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- | ------------------ |
-| Broker-or-not decision | [Async processing doc](../../projects/docita/03-async-processing.md) - evaluate PostgreSQL queue tradeoffs from measured workload; no verified jobs/sec result is implied | Essential | Important |
-| Transactional enqueue | Ordinary `PostgresQueueService.enqueue` creates a job in its own operation; atomic business/job intent requires an explicitly shared transaction or an outbox at the actual call site | Varies | Varies |
-| Idempotent enqueue | name/key lookup for completed jobs within 24 hours; it does not atomically suppress concurrent or still-running submissions | Varies | Varies |
+| Broker-or-not decision | [Async processing doc](../../projects/docita/03-async-processing.md) - evaluate PostgreSQL queue trade-offs from measured workload; no verified throughput rate is implied | Essential | Important |
+| Transactional enqueue | Ordinary `PostgresQueueService.enqueue` creates a job in its own operation; atomic business and job intent requires an explicitly shared transaction or an outbox at the actual call site | Varies | Varies |
+| Idempotent enqueue | name and key lookup for completed jobs within 24 hours; it does not atomically suppress concurrent or still-running submissions | Varies | Varies |
 | Bounded retries → DLQ | Default `maxAttempts=5` can be overridden; `delayedUntil` backoff and terminal failure preserve local attempt state, not external exactly-once effects | Varies | Varies |
-| Exactly-one claiming | `FOR UPDATE SKIP LOCKED` polling - concurrent claims select distinct locked rows; recovery/retry can still duplicate effects, so idempotent execution is required | Varies | Varies |
+| Exactly-one claiming | `FOR UPDATE SKIP LOCKED` polling - concurrent claims select distinct locked rows; recovery and retry can still duplicate effects, so idempotent execution is required | Varies | Varies |
 | Stale-worker recovery | `ACTIVE` jobs older than ten minutes are recovered with a delay; an older worker can still finish later, so ownership fencing and effect idempotency remain separate concerns | Varies | Varies |
 | Outbox relay | `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts` + `outbox.service.ts` - `OutboxEvent` rows polled and republished after commit | Varies | Varies |
 
-The referenced Docita design uses PostgreSQL workers rather than Kafka/RabbitMQ; this is an architectural study example, not current deployment evidence. The broker chapters' real-world anchor here is the decision matrix that kept them out, plus the patterns implemented broker-free (idempotency, retry→DLQ, claiming, outbox). A broker migration requires explicit changes to acknowledgments, ownership, delivery/replay and consumer contracts; replacing a publish target alone is not enough.
+The referenced Docita design uses PostgreSQL workers rather than Kafka or RabbitMQ; this is an architectural study example, not current deployment evidence. The broker chapters' real-world anchor here is the decision matrix that kept them out, plus the patterns implemented broker-free (idempotency, retry→DLQ, claiming, outbox). A broker migration requires explicit changes to acknowledgments, ownership, delivery, replay, and consumer contracts; replacing a publish target alone is not enough.
 
 ## Navigation
 

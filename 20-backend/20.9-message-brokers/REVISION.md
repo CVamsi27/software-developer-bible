@@ -16,11 +16,11 @@ Source: [Message Brokers](20.9.01-message-brokers.md).
 
 **Q:** Why is a publish acknowledgment not proof that a consumer completed its work?
 
-**A:** It acknowledges the broker acceptance/durability contract. Consumer processing and its acknowledgment happen later, across another failure boundary.
+**A:** It acknowledges the broker acceptance and durability contract. Consumer processing and its acknowledgment happen later, across another failure boundary.
 
 **Q:** Which retained history disappears when a keyed Kafka topic is compacted?
 
-**A:** Superseded values for each key may be removed. A rebuild can recover retained current state, while a complete event/audit history needs uncompacted retention or an external archive.
+**A:** Superseded values for each key may be removed. A rebuild can recover retained current state, while a complete event and audit history needs uncompacted retention or an external archive.
 
 ## Kafka Internals & Operations
 
@@ -32,7 +32,7 @@ Source: [Kafka Internals & Operations](20.9.02-kafka-internals-and-operations.md
 
 **Q:** Does an offset distance of 1000 imply a particular end-to-end delay?
 
-**A:** No. It is an offset distance affected by processing/commit rate and log gaps. Measure event-to-effect latency and oldest-unprocessed age alongside lag.
+**A:** No. It is an offset distance affected by processing and commit rate and log gaps. Measure event-to-effect latency and oldest-unprocessed age alongside lag.
 
 **Q:** In Confluent JavaScript 1.11.0, does calling `heartbeat()` inside `eachMessage` extend the progress budget for a slow effect?
 
@@ -48,15 +48,15 @@ Source: [Event-Driven Patterns](20.9.03-event-driven-patterns.md).
 
 **Q:** Why is a one-day dedup TTL unsafe when operators may replay a year of archived events?
 
-**A:** Old duplicate identities can arrive after their markers expire. The dedup/effect contract must cover the supported replay horizon or make the effect inherently idempotent.
+**A:** Old duplicate identities can arrive after their markers expire. The dedup and effect contract must cover the supported replay horizon or make the effect inherently idempotent.
 
 **Q:** What ordering decision is hidden in moving one entity event to a DLQ and continuing?
 
-**A:** Later entity events can be processed without the failed predecessor. Decide whether that gap is allowed or whether the entity/partition must remain blocked until repaired.
+**A:** Later entity events can be processed without the failed predecessor. Decide whether that gap is allowed or whether the entity or partition must remain blocked until repaired.
 
 **Q:** In RabbitMQ 4.3 quorum queues, why might repeated message returns fail to increase delayed-retry time?
 
-**A:** The delay uses `delivery-count`, which increases only for specified failure paths such as session/channel crashes or AMQP 1.0 `modified` with `delivery_failed=true`. Choose the retry type with that behavior in mind and set a terminal delivery-limit/DLQ policy.
+**A:** The delay uses `delivery-count`, which increases only for specified failure paths such as session or channel crashes or AMQP 1.0 `modified` with `delivery_failed=true`. Choose the retry type with that behavior in mind and set a terminal delivery-limit and DLQ policy.
 
 ## Failure Traces
 
@@ -72,11 +72,11 @@ Sources: [broker model](20.9.01-message-brokers.md), [Kafka operations](20.9.02-
 
 **Q:** What does a committed offset of 115 mean when the log end is 120?
 
-**A:** Recovery starts at 115, giving an offset distance of five. It does not prove five retained records or a particular delay; an invalid/reset position must remain unknown rather than zero.
+**A:** Recovery starts at 115, giving an offset distance of five. It does not prove five retained records or a particular delay; an invalid or reset position must remain unknown rather than zero.
 
 **Q:** Does upgrading the broker to Kafka 4.3 put every consumer on KIP-848?
 
-**A:** No. A compatible client explicitly selects the consumer protocol. Server heartbeat/session settings then apply, but client poll-progress limits (`max.poll.interval.ms`) still matter; check each client's protocol support instead of assuming API compatibility implies KIP-848 support.
+**A:** No. A compatible client explicitly selects the consumer protocol. Server heartbeat and session settings then apply, but client poll-progress limits (`max.poll.interval.ms`) still matter; check each client's protocol support instead of assuming API compatibility implies KIP-848 support.
 
 **Q:** When should a Kafka Share Group replace a classic consumer group?
 
@@ -84,11 +84,23 @@ Sources: [broker model](20.9.01-message-brokers.md), [Kafka operations](20.9.02-
 
 **Q:** Why can a claim-check event become impossible to replay after its first successful delivery?
 
-**A:** Its referenced object may have been deleted. Blob retention and authorization must cover every independent consumer and the entire supported retry/replay horizon, with corruption/missing-object handling.
+**A:** Its referenced object may have been deleted. Blob retention and authorization must cover every independent consumer and the entire supported retry and replay horizon, with corruption and missing-object handling.
 
 **Q:** Does adding an optional field prove every older consumer will accept the event?
 
 **A:** No. Compatibility depends on format, defaults, validation and semantics. A strict unknown-field reader can reject it, and changing a money unit can break meaning without changing the type.
+
+Source: [Kafka Internals & Operations](20.9.02-kafka-internals-and-operations.md)
+
+**Q:** What happens to an `acks=all` producer when a lagging follower exceeds `replica.lag.time.max.ms` and drops the live ISR below `min.insync.replicas`?
+
+**A:** The lagging follower leaves the ISR, and once the ISR size falls below `min.insync.replicas`, the broker rejects `acks=all` writes with `NotEnoughReplicasException` rather than acknowledging under-replicated records.
+
+Source: [Event-Driven Patterns](20.9.03-event-driven-patterns.md)
+
+**Q:** How do `BACKWARD`, `FORWARD`, and `FULL` Schema Registry compatibility modes govern rollout order between producers and consumers?
+
+**A:** `BACKWARD` allows new consumers to read old records (upgrade consumers first); `FORWARD` allows old consumers to read new records (upgrade producers first); `FULL` satisfies both directions so either side can deploy first.
 
 ## Next Step
 

@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Caching-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-orange)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../docs/topic-importance.md)
 
@@ -16,15 +16,15 @@ Source: [Caching Deep-Dive](20.8.01-caching-deep-dive.md).
 
 **Q:** A reader fetches the old row, a writer commits and deletes the cache key, then the reader caches its result. Which stale-read problem remains?
 
-**A:** The old row can repopulate the cache after invalidation. TTL limits that entry's lifetime; stronger freshness needs a source-coordinated version/conditional fill or an authoritative read.
+**A:** The old row can repopulate the cache after invalidation. TTL limits that entry's lifetime; stronger freshness needs a source-coordinated version or conditional fill or an authoritative read.
 
 **Q:** Why does changing every cache key from `v1` to `v2` help a serializer deployment but not automatically make source writes consistent?
 
-**A:** It prevents reuse of the previous serialization namespace. A source write and namespace change still have separate timing; a reader can load an old source snapshot into the new key unless the version/read contract prevents it.
+**A:** It prevents reuse of the previous serialization namespace. A source write and namespace change still have separate timing; a reader can load an old source snapshot into the new key unless the version and read contract prevents it.
 
 **Q:** L1 installs a value from L2 with a new five-second TTL. Is that value at most five seconds old?
 
-**A:** No. It may already have aged in L2 or come from a delayed source read. Propagate and enforce the relevant source/version freshness information, or accept the whole path's stated stale-read window.
+**A:** No. It may already have aged in L2 or come from a delayed source read. Propagate and enforce the relevant source and version freshness information, or accept the whole path's stated stale-read window.
 
 **Q:** The cache limits its map to 100 entries. Has it bounded memory to a known number of bytes?
 
@@ -36,7 +36,7 @@ Source: [Caching Deep-Dive](20.8.01-caching-deep-dive.md).
 
 **Q:** What must the service survive when an entire hot cache is empty?
 
-**A:** A burst of origin reads. Coalesce identical misses, cap origin concurrency, and shed/serve stale work under an explicit policy; merely adding retries amplifies the burst.
+**A:** A burst of origin reads. Coalesce identical misses, cap origin concurrency, and shed or serve stale work under an explicit policy; merely adding retries amplifies the burst.
 
 ## Redis Fundamentals
 
@@ -50,7 +50,7 @@ Source: [Redis Fundamentals](20.8.02-redis-fundamentals.md).
 
 **A:** Checking the random owner token prevents it deleting a replacement holder's lease. It does not stop the old worker's effect; a database invariant or resource-enforced fencing must reject unsafe overlap.
 
-**Q:** Is a pipeline sufficient for a rate limiter's remove/count/add decision?
+**Q:** Is a pipeline sufficient for a rate limiter's remove, count, and add decision?
 
 **A:** No. It reduces network round trips, while other clients may interleave. One Lua script or another explicitly atomic decision boundary must decide admission and record it.
 
@@ -60,7 +60,7 @@ Source: [Redis Fundamentals](20.8.02-redis-fundamentals.md), [Redis data types](
 
 **Q:** When does a Redis Hash fit better than a JSON document, and why is a JSON string different from Redis JSON?
 
-**A:** A Hash stores flat string fields and supports field-level commands. A serialized JSON String is opaque to Redis commands, while Redis JSON supports structured field access and queries. Choose from the required data shape and access pattern, and confirm module/version availability.
+**A:** A Hash stores flat string fields and supports field-level commands. A serialized JSON String is opaque to Redis commands, while Redis JSON supports structured field access and queries. Choose from the required data shape and access pattern, and confirm module and version availability.
 
 **Q:** Which Node.js client does Redis recommend for new applications, and why should you avoid mixing examples from different clients?
 
@@ -92,7 +92,7 @@ Source: [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md).
 
 **Q:** Why can a Streams consumer reading `>` miss work left by a crashed worker?
 
-**A:** `>` retrieves never-delivered entries. Already-delivered entries remain in the pending-entry list and need explicit recovery/reclaim; processing must tolerate an old worker resuming.
+**A:** `>` retrieves never-delivered entries. Already-delivered entries remain in the pending-entry list and need explicit recovery and reclaim; processing must tolerate an old worker resuming.
 
 **Q:** Does `XACK` delete the event, and does a successful `XADD` prove it survives failover?
 
@@ -125,6 +125,18 @@ Source: [Cache-aside model](20.8.01-caching-deep-dive.md#cache-aside-with-one-co
 **Q:** A stream entry is reclaimed while the original worker resumes. Does `XACK` arbitrate the business effect?
 
 **A:** No. Both can perform work before acknowledgment; the authoritative effect needs an atomic deduplication or conflict guard.
+
+Source: [Caching Deep Dive](20.8.01-caching-deep-dive.md)
+
+**Q:** Why does XFetch weight early-expiration probability with the recomputation duration `delta` instead of checking remaining Time to Live (TTL) alone?
+
+**A:** Weighting the probabilistic refresh window by `delta` starts background refreshes proportionally earlier for expensive origin computations than for cheap lookups, curbing stampedes without holding a distributed lock.
+
+Source: [Redis Fundamentals](20.8.02-redis-fundamentals.md)
+
+**Q:** Why can sustained writes during an RDB `BGSAVE` or AOF rewrite push Redis memory toward twice the dataset size, and why do production hosts disable Transparent Huge Pages (THP)?
+
+**A:** `fork()` shares memory pages via copy-on-write (CoW), so mutating pages during the snapshot duplicates them in RAM and can trigger out-of-memory kills without headroom. THP enlarges each copied page from 4 KiB to 2 MiB, amplifying both memory spike and write latency.
 
 ## Next Step
 

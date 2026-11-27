@@ -1,6 +1,6 @@
 # Caching — Index
 
-> **Study time:** ≈ 47 min of reading (5 files, ~9 min average).
+> **Study time:** ≈ 50 min of reading (5 files, ~10 min average).
 > **5 files** — cache contracts, invalidation, Redis data structures, operational patterns and interview practice.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
@@ -23,12 +23,12 @@
 
 ## Compare the Contracts
 
-| Read/write profile | Pattern | Why |
+| Read and write profile | Pattern | Why |
 | ------------------------------ | ---------------------------------------------------------- | ------------------------------------------------------------------ |
 | Read-heavy, stale-tolerant | Cache-aside + TTL + jitter | Useful when the stated stale-read and fallback policy holds |
 | Read-heavy, needs fresh writes | Write-through | Successful writes warm reads; partial failures and ordering remain |
 | Write-heavy analytics | Write-behind (batch flush) | Throughput ↑; risk window on crash |
-| Hot key / thundering herd | Lock single-flight + early refresh | Stampede defense |
+| Hot key and thundering herd | Lock single-flight + early refresh | Stampede defense |
 | Cross-instance coordination | Database invariant first; lease only where overlap is safe | Expiry and failover can permit overlapping holders |
 
 ---
@@ -58,8 +58,8 @@ Need to cache data?
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 1 | [Caching Deep Dive](20.8.01-caching-deep-dive.md) | Cache hierarchy, cache-aside and read-through, write policies, invalidation, stampede prevention, multi-tenant caching | Essential | Important | 12 min |
-| 2 | [Redis Fundamentals](20.8.02-redis-fundamentals.md) | Command path and latency, data structures, persistence versus replication, Cluster slots, and core patterns | Essential | Important | 14 min |
-| 3 | [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md) | Lease assumptions, Lua rate limiting, Pub/Sub delivery, Redis Streams, scripting boundaries | Essential | Important | 10 min |
+| 2 | [Redis Fundamentals](20.8.02-redis-fundamentals.md) | Command path and latency, data structures, persistence versus replication, Cluster slots, and core patterns | Essential | Important | 15 min |
+| 3 | [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md) | Lease assumptions, Lua rate limiting, Pub/Sub delivery, Redis Streams, scripting boundaries | Essential | Important | 11 min |
 | 4 | [Interview Questions](20.8.04-interview-questions.md) | 25 senior Q&A: invalidation design, stampede physics, data-structure tradeoffs, hit-ratio forensics, persistence decisions | Essential | Important | 8 min |
 
 ---
@@ -84,7 +84,7 @@ Need to cache data?
 
 ## Navigation
 
-[← Previous: GraphQL](../20.7-graphql/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Real-Time stack →](../../60-realtime/60.1-websockets/INDEX.md)
+[← Previous: GraphQL](../20.7-graphql/INDEX.md) · [Back to Index](../../INDEX.md) · [Next: Real-Time stack →](../../60-realtime/60.1-websockets/INDEX.md)
 
 ---
 
@@ -94,7 +94,7 @@ These [Docita](https://github.com/CVamsi27/docita) pointers are places to inspec
 
 | Topic | Docita evidence |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Global cache module | `apps/api/src/cache/cache.module.ts` - @nestjs/cache-manager registered globally: TTL 300s, max 500 entries |
+| Global cache module | `apps/api/src/cache/cache.module.ts` - `@nestjs/cache-manager` registered globally: TTL 300s, max 500 entries |
 | Tag-based invalidation | `apps/api/src/shared/modules/services/tagged-cache.service.ts` - tag→key maps identify groups for invalidation; verify concurrency guarantees in the implementation |
 | LRU primitive | `apps/api/src/shared/common/utils/lru-cache.ts` - capacity+TTL in-process LRU for read-heavy lookups |
 | Response caching | `apps/api/src/shared/common/interceptors/cache.interceptor.ts` - hashed-key GET caching through CACHE_MANAGER |

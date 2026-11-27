@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-REST%20APIs-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -26,17 +26,21 @@ Source: [HTTP Methods](20.3.2.01-http-methods.md)
 
 **A:** The method describes interaction semantics, such as replacement versus partial modification. It does not dictate whether the server executes a SQL `INSERT` or `UPDATE`.
 
+**Q:** How does RFC 7396 JSON Merge Patch differ from RFC 6902 JSON Patch when designing a `PATCH` endpoint?
+
+**A:** JSON Merge Patch (`application/merge-patch+json`) represents removals with `null` and replaces arrays whole, so it cannot distinguish clearing a field from setting an explicit `null` or append safely to an array. JSON Patch (`application/json-patch+json`) sends an ordered, atomic list of `add`, `remove`, `replace`, and `test` operations.
+
 ## HTTP Status Codes
 
 Source: [HTTP Status Codes](20.3.2.02-status-codes.md)
 
-**Q:** How do status codes guide browsers, proxies and clients?
+**Q:** How do status codes guide browsers, proxies, and clients?
 
-**A:** The first digit gives a broad outcome class. The specific status, method, headers and application contract determine caching, redirection and retry behavior.
+**A:** The first digit gives a broad outcome class. The specific status, method, headers, and application contract determine caching, redirection, and retry behavior.
 
 **Q:** Why is the 4xx or 5xx class insufficient by itself to decide whether to retry?
 
-**A:** Some 4xx responses are retryable after a condition changes, and some 5xx failures persist. Check operation idempotence, `Retry-After`, attempt limits and the documented failure meaning.
+**A:** Some 4xx responses are retryable after a condition changes, and some 5xx failures persist. Check operation idempotence, `Retry-After`, attempt limits, and the documented failure meaning.
 
 **Q:** When should an API use a specific status code rather than a generic error?
 
@@ -52,11 +56,15 @@ Source: [CORS (Cross-Origin Resource Sharing)](20.3.2.03-cors.md)
 
 **Q:** How does a server permit selected cross-origin access?
 
-**A:** Return the applicable CORS headers for allowed origins, methods and headers. Certain requests need preflight; authentication and authorization still apply to the actual request.
+**A:** Return the applicable CORS headers for allowed origins, methods, and headers. Certain requests need preflight; authentication and authorization still apply to the actual request.
 
 **Q:** Why can a request succeed in `curl` but be unreadable to browser JavaScript?
 
 **A:** `curl` does not enforce browser origin policy. A browser can send a request yet withhold its response from JavaScript; credentialed CORS also cannot use a wildcard allowed origin.
+
+**Q:** Why is allowlisting `Origin: null` dangerous on a credentialed CORS endpoint?
+
+**A:** Sandboxed iframes, `file://` documents, and cross-origin redirects all emit the literal `Origin: null` header. Allowlisting `'null'` alongside `Access-Control-Allow-Credentials: true` lets an attacker inside a sandboxed iframe read authenticated cross-origin responses.
 
 ## HTTP Caching Strategies
 
@@ -64,7 +72,7 @@ Source: [HTTP Caching Strategies](20.3.2.04-http-caching.md)
 
 **Q:** How does freshness let a cache reuse a response without contacting the origin?
 
-**A:** A fresh reusable response can be served from the relevant cache without revalidation. Lookup, transfer and rendering still have costs; this reduces origin traffic rather than creating literally zero latency.
+**A:** A fresh reusable response can be served from the relevant cache without revalidation. Lookup, transfer, and rendering still have costs; this reduces origin traffic rather than creating literally zero latency.
 
 **Q:** How do validators reduce transfer when a cached response becomes stale?
 
@@ -72,7 +80,11 @@ Source: [HTTP Caching Strategies](20.3.2.04-http-caching.md)
 
 **Q:** Which invalidation paths must a caching design account for?
 
-**A:** Consider writes, permission changes, representation variants and deployment changes. Choose a key and freshness, validation or purge policy that match the tolerated stale-data window.
+**A:** Consider writes, permission changes, representation variants, and deployment changes. Choose a key and freshness, validation, or purge policy that match the tolerated stale-data window.
+
+**Q:** What do `Cache-Control: immutable` and RFC 9213 `CDN-Cache-Control` solve?
+
+**A:** `immutable` tells browsers not to issue conditional revalidation requests during reloads for content-hashed static URLs while fresh. `CDN-Cache-Control` targets CDN intermediaries independently of browser `Cache-Control`, avoiding ambiguity when multiple proxies share `s-maxage`.
 
 ## HTTP retry and concurrency boundaries
 
@@ -104,7 +116,7 @@ Sources: [Status codes](20.3.2.02-status-codes.md), [CORS](20.3.2.03-cors.md), [
 
 **Q:** Why does a JSON `POST` usually cause `OPTIONS` before the actual request?
 
-**A:** Its `Content-Type` is not CORS-safelisted. The browser checks permitted method/header names, then checks the actual response too.
+**A:** Its `Content-Type` is not CORS-safelisted. The browser checks permitted method and header names, then checks the actual response too.
 
 **Q:** Does `no-cache` prohibit storage?
 
@@ -128,7 +140,7 @@ Use these prompts after the reading pass to recall the HTTP request and cache me
 
 ## See Also
 
-- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for caching, conditional requests and protocol behavior
+- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for caching, conditional requests, and protocol behavior
 
 ## References & Learn More
 

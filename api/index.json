@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "bcec4fd7add8aa6e98ff34d4a04a9cb2bdcdaeb9d82bd6364c129d8f03f89259",
+ "corpus_digest": "b7289569811eb6d7371c65395dd861748eeb9f0c9a97be184ff073dbc4dcd7c4",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5553
+  "read_minutes": 5556
  },
  "chapters": [
   {
@@ -2235,7 +2235,7 @@
     "concept",
     "theory"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.02-rest-principles.html",
@@ -2295,7 +2295,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.02-status-codes.html",
@@ -2335,7 +2335,7 @@
    "g": [
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.01-pagination.html",

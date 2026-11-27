@@ -16,7 +16,7 @@ Source: [API Design Patterns — REST, GraphQL, gRPC, Webhooks](20.3.1.01-api-de
 
 **Q:** Which trust and failure boundaries does a remote API call cross?
 
-**A:** A network call can be delayed, rejected or completed without its response arriving. Validate the remote party and payload, bound waiting and make uncertain retries safe at the operation boundary.
+**A:** A network call can be delayed, rejected, or completed without its response arriving. Validate the remote party and payload, bound waiting, and make uncertain retries safe at the operation boundary.
 
 **Q:** Why should an API contract avoid exposing internal implementation details?
 
@@ -24,7 +24,7 @@ Source: [API Design Patterns — REST, GraphQL, gRPC, Webhooks](20.3.1.01-api-de
 
 **Q:** How does consistent API behavior help independently developed clients?
 
-**A:** Consistent naming, error fields and pagination reduce client-specific branches. Document exceptions when an operation needs a different contract.
+**A:** Consistent naming, error fields, and pagination reduce client-specific branches. Document exceptions when an operation needs a different contract.
 
 ## REST Principles
 
@@ -32,7 +32,7 @@ Source: [REST Principles](20.3.1.02-rest-principles.md)
 
 **Q:** What makes an interface uniform in REST?
 
-**A:** The uniform interface combines resource identification, manipulation through representations, self-descriptive messages and hypermedia controls. HTTP methods and media types help express those constraints; naming endpoints consistently is not enough.
+**A:** The uniform interface combines resource identification, manipulation through representations, self-descriptive messages, and hypermedia controls. HTTP methods and media types help express those constraints; naming endpoints consistently is not enough.
 
 **Q:** Why does REST model resources rather than a list of remote actions?
 
@@ -52,11 +52,15 @@ Source: [API Versioning](20.3.1.03-versioning.md)
 
 **Q:** How can a provider introduce an incompatible contract without immediately breaking existing clients?
 
-**A:** Offer an opt-in replacement with documented behavior, a deprecation period and usage evidence before retirement. An optional additive change often needs no new version, but strict consumers still need compatibility checks.
+**A:** Offer an opt-in replacement with documented behavior, a deprecation period, and usage evidence before retirement. An optional additive change often needs no new version, but strict consumers still need compatibility checks.
 
 **Q:** What does a version identifier tell a client about its contract?
 
-**A:** It identifies the externally visible contract being selected. A URL, header or media type can carry it; compatible additions may evolve within that contract.
+**A:** It identifies the externally visible contract being selected. A URL, header, or media type can carry it; compatible additions may evolve within that contract.
+
+**Q:** How does date-based rolling versioning (such as pinning `2026-10-01` per account) differ from coarse `v1` and `v2` URL versions?
+
+**A:** Date-based versioning pins each consumer to a release date and steps payloads backward through small, composable compatibility transformers per breaking change. This avoids big-bang major rewrites while preserving older representations, though the provider must test and retire historical transformation layers systematically.
 
 ## REST Maturity Model
 
@@ -76,7 +80,7 @@ Source: [REST Maturity Model](20.3.1.04-rest-maturity-model.md)
 
 ## OpenAPI / Swagger Documentation
 
-Source: [OpenAPI / Swagger Documentation](20.3.1.05-openapi-swagger.md)
+Source: [OpenAPI and Swagger Documentation](20.3.1.05-openapi-swagger.md)
 
 **Q:** How can a machine-readable API description reduce documentation drift?
 
@@ -90,23 +94,27 @@ Source: [OpenAPI / Swagger Documentation](20.3.1.05-openapi-swagger.md)
 
 **A:** Generated types reproduce omissions or errors in the specification. They also cannot establish that the deployed server returns compliant data or enforces the described permissions.
 
+**Q:** Why should polymorphic OpenAPI payloads pair `oneOf` with an explicit `discriminator`?
+
+**A:** Declaring `discriminator` (`propertyName` and `mapping`) alongside `oneOf` tells validators and code generators which tag field selects the exact variant schema. Without it, generators often emit ambiguous unions and runtime validators produce noisy errors across every candidate branch.
+
 ## Trace and Boundary Checks
 
 Source: [API styles](20.3.1.01-api-design-patterns.md)
 
-**Q:** Which API could a shop use for order reads, collaborative messages and payment callbacks?
+**Q:** Which API could a shop use for order reads, collaborative messages, and payment callbacks?
 
-**A:** A resource/GraphQL read contract, a WebSocket channel for two-way messages, and a webhook ingress can coexist. Choose interaction and recovery rules independently; one product need not select only one style.
+**A:** A resource or GraphQL read contract, a WebSocket channel for two-way messages, and a webhook ingress can coexist. Choose interaction and recovery rules independently; one product need not select only one style.
 
 **Q:** Does one GraphQL request or a protobuf body prove lower end-to-end latency?
 
-**A:** No. Resolve/fan-out work, network calls, authorization, serialization, compression and client behavior affect cost. Measure representative operations rather than ranking transports universally.
+**A:** No. Resolver and fan-out work, network calls, authorization, serialization, compression, and client behavior affect cost. Measure representative operations rather than ranking transports universally.
 
 Source: [REST](20.3.1.02-rest-principles.md)
 
 **Q:** The client follows a cancellation control, but an order shipped since its read. What remains authoritative?
 
-**A:** The server's current authorization and domain/version check. A displayed control can become stale; following it does not bypass validation or guarantee a transition.
+**A:** The server's current authorization and domain and version check. A displayed control can become stale; following it does not bypass validation or guarantee a transition.
 
 **Q:** Does storing orders and idempotency records violate REST statelessness?
 
@@ -130,7 +138,7 @@ Source: [Maturity model](20.3.1.04-rest-maturity-model.md)
 
 **Q:** Does adding an unexplained `_links` object prove level 3 or production readiness?
 
-**A:** No. Clients need understood control/media semantics. The ladder also says nothing by itself about authorization, durability or the other REST constraints.
+**A:** No. Clients need understood control and media semantics. The ladder also says nothing by itself about authorization, durability, or the other REST constraints.
 
 Source: [OpenAPI](20.3.1.05-openapi-swagger.md)
 
@@ -144,7 +152,7 @@ Source: [OpenAPI](20.3.1.05-openapi-swagger.md)
 
 **Q:** What should a team check before adopting an OpenAPI 3.2 feature such as `QUERY` or streaming `itemSchema`?
 
-**A:** Confirm that validators, gateways, generators and deployed consumers support the feature end to end. A valid document cannot make an older tool interpret a new operation or streaming contract correctly.
+**A:** Confirm that validators, gateways, generators, and deployed consumers support the feature end to end. A valid document cannot make an older tool interpret a new operation or streaming contract correctly.
 
 ## Summary
 

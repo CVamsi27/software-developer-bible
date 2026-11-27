@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-13_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-14_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -24,13 +24,13 @@ Source: [CAP Theorem & PACELC](30.2.1.01-cap-theorem.md)
 
 **Q:** What changes if a standby has flushed a write's log but not applied it?
 
-**A:** Durability evidence is not yet read visibility. An ordinary standby query can lag; specify remote-apply acknowledgment or a read/version barrier when that visibility is required, with appropriate failover rules.
+**A:** Durability evidence is not yet read visibility. An ordinary standby query can lag; specify remote-apply acknowledgment or a read or version barrier when that visibility is required, with appropriate failover rules.
 
 ## Data Consistency Models
 
 Source: [Data Consistency Models](30.2.1.02-consistency-models.md)
 
-**Q:** Why do read-your-writes and monotonic reads not form a single stronger/weaker ladder?
+**Q:** Why do read-your-writes and monotonic reads not form a single stronger or weaker ladder?
 
 **A:** They constrain different histories: one preserves a client's own writes, the other prevents its reads from moving backward. A system can provide one without the other.
 
@@ -40,7 +40,7 @@ Source: [Data Consistency Models](30.2.1.02-consistency-models.md)
 
 **Q:** Does seeing `x = 5` and later `x = 3` always violate monotonic reads?
 
-**A:** No. It violates the guarantee if `3` comes from an older history/version. A newer accepted update can legitimately decrease the value. Compare observed versions, not arithmetic magnitude.
+**A:** No. It violates the guarantee if `3` comes from an older history or version. A newer accepted update can legitimately decrease the value. Compare observed versions, not arithmetic magnitude.
 
 **Q:** A's write finishes before B invokes a read, but B reads the previous value. Which ordering distinction matters?
 
@@ -100,7 +100,7 @@ Source: [Caching Patterns](30.2.1.05-caching-patterns.md)
 
 **Q:** A reader loads v1, a writer commits v2 and deletes the key, then the reader fills v1. What did invalidation miss?
 
-**A:** The delayed fill occurs after deletion. Define an authoritative/versioned fill boundary or an acceptable stale window; successful `DEL` alone does not order source reads.
+**A:** The delayed fill occurs after deletion. Define an authoritative or versioned fill boundary or an acceptable stale window; successful `DEL` alone does not order source reads.
 
 **Q:** Does a fresh TTL prove that the source value is equally fresh?
 
@@ -144,11 +144,11 @@ Source: [Distributed Transactions](30.2.1.07-distributed-transactions.md)
 
 **Q:** Does shared atomic commit mean arbitrary readers see both databases switch simultaneously?
 
-**A:** No. The eventual commit/abort decision is shared; read visibility and isolation across independent resources need their own contract.
+**A:** No. The eventual commit or abort decision is shared; read visibility and isolation across independent resources need their own contract.
 
 **Q:** Does two-phase commit imply that a transaction uses two-phase locking?
 
-**A:** No. 2PC coordinates a shared commit/abort decision. 2PL constrains lock acquisition and release for concurrency control. A system can combine them, but atomic outcome and isolation are separate obligations.
+**A:** No. 2PC coordinates a shared commit or abort decision. 2PL constrains lock acquisition and release for concurrency control. A system can combine them, but atomic outcome and isolation are separate obligations.
 
 ## Rate Limiting
 
@@ -158,7 +158,7 @@ Additional sources: [RFC 6585 §4 — 429](https://www.rfc-editor.org/rfc/rfc658
 
 **Q:** Why can two independent local token buckets exceed a global limit?
 
-**A:** Each grants capacity without knowing the other's grants. A global contract needs coordination or a documented allocation/approximation strategy.
+**A:** Each grants capacity without knowing the other's grants. A global contract needs coordination or a documented allocation or approximation strategy.
 
 **Q:** The Redis script starts `EXPIRE` on the first `INCR`. Is that a sliding window?
 
@@ -182,7 +182,7 @@ Source: [Consensus & Leader Election](30.2.1.09-consensus-and-leader-election.md
 
 **Q:** A commits X on A+B, then A is isolated. Trace the safe replacement.
 
-**A:** B+C can elect an eligible newer-term leader. Voting/log rules preserve X; A cannot commit fresh entries alone even if it still calls itself leader.
+**A:** B+C can elect an eligible newer-term leader. Voting and log rules preserve X; A cannot commit fresh entries alone even if it still calls itself leader.
 
 **Q:** What stops a later Paxos proposer replacing an already-chosen value?
 
@@ -236,17 +236,17 @@ Source: [Capacity Planning and Back-of-the-Envelope Estimation](30.2.1.12-capaci
 
 **A:** Bursts, skew, failover and maintenance can concentrate work. Average load hides queues and saturation at the periods that determine service reliability.
 
-**Q:** At 10K arrivals/s and 1K completions/s, how long to accumulate 1M messages?
+**Q:** At 10K arrivals per second and 1K completions per second, how long to accumulate 1M messages?
 
 **A:** About `1,000,000 ÷ 9,000 ≈ 111` seconds under constant rates and no shedding. Memory depends on payload and overhead; this is not a universal crash point.
 
-**Q:** A tested instance serves 1K/s, demand is 35K/s, and one instance may fail. What is the minimum under those assumptions?
+**Q:** A tested instance serves 1K requests per second, demand is 35K requests per second, and one instance may fail. What is the minimum under those assumptions?
 
 **A:** 36 instances keep 35 tested instances after one loss. Zone-loss, autoscaling delay, traffic skew and downstream limits can require a different topology or more headroom.
 
 **Q:** In the same example, what capacity survives losing any one of three equal zones?
 
-**A:** Place 18 instances in each zone, 54 total. Losing one zone leaves 36 instances, enough for the 35K/s tested demand under the stated assumptions.
+**A:** Place 18 instances in each zone, 54 total. Losing one zone leaves 36 instances, enough for the 35K requests per second tested demand under the stated assumptions.
 
 ## Backpressure and Flow Control
 
@@ -254,11 +254,11 @@ Source: [Backpressure and Flow Control](30.2.1.13-backpressure-and-flow-control.
 
 **Q:** How can a push protocol provide backpressure without becoming a pull API?
 
-**A:** Credits, bounded windows or explicit pause/resume signals restrict producer progress to consumer capacity. The key is bounded admitted work and a defined overload policy.
+**A:** Credits, bounded windows or explicit pause and resume signals restrict producer progress to consumer capacity. The key is bounded admitted work and a defined overload policy.
 
-**Q:** Arrivals are 10,000 events/s, completions are 1,000/s, and the buffer has 10,000 free slots. About how long until it fills?
+**Q:** Arrivals are 10,000 events per second, completions are 1,000 events per second, and the buffer has 10,000 free slots. About how long until it fills?
 
-**A:** The backlog grows by 9,000 events/s, so 10,000 ÷ 9,000 ≈ 1.11 seconds, assuming constant rates and an initially empty buffer.
+**A:** The backlog grows by 9,000 events per second, so 10,000 ÷ 9,000 ≈ 1.11 seconds, assuming constant rates and an initially empty buffer.
 
 **Q:** Does bounding stored items bound total process memory?
 
@@ -341,11 +341,11 @@ Source: [Outbox Pattern & Change Data Capture (CDC)](30.2.1.18-outbox-and-cdc.md
 
 **Q:** Why does an autocommit `SKIP LOCKED` select fail to claim through publication?
 
-**A:** Its transaction ends when the statement finishes, releasing row locks before the broker call. Use one explicit claim transaction or a recoverable owner/lease protocol.
+**A:** Its transaction ends when the statement finishes, releasing row locks before the broker call. Use one explicit claim transaction or a recoverable owner and lease protocol.
 
 **Q:** Worker A holds aggregate v1; worker B skips it and publishes v2. Does the same Kafka key restore order?
 
-**A:** No. Kafka preserves append order within its partition, not the desired order of competing relays. Serialize aggregate dispatch or enforce a durable consumer version/gap policy.
+**A:** No. Kafka preserves append order within its partition, not the desired order of competing relays. Serialize aggregate dispatch or enforce a durable consumer version and gap policy.
 
 **Q:** The API times out while committing the order and outbox row. Is retrying with a new request ID safe?
 
@@ -389,7 +389,7 @@ Source: [Multi-Region Deployment](30.2.1.20-multi-region-deployment.md)
 
 **Q:** What must a failover plan decide before declaring both regions writable?
 
-**A:** The write authority, conflict policy and fencing/reconciliation behavior during partitions. Routing traffic alone does not preserve invariants.
+**A:** The write authority, conflict policy and fencing and reconciliation behavior during partitions. Routing traffic alone does not preserve invariants.
 
 **Q:** Why are RPO and RTO not guaranteed by choosing warm standby or active-active?
 
@@ -429,7 +429,7 @@ Source: [TCP & UDP Transport Fundamentals](30.2.1.21-tcp-udp-transport-fundament
 
 **Q:** What should you include when estimating the first HTTPS response on a new connection?
 
-**A:** Count DNS if needed, TCP setup, TLS setup, the request/response path, and server work. State whether resumption or connection reuse applies; [RFC 9293](https://www.rfc-editor.org/rfc/rfc9293.html) specifies TCP, while TLS 1.3 setup is described in [RFC 8446](https://www.rfc-editor.org/rfc/rfc8446.html).
+**A:** Count DNS if needed, TCP setup, TLS setup, the request and response path, and server work. State whether resumption or connection reuse applies; [RFC 9293](https://www.rfc-editor.org/rfc/rfc9293.html) specifies TCP, while TLS 1.3 setup is described in [RFC 8446](https://www.rfc-editor.org/rfc/rfc8446.html).
 
 **Q:** Why does HTTP/3 use QUIC over UDP instead of sending HTTP directly over UDP?
 
@@ -469,7 +469,7 @@ Source: [DNS & Name Resolution](30.2.1.22-dns-and-name-resolution.md)
 
 **Q:** Can an HTTPS DNS record change which hostname the TLS certificate must identify?
 
-**A:** No. HTTPS/SVCB records can advertise a target, port, ALPN and ECH configuration, but the client still validates the certificate against its intended service identity. ECH can hide the inner SNI when negotiated; the chosen DNS resolver still sees its query. See [RFC 9460](https://www.rfc-editor.org/rfc/rfc9460.html), [RFC 9848](https://www.rfc-editor.org/rfc/rfc9848.html), and [RFC 9525](https://www.rfc-editor.org/rfc/rfc9525.html).
+**A:** No. HTTPS and SVCB records can advertise a target, port, ALPN and ECH configuration, but the client still validates the certificate against its intended service identity. ECH can hide the inner SNI when negotiated; the chosen DNS resolver still sees its query. See [RFC 9460](https://www.rfc-editor.org/rfc/rfc9460.html), [RFC 9848](https://www.rfc-editor.org/rfc/rfc9848.html), and [RFC 9525](https://www.rfc-editor.org/rfc/rfc9525.html).
 
 **Q:** Can a recursive resolver return an address after its TTL expires?
 
@@ -530,6 +530,28 @@ Source: [TLS, HTTPS & the Certificate Lifecycle](30.2.1.23-tls-https-and-certifi
 **Q:** What do current TLS recommendations say about new protocols and TLS 1.2 key exchange?
 
 **A:** A new protocol using TLS must require TLS 1.3. Existing TLS 1.2 deployments need current BCP 195 configuration: RSA and finite-field DH key-exchange suites are deprecated, and static ECDH is discouraged. This does not prohibit RSA certificate signatures. See [RFC 9852](https://www.rfc-editor.org/rfc/rfc9852.html) and [RFC 10015](https://www.rfc-editor.org/rfc/rfc10015.html).
+
+## Senior Failure Boundaries and Sizing Mechanics
+
+**Q:** Why can Power of Two Choices (P2C) outperform global least-connections or least-response-time load balancing across a large fleet? (Source: [Load Balancing](30.2.1.04-load-balancing.md))
+
+**A:** Global least-load selection relies on telemetry that lags under concurrency, so independent load balancers can all pick the same newly fast or freshly booted server and create a thundering herd. Sampling two healthy backends at random and choosing the less loaded one breaks herding with `O(1)` per-request state and no fleet-wide coordination.
+
+**Q:** What state does the Generic Cell Rate Algorithm (GCRA) store per key, and why is it memory-efficient for distributed rate limiting? (Source: [Rate Limiting](30.2.1.08-rate-limiting.md))
+
+**A:** GCRA stores a single 64-bit Theoretical Arrival Time (`TAT`) timestamp per key instead of separate token counts, refill timestamps, or per-event logs. Comparing arrival time `now` against `TAT - τ` enforces both the steady emission interval and burst allowance while computing `Retry-After` directly from the deficit.
+
+**Q:** How do Raft `PreVote` and `ReadIndex` protect cluster stability and read linearizability? (Source: [Consensus and Leader Election](30.2.1.09-consensus-and-leader-election.md))
+
+**A:** `PreVote` prevents a reconnecting partitioned node with an inflated term from deposing a healthy leader by probing a majority before incrementing its term. `ReadIndex` guarantees linearizable reads without writing to the log by having the leader confirm current authority with one heartbeat quorum round-trip and wait until its state machine applies through its recorded commit index.
+
+**Q:** Why does targeting 50%–70% utilization instead of 95% protect p99 latency, and what does the Universal Scalability Law add when scaling out? (Source: [Capacity Planning](30.2.1.12-capacity-planning.md))
+
+**A:** In single-server queueing (`M/M/1`), response time scales roughly with `1 ÷ (1 - ρ)` as utilization `ρ` approaches 1, so pushing utilization from 50% to 90% quintuples queueing delay and causes bursts to breach latency SLOs. Horizontally, the Universal Scalability Law warns that cross-node coherency overhead grows quadratically with node count and can produce retrograde scaling where extra nodes lower total throughput.
+
+**Q:** Why can Kubernetes `ndots:5` trigger intermittent 5-second external DNS timeouts under bursty egress traffic? (Source: [DNS and Name Resolution](30.2.1.22-dns-and-name-resolution.md))
+
+**A:** A two-dot external name like `api.github.com` has fewer than five dots, so libc resolvers probe up to four cluster search suffixes in both `A` and `AAAA` queries before trying the real host. That up-to-8x UDP amplification can saturate `CoreDNS` or exhaust Linux `conntrack` UDP table entries; mitigate with trailing-dot FQDNs, lower `ndots`, or `NodeLocal DNSCache` over TCP.
 
 ## Summary
 

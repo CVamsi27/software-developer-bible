@@ -10598,7 +10598,7 @@
     },
     {
       "path": "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.md",
-      "sha256": "fc003149e4df86fe08788028f8890b6780039b63965c4fe1a0f38baa5aa85dda",
+      "sha256": "ce6dc8cf9e92dfd083664b996fadf4a96b36297714fb6e30597590abf0daa802",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -10623,10 +10623,10 @@
       },
       "review": {
         "path": "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.md",
-        "sha256": "fc003149e4df86fe08788028f8890b6780039b63965c4fe1a0f38baa5aa85dda",
+        "sha256": "ce6dc8cf9e92dfd083664b996fadf4a96b36297714fb6e30597590abf0daa802",
         "genre": "learning-chapter",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 12B D1-D7 rework of 20.4.3 and 20.4.4 C1-C8 refinement (2026-11-24): Full read of 183 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -10635,7 +10635,7 @@
     },
     {
       "path": "20-backend/20.4-database/03-transactions-and-replication/20.4.3.02-deadlocks.md",
-      "sha256": "e6bf0dd65563125072e849040f2a6f7ffb46f8a98eced95a7a114f014da0757d",
+      "sha256": "a75aecd0c9b483e6eb7e56f0a865fb3e6a5b92eb502ebcbe010ae365bae9f0ea",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -10659,19 +10659,19 @@
       },
       "review": {
         "path": "20-backend/20.4-database/03-transactions-and-replication/20.4.3.02-deadlocks.md",
-        "sha256": "e6bf0dd65563125072e849040f2a6f7ffb46f8a98eced95a7a114f014da0757d",
+        "sha256": "a75aecd0c9b483e6eb7e56f0a865fb3e6a5b92eb502ebcbe010ae365bae9f0ea",
         "genre": "learning-chapter",
         "status": "reviewed",
-        "notes": "Full content reviewed: two-session wait cycle, victim uncertainty, hidden lock paths, deterministic ordering, NOWAIT/SKIP LOCKED/timeout distinctions, pg_blocking_pids prepared-transaction boundary and advisory lifetimes. Existing example/failure/decision depth sufficient; SQL not executed.",
+        "notes": "Phase 12B D1-D7 rework of 20.4.3 and 20.4.4 C1-C8 refinement (2026-11-24): Full read of 137 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "career_planning",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true
       }
     },
     {
       "path": "20-backend/20.4-database/03-transactions-and-replication/20.4.3.03-optimistic-pessimistic-locking.md",
-      "sha256": "60e6216ec353ef2505e075b1ccf3b1ac0b59467a9bf73504ccdaada5759a551c",
+      "sha256": "f13c408649f4db278bbfed0621f88e7f6b8790f9daaa7282f8a7df45a37bd8d2",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -10694,19 +10694,19 @@
       },
       "review": {
         "path": "20-backend/20.4-database/03-transactions-and-replication/20.4.3.03-optimistic-pessimistic-locking.md",
-        "sha256": "60e6216ec353ef2505e075b1ccf3b1ac0b59467a9bf73504ccdaada5759a551c",
+        "sha256": "f13c408649f4db278bbfed0621f88e7f6b8790f9daaa7282f8a7df45a37bd8d2",
         "genre": "learning-chapter",
         "status": "reviewed",
-        "notes": "Full content reviewed: complete stale-editor fixture, zero-row semantics, per-writer version cooperation, isolation-dependent held locks, atomic stock predicate, recoverable queue claim and changed-decision table. SQL not executed; no new blanket locking guidance needed.",
+        "notes": "Phase 12B D1-D7 rework of 20.4.3 and 20.4.4 C1-C8 refinement (2026-11-24): Full read of 158 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "career_planning",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true
       }
     },
     {
       "path": "20-backend/20.4-database/03-transactions-and-replication/20.4.3.04-database-replication.md",
-      "sha256": "7e56c6ad1e9d13fa956b8a140ed9e4a3cd977d40982dc44fc0498521aa7ba3d9",
+      "sha256": "0a32d0fac6866c77ee94e385272b9385b2a0ca9f2e75fa55358271d35492fe75",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -10731,19 +10731,19 @@
       },
       "review": {
         "path": "20-backend/20.4-database/03-transactions-and-replication/20.4.3.04-database-replication.md",
-        "sha256": "7e56c6ad1e9d13fa956b8a140ed9e4a3cd977d40982dc44fc0498521aa7ba3d9",
+        "sha256": "0a32d0fac6866c77ee94e385272b9385b2a0ca9f2e75fa55358271d35492fe75",
         "genre": "learning-chapter",
         "status": "reviewed",
-        "notes": "Full content reviewed: receipt/write/flush/replay stages, physical/logical restrictions, synchronous set semantics, fresh-snapshot watermark protocol, failover fencing, prepared basebackup and lag/retention observability. Clear workload and recovery trade-offs. Deployment/SQL not executed.",
+        "notes": "Phase 12B D1-D7 rework of 20.4.3 and 20.4.4 C1-C8 refinement (2026-11-24): Full read of 165 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "career_planning",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true
       }
     },
     {
       "path": "20-backend/20.4-database/03-transactions-and-replication/INDEX.md",
-      "sha256": "571bef9d3f26098aaf3498f5a8ef5648126361e47c5adc981086dfd4c0c7ec4e",
+      "sha256": "a6bc69b2fa802ffd86e0ed94dd352efea24121474b2f096e0708ee43adc36fa4",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -10760,10 +10760,10 @@
       },
       "review": {
         "path": "20-backend/20.4-database/03-transactions-and-replication/INDEX.md",
-        "sha256": "571bef9d3f26098aaf3498f5a8ef5648126361e47c5adc981086dfd4c0c7ec4e",
+        "sha256": "a6bc69b2fa802ffd86e0ed94dd352efea24121474b2f096e0708ee43adc36fa4",
         "genre": "index",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 12B D1-D7 rework of 20.4.3 and 20.4.4 C1-C8 refinement (2026-11-24): Full read of 53 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -10772,7 +10772,7 @@
     },
     {
       "path": "20-backend/20.4-database/03-transactions-and-replication/REVISION.md",
-      "sha256": "6c5813c0a753b09ac9f4ea74246aeed2c35697759f630daf40e64128c0aeceb1",
+      "sha256": "2675d1c7689cf9cd88e6382135c9e6d0ffdc9a528437cbe791aba82a616246f5",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -10786,16 +10786,16 @@
           "References & Learn More"
         ],
         "code_fences": 0,
-        "revision_questions": 12,
+        "revision_questions": 15,
         "has_summary": true,
         "has_first_principles": false
       },
       "review": {
         "path": "20-backend/20.4-database/03-transactions-and-replication/REVISION.md",
-        "sha256": "6c5813c0a753b09ac9f4ea74246aeed2c35697759f630daf40e64128c0aeceb1",
+        "sha256": "2675d1c7689cf9cd88e6382135c9e6d0ffdc9a528437cbe791aba82a616246f5",
         "genre": "revision",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 12B D1-D7 rework of 20.4.3 and 20.4.4 C1-C8 refinement (2026-11-24): Full read of 99 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -10804,7 +10804,7 @@
     },
     {
       "path": "20-backend/20.4-database/04-orm-and-access/20.4.4.01-prisma.md",
-      "sha256": "04d0d2ee975ece529e2671f03f740deb6472ecd1f17dd6eb6ed2ec2199d66166",
+      "sha256": "c96acbb2a9875c1cb0082e5aaa632af38a2a20ce14dad848cd8a31a6f0465d6e",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -10829,10 +10829,10 @@
       },
       "review": {
         "path": "20-backend/20.4-database/04-orm-and-access/20.4.4.01-prisma.md",
-        "sha256": "04d0d2ee975ece529e2671f03f740deb6472ecd1f17dd6eb6ed2ec2199d66166",
+        "sha256": "c96acbb2a9875c1cb0082e5aaa632af38a2a20ce14dad848cd8a31a6f0465d6e",
         "genre": "learning-chapter",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 12B D1-D7 rework of 20.4.3 and 20.4.4 C1-C8 refinement (2026-11-24): Full read of 290 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -10841,7 +10841,7 @@
     },
     {
       "path": "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md",
-      "sha256": "50f94b74d190b13ef2ee39e5b655c7ed9a4fb8352625a3d4b6ba21c4ca41738f",
+      "sha256": "d681f4756c3343aba464035000b8949ee3aa772abe0e849374d47cc4535b2fde",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -10866,10 +10866,10 @@
       },
       "review": {
         "path": "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md",
-        "sha256": "50f94b74d190b13ef2ee39e5b655c7ed9a4fb8352625a3d4b6ba21c4ca41738f",
+        "sha256": "d681f4756c3343aba464035000b8949ee3aa772abe0e849374d47cc4535b2fde",
         "genre": "learning-chapter",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 12B D1-D7 rework of 20.4.3 and 20.4.4 C1-C8 refinement (2026-11-24): Full read of 232 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -10878,7 +10878,7 @@
     },
     {
       "path": "20-backend/20.4-database/04-orm-and-access/20.4.4.03-orm-query-builder-landscape.md",
-      "sha256": "1f19a5d556910755a557ce0967927bffc936de0f66f2dd315dc8a8d42f8aa5f5",
+      "sha256": "3e4b9812ccb063d12a6c93a3427b593964f6c3219679c1b725d693f3915d7f3f",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -10902,19 +10902,19 @@
       },
       "review": {
         "path": "20-backend/20.4-database/04-orm-and-access/20.4.4.03-orm-query-builder-landscape.md",
-        "sha256": "1f19a5d556910755a557ce0967927bffc936de0f66f2dd315dc8a8d42f8aa5f5",
+        "sha256": "3e4b9812ccb063d12a6c93a3427b593964f6c3219679c1b725d693f3915d7f3f",
         "genre": "learning-chapter",
         "status": "reviewed",
-        "notes": "Full content reviewed: fixed top-author report with bounded parameters/result validation, comparison by equal relational work, transaction participation, raw/ORM safety boundaries, migration-build separation and rollout costs. Driver/tool commands are version-scoped guidance; they were not executed.",
+        "notes": "Phase 12B D1-D7 rework of 20.4.3 and 20.4.4 C1-C8 refinement (2026-11-24): Full read of 173 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "career_planning",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true
       }
     },
     {
       "path": "20-backend/20.4-database/04-orm-and-access/INDEX.md",
-      "sha256": "d8efee6247817013916f8e8a5dab3e22bc2f7a80b50a8a821dec87a40d322834",
+      "sha256": "09bfa765b664d062925fe761a46bb7c20f1786d4c8951a70a9bb0a3171bb6dee",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -10930,10 +10930,10 @@
       },
       "review": {
         "path": "20-backend/20.4-database/04-orm-and-access/INDEX.md",
-        "sha256": "d8efee6247817013916f8e8a5dab3e22bc2f7a80b50a8a821dec87a40d322834",
+        "sha256": "09bfa765b664d062925fe761a46bb7c20f1786d4c8951a70a9bb0a3171bb6dee",
         "genre": "index",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 12B D1-D7 rework of 20.4.3 and 20.4.4 C1-C8 refinement (2026-11-24): Full read of 49 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -10942,7 +10942,7 @@
     },
     {
       "path": "20-backend/20.4-database/04-orm-and-access/REVISION.md",
-      "sha256": "6ecd12e8c8e8525768eaadb0af8758ae281c2cedba358bdce9d5635bdfeb816b",
+      "sha256": "db0a050bc8902ae99108f56138244ddb617cefb9d46ff640626eb2992efaea4d",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -10955,16 +10955,16 @@
           "References & Learn More"
         ],
         "code_fences": 0,
-        "revision_questions": 14,
+        "revision_questions": 16,
         "has_summary": true,
         "has_first_principles": false
       },
       "review": {
         "path": "20-backend/20.4-database/04-orm-and-access/REVISION.md",
-        "sha256": "6ecd12e8c8e8525768eaadb0af8758ae281c2cedba358bdce9d5635bdfeb816b",
+        "sha256": "db0a050bc8902ae99108f56138244ddb617cefb9d46ff640626eb2992efaea4d",
         "genre": "revision",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 12B D1-D7 rework of 20.4.3 and 20.4.4 C1-C8 refinement (2026-11-24): Full read of 99 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -11237,7 +11237,7 @@
     },
     {
       "path": "20-backend/20.4-database/INDEX.md",
-      "sha256": "b5902c0ae61e9518d9f8c4a5a232951f70fab360fd7b2cc714404ad679471f20",
+      "sha256": "d75639b968f48e83f289a1f5427db043c7be9b03d2465852f97d60be1b162cac",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -11262,12 +11262,12 @@
       },
       "review": {
         "path": "20-backend/20.4-database/INDEX.md",
-        "sha256": "b5902c0ae61e9518d9f8c4a5a232951f70fab360fd7b2cc714404ad679471f20",
+        "sha256": "d75639b968f48e83f289a1f5427db043c7be9b03d2465852f97d60be1b162cac",
         "genre": "navigation-index",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "Phase 12A D1-D7 rework of 20.4.1 and 20.4.2 C1-C8 refinement (2026-11-24): Full read of 172 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+        "notes": "Phase 12B D1-D7 rework of 20.4.3 and 20.4.4 C1-C8 refinement (2026-11-24): Full read of 172 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": [],
         "metadataReview": {
@@ -14227,7 +14227,7 @@
     },
     {
       "path": "20-backend/INDEX.md",
-      "sha256": "8d3aad30a8b62341e921f83b9468c43a44bdeb9ffa5542199e082a1ed8b195cc",
+      "sha256": "8ae953a7b581095a902f1c26ac0ea10238251b2e40036f500497d25ca193810d",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -14246,12 +14246,12 @@
       },
       "review": {
         "path": "20-backend/INDEX.md",
-        "sha256": "8d3aad30a8b62341e921f83b9468c43a44bdeb9ffa5542199e082a1ed8b195cc",
+        "sha256": "8ae953a7b581095a902f1c26ac0ea10238251b2e40036f500497d25ca193810d",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 12A D1-D7 rework of 20.4.1 and 20.4.2 count/read-time sync (2026-11-24): Full read of 122 lines. Updated generated counts/read-time navigation after Phase 12A D1-D7 rework of 20.4.1 and 20.4.2.",
+        "notes": "Phase 12B D1-D7 rework of 20.4.3 and 20.4.4 count/read-time sync (2026-11-24): Full read of 122 lines. Updated generated counts/read-time navigation after Phase 12B D1-D7 rework of 20.4.3 and 20.4.4.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "ab7ced08ffe012474a86db7f5ff38398ca691458b124ed67f5bf5a2780894865",
@@ -31035,7 +31035,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "4df7603bbb0c1976f5684bc7a0fbbfa351566e98632a3c2f17ef49e902142896",
+      "sha256": "81140dfdd1a2285094e45411fe1bc1d38c7b5195337c830feb76cd95fe7dc9d2",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -31053,12 +31053,12 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "4df7603bbb0c1976f5684bc7a0fbbfa351566e98632a3c2f17ef49e902142896",
+        "sha256": "81140dfdd1a2285094e45411fe1bc1d38c7b5195337c830feb76cd95fe7dc9d2",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 12A D1-D7 rework of 20.4.1 and 20.4.2 count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 12A D1-D7 rework of 20.4.1 and 20.4.2.",
+        "notes": "Phase 12B D1-D7 rework of 20.4.3 and 20.4.4 count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 12B D1-D7 rework of 20.4.3 and 20.4.4.",
         "findings": []
       }
     },
@@ -31638,7 +31638,7 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "bdeedbfaf88016cf3c735d648fd51d43aa22e89e28b603985bb2604d93b8882f",
+      "sha256": "83392624b16dd81c475f06ae5775b434f48383b98ad4d27c966f88d94cadbd6e",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31656,12 +31656,12 @@
       },
       "review": {
         "path": "docs/api-contract.md",
-        "sha256": "bdeedbfaf88016cf3c735d648fd51d43aa22e89e28b603985bb2604d93b8882f",
+        "sha256": "83392624b16dd81c475f06ae5775b434f48383b98ad4d27c966f88d94cadbd6e",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 12A D1-D7 rework of 20.4.1 and 20.4.2 count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 12A D1-D7 rework of 20.4.1 and 20.4.2.",
+        "notes": "Phase 12B D1-D7 rework of 20.4.3 and 20.4.4 count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 12B D1-D7 rework of 20.4.3 and 20.4.4.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

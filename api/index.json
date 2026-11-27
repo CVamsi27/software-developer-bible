@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "c57c1940324f14649a71b174ba2b1cb98f08ef207419ec9b1167bbed1c2cd5e5",
+ "corpus_digest": "36fd713a651468d77ebfc0d5d233bbeec51e198c4ccec36759b796d2e3956e0a",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5566
+  "read_minutes": 5567
  },
  "chapters": [
   {
@@ -2684,7 +2684,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.html",

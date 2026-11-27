@@ -24,7 +24,11 @@ Source: [Database Transactions](20.4.3.01-transactions.md)
 
 **Q:** A network failure occurs during `COMMIT`. Why is it different from a confirmed `40001` rollback?
 
-**A:** The commit outcome may be unknown. Reconcile a durable operation key/result before repeating a transfer; a known serialization rollback instead permits bounded whole-transaction retry with fresh reads.
+**A:** The commit outcome may be unknown. Reconcile a durable operation key and result before repeating a transfer; a known serialization rollback instead permits bounded whole-transaction retry with fresh reads.
+
+**Q:** Why can wrapping more than 64 nested `SAVEPOINT` calls inside one transaction degrade latency for unrelated queries across the entire PostgreSQL server?
+
+**A:** Each session caches up to 64 subtransaction IDs locally; exceeding that limit overflows snapshots into the shared `pg_subtrans` SLRU, triggering global contention whenever concurrent backends check tuple visibility.
 
 ## Deadlocks
 
@@ -36,11 +40,15 @@ Source: [Deadlocks](20.4.3.02-deadlocks.md)
 
 **Q:** What architectural rule prevents deadlocks across multi-row database updates?
 
-**A:** Acquire all participating resources in a deterministic global order to remove circular wait. Ordering only the explicit rows is insufficient if triggers, foreign keys, lock upgrades or another writer acquire additional resources differently.
+**A:** Acquire all participating resources in a deterministic global order to remove circular wait. Ordering only the explicit rows is insufficient if triggers, foreign keys, lock upgrades, or another writer acquire additional resources differently.
 
 **Q:** What changes when a worker uses `SKIP LOCKED` instead of waiting for the first queued row?
 
 **A:** It can claim another unlocked row, so the result is not strict FIFO or proof that an empty result means no pending work. The claim must atomically transition state; a crashed worker still needs lease recovery and idempotent effects.
+
+**Q:** Why does `SELECT ... FOR NO KEY UPDATE` avoid blocking child foreign-key inserts while `SELECT ... FOR UPDATE` blocks them?
+
+**A:** Child foreign-key inserts acquire `FOR KEY SHARE` on the referenced parent row, which conflicts with `FOR UPDATE` but coexists with `FOR NO KEY UPDATE` when primary and unique key columns are not modified.
 
 ## Optimistic vs Pessimistic Locking
 
@@ -48,7 +56,7 @@ Source: [Optimistic vs Pessimistic Locking](20.4.3.03-optimistic-pessimistic-loc
 
 **Q:** Under what workload characteristics does optimistic concurrency control outperform pessimistic locking?
 
-**A:** Expected-version writes can avoid holding protective locks throughout an earlier read or editing period when conflicts are rare. The `UPDATE` still takes write locks and validates its predicate when it executes, not automatically at commit. Measure conflict/recomputation cost; stale human intent needs reconciliation.
+**A:** Expected-version writes can avoid holding protective locks throughout an earlier read or editing period when conflicts are rare. The `UPDATE` still takes write locks and validates its predicate when it executes, not automatically at commit. Measure conflict and recomputation cost; stale human intent needs reconciliation.
 
 **Q:** Why must an optimistic concurrency update verify the version in the `WHERE` clause rather than purely in memory?
 
@@ -72,7 +80,11 @@ Source: [Database Replication](20.4.3.04-database-replication.md)
 
 **Q:** A standby has caught up, but a Repeatable Read transaction established its snapshot before replay. Is its next read current?
 
-**A:** No. Replay progress and snapshot visibility are separate. Start a fresh business-read snapshot after the trusted watermark check, and handle failover/timeline identity in the routing protocol.
+**A:** No. Replay progress and snapshot visibility are separate. Start a fresh business-read snapshot after the trusted watermark check, and handle failover and timeline identity in the routing protocol.
+
+**Q:** How do `max_slot_wal_keep_size` and `hot_standby_feedback = on` each trade primary health against replica stability?
+
+**A:** `max_slot_wal_keep_size` protects the primary from disk exhaustion by invalidating a stalled slot past a byte cap (forcing a replica rebuild), whereas `hot_standby_feedback = on` prevents standby query cancellations by deferring primary vacuum—at the cost of primary table bloat.
 
 ## Summary
 

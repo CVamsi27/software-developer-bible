@@ -4868,176 +4868,180 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 12A D1-D7 rework of 20.4.1 and 20.4.2)."
   },
   "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.md": {
-   "sha256": "fc003149e4df86fe08788028f8890b6780039b63965c4fe1a0f38baa5aa85dda",
+   "sha256": "ce6dc8cf9e92dfd083664b996fadf4a96b36297714fb6e30597590abf0daa802",
    "lines": 183,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against PostgreSQL transaction, isolation, WAL synchronous_commit, and DDL transaction docs.",
-    "readable": "Full read of 183 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "939 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 183 lines (1020 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1020 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical database transactions chapter; points at 20.4.4.02 for Prisma tx code and 20.6.3.02 for distributed transactions.",
-    "fast": "25.8 KB raw / 7.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 25.8 KB raw / 7.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that a network failure during COMMIT leaves outcome uncertain and requires durable idempotency/reconciliation rather than blind retry."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12B D1-D7 rework of 20.4.3 and 20.4.4)."
   },
   "20-backend/20.4-database/03-transactions-and-replication/20.4.3.02-deadlocks.md": {
-   "sha256": "e6bf0dd65563125072e849040f2a6f7ffb46f8a98eced95a7a114f014da0757d",
+   "sha256": "a75aecd0c9b483e6eb7e56f0a865fb3e6a5b92eb502ebcbe010ae365bae9f0ea",
    "lines": 137,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against PostgreSQL explicit-locking, pg_blocking_pids, deadlock_timeout, and SQLSTATE 40P01/55P03 docs.",
-    "readable": "Full read of 137 lines. Crisp deadlocks chapter with two-session interleaving table, table vs row lock modes, consistent ID lock ordering, NOWAIT vs SKIP LOCKED, pg_blocking_pids blocker query, and transaction-scoped advisory locks.",
-    "concise": "729 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "readable": "Full read of 137 lines (791 prose words). Crisp deadlocks chapter with two-session interleaving table, table vs row lock modes, consistent ID lock ordering, NOWAIT vs SKIP LOCKED, pg_blocking_pids blocker query, and transaction-scoped advisory locks.",
+    "concise": "791 words across 137 lines. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
     "focused": "Canonical database deadlocks chapter; points at 20.4.3.03 for lock strategies and 30.2.1.14 for cross-service distributed locks.",
-    "fast": "22.3 KB raw / 6.3 KB gzip",
+    "fast": "Measured 22.3 KB raw / 6.3 KB gzip.",
     "best": "Remaining limit is that ordering explicit SQL locks can still cycle if triggers, foreign keys, or another code path acquire hidden locks in reverse order."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12B D1-D7 rework of 20.4.3 and 20.4.4)."
   },
   "20-backend/20.4-database/03-transactions-and-replication/20.4.3.03-optimistic-pessimistic-locking.md": {
-   "sha256": "60e6216ec353ef2505e075b1ccf3b1ac0b59467a9bf73504ccdaada5759a551c",
+   "sha256": "f13c408649f4db278bbfed0621f88e7f6b8790f9daaa7282f8a7df45a37bd8d2",
    "lines": 158,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against PostgreSQL row-locking, Read Committed predicate rechecks, and SELECT SKIP LOCKED docs.",
-    "readable": "Full read of 158 lines. Clear optimistic vs pessimistic locking guide with expected-version UPDATE fixture, ordered FOR UPDATE locks, single-statement conditional stock reservation, FOR UPDATE SKIP LOCKED job claims, and decision matrix.",
-    "concise": "822 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "readable": "Full read of 158 lines (876 prose words). Clear optimistic vs pessimistic locking guide with expected-version UPDATE fixture, ordered FOR UPDATE locks, single-statement conditional stock reservation, FOR UPDATE SKIP LOCKED job claims, and decision matrix.",
+    "concise": "876 words across 158 lines. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
     "focused": "Canonical locking chapter; points at 20.4.4.02 for ORM implementation and 20.4.3.02 for deadlock diagnosis.",
-    "fast": "23.5 KB raw / 6.4 KB gzip",
+    "fast": "Measured 23.5 KB raw / 6.4 KB gzip.",
     "best": "Remaining limit is that optimistic retries cannot safely auto-overwrite stale human form edits, and SKIP LOCKED worker claims still require crash-lease recovery and idempotency."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12B D1-D7 rework of 20.4.3 and 20.4.4)."
   },
   "20-backend/20.4-database/03-transactions-and-replication/20.4.3.04-database-replication.md": {
-   "sha256": "7e56c6ad1e9d13fa956b8a140ed9e4a3cd977d40982dc44fc0498521aa7ba3d9",
+   "sha256": "0a32d0fac6866c77ee94e385272b9385b2a0ca9f2e75fa55358271d35492fe75",
    "lines": 165,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against PostgreSQL warm-standby, logical replication, pg_basebackup, pg_stat_replication, and Patroni docs.",
-    "readable": "Full read of 165 lines. Clear replication chapter tracing WAL write/flush/receive/replay milestones, physical vs logical replication limits (DDL/sequences/conflicts), synchronous_commit levels, WAL-LSN watermark routing, fenced failover, and pg_stat_replication monitoring.",
-    "concise": "1243 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "readable": "Full read of 165 lines (1305 prose words). Clear replication chapter tracing WAL write/flush/receive/replay milestones, physical vs logical replication limits (DDL/sequences/conflicts), synchronous_commit levels, WAL-LSN watermark routing, fenced failover, and pg_stat_replication monitoring.",
+    "concise": "1305 words across 165 lines. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
     "focused": "Canonical database replication chapter; points at 20.4.5.04 for backups/PITR and 30.2.1.03 for system-design sharding.",
-    "fast": "23.4 KB raw / 7.6 KB gzip",
+    "fast": "Measured 23.4 KB raw / 7.6 KB gzip.",
     "best": "Remaining limit is that replication propagates accidental deletes immediately and synchronous commit only survives primary loss when failover selects a copy holding that write."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12B D1-D7 rework of 20.4.3 and 20.4.4)."
   },
   "20-backend/20.4-database/03-transactions-and-replication/INDEX.md": {
-   "sha256": "571bef9d3f26098aaf3498f5a8ef5648126361e47c5adc981086dfd4c0c7ec4e",
+   "sha256": "a6bc69b2fa802ffd86e0ed94dd352efea24121474b2f096e0708ee43adc36fa4",
    "lines": 53,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against all 5 files in 03-transactions-and-replication/; all links verified.",
-    "readable": "Full read of 53 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 53 lines (149 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "149 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical Transactions & Replication category index; points at numbered chapters and REVISION.md.",
-    "fast": "11.1 KB raw / 3.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 11.1 KB raw / 3.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is Docita anchors identify code leads and do not assert live topology or failover guarantees."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12B D1-D7 rework of 20.4.3 and 20.4.4)."
   },
   "20-backend/20.4-database/03-transactions-and-replication/REVISION.md": {
-   "sha256": "6c5813c0a753b09ac9f4ea74246aeed2c35697759f630daf40e64128c0aeceb1",
-   "lines": 87,
+   "sha256": "2675d1c7689cf9cd88e6382135c9e6d0ffdc9a528437cbe791aba82a616246f5",
+   "lines": 99,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against all 4 chapters in 03-transactions-and-replication/; all source links verified.",
-    "readable": "Full read of 87 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "701 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 99 lines (868 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "868 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical Transactions & Replication revision companion; kept separate from learning chapters.",
-    "fast": "13.1 KB raw / 4.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 13.1 KB raw / 4.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that conceptual recall does not replace running two-session concurrency and failover drills."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12B D1-D7 rework of 20.4.3 and 20.4.4)."
   },
   "20-backend/20.4-database/04-orm-and-access/20.4.4.01-prisma.md": {
-   "sha256": "04d0d2ee975ece529e2671f03f740deb6472ecd1f17dd6eb6ed2ec2199d66166",
+   "sha256": "c96acbb2a9875c1cb0082e5aaa632af38a2a20ce14dad848cd8a31a6f0465d6e",
    "lines": 290,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against Prisma ORM 7 generators, transactions, PostgreSQL driver adapter, connection-pool, and release-status docs.",
-    "readable": "Full read of 290 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1290 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 290 lines (1352 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1352 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical Prisma fundamentals chapter; points at 20.4.4.02 for concurrent transactions/RLS and 20.4.5.01 for pooling.",
-    "fast": "35.7 KB raw / 9.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 35.7 KB raw / 9.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that TypeScript generics on $queryRaw do not validate runtime rows and Prisma ORM 8 RC uses a distinct contract."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12B D1-D7 rework of 20.4.3 and 20.4.4)."
   },
   "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md": {
-   "sha256": "50f94b74d190b13ef2ee39e5b655c7ed9a4fb8352625a3d4b6ba21c4ca41738f",
+   "sha256": "d681f4756c3343aba464035000b8949ee3aa772abe0e849374d47cc4535b2fde",
    "lines": 232,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against Prisma ORM 7 client-extensions, Prisma 6.14 $use removal, Prisma 7 transactions, and PostgreSQL RLS/locking docs.",
-    "readable": "Full read of 232 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1247 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 232 lines (1308 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1308 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical Prisma advanced chapter; points at 20.4.1.06 for full RLS trust model and 20.4.5.03 for soft-delete lifecycles.",
-    "fast": "41.8 KB raw / 9.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 41.8 KB raw / 9.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that query extensions do not intercept nested operations and P2034 retry codes are version-specific to Prisma 7."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12B D1-D7 rework of 20.4.3 and 20.4.4)."
   },
   "20-backend/20.4-database/04-orm-and-access/20.4.4.03-orm-query-builder-landscape.md": {
-   "sha256": "1f19a5d556910755a557ce0967927bffc936de0f66f2dd315dc8a8d42f8aa5f5",
+   "sha256": "3e4b9812ccb063d12a6c93a3427b593964f6c3219679c1b725d693f3915d7f3f",
    "lines": 173,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against Prisma 7, Drizzle Kit, TypeORM, Knex, and node-postgres official documentation.",
-    "readable": "Full read of 173 lines. Balanced access-layer comparison (pg, Knex, TypeORM, Prisma 7, Drizzle) holding one relational report constant, comparing migration tooling honestly, and explaining how to mix raw SQL without breaking transaction/DTO seams.",
-    "concise": "1211 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "readable": "Full read of 173 lines (1296 prose words). Balanced access-layer comparison (pg, Knex, TypeORM, Prisma 7, Drizzle) holding one relational report constant, comparing migration tooling honestly, and explaining how to mix raw SQL without breaking transaction/DTO seams.",
+    "concise": "1296 words across 173 lines. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
     "focused": "Canonical ORM/query-builder comparison chapter; points at 20.4.5.02 for online migration rollouts and 20.4.4.01-02 for Prisma depth.",
-    "fast": "26.8 KB raw / 8.2 KB gzip",
+    "fast": "Measured 26.8 KB raw / 8.2 KB gzip.",
     "best": "Remaining limit is that CLI flags and runtime/edge adapter support vary by major version and must be verified against pinned packages."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12B D1-D7 rework of 20.4.3 and 20.4.4)."
   },
   "20-backend/20.4-database/04-orm-and-access/INDEX.md": {
-   "sha256": "d8efee6247817013916f8e8a5dab3e22bc2f7a80b50a8a821dec87a40d322834",
+   "sha256": "09bfa765b664d062925fe761a46bb7c20f1786d4c8951a70a9bb0a3171bb6dee",
    "lines": 49,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against Prisma release-status reference and all 4 files in 04-orm-and-access/.",
-    "readable": "Full read of 49 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "168 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 49 lines (170 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "170 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical ORM & Access category index; points at numbered chapters and REVISION.md.",
-    "fast": "10.9 KB raw / 3.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 10.9 KB raw / 3.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is Prisma 8 RC status can advance over time; always verify current release status before upgrading."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12B D1-D7 rework of 20.4.3 and 20.4.4)."
   },
   "20-backend/20.4-database/04-orm-and-access/REVISION.md": {
-   "sha256": "6ecd12e8c8e8525768eaadb0af8758ae281c2cedba358bdce9d5635bdfeb816b",
-   "lines": 91,
+   "sha256": "db0a050bc8902ae99108f56138244ddb617cefb9d46ff640626eb2992efaea4d",
+   "lines": 99,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against all 3 chapters in 04-orm-and-access/; all source links verified.",
-    "readable": "Full read of 91 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "722 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 99 lines (830 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "830 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical ORM & Access revision companion; kept separate from learning chapters.",
-    "fast": "12.8 KB raw / 4.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 12.8 KB raw / 4.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that conceptual recall does not replace inspecting emitted SQL and testing concurrent conflict paths against PostgreSQL."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12B D1-D7 rework of 20.4.3 and 20.4.4)."
   },
   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.01-connection-pooling.md": {
    "sha256": "9fe7d1c81518918feda4831a650ab314b5dfcd0558188a53b203be8b51447e9e",
@@ -5168,7 +5172,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
   },
   "20-backend/20.4-database/INDEX.md": {
-   "sha256": "b5902c0ae61e9518d9f8c4a5a232951f70fab360fd7b2cc714404ad679471f20",
+   "sha256": "d75639b968f48e83f289a1f5427db043c7be9b03d2465852f97d60be1b162cac",
    "lines": 172,
    "genre": "index",
    "status": "read",
@@ -5178,10 +5182,10 @@
     "readable": "Full read of 172 lines (425 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "425 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical Database stack index; points at category INDEX files without duplicating chapter explanations.",
-    "fast": "Measured 27.5 KB raw / 6.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 27.5 KB raw / 6.9 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Remaining limit is Docita anchors name source files to inspect and do not assert live production settings."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 12A D1-D7 rework of 20.4.1 and 20.4.2)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12B D1-D7 rework of 20.4.3 and 20.4.4)."
   },
   "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.md": {
    "sha256": "91d2a09ec136f0548629d732ae2ed8cef90fb5313c62c1ead16d6db8763ee377",
@@ -6561,7 +6565,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
   },
   "20-backend/INDEX.md": {
-   "sha256": "8d3aad30a8b62341e921f83b9468c43a44bdeb9ffa5542199e082a1ed8b195cc",
+   "sha256": "8ae953a7b581095a902f1c26ac0ea10238251b2e40036f500497d25ca193810d",
    "lines": 122,
    "genre": "index",
    "status": "read",
@@ -6574,7 +6578,7 @@
     "fast": "Measured 15.4 KB raw / 5.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Remaining limit is study-hour path estimates are rough guides and depend on each reader's prior backend background."
    },
-   "notes": "Synced live read-time and counts after Phase 12A D1-D7 rework of 20.4.1 and 20.4.2."
+   "notes": "Synced live read-time and counts after Phase 12B D1-D7 rework of 20.4.3 and 20.4.4."
   },
   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md": {
    "sha256": "065e2b7d573b2298550d061453667084b1d010e6fadf07f903f6fdd34a8e5185",
@@ -14367,7 +14371,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "4df7603bbb0c1976f5684bc7a0fbbfa351566e98632a3c2f17ef49e902142896",
+   "sha256": "81140dfdd1a2285094e45411fe1bc1d38c7b5195337c830feb76cd95fe7dc9d2",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14380,7 +14384,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 12A D1-D7 rework of 20.4.1 and 20.4.2."
+   "notes": "Synced live read-time and counts after Phase 12B D1-D7 rework of 20.4.3 and 20.4.4."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14671,7 +14675,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "bdeedbfaf88016cf3c735d648fd51d43aa22e89e28b603985bb2604d93b8882f",
+   "sha256": "83392624b16dd81c475f06ae5775b434f48383b98ad4d27c966f88d94cadbd6e",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14684,7 +14688,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 12A D1-D7 rework of 20.4.1 and 20.4.2."
+   "notes": "Synced live read-time and counts after Phase 12B D1-D7 rework of 20.4.3 and 20.4.4."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

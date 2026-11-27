@@ -20,11 +20,11 @@ Source: [Prisma ORM](20.4.4.01-prisma.md)
 
 **Q:** Why do these examples pin Prisma 7.10.0 and name the adapter and generator?
 
-**A:** Prisma 7 is the current stable line and its client requires a driver adapter and generated output path. Prisma ORM 8 remains a release candidate with a different contract/runtime and query API. Check the [release-status page](https://www.prisma.io/docs/orm/release-status) before changing the pinned version.
+**A:** Prisma 7 is the current stable line and its client requires a driver adapter and generated output path. Prisma ORM 8 remains a release candidate with a different contract, runtime, and query API. Check the [release-status page](https://www.prisma.io/docs/orm/release-status) before changing the pinned version.
 
 **Q:** What does a generic argument on `$queryRaw` establish?
 
-**A:** It tells TypeScript what shape the caller expects. It does not inspect the returned rows, convert PostgreSQL `bigint` to a JSON number or validate the SQL/interface contract.
+**A:** It tells TypeScript what shape the caller expects. It does not inspect the returned rows, convert PostgreSQL `bigint` to a JSON number or validate the SQL and interface contract.
 
 **Q:** Why include a second ordering key in a timestamp-based page?
 
@@ -34,13 +34,17 @@ Source: [Prisma ORM](20.4.4.01-prisma.md)
 
 **A:** The cursor is no longer a valid existing anchor for the query contract. The API must define a missing-cursor outcome or use an explicit value-based boundary; cursor pagination alone does not preserve a multi-request snapshot.
 
+**Q:** How does Prisma's `TypedSQL` (`prisma generate --sql`) improve safety over `$queryRaw<T>`?
+
+**A:** `$queryRaw<T>` is only an unchecked TypeScript type assertion that does not validate SQL or returned columns at compile time; `TypedSQL` validates `.sql` files against the database schema at generation time and emits typed query functions.
+
 ## Prisma Advanced
 
 Source: [Prisma Advanced](20.4.4.02-prisma-advanced.md)
 
 **Q:** Why can two individually atomic transfers still overspend?
 
-**A:** At Read Committed, both can read the same earlier balance before either writes. Put the decision into a conditional update or use the appropriate locks/isolation, plus a database invariant.
+**A:** At Read Committed, both can read the same earlier balance before either writes. Put the decision into a conditional update or use the appropriate locks and isolation, plus a database invariant.
 
 **Q:** How does a duplicate outbox event prevent a second stock reservation in the example?
 
@@ -58,6 +62,10 @@ Source: [Prisma Advanced](20.4.4.02-prisma-advanced.md)
 
 **A:** No. The helper escaped the participating transaction client and owns another boundary. Pass `tx` through the helper when its effects must commit or roll back with the caller.
 
+**Q:** What must hold when running Prisma 7 with `PrismaPg` and transaction-local RLS behind PgBouncer in transaction-pooling mode?
+
+**A:** Keep `set_config(..., true)` and every protected query inside the same `prisma.$transaction` callback so no session state leaks across reassigned server connections, and ensure PgBouncer's `max_prepared_statements` matches the driver's prepared-statement protocol.
+
 ## ORM & Query Builder Landscape
 
 Source: [ORM & Query Builder Landscape](20.4.4.03-orm-query-builder-landscape.md)
@@ -68,11 +76,11 @@ Source: [ORM & Query Builder Landscape](20.4.4.03-orm-query-builder-landscape.md
 
 **Q:** Why can a repository interface fail to preserve atomicity during a tool swap?
 
-**A:** A replacement may open another connection or transaction internally. The operation/result interface also needs a transaction-participation and tenant-context contract.
+**A:** A replacement may open another connection or transaction internally. The operation and result interface also needs a transaction-participation and tenant-context contract.
 
 **Q:** What should migration review cover beyond whether a tool generated the SQL?
 
-**A:** Assess locks, data backfill, old/new application compatibility, privileges and rollback/recovery. Automatic diff generation or applying pending history does not prove every production drift or online rollout risk is handled.
+**A:** Assess locks, data backfill, old and new application compatibility, privileges, and rollback and recovery. Automatic diff generation or applying pending history does not prove every production drift or online rollout risk is handled.
 
 **Q:** What changes if a raw driver returns a count as decimal text while the public DTO assumes a number?
 

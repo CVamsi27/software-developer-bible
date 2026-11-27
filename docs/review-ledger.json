@@ -139,7 +139,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework)."
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.02-scope.md": {
-   "sha256": "9402555b56b1d56ce745eaae4a04b89f6244f81fb151a10b6e51deff820028e7",
+   "sha256": "1396673e68cb38e1a2af5156939291550aa5d3ca6b21a3a22e517f87233aba38",
    "lines": 190,
    "genre": "chapter",
    "status": "read",
@@ -152,7 +152,7 @@
     "fast": "Measured 31.7 KB raw / 7.4 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Scope is not lifetime: a returned closure keeps a binding alive after the block exits, so visibility does not predict retention."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework)."
+   "notes": "C1-C8 genuine file-by-file refinement (Fix site-build H1 Kramdown wrap and clean 10-frontend prose slashes)."
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.03-call-stack.md": {
    "sha256": "58c386cbf0a352b6409209c560071c408232511c76443737e3808195e385b879",
@@ -187,7 +187,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework)."
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.05-lexical-environment.md": {
-   "sha256": "5d07634877a70864a050cd2209825ce34f7644fa5ada6cc464507900432d3b50",
+   "sha256": "77f6aa817142ff6bc5e594a7d46369edc9b7ba885b0d784f6de4903ebe721723",
    "lines": 174,
    "genre": "chapter",
    "status": "read",
@@ -200,7 +200,7 @@
     "fast": "Measured 27.9 KB raw / 7.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The lookup diagram does not show memory layout; an engine can use slots, registers or heap storage while preserving the same resolution."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework)."
+   "notes": "C1-C8 genuine file-by-file refinement (Fix site-build H1 Kramdown wrap and clean 10-frontend prose slashes)."
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.06-closures.md": {
    "sha256": "7026f7a607a3be0c2da5f824316cf3f3ca798ddd0b26153d1c9694c0ce63829f",
@@ -235,7 +235,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework)."
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/INDEX.md": {
-   "sha256": "0b3d7044d17a45b7f85d44de1236aa26a431a96df3b30fbf5becf5542eec9e67",
+   "sha256": "ae3f5f66483ad5eb92799486c2c86a6b1e6680072b478ed4b775f0de245d51c0",
    "lines": 53,
    "genre": "index",
    "status": "read",
@@ -248,7 +248,7 @@
     "fast": "Measured 11.1 KB raw / 3.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The Docita table cites candidate source paths that cannot establish deployed behavior; the page says to inspect the revision and tests first."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 1 Pilot: Execution, Scope, and V8 D1-D7 Rework)."
+   "notes": "C1-C8 genuine file-by-file refinement (Fix site-build H1 Kramdown wrap and clean 10-frontend prose slashes)."
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/REVISION.md": {
    "sha256": "3caa22890ffc1b1da797dc63bc3da73e4e23a43f5c8ed7193e394c8388242f4f",
@@ -379,23 +379,23 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 2B D1-D7 rework: 03-async-concurrency)."
   },
   "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.03-async-await.md": {
-   "sha256": "43446bf2d6503f7a5cff2080a7bea2092c3b729cfa2832dc15ff0cb3e8187030",
+   "sha256": "5e4a43835c9f2a03c6dddaebe96cf873af94ecdc6c5fb7e2c6fa6e08d8035504",
    "lines": 341,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Async return adoption, the return await boundary, for await cleanup and the generator-runner caveat were checked against ECMA-262 and MDN.",
-    "readable": "Full read of 341 lines (797 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "797 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 341 lines (805 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "805 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Await suspension and async iteration are owned here; promise internals, abort and bounded pools point at their chapters.",
-    "fast": "Measured 43.1 KB raw / 8.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 43.1 KB raw / 8.4 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "await does not yield the thread and an async function does not run atomically; the chapter says only event-loop work can interleave, while remote effects can still commit."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 2B D1-D7 rework: 03-async-concurrency)."
+   "notes": "C1-C8 genuine file-by-file refinement (Fix site-build H1 Kramdown wrap and clean 10-frontend prose slashes)."
   },
   "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.04-error-handling.md": {
-   "sha256": "2173342a661ff9ea9ecf48e1a107abcf53caca6f4d38b78a6bc02e0698080c20",
+   "sha256": "aeb3d7e023de2fbddc49c38ebbbdd2daf74bcb96239f625aeb67e35383d68f40",
    "lines": 308,
    "genre": "chapter",
    "status": "read",
@@ -405,10 +405,10 @@
     "readable": "Full read of 308 lines (798 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "798 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Failure classification and recovery boundaries are owned here; retry policy and idempotency are linked as the canonical implementations.",
-    "fast": "Measured 40.9 KB raw / 8.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 40.9 KB raw / 8.8 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "A catch cannot observe a killed process, certain OOM conditions or a committed remote write; the chapter separates one read from write reconciliation."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 2B D1-D7 rework: 03-async-concurrency)."
+   "notes": "C1-C8 genuine file-by-file refinement (Fix site-build H1 Kramdown wrap and clean 10-frontend prose slashes)."
   },
   "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.05-abort-and-cancellation.md": {
    "sha256": "af44b6c96316c1b0699715fd6e85c3ced24bfecc3ef607b01a32c8b229ed02bd",
@@ -443,7 +443,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 2B D1-D7 rework: 03-async-concurrency)."
   },
   "10-frontend/10.1-javascript/03-async-concurrency/INDEX.md": {
-   "sha256": "67e4ee5217b23ee942e402345cb8c28abd5f578424960aa5e461b6b45cbd71aa",
+   "sha256": "3dfc409ddc450867043d3476b8f4116b35033f4334fc78ac4a510baf28b5d136",
    "lines": 51,
    "genre": "index",
    "status": "read",
@@ -453,10 +453,10 @@
     "readable": "Full read of 51 lines (118 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "118 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Category flow only; each scheduling and failure mechanism is owned by its chapter, and revision is linked separately.",
-    "fast": "Measured 11.2 KB raw / 3.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 11.2 KB raw / 3.5 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The Docita table cites candidate source paths that cannot prove deployed behavior; the page says to inspect the revision and tests first."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 2B D1-D7 rework: 03-async-concurrency)."
+   "notes": "C1-C8 genuine file-by-file refinement (Fix site-build H1 Kramdown wrap and clean 10-frontend prose slashes)."
   },
   "10-frontend/10.1-javascript/03-async-concurrency/REVISION.md": {
    "sha256": "4608cbd272b007dc26fef2334de6b6376741dbe4aeb483b48c3d47e88539670a",
@@ -587,7 +587,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 2C D1-D7 rework: 04-memory-and-data)."
   },
   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md": {
-   "sha256": "b4e487a29ed46465e9a57421ff7ebd6f538f251b273e4f9a6689cfc155e2717c",
+   "sha256": "1fe7c8983e4df1570a674b76b78926ad77718b0eb5f0b877828bda865352c178",
    "lines": 172,
    "genre": "chapter",
    "status": "read",
@@ -597,13 +597,13 @@
     "readable": "Full read of 172 lines (739 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "739 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Hash mechanics and V8's table implementation are owned here; equality rules and Map behavior point at their chapters.",
-    "fast": "Measured 21.7 KB raw / 6.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 21.7 KB raw / 6.6 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Expected O(1) does not guarantee per-operation latency: collisions, long keys, tombstones and rehashing can each add work, and Map exposes no reserve API."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 2C D1-D7 rework: 04-memory-and-data)."
+   "notes": "C1-C8 genuine file-by-file refinement (Fix site-build H1 Kramdown wrap and clean 10-frontend prose slashes)."
   },
   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.09-equality-and-coercion.md": {
-   "sha256": "525615c550989c26651e82bcb734c9cfd3b6a1ba9ebb8f0b2ed42d9bcb218175",
+   "sha256": "f3245261e83be786673402d168abac9c379fb48310867847a827618714f94986",
    "lines": 200,
    "genre": "chapter",
    "status": "read",
@@ -613,58 +613,58 @@
     "readable": "Full read of 200 lines (666 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "666 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Equality algorithms and coercion order are owned here; Map key equality and hash lookup point at their chapters.",
-    "fast": "Measured 33.5 KB raw / 7.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 33.5 KB raw / 7.0 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Coercion rules do not validate input: Number('') and Number(' ') both yield 0, and document.all remains a legacy exception that cannot model ordinary objects."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 2C D1-D7 rework: 04-memory-and-data)."
+   "notes": "C1-C8 genuine file-by-file refinement (Fix site-build H1 Kramdown wrap and clean 10-frontend prose slashes)."
   },
   "10-frontend/10.1-javascript/04-memory-and-data/INDEX.md": {
-   "sha256": "038207eb163b8abe7118e2b1e179a1d8378ed289d04eb90ef0ac3aca631171f8",
+   "sha256": "10ce618b63fb046a9db2429d7838cdf28d75a84d34f2a694c7402728b270805a",
    "lines": 56,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The 10-file badge was checked against 9 chapter rows plus the revision companion; the Files badge now targets #chapters.",
-    "readable": "Full read of 56 lines (155 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "155 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 56 lines (157 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "157 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Category flow only; copying, timers, retention, GC and equality are owned by their chapters and linked rather than retold.",
-    "fast": "Measured 12.5 KB raw / 3.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 12.5 KB raw / 3.9 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The Docita anchor lists source paths that cannot establish deployment status; the page says so and points to the revision and tests."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 2C D1-D7 rework: 04-memory-and-data)."
+   "notes": "C1-C8 genuine file-by-file refinement (Fix site-build H1 Kramdown wrap and clean 10-frontend prose slashes)."
   },
   "10-frontend/10.1-javascript/04-memory-and-data/REVISION.md": {
-   "sha256": "f6dd88fb9b7ea86a50c886c2e5017ac6b863a84d43f21abebacf232d1aae8071",
+   "sha256": "075e7dc8ad3d0072a728fce44e30ae70afdb33572ad113841502f2bc7051ba80",
    "lines": 409,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Every prompt was checked against its source chapter; weak-key eligibility, structured-clone failures, throttle spacing and GC timing were verified against the linked specification and MDN pages.",
-    "readable": "Full read of 409 lines (4231 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "4231 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 409 lines (4238 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "4238 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Revision companion; each mechanism stays in one group and points at its source chapter.",
-    "fast": "Measured 44.5 KB raw / 13.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 44.5 KB raw / 13.1 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Retrieval practice cannot replace the chapters; the opening says to answer without reopening them and revisit when an answer misses a mechanism, boundary or failure case."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 2C D1-D7 rework: 04-memory-and-data)."
+   "notes": "C1-C8 genuine file-by-file refinement (Fix site-build H1 Kramdown wrap and clean 10-frontend prose slashes)."
   },
   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.01-modules.md": {
-   "sha256": "2130c28bc5037776c74405f51ebd5e976e0f665a6b8c9b3c7a7fc18ad797c07f",
+   "sha256": "eeb7da64049666a3266b967d4ebf4158896938f3772a150ca8eaea639f402f01",
    "lines": 134,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "ESM linking and evaluation, CommonJS wrapper behavior, Node syntax detection and TypeScript nodenext resolution were checked against ECMA-262, current Node docs and the TypeScript handbook.",
-    "readable": "Full read of 134 lines (980 prose words) a failed shared-client import opens, then scope/dependency/identity, resolve-link-evaluate, the ESM/CommonJS table, surface design, dynamic import and tree shaking.",
-    "concise": "980 words across 134 lines. the comparison table and cycle traces carry the format differences, with bundler behavior kept to its boundary.",
+    "readable": "Full read of 134 lines (982 prose words) a failed shared-client import opens, then scope/dependency/identity, resolve-link-evaluate, the ESM/CommonJS table, surface design, dynamic import and tree shaking.",
+    "concise": "982 words across 134 lines. the comparison table and cycle traces carry the format differences, with bundler behavior kept to its boundary.",
     "focused": "Module identity and format contracts are owned here; lexical resolution and Node hosting point at their chapters.",
-    "fast": "Measured 20.2 KB raw / 6.2 KB gzip (the shared Jekyll shell is included.)",
+    "fast": "Measured 20.2 KB raw / 6.2 KB gzip. (the shared Jekyll shell is included.)",
     "best": "A module boundary does not hide source or protect embedded secrets; module-level state is shared per resolved identity and can leak request-specific data."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 2D D1-D7 rework: 05-functional-patterns)."
+   "notes": "C1-C8 genuine file-by-file refinement (Fix site-build H1 Kramdown wrap and clean 10-frontend prose slashes)."
   },
   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.02-memoization.md": {
    "sha256": "cfce9f1e5f1a3ff2cce7a0417c4aac7a84e3e5f64591a4d476c87c07fbb6ae1b",
@@ -827,20 +827,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 2E D1-D7 rework: 06-modern-and-interview)."
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md": {
-   "sha256": "413cf5a565565b90bec99651f654393645c2194fec8a420d3533945e71397957",
+   "sha256": "1dcaa54d4723b11eb16eb869cce0ca412b10e29c02af97a53beeb02d4dc0b708",
    "lines": 508,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The 62 questions were checked against their source chapters; iterator-helper availability was re-executed on Node 26.13.0 (Iterator.concat present, AsyncIterator absent), JSON reviver source access was executed, and the edition claims were checked against the TC39 finished-proposals table.",
-    "readable": "Full read of 508 lines (5845 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "5845 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 508 lines (5949 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "5949 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Interview bank with grouped sources; implementations and mechanisms point at their canonical chapters, which own the full explanations.",
     "fast": "Measured 57.5 KB raw / 15.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The bank cannot substitute for the chapters: several answers are deliberately short, and the opening says to use the source links when an answer misses a mechanism or boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 2E D1-D7 rework: 06-modern-and-interview)."
+   "notes": "C1-C8 genuine file-by-file refinement (Fix site-build H1 Kramdown wrap and clean 10-frontend prose slashes)."
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.06-regexp-and-text.md": {
    "sha256": "154bb4f938f9ab987ee7a9182fd1823fd4a37bcf6d14c7ae08206a2a29e4ed82",
@@ -859,7 +859,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 2E D1-D7 rework: 06-modern-and-interview)."
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/INDEX.md": {
-   "sha256": "39ddd573588b1e37254c66352bd13e46b601e4b5364ee5ae261ac9fe1a7b8dd2",
+   "sha256": "71d51978ba31e0747181898f598e34ef02834ea8ca8e0580466e2b8e8c353826",
    "lines": 50,
    "genre": "index",
    "status": "read",
@@ -872,39 +872,39 @@
     "fast": "Measured 11.3 KB raw / 3.6 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The Order column follows study order while the file prefixes put the interview bank first; readers cannot infer sequence from numbers and must follow the links."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 2E D1-D7 rework: 06-modern-and-interview)."
+   "notes": "C1-C8 genuine file-by-file refinement (Fix site-build H1 Kramdown wrap and clean 10-frontend prose slashes)."
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/REVISION.md": {
-   "sha256": "989275656ac62dde5528ce7f24c9d7b38be7d82d3f45cffb044528732a1494e6",
+   "sha256": "6f262b5e47d7541db4321cbb02d589c31e63a83d07b6cede1a870b5194db81e8",
    "lines": 257,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Every prompt was checked against its source chapter; the iterator and regex runtime answers were re-executed on Node 26.13.0, and the edition and JSON claims were checked against the TC39 table and the ECMAScript 2026 draft.",
-    "readable": "Full read of 257 lines (3105 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "3105 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 257 lines (3103 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "3103 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Revision companion; each mechanism stays in one group and points at its source chapter.",
-    "fast": "Measured 35.7 KB raw / 10.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 35.7 KB raw / 10.6 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Retrieval practice cannot replace the chapters; the opening says to answer without reopening them and revisit when an answer misses a mechanism, boundary or failure case."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 2E D1-D7 rework: 06-modern-and-interview)."
+   "notes": "C1-C8 genuine file-by-file refinement (Fix site-build H1 Kramdown wrap and clean 10-frontend prose slashes)."
   },
   "10-frontend/10.1-javascript/INDEX.md": {
-   "sha256": "bddb0d70710ec3bab79a6228b4fe2e5daaaa6832123173c13c5050d713bc4216",
+   "sha256": "900cf28e8f08828f271c4b15654c62df1a9fc6de3b2e4ec1ca1a88d012e711b2",
    "lines": 170,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The 42-file badge and 36-chapter table were checked against scripts/check_counts.py; the new note reconciles 36 chapters plus 6 revision companions.",
-    "readable": "Full read of 170 lines (444 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "444 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 170 lines (451 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "451 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Section navigation; each mechanism is owned by its chapter and category index, not retold here.",
     "fast": "Measured 29.1 KB raw / 6.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The path cannot guarantee interview coverage; the opening says it is a study order, not a coverage guarantee, and reading time is approximate."
    },
-   "notes": "Synced live read-time and counts after Phase 2E D1-D7 rework: 06-modern-and-interview."
+   "notes": "C1-C8 genuine file-by-file refinement (Fix site-build H1 Kramdown wrap and clean 10-frontend prose slashes)."
   },
   "10-frontend/10.2-typescript/01-foundations/10.2.1.01-types-vs-interfaces.md": {
    "sha256": "4e4909bc2db5e0db97fdbf47ecd4e88caac2a5c16395b93149afa7d286275ff1",
@@ -955,7 +955,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 2F D1-D7 rework: 10.2-typescript/01-foundations)."
   },
   "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md": {
-   "sha256": "687a666a612aa1e3f0996d40d0157da20d5c2ac06b70ed4414d34d015e9e9f3a",
+   "sha256": "f7d016ffb72e6ea4849890e054ac24812c41f6aa403456381c48658c79dfa49a",
    "lines": 148,
    "genre": "chapter",
    "status": "read",
@@ -965,13 +965,13 @@
     "readable": "Full read of 148 lines (1028 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "1028 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Project configuration and checker/loader agreement are owned here; module resolution details point at the Node and monorepo chapters.",
-    "fast": "Measured 24.4 KB raw / 6.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 24.4 KB raw / 6.4 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "A green tsc run describes only the files and options it saw: lib and types declare APIs without installing them, paths does not rewrite imports, and the deployed loader can still reject the emitted graph."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 2F D1-D7 rework: 10.2-typescript/01-foundations)."
+   "notes": "C1-C8 genuine file-by-file refinement (Fix site-build H1 Kramdown wrap and clean 10-frontend prose slashes)."
   },
   "10-frontend/10.2-typescript/01-foundations/INDEX.md": {
-   "sha256": "f8a6d3cb8472c8a7f10f95096c33a01547282b78e8db94f386687d77428e05d7",
+   "sha256": "4b117452aee7f264806723eec3687fbd715b104f0f36eb3c9842c2b61e57503d",
    "lines": 47,
    "genre": "index",
    "status": "read",
@@ -981,10 +981,10 @@
     "readable": "Full read of 47 lines (114 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "114 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Category flow only; each chapter's mechanism is owned by its file and linked once, while Docita evidence is kept to three candidate rows.",
-    "fast": "Measured 10.4 KB raw / 3.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 10.4 KB raw / 3.4 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The Docita rows name candidate source locations, and the page says a path does not establish deployed behavior; inspect the checked-out revision and tests before citing it as implementation evidence."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 2F D1-D7 rework: 10.2-typescript/01-foundations)."
+   "notes": "C1-C8 genuine file-by-file refinement (Fix site-build H1 Kramdown wrap and clean 10-frontend prose slashes)."
   },
   "10-frontend/10.2-typescript/01-foundations/REVISION.md": {
    "sha256": "be9f2f001f7f2be9d9cae5bc2cc551c6aee8c594a0c47984cdfba1291b26b943",
@@ -1435,7 +1435,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 3A D1-D7 rework: 10.3-react/01-react-internals)."
   },
   "10-frontend/10.3-react/01-react-internals/10.3.1.05-lifecycle.md": {
-   "sha256": "658764acb9b2b8b95dbc45f50e200f4458082135b4726fbdc6ef4f82b7ab9bf7",
+   "sha256": "fdf8e952a7751f1b04278645d2b982236ca7719ed55e87e286f123f0614f8940",
    "lines": 129,
    "genre": "chapter",
    "status": "read",
@@ -1445,10 +1445,10 @@
     "readable": "Full read of 129 lines (548 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "548 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "The effect-as-synchronization model is owned here; dependency mechanics belong to the useEffect chapter and are not retold.",
-    "fast": "Measured 14.5 KB raw / 4.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 14.5 KB raw / 4.5 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Explains effects as start/stop synchronization and names work that does not belong in an effect; class equivalence is a boundary note, not a migration guide."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 3A D1-D7 rework: 10.3-react/01-react-internals)."
+   "notes": "C1-C8 genuine file-by-file refinement (Fix site-build H1 Kramdown wrap and clean 10-frontend prose slashes)."
   },
   "10-frontend/10.3-react/01-react-internals/INDEX.md": {
    "sha256": "239ec23556329f7cf1e55a5b136ebde1b61347aa379bc0470104849bb6f1cf87",
@@ -2651,7 +2651,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 6B D1-D7 rework: 10.6-animation (completes 10.6-animation))."
   },
   "10-frontend/10.7-html-css/10.7.01-html-fundamentals.md": {
-   "sha256": "ce6b3c592f45d9f39e721245d431d7ae32227abb2b60d751590a3822795745b1",
+   "sha256": "708b940ef89508371e56966f46eca60bcd9da41662e83000d83390a294613c70",
    "lines": 192,
    "genre": "chapter",
    "status": "read",
@@ -2661,13 +2661,13 @@
     "readable": "Full read of 192 lines (961 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "961 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Semantic form contract and document metadata are owned here; CSS fundamentals own the styling layer, and SEO owns crawl and index consequences.",
-    "fast": "Measured 30.3 KB raw / 7.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 30.3 KB raw / 7.0 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Separates native validation from server authorization and metadata from access control; a canonical link cannot enforce access or redirect a visitor."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 7A D1-D7 rework: 10.7-html-css (10.7.01-10.7.06))."
+   "notes": "C1-C8 genuine file-by-file refinement (Fix site-build H1 Kramdown wrap and clean 10-frontend prose slashes)."
   },
   "10-frontend/10.7-html-css/10.7.02-css-fundamentals.md": {
-   "sha256": "cde66c003d82e0337a25c2121659ce1e0eca184e4b8b0aed4046cf9e89f49e93",
+   "sha256": "c0c4c2c63c6c2a771bf4eb19da5063568e0a9811cdeba2eb033baaa2bbb1d11c",
    "lines": 250,
    "genre": "chapter",
    "status": "read",
@@ -2677,10 +2677,10 @@
     "readable": "Full read of 250 lines (915 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "915 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Cascade and layout primitives are owned here; CSS architecture owns team-scale ownership, and theming owns token semantics.",
-    "fast": "Measured 30.6 KB raw / 6.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 30.6 KB raw / 6.9 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Shows why a declaration lost before prescribing a fix; specificity arithmetic cannot explain layer or origin precedence, and no layout mode removes the need for content testing."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 7A D1-D7 rework: 10.7-html-css (10.7.01-10.7.06))."
+   "notes": "C1-C8 genuine file-by-file refinement (Fix site-build H1 Kramdown wrap and clean 10-frontend prose slashes)."
   },
   "10-frontend/10.7-html-css/10.7.03-browser-rendering.md": {
    "sha256": "b26c47bbc4eb9d39fe90bff24d9d447ecf525848a45ff1d35877f2f1754d4da8",
@@ -2827,20 +2827,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css))."
   },
   "10-frontend/10.7-html-css/REVISION.md": {
-   "sha256": "614247f129acf5b77f8505cd9d626e555e9ac0413bbe8160bf0c7e7f6f3d9149",
+   "sha256": "6319556a4cbbe5272d289d90be2deb8673c4bfe0b4b0268a3c8fe205b15b87b8",
    "lines": 165,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Every answer was checked against its source chapter and the MDN cascade, storage, cookie and accessibility references; the Tailwind v4 boundary and reading-flow availability match the sources on 2026-11-18.",
-    "readable": "Full read of 165 lines (1250 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1250 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 165 lines (1252 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1252 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Retrieval drill: each group names its source chapter and points at it for the full treatment.",
-    "fast": "Measured 16.2 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 16.2 KB raw / 5.5 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Tests reload, metadata and layout boundaries under changed conditions; it cannot replace the chapters."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css))."
+   "notes": "C1-C8 genuine file-by-file refinement (Fix site-build H1 Kramdown wrap and clean 10-frontend prose slashes)."
   },
   "10-frontend/10.8-mobile/10.8.01-react-native-cross-platform.md": {
    "sha256": "f4912cdb0aae6d77dc99230a44509229950a7a005c6ed00c62ece3f39ce55dce",
@@ -2859,7 +2859,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 8 D1-D7 rework: 10.8-mobile and 10-frontend/INDEX (completes 10-frontend))."
   },
   "10-frontend/10.8-mobile/10.8.02-deep-linking-universal-links.md": {
-   "sha256": "ebf74702ac10f7e4ac812981bc907dea8264c6baed89d2f19b9c6c9e360f6c6a",
+   "sha256": "cc1720684ec2fb278d0de180bac989e76136bb598c60d55e51168535ba2fc9ab",
    "lines": 282,
    "genre": "chapter",
    "status": "read",
@@ -2869,10 +2869,10 @@
     "readable": "Full read of 282 lines (1088 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "1088 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Association verification, URL parsing and bootstrap ownership are owned here; authentication owns access decisions, and the testing chapter owns device evidence.",
-    "fast": "Measured 40.0 KB raw / 9.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 40.0 KB raw / 9.1 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Separates association from authentication and routing; domain verification cannot authorize resource access, and store installation does not preserve an arbitrary pending URL."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 8 D1-D7 rework: 10.8-mobile and 10-frontend/INDEX (completes 10-frontend))."
+   "notes": "C1-C8 genuine file-by-file refinement (Fix site-build H1 Kramdown wrap and clean 10-frontend prose slashes)."
   },
   "10-frontend/10.8-mobile/10.8.03-testing-react-native-apps.md": {
    "sha256": "7768cb82616e0a6a689671ff13b7c82f9a4e07ee4f8de11b418fa1222422fdd5",
@@ -2987,7 +2987,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 8 D1-D7 rework: 10.8-mobile and 10-frontend/INDEX (completes 10-frontend))."
   },
   "10-frontend/INDEX.md": {
-   "sha256": "2e18a5c8590183a38567ded1e4877ecf700f475e0c8ce59cfd7f45b9bc769b8f",
+   "sha256": "25996f6f759f9daa2fdbd80ecc2fe1207c163b42dedc14b3cece596455fe5d38",
    "lines": 75,
    "genre": "index",
    "status": "read",
@@ -3000,7 +3000,7 @@
     "fast": "Measured 14.7 KB raw / 4.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Sets the frontend study order from execution to optional capabilities; it limits itself to navigation and does not teach any mechanism."
    },
-   "notes": "Synced live read-time and counts after Phase 24B: final TypeScript AST and Node.js/Architecture prose polish."
+   "notes": "C1-C8 genuine file-by-file refinement (Fix site-build H1 Kramdown wrap and clean 10-frontend prose slashes)."
   },
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md": {
    "sha256": "82029f005e6bc65af05786f5fea58d6c24d11337d2315bdb787a857dcab388da",
@@ -15834,20 +15834,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 24A: lanes, projects, active docs, and root guides)."
   },
   "docs/superpowers/plans/2026-11-18-performance-ui-implementation.md": {
-   "sha256": "3b3438490f19076aa0a01a6e4771ba92a4f48c1b0960256283df826e05c3011b",
-   "lines": 496,
+   "sha256": "76ce50ebd6443e402f87160430c9cd392d367e423274270c66e0dbc36a1f5bb6",
+   "lines": 495,
    "genre": "doc",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 archived implementation plan (2026-11-18-performance-ui-implementation) verified against repo history as a dated engineering record with no live API claims.",
-    "readable": "Full read of 496 lines (1621 prose words) end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "1621 words across 496 lines. Step-by-step execution plan for 2026-11-18-performance-ui-implementation with explicit verification gates.",
+    "readable": "Full read of 495 lines (1621 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "1621 words across 495 lines. Step-by-step execution plan for 2026-11-18-performance-ui-implementation with explicit verification gates.",
     "focused": "Canonical historical plan document for 2026-11-18-performance-ui-implementation; no duplicate active instructions.",
     "fast": "Measured 53.1 KB raw / 10.5 KB gzip. (fast scan via headings and direct links.)",
     "best": "Records explicit rollback/verification boundary and failure-handling checks."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 11D-2 historical implementation plans)."
+   "notes": "C1-C8 genuine file-by-file refinement (Fix site-build H1 Kramdown wrap and clean 10-frontend prose slashes)."
   },
   "docs/superpowers/specs/2026-11-18-performance-ui-design.md": {
    "sha256": "17f8fc9a4cc982df062898826b026a5f34ff283ac7fb06e4a3693cbe48dd02b2",

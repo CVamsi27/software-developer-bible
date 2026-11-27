@@ -35,9 +35,9 @@ Read Event Loop → Promises → Async/Await to separate scheduling, outcomes an
 Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
 
 | Topic in this category | Docita evidence |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
 | Promises & concurrency limits | `packages/utils/src/async/map-with-concurrency.ts` - bounded async worker pool resolved via `Promise.all` |
-| Async/await + timers polling | `apps/app/src/hooks/use-phone-signature-polling.ts` - awaited status checks driving an interval-based poll loop |
+| `async` and `await` + timers polling | `apps/app/src/hooks/use-phone-signature-polling.ts` - awaited status checks driving an interval-based poll loop |
 | Error handling for async failures | `packages/utils/src/errors/network-error.ts` - `instanceof Error` narrowing to classify fetch and network failures |
 
 ---

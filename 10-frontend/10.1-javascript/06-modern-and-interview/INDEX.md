@@ -16,10 +16,10 @@ The Files badge counts these 6 chapters plus the revision companion.
 | Order | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Recent ECMAScript Features](10.1.6.01-es2024-features.md) | Selected ES2022–2026 built-ins, `Iterator.concat`, `JSON.rawJSON`, `Uint8Array.fromBase64`, and host boundaries | Important | Specialized | 8 min |
-| 02 | [Web Workers](10.1.6.02-web-workers.md) | Dedicated, shared, and service workers; `ArrayBuffer` transfer, `SharedArrayBuffer` COOP/COEP, and cancellation | Important | Important | 8 min |
+| 02 | [Web Workers](10.1.6.02-web-workers.md) | Dedicated, shared, and service workers; `ArrayBuffer` transfer, `SharedArrayBuffer` COOP and COEP, and cancellation | Important | Important | 8 min |
 | 03 | [DOM Events & Delegation](10.1.6.03-dom-events-delegation.md) | Event path, Shadow DOM `composed: true`, delegation, propagation, passive listeners, and cleanup | Essential | Foundational | 6 min |
 | 04 | [Cross-Tab Communication](10.1.6.04-cross-tab-communication.md) | `BroadcastChannel`, stored recovery, shared owners, Web Locks, and safe cross-tab session updates | Important | Specialized | 7 min |
-| 05 | [Regular Expressions and Text Matching](10.1.6.06-regexp-and-text.md) | Character classes, `g`/`u`/`v`/`d` flags, capture indices, ReDoS backtracking risk, and log redaction | Essential | Important | 9 min |
+| 05 | [Regular Expressions and Text Matching](10.1.6.06-regexp-and-text.md) | Character classes, `g`, `u`, `v`, and `d` flags, capture indices, ReDoS backtracking risk, and log redaction | Essential | Important | 9 min |
 | 06 | [Interview Questions](10.1.6.05-interview-questions.md) | 76 curated questions with answers and changed-condition checks | Essential | Foundational | 17 min |
 
 ---

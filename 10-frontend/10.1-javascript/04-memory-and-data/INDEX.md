@@ -15,21 +15,21 @@ The Files badge counts these 9 chapters plus the revision companion.
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Pass by Value](10.1.4.01-pass-by-value.md) | Primitive vs. reference, call-by-sharing, shallow immutability (`freeze`/`seal`), and pure `toSorted` arrays | Essential | Foundational | 6 min |
+| 01 | [Pass by Value](10.1.4.01-pass-by-value.md) | Primitive vs. reference, call-by-sharing, shallow immutability (`freeze` and `seal`), and pure `toSorted` arrays | Essential | Foundational | 6 min |
 | 02 | [Map, Set, WeakMap, WeakSet](10.1.4.02-map-set-weakmap-weakset.md) | Key identity, insertion order, `getOrInsert` and `getOrInsertComputed`, set methods, and weak symbol boundaries | Essential | Foundational | 7 min |
 | 03 | [Shallow vs Deep Copy](10.1.4.03-shallow-vs-deep-copy.md) | Reference graphs, `structuredClone`, transferable buffers, JSON coercion limits, and path copying | Essential | Foundational | 7 min |
-| 04 | [Debounce](10.1.4.04-debounce.md) | Quiet-time scheduling, leading/trailing/maxWait policies, cancellation, and React lifecycle cleanup | Essential | Foundational | 11 min |
+| 04 | [Debounce](10.1.4.04-debounce.md) | Quiet-time scheduling, leading, trailing, and `maxWait` policies, cancellation, and React lifecycle cleanup | Essential | Foundational | 11 min |
 | 05 | [Throttle](10.1.4.05-throttle.md) | Periodic scheduling, hybrid edge policies, `requestAnimationFrame` gating, cancellation, and concurrency limits | Essential | Foundational | 10 min |
 | 06 | [Memory Leaks](10.1.4.06-memory-leaks.md) | Retaining paths, `{ signal }` listener cleanup, bounded caches, DevTools retainers, and `v8.writeHeapSnapshot()` | Essential | Foundational | 8 min |
 | 07 | [Garbage Collection](10.1.4.07-garbage-collection.md) | Tracing, V8 spaces (`getHeapSpaceStatistics`), Orinoco, `WeakRef`, and ES2026 `using` deterministic disposal | Essential | Foundational | 7 min |
 | 08 | [Hash Tables and Hash Maps](10.1.4.08-hash-tables-internals.md) | Hash lookup, probing tombstones, object integer-key hoisting vs. `Map`, V8 `OrderedHashTable`, and resize pauses | Important | Specialized | 7 min |
-| 09 | [Equality & Coercion](10.1.4.09-equality-and-coercion.md) | Equality algorithms, `Symbol.toPrimitive`, `BigInt` rules, `??`, and explicit string/boolean boundary parsing | Essential | Foundational | 8 min |
+| 09 | [Equality & Coercion](10.1.4.09-equality-and-coercion.md) | Equality algorithms, `Symbol.toPrimitive`, `BigInt` rules, `??`, and explicit string and boolean boundary parsing | Essential | Foundational | 8 min |
 
 ---
 
 ## Read order
 
-Follow the numbered chapters. **Pass by Value** establishes the difference between rebinding and mutating shared identity; **Map/Set** applies identity to keys and ownership; **Shallow vs Deep Copy** then shows which references a copy separates. **Debounce** and **Throttle** compare waiting for quiet with admitting periodic work. Their pending callbacks lead into cleanup ownership in **Memory Leaks**, then reachability in **Garbage Collection**. Finish with **Hash Tables** for the collision and growth costs behind lookup, and **Equality & Coercion** for the distinct comparison algorithms. Use the revision companion to connect these topics before interview practice.
+Follow the numbered chapters. **Pass by Value** establishes the difference between rebinding and mutating shared identity; **`Map` and `Set`** apply identity to keys and ownership; **Shallow vs Deep Copy** then shows which references a copy separates. **Debounce** and **Throttle** compare waiting for quiet with admitting periodic work. Their pending callbacks lead into cleanup ownership in **Memory Leaks**, then reachability in **Garbage Collection**. Finish with **Hash Tables** for the collision and growth costs behind lookup, and **Equality & Coercion** for the distinct comparison algorithms. Use the revision companion to connect these topics before interview practice.
 
 ---
 

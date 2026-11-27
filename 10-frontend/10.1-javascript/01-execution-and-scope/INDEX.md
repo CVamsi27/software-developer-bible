@@ -15,7 +15,7 @@ The Files badge counts these 7 chapters plus the revision companion.
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Execution Context](10.1.1.01-execution-context.md) | Evaluation and realm lifetime, LE/VE roles, block transitions, parameter-expression boundaries | Essential | Foundational | 7 min |
+| 01 | [Execution Context](10.1.1.01-execution-context.md) | Evaluation and realm lifetime, Lexical Environment and Variable Environment roles, block transitions, parameter-expression boundaries | Essential | Foundational | 7 min |
 | 02 | [Scope](10.1.1.02-scope.md) | Global, function, block, and module boundaries, binding lookup, lifetime | Essential | Foundational | 9 min |
 | 03 | [Call Stack](10.1.1.03-call-stack.md) | Logical call nesting, physical-frame limits, recursion, exceptions, and async suspension | Essential | Foundational | 7 min |
 | 04 | [Hoisting](10.1.1.04-hoisting.md) | Declaration setup, temporal dead zone, function and resource declarations | Essential | Foundational | 7 min |

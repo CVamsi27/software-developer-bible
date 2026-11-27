@@ -108,7 +108,7 @@ Source: [Tailwind CSS — Utility-First Styling with Design Tokens](10.7.09-tail
 
 **Q:** Why can a class written at runtime (`bg-${color}-500`) produce missing styles?
 
-**A:** The scanner recognizes complete class candidates, not JavaScript interpolation. Version 4 automatically detects normal sources and can add external paths or inline candidates with `@source`; version 3 uses configured `content`/`safelist` settings.
+**A:** The scanner recognizes complete class candidates, not JavaScript interpolation. Version 4 automatically detects normal sources and can add external paths or inline candidates with `@source`; version 3 uses configured `content` and `safelist` settings.
 
 **Q:** Why prefer extracting repeated utility lists into components instead of `@apply`?
 

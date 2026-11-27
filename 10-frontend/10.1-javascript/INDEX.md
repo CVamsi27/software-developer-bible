@@ -7,7 +7,7 @@
 [![Category](https://img.shields.io/badge/category-Core-blueviolet)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-JavaScript fundamentals commonly appear in frontend, Node.js, and full-stack interviews. Be ready to trace scope and promise behavior, explain object identity, and distinguish language rules from host/runtime behavior. The chapters and drills organize those topics; they are a study path, not a guarantee of interview coverage.
+JavaScript fundamentals commonly appear in frontend, Node.js, and full-stack interviews. Be ready to trace scope and promise behavior, explain object identity, and distinguish language rules from host and runtime behavior. The chapters and drills organize those topics; they are a study path, not a guarantee of interview coverage.
 
 ---
 
@@ -19,7 +19,7 @@ The numbered chapters are organized into six category folders. Files in the same
 | ------------------------------------------------------------------------ | -------: | -------------------------------------------------------------------------------------------------------------------- |
 | [Execution & Scope](01-execution-and-scope/INDEX.md) | 7 | The language's binding, lookup, execution and lifetime model |
 | [Objects, Prototypes & `this`](02-objects-prototypes-this/INDEX.md) | 3 | Property lookup, prototype links, method calls and `this` |
-| [Async & Concurrency](03-async-concurrency/INDEX.md) | 6 | Event-loop scheduling, promises, async/await, cancellation and bounded work |
+| [Async & Concurrency](03-async-concurrency/INDEX.md) | 6 | Event-loop scheduling, promises, `async` and `await`, cancellation and bounded work |
 | [Memory & Data](04-memory-and-data/INDEX.md) | 9 | Choosing the right collection, hash table internals, avoiding memory leaks, understanding GC |
 | [Functional Patterns](05-functional-patterns/INDEX.md) | 5 | The patterns you'll use daily: currying, composition, memoization, generators |
 | [Modern JS & Interview Prep](06-modern-and-interview/INDEX.md) | 6 | Selected ES2022–2026 APIs, workers, DOM events, cross-tab coordination, regular expressions, and interview questions |
@@ -46,14 +46,14 @@ Start with the language's evaluation and binding model, then distinguish it from
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Execution Context](01-execution-and-scope/10.1.1.01-execution-context.md) | Evaluation state, environment references, declaration setup, parameter bindings | Essential | Foundational | 7 min |
-| 02 | [Scope](01-execution-and-scope/10.1.1.02-scope.md) | Binding lookup, block boundaries, global/module scopes | Essential | Foundational | 9 min |
+| 02 | [Scope](01-execution-and-scope/10.1.1.02-scope.md) | Binding lookup, block boundaries, global and module scopes | Essential | Foundational | 9 min |
 | 03 | [Call Stack](01-execution-and-scope/10.1.1.03-call-stack.md) | LIFO, stack frames, stack overflow, max call stack size, debugging | Essential | Foundational | 7 min |
-| 04 | [Hoisting](01-execution-and-scope/10.1.1.04-hoisting.md) | `var`/`let`/`const` hoisting, temporal dead zone, function hoisting | Essential | Foundational | 7 min |
+| 04 | [Hoisting](01-execution-and-scope/10.1.1.04-hoisting.md) | `var`, `let`, and `const` hoisting, temporal dead zone, function hoisting | Essential | Foundational | 7 min |
 | 05 | [Lexical Environment](01-execution-and-scope/10.1.1.05-lexical-environment.md) | Record hierarchy, outer lookup, global object versus module bindings | Essential | Foundational | 9 min |
 | 06 | [Closures](01-execution-and-scope/10.1.1.06-closures.md) | Lexical scoping, closure lifecycle, module pattern, memory implications | Essential | Foundational | 8 min |
 | 07 | [V8 Execution and Optimization](01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md) | Pre-parsing, bytecode caching, JIT tiers, Smi and pointer compression, Hidden Classes, Elements Kinds, inline caches, closure contexts, OSR, and deoptimization | Important | Specialized | 15 min |
 
-**Read order:** Execution Context → Scope → Call Stack → Hoisting → Lexical Environment → Closures → V8 execution and optimization (matches the category's numbering and its read-order rationale — see [01-execution-and-scope/INDEX.md](01-execution-and-scope/INDEX.md)).
+**Read order:** Execution Context → Scope → Call Stack → Hoisting → Lexical Environment → Closures → V8 execution and optimization (matches the category's numbering and its read-order rationale — see [Execution & Scope Index](01-execution-and-scope/INDEX.md)).
 
 ---
 
@@ -92,15 +92,15 @@ Choosing the right collection and avoiding memory leaks.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 17 | [Pass by Value](04-memory-and-data/10.1.4.01-pass-by-value.md) | Primitive vs. reference, call-by-sharing, shallow immutability (`freeze`/`seal`), and pure `toSorted` arrays | Essential | Foundational | 6 min |
+| 17 | [Pass by Value](04-memory-and-data/10.1.4.01-pass-by-value.md) | Primitive vs. reference, call-by-sharing, shallow immutability (`freeze` and `seal`), and pure `toSorted` arrays | Essential | Foundational | 6 min |
 | 18 | [Map, Set, WeakMap, WeakSet](04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md) | Key identity, insertion order, `getOrInsert` and `getOrInsertComputed`, set methods, and weak symbol boundaries | Essential | Foundational | 7 min |
 | 19 | [Shallow vs Deep Copy](04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md) | Reference graphs, `structuredClone`, transferable buffers, JSON coercion limits, and path copying | Essential | Foundational | 7 min |
-| 20 | [Debounce](04-memory-and-data/10.1.4.04-debounce.md) | Quiet-time scheduling, leading/trailing/maxWait policies, cancellation, and React lifecycle cleanup | Essential | Foundational | 11 min |
+| 20 | [Debounce](04-memory-and-data/10.1.4.04-debounce.md) | Quiet-time scheduling, leading, trailing, and `maxWait` policies, cancellation, and React lifecycle cleanup | Essential | Foundational | 11 min |
 | 21 | [Throttle](04-memory-and-data/10.1.4.05-throttle.md) | Periodic scheduling, hybrid edge policies, `requestAnimationFrame` gating, cancellation, and concurrency limits | Essential | Foundational | 10 min |
 | 22 | [Memory Leaks](04-memory-and-data/10.1.4.06-memory-leaks.md) | Retaining paths, `{ signal }` listener cleanup, bounded caches, DevTools retainers, and `v8.writeHeapSnapshot()` | Essential | Foundational | 8 min |
 | 23 | [Garbage Collection](04-memory-and-data/10.1.4.07-garbage-collection.md) | Tracing, V8 spaces (`getHeapSpaceStatistics`), Orinoco, `WeakRef`, and ES2026 `using` deterministic disposal | Essential | Foundational | 7 min |
 | 24 | [Hash Tables and Hash Maps](04-memory-and-data/10.1.4.08-hash-tables-internals.md) | Hash lookup, probing tombstones, object integer-key hoisting vs. `Map`, V8 `OrderedHashTable`, and resize pauses | Important | Specialized | 7 min |
-| 25 | [Equality & Coercion](04-memory-and-data/10.1.4.09-equality-and-coercion.md) | Equality algorithms, `Symbol.toPrimitive`, `BigInt` rules, `??`, and explicit string/boolean boundary parsing | Essential | Foundational | 8 min |
+| 25 | [Equality & Coercion](04-memory-and-data/10.1.4.09-equality-and-coercion.md) | Equality algorithms, `Symbol.toPrimitive`, `BigInt` rules, `??`, and explicit string and boolean boundary parsing | Essential | Foundational | 8 min |
 
 ---
 
@@ -120,15 +120,15 @@ Patterns for explicit data flow, reusable computations, lazy iteration and funct
 
 ## Modern JS & Interview Prep
 
-Selected recent APIs, browser execution/event models and interview practice.
+Selected recent APIs, browser execution and event models and interview practice.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 31 | [Recent ECMAScript Features](06-modern-and-interview/10.1.6.01-es2024-features.md) | Selected ES2022–2026 built-ins, `Iterator.concat`, `JSON.rawJSON`, `Uint8Array.fromBase64`, and host boundaries | Important | Specialized | 8 min |
-| 32 | [Web Workers](06-modern-and-interview/10.1.6.02-web-workers.md) | Dedicated, shared, and service workers; `ArrayBuffer` transfer, `SharedArrayBuffer` COOP/COEP, and cancellation | Important | Important | 8 min |
+| 32 | [Web Workers](06-modern-and-interview/10.1.6.02-web-workers.md) | Dedicated, shared, and service workers; `ArrayBuffer` transfer, `SharedArrayBuffer` COOP and COEP, and cancellation | Important | Important | 8 min |
 | 33 | [DOM Events & Delegation](06-modern-and-interview/10.1.6.03-dom-events-delegation.md) | Event path, Shadow DOM `composed: true`, delegation, propagation, passive listeners, and cleanup | Essential | Foundational | 6 min |
 | 34 | [Cross-Tab Communication](06-modern-and-interview/10.1.6.04-cross-tab-communication.md) | `BroadcastChannel`, stored recovery, shared owners, Web Locks, and safe cross-tab session updates | Important | Specialized | 7 min |
-| 35 | [Regular Expressions and Text Matching](06-modern-and-interview/10.1.6.06-regexp-and-text.md) | Character classes, `g`/`u`/`v`/`d` flags, capture indices, ReDoS backtracking risk, and log redaction | Essential | Important | 9 min |
+| 35 | [Regular Expressions and Text Matching](06-modern-and-interview/10.1.6.06-regexp-and-text.md) | Character classes, `g`, `u`, `v`, and `d` flags, capture indices, ReDoS backtracking risk, and log redaction | Essential | Important | 9 min |
 | 36 | [Interview Questions](06-modern-and-interview/10.1.6.05-interview-questions.md) | 76 questions with model answers, implementation prompts, and changed-condition checks | Essential | Foundational | 17 min |
 
 ---

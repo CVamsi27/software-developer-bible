@@ -1,7 +1,7 @@
 # Foundations — TypeScript
 
 > **Study time:** ≈ 34 min of reading (5 files, ~7 min average).
-> **5 files.** Type aliases versus interfaces (open vs. closed assignability), `keyof` / `typeof` / `(typeof T)[number]`, control-flow narrowing & `asserts`, and `tsconfig.json` strictness.
+> **5 files.** Type aliases versus interfaces (open vs. closed assignability), `keyof`, `typeof`, and `(typeof T)[number]`, control-flow narrowing & `asserts`, and `tsconfig.json` strictness.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#files)
 [![Category](https://img.shields.io/badge/category-Foundations-orange)](../INDEX.md)

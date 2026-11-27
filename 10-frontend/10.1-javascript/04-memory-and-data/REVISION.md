@@ -96,11 +96,11 @@ Source: [Shallow Copy vs Deep Copy](10.1.4.03-shallow-vs-deep-copy.md)
 
 **Q:** What does `JSON.parse(JSON.stringify(x))` silently rewrite, and what does it refuse outright?
 
-**A:** Dates normally become ISO strings, ordinary `Map`/`Set`/`RegExp` become `{}`, and `NaN`/infinities become `null`. Functions, `undefined`, and symbol-valued properties are omitted; array slots with those values become `null`. Cycles and unhandled `BigInt` values throw.
+**A:** Dates normally become ISO strings, ordinary `Map`, `Set`, and `RegExp` become `{}`, and `NaN` or infinities become `null`. Functions, `undefined`, and symbol-valued properties are omitted; array slots with those values become `null`. Cycles and unhandled `BigInt` values throw.
 
 **Q:** What does `structuredClone` hand back when given a class instance?
 
-**A:** A supported ordinary class instance normally becomes a plain object with cloneable enumerable own properties, without the custom prototype/private fields. An uncloneable property such as a function can still throw, so success is not unconditional.
+**A:** A supported ordinary class instance normally becomes a plain object with cloneable enumerable own properties, without the custom prototype or private fields. An uncloneable property such as a function can still throw, so success is not unconditional.
 
 **Q:** Which copy routine should you use when a value is about to cross a worker boundary?
 

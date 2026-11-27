@@ -365,8 +365,7 @@ Generate a temporary batch from `docs/review-ledger.json` that copies each read 
 <raw KB> KB raw / <gzip KB> KB gzip built page; the shared Jekyll shell is included.
 ```
 
-Apply the batch with `python3 scripts/review_ledger.py --date 2026-11-18 apply
-<batch>`. Confirm that no Markdown hash changed and that the ledger audit has
+Apply the batch with `python3 scripts/review_ledger.py --date 2026-11-18 apply <batch>`. Confirm that no Markdown hash changed and that the ledger audit has
 zero axis failures.
 
 ## Task 6: Run reader UX and rendered-site verification

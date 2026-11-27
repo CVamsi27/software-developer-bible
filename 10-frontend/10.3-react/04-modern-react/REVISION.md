@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-React-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -16,7 +16,7 @@ Source: [Modern React: Scheduling, Actions, and DOM APIs](10.3.4.01-modern-hooks
 
 **Q:** What single theme connects React 18's hooks and React 19's APIs?
 
-**A:** They give React explicit scheduling and resource lifetimes. Transitions and deferred values distinguish urgent feedback from eligible background rendering; Actions coordinate async mutations, while optimistic state supplies a temporary proposal over a confirmed base. Error presentation, stable resource ownership and persistence remain application responsibilities.
+**A:** They give React explicit scheduling and resource lifetimes. Transitions and deferred values distinguish urgent feedback from eligible background rendering; Actions coordinate async mutations, while optimistic state supplies a temporary proposal over a confirmed base. Error presentation, stable resource ownership, and persistence remain application responsibilities.
 
 **Q:** When do you reach for `useTransition` versus `useDeferredValue`?
 
@@ -44,7 +44,7 @@ Source: [Modern React: Scheduling, Actions, and DOM APIs](10.3.4.01-modern-hooks
 
 **Q:** What does ref-as-prop actually eliminate in React 19?
 
-**A:** The `forwardRef` wrapper — function components now read `ref` straight from props (and `forwardRef` is slated for eventual deprecation). `useImperativeHandle` stays: only the *forwarding* boilerplate goes away, not imperative handles for exposing focus/scroll APIs.
+**A:** The `forwardRef` wrapper — function components now read `ref` straight from props (and `forwardRef` is slated for eventual deprecation). `useImperativeHandle` stays: only the *forwarding* boilerplate goes away, not imperative handles for exposing focus and scroll APIs.
 
 **Q:** Which `use` reads are supported in a Server Component, and what does that mean for a promise passed to a Client Component?
 
@@ -60,7 +60,11 @@ Source: [Modern React: Scheduling, Actions, and DOM APIs](10.3.4.01-modern-hooks
 
 **Q:** What does `<Activity mode="hidden">` preserve, and what happens to Effects?
 
-**A:** It preserves the subtree’s component state while hiding it, disconnecting its Effects and deferring updates until it becomes visible again. Use it when that retention behavior is useful, not as a generic loading state.
+**A:** It preserves the subtree's component state while hiding it, disconnecting its Effects, and deferring updates until it becomes visible again. Use it when that retention behavior is useful, not as a generic loading state.
+
+**Q:** What does `useDeferredValue(value, initialValue)` solve on initial mount, and why does React 19 `<form action={fn}>` clear uncontrolled fields after validation errors?
+
+**A:** Passing `initialValue` lets the initial mount render immediately with a cheap placeholder value while scheduling the expensive `value` render in the background. Because `<form action={fn}>` resets uncontrolled form inputs automatically once the Action completes, return the submitted values via `useActionState` to pass into `defaultValue` (or use controlled inputs) when validation errors must keep user typing intact.
 
 ## Web Components
 
@@ -88,7 +92,7 @@ Source: [Web Components](10.3.4.02-web-components.md)
 
 **Q:** How do you listen for the `booking-confirmed` custom event in React 19 JSX?
 
-**A:** Use the `on`-prefixed prop with the event name’s exact case and dashes: `onbooking-confirmed`. Type the custom element’s intrinsic JSX props separately.
+**A:** Use the `on`-prefixed prop with the event name's exact case and dashes: `onbooking-confirmed`. Type the custom element's intrinsic JSX props separately under `declare module "react"`.
 
 **Q:** Why does interpolating user text into shadow-root `innerHTML` remain unsafe?
 
@@ -98,19 +102,23 @@ Source: [Web Components](10.3.4.02-web-components.md)
 
 **A:** When it originates inside a shadow tree and ancestor listeners outside that tree must receive it by propagation. Dispatching directly on the host does not need to cross its own shadow boundary.
 
+**Q:** What do Declarative Shadow DOM and `ElementInternals` add for server rendering and forms?
+
+**A:** Declarative Shadow DOM (`<template shadowrootmode="open">`) lets SSR emit shadow-tree markup before JavaScript upgrades the element, preventing FOUC and layout shifts. Calling `this.attachInternals()` on a form-associated custom element exposes `ElementInternals` for form value submission, constraint validation (`setValidity()`), and ARIA semantics without exposing internal DOM.
+
 ## React Router
 
 Source: [React Router](10.3.4.03-react-router.md)
 
 **Q:** How does Data Mode differ from a declarative router or Framework Mode?
 
-**A:** Data Mode adds loaders, actions and navigation state to a route tree. Declarative Mode supplies matching/navigation; Framework Mode adds route modules, build conventions, code splitting and rendering strategies. This chapter's examples use v8 Data Mode.
+**A:** Data Mode adds loaders, actions, and navigation state to a route tree. Declarative Mode supplies matching and navigation; Framework Mode adds route modules, build conventions, code splitting, and rendering strategies. This chapter's examples use v8 Data Mode.
 
 **Q:** Can a parent loader prevent a child loader from starting, and what does Data Mode middleware change?
 
 **A:** Matched loaders run concurrently, so a parent loader cannot gate a child loader. Data Mode middleware runs sequentially before route handlers and can coordinate a client redirect, but every protected API operation still authorizes on the server.
 
-**Q:** What changed about deferred loader data between v6 and v7/v8?
+**Q:** What changed about deferred loader data between v6 and v7 or v8?
 
 **A:** V6 used `defer`; v7 and v8 return an object containing an unresolved promise. Await critical data explicitly, then render the slower value with `<Await>` beneath Suspense.
 
@@ -120,7 +128,7 @@ Source: [React Router](10.3.4.03-react-router.md)
 
 **Q:** What does `useFetcher` add when submitting an inline rename?
 
-**A:** It runs a route action and exposes its pending/data state while keeping the current location. A navigation form instead participates in a route navigation.
+**A:** It runs a route action and exposes its pending and data state while keeping the current location. A navigation form instead participates in a route navigation.
 
 **Q:** Does an absolute child path escape its parent layout?
 
@@ -132,11 +140,11 @@ Source: [React Router](10.3.4.03-react-router.md)
 
 **Q:** What is the v8 Data Mode default after a failed mutation, and what can `shouldRevalidate` change?
 
-**A:** A 4xx/5xx action response skips default loader revalidation; a successful-status `{ error }` result still triggers it. `shouldRevalidate` can override the default, so preserve `defaultShouldRevalidate` unless the route data is known to be unaffected.
+**A:** A `4xx` or `5xx` action response skips default loader revalidation; a successful-status `{ error }` result still triggers it. `shouldRevalidate` can override the default, so preserve `defaultShouldRevalidate` unless the route data is known to be unaffected.
 
 **Q:** What should a v7 application check before moving to v8?
 
-**A:** Meet the Node 22.22+ and React/React DOM 19.2.7+ minimums; Framework Mode also requires Vite 7+. Replace `react-router-dom` imports: DOM provider APIs come from `react-router/dom` and other APIs from `react-router`. Review the official migration guide for flags and adapter-specific changes.
+**A:** Meet the Node 22.22+ and React and React DOM 19.2.7+ minimums; Framework Mode also requires Vite 7+. Replace `react-router-dom` imports: DOM provider APIs come from `react-router/dom` and other APIs from `react-router`. Review the official migration guide for flags and adapter-specific changes.
 
 **Q:** Is a v8 Data Mode middleware session check a security boundary?
 
@@ -144,7 +152,15 @@ Source: [React Router](10.3.4.03-react-router.md)
 
 **Q:** When should an inline rename use a fetcher instead of a navigation `<Form>`?
 
-**A:** Use a fetcher when the action should expose pending/result state without changing the current location. Use a navigation `<Form>` when the submission represents a route transition or should update browser history.
+**A:** Use a fetcher when the action should expose pending and result state without changing the current location. Use a navigation `<Form>` when the submission represents a route transition or should update browser history.
+
+**Q:** How does a route `ErrorBoundary` distinguish thrown HTTP `Response` errors from unexpected runtime exceptions?
+
+**A:** Read the error with `useRouteError()` and guard with `isRouteErrorResponse(error)`, which narrows thrown `Response` values (such as 404 or 403) so the UI renders the expected status message separately from generic crash fallbacks.
+
+**Q:** When does an app fit React Router Data Mode, React Router Framework Mode, or Next.js App Router?
+
+**A:** Pick Data Mode for SPAs or custom Vite builds talking to a separate backend, Framework Mode when you want Vite SSR, route-module splitting, and Request and Response server loaders without React Server Components, and Next.js App Router when designing around React Server Components and Server Functions.
 
 ## API and lifetime boundaries
 
@@ -156,7 +172,7 @@ Source: [Modern Hooks](10.3.4.01-modern-hooks-react18-19.md), [Web Components](1
 
 **Q:** Can an Effect Event be passed down as a normal button callback?
 
-**A:** No. Keep it inside its effect/subscription lifecycle; it is not a general replacement for event handlers or required dependencies.
+**A:** No. Keep it inside its effect or subscription lifecycle; it is not a general replacement for event handlers or required dependencies.
 
 **Q:** Why is `useId` unsuitable for a database record's list key?
 
@@ -168,11 +184,11 @@ Source: [Modern Hooks](10.3.4.01-modern-hooks-react18-19.md), [Web Components](1
 
 **Q:** Does aborting an obsolete navigation undo a mutation at the server?
 
-**A:** No. The client may stop waiting while the server already accepted work. Use server-side version/idempotency rules for conflicting or retried writes.
+**A:** No. The client may stop waiting while the server already accepted work. Use server-side version and idempotency rules for conflicting or retried writes.
 
 ## Summary
 
-Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
+Revisit the linked chapter when an answer misses the mechanism, a boundary, or a failure case.
 
 ---
 

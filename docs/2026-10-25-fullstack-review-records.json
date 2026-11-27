@@ -1361,10 +1361,10 @@
     },
     {
       "path": "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.md",
-      "sha256": "fc212bdc84054a21e2cf33c38f71a9716cfeeefef7da8d5724041b8cc42d3dce",
+      "sha256": "f7e791392061d173109cf4dd0ac8dec1338db774765d6580d5e4d30ff371c4a0",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 3D D1-D7 rework: 10.3-react/04-modern-react C1-C8 refinement (2026-11-24): Full read of 303 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-24",
@@ -1372,10 +1372,10 @@
     },
     {
       "path": "10-frontend/10.3-react/04-modern-react/10.3.4.02-web-components.md",
-      "sha256": "e156bc67be4b02542f9a490f896ebff9084896dbfc926239548f70255b7849d4",
+      "sha256": "4e95fb40e7bf9e547d892580d1ccd6e1736676683fcf16d0bad43c07ef7599f5",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 3D D1-D7 rework: 10.3-react/04-modern-react C1-C8 refinement (2026-11-24): Full read of 172 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-24",
@@ -1383,10 +1383,10 @@
     },
     {
       "path": "10-frontend/10.3-react/04-modern-react/10.3.4.03-react-router.md",
-      "sha256": "73e0f8d3d0856909d40172e05c099639f8ade327fe9e7cceb5b6b2d696c0279b",
+      "sha256": "091d1c51fa306a225fb486240a9778b423a5515ebeb7e805370a8e5cc3744569",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 3D D1-D7 rework: 10.3-react/04-modern-react C1-C8 refinement (2026-11-24): Full read of 294 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-24",
@@ -1394,10 +1394,10 @@
     },
     {
       "path": "10-frontend/10.3-react/04-modern-react/INDEX.md",
-      "sha256": "2185ebbd438ece87416c8cb14486bec57d72bc744c033a1dc5dc5ea85e43b84d",
+      "sha256": "c98470bc94cbc27f3ee16d601ff22ff13f5f2b56a958bea5d7e817d1cba14656",
       "genre": "index",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 3D D1-D7 rework: 10.3-react/04-modern-react C1-C8 refinement (2026-11-24): Full read of 48 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-24",
@@ -1405,10 +1405,10 @@
     },
     {
       "path": "10-frontend/10.3-react/04-modern-react/REVISION.md",
-      "sha256": "61d70c9f577e8b6839ee5fac7f30f5de29ce1614173ac75bf8ec5c88206dd35f",
+      "sha256": "524cff54cf7fc8599fcff219277b283dec14a04226b1263a373a98d15dd011f7",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 3D D1-D7 rework: 10.3-react/04-modern-react C1-C8 refinement (2026-11-24): Full read of 201 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-24",
@@ -1469,12 +1469,12 @@
     },
     {
       "path": "10-frontend/10.3-react/INDEX.md",
-      "sha256": "ec3f88ff1bd7947d15cb0c2a84a4e0fd0e079e8a3058d78aff03eeb0c62019c2",
+      "sha256": "f3fd05971d25af8966f9e78a1e4595e2bad686ba7dc9dddccd1ea7146f251666",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 3C D1-D7 rework: 10.3-react/03-advanced-hooks-and-patterns count/read-time sync (2026-11-24): Full read of 145 lines. Updated generated counts/read-time navigation after Phase 3C D1-D7 rework: 10.3-react/03-advanced-hooks-and-patterns.",
+      "notes": "Phase 3D D1-D7 rework: 10.3-react/04-modern-react count/read-time sync (2026-11-24): Full read of 145 lines. Updated generated counts/read-time navigation after Phase 3D D1-D7 rework: 10.3-react/04-modern-react.",
       "findings": []
     },
     {
@@ -2245,10 +2245,10 @@
     },
     {
       "path": "10-frontend/INDEX.md",
-      "sha256": "0990aae5d1c56b108b4efe94636a447a5e374aafe2af69dbfe146cce6df22630",
+      "sha256": "f463926bdd6e4cd4e8e24e6df0e5df66a62f0ebf86fc6b166ccc3d30f559b338",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Phase 3C D1-D7 rework: 10.3-react/03-advanced-hooks-and-patterns count/read-time sync (2026-11-24): Full read of 75 lines. Updated generated counts/read-time navigation after Phase 3C D1-D7 rework: 10.3-react/03-advanced-hooks-and-patterns.",
+      "notes": "Phase 3D D1-D7 rework: 10.3-react/04-modern-react count/read-time sync (2026-11-24): Full read of 75 lines. Updated generated counts/read-time navigation after Phase 3D D1-D7 rework: 10.3-react/04-modern-react.",
       "findings": [],
       "reviewer": "root",
       "metadataReview": {
@@ -10064,12 +10064,12 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "03d8bf051f57e1643876028eb5a1cc3ea3f57215048498d91730148da9ff7ea6",
+      "sha256": "f33707013f8669b695894e06b5d390ad7cc6b44670dcb53c506840210c57a263",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 3C D1-D7 rework: 10.3-react/03-advanced-hooks-and-patterns count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 3C D1-D7 rework: 10.3-react/03-advanced-hooks-and-patterns.",
+      "notes": "Phase 3D D1-D7 rework: 10.3-react/04-modern-react count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 3D D1-D7 rework: 10.3-react/04-modern-react.",
       "findings": []
     },
     {
@@ -10259,12 +10259,12 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "39d950322a5f864f5e1c6ff371dbb707fad1120a5ad7e1f9dd493f97967f7055",
+      "sha256": "bdc85191a60b81f8ccb98b504eda39a7a15cdeb045a4109f0ecd554adb6e7a7a",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 3C D1-D7 rework: 10.3-react/03-advanced-hooks-and-patterns count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 3C D1-D7 rework: 10.3-react/03-advanced-hooks-and-patterns.",
+      "notes": "Phase 3D D1-D7 rework: 10.3-react/04-modern-react count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 3D D1-D7 rework: 10.3-react/04-modern-react.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

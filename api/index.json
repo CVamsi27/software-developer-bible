@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "cacc6fb90abc6ca3b504c2c87ccf33e42111baa8f83e06f0c094ca5435aca30c",
+ "corpus_digest": "8a13bce23e71644c382d2af756651bc2b6e7a37691b3d3a5c4c7a334f2aad27d",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5487
+  "read_minutes": 5491
  },
  "chapters": [
   {
@@ -960,7 +960,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "10-frontend/10.3-react/04-modern-react/10.3.4.02-web-components.html",
@@ -970,7 +970,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.3-react/04-modern-react/10.3.4.03-react-router.html",
@@ -980,7 +980,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "10-frontend/10.3-react/04-modern-react/REVISION.html",
@@ -991,7 +991,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.01-portals.html",

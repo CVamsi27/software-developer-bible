@@ -1,6 +1,6 @@
 # React — Index
 
-> **Study time:** ≈ 3 h 24 m of reading (28 files, ~7 min average).
+> **Study time:** ≈ 3 h 28 m of reading (28 files, ~7 min average).
 > **28 files** — React internals from Virtual DOM to Fiber, hooks, patterns, custom hooks, portals, compound components, external stores, server-state ownership with TanStack Query, React Router data routers, React 18/19 concurrent APIs, performance, state management, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-28-blue)](../../INDEX.md)
@@ -88,9 +88,9 @@ The newest features — what changed in concurrent React and what you need to kn
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 18 | [Modern Hooks (React 18/19)](04-modern-react/10.3.4.01-modern-hooks-react18-19.md) | `useTransition`, `useDeferredValue`, `useOptimistic`, `use(promise)`, `ref`-as-prop, Form actions | Important | Specialized | 13 min |
-| 19 | [Web Components](04-modern-react/10.3.4.02-web-components.md) | Custom Elements, Shadow DOM, HTML Templates, Web Components vs React | Important | Specialized | 7 min |
-| 20 | [React Router](04-modern-react/10.3.4.03-react-router.md) | `createBrowserRouter` data routers, nested routes + `Outlet`, loaders/actions, v7 promise fields + `Await`, protected routes, relative routing, RR vs Next.js | Essential | Foundational | 12 min |
+| 18 | [Modern React (18–19.3)](04-modern-react/10.3.4.01-modern-hooks-react18-19.md) | Scheduling, `useDeferredValue` initial values, Actions, form reset, Suspense resources, Effect Events, Fragment refs, and View Transitions | Important | Specialized | 14 min |
+| 19 | [Web Components](04-modern-react/10.3.4.02-web-components.md) | Custom-element lifecycle, attributes, properties, and events, Declarative Shadow DOM, `ElementInternals`, and React 19 interop | Important | Specialized | 8 min |
+| 20 | [React Router](04-modern-react/10.3.4.03-react-router.md) | v8.4 modes, nested routes, middleware, loaders and actions, `isRouteErrorResponse`, Suspense and `Await`, revalidation, and React Router vs. Next.js | Essential | Foundational | 13 min |
 
 ---
 

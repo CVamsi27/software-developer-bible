@@ -80,7 +80,7 @@ Source: [Test Patterns](50.1.4.02-test-patterns.md)
 
 ## Summary
 
-Control the smallest useful boundary and exercise the real consumer. Keep the double’s configured behavior, timer state, and separate fixture data explicit so a passing result supports only the intended claim.
+Control the smallest useful boundary and exercise the real consumer. Keep the double's configured behavior, timer state, and separate fixture data explicit so a passing result supports only the intended claim.
 
 ## See Also
 

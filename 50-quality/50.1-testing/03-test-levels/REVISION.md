@@ -24,7 +24,7 @@ Source: [Unit Testing](50.1.3.01-unit-testing.md)
 
 **Q:** Why is a loader call count useful here while a private helper spy may be brittle?
 
-**A:** Avoiding a fetch before expiry is part of the public behavior. A private helper’s name or invocation pattern can change without violating that behavior.
+**A:** Avoiding a fetch before expiry is part of the public behavior. A private helper's name or invocation pattern can change without violating that behavior.
 
 **Q:** Does the sequential cache test establish one refresh for concurrent callers?
 

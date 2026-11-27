@@ -74,6 +74,10 @@ Source: [Learning chapter](50.4.02-sli-slo-error-budgets.md)
 
 **A:** No observed-population result is available. It does not prove health; measurement coverage and low-volume policy need separate treatment.
 
+**Q:** Why can an endpoint with three serial `99.9%` dependencies not reliably guarantee a `99.95%` SLO without architectural isolation, and how do client retries distort a raw server SLI?
+
+**A:** Independent serial dependencies multiply availability (`0.999^3 ≈ 99.7%`), so exceeding their product requires fallbacks, caching, or asynchronous decoupling. Client retries distort raw server counters in both directions: repeated retries against a failing endpoint multiply recorded bad requests and burn rate, while a retry that succeeds masks the failed attempt from user-visible failure unless per-attempt and user-journey SLIs are measured separately.
+
 ## Bounded mitigation and recovery
 
 Source: [Incident Response](50.4.01-incident-response.md)

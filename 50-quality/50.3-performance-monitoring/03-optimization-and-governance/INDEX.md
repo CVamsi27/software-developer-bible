@@ -11,7 +11,7 @@
 
 ## Why governance, not just optimization
 
-A page can become slower as each sprint adds more code and assets. A performance budget sets a measurable limit, and continuous integration (CI) checks enforce it before changes ship. This answers the interview question “how do you keep a fast site fast?”
+A page can become slower as each sprint adds more code and assets. A performance budget sets a measurable limit, and continuous integration (CI) checks enforce it before changes ship. This answers the interview question "how do you keep a fast site fast?"
 
 ---
 

@@ -1,6 +1,6 @@
 # Production Engineering — Index
 
-> **Study time:** ≈ 49 min of reading (7 files, ~7 min average).
+> **Study time:** ≈ 50 min of reading (7 files, ~7 min average).
 > **7 files** — Incident response, Service Level Indicators (SLIs), Service Level Objectives (SLOs), error budgets, chaos engineering, production readiness reviews, and sustainable on-call — operating systems in production. Use the chapters to connect operational decisions to evidence.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)

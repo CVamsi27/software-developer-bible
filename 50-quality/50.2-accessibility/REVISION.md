@@ -102,7 +102,7 @@ Source: [Accessible Charts & Data Visualization](50.2.06-accessible-charts-data-
 
 **A:** Provide a useful text summary and accessible data representation, and make any interaction keyboard and screen-reader usable. A title alone cannot communicate all values and relationships.
 
-**Q:** What data supports the example’s Q1-to-Q4 growth summary?
+**Q:** What data supports the example's Q1-to-Q4 growth summary?
 
 **A:** The increase is `700,000` euros divided by the Q1 baseline of `1,200,000`, approximately `58.3%`. The same four-quarter array supplies the graphic, summary, and exact table.
 
@@ -140,7 +140,7 @@ Source: [Testing Accessibility](50.2.08-testing-a11y.md)
 
 **Q:** Why does directly focusing every element not establish natural `Tab` order?
 
-**A:** It bypasses sequential browser navigation, hidden or disabled behavior, and the task’s movement model. Use actual input and observe the resulting focus and state.
+**A:** It bypasses sequential browser navigation, hidden or disabled behavior, and the task's movement model. Use actual input and observe the resulting focus and state.
 
 ## Summary
 

@@ -11291,36 +11291,36 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/02-frameworks/50.1.2.01-jest.md": {
-   "sha256": "219224c632a073cb5b50ebe271d24339d36339e739f776e741546eb9697253f6",
+   "sha256": "5e0912921b1d5115b349b0d289d357f093dcef33d148c8eee9d96ccdfc31bc69",
    "lines": 186,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Jest on Node 24.9+ synchronous ESM `require()` support, `--experimental-vm-modules`, and `advanceTimersByTimeAsync`.",
-    "readable": "Full read of 186 lines (1040 prose words). (1,010 prose words). Covers Jest runtime configuration, dependency-injected async contract assertions, matcher semantics, `mockClear`/`mockReset`/`mockRestore`, ESM VM modules and Node 24.9+ `require(esm)`, and fake timers.",
-    "concise": "1040 words across 186 lines. 1,010 words across 182 lines. Covers Jest runtime configuration, dependency-injected async contract assertions, matcher semantics, `mockClear`/`mockReset`/`mockRestore`, ESM VM modules and Node 24.9+ `require(esm)`, and fake timers.",
+    "readable": "Full read of 186 lines (1042 prose words). (1,010 prose words). Covers Jest runtime configuration, dependency-injected async contract assertions, matcher semantics, `mockClear`/`mockReset`/`mockRestore`, ESM VM modules and Node 24.9+ `require(esm)`, and fake timers.",
+    "concise": "1042 words across 186 lines. 1,010 words across 182 lines. Covers Jest runtime configuration, dependency-injected async contract assertions, matcher semantics, `mockClear`/`mockReset`/`mockRestore`, ESM VM modules and Node 24.9+ `require(esm)`, and fake timers.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers Jest runtime configuration, dependency-injected async contract assertions, matcher semantics, `mockClear`/`mockReset`/`mockRestore`, ESM VM modules and Node 24.9+ `require(esm)`, and fake timers.",
     "fast": "Measured 29.8 KB raw / 7.6 KB gzip. Covers Jest runtime configuration, dependency-injected async contract assertions, matcher semantics, `mockClear`/`mockReset`/`mockRestore`, ESM VM modules and Node 24.9+ `require(esm)`, and fake timers.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers Jest runtime configuration, dependency-injected async contract assertions, matcher semantics, `mockClear`/`mockReset`/`mockRestore`, ESM VM modules and Node 24.9+ `require(esm)`, and fake timers."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.1-testing/02-frameworks/50.1.2.02-vitest.md": {
-   "sha256": "b2ef92eee511e9fd6c323c6b78b382925ec37b9165c56df953bc0cac16320c20",
-   "lines": 191,
+   "sha256": "d183867fe692cbae042e03f0c433c593bbc85de10f72f6750949b9d1f78eadfe",
+   "lines": 196,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Vitest 5.0.5 package manifest (Node `^22.12.0 || ^24.0.0 || >=26.0.0`, Vite `^6.4.0 || ^7.0.0 || ^8.0.0`) and `@vitest/browser-playwright`.",
-    "readable": "Full read of 191 lines (974 prose words). Covers Vitest 5 configuration (`pool: 'forks'`, `clearMocks: true`), fake-timer retry testing, `vi.mock`/`vi.hoisted`, Vitest Browser Mode (stable since v4), MSW 2.x, and V8 coverage.",
-    "concise": "974 words across 191 lines. Covers Vitest 5 configuration (`pool: 'forks'`, `clearMocks: true`), fake-timer retry testing, `vi.mock`/`vi.hoisted`, Vitest Browser Mode (stable since v4), MSW 2.x, and V8 coverage.",
+    "readable": "Full read of 196 lines (974 prose words). Covers Vitest 5 configuration (`pool: 'forks'`, `clearMocks: true`), fake-timer retry testing, `vi.mock`/`vi.hoisted`, Vitest Browser Mode (stable since v4), MSW 2.x, and V8 coverage.",
+    "concise": "974 words across 196 lines. Covers Vitest 5 configuration (`pool: 'forks'`, `clearMocks: true`), fake-timer retry testing, `vi.mock`/`vi.hoisted`, Vitest Browser Mode (stable since v4), MSW 2.x, and V8 coverage.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers Vitest 5 configuration (`pool: 'forks'`, `clearMocks: true`), fake-timer retry testing, `vi.mock`/`vi.hoisted`, Vitest Browser Mode (stable since v4), MSW 2.x, and V8 coverage.",
     "fast": "Measured 30.1 KB raw / 7.7 KB gzip. Covers Vitest 5 configuration (`pool: 'forks'`, `clearMocks: true`), fake-timer retry testing, `vi.mock`/`vi.hoisted`, Vitest Browser Mode (stable since v4), MSW 2.x, and V8 coverage.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers Vitest 5 configuration (`pool: 'forks'`, `clearMocks: true`), fake-timer retry testing, `vi.mock`/`vi.hoisted`, Vitest Browser Mode (stable since v4), MSW 2.x, and V8 coverage."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.1-testing/02-frameworks/50.1.2.03-react-testing-library.md": {
    "sha256": "5ae9d90ca2ab1dc7eff1dfdaab35c1203a13df437fa6dfd1234ae4424f2a02dc",
@@ -11355,52 +11355,52 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/02-frameworks/50.1.2.05-playwright.md": {
-   "sha256": "dad46abf88e179ee6a7d8c1d6bb01269b9022f48d7a3b6bac5640d8a67b847cd",
-   "lines": 118,
+   "sha256": "ce2213376b0760ec5718bde5cb393ed19c4b7ffb6f33bccda038e7c3ccd7d0f1",
+   "lines": 120,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: `@playwright/test` web-first assertions, `page.route` network interception, `trace: 'retain-on-failure'`, and `toHaveScreenshot`.",
-    "readable": "Full read of 118 lines (975 prose words). Covers Playwright locators and actionability auto-waiting, isolated browser-context fixtures, `page.route` payload verification, `storageState` handling, Trace Viewer, and CI sharding.",
-    "concise": "975 words across 118 lines. Covers Playwright locators and actionability auto-waiting, isolated browser-context fixtures, `page.route` payload verification, `storageState` handling, Trace Viewer, and CI sharding.",
+    "readable": "Full read of 120 lines (1055 prose words). Covers Playwright locators and actionability auto-waiting, isolated browser-context fixtures, `page.route` payload verification, `storageState` handling, Trace Viewer, and CI sharding.",
+    "concise": "1055 words across 120 lines. Covers Playwright locators and actionability auto-waiting, isolated browser-context fixtures, `page.route` payload verification, `storageState` handling, Trace Viewer, and CI sharding.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers Playwright locators and actionability auto-waiting, isolated browser-context fixtures, `page.route` payload verification, `storageState` handling, Trace Viewer, and CI sharding.",
     "fast": "Measured 21.8 KB raw / 6.4 KB gzip. Covers Playwright locators and actionability auto-waiting, isolated browser-context fixtures, `page.route` payload verification, `storageState` handling, Trace Viewer, and CI sharding.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers Playwright locators and actionability auto-waiting, isolated browser-context fixtures, `page.route` payload verification, `storageState` handling, Trace Viewer, and CI sharding."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.1-testing/02-frameworks/INDEX.md": {
-   "sha256": "b7d0bb62623ae11b4cea2fd5c001a9915591874b83ea18ca1bfe528adba70f23",
+   "sha256": "42e642c85e79953d413e4d17c362a6bec3839c9547b7e633929223845af5993c",
    "lines": 64,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Vitest 5.0.5 (Node 22/24/26+, Vite 6/7/8), Jest on Node 24.9+ (`require(esm)`), React Testing Library, and Playwright.",
-    "readable": "Full read of 64 lines (236 prose words). Learning-flow index for JavaScript and TypeScript testing frameworks: Jest, Vitest 5, React Testing Library, Playwright Test, and framework selection trade-offs.",
-    "concise": "236 words across 64 lines. Learning-flow index for JavaScript and TypeScript testing frameworks: Jest, Vitest 5, React Testing Library, Playwright Test, and framework selection trade-offs.",
+    "readable": "Full read of 64 lines (238 prose words). Learning-flow index for JavaScript and TypeScript testing frameworks: Jest, Vitest 5, React Testing Library, Playwright Test, and framework selection trade-offs.",
+    "concise": "238 words across 64 lines. Learning-flow index for JavaScript and TypeScript testing frameworks: Jest, Vitest 5, React Testing Library, Playwright Test, and framework selection trade-offs.",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for JavaScript and TypeScript testing frameworks: Jest, Vitest 5, React Testing Library, Playwright Test, and framework selection trade-offs.",
     "fast": "Measured 12.4 KB raw / 3.9 KB gzip. Learning-flow index for JavaScript and TypeScript testing frameworks: Jest, Vitest 5, React Testing Library, Playwright Test, and framework selection trade-offs.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for JavaScript and TypeScript testing frameworks: Jest, Vitest 5, React Testing Library, Playwright Test, and framework selection trade-offs."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.1-testing/02-frameworks/REVISION.md": {
-   "sha256": "19e6cf4efb0b32c19435c99be5837dca51da44cfe03455206096fca2ab4e64c7",
-   "lines": 124,
+   "sha256": "38a785a2c36844e2537817162dccc212351fe617690ab4db263a49c7fa7a78e0",
+   "lines": 128,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Vitest 5, Jest, React Testing Library, MSW 2.x, and Playwright Test.",
-    "readable": "Full read of 124 lines (1051 prose words). (1,011 prose words). Active-recall Q&A companion covering mock clear/reset/restore, Vitest 5 default `clearMocks`, Browser Mode vs jsdom, RTL query priority and `waitFor`, and Playwright actionability vs business waits.",
-    "concise": "1051 words across 124 lines. 1,011 words across 124 lines. Active-recall Q&A companion covering mock clear/reset/restore, Vitest 5 default `clearMocks`, Browser Mode vs jsdom, RTL query priority and `waitFor`, and Playwright actionability vs business waits.",
+    "readable": "Full read of 128 lines (1128 prose words). (1,011 prose words). Active-recall Q&A companion covering mock clear/reset/restore, Vitest 5 default `clearMocks`, Browser Mode vs jsdom, RTL query priority and `waitFor`, and Playwright actionability vs business waits.",
+    "concise": "1128 words across 128 lines. 1,011 words across 124 lines. Active-recall Q&A companion covering mock clear/reset/restore, Vitest 5 default `clearMocks`, Browser Mode vs jsdom, RTL query priority and `waitFor`, and Playwright actionability vs business waits.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering mock clear/reset/restore, Vitest 5 default `clearMocks`, Browser Mode vs jsdom, RTL query priority and `waitFor`, and Playwright actionability vs business waits.",
     "fast": "Measured 15.2 KB raw / 5.3 KB gzip. Active-recall Q&A companion covering mock clear/reset/restore, Vitest 5 default `clearMocks`, Browser Mode vs jsdom, RTL query priority and `waitFor`, and Playwright actionability vs business waits.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering mock clear/reset/restore, Vitest 5 default `clearMocks`, Browser Mode vs jsdom, RTL query priority and `waitFor`, and Playwright actionability vs business waits."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.1-testing/03-test-levels/50.1.3.01-unit-testing.md": {
    "sha256": "6621121ad448518c7282d37f97a2828f75f40a46233e390a10fac1feb0502faa",
@@ -11419,20 +11419,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/03-test-levels/50.1.3.02-integration-testing.md": {
-   "sha256": "ccc410ed636a9c557a795bc6e248fe8ef4b7d4637c7c364355a82d7a659eb2e7",
+   "sha256": "5c9db5576f89ad10a2c43e0e5373609e4d6ea521568699ff7dc73a3078a1b11e",
    "lines": 200,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Express 5, `@testcontainers/postgresql`, node-postgres parameterized queries, MSW 2.x (`http`/`HttpResponse`), and Pact contract verification.",
-    "readable": "Full read of 200 lines (874 prose words). Covers real-seam integration testing with Express 5, `pg`, Supertest, and `@testcontainers/postgresql`, competing concurrent booking claims (`ON CONFLICT DO NOTHING`), and database write isolation.",
-    "concise": "874 words across 200 lines. Covers real-seam integration testing with Express 5, `pg`, Supertest, and `@testcontainers/postgresql`, competing concurrent booking claims (`ON CONFLICT DO NOTHING`), and database write isolation.",
+    "readable": "Full read of 200 lines (876 prose words). Covers real-seam integration testing with Express 5, `pg`, Supertest, and `@testcontainers/postgresql`, competing concurrent booking claims (`ON CONFLICT DO NOTHING`), and database write isolation.",
+    "concise": "876 words across 200 lines. Covers real-seam integration testing with Express 5, `pg`, Supertest, and `@testcontainers/postgresql`, competing concurrent booking claims (`ON CONFLICT DO NOTHING`), and database write isolation.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers real-seam integration testing with Express 5, `pg`, Supertest, and `@testcontainers/postgresql`, competing concurrent booking claims (`ON CONFLICT DO NOTHING`), and database write isolation.",
     "fast": "Measured 37.9 KB raw / 8.4 KB gzip. Covers real-seam integration testing with Express 5, `pg`, Supertest, and `@testcontainers/postgresql`, competing concurrent booking claims (`ON CONFLICT DO NOTHING`), and database write isolation.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers real-seam integration testing with Express 5, `pg`, Supertest, and `@testcontainers/postgresql`, competing concurrent booking claims (`ON CONFLICT DO NOTHING`), and database write isolation."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.1-testing/03-test-levels/50.1.3.03-e2e-testing.md": {
    "sha256": "1b7590554363d830604c257543eaa2689cd4452cce8210ae05a559750776016b",
@@ -11467,7 +11467,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/03-test-levels/REVISION.md": {
-   "sha256": "5931382824b532d34b873599f7185c18bd40293bab43d5f4e6e0b05d183d8c04",
+   "sha256": "aee4aac7c02b9acf233f87abe677e11a5b12c826a3edde18b4d2b44a7669a7ea",
    "lines": 95,
    "genre": "revision",
    "status": "read",
@@ -11480,23 +11480,23 @@
     "fast": "Measured 12.6 KB raw / 4.5 KB gzip. Active-recall Q&A companion covering controlled clock boundaries, why transaction rollback fails across separate pool connections, competing write arbitration, and `waitForResponse` registration order.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering controlled clock boundaries, why transaction rollback fails across separate pool connections, competing write arbitration, and `waitForResponse` registration order."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.1-testing/04-mocking-and-patterns/50.1.4.01-mocking.md": {
-   "sha256": "c355300420b54df6c827588a59815c9c8a6626eede429ec76847c4bcb6f215ef",
+   "sha256": "732d6cb564c75c4a76f10f7f53a6863b9cfa67e415a59a506388f09bd5651fd6",
    "lines": 209,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: MSW 2.x (`msw/node`, `http`, `HttpResponse`) and Vitest 5 `vi.restoreAllMocks()` vs `mockRestore()` contracts.",
-    "readable": "Full read of 209 lines (1102 prose words). (1,083 prose words). Covers test double roles, typed delivery boundary mocks, `vi.mocked` vs runtime replacement, MSW 2.x Node server interception (`http`, `HttpResponse`, `HttpResponse.error()`), and mock reset/restore tables.",
-    "concise": "1102 words across 209 lines. 1,083 words across 195 lines. Covers test double roles, typed delivery boundary mocks, `vi.mocked` vs runtime replacement, MSW 2.x Node server interception (`http`, `HttpResponse`, `HttpResponse.error()`), and mock reset/restore tables.",
+    "readable": "Full read of 209 lines (1104 prose words). (1,083 prose words). Covers test double roles, typed delivery boundary mocks, `vi.mocked` vs runtime replacement, MSW 2.x Node server interception (`http`, `HttpResponse`, `HttpResponse.error()`), and mock reset/restore tables.",
+    "concise": "1104 words across 209 lines. 1,083 words across 195 lines. Covers test double roles, typed delivery boundary mocks, `vi.mocked` vs runtime replacement, MSW 2.x Node server interception (`http`, `HttpResponse`, `HttpResponse.error()`), and mock reset/restore tables.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers test double roles, typed delivery boundary mocks, `vi.mocked` vs runtime replacement, MSW 2.x Node server interception (`http`, `HttpResponse`, `HttpResponse.error()`), and mock reset/restore tables.",
     "fast": "Measured 37.1 KB raw / 8.4 KB gzip. Covers test double roles, typed delivery boundary mocks, `vi.mocked` vs runtime replacement, MSW 2.x Node server interception (`http`, `HttpResponse`, `HttpResponse.error()`), and mock reset/restore tables.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers test double roles, typed delivery boundary mocks, `vi.mocked` vs runtime replacement, MSW 2.x Node server interception (`http`, `HttpResponse`, `HttpResponse.error()`), and mock reset/restore tables."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.1-testing/04-mocking-and-patterns/50.1.4.02-test-patterns.md": {
    "sha256": "4418c3b423666e86c531e0f529e85762713d729ee29f8950668a2a5c3fd976e5",
@@ -11531,7 +11531,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/04-mocking-and-patterns/REVISION.md": {
-   "sha256": "a97eceafd93445f9af8861f7f213a691e234119ff1890c6a9a0f3f75bbfa0313",
+   "sha256": "d4b9b13245bb09aae7b147664355114f23c74c872c2bfbd480b36a0f9b6b54c3",
    "lines": 91,
    "genre": "revision",
    "status": "read",
@@ -11544,23 +11544,23 @@
     "fast": "Measured 12.4 KB raw / 4.4 KB gzip. Active-recall Q&A companion covering network-level vs wrapper mocking, Vitest `vi.restoreAllMocks()` vs `mockRestore()`, HTTP 500 vs `HttpResponse.error()`, defensive builder copying, and property invariants.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering network-level vs wrapper mocking, Vitest `vi.restoreAllMocks()` vs `mockRestore()`, HTTP 500 vs `HttpResponse.error()`, defensive builder copying, and property invariants."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.1-testing/05-advanced/50.1.5.01-performance-load-testing.md": {
-   "sha256": "8cba1522a9860a348f22043553c347139b94c692695df7503cedfd8735a887ce",
-   "lines": 186,
+   "sha256": "11a9f06b9e595595070ec6c72b2ef13441b11f1eabec310225df3689f7acc842",
+   "lines": 188,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Grafana k6 `constant-arrival-rate` executor, custom `Rate` metric denominators, and `dropped_iterations` thresholds.",
-    "readable": "Full read of 186 lines (1068 prose words). (1,060 prose words). Covers load/stress/spike/soak test shapes, closed-VU vs open arrival-rate models, Little's Law, and a runnable k6 `constant-arrival-rate` test with a custom `semantic_failures` Rate gate.",
-    "concise": "1068 words across 186 lines. 1,060 words across 178 lines. Covers load/stress/spike/soak test shapes, closed-VU vs open arrival-rate models, Little's Law, and a runnable k6 `constant-arrival-rate` test with a custom `semantic_failures` Rate gate.",
+    "readable": "Full read of 188 lines (1068 prose words). (1,060 prose words). Covers load/stress/spike/soak test shapes, closed-VU vs open arrival-rate models, Little's Law, and a runnable k6 `constant-arrival-rate` test with a custom `semantic_failures` Rate gate.",
+    "concise": "1068 words across 188 lines. 1,060 words across 178 lines. Covers load/stress/spike/soak test shapes, closed-VU vs open arrival-rate models, Little's Law, and a runnable k6 `constant-arrival-rate` test with a custom `semantic_failures` Rate gate.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers load/stress/spike/soak test shapes, closed-VU vs open arrival-rate models, Little's Law, and a runnable k6 `constant-arrival-rate` test with a custom `semantic_failures` Rate gate.",
     "fast": "Measured 29.9 KB raw / 8.0 KB gzip. Covers load/stress/spike/soak test shapes, closed-VU vs open arrival-rate models, Little's Law, and a runnable k6 `constant-arrival-rate` test with a custom `semantic_failures` Rate gate.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers load/stress/spike/soak test shapes, closed-VU vs open arrival-rate models, Little's Law, and a runnable k6 `constant-arrival-rate` test with a custom `semantic_failures` Rate gate."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.1-testing/05-advanced/50.1.5.02-chaos-engineering.md": {
    "sha256": "194bf8299691b7847ae0ac7ade82cd43470ee0f5379af274e0bfcd1ea37afd78",
@@ -11611,7 +11611,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/06-interview-prep/50.1.6.01-interview-questions.md": {
-   "sha256": "bc050e98b0e59a0e82ab64a56b66cff6963334b63e88adc49b5d9e16bc8b2fe1",
+   "sha256": "77c09ef9c3ae488d70d257e8c0c32be4d9112f132fd2c70189e9edc9403a9510",
    "lines": 295,
    "genre": "interview",
    "status": "read",
@@ -11624,7 +11624,7 @@
     "fast": "Measured 41.2 KB raw / 14.2 KB gzip. Covers 40 senior testing interview questions with changed-condition probes across test boundaries, TDD, async/timers, RTL, MSW 2.x, flaky-test triage, Pact contracts, Testcontainers, and Stryker mutation testing.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers 40 senior testing interview questions with changed-condition probes across test boundaries, TDD, async/timers, RTL, MSW 2.x, flaky-test triage, Pact contracts, Testcontainers, and Stryker mutation testing."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.1-testing/06-interview-prep/INDEX.md": {
    "sha256": "34314b9bbcea5174d0fb90edf3b044184610864a014a3139f11def40435bed2e",
@@ -11643,7 +11643,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.1-testing/INDEX.md": {
-   "sha256": "133bb9d002d447801b782a5b9f319d86e813bd2a70504ccfb43799f5ca6a58a9",
+   "sha256": "6dcfc943b90a3fe629b7a79f36c56d8f418a7f344e59bf796a39a274b0430bec",
    "lines": 106,
    "genre": "index",
    "status": "read",
@@ -11656,7 +11656,7 @@
     "fast": "Measured 18.7 KB raw / 4.9 KB gzip. Learning-flow index for 50.1-testing across six categories: foundations, frameworks (Jest, Vitest, RTL, Playwright), test levels, mocking/patterns, load/chaos testing, and interview prep.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for 50.1-testing across six categories: foundations, frameworks (Jest, Vitest, RTL, Playwright), test levels, mocking/patterns, load/chaos testing, and interview prep."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.2-accessibility/50.2.01-wcag-overview.md": {
    "sha256": "80187f995f44f9e754449981df68c91fe3551de9a6d4ab4979abe3d3994b5172",
@@ -11675,7 +11675,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.2-accessibility/50.2.02-aria.md": {
-   "sha256": "5f95764e08f93d34b23d8294d85d2513bb73371f6f8cdca07dcc8fb6e4a41a59",
+   "sha256": "3f1d24f0626cad5897d34d06c5b72d7796594d5dc1e5cc3d5f5fd811e9224b76",
    "lines": 115,
    "genre": "chapter",
    "status": "read",
@@ -11688,10 +11688,10 @@
     "fast": "Measured 19.4 KB raw / 5.9 KB gzip. Covers WAI-ARIA roles, accessible names, states, and properties, native button vs ARIA disclosure synchronization, `hidden` vs `aria-hidden`, and polite/assertive live regions.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers WAI-ARIA roles, accessible names, states, and properties, native button vs ARIA disclosure synchronization, `hidden` vs `aria-hidden`, and polite/assertive live regions."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.md": {
-   "sha256": "33c6f5eaddf818728193277bfc3a30d72da20ce66c780b7922ee9380aa859ef0",
+   "sha256": "3377fba0c2325ef09a65faf422b7d8d38e42bdf5d8764e3079172feb3dfa4c88",
    "lines": 189,
    "genre": "chapter",
    "status": "read",
@@ -11704,7 +11704,7 @@
     "fast": "Measured 34.1 KB raw / 7.6 KB gzip. Covers focus vs selection vs activation, roving tabindex manual-activation tabs, native `<dialog>.showModal()` focus containment and restoration, and WCAG 2.1.4 character key shortcuts.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers focus vs selection vs activation, roving tabindex manual-activation tabs, native `<dialog>.showModal()` focus containment and restoration, and WCAG 2.1.4 character key shortcuts."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.2-accessibility/50.2.04-color-and-contrast.md": {
    "sha256": "b093109bc6ca977d4c1a64b15a1e61105d0169282680f06e5651148e2fa78491",
@@ -11755,7 +11755,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.md": {
-   "sha256": "e7c16a84cf42361cba0e1db999b766eea047f05d792bd2b89036c7454770f767",
+   "sha256": "48f1b43a24b3150b86a2ad41e96e52656febd675a8881376436f1dc2b211b3e9",
    "lines": 120,
    "genre": "chapter",
    "status": "read",
@@ -11768,7 +11768,7 @@
     "fast": "Measured 19.2 KB raw / 5.9 KB gzip. Covers shared primitive interaction contracts (Radix UI / React Aria), semantic theme token pairs, `eslint-plugin-jsx-a11y` flat config, and consumer journey verification after upgrades.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers shared primitive interaction contracts (Radix UI / React Aria), semantic theme token pairs, `eslint-plugin-jsx-a11y` flat config, and consumer journey verification after upgrades."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.2-accessibility/50.2.08-testing-a11y.md": {
    "sha256": "e7e5d7fc77942e885589c08e5563f47dfefc892727b89847263f4943af252891",
@@ -11819,7 +11819,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.2-accessibility/REVISION.md": {
-   "sha256": "b115df2fcbf4d479d29a9df97a1398d7142a76b986a2e3ce045f9601d18d2dd0",
+   "sha256": "e7bd28f96c620baed975b577ac00ddc28c8c36700db2049a84484a09f201e5ab",
    "lines": 155,
    "genre": "revision",
    "status": "read",
@@ -11832,23 +11832,23 @@
     "fast": "Measured 15.9 KB raw / 5.4 KB gzip. Active-recall Q&A companion covering WCAG conformance scope, native vs ARIA semantics, roving tabindex, contrast thresholds, programmatic form error cleanup, and accessible charts.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering WCAG conformance scope, native vs ARIA semantics, roving tabindex, contrast thresholds, programmatic form error cleanup, and accessible charts."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.md": {
-   "sha256": "88aac7cd962b223b45b1d5fd81d45db54766eb9165ba89c6d1441b4ecc21aabd",
-   "lines": 153,
+   "sha256": "f14df74f011dfc13a4550c84d9dbd84cfa62b6f5a0d5816051b859f4be9ad15f",
+   "lines": 155,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Core Web Vitals (INP replacing FID, LCP <= 2500ms, INP <= 200ms, CLS <= 0.1) and `web-vitals` (`onLCP`, `onINP`, `onCLS`).",
-    "readable": "Full read of 153 lines (1133 prose words). (1,111 prose words). Covers LCP, INP, and CLS measurement boundaries and fixed field cutoffs, 4-part LCP waterfall decomposition, 3-part INP latency, CLS session windows, nearest-rank p75, and `web-vitals` bootstrap collection.",
-    "concise": "1133 words across 153 lines. 1,111 words across 137 lines. Covers LCP, INP, and CLS measurement boundaries and fixed field cutoffs, 4-part LCP waterfall decomposition, 3-part INP latency, CLS session windows, nearest-rank p75, and `web-vitals` bootstrap collection.",
+    "readable": "Full read of 155 lines (1253 prose words). (1,111 prose words). Covers LCP, INP, and CLS measurement boundaries and fixed field cutoffs, 4-part LCP waterfall decomposition, 3-part INP latency, CLS session windows, nearest-rank p75, and `web-vitals` bootstrap collection.",
+    "concise": "1253 words across 155 lines. 1,111 words across 137 lines. Covers LCP, INP, and CLS measurement boundaries and fixed field cutoffs, 4-part LCP waterfall decomposition, 3-part INP latency, CLS session windows, nearest-rank p75, and `web-vitals` bootstrap collection.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers LCP, INP, and CLS measurement boundaries and fixed field cutoffs, 4-part LCP waterfall decomposition, 3-part INP latency, CLS session windows, nearest-rank p75, and `web-vitals` bootstrap collection.",
     "fast": "Measured 27.4 KB raw / 7.7 KB gzip. Covers LCP, INP, and CLS measurement boundaries and fixed field cutoffs, 4-part LCP waterfall decomposition, 3-part INP latency, CLS session windows, nearest-rank p75, and `web-vitals` bootstrap collection.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers LCP, INP, and CLS measurement boundaries and fixed field cutoffs, 4-part LCP waterfall decomposition, 3-part INP latency, CLS session windows, nearest-rank p75, and `web-vitals` bootstrap collection."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.3-performance-monitoring/01-core-metrics/INDEX.md": {
    "sha256": "4965cfb01883f1270e51b942e6d151fdba661eabcf658a5c4fe574405ab89eba",
@@ -11867,20 +11867,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.3-performance-monitoring/01-core-metrics/REVISION.md": {
-   "sha256": "2aaad2220dfbce4246cc327618e53ce400821155915a65553375b1d16a3b9d52",
-   "lines": 79,
+   "sha256": "e143879592a470a539b87218d7d0e9a5c2507dda4fbe8193d94a0c83bb0eb848",
+   "lines": 83,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Google Core Web Vitals specification and `web-vitals` library lifecycle semantics.",
-    "readable": "Full read of 79 lines (659 prose words). Active-recall Q&A companion covering field p75 evaluation, why Lighthouse cannot measure field INP, LCP 4-subpart decomposition, CLS 5-second session windows, and `web-vitals` `value` vs `delta`.",
-    "concise": "659 words across 79 lines. Active-recall Q&A companion covering field p75 evaluation, why Lighthouse cannot measure field INP, LCP 4-subpart decomposition, CLS 5-second session windows, and `web-vitals` `value` vs `delta`.",
+    "readable": "Full read of 83 lines (733 prose words). Active-recall Q&A companion covering field p75 evaluation, why Lighthouse cannot measure field INP, LCP 4-subpart decomposition, CLS 5-second session windows, and `web-vitals` `value` vs `delta`.",
+    "concise": "733 words across 83 lines. Active-recall Q&A companion covering field p75 evaluation, why Lighthouse cannot measure field INP, LCP 4-subpart decomposition, CLS 5-second session windows, and `web-vitals` `value` vs `delta`.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering field p75 evaluation, why Lighthouse cannot measure field INP, LCP 4-subpart decomposition, CLS 5-second session windows, and `web-vitals` `value` vs `delta`.",
     "fast": "Measured 11.5 KB raw / 4.1 KB gzip. Active-recall Q&A companion covering field p75 evaluation, why Lighthouse cannot measure field INP, LCP 4-subpart decomposition, CLS 5-second session windows, and `web-vitals` `value` vs `delta`.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering field p75 evaluation, why Lighthouse cannot measure field INP, LCP 4-subpart decomposition, CLS 5-second session windows, and `web-vitals` `value` vs `delta`."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.01-performance-apis.md": {
    "sha256": "aadffb10c4b0d70589cd51900bfdb7919d3d52996b50f35b503a6bdbf4a4477d",
@@ -12027,7 +12027,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.3-performance-monitoring/03-optimization-and-governance/INDEX.md": {
-   "sha256": "725b939e2538c18fd1d4fc8c4ce2dd7e7f80a894346bde042da4c27db04fec67",
+   "sha256": "f15cb0038ac5f7b6bdc87be226dc5b946f6753bcece042bb841a31220c9e0057",
    "lines": 73,
    "genre": "index",
    "status": "read",
@@ -12040,7 +12040,7 @@
     "fast": "Measured 11.4 KB raw / 3.8 KB gzip. Learning-flow index for web performance optimization and governance: bundle analysis and CI-enforced performance budgets.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for web performance optimization and governance: bundle analysis and CI-enforced performance budgets."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.3-performance-monitoring/03-optimization-and-governance/REVISION.md": {
    "sha256": "551131dcda67ab68890660945e986a178fa43db792bd25cb143d5b935c139651",
@@ -12059,7 +12059,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.3-performance-monitoring/04-interview-prep/50.3.4.01-interview-questions.md": {
-   "sha256": "9a9652bca9f104038e661bfb8e43a1b5a9becc6fd557aa8081ecded25412a6d3",
+   "sha256": "3b027df04c4ea842e2b8a69b483b0e12106396f981b7d8f38255b1764d0ae8b8",
    "lines": 302,
    "genre": "interview",
    "status": "read",
@@ -12072,7 +12072,7 @@
     "fast": "Measured 29.1 KB raw / 9.6 KB gzip. Covers 30 senior performance monitoring interview questions with changed-condition probes across LCP/INP/CLS, lab vs field, SPA soft navigations, micro-frontend attribution, 1B-event/day RUM ingestion, SSR, and HTTP/3.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers 30 senior performance monitoring interview questions with changed-condition probes across LCP/INP/CLS, lab vs field, SPA soft navigations, micro-frontend attribution, 1B-event/day RUM ingestion, SSR, and HTTP/3."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.3-performance-monitoring/04-interview-prep/INDEX.md": {
    "sha256": "3acf3d1d60b2cdd480e5ae675f80d756f36bacdff51dd0d0204888cbc4e1f512",
@@ -12123,23 +12123,23 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.4-production-engineering/50.4.02-sli-slo-error-budgets.md": {
-   "sha256": "86ff5fafe46d1cf4c0188480f4390803f2295eb79dd6725cf274a5d0a2db69b6",
-   "lines": 174,
+   "sha256": "790155a5ed181f6c71b16017726f945105c3a7e5c305c9be350c2e8e650f535c",
+   "lines": 176,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Google SRE Workbook multi-window burn-rate alerting and event-accounted request error budgets.",
-    "readable": "Full read of 174 lines (916 prose words). Covers request-based vs time-based SLI/SLO contracts, exact BigInt error-budget calculation, event-accounted vs constant-traffic burn rates, multi-window PromQL alerts (14.4x 1h/5m), and release policies.",
-    "concise": "916 words across 174 lines. Covers request-based vs time-based SLI/SLO contracts, exact BigInt error-budget calculation, event-accounted vs constant-traffic burn rates, multi-window PromQL alerts (14.4x 1h/5m), and release policies.",
+    "readable": "Full read of 176 lines (1024 prose words). Covers request-based vs time-based SLI/SLO contracts, exact BigInt error-budget calculation, event-accounted vs constant-traffic burn rates, multi-window PromQL alerts (14.4x 1h/5m), and release policies.",
+    "concise": "1024 words across 176 lines. Covers request-based vs time-based SLI/SLO contracts, exact BigInt error-budget calculation, event-accounted vs constant-traffic burn rates, multi-window PromQL alerts (14.4x 1h/5m), and release policies.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers request-based vs time-based SLI/SLO contracts, exact BigInt error-budget calculation, event-accounted vs constant-traffic burn rates, multi-window PromQL alerts (14.4x 1h/5m), and release policies.",
     "fast": "Measured 26.4 KB raw / 7.3 KB gzip. Covers request-based vs time-based SLI/SLO contracts, exact BigInt error-budget calculation, event-accounted vs constant-traffic burn rates, multi-window PromQL alerts (14.4x 1h/5m), and release policies.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers request-based vs time-based SLI/SLO contracts, exact BigInt error-budget calculation, event-accounted vs constant-traffic burn rates, multi-window PromQL alerts (14.4x 1h/5m), and release policies."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.4-production-engineering/50.4.03-chaos-engineering.md": {
-   "sha256": "c4052b475ff9023a0a3c96431f417aed32502f83320559be50bac1389aa6a075",
+   "sha256": "ef1ba29a1830f10dc68ab690735f8cea5457e7228414b00bf456d8962d058690",
    "lines": 132,
    "genre": "chapter",
    "status": "read",
@@ -12152,10 +12152,10 @@
     "fast": "Measured 19.5 KB raw / 6.9 KB gzip. Covers operational chaos governance, game-day rehearsals, dependency blast-radius boundaries, controller stop thresholds, runner-independent fault expiry, and Chaos Mesh scheduling.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers operational chaos governance, game-day rehearsals, dependency blast-radius boundaries, controller stop thresholds, runner-independent fault expiry, and Chaos Mesh scheduling."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.4-production-engineering/50.4.04-production-readiness-reviews.md": {
-   "sha256": "07acdbc1169d3a218921104e03e7db27d0de466e30e03a18d79310d4d427f440",
+   "sha256": "4c3a54305d5677e1a200724de1dd3c4e33587596736e795415e5920bea6f525b",
    "lines": 147,
    "genre": "chapter",
    "status": "read",
@@ -12168,7 +12168,7 @@
     "fast": "Measured 26.0 KB raw / 7.1 KB gzip. Covers Production Readiness Review (PRR) evidence across ownership, capacity, change safety, dependency failure, data restore, and security, plus a typed TypeScript release-gate verifier.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers Production Readiness Review (PRR) evidence across ownership, capacity, change safety, dependency failure, data restore, and security, plus a typed TypeScript release-gate verifier."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.4-production-engineering/50.4.05-on-call-without-burnout.md": {
    "sha256": "8fd88440a8d6a9335ad190e5d0c092ab78f90d64080d3f9e699ae380a900c92e",
@@ -12187,7 +12187,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.4-production-engineering/50.4.06-interview-questions.md": {
-   "sha256": "679f561dfceb016da3d59972f7183b03970b79f630605b2f834f6a0fd111ae01",
+   "sha256": "1ea184e4aded32ebfdee96b238ce3ee5a9cd8132e12e87f525a7f449d3ad54a5",
    "lines": 176,
    "genre": "interview",
    "status": "read",
@@ -12200,10 +12200,10 @@
     "fast": "Measured 32.1 KB raw / 11.5 KB gzip. Covers 25 senior production-engineering interview questions with probes across 15-minute outage triage, blameless postmortems, SLO burn rates, chaos blast radius, PRR gates, toil, and multi-region failover.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers 25 senior production-engineering interview questions with probes across 15-minute outage triage, blameless postmortems, SLO burn rates, chaos blast radius, PRR gates, toil, and multi-region failover."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.4-production-engineering/INDEX.md": {
-   "sha256": "1a51b3c8752275154b1fb77d2af12b217f18be662bc386b10471d1a91c322197",
+   "sha256": "94b1256edc00744e6ae7b3d2c158967947923d583a7ca6fb5cf9cc1c26bfa840",
    "lines": 49,
    "genre": "index",
    "status": "read",
@@ -12216,26 +12216,26 @@
     "fast": "Measured 11.4 KB raw / 3.9 KB gzip. Learning-flow index for 50.4-production-engineering covering SLIs/SLOs/error budgets, incident command and postmortems, production readiness reviews, operational chaos engineering, and sustainable on-call.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for 50.4-production-engineering covering SLIs/SLOs/error budgets, incident command and postmortems, production readiness reviews, operational chaos engineering, and sustainable on-call."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/50.4-production-engineering/REVISION.md": {
-   "sha256": "cebd876266654ca4c16ae054bea12b01d6d9fd4dfa8f9ddfd4185befff240d4e",
-   "lines": 135,
+   "sha256": "52b458edc56b19169f835aa92c8d4e634d664989abcc8b48f0e0661d19a361b9",
+   "lines": 139,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: NIST SP 800-61 Rev. 3, event-accounted vs time-based SLO budgets, and bounded production chaos experiments.",
-    "readable": "Full read of 135 lines (902 prose words). Active-recall Q&A companion covering incident command separation, NIST SP 800-61 Rev. 3 containment, request-based error budget math, bounded rollbacks, fault expiry, and shift page distributions.",
-    "concise": "902 words across 135 lines. Active-recall Q&A companion covering incident command separation, NIST SP 800-61 Rev. 3 containment, request-based error budget math, bounded rollbacks, fault expiry, and shift page distributions.",
+    "readable": "Full read of 139 lines (992 prose words). Active-recall Q&A companion covering incident command separation, NIST SP 800-61 Rev. 3 containment, request-based error budget math, bounded rollbacks, fault expiry, and shift page distributions.",
+    "concise": "992 words across 139 lines. Active-recall Q&A companion covering incident command separation, NIST SP 800-61 Rev. 3 containment, request-based error budget math, bounded rollbacks, fault expiry, and shift page distributions.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering incident command separation, NIST SP 800-61 Rev. 3 containment, request-based error budget math, bounded rollbacks, fault expiry, and shift page distributions.",
     "fast": "Measured 15.5 KB raw / 5.3 KB gzip. Active-recall Q&A companion covering incident command separation, NIST SP 800-61 Rev. 3 containment, request-based error budget math, bounded rollbacks, fault expiry, and shift page distributions.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering incident command separation, NIST SP 800-61 Rev. 3 containment, request-based error budget math, bounded rollbacks, fault expiry, and shift page distributions."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "50-quality/INDEX.md": {
-   "sha256": "c30d8650afdf9ba65e71685e05f43a092fce775e7bd19f1e14ef5b9d3bd1c4b3",
+   "sha256": "1df8728e11042d6e9b35274306d52e92a99bbd2b76d531e944a4fb22680b3c41",
    "lines": 64,
    "genre": "index",
    "status": "read",
@@ -12248,7 +12248,7 @@
     "fast": "Measured 10.7 KB raw / 3.9 KB gzip. Section-level learning-flow index for 50-quality across testing (50.1), accessibility (50.2), performance monitoring (50.3), and production engineering (50.4).",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Section-level learning-flow index for 50-quality across testing (50.1), accessibility (50.2), performance monitoring (50.3), and production engineering (50.4)."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22A: 50-quality (64 files))."
   },
   "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.md": {
    "sha256": "39180e6cbe98de7f9449d5c17fd2449d8e42caef44573bba54f72495aa1a9b3c",
@@ -14395,7 +14395,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "6fadfad53d68e74db013856d034aef4bfb1765b876f3879366bc67a2ed84273e",
+   "sha256": "c5f9b8a458d25dcc088c0977a96a2dcc14944613b4b6391bef5879317f614000",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14408,7 +14408,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX."
+   "notes": "Synced live read-time and counts after Phase 22A: 50-quality (64 files)."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14699,7 +14699,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "d6113e52e722fc507affbb01ddea9d53bf03d438d99d77512a1e0fcdfa9e0560",
+   "sha256": "34ea561525583f90b932363cb2139e9aea077f4980529cab1288e3d47a14b915",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14712,7 +14712,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX."
+   "notes": "Synced live read-time and counts after Phase 22A: 50-quality (64 files)."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

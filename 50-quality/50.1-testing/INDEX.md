@@ -1,6 +1,6 @@
 # Testing — Index
 
-> **Study time:** ≈ 2 h 15 m of reading (20 files, ~7 min average).
+> **Study time:** ≈ 2 h 17 m of reading (20 files, ~7 min average).
 > **20 files across six categories.** Learn testing fundamentals, framework behavior, unit, integration, and end-to-end (E2E) boundaries, test data, mocking, reusable patterns, and load and fault experiments, then practice the interview bank.
 
 [![Files](https://img.shields.io/badge/files-20-blue)](../../INDEX.md)
@@ -38,10 +38,10 @@ A test observes selected behavior under a controlled arrangement. Start with the
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
 | 01 | [Jest](02-frameworks/50.1.2.01-jest.md) | Configuration, matchers, snapshots, mocking, code coverage | Existing suites or projects with a compatible configured runtime | Essential | Foundational | 8 min |
-| 02 | [Vitest](02-frameworks/50.1.2.02-vitest.md) | Runtime and configuration, transforms, mocking, and migration boundaries | Choose from compatibility and measured suite behavior | Essential | Foundational | 8 min |
-| 03 | [React Testing Library](02-frameworks/50.1.2.03-react-testing-library.md) | Render, queries, events, async testing, accessibility (testing-library/jest-dom) | React component tests | Essential | Foundational | 10 min |
+| 02 | [Vitest](02-frameworks/50.1.2.02-vitest.md) | Runtime and configuration, transforms, mocking, and migration boundaries | Choose from compatibility and measured suite behavior | Essential | Foundational | 9 min |
+| 03 | [React Testing Library](02-frameworks/50.1.2.03-react-testing-library.md) | Render, queries, events, async testing, accessibility (`@testing-library/jest-dom`) | React component tests | Essential | Foundational | 10 min |
 | 04 | [Testing Frameworks Comparison](02-frameworks/50.1.2.04-testing-frameworks-comparison.md) | Jest versus Vitest, Playwright E2E, Supertest Application Programming Interface (API) testing, choosing the right framework | Stack decisions | Essential | Foundational | 4 min |
-| 05 | [Playwright](02-frameworks/50.1.2.05-playwright.md) | Action-specific waits, browser fixtures, controlled APIs, visual contracts, and diagnostics | Real-browser journeys | Essential | Foundational | 6 min |
+| 05 | [Playwright](02-frameworks/50.1.2.05-playwright.md) | Action-specific waits, browser fixtures, controlled APIs, visual contracts, and diagnostics | Real-browser journeys | Essential | Foundational | 7 min |
 
 ---
 

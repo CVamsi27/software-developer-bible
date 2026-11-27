@@ -66,6 +66,10 @@ Source: [Core Web Vitals](50.3.1.01-core-web-vitals.md)
 
 **A:** `value` is the current metric; `delta` is the change since its previous report. Upsert values or accumulate deltas deliberately. Counting each callback as a new visit changes the sample distribution.
 
+**Q:** Why can hard-navigation Core Web Vitals stay green while users experience slow route transitions in a Single-Page Application (SPA), and why must prerendered pages subtract `activationStart`?
+
+**A:** Standard `web-vitals` reports hard document navigations rather than client-side route transitions, so slow SPA navigations stay invisible unless soft-navigation telemetry is measured separately. On prerendered pages, entry timestamps start at background prerender creation; subtracting `navigationEntry.activationStart` (clamped at zero) prevents idle prerender dwell from inflating user-perceived LCP.
+
 ## Summary
 
 Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.

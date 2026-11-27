@@ -111,6 +111,10 @@ Source: [Playwright: End-to-End Browser Journeys](50.1.2.05-playwright.md)
 
 **A:** A stable visual contract and controlled browser, operating system, fonts, viewport, and data. Mask or disable intentional variation without hiding the behavior being checked, inspect changed baselines, and keep behavioral assertions too. Visual comparisons are not limited to design tokens, and a trace does not replace an expected-layout comparison.
 
+**Q:** Why can a Playwright click on a server-rendered button silently do nothing even after auto-waiting passes, and why is `waitUntil: 'networkidle'` the wrong fix?
+
+**A:** Auto-waiting verifies Document Object Model (DOM) visibility, stability, and enabled state, not whether client-side hydration has attached event listeners yet. `networkidle` breaks or stalls on pages with polling, analytics beacons, SSE, or WebSockets; wait for an observable readiness signal or pair the action with an explicit response and state assertion instead.
+
 ## Summary
 
 Check which runtime, dependency, and observation each test actually reaches. Reproduce the pending and error cases, then explain where integration or browser evidence is still required.

@@ -36,11 +36,11 @@
 The [Docita case study](../../../projects/docita/INDEX.md) supplies code pointers to inspect against the chapter contracts. Current streaming, admission, and operational guarantees need runtime evidence; these paths do not alone establish deployment status.
 
 | Topic | Docita evidence |
-| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Buffers | `apps/api/src/shared/modules/document-generation/pdf/pdf-generator.service.ts` - PDFKit document assembled chunk-by-chunk into a returned `Buffer` |
 | File system | `apps/api/src/shared/modules/database/database-backup.service.ts` - spawns `pg_dump`, writes dump files under a retention policy |
 | File uploads | `apps/api/src/shared/common/utils/upload.utils.ts` - inspect multer disk staging and admission checks; MIME labels alone do not validate file content |
-| HTTP module / server | `apps/api/src/main.ts` - Express bootstrap: CORS allow-list, helmet, URI versioning, Sentry instrumentation |
+| HTTP module and server | `apps/api/src/main.ts` - Express bootstrap: CORS allow-list, helmet, URI versioning, Sentry instrumentation |
 
 Inspect current pipeline and library staging and error ownership before attributing bounded streaming or cleanup guarantees to the case study. The chapter fixtures state and test their own I/O contracts.
 

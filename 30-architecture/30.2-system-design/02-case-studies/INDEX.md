@@ -1,7 +1,7 @@
 # System Design — Case Studies
 
 > **Study time:** ≈ 6 h 36 m of reading (32 files, ~12 min average).
-Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then choose cases that match your interview goals.
+Applied examples of system design interviews. Read [System Design Theory](../01-theory/INDEX.md) first, then choose cases that match your interview goals.
 
 [![Files](https://img.shields.io/badge/files-32-blue)](../../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](../INDEX.md)

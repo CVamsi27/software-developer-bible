@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "719c649895a787c32cf825dc1e076b28060f48de6818f1e0eada3009fd78e9f0",
+ "corpus_digest": "d331b9f81c0931f42f5901a2abf03e986f1d4c77b245fc42f1ecc3efea630305",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5619
+  "read_minutes": 5620
  },
  "chapters": [
   {
@@ -747,7 +747,7 @@
    "g": [
     "concept"
    ],
-   "m": 44
+   "m": 45
   },
   {
    "p": "10-frontend/10.3-react/01-react-internals/10.3.1.01-virtual-dom.html",

@@ -7,7 +7,7 @@
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-Begin with [How to Approach](30.2.1.15-how-to-approach.md) and [Capacity Planning](30.2.1.12-capacity-planning.md). Review the TCP, DNS and TLS prerequisites when a prompt depends on network behavior; then follow the consistency, placement, traffic and recovery sequence below. After the theory revision and separate interview drill, move to [../02-case-studies/](../02-case-studies/INDEX.md).
+Begin with [How to Approach](30.2.1.15-how-to-approach.md) and [Capacity Planning](30.2.1.12-capacity-planning.md). Review the TCP, DNS and TLS prerequisites when a prompt depends on network behavior; then follow the consistency, placement, traffic and recovery sequence below. After the theory revision and separate interview drill, move to [Case Studies](../02-case-studies/INDEX.md).
 
 ---
 

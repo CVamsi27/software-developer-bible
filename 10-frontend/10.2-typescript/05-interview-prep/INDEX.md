@@ -1,6 +1,6 @@
 # Interview Prep — TypeScript
 
-> **Study time:** ≈ 44 min of reading (1 file, ~44 min average).
+> **Study time:** ≈ 45 min of reading (1 file, ~45 min average).
 > **1 file.** The self-test bank: 55 TypeScript interview questions grouped by difficulty.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](#files)
@@ -13,7 +13,7 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | -----: | ------------------------------------------------------- | --------------------------------- | ------------- | ------------------ | ----------: |
-| 01 | [Interview Questions](10.2.5.01-interview-questions.md) | 55 curated questions with answers | Essential | Foundational | 44 min |
+| 01 | [Interview Questions](10.2.5.01-interview-questions.md) | 55 curated questions with answers | Essential | Foundational | 45 min |
 
 ---
 

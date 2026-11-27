@@ -1323,23 +1323,23 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 2I D1-D7 rework: 10.2-typescript/04-advanced-patterns)."
   },
   "10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.md": {
-   "sha256": "d301efce1a1ea44fedcab62958c85eeeda2474d896c6db7058bedad091ca5a42",
-   "lines": 1317,
+   "sha256": "c781feb8202de0a515c58a0aea84916a2a573e52894c26743595fd8816a3111c",
+   "lines": 1321,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "All 50 Q/A pairs were read; the self-contained generics, reducer, path, validation, middleware, API-client, state-machine, DI, config, query-builder, WebSocket and async examples were compiled with TypeScript 5.9.3 under --strict, several also with 7.0.2; the module-mode pairing was checked against compiler acceptance, and React snippets were reviewed but not compiled because React types are not installed here.",
-    "readable": "Full read of 1317 lines (4377 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 1321 lines (4377 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "4377 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Each drill stays in one place; repeated topics (events, middleware, validation, plugins, config, query building) are variants with explicit cross-references, and Q28/Q36/Q38 point at their canonical implementations rather than retelling them.",
-    "fast": "Measured 178.9 KB raw / 25.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 178.9 KB raw / 25.1 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The bank is practice, not a substitute for the chapters: it cannot validate that a reader explanation is correct, and the opening says to revisit the linked source when an answer misses a mechanism, boundary or failure case."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24B: final TypeScript AST and Node.js/Architecture prose polish)."
   },
   "10-frontend/10.2-typescript/05-interview-prep/INDEX.md": {
-   "sha256": "30128dbd8dc4f5fbc0e28409f542d7a31dd2ceb455ec0af6bb740c7b39f80add",
+   "sha256": "18d39fc2197210351561295a1e42d1cf1b26537070e1a89644be0b2ff26ce503",
    "lines": 42,
    "genre": "index",
    "status": "read",
@@ -1349,13 +1349,13 @@
     "readable": "Full read of 42 lines (129 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "129 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Category flow only; the bank owns each drill and its canonical chapter links, and this index points at revision companions rather than retelling them.",
-    "fast": "Measured 9.2 KB raw / 3.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 9.2 KB raw / 3.1 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The bank is practice, not a replacement for the chapters: the index says to answer without the explanation and revisit the linked canonical chapter when a boundary is unclear."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep)."
+   "notes": "Synced live read-time and counts after Phase 24B: final TypeScript AST and Node.js/Architecture prose polish."
   },
   "10-frontend/10.2-typescript/INDEX.md": {
-   "sha256": "4a6df97c0617ddd065051f10a3350b2dbce9c4272ae70e19281ee9194079a5e0",
+   "sha256": "c3d23ed00a3a54ff36bc0e266dc0a764cbe90ffbffd716df3b342a3f7ab2a1af",
    "lines": 129,
    "genre": "index",
    "status": "read",
@@ -1368,7 +1368,7 @@
     "fast": "Measured 20.9 KB raw / 5.3 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The Chapters column counts 19 learning chapters while the badge counts 23 content files, a limit of the table: the four revision companions must be found in each category index."
    },
-   "notes": "Synced live read-time and counts after Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep."
+   "notes": "Synced live read-time and counts after Phase 24B: final TypeScript AST and Node.js/Architecture prose polish."
   },
   "10-frontend/10.3-react/01-react-internals/10.3.1.01-virtual-dom.md": {
    "sha256": "d6171312c7fcb133cdad1923be91937e422e84d1e50eae3e0e4fb493825883e8",
@@ -2987,7 +2987,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 8 D1-D7 rework: 10.8-mobile and 10-frontend/INDEX (completes 10-frontend))."
   },
   "10-frontend/INDEX.md": {
-   "sha256": "9be62b1225d420acd96553fe8473994ebc7211f538bfcceef244ea0a971033e5",
+   "sha256": "2e18a5c8590183a38567ded1e4877ecf700f475e0c8ce59cfd7f45b9bc769b8f",
    "lines": 75,
    "genre": "index",
    "status": "read",
@@ -3000,10 +3000,10 @@
     "fast": "Measured 14.7 KB raw / 4.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Sets the frontend study order from execution to optional capabilities; it limits itself to navigation and does not teach any mechanism."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 8 D1-D7 rework: 10.8-mobile and 10-frontend/INDEX (completes 10-frontend))."
+   "notes": "Synced live read-time and counts after Phase 24B: final TypeScript AST and Node.js/Architecture prose polish."
   },
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md": {
-   "sha256": "503f6398788156156ec1441e71318269d8a48faf5abf9a1eca58a318d3ae25d7",
+   "sha256": "82029f005e6bc65af05786f5fea58d6c24d11337d2315bdb787a857dcab388da",
    "lines": 164,
    "genre": "chapter",
    "status": "read",
@@ -3013,10 +3013,10 @@
     "readable": "Full read of 164 lines (840 prose words) the database callback resumes into synchronous JSON work; definition and first principles, libuv phases, CommonJS/ESM scheduling, bounded CPU slices, measurement and remedy selection are ordered.",
     "concise": "840 words across 164 lines. one request trace and one phase table carry the scheduling model, while the measurement and remedy tables add decision boundaries instead of repeating the trace.",
     "focused": "Event-loop scheduling and saturation are owned here; stream pressure, process shutdown and worker admission are linked to their canonical chapters rather than re-taught.",
-    "fast": "Measured 25.6 KB raw / 6.9 KB gzip (the shared Jekyll shell is included.)",
+    "fast": "Measured 25.6 KB raw / 6.9 KB gzip. (the shared Jekyll shell is included.)",
     "best": "Separates callback eligibility from CPU work and external I/O; no timer, promise or async function is presented as a deadline or automatic CPU offload. The boundary is explicit."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 9A D1-D7 rework: 20.1-node.js (01-runtime-and-async, 02-io-and-data))."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24B: final TypeScript AST and Node.js/Architecture prose polish)."
   },
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.02-web-streams-and-test-runner.md": {
    "sha256": "753a047ac7ffdfcaaa6a7aec69ca5a932ca8829b4f7f91c4b5768d948183368a",
@@ -3083,7 +3083,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 9A D1-D7 rework: 20.1-node.js (01-runtime-and-async, 02-io-and-data))."
   },
   "20-backend/20.1-node.js/02-io-and-data/20.1.2.02-buffers.md": {
-   "sha256": "ed0997cc5862b9b2ce0cf042629fcc75aeca60f67ef95d40788925f2d52c5454",
+   "sha256": "c49e552901969f7d16184c884bea3a634bc64483667aaca4a6bc923195a0d12d",
    "lines": 214,
    "genre": "chapter",
    "status": "read",
@@ -3093,45 +3093,45 @@
     "readable": "Full read of 214 lines (1138 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "1138 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Byte representation, ownership and binary framing are owned here; stream pressure and filesystem persistence are linked to their canonical chapters.",
-    "fast": "Measured 43.1 KB raw / 9.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 43.1 KB raw / 9.0 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Makes encoding, byte order, length validation and copy/share ownership observable; it labels the PNG/header and upload helpers as incomplete validation or in-memory examples. The boundary is explicit."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 9A D1-D7 rework: 20.1-node.js (01-runtime-and-async, 02-io-and-data))."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24B: final TypeScript AST and Node.js/Architecture prose polish)."
   },
   "20-backend/20.1-node.js/02-io-and-data/20.1.2.03-file-system.md": {
-   "sha256": "16473ad6bbcc573e513bf74bcdfae7cb5e6deff3e24157d96ce4bce8243f301b",
+   "sha256": "8d79ae0a7965acbf3a529473995bfb088177e41ed49caf928da46b173991a9fb",
    "lines": 187,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Node fs, path, streams and file-system guidance; the temporary-file `wx`/`sync`/`rename` lifecycle and `fs.watch` limitations match the documented API. Executed the prefix fixture on Node v26.13.0 and corrected the prose typo to show the exact three-byte prefix `{\"r`.",
-    "readable": "Full read of 187 lines (1006 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1006 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 187 lines (1008 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1008 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Filesystem naming, handles, replacement and watch semantics are canonical here; stream byte handling and HTTP admission are linked without re-teaching their code.",
-    "fast": "Measured 31.6 KB raw / 7.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 31.6 KB raw / 7.7 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Separates namespace replacement from transaction and power-loss durability, lexical containment from symlink safety, and watch notification from content validation. The boundary is explicit."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 9A D1-D7 rework: 20.1-node.js (01-runtime-and-async, 02-io-and-data))."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24B: final TypeScript AST and Node.js/Architecture prose polish)."
   },
   "20-backend/20.1-node.js/02-io-and-data/20.1.2.04-http-module.md": {
-   "sha256": "3b9feb7ae445b9fd3291ff8134bb95a018efc9481b132a701a03c5e1feed775e",
+   "sha256": "48e34529277902b9a6fa510781c9f2e20de05164aee6791a5586c80062ad9d13",
    "lines": 222,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Node HTTP, HTTPS, HTTP/2, Streams and URL behavior documentation; request/headers/keep-alive timeout distinctions, `req.iterator`, response ownership, `fetch` redirect policy and `http.Agent` versus Undici boundaries remain accurate on Node v26.13.0.",
-    "readable": "Full read of 222 lines (950 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "950 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 222 lines (952 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "952 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Raw HTTP message and response lifecycle are owned here; Express/Fastify dispatch, stream pressure and process draining are linked to their canonical chapters.",
-    "fast": "Measured 41.5 KB raw / 8.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 41.5 KB raw / 8.5 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Enforces actual received-byte limits, avoids Host-derived authority, and distinguishes transport deadlines from application work and remote consumption."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 9A D1-D7 rework: 20.1-node.js (01-runtime-and-async, 02-io-and-data))."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24B: final TypeScript AST and Node.js/Architecture prose polish)."
   },
   "20-backend/20.1-node.js/02-io-and-data/INDEX.md": {
-   "sha256": "14b03d56ea74f10e92e74621193cd29eaa91afe84d37ecaf5e8b090e2940da9d",
+   "sha256": "18cb57cfb8a8eeaef608f5db20fd1b17adb401519ee9135cf767726dfe8c7b75",
    "lines": 49,
    "genre": "index",
    "status": "read",
@@ -3141,10 +3141,10 @@
     "readable": "Full read of 49 lines (160 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "160 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Navigation only: it points at the canonical four I/O chapters and revision companion without restating their mechanisms.",
-    "fast": "Measured 11.2 KB raw / 3.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 11.2 KB raw / 3.7 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Moves from bytes and pressure to persistence and HTTP admission, which gives readers one causal flow instead of a module list. The boundary is explicit."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 9A D1-D7 rework: 20.1-node.js (01-runtime-and-async, 02-io-and-data))."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24B: final TypeScript AST and Node.js/Architecture prose polish)."
   },
   "20-backend/20.1-node.js/02-io-and-data/REVISION.md": {
    "sha256": "8b6cb6625352429f4522465b47344d41851392d37341bc7697f20ae32f44a669",
@@ -3163,7 +3163,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 9A D1-D7 rework: 20.1-node.js (01-runtime-and-async, 02-io-and-data))."
   },
   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.01-clustering.md": {
-   "sha256": "84f83b45d41fe2a79d534f33d49b10a75de084cc26f9c2d0623a1861e6733b1a",
+   "sha256": "05d767f6602f5a38b86b91b216b01db3af2922c4e0e56fd63dbe41e03fe97833",
    "lines": 198,
    "genre": "chapter",
    "status": "read",
@@ -3173,13 +3173,13 @@
     "readable": "Full read of 198 lines (1015 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "1015 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Cluster topology and process-local resource multiplication are owned here; worker pools, PM2 supervision and container recovery are linked to their canonical chapters.",
-    "fast": "Measured 38.4 KB raw / 8.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 38.4 KB raw / 8.1 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Separates connection balancing from request fairness and capacity recovery from response/state recovery; the example bounds restart loops and shutdown. The boundary is explicit."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 9B D1-D7 rework: 20.1-node.js/03-processes-and-concurrency)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24B: final TypeScript AST and Node.js/Architecture prose polish)."
   },
   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.02-child-processes-workers.md": {
-   "sha256": "f2640c74802ebb2bf544a9219eb55909b26e6f607a683dbd814592709f227cf1",
+   "sha256": "83a26762a01af47175f8e63fe4b62707cf6ec7104e8d393c023766d3dc687e74",
    "lines": 234,
    "genre": "chapter",
    "status": "read",
@@ -3189,13 +3189,13 @@
     "readable": "Full read of 234 lines (1150 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "1150 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Worker/process selection, task correlation and queue admission are owned here; cluster scaling and diagnostics are linked rather than re-taught.",
-    "fast": "Measured 40.9 KB raw / 8.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 40.9 KB raw / 8.9 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Settles result/error/exit/timeout exactly once, caps queued work, and distinguishes copy, transfer and shared memory from security isolation. The boundary is explicit."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 9B D1-D7 rework: 20.1-node.js/03-processes-and-concurrency)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24B: final TypeScript AST and Node.js/Architecture prose polish)."
   },
   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.03-process-environment.md": {
-   "sha256": "e76a4ecefa9bd1a1c5b398edb8a1983dc91a2324402d8652e7a72d7030150251",
+   "sha256": "f06dbf3fc19cf660aa0846215a1ef874099acdd1b481505791437b223789f6c1",
    "lines": 216,
    "genre": "chapter",
    "status": "read",
@@ -3205,10 +3205,10 @@
     "readable": "Full read of 216 lines (1093 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "1093 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Process configuration and shutdown ownership are canonical here; PM2, cluster and HTTP message behavior are linked to their specialized chapters.",
-    "fast": "Measured 39.0 KB raw / 8.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 39.0 KB raw / 8.8 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Treats environment input as untrusted, stops admission before resource closure, keeps the deadline idempotent, and refuses to equate exit code zero with completed cleanup. The boundary is explicit."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 9B D1-D7 rework: 20.1-node.js/03-processes-and-concurrency)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24B: final TypeScript AST and Node.js/Architecture prose polish)."
   },
   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.04-pm2-process-supervision.md": {
    "sha256": "d073097f710edfa06bc649751f6406f5d26aa69f63b4b5625ef3f4bcf19bbe0d",
@@ -7771,20 +7771,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 18B: 30.2.1 system design theory (13-23, INDEX, REVISION) and 30.2 INDEX)."
   },
   "30-architecture/30.2-system-design/01-theory/INDEX.md": {
-   "sha256": "5043ec5aaee242e0d33b507f9f129d23753e19d9b7b0ba7ceefbce302bde6b6b",
+   "sha256": "602f4da0c48a167c6687c2e416c6651f8a0085890452a6831d5ce0e2c12be942",
    "lines": 98,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against the 25-file 01-theory directory.",
-    "readable": "Full read of 98 lines (291 prose words). Category index for 30.2-system-design/01-theory sequencing 23 theory and prerequisite chapters (CAP/PACELC through TLS 1.3 certificate lifecycle), REVISION.md, and 30 design prompts with Docita evidence anchors.",
-    "concise": "291 words across 98 lines. zero filler or duplicate explanations.",
+    "readable": "Full read of 98 lines (292 prose words). Category index for 30.2-system-design/01-theory sequencing 23 theory and prerequisite chapters (CAP/PACELC through TLS 1.3 certificate lifecycle), REVISION.md, and 30 design prompts with Docita evidence anchors.",
+    "concise": "292 words across 98 lines. zero filler or duplicate explanations.",
     "focused": "Focused single-topic scope: Canonical reading-order guide for system design theory.",
     "fast": "Measured 22.8 KB raw / 6.8 KB gzip. Fast to scan: 22.8 KB raw / 6.8 KB gzip.",
     "best": "Best-practice depth: Connects data consistency, traffic scaling, delivery, and topology failure boundary conditions."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 18B: 30.2.1 system design theory (13-23, INDEX, REVISION) and 30.2 INDEX)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24B: final TypeScript AST and Node.js/Architecture prose polish)."
   },
   "30-architecture/30.2-system-design/01-theory/REVISION.md": {
    "sha256": "5644a04ed0964d3a05bc8259d0e3cc002cbd4e84b9c4d3383d71121033e8f60e",
@@ -8299,20 +8299,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION))."
   },
   "30-architecture/30.2-system-design/02-case-studies/INDEX.md": {
-   "sha256": "b47df3b43bc8c2bb21bfa9dc90abaa284aa9a7b5cd51b10b85b076be59a7f90d",
+   "sha256": "4f271a3c219c53392dae4810df5959b786ec3a658000fd111affc3ce6f1cfdf0",
    "lines": 114,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against all 31 numbered case studies and REVISION.md.",
-    "readable": "Full read of 114 lines (301 prose words). Category index for 30.2-system-design/02-case-studies organizing 31 applied system design case studies by 4 difficulty tiers and 12 engineering domains, with Docita implementation anchors.",
-    "concise": "301 words across 114 lines. zero filler or duplicate explanations.",
+    "readable": "Full read of 114 lines (303 prose words). Category index for 30.2-system-design/02-case-studies organizing 31 applied system design case studies by 4 difficulty tiers and 12 engineering domains, with Docita implementation anchors.",
+    "concise": "303 words across 114 lines. zero filler or duplicate explanations.",
     "focused": "Focused single-topic scope: Canonical entrypoint for applied system design interview case studies.",
     "fast": "Measured 25.7 KB raw / 7.0 KB gzip. Fast to scan: 25.7 KB raw / 7.0 KB gzip.",
     "best": "Best-practice depth: Guides readers to state the core invariant, atomic boundary, scaling bottleneck, and failure recovery path for each design."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION))."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24B: final TypeScript AST and Node.js/Architecture prose polish)."
   },
   "30-architecture/30.2-system-design/02-case-studies/REVISION.md": {
    "sha256": "ff9f9c6054f89f332b16d66037e319ba46a7064af7e1257684a5569929b87fd8",
@@ -14395,7 +14395,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "dcc91fbec728e2b6af6af286fc9d8dec6ab0641746764b6bda51905dea9e3f92",
+   "sha256": "bb44efa2e5eb5b02d269db936e0baa61c6a9cedd7a58dfaeaf1d03bc435ce790",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14408,7 +14408,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 24A: lanes, projects, active docs, and root guides)."
+   "notes": "Synced live read-time and counts after Phase 24B: final TypeScript AST and Node.js/Architecture prose polish."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14699,7 +14699,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "e2d7d24913de3fa07eec0f95bdf8a4b7ccd1535ae01bc52a762bfbde603870c0",
+   "sha256": "b8afd4553a2c7ce048961f3df8aad8883d47386ab2ce401a8b1f38c646aa0e01",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14712,7 +14712,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 22B: 60-realtime (20 files)."
+   "notes": "Synced live read-time and counts after Phase 24B: final TypeScript AST and Node.js/Architecture prose polish."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

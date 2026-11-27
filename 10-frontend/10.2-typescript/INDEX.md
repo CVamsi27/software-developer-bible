@@ -1,6 +1,6 @@
 # TypeScript — Index
 
-> **Study time:** ≈ 3 h 33 m of reading (23 files, ~9 min average).
+> **Study time:** ≈ 3 h 34 m of reading (23 files, ~9 min average).
 > **23 files** — TypeScript type system mastery from basic types to branded types, template literals, declaration files, advanced generics, variance, decorators, the `satisfies` operator, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-23-blue)](../../INDEX.md)
@@ -96,7 +96,7 @@ Senior-level TS — types as a design tool.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 19 | [Interview Questions](05-interview-prep/10.2.5.01-interview-questions.md) | 55 curated questions with answers | Essential | Foundational | 44 min |
+| 19 | [Interview Questions](05-interview-prep/10.2.5.01-interview-questions.md) | 55 curated questions with answers | Essential | Foundational | 45 min |
 
 ---
 

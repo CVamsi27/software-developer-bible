@@ -1,6 +1,6 @@
 # Auth — Security
 
-> **Study time:** ≈ 2 h 9 m of reading (12 files, ~11 min average).
+> **Study time:** ≈ 2 h 15 m of reading (12 files, ~11 min average).
 > The table gives the intended study order; revision and timed practice are separate activities.
 > **Prerequisite:** [Encryption, Hashing & TLS](../03-hardening-and-operations/20.5.3.01-encryption.md).
 >
@@ -12,17 +12,17 @@
 ## Read order
 
 | Stage | Topic | Read | Be ready to explain | Priority |
-| ----: | -------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | --------- |
+| ----: | -------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | --------- |
 | 0 | Foundations | [Auth fundamentals](20.5.1.01-auth-fundamentals.md) · 7 min | Identity evidence, password verifiers, random credentials, cryptographic boundaries and bounded login work | Essential |
-| 1 | HTTP Basic and Digest | [Basic/Digest](20.5.1.02-http-basic-digest-auth.md) · 12 min | Header and challenge mechanics, TLS requirements, Digest verifier cost and where either scheme still fits | Important |
+| 1 | HTTP Basic and Digest | [Basic and Digest](20.5.1.02-http-basic-digest-auth.md) · 12 min | Header and challenge mechanics, TLS requirements, Digest verifier cost and where either scheme still fits | Important |
 | 2 | API keys | [API keys](20.5.1.03-api-keys.md) · 13 min | High-entropy issuance, verifier storage, scopes, key ownership and revocation delay | Essential |
-| 3 | Sessions and cookies | [Sessions/cookies](20.5.1.04-sessions-cookies.md) · 8 min | Session rotation, cookie delivery, CSRF, server expiry and store failure | Essential |
-| 4 | JWT | [JWT](20.5.1.05-jwt.md) · 9 min | Token profile validation, issuer/audience, signing authority, refresh rotation and revocation limits | Essential |
-| 5 | OAuth 2.0 and OIDC | [OAuth/OIDC](20.5.1.06-oauth2-oidc.md) · 13 min | Authorization Code with PKCE, delegated scopes, OIDC identity validation and browser architecture trade-offs | Essential |
-| 6 | SSO, SAML and federation | [SSO/SAML](20.5.1.07-sso-saml-federation.md) · 12 min | Metadata trust, signed assertion validation, request/replay binding, local sessions and deprovisioning | Important |
-| 7 | MFA, passkeys and WebAuthn | [MFA/passkeys](20.5.1.08-mfa-passkeys-webauthn.md) · 14 min | TOTP replay, phishing resistance, origin/RP validation, assurance and recovery | Important |
-| 8 | RBAC | [RBAC](20.5.1.09-rbac-abac.md) · 10 min | User-role assignments, active roles, optional hierarchy/constraints and object-level checks | Essential |
-| 9 | ABAC | [ABAC](20.5.1.10-abac-access-control.md) · 11 min | Attribute authority/freshness, policy decision and enforcement, composition and failure behavior | Essential |
+| 3 | Sessions and cookies | [Sessions and cookies](20.5.1.04-sessions-cookies.md) · 8 min | Session rotation, cookie delivery, CSRF, server expiry and store failure | Essential |
+| 4 | JWT | [JWT](20.5.1.05-jwt.md) · 9 min | Token profile validation, issuer and audience checks, signing authority, refresh rotation, and revocation limits | Essential |
+| 5 | OAuth 2.0 and OIDC | [OAuth and OIDC](20.5.1.06-oauth2-oidc.md) · 13 min | Authorization Code with PKCE, delegated scopes, OIDC identity validation and browser architecture trade-offs | Essential |
+| 6 | SSO, SAML and federation | [SSO and SAML](20.5.1.07-sso-saml-federation.md) · 12 min | Metadata trust, signed assertion validation, request and replay binding, local sessions, and deprovisioning | Important |
+| 7 | MFA, passkeys and WebAuthn | [MFA and passkeys](20.5.1.08-mfa-passkeys-webauthn.md) · 14 min | TOTP replay, phishing resistance, origin and RP validation, assurance, and recovery | Important |
+| 8 | RBAC | [RBAC](20.5.1.09-rbac-abac.md) · 10 min | User-role assignments, active roles, optional hierarchy, constraints, and object-level checks | Essential |
+| 9 | ABAC | [ABAC](20.5.1.10-abac-access-control.md) · 11 min | Attribute authority and freshness, policy decision and enforcement, composition, and failure behavior | Essential |
 | — | Revision | [Auth revision](REVISION.md) | Recall every mechanism and explain which boundary fails under changed conditions | Essential |
 | 10 | Interview practice | [40 interview questions](20.5.1.11-interview-questions.md) | Trace complete login, token, recovery and authorization flows; defend trade-offs and failure handling | Essential |
 
@@ -40,7 +40,7 @@ For every design, answer four questions:
 | Design | Request-time check | Revocation boundary | Fits when |
 | ------------------------- | ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | Server-side session | Shared session state, often through an opaque cookie | Delete or invalidate server state; caches and in-flight requests determine propagation | The app needs central session control and immediate current-state decisions |
-| Self-contained JWT | Trusted key plus a required issuer-specific token profile | Offline validators accept it until expiry unless they perform an online/current-state check | Independent verification is useful and its validity window is acceptable |
+| Self-contained JWT | Trusted key plus a required issuer-specific token profile | Offline validators accept it until expiry unless they perform an online current-state check | Independent verification is useful and its validity window is acceptable |
 | Hybrid access and refresh | Short-lived access-token policy plus stateful refresh grant | Revoke the refresh grant; existing access tokens remain valid until rejected by expiry or current-state policy | Renewal needs central state while normal API checks can use a bounded access credential |
 
 Refresh rotation protects the renewal chain; it does not automatically revoke already-issued access tokens. Cookie use and bearer-token format are independent choices: choose transport from the client threat model.
@@ -58,7 +58,7 @@ These Docita paths and the study project provide examples of implementation patt
 | Role enforcement | `apps/api/src/shared/modules/auth/auth/roles.guard.ts` |
 | Attribute policy | `apps/api/src/shared/modules/authorization/abac-policy.registry.ts` |
 
-The study example does not establish OAuth/OIDC, SAML/SCIM or passkey implementation. Check the repository before making claims about those features.
+The study example does not establish OAuth or OIDC, SAML or SCIM, or passkey implementation. Check the repository before making claims about those features.
 
 ## Finish the track
 

@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Security-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-8_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-9_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -20,7 +20,7 @@ Source: [Auth Fundamentals — Identity, Credentials & Crypto Primitives](20.5.1
 
 **Q:** Why store an encoded Argon2id verifier instead of a fast digest or encrypted password?
 
-**A:** A unique salt and configurable memory/time cost make each offline password guess expensive; the encoded parameters also let the service raise its policy and rehash after successful login. Encryption is reversible, while a fast digest makes guesses cheap.
+**A:** A unique salt and configurable memory and time cost make each offline password guess expensive; the encoded parameters also let the service raise its policy and rehash after successful login. Encryption is reversible, while a fast digest makes guesses cheap.
 
 Source: [OWASP Password Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html) · [RFC 9106 — Argon2](https://datatracker.ietf.org/doc/html/rfc9106)
 
@@ -82,7 +82,7 @@ Source: [API Keys](20.5.1.03-api-keys.md)
 
 **Q:** Why is a service key alone insufficient for delegated user authorization?
 
-**A:** A service key does not establish the user's delegated permission or consent. Add an explicit user/delegation contract when the operation acts on behalf of a person.
+**A:** A service key does not establish the user's delegated permission or consent. Add an explicit user delegation contract when the operation acts on behalf of a person.
 
 ## Sessions & Cookies
 
@@ -104,6 +104,9 @@ Source: [Sessions & Cookies](20.5.1.04-sessions-cookies.md)
 
 **A:** Different instances would then disagree about session validity, and logout or revocation could stop applying consistently. Treat store failure as an authentication-path failure and make availability behavior observable.
 
+**Q:** How does naming a session cookie with the `__Host-` prefix prevent cookie tossing from a sibling subdomain?
+**A:** Browsers reject any `__Host-` cookie unless it sets `Secure`, uses `Path=/`, and omits `Domain`, locking the cookie to host-only delivery so a sibling subdomain cannot overwrite the parent host's session cookie (source: [Sessions & Cookies](20.5.1.04-sessions-cookies.md)).
+
 ## JWT (JSON Web Tokens)
 
 Source: [JWT (JSON Web Tokens)](20.5.1.05-jwt.md)
@@ -114,7 +117,7 @@ Source: [JWT (JSON Web Tokens)](20.5.1.05-jwt.md)
 
 **Q:** Are registered JWT claims such as `iss`, `aud`, `exp` and `jti` automatically required by the format?
 
-**A:** No. The base format defines their meanings, but an issuer/resource-server profile must say which claims are required and how they are validated. A custom permission claim also needs an explicit contract and does not replace object-level authorization.
+**A:** No. The base format defines their meanings, but an issuer and resource-server profile must say which claims are required and how they are validated. A custom permission claim also needs an explicit contract and does not replace object-level authorization.
 
 **Q:** Why does immediate JWT revocation require an additional mechanism?
 
@@ -174,9 +177,15 @@ Source: [OAuth 2.0 Authorization Server Issuer Identification, RFC 9207](https:/
 
 **A:** No. It must validate the ID token under the trusted issuer, client, and `nonce` contract, map the provider subject, and then create the local session. The API independently validates the access token's intended recipient and permissions.
 
+**Q:** How do sender-constrained tokens (DPoP or mTLS binding) prevent replay of a stolen OAuth access or refresh token?
+**A:** Both mechanisms bind a key thumbprint (`cnf.jkt` or `cnf.x5t#S256`) into the credential so each request must prove possession of the client's private key, rendering a copied token useless on an attacker's host (source: [OAuth 2.0 & OpenID Connect](20.5.1.06-oauth2-oidc.md)).
+
 **Q:** Does storing a credential in an `HttpOnly` cookie remove the need for CSRF protection?
 
 **A:** No. JavaScript cannot read that cookie, but the browser can still attach it automatically. A backend using it must protect its state-changing requests; direct bearer-header usage has a different credential-attachment boundary.
+
+**Q:** Why should an API reject JWTs whose JOSE `typ` header does not match its expected access-token media type even when `aud` checks pass?
+**A:** Validating `typ` (such as `at+jwt` per RFC 9068 versus `logout+jwt` or generic `JWT`) prevents cross-purpose token confusion when an authorization server signs multiple token types with the same JWKS key pair (source: [JWT](20.5.1.05-jwt.md)).
 
 ## SSO, SAML & Federation
 
@@ -196,7 +205,7 @@ Source: [SSO, SAML & Federation](20.5.1.07-sso-saml-federation.md)
 
 **Q:** Why can a duplicate SAML response pass during a race even when `InResponseTo` validation is enabled?
 
-**A:** Node-SAML 5.1.0 checks and removes the request ID in separate cache calls, so concurrent requests can both observe it before removal. Serialize validation by request ID across instances or use a validator/cache contract with atomic consume, and independently enforce an atomic assertion-ID replay check.
+**A:** Node-SAML 5.1.0 checks and removes the request ID in separate cache calls, so concurrent requests can both observe it before removal. Serialize validation by request ID across instances or use a validator and cache contract with atomic consume, and independently enforce an atomic assertion-ID replay check.
 
 **Q:** Does a matching `InResponseTo` prove that the response returned to the browser that started the login?
 
@@ -242,6 +251,9 @@ Source: [NIST SP 800-63B-4, Account Recovery](https://pages.nist.gov/800-63-4/sp
 
 **A:** AAL2 should reauthenticate within 24 hours overall and after at most one hour of inactivity. AAL3 must reauthenticate within 12 hours overall; its inactivity timeout should be no more than 15 minutes. Apply the relevant profile and stricter action-specific rules where needed.
 
+**Q:** Which WebAuthn `authenticatorData` flags tell a verifier whether a registered passkey is syncable rather than device-bound?
+**A:** The Backup Eligibility (`BE`) bit is set to `1` at creation for multi-device syncable passkeys and `0` for hardware-bound keys, while Backup State (`BS`) reports current backup status—so assurance policies inspect `BE`, `BS`, and user verification rather than product names (source: [MFA, Passkeys & WebAuthn](20.5.1.08-mfa-passkeys-webauthn.md)).
+
 Source: [NIST SP 800-63B-4, Authentication Assurance Levels](https://pages.nist.gov/800-63-4/sp800-63b/aal/) · [Session Management](https://pages.nist.gov/800-63-4/sp800-63b/session/)
 
 ## RBAC (Role-Based Access Control)
@@ -278,7 +290,7 @@ Source: [ABAC (Attribute-Based Access Control)](20.5.1.10-abac-access-control.md
 
 ## Failure Traces
 
-Sources: [API keys](20.5.1.03-api-keys.md), [sessions](20.5.1.04-sessions-cookies.md), [JWT](20.5.1.05-jwt.md), [OAuth/OIDC](20.5.1.06-oauth2-oidc.md), [federation](20.5.1.07-sso-saml-federation.md), [MFA](20.5.1.08-mfa-passkeys-webauthn.md), [RBAC](20.5.1.09-rbac-abac.md) and [ABAC](20.5.1.10-abac-access-control.md).
+Sources: [API keys](20.5.1.03-api-keys.md), [sessions](20.5.1.04-sessions-cookies.md), [JWT](20.5.1.05-jwt.md), [OAuth and OIDC](20.5.1.06-oauth2-oidc.md), [federation](20.5.1.07-sso-saml-federation.md), [MFA](20.5.1.08-mfa-passkeys-webauthn.md), [RBAC](20.5.1.09-rbac-abac.md) and [ABAC](20.5.1.10-abac-access-control.md).
 
 **Q:** Why can a revoked API key still pass a cached guard, and what must the contract state?
 
@@ -296,7 +308,7 @@ Source: [HTTP Semantics, RFC 9110](https://datatracker.ietf.org/doc/html/rfc9110
 
 **Q:** Why does a correctly signed JWT with no `exp` need to fail a profile requiring short lifetimes?
 
-**A:** A library can validate an expiration only when it exists. The application must require expiry and other profile fields, alongside algorithm/issuer/audience/purpose/runtime shape; a type cast does not validate them.
+**A:** A library can validate an expiration only when it exists. The application must require expiry and other profile fields, alongside algorithm, issuer, audience, purpose, and runtime shape; a type cast does not validate them.
 
 **Q:** An OAuth callback arrives twice with the same `state`. What blocks the second exchange?
 
@@ -308,15 +320,15 @@ Source: [HTTP Semantics, RFC 9110](https://datatracker.ietf.org/doc/html/rfc9110
 
 **Q:** Why should registration not look up its challenge using the new credential ID?
 
-**A:** That credential did not exist at start. Store an expiring attempt bound to the authenticated account and browser, consume it once, then validate origin/RP/challenge/user verification and unique credential ownership.
+**A:** That credential did not exist at start. Store an expiring attempt bound to the authenticated account and browser, consume it once, then validate origin, RP ID, challenge, and user verification and unique credential ownership.
 
 **Q:** A role inherits itself indirectly. Is recursive permission expansion safe?
 
-**A:** No. Detect cycles and unknown parents, bound depth and reject invalid configuration. Role names do not imply inheritance, and expanded permissions do not replace tenant/object scope.
+**A:** No. Detect cycles and unknown parents, bound depth and reject invalid configuration. Role names do not imply inheritance, and expanded permissions do not replace tenant and object scope.
 
 **Q:** A request says a patient belongs to clinic A and is public. Which attributes can authorize access?
 
-**A:** Use verified current subject data and the actual stored patient's tenant/classification/assignment. Requested attributes cannot establish authority. Constrain the subsequent operation with the same state/version to prevent a stale decision race.
+**A:** Use verified current subject data and the actual stored patient's tenant, classification, and assignment. Requested attributes cannot establish authority. Constrain the subsequent operation with the same state and version to prevent a stale decision race.
 
 ## Summary
 

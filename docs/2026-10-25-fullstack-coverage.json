@@ -11280,7 +11280,7 @@
     },
     {
       "path": "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.md",
-      "sha256": "91d2a09ec136f0548629d732ae2ed8cef90fb5313c62c1ead16d6db8763ee377",
+      "sha256": "a18dc10b3f0321cf08d50b3b0b83ad56f6b59a9a244a6c84013d30c57fc0984e",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -11303,19 +11303,19 @@
       },
       "review": {
         "path": "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.md",
-        "sha256": "91d2a09ec136f0548629d732ae2ed8cef90fb5313c62c1ead16d6db8763ee377",
+        "sha256": "a18dc10b3f0321cf08d50b3b0b83ad56f6b59a9a244a6c84013d30c57fc0984e",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 13A D1-D7 rework of 20.5.1 (01-auth) C1-C8 refinement (2026-11-24): Full read of 150 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.5-security/01-auth/20.5.1.02-http-basic-digest-auth.md",
-      "sha256": "bfe0dcbd190df4f43b93357b01545b130e36432ea8002392044edd4536d90428",
+      "sha256": "620d403354151fbf65ce14b71ce8df8f9cad6d2aa47bcd83c0a16d523fe8fe1e",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -11336,19 +11336,19 @@
       },
       "review": {
         "path": "20-backend/20.5-security/01-auth/20.5.1.02-http-basic-digest-auth.md",
-        "sha256": "bfe0dcbd190df4f43b93357b01545b130e36432ea8002392044edd4536d90428",
+        "sha256": "620d403354151fbf65ce14b71ce8df8f9cad6d2aa47bcd83c0a16d523fe8fe1e",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 13A D1-D7 rework of 20.5.1 (01-auth) C1-C8 refinement (2026-11-24): Full read of 288 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.5-security/01-auth/20.5.1.03-api-keys.md",
-      "sha256": "90adbd11c5ada772e642c7d2d3f171b092f9b6ffd5bcf509e49c42477f9eac0a",
+      "sha256": "880f2075d14f9ee024c89488cb56ec7cd9783e8746854eba794fb289e05ecaef",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -11369,19 +11369,19 @@
       },
       "review": {
         "path": "20-backend/20.5-security/01-auth/20.5.1.03-api-keys.md",
-        "sha256": "90adbd11c5ada772e642c7d2d3f171b092f9b6ffd5bcf509e49c42477f9eac0a",
+        "sha256": "880f2075d14f9ee024c89488cb56ec7cd9783e8746854eba794fb289e05ecaef",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 13A D1-D7 rework of 20.5.1 (01-auth) C1-C8 refinement (2026-11-24): Full read of 320 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.5-security/01-auth/20.5.1.04-sessions-cookies.md",
-      "sha256": "104566be766c9766d1939711b1ff4d55ef29e0345903dc0fcf6e4675220ba1e0",
+      "sha256": "5ebc22ff14edf70de9d7c8cc500fd9acb2ccb1538a70aee147a1ad056aa647fe",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -11402,19 +11402,19 @@
       },
       "review": {
         "path": "20-backend/20.5-security/01-auth/20.5.1.04-sessions-cookies.md",
-        "sha256": "104566be766c9766d1939711b1ff4d55ef29e0345903dc0fcf6e4675220ba1e0",
+        "sha256": "5ebc22ff14edf70de9d7c8cc500fd9acb2ccb1538a70aee147a1ad056aa647fe",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 13A D1-D7 rework of 20.5.1 (01-auth) C1-C8 refinement (2026-11-24): Full read of 178 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.5-security/01-auth/20.5.1.05-jwt.md",
-      "sha256": "9d541f534f952eab6df5cbd317f51392810251d05d2d7d5d7c59617cedac54c4",
+      "sha256": "361d115d00673d9a9e19e5fe15698482973b5627b2f2a46dc7a6f0b287ce59f9",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -11435,10 +11435,10 @@
       },
       "review": {
         "path": "20-backend/20.5-security/01-auth/20.5.1.05-jwt.md",
-        "sha256": "9d541f534f952eab6df5cbd317f51392810251d05d2d7d5d7c59617cedac54c4",
+        "sha256": "361d115d00673d9a9e19e5fe15698482973b5627b2f2a46dc7a6f0b287ce59f9",
         "genre": "learning-chapter",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 13A D1-D7 rework of 20.5.1 (01-auth) C1-C8 refinement (2026-11-24): Full read of 178 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -11447,7 +11447,7 @@
     },
     {
       "path": "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.md",
-      "sha256": "c938b06b4226ddd05603f90b5333748c1eb7388243c932d6a8ad4a7a638480cf",
+      "sha256": "28fcb4c39613116997f634a4ec43f97bd0f86974a28dc204fdb2c39db1915f7e",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -11472,19 +11472,19 @@
       },
       "review": {
         "path": "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.md",
-        "sha256": "c938b06b4226ddd05603f90b5333748c1eb7388243c932d6a8ad4a7a638480cf",
+        "sha256": "28fcb4c39613116997f634a4ec43f97bd0f86974a28dc204fdb2c39db1915f7e",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 13A D1-D7 rework of 20.5.1 (01-auth) C1-C8 refinement (2026-11-24): Full read of 231 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.5-security/01-auth/20.5.1.07-sso-saml-federation.md",
-      "sha256": "6caaf2d564fa79ee94577b914119c4206a8284f7622666a9668914af4bab708c",
+      "sha256": "f845ea0a3bebed3fe6a2f782f0fe8fd9320aa8872e491143f3b1653d4157b0f3",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -11510,19 +11510,19 @@
       },
       "review": {
         "path": "20-backend/20.5-security/01-auth/20.5.1.07-sso-saml-federation.md",
-        "sha256": "6caaf2d564fa79ee94577b914119c4206a8284f7622666a9668914af4bab708c",
+        "sha256": "f845ea0a3bebed3fe6a2f782f0fe8fd9320aa8872e491143f3b1653d4157b0f3",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 13A D1-D7 rework of 20.5.1 (01-auth) C1-C8 refinement (2026-11-24): Full read of 213 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.5-security/01-auth/20.5.1.08-mfa-passkeys-webauthn.md",
-      "sha256": "06cf69ed0a22b939f0257ee7711b30f08569147db72f1d40f01ae5cd690d5c83",
+      "sha256": "c11d4a33ee52536ee232ea5e46b225080550751c36b4e3bf42d1899e828dcf48",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -11543,19 +11543,19 @@
       },
       "review": {
         "path": "20-backend/20.5-security/01-auth/20.5.1.08-mfa-passkeys-webauthn.md",
-        "sha256": "06cf69ed0a22b939f0257ee7711b30f08569147db72f1d40f01ae5cd690d5c83",
+        "sha256": "c11d4a33ee52536ee232ea5e46b225080550751c36b4e3bf42d1899e828dcf48",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 13A D1-D7 rework of 20.5.1 (01-auth) C1-C8 refinement (2026-11-24): Full read of 242 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.5-security/01-auth/20.5.1.09-rbac-abac.md",
-      "sha256": "d6a88289b6e67ddace1c8168e4672cdb3927381a78e2366fe2035ddc55f24cc7",
+      "sha256": "e641b9ee27adc0d65ca243a727ec78a3e22bc16a92af275bba67a9941b94ded5",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -11578,19 +11578,19 @@
       },
       "review": {
         "path": "20-backend/20.5-security/01-auth/20.5.1.09-rbac-abac.md",
-        "sha256": "d6a88289b6e67ddace1c8168e4672cdb3927381a78e2366fe2035ddc55f24cc7",
+        "sha256": "e641b9ee27adc0d65ca243a727ec78a3e22bc16a92af275bba67a9941b94ded5",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 13A D1-D7 rework of 20.5.1 (01-auth) C1-C8 refinement (2026-11-24): Full read of 215 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.5-security/01-auth/20.5.1.10-abac-access-control.md",
-      "sha256": "736ba36234d6f29c2d0e519317797ed8bcb50ec00c2658571fcdd65929ed2aa0",
+      "sha256": "ce406f4f8df20bc16a0c29e7e830989729f271d4fef8c0821829a723246a1364",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -11615,19 +11615,19 @@
       },
       "review": {
         "path": "20-backend/20.5-security/01-auth/20.5.1.10-abac-access-control.md",
-        "sha256": "736ba36234d6f29c2d0e519317797ed8bcb50ec00c2658571fcdd65929ed2aa0",
+        "sha256": "ce406f4f8df20bc16a0c29e7e830989729f271d4fef8c0821829a723246a1364",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 13A D1-D7 rework of 20.5.1 (01-auth) C1-C8 refinement (2026-11-24): Full read of 232 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md",
-      "sha256": "b068d719671dc3a6450db92d5396f4a3682a0b7389b0cb5137c6195abc2e956a",
+      "sha256": "454fdb3a2bb9f484f1780f0fbb45336c236cd1ac13db233dc25dbe5cc5c32f0e",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -11651,19 +11651,19 @@
       },
       "review": {
         "path": "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md",
-        "sha256": "b068d719671dc3a6450db92d5396f4a3682a0b7389b0cb5137c6195abc2e956a",
+        "sha256": "454fdb3a2bb9f484f1780f0fbb45336c236cd1ac13db233dc25dbe5cc5c32f0e",
         "genre": "interview-bank",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 13A D1-D7 rework of 20.5.1 (01-auth) C1-C8 refinement (2026-11-24): Full read of 324 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.5-security/01-auth/INDEX.md",
-      "sha256": "c8c9d421ea4711ed378dc775deeb93abb5502d0754774fa2e727fcf83d4ed707",
+      "sha256": "eb9e181984616007bbc6ac65dc7337f1b1f95a1f12c57d9d88ea9cc1bf09a0d3",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -11680,19 +11680,19 @@
       },
       "review": {
         "path": "20-backend/20.5-security/01-auth/INDEX.md",
-        "sha256": "c8c9d421ea4711ed378dc775deeb93abb5502d0754774fa2e727fcf83d4ed707",
+        "sha256": "eb9e181984616007bbc6ac65dc7337f1b1f95a1f12c57d9d88ea9cc1bf09a0d3",
         "genre": "navigation-index",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 13A D1-D7 rework of 20.5.1 (01-auth) C1-C8 refinement (2026-11-24): Full read of 67 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.5-security/01-auth/REVISION.md",
-      "sha256": "600ea884a6c690e3a4d64c459d702645655000a906d4881bec14dd802d0b8056",
+      "sha256": "788eaf3208614ef155a11d540bf858b45aa64941db673e44f6182b04b6490145",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -11713,18 +11713,18 @@
           "References & Learn More"
         ],
         "code_fences": 0,
-        "revision_questions": 60,
+        "revision_questions": 64,
         "has_summary": true,
         "has_first_principles": false
       },
       "review": {
         "path": "20-backend/20.5-security/01-auth/REVISION.md",
-        "sha256": "600ea884a6c690e3a4d64c459d702645655000a906d4881bec14dd802d0b8056",
+        "sha256": "788eaf3208614ef155a11d540bf858b45aa64941db673e44f6182b04b6490145",
         "genre": "revision-companion",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 13A D1-D7 rework of 20.5.1 (01-auth) C1-C8 refinement (2026-11-24): Full read of 343 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
@@ -12232,7 +12232,7 @@
     },
     {
       "path": "20-backend/20.5-security/INDEX.md",
-      "sha256": "a49c4684e751f213c49f95e9bfc0aac7ae8eac9aeaae27b0be39ab76d431c942",
+      "sha256": "429387219a28a8b59a43da3b5facc5be778f2c9348e67aaf466eae9ebf7565dd",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -12256,12 +12256,12 @@
       },
       "review": {
         "path": "20-backend/20.5-security/INDEX.md",
-        "sha256": "a49c4684e751f213c49f95e9bfc0aac7ae8eac9aeaae27b0be39ab76d431c942",
+        "sha256": "429387219a28a8b59a43da3b5facc5be778f2c9348e67aaf466eae9ebf7565dd",
         "genre": "navigation-index",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 13A D1-D7 rework of 20.5.1 (01-auth) C1-C8 refinement (2026-11-24): Full read of 164 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
@@ -14227,7 +14227,7 @@
     },
     {
       "path": "20-backend/INDEX.md",
-      "sha256": "89f9239631df698fb53a51a7b133fc3bcc7bf76a9685d1322626b0ef8917824c",
+      "sha256": "46b6ff4019e416bb65a7ce683cd791e0edf778205aca800f4040f2ff2c83a228",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -14246,12 +14246,12 @@
       },
       "review": {
         "path": "20-backend/INDEX.md",
-        "sha256": "89f9239631df698fb53a51a7b133fc3bcc7bf76a9685d1322626b0ef8917824c",
+        "sha256": "46b6ff4019e416bb65a7ce683cd791e0edf778205aca800f4040f2ff2c83a228",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 12C D1-D7 rework of 20.4.5 and 20.4 INDEX (completes 20.4-database) count/read-time sync (2026-11-24): Full read of 122 lines. Updated generated counts/read-time navigation after Phase 12C D1-D7 rework of 20.4.5 and 20.4 INDEX (completes 20.4-database).",
+        "notes": "Phase 13A D1-D7 rework of 20.5.1 (01-auth) count/read-time sync (2026-11-24): Full read of 122 lines. Updated generated counts/read-time navigation after Phase 13A D1-D7 rework of 20.5.1 (01-auth).",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "ab7ced08ffe012474a86db7f5ff38398ca691458b124ed67f5bf5a2780894865",
@@ -31035,7 +31035,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "5e34cf4520976bcd16d0c4833576efcdb40aa0c6c8683ebb27db892b56e61c6b",
+      "sha256": "4205f6837cefeedb0d02b335495175240393b76d11f195677e862d8152ee3cc6",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -31053,12 +31053,12 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "5e34cf4520976bcd16d0c4833576efcdb40aa0c6c8683ebb27db892b56e61c6b",
+        "sha256": "4205f6837cefeedb0d02b335495175240393b76d11f195677e862d8152ee3cc6",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 12C D1-D7 rework of 20.4.5 and 20.4 INDEX (completes 20.4-database) count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 12C D1-D7 rework of 20.4.5 and 20.4 INDEX (completes 20.4-database).",
+        "notes": "Phase 13A D1-D7 rework of 20.5.1 (01-auth) count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 13A D1-D7 rework of 20.5.1 (01-auth).",
         "findings": []
       }
     },
@@ -31638,7 +31638,7 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "9ba59000901f89211426a249e164842420abc4cb759287070e1539c750f9b885",
+      "sha256": "58be210c133a0e08c90adc6081466dd137c278fbe4829ecec18f310f2067aeae",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31656,12 +31656,12 @@
       },
       "review": {
         "path": "docs/api-contract.md",
-        "sha256": "9ba59000901f89211426a249e164842420abc4cb759287070e1539c750f9b885",
+        "sha256": "58be210c133a0e08c90adc6081466dd137c278fbe4829ecec18f310f2067aeae",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 12C D1-D7 rework of 20.4.5 and 20.4 INDEX (completes 20.4-database) count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 12C D1-D7 rework of 20.4.5 and 20.4 INDEX (completes 20.4-database).",
+        "notes": "Phase 13A D1-D7 rework of 20.5.1 (01-auth) count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 13A D1-D7 rework of 20.5.1 (01-auth).",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

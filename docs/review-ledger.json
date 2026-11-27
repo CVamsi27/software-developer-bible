@@ -5188,212 +5188,212 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 12C D1-D7 rework of 20.4.5 and 20.4 INDEX (completes 20.4-database))."
   },
   "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.md": {
-   "sha256": "91d2a09ec136f0548629d732ae2ed8cef90fb5313c62c1ead16d6db8763ee377",
-   "lines": 148,
+   "sha256": "a18dc10b3f0321cf08d50b3b0b83ad56f6b59a9a244a6c84013d30c57fc0984e",
+   "lines": 150,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against OWASP Authentication and Password Storage Cheat Sheets and RFC 9106.",
-    "readable": "Full read of 148 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "936 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 150 lines (1001 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1001 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for core credential and cryptographic auth primitives before sessions, JWTs, and OAuth.",
-    "fast": "21.7 KB raw / 7.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 21.7 KB raw / 7.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Traces Argon2 memory exhaustion failure boundary, shared-secret HMAC forgery risks, and account lockout trade-offs."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13A D1-D7 rework of 20.5.1 (01-auth))."
   },
   "20-backend/20.5-security/01-auth/20.5.1.02-http-basic-digest-auth.md": {
-   "sha256": "bfe0dcbd190df4f43b93357b01545b130e36432ea8002392044edd4536d90428",
+   "sha256": "620d403354151fbf65ce14b71ce8df8f9cad6d2aa47bcd83c0a16d523fe8fe1e",
    "lines": 288,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against RFC 7617, RFC 7616, RFC 9110, and NestJS 11 guard contracts.",
-    "readable": "Full read of 288 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 288 lines (894 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "894 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for Basic and Digest HTTP authentication schemes.",
-    "fast": "36.4 KB raw / 8.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 36.4 KB raw / 8.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Explains why Digest requires password-equivalent HA1 storage, lacks transport confidentiality without TLS, and hits per-request password-hash CPU limits."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13A D1-D7 rework of 20.5.1 (01-auth))."
   },
   "20-backend/20.5-security/01-auth/20.5.1.03-api-keys.md": {
-   "sha256": "90adbd11c5ada772e642c7d2d3f171b092f9b6ffd5bcf509e49c42477f9eac0a",
+   "sha256": "880f2075d14f9ee024c89488cb56ec7cd9783e8746854eba794fb289e05ecaef",
    "lines": 320,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Node.js `node:crypto`, OWASP API Security Top 10, and RFC 9110.",
-    "readable": "Full read of 320 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1085 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 320 lines (1087 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1087 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for machine/partner API key lifecycle and verification.",
-    "fast": "43.3 KB raw / 9.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 43.3 KB raw / 9.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Contrasts high-entropy SHA-256 hashing against low-entropy password hashing and defines the delegation failure boundary where OAuth is required."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13A D1-D7 rework of 20.5.1 (01-auth))."
   },
   "20-backend/20.5-security/01-auth/20.5.1.04-sessions-cookies.md": {
-   "sha256": "104566be766c9766d1939711b1ff4d55ef29e0345903dc0fcf6e4675220ba1e0",
-   "lines": 176,
+   "sha256": "5ebc22ff14edf70de9d7c8cc500fd9acb2ccb1538a70aee147a1ad056aa647fe",
+   "lines": 178,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Express 5, `express-session` 1.18, `connect-redis` (`RedisStore`), and RFC 6265.",
-    "readable": "Full read of 176 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "808 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 178 lines (864 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "864 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for stateful HTTP session management and browser cookie transport.",
-    "fast": "41.4 KB raw / 8.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 41.4 KB raw / 8.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Traces session-store outage failure boundary (never fall back to per-process memory) and active-XSS vs `HttpOnly` limits."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13A D1-D7 rework of 20.5.1 (01-auth))."
   },
   "20-backend/20.5-security/01-auth/20.5.1.05-jwt.md": {
-   "sha256": "9d541f534f952eab6df5cbd317f51392810251d05d2d7d5d7c59617cedac54c4",
+   "sha256": "361d115d00673d9a9e19e5fe15698482973b5627b2f2a46dc7a6f0b287ce59f9",
    "lines": 178,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against RFC 7519, RFC 7517, RFC 8725 (JWT BCP), and `jsonwebtoken` 9.",
-    "readable": "Full read of 178 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1306 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 178 lines (1379 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1379 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for self-contained token verification and refresh rotation state transitions.",
-    "fast": "33.0 KB raw / 8.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 33.0 KB raw / 8.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Explains the revocation failure boundary of stateless tokens, HMAC shared-signer risk, and browser storage trade-offs."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13A D1-D7 rework of 20.5.1 (01-auth))."
   },
   "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.md": {
-   "sha256": "c938b06b4226ddd05603f90b5333748c1eb7388243c932d6a8ad4a7a638480cf",
-   "lines": 229,
+   "sha256": "28fcb4c39613116997f634a4ec43f97bd0f86974a28dc204fdb2c39db1915f7e",
+   "lines": 231,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Freshness check 2026-11-23 against RFC 6749, RFC 8628, RFC 9207, RFC 9700 (OAuth Security BCP), and RFC 10017; executed `beginLogin` and `consumePending` in Node v26.13.0.",
-    "readable": "Full read of 229 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1954 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 231 lines (2026 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "2026 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for delegated authorization and OIDC identity federation.",
-    "fast": "46.6 KB raw / 11.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 46.6 KB raw / 11.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Traces callback replay, IdP mix-up, email-only account-linking failure boundary, and concurrent refresh-token race conditions."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13A D1-D7 rework of 20.5.1 (01-auth))."
   },
   "20-backend/20.5-security/01-auth/20.5.1.07-sso-saml-federation.md": {
-   "sha256": "6caaf2d564fa79ee94577b914119c4206a8284f7622666a9668914af4bab708c",
+   "sha256": "f845ea0a3bebed3fe6a2f782f0fe8fd9320aa8872e491143f3b1653d4157b0f3",
    "lines": 213,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against OASIS SAML 2.0, RFC 7643/7644, and `@node-saml/node-saml` 5.1.0 (GHSA-4mxg-3p6v-xgq3).",
-    "readable": "Full read of 213 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1809 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 213 lines (1878 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1878 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for enterprise workforce SAML federation and SCIM lifecycle synchronization.",
-    "fast": "33.2 KB raw / 9.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 33.2 KB raw / 9.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Highlights the non-atomic `CacheProvider` `InResponseTo` race boundary in `node-saml` 5.1.0, IdP-initiated login CSRF risk, and local-session offboarding delay."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13A D1-D7 rework of 20.5.1 (01-auth))."
   },
   "20-backend/20.5-security/01-auth/20.5.1.08-mfa-passkeys-webauthn.md": {
-   "sha256": "06cf69ed0a22b939f0257ee7711b30f08569147db72f1d40f01ae5cd690d5c83",
+   "sha256": "c11d4a33ee52536ee232ea5e46b225080550751c36b4e3bf42d1899e828dcf48",
    "lines": 242,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Freshness check 2026-11-23 against W3C WebAuthn Level 3, NIST SP 800-63B-4 (AAL & syncable authenticators), RFC 6238, and `@simplewebauthn/server` 14.0.3; executed `totpAt` RFC test vector (`94287082`) in Node v26.13.0.",
-    "readable": "Full read of 242 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1972 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 242 lines (2031 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "2031 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for multi-factor authentication, WebAuthn ceremonies, and NIST assurance levels.",
-    "fast": "41.3 KB raw / 11.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 41.3 KB raw / 11.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Explains why syncable passkeys cannot meet NIST AAL3 non-exportability and why account recovery is an equivalent authentication failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13A D1-D7 rework of 20.5.1 (01-auth))."
   },
   "20-backend/20.5-security/01-auth/20.5.1.09-rbac-abac.md": {
-   "sha256": "d6a88289b6e67ddace1c8168e4672cdb3927381a78e2366fe2035ddc55f24cc7",
+   "sha256": "e641b9ee27adc0d65ca243a727ec78a3e22bc16a92af275bba67a9941b94ded5",
    "lines": 215,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against NIST RBAC / INCITS 359 and OWASP Authorization Cheat Sheet.",
-    "readable": "Full read of 215 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "816 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 215 lines (822 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "822 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for role-based capability modeling and cycle-safe hierarchy resolution.",
-    "fast": "46.8 KB raw / 8.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 46.8 KB raw / 8.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Traces role-explosion failure boundary and cross-tenant object-lookup bypasses when guards only check route role metadata."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13A D1-D7 rework of 20.5.1 (01-auth))."
   },
   "20-backend/20.5-security/01-auth/20.5.1.10-abac-access-control.md": {
-   "sha256": "736ba36234d6f29c2d0e519317797ed8bcb50ec00c2658571fcdd65929ed2aa0",
+   "sha256": "ce406f4f8df20bc16a0c29e7e830989729f271d4fef8c0821829a723246a1364",
    "lines": 232,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against NIST SP 800-162, OWASP Authorization Patterns, and Open Policy Agent deployment models.",
-    "readable": "Full read of 232 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1385 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 232 lines (1435 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1435 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for attribute-driven policy evaluation and PEP/PDP enforcement placement.",
-    "fast": "39.2 KB raw / 9.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 39.2 KB raw / 9.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Traces check-to-use (TOCTOU) mutation race failure boundary between guard check and database transaction, plus fail-closed missing-attribute handling."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13A D1-D7 rework of 20.5.1 (01-auth))."
   },
   "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md": {
-   "sha256": "b068d719671dc3a6450db92d5396f4a3682a0b7389b0cb5137c6195abc2e956a",
+   "sha256": "454fdb3a2bb9f484f1780f0fbb45336c236cd1ac13db233dc25dbe5cc5c32f0e",
    "lines": 324,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against RFC 9106, RFC 9110, RFC 9700, RFC 10017, W3C WebAuthn Level 3, and NIST SP 800-63B-4.",
-    "readable": "Full read of 324 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "4127 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 324 lines (4173 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "4173 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical interview bank for 20.5-security/01-auth paired with REVISION.md.",
-    "fast": "48.5 KB raw / 17.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 48.5 KB raw / 17.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Every question tests both the primary mechanism and a production failure boundary or follow-up trap."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13A D1-D7 rework of 20.5.1 (01-auth))."
   },
   "20-backend/20.5-security/01-auth/INDEX.md": {
-   "sha256": "c8c9d421ea4711ed378dc775deeb93abb5502d0754774fa2e727fcf83d4ed707",
+   "sha256": "eb9e181984616007bbc6ac65dc7337f1b1f95a1f12c57d9d88ea9cc1bf09a0d3",
    "lines": 67,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against RFC 9106, RFC 9700, RFC 10017, WebAuthn Level 3, and NIST SP 800-63B-4.",
-    "readable": "Full read of 67 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "245 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 67 lines (249 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "249 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical category index for authentication and authorization with a session-vs-JWT-vs-hybrid comparison table.",
-    "fast": "15.1 KB raw / 4.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 15.1 KB raw / 4.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Highlights principal identity, current-state revocation boundary limits, and browser credential transport failure modes."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13A D1-D7 rework of 20.5.1 (01-auth))."
   },
   "20-backend/20.5-security/01-auth/REVISION.md": {
-   "sha256": "600ea884a6c690e3a4d64c459d702645655000a906d4881bec14dd802d0b8056",
-   "lines": 331,
+   "sha256": "788eaf3208614ef155a11d540bf858b45aa64941db673e44f6182b04b6490145",
+   "lines": 343,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against RFC 9106, RFC 9110, RFC 9700, RFC 10017, W3C WebAuthn Level 3, and NIST SP 800-63B-4.",
-    "readable": "Full read of 331 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "3189 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 343 lines (3448 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "3448 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical revision companion for 01-auth distinct from the 40-question interview drill.",
-    "fast": "34.8 KB raw / 11.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 34.8 KB raw / 11.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Tests revocation windows, race conditions (`InResponseTo`, OAuth `state`), and stale attribute authorization failure boundary conditions."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13A D1-D7 rework of 20.5.1 (01-auth))."
   },
   "20-backend/20.5-security/02-attacks-and-defense/20.5.2.01-xss.md": {
    "sha256": "25819cc24f89df07bff91a2f1aec06e41536332c80d91036d04d370457616882",
@@ -5634,20 +5634,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
   },
   "20-backend/20.5-security/INDEX.md": {
-   "sha256": "a49c4684e751f213c49f95e9bfc0aac7ae8eac9aeaae27b0be39ab76d431c942",
+   "sha256": "429387219a28a8b59a43da3b5facc5be778f2c9348e67aaf466eae9ebf7565dd",
    "lines": 164,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against OWASP Top 10, WebAuthn Level 3, OAuth 2.1 / RFC 9700, Argon2id RFC 9106, and Node.js 26 security primitives.",
-    "readable": "Full read of 164 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 164 lines (442 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "442 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical security stack entrypoint sequencing identity, exploit defense, operational hardening, and drills.",
-    "fast": "26.0 KB raw / 6.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 26.0 KB raw / 6.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Frames trust boundary conditions, failure modes, and defense-in-depth trade-offs."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13A D1-D7 rework of 20.5.1 (01-auth))."
   },
   "20-backend/20.6-microservices/01-service-topology/20.6.1.01-service-discovery.md": {
    "sha256": "dc761b140212a9392335273e22505958909be05baf97051eef0c3a0d460ed328",
@@ -6565,7 +6565,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
   },
   "20-backend/INDEX.md": {
-   "sha256": "89f9239631df698fb53a51a7b133fc3bcc7bf76a9685d1322626b0ef8917824c",
+   "sha256": "46b6ff4019e416bb65a7ce683cd791e0edf778205aca800f4040f2ff2c83a228",
    "lines": 122,
    "genre": "index",
    "status": "read",
@@ -6578,7 +6578,7 @@
     "fast": "Measured 15.4 KB raw / 5.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Remaining limit is study-hour path estimates are rough guides and depend on each reader's prior backend background."
    },
-   "notes": "Synced live read-time and counts after Phase 12C D1-D7 rework of 20.4.5 and 20.4 INDEX (completes 20.4-database)."
+   "notes": "Synced live read-time and counts after Phase 13A D1-D7 rework of 20.5.1 (01-auth)."
   },
   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md": {
    "sha256": "065e2b7d573b2298550d061453667084b1d010e6fadf07f903f6fdd34a8e5185",
@@ -14371,7 +14371,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "5e34cf4520976bcd16d0c4833576efcdb40aa0c6c8683ebb27db892b56e61c6b",
+   "sha256": "4205f6837cefeedb0d02b335495175240393b76d11f195677e862d8152ee3cc6",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14384,7 +14384,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 12C D1-D7 rework of 20.4.5 and 20.4 INDEX (completes 20.4-database)."
+   "notes": "Synced live read-time and counts after Phase 13A D1-D7 rework of 20.5.1 (01-auth)."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14675,7 +14675,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "9ba59000901f89211426a249e164842420abc4cb759287070e1539c750f9b885",
+   "sha256": "58be210c133a0e08c90adc6081466dd137c278fbe4829ecec18f310f2067aeae",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14688,7 +14688,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 12C D1-D7 rework of 20.4.5 and 20.4 INDEX (completes 20.4-database)."
+   "notes": "Synced live read-time and counts after Phase 13A D1-D7 rework of 20.5.1 (01-auth)."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

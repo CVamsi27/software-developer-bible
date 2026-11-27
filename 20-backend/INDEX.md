@@ -30,18 +30,18 @@ This stack is the canonical reference. Each sub-stack has its own INDEX with det
 ## The 11 Sub-Stacks (in study order)
 
 | Order | Sub-stack | Files | Topics |
-| ----: | ------------------------------------------------------------------- | ----: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ----: | ------------------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1 | [Node.js](20.1-node.js/INDEX.md) | 15 | Event loop, streams, clustering, web streams, child processes, test runner |
 | 2 | [NestJS](20.2-nestjs/INDEX.md) | 19 | Modules, DI, guards, pipes, interceptors, CQRS, microservices |
 | 3 | [REST APIs](20.3-rest-apis/INDEX.md) | 21 | HTTP methods, status codes, versioning, pagination, rate limiting, RFC 9457 problem details, webhooks, HTTP caching, maturity model |
 | 4 | [Database](20.4-database/INDEX.md) | 24 | PostgreSQL, indexes, transactions, MVCC, Prisma, pooling, replication (5 categories) |
-| 5 | [Auth & Security](20.5-security/INDEX.md) | 21 | [auth track](20.5-security/01-auth/INDEX.md): fundamentals → sessions → JWT → OAuth → RBAC/ABAC · attacks (XSS, CSRF, SQLi) · hardening (CSP, STRIDE, secrets) · API Top 10 |
-| 6 | [Microservices & Distributed Patterns](20.6-microservices/INDEX.md) | 19 | Service discovery, gateway, saga, circuit breaker, event sourcing/CQRS, Kafka/RabbitMQ, gRPC streaming, service mesh, event-driven architecture |
-| 7 | [GraphQL](20.7-graphql/INDEX.md) | 9 | Schema design, queries/mutations, Apollo Server, performance, security |
+| 5 | [Auth & Security](20.5-security/INDEX.md) | 21 | [auth track](20.5-security/01-auth/INDEX.md): fundamentals → sessions → JWT → OAuth → RBAC and ABAC · attacks (XSS, CSRF, SQLi) · hardening (CSP, STRIDE, secrets) · API Top 10 |
+| 6 | [Microservices & Distributed Patterns](20.6-microservices/INDEX.md) | 19 | Service discovery, gateway, saga, circuit breaker, event sourcing and CQRS, Kafka and RabbitMQ, gRPC streaming, service mesh, event-driven architecture |
+| 7 | [GraphQL](20.7-graphql/INDEX.md) | 9 | Schema design, queries and mutations, Apollo Server, performance, security |
 | 8 | [Caching](20.8-caching/INDEX.md) | 4 | Cache patterns, invalidation, stampede prevention, Redis fundamentals + advanced patterns |
-| 9 | [Message Brokers](20.9-message-brokers/INDEX.md) | 4 | Kafka vs RabbitMQ models, delivery semantics, acks/ISR durability, consumer groups & rebalances, lag SLI, envelopes/schema evolution, DLQs, transactional outbox |
-| 10 | [AI Engineering](20.12-ai-engineering/INDEX.md) | 7 | LLM app architecture (RAG/streaming/structured output), prompts & evals, safety & cost governance |
-| 11 | [Java](20.13-java/INDEX.md) | 6 | Language fundamentals, OOP & SOLID, concurrency, JUnit/Mockito testing, Spring Boot, interview Q&A |
+| 9 | [Message Brokers](20.9-message-brokers/INDEX.md) | 4 | Kafka vs RabbitMQ models, delivery semantics, acks and ISR durability, consumer groups & rebalances, lag SLI, envelopes and schema evolution, DLQs, transactional outbox |
+| 10 | [AI Engineering](20.12-ai-engineering/INDEX.md) | 7 | LLM app architecture (RAG, streaming, and structured output), prompts & evals, safety & cost governance |
+| 11 | [Java](20.13-java/INDEX.md) | 6 | Language fundamentals, OOP & SOLID, concurrency, JUnit and Mockito testing, Spring Boot, interview Q&A |
 
 > IDs 20.10–20.11 are deliberately absent: earlier sessions added stacks there, then renumbered them elsewhere — the *study order* above is contiguous, and gRPC (the usual candidate for a standalone slot) is already taught canonically in [20.6.2](20.6-microservices/02-communication-and-messaging/20.6.2.01-grpc.md). Don't fill the IDs for cosmetics; add a stack when content demands it.
 
@@ -54,7 +54,7 @@ The backend stack is organized into 5 conceptual layers. Read in this order.
 ### Runtime & Language (read first)
 - **Node.js** — the runtime; event loop, streams, async patterns
 - **NestJS** — an application framework; modules, dependency injection and request hooks (read after Node.js)
-- **Java** — language core, OOP/SOLID, concurrency, testing (only if the target role/stack uses Java)
+- **Java** — language core, OOP and SOLID, concurrency, testing (only if the target role or stack uses Java)
 
 ### API Layer (read second)
 - **REST APIs** — the canonical web API style; status codes, pagination, errors
@@ -69,7 +69,7 @@ The backend stack is organized into 5 conceptual layers. Read in this order.
 
 ### Distributed (read last)
 - **Microservices** — saga, CQRS, event sourcing, service mesh
-- **Message Brokers** — Kafka/RabbitMQ operations and the event-driven patterns underneath those architectures
+- **Message Brokers** — Kafka and RabbitMQ operations and the event-driven patterns underneath those architectures
 - **AI Engineering** — RAG, evals, cost governance (if JD requires)
 
 ---
@@ -77,7 +77,7 @@ The backend stack is organized into 5 conceptual layers. Read in this order.
 ## Suggested Study Order
 
 ### Path A — Full-stack senior, 4-week prep (most lanes)
-For the current Germany/remote TypeScript full-stack plan, keep Java deferred unless a specific target role requires it.
+For the current Germany and remote TypeScript full-stack plan, keep Java deferred unless a specific target role requires it.
 
 1. Node.js core + Event Loop (1 hr)
 2. NestJS Modules + Dependency Injection (1.5 hrs)
@@ -99,7 +99,7 @@ For the current Germany/remote TypeScript full-stack plan, keep Java deferred un
 8. GraphQL, Caching, AI Engineering — as needed
 
 ### Path C — Interview tomorrow
-- Review each chapter’s definition, example and summary; focus on the topics listed above
+- Review each chapter's definition, example and summary; focus on the topics listed above
 - Node.js: re-read Event Loop
 - REST: re-read Status Codes + Pagination
 - Database: re-read MVCC + Transactions + Indexes
@@ -119,4 +119,4 @@ For the current Germany/remote TypeScript full-stack plan, keep Java deferred un
 
 ## Navigation
 
-[← Previous: Frontend](../10-frontend/INDEX.md) · [ Back to Index](../INDEX.md) · [Next: Architecture →](../30-architecture/INDEX.md)
+[← Previous: Frontend](../10-frontend/INDEX.md) · [Back to Index](../INDEX.md) · [Next: Architecture →](../30-architecture/INDEX.md)

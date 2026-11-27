@@ -3531,132 +3531,132 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 16A D1-D7 rework of 20.12-ai-engineering)."
   },
   "20-backend/20.13-java/20.13.01-java-language-fundamentals.md": {
-   "sha256": "9d1a11b50535e7c66d0191ef73072078ac62bb9da882faafdcf579c6ea1e7c3c",
+   "sha256": "6454405e739609677c340671dd62fffb1a8f96994c89cbf11ab9216e216216b4",
    "lines": 662,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Java SE 27 and Java 21 LTS sources (JEPs 395, 409, 440, 441).",
-    "readable": "Full read of 662 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1887 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 662 lines (1972 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1972 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for JVM memory layout, value vs identity types, immutable data modeling, and stream pipeline allocation without duplication.",
-    "fast": "93.5 KB raw / 16.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 93.5 KB raw / 16.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Explains boxing, erasure, and mutability failure boundary conditions with a Java-vs-TypeScript trade-off table."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 16B D1-D7 rework of 20.13-java and 20-backend/INDEX.md)."
   },
   "20-backend/20.13-java/20.13.02-java-oop-solid.md": {
-   "sha256": "bba703f4269a79574b198c46cea7633be655488936f4c750334bab53a623b29b",
+   "sha256": "94b2a7748fd0bad9935a0cd30a5c8ad2341ac83f00beb7b48968c05b97a227fc",
    "lines": 435,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Java 21-27 records, sealed interfaces, and constructor injection conventions.",
-    "readable": "Full read of 435 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1425 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 435 lines (1430 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1430 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for Java SOLID refactorings without duplicating GoF pattern chapters.",
-    "fast": "54.8 KB raw / 10.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 54.8 KB raw / 10.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Shows failure boundary of inheritance hierarchies and trade-off limits of over-abstraction."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 16B D1-D7 rework of 20.13-java and 20-backend/INDEX.md)."
   },
   "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md": {
-   "sha256": "411378b88032ff31389efd024535135a4eb14cb1afbb9f163ca2aba16c3efad5",
-   "lines": 314,
+   "sha256": "e4a0358102bb6ddaa895d974b59c56252a2e74a01de1d837b79587064d43207e",
+   "lines": 316,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Java 21 JEP 444, JDK 24 JEP 491 monitor unpinning, and JDK 25+ Structured Concurrency sources.",
-    "readable": "Full read of 314 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1031 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 316 lines (1107 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1107 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for JVM concurrency and Virtual Threads without duplicating Node.js event-loop chapters.",
-    "fast": "46.0 KB raw / 9.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 46.0 KB raw / 9.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Traces carrier-thread pinning failure boundary, semaphore rate-limit vs thread-pool sizing trade-offs, and deadlock limits."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 16B D1-D7 rework of 20.13-java and 20-backend/INDEX.md)."
   },
   "20-backend/20.13-java/20.13.04-java-testing-junit-mockito.md": {
-   "sha256": "ac4265141e117349813dfd6fe7c7f9027e5816fe14da5edfb66c0fe8a982ec35",
+   "sha256": "7c315ef85eabce45924d49eb41e74097dfcc2b8bf42622d55bff317fb6a1d90b",
    "lines": 316,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against JUnit 6.0.3, Mockito 5.23.0, AssertJ, and Testcontainers 2.0.5 release sources.",
-    "readable": "Full read of 316 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "702 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 316 lines (703 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "703 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for JVM unit and container integration testing with no duplicate test theory.",
-    "fast": "44.2 KB raw / 8.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 44.2 KB raw / 8.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Highlights mock-drift failure boundary and unit-vs-container speed trade-offs."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 16B D1-D7 rework of 20.13-java and 20-backend/INDEX.md)."
   },
   "20-backend/20.13-java/20.13.05-spring-boot.md": {
-   "sha256": "1046e2fe4d4f1e4e4bd88a662a9cbaa27cbd7a018e099b54af91b717d422b48d",
+   "sha256": "2c6b54663fb30da0924949d90500c2ae48f0b9015465891729f3cb38e38aa775",
    "lines": 221,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Spring Boot 4.1.1 (Spring Framework 7.0, Jakarta EE 11, Hibernate 7) documentation.",
-    "readable": "Full read of 221 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1556 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 221 lines (1628 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1628 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for Spring Boot container lifecycle, proxy boundaries, and JPA transaction handling.",
-    "fast": "34.9 KB raw / 9.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 34.9 KB raw / 9.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Traces proxy self-invocation failure boundary, lazy-loading limits, and connection pool exhaustion trade-offs."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 16B D1-D7 rework of 20.13-java and 20-backend/INDEX.md)."
   },
   "20-backend/20.13-java/20.13.06-interview-questions.md": {
-   "sha256": "b48654c513b47913c9a87be938504b1cc77253ab30ce7807f492c709d87efa35",
+   "sha256": "6a0e32257e4e6003eac7d289ca9976f8c2e92bb1cda1aa35f5e9342d2379cebf",
    "lines": 149,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Java 21-27 (JEP 444, JEP 491) and Spring Boot 4.1.1 specifications.",
-    "readable": "Full read of 149 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "2540 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 149 lines (2598 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "2598 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical interview drill for 20.13-java distinct from REVISION.md recall prompts.",
-    "fast": "31.0 KB raw / 10.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 31.0 KB raw / 10.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Every answer states the runtime mechanism, failure boundary, and production trade-off."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 16B D1-D7 rework of 20.13-java and 20-backend/INDEX.md)."
   },
   "20-backend/20.13-java/INDEX.md": {
-   "sha256": "f34d6b7ccf8edb864d8232a94351cd46f8165b6ec9e3a2add2b6ff6f1993d594",
+   "sha256": "5fb8bf99d04c92304645fa8e2ed07539a8a909a331150d5aea0053e1cfbce35e",
    "lines": 57,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23: pins Java SE 27 / Java 21 LTS, JUnit 6.0.3, Mockito 5.23.0, Testcontainers 2.0.5, and Spring Boot 4.1.1.",
-    "readable": "Full read of 57 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "242 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 57 lines (254 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "254 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical index flow sequences language fundamentals -> OOP/SOLID -> concurrency -> testing -> Spring Boot -> revision -> interviews with no duplicate content.",
-    "fast": "12.1 KB raw / 4.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 12.1 KB raw / 4.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Clear trade-off and failure boundary links across Node.js and architecture stacks."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 16B D1-D7 rework of 20.13-java and 20-backend/INDEX.md)."
   },
   "20-backend/20.13-java/REVISION.md": {
-   "sha256": "48df1f66fc00d40cd4e566e4dd782a1d734189ed5e651dfd0a254f19719425b2",
-   "lines": 190,
+   "sha256": "988b124f6b9dfb798b2093610f1c5054a1b43a45f0c02f15841353fe07da6435",
+   "lines": 208,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Java 21-27, JUnit 6.0.3, and Spring Boot 4.1.1 chapters.",
-    "readable": "Full read of 190 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1443 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 208 lines (1635 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1635 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical revision companion for 20.13-java separate from the 28-question interview bank.",
-    "fast": "20.3 KB raw / 6.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 20.3 KB raw / 6.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Drills failure boundary conditions and design trade-offs across all 5 Java learning chapters."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 16B D1-D7 rework of 20.13-java and 20-backend/INDEX.md)."
   },
   "20-backend/20.2-nestjs/01-core-architecture/20.2.1.01-modules.md": {
    "sha256": "3f4f5b0207e129b3364224ca17c2bd21baa52678b1d3df6b87c7ea465be30958",
@@ -6587,20 +6587,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers)."
   },
   "20-backend/INDEX.md": {
-   "sha256": "20bebf4f513a98232d38d020ff82c531e6015e45d9be49eb5050dd0c473f9ba9",
+   "sha256": "0ffcb9aa1df619a6e4426969442fb168415916e259e2ab3387a01431af06795e",
    "lines": 122,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against live disk file counts restamped by check_counts.py and read_time.py; all 11 sub-stack links verified.",
-    "readable": "Full read of 122 lines (438 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "438 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 122 lines (445 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "445 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical Backend stack map; points at sub-stack INDEX files instead of duplicating sub-stack curricula.",
     "fast": "Measured 15.4 KB raw / 5.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Remaining limit is study-hour path estimates are rough guides and depend on each reader's prior backend background."
    },
-   "notes": "Synced live read-time and counts after Phase 16A D1-D7 rework of 20.12-ai-engineering."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 16B D1-D7 rework of 20.13-java and 20-backend/INDEX.md)."
   },
   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md": {
    "sha256": "065e2b7d573b2298550d061453667084b1d010e6fadf07f903f6fdd34a8e5185",

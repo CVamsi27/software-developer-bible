@@ -2627,12 +2627,12 @@
     },
     {
       "path": "20-backend/20.13-java/20.13.01-java-language-fundamentals.md",
-      "sha256": "9d1a11b50535e7c66d0191ef73072078ac62bb9da882faafdcf579c6ea1e7c3c",
+      "sha256": "6454405e739609677c340671dd62fffb1a8f96994c89cbf11ab9216e216216b4",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+      "notes": "Phase 16B D1-D7 rework of 20.13-java and 20-backend/INDEX.md C1-C8 refinement (2026-11-24): Full read of 662 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "2a75d51ec6a319d9a0d9408d8cd4b6ad9a56c71142a210db02793600506c4aeb",
@@ -2643,52 +2643,52 @@
     },
     {
       "path": "20-backend/20.13-java/20.13.02-java-oop-solid.md",
-      "sha256": "bba703f4269a79574b198c46cea7633be655488936f4c750334bab53a623b29b",
+      "sha256": "94b2a7748fd0bad9935a0cd30a5c8ad2341ac83f00beb7b48968c05b97a227fc",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+      "notes": "Phase 16B D1-D7 rework of 20.13-java and 20-backend/INDEX.md C1-C8 refinement (2026-11-24): Full read of 435 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
       "path": "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md",
-      "sha256": "411378b88032ff31389efd024535135a4eb14cb1afbb9f163ca2aba16c3efad5",
+      "sha256": "e4a0358102bb6ddaa895d974b59c56252a2e74a01de1d837b79587064d43207e",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+      "notes": "Phase 16B D1-D7 rework of 20.13-java and 20-backend/INDEX.md C1-C8 refinement (2026-11-24): Full read of 316 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
       "path": "20-backend/20.13-java/20.13.04-java-testing-junit-mockito.md",
-      "sha256": "ac4265141e117349813dfd6fe7c7f9027e5816fe14da5edfb66c0fe8a982ec35",
+      "sha256": "7c315ef85eabce45924d49eb41e74097dfcc2b8bf42622d55bff317fb6a1d90b",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+      "notes": "Phase 16B D1-D7 rework of 20.13-java and 20-backend/INDEX.md C1-C8 refinement (2026-11-24): Full read of 316 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
       "path": "20-backend/20.13-java/20.13.05-spring-boot.md",
-      "sha256": "1046e2fe4d4f1e4e4bd88a662a9cbaa27cbd7a018e099b54af91b717d422b48d",
+      "sha256": "2c6b54663fb30da0924949d90500c2ae48f0b9015465891729f3cb38e38aa775",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+      "notes": "Phase 16B D1-D7 rework of 20.13-java and 20-backend/INDEX.md C1-C8 refinement (2026-11-24): Full read of 221 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
       "path": "20-backend/20.13-java/20.13.06-interview-questions.md",
-      "sha256": "b48654c513b47913c9a87be938504b1cc77253ab30ce7807f492c709d87efa35",
+      "sha256": "6a0e32257e4e6003eac7d289ca9976f8c2e92bb1cda1aa35f5e9342d2379cebf",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+      "notes": "Phase 16B D1-D7 rework of 20.13-java and 20-backend/INDEX.md C1-C8 refinement (2026-11-24): Full read of 149 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "db47275804e76a3767e79bd461b94b34f590f1c6f4968d1994473e56a2b1fb5d",
@@ -2699,12 +2699,12 @@
     },
     {
       "path": "20-backend/20.13-java/INDEX.md",
-      "sha256": "f34d6b7ccf8edb864d8232a94351cd46f8165b6ec9e3a2add2b6ff6f1993d594",
+      "sha256": "5fb8bf99d04c92304645fa8e2ed07539a8a909a331150d5aea0053e1cfbce35e",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+      "notes": "Phase 16B D1-D7 rework of 20.13-java and 20-backend/INDEX.md C1-C8 refinement (2026-11-24): Full read of 57 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "fa9455aff670fd0876aade82489fd707a8ab9cdb27dcb5eae1b6e42819411836",
@@ -2715,12 +2715,12 @@
     },
     {
       "path": "20-backend/20.13-java/REVISION.md",
-      "sha256": "48df1f66fc00d40cd4e566e4dd782a1d734189ed5e651dfd0a254f19719425b2",
+      "sha256": "988b124f6b9dfb798b2093610f1c5054a1b43a45f0c02f15841353fe07da6435",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+      "notes": "Phase 16B D1-D7 rework of 20.13-java and 20-backend/INDEX.md C1-C8 refinement (2026-11-24): Full read of 208 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
@@ -4764,12 +4764,12 @@
     },
     {
       "path": "20-backend/INDEX.md",
-      "sha256": "20bebf4f513a98232d38d020ff82c531e6015e45d9be49eb5050dd0c473f9ba9",
+      "sha256": "0ffcb9aa1df619a6e4426969442fb168415916e259e2ab3387a01431af06795e",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 16A D1-D7 rework of 20.12-ai-engineering count/read-time sync (2026-11-24): Full read of 122 lines. Updated generated counts/read-time navigation after Phase 16A D1-D7 rework of 20.12-ai-engineering.",
+      "notes": "Phase 16B D1-D7 rework of 20.13-java and 20-backend/INDEX.md C1-C8 refinement (2026-11-24): Full read of 122 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "ab7ced08ffe012474a86db7f5ff38398ca691458b124ed67f5bf5a2780894865",

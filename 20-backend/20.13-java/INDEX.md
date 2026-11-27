@@ -7,7 +7,7 @@
 [![Category](https://img.shields.io/badge/category-Backend-blue)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why Java here:** the shared stacks cover the web-engineering topics (JS/TS frontend, Node/Nest backend, databases, infra). Java is a first-class backend language in the EU market and the interview language of the SDE/FAANG lane — its language and ecosystem knowledge is generic, so it lives in the stack, not in any single lane.
+**Why Java here:** the shared stacks cover the web-engineering topics (JS and TS frontend, Node and Nest backend, databases, infra). Java is a first-class backend language in the EU market and the interview language of the SDE and FAANG lane — its language and ecosystem knowledge is generic, so it lives in the stack, not in any single lane.
 
 ---
 
@@ -35,22 +35,22 @@
 
 - [Backend Index](../INDEX.md) — Node.js and NestJS backend stacks that provide architectural equivalents to JVM services
 - [Design Patterns](../../30-architecture/30.1-design-patterns/INDEX.md) — Gang of Four design patterns whose canonical textbook implementations are in Java
-- [Testing — Quality](../../50-quality/50.1-testing/INDEX.md) — unit, integration, and mocking strategies comparing JUnit/Mockito with Jest/Vitest
+- [Testing — Quality](../../50-quality/50.1-testing/INDEX.md) — unit, integration, and mocking strategies comparing JUnit and Mockito with Jest and Vitest
 - [Coding Patterns — Interview Toolkit](../../70-interview-toolkit/70.2-coding-patterns/INDEX.md) — algorithmic patterns for the data structures coding portion of enterprise Java loops
 
 ---
 
 ## Docita Anchor
 
-These [Docita](https://github.com/CVamsi27/docita) TypeScript/NestJS pointers offer conceptual comparisons. Inspect current implementation and deployment evidence before claiming behavior or the absence of Java code:
+These [Docita](https://github.com/CVamsi27/docita) TypeScript and NestJS pointers offer conceptual comparisons. Inspect current implementation and deployment evidence before claiming behavior or the absence of Java code:
 
 | Java chapter | Closest docita concept |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| DI / Spring container | NestJS modules + providers - `apps/api/src/app.module.ts`, `apps/api/src/domains/clinical/clinical.module.ts` |
-| MVC controllers / filter chain | NestJS controllers, guards, pipes - `apps/api/src/domains/clinical/presentation/controllers/`, `shared/modules/auth/guards/` |
-| Concurrency & multithreading | Node's single-thread event loop + process separation - `apps/worker/src/main.ts`, `shared/modules/queue/postgres-queue.service.ts` (background job separation is the architectural goal; inspect actual CPU/I/O behavior) |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| DI and Spring container | NestJS modules + providers - `apps/api/src/app.module.ts`, `apps/api/src/domains/clinical/clinical.module.ts` |
+| MVC controllers and filter chain | NestJS controllers, guards, pipes - `apps/api/src/domains/clinical/presentation/controllers/`, `shared/modules/auth/guards/` |
+| Concurrency & multithreading | Node's single-thread event loop + process separation - `apps/worker/src/main.ts`, `shared/modules/queue/postgres-queue.service.ts` (background job separation is the architectural goal; inspect actual CPU and I/O behavior) |
 | JUnit & Mockito testing | Colocated Vitest specs (`*.spec.ts`) - e.g. `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.spec.ts` |
-| Actuator / ops | `apps/api/src/shared/modules/monitoring/` + `apps/api/src/instrument.ts` (Sentry) - health, metrics, and tracing analogues |
+| Actuator and ops | `apps/api/src/shared/modules/monitoring/` + `apps/api/src/instrument.ts` (Sentry) - health, metrics, and tracing analogues |
 
 ---
 

@@ -70,7 +70,7 @@ Source: [OOP and SOLID](20.13.02-java-oop-solid.md)
 
 **A:** No. Injection supplies an object. Inversion also requires that high-level policy own the abstraction and that lower-level details implement it; injecting a concrete infrastructure class leaves the dependency direction unchanged.
 
-**Q:** When does an Open/Closed Principle (OCP) extension point help rather than add unnecessary indirection?
+**Q:** When does an Open-Closed Principle (OCP) extension point help rather than add unnecessary indirection?
 
 **A:** When a real, repeated variation is expected and the new behavior satisfies a stable contract. Keep a workflow unchanged only when new implementations fit that contract; otherwise revise the abstraction rather than stacking flags or conditionals around it.
 
@@ -92,7 +92,7 @@ Source: [Concurrency](20.13.03-java-concurrency-multithreading.md)
 
 **Q:** Why can `LongAdder` statistics exceed what a capacity admission check can safely use?
 
-**A:** Its sum is not an atomic snapshot across concurrent updates. Use an atomic check/update, lock or semaphore when the decision must reserve bounded capacity.
+**A:** Its sum is not an atomic snapshot across concurrent updates. Use an atomic check-and-update, lock or semaphore when the decision must reserve bounded capacity.
 
 **Q:** If timed `tryLock` returns `false`, should `finally` unlock anyway?
 
@@ -164,11 +164,29 @@ Source: [Language trace](20.13.01-java-language-fundamentals.md#trace-references
 
 **Q:** A repository test flushes then reads the same `id` without clearing its entity manager. What could the assertion miss?
 
-**A:** It can receive the same managed entity instead of reading the persisted row. Clear before the lookup and separately test transaction/concurrency behavior.
+**A:** It can receive the same managed entity instead of reading the persisted row. Clear before the lookup and separately test transaction and concurrency behavior.
 
 **Q:** A singleton service stores a request's tenant in a field. Can constructor injection make that safe?
 
 **A:** No. Concurrent requests share the bean. Pass trusted request state explicitly and keep transaction-scoped access on the correct connection.
+
+Source: [Language Fundamentals](20.13.01-java-language-fundamentals.md)
+
+**Q:** Why can setting `-Xmx` equal to a Linux container's memory limit still cause out-of-memory kills, and which JVM budgets live outside the heap?
+
+**A:** Metaspace, JIT code cache, thread stacks, and direct off-heap buffers consume resident memory outside `-Xmx`. Sizing the heap via `-XX:MaxRAMPercentage` to leave roughly 25–30% native headroom prevents container OOM kills during off-heap allocation spikes.
+
+Source: [Concurrency](20.13.03-java-concurrency-multithreading.md)
+
+**Q:** Why is `ScopedValue` (Java 25, JEP 506) preferred over `ThreadLocal` when passing request context across large numbers of virtual threads?
+
+**A:** Mutable `ThreadLocal` storage scales memory per virtual thread and risks state leakage if pooled threads miss `remove()`. `ScopedValue` binds immutable values strictly to a lexical dynamic scope and unbinds automatically when that scope exits.
+
+Source: [Spring Boot](20.13.05-spring-boot.md)
+
+**Q:** How can slow downstream HTTP calls or nested `Propagation.REQUIRES_NEW` calls inside a `@Transactional` method stall a Spring Boot service?
+
+**A:** `@Transactional` holds a HikariCP connection open for the whole method execution, so blocking network calls exhaust the pool under concurrency. `Propagation.REQUIRES_NEW` borrows a second connection while keeping the outer connection checked out, which can self-deadlock the entire pool when all threads wait for a second connection.
 
 ## Summary
 

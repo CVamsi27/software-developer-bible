@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "1833cd0f8f9284abfde2464428208e269c4c65d7a6da422f05fceac3e65efcd4",
+ "corpus_digest": "d137899b02428496d41f0527d76055d85e8caeb4edce723ca8c32a2d071bd0c9",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5618
+  "read_minutes": 5619
  },
  "chapters": [
   {
@@ -6750,7 +6750,7 @@
     "guide",
     "reference"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "60-realtime/60.1-websockets/02-architecture-and-scaling/REVISION.html",

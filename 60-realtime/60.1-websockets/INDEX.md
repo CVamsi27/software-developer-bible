@@ -1,6 +1,6 @@
 # WebSockets — Index
 
-> **Study time:** ≈ 1 h 58 m of reading (14 files, ~8 min average).
+> **Study time:** ≈ 1 h 59 m of reading (14 files, ~8 min average).
 > **14 files across 4 categories.** Real-time communication from WebSocket fundamentals and Socket.IO to Server-Sent Events (SSE), real-time architecture, NestJS WebSockets, GraphQL subscriptions, Web Real-Time Communication (WebRTC) peer-to-peer, testing real-time systems, WebTransport, scaling patterns, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
@@ -55,7 +55,7 @@ The hard part — making it work at scale.
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Real-Time Architecture](02-architecture-and-scaling/60.1.2.01-real-time-architecture.md) | Publish-subscribe (pub-sub), message brokers, scaling WebSockets, state sync, presence | Important | Specialized | 8 min |
-| 02 | [Scaling Patterns](02-architecture-and-scaling/60.1.2.02-scaling-patterns.md) | Sticky sessions, Redis adapter, sharding, edge platforms (Cloudflare Durable Objects) | Important | Specialized | 8 min |
+| 02 | [Scaling Patterns](02-architecture-and-scaling/60.1.2.02-scaling-patterns.md) | Sticky sessions, Redis adapter, sharding, edge platforms (Cloudflare Durable Objects) | Important | Specialized | 9 min |
 
 ---
 

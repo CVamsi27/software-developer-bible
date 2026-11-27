@@ -72,7 +72,7 @@ Source: [Scaling WebSockets](60.1.2.02-scaling-patterns.md)
 
 **Q:** What must survive when reconnect reaches a different gateway?
 
-**A:** Verified identity and current permissions, durable business state, and the history or snapshot needed by recovery. An old process’s live socket cannot be transferred by changing a registry entry.
+**A:** Verified identity and current permissions, durable business state, and the history or snapshot needed by recovery. An old process's live socket cannot be transferred by changing a registry entry.
 
 **Q:** Why can scale-out fail to help a hot auction?
 
@@ -81,6 +81,10 @@ Source: [Scaling WebSockets](60.1.2.02-scaling-patterns.md)
 **Q:** Does an authorized Socket.IO room make a shared Redis adapter channel safe for untrusted publishers?
 
 **A:** No. The adapter trusts its internal Pub-Sub messages. Protect Redis access and command and channel permissions; a publisher to adapter channels can inject traffic outside the client handler's room checks.
+
+**Q:** Why can restarting one heavily loaded WebSocket gateway knock over healthy peer gateways, and how do staggered drains and full-jitter backoff prevent the cascade?
+
+**A:** Dropping tens of thousands of sockets at once forces simultaneous TLS handshakes, authentication checks, and initial snapshot queries onto the surviving nodes at multiples of steady-state load. Closing sockets in staggered waves during rolling deploys, applying client full-jitter exponential backoff (`random(0, min(cap, base * 2^attempt))`), and rate-limiting reconnect handshakes and snapshot fetches spread recovery across time instead of collapsing the fleet.
 
 ## Summary
 

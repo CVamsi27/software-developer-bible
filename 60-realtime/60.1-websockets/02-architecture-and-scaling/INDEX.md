@@ -1,6 +1,6 @@
 # Architecture & Scaling
 
-> **Study time:** ≈ 18 min of reading (3 files, ~6 min average).
+> **Study time:** ≈ 19 min of reading (3 files, ~6 min average).
 > **3 files.** Real-time system design: publish-subscribe (pub-sub) topologies, presence, state sync — then the concrete scaling patterns (sticky sessions, Redis adapter, sharding) that keep connections alive past one node.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
@@ -20,7 +20,7 @@ Start with a durable change and trace how an authorized client learns about it. 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Real-Time Architecture](60.1.2.01-real-time-architecture.md) | Publish-subscribe (pub-sub), message brokers, scaling WebSockets, state sync, presence | Important | Specialized | 8 min |
-| 02 | [Scaling Patterns](60.1.2.02-scaling-patterns.md) | Sticky sessions, Redis adapter, sharding, edge platforms (Cloudflare Durable Objects) | Important | Specialized | 8 min |
+| 02 | [Scaling Patterns](60.1.2.02-scaling-patterns.md) | Sticky sessions, Redis adapter, sharding, edge platforms (Cloudflare Durable Objects) | Important | Specialized | 9 min |
 
 ---
 
@@ -30,7 +30,7 @@ Start with a durable change and trace how an authorized client learns about it. 
 2. **Fleet behavior:** read scaling patterns and trace one room across two gateways. Explain polling affinity, recovery on another node, slow-client policy, and failure headroom.
 3. **Revision:** complete the [source-linked revision questions](REVISION.md), then move to framework implementation and interview practice.
 
-A cross-node audience needs routing that reaches its owning gateways. A broker or adapter is one implementation; an explicit inter-gateway routing service is another. Choose from workload and failure requirements rather than an “always use Redis” rule.
+A cross-node audience needs routing that reaches its owning gateways. A broker or adapter is one implementation; an explicit inter-gateway routing service is another. Choose from workload and failure requirements rather than an "always use Redis" rule.
 
 ---
 

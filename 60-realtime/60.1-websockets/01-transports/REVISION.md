@@ -54,6 +54,10 @@ Source: [Server-Sent Events (SSE)](60.1.1.02-server-sent-events.md)
 
 **A:** No. It is a transport replay cursor. Handler validation, application processing, and durable acknowledgment are separate. The display validates and applies before updating its own deduplication cursor.
 
+**Q:** Why can opening six browser tabs on an HTTP/1.1 SSE origin stall ordinary `fetch` requests in another tab, and how do teams prevent it?
+
+**A:** Browsers typically cap HTTP/1.1 at six concurrent TCP connections per origin shared across all tabs. Six persistent `EventSource` streams occupy every slot and block other requests; serve SSE over HTTP/2 so streams multiplex over one connection (bounded by `SETTINGS_MAX_CONCURRENT_STREAMS`), or share a single stream across tabs using a `SharedWorker` or `BroadcastChannel`.
+
 ## Socket.IO
 
 Source: [Socket.IO](60.1.1.03-socket-io.md)
@@ -88,7 +92,7 @@ Source: [WebTransport](60.1.1.04-webtransport.md)
 
 **Q:** Why can a reliable stream return half a JavaScript Object Notation (JSON) record in one read?
 
-**A:** It preserves an ordered byte sequence, not the sender’s write boundaries. Buffer and decode incrementally until the application’s bounded framing rule identifies a complete record.
+**A:** It preserves an ordered byte sequence, not the sender's write boundaries. Buffer and decode incrementally until the application's bounded framing rule identifies a complete record.
 
 **Q:** Does QUIC migration cause `transport.ready` to fire again?
 
@@ -112,7 +116,7 @@ Source: [Socket.IO](60.1.1.03-socket-io.md)
 
 **Q:** Why does Eve fail a room join even though her fixture token is valid?
 
-**A:** Authentication identifies Eve. Room authorization separately checks the verified account’s allowed rooms before joining or returning history.
+**A:** Authentication identifies Eve. Room authorization separately checks the verified account's allowed rooms before joining or returning history.
 
 **Q:** The same command ID is sent with changed text. Why does the fixture reject it?
 

@@ -12267,20 +12267,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 6 60-realtime and 00-strategy)."
   },
   "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.md": {
-   "sha256": "f4ceb3c353e50bdbafa908a866763808772383effbabe36a7274932cf82d61bf",
-   "lines": 236,
+   "sha256": "a1767c5e24e50cbf324227fbcf344cf979b163064858cc807dcf96b0f7dec968",
+   "lines": 238,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The event-stream format and EventSource reconnection were checked against the WHATWG HTML specification; Docita's AI controller was verified to emit delta/done/error events.",
-    "readable": "Full read of 236 lines (924 prose words) one progress scenario opens, then wire format, replay server, reconnection and production limits.",
-    "concise": "924 words across 236 lines. the replay server example carries the mechanism and the prose stays on stream semantics.",
+    "readable": "Full read of 238 lines (1016 prose words) one progress scenario opens, then wire format, replay server, reconnection and production limits.",
+    "concise": "1016 words across 238 lines. the replay server example carries the mechanism and the prose stays on stream semantics.",
     "focused": "SSE framing and reconnection are owned here; WebSocket comparison points at the overview instead of repeating framing.",
-    "fast": "Measured 46.3 KB raw / 8.9 KB gzip (the shared Jekyll shell is included.)",
+    "fast": "Measured 46.3 KB raw / 8.9 KB gzip. (the shared Jekyll shell is included.)",
     "best": "EventSource cannot send custom authorization headers, and Last-Event-ID replay is server-owned; the chapter states both limits."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 6 60-realtime and 00-strategy)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22B: 60-realtime (20 files))."
   },
   "60-realtime/60.1-websockets/01-transports/60.1.1.03-socket-io.md": {
    "sha256": "df40e92faabc1972751cfb9a3fa28ec059627fa0373c6de89b2954cbf0debacb",
@@ -12299,7 +12299,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 6 60-realtime and 00-strategy)."
   },
   "60-realtime/60.1-websockets/01-transports/60.1.1.04-webtransport.md": {
-   "sha256": "05c55b9057b6d444c8fc315fcf08bf67670f8d2f38dd7c8c215838726c0cb27d",
+   "sha256": "ff319bff82d0108b5f0001a14859d168a441e8946b261b412b1a582c52c147a6",
    "lines": 157,
    "genre": "chapter",
    "status": "read",
@@ -12309,10 +12309,10 @@
     "readable": "Full read of 157 lines (1318 prose words) a game scenario separates reliable chat from stale position, then streams, datagrams, closure and selection.",
     "concise": "1318 words across 157 lines. 1,288 words; the two delivery examples carry the mechanism and prose explains when each applies.",
     "focused": "WebTransport stream and datagram semantics are owned here; QUIC background is bounded to what the choice needs.",
-    "fast": "Measured 28.9 KB raw / 8.2 KB gzip (the shared Jekyll shell is included.)",
+    "fast": "Measured 28.9 KB raw / 8.2 KB gzip. (the shared Jekyll shell is included.)",
     "best": "You cannot assume browser or HTTP/3 server support, datagrams are unreliable and unordered, and the chapter says to verify both ends."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 6 60-realtime and 00-strategy)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22B: 60-realtime (20 files))."
   },
   "60-realtime/60.1-websockets/01-transports/INDEX.md": {
    "sha256": "2f49564c84734c8c15679151f570232104b55f58208bb565ad2b812a0cb3b8de",
@@ -12331,23 +12331,23 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 6 60-realtime and 00-strategy)."
   },
   "60-realtime/60.1-websockets/01-transports/REVISION.md": {
-   "sha256": "05743f81abe197574d41d8207383d013a35687c2f2d3adccfcecaf743372010c",
-   "lines": 139,
+   "sha256": "5f6b6072bf926985910885afc796467443ad7114a3a4ca95d7904e42d9f71af5",
+   "lines": 143,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "No version-sensitive API; the acknowledgment prompts were checked against the chapter's local-progress versus durable-business distinction.",
-    "readable": "Full read of 139 lines (1111 prose words) prompts follow chapter order and each answer names a mechanism before a failure case.",
-    "concise": "1111 words across 139 lines. 1,090 words; the five groups reuse chapter scenarios without copying their code.",
+    "readable": "Full read of 143 lines (1188 prose words) prompts follow chapter order and each answer names a mechanism before a failure case.",
+    "concise": "1188 words across 143 lines. 1,090 words; the five groups reuse chapter scenarios without copying their code.",
     "focused": "Revision companion only; every group points at its source chapter and adds no new teaching.",
-    "fast": "Measured 15.8 KB raw / 5.4 KB gzip (the shared Jekyll shell is included.)",
+    "fast": "Measured 15.8 KB raw / 5.4 KB gzip. (the shared Jekyll shell is included.)",
     "best": "Retrieval practice cannot replace the chapter read; the opening says to close the chapters first and return when reasoning is incomplete."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 6 60-realtime and 00-strategy)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22B: 60-realtime (20 files))."
   },
   "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.01-real-time-architecture.md": {
-   "sha256": "577c0d4c9c5c0a8daeed76521e3f225fe5f4cfb6ceae151387e8ce24d92219bd",
+   "sha256": "3bb350567fb011848219054e60ed2c57f4950a0bc26b81dbaf5093be380da4b7",
    "lines": 133,
    "genre": "chapter",
    "status": "read",
@@ -12357,29 +12357,29 @@
     "readable": "Full read of 133 lines (1358 prose words) a booking-screen scenario opens, then event path, topology, commit order, semantics, patterns and load testing.",
     "concise": "1358 words across 133 lines. 1,335 words; the booking trace carries the failure case and the patterns are compared in one table.",
     "focused": "Commit and publication ordering are owned here; sticky sessions and adapters stay in the scaling chapter.",
-    "fast": "Measured 21.3 KB raw / 7.8 KB gzip (the shared Jekyll shell is included.)",
+    "fast": "Measured 21.3 KB raw / 7.8 KB gzip. (the shared Jekyll shell is included.)",
     "best": "A notification sent after commit can still be lost or duplicated, so a push cannot guarantee the client's state; the chapter requires a read path or replay."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 6 60-realtime and 00-strategy)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22B: 60-realtime (20 files))."
   },
   "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.md": {
-   "sha256": "96aa3db35115b63c5bb70fedaa8577334b341fe2b8b8e59de4a2bcd673adf6cf",
-   "lines": 152,
+   "sha256": "d9e95141d009386385f87ce76cf2657c1d44da6716305a3037fd89c006dd3b95",
+   "lines": 154,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Sticky sessions, the Redis adapter and sharding were checked against Socket.IO 4.8.4 documentation and the architecture chapter's boundary.",
-    "readable": "Full read of 152 lines (1316 prose words) one cross-gateway room trace opens, then routing, bridging, strategy, capacity and failure.",
-    "concise": "1316 words across 152 lines. 1,293 words; the two-gateway trace carries the fan-out problem and the strategy table carries the trade-offs.",
+    "readable": "Full read of 154 lines (1409 prose words) one cross-gateway room trace opens, then routing, bridging, strategy, capacity and failure.",
+    "concise": "1409 words across 154 lines. 1,293 words; the two-gateway trace carries the fan-out problem and the strategy table carries the trade-offs.",
     "focused": "Connection routing and fan-out are owned here; commit ordering stays with the architecture chapter.",
-    "fast": "Measured 25.0 KB raw / 7.9 KB gzip (the shared Jekyll shell is included.)",
+    "fast": "Measured 25.0 KB raw / 7.9 KB gzip. (the shared Jekyll shell is included.)",
     "best": "Sticky sessions and a Redis adapter raise capacity but do not remove the publish bottleneck; the chapter says to measure and plan failure."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 6 60-realtime and 00-strategy)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22B: 60-realtime (20 files))."
   },
   "60-realtime/60.1-websockets/02-architecture-and-scaling/INDEX.md": {
-   "sha256": "682d74a4d490db90dba4bfcf0edc2d555073faa49056085d43d0e5190c529bf0",
+   "sha256": "bc976d40ac9f66ecfdf05455e7c49fcd1077a6c7288f26cf6a24568ed70d4d92",
    "lines": 63,
    "genre": "index",
    "status": "read",
@@ -12389,26 +12389,26 @@
     "readable": "Full read of 63 lines (225 prose words) the hard-part framing precedes the two-chapter table.",
     "concise": "225 words across 63 lines. one scenario paragraph and a two-row table carry the section.",
     "focused": "Scaling mechanics are owned by the two chapters; this index only explains why commit-to-recovery is the hard path.",
-    "fast": "Measured 11.1 KB raw / 3.8 KB gzip (the shared Jekyll shell is included.)",
+    "fast": "Measured 11.1 KB raw / 3.8 KB gzip. (the shared Jekyll shell is included.)",
     "best": "A single-node demonstration does not establish a universal capacity limit; the page says to measure the real workload."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 6 60-realtime and 00-strategy)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22B: 60-realtime (20 files))."
   },
   "60-realtime/60.1-websockets/02-architecture-and-scaling/REVISION.md": {
-   "sha256": "d2e1e98b2f58be6ed76c792051e816a1c3adf16f2102dce9abaf12c52da2f8dd",
-   "lines": 95,
+   "sha256": "60c75663fa8dec2b14c240d8a47bd4fe65bdb5796895777b08b455a442ff72bc",
+   "lines": 99,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "No versioned claim; the commit/publish/recover prompts were checked against the ordering in the architecture chapter.",
-    "readable": "Full read of 95 lines (649 prose words) three source groups then two cross-cutting groups on commit order and fleet boundaries.",
-    "concise": "649 words across 95 lines. questions are fresh-worded and answers avoid repeating the chapter examples.",
+    "readable": "Full read of 99 lines (736 prose words) three source groups then two cross-cutting groups on commit order and fleet boundaries.",
+    "concise": "736 words across 99 lines. questions are fresh-worded and answers avoid repeating the chapter examples.",
     "focused": "Revision companion; it points at the two learning chapters and keeps the capacity boundary in one place.",
-    "fast": "Measured 12.2 KB raw / 4.3 KB gzip (the shared Jekyll shell is included.)",
+    "fast": "Measured 12.2 KB raw / 4.3 KB gzip. (the shared Jekyll shell is included.)",
     "best": "Prompts cannot prove production capacity; the fleet group asks for a measured workload and names the single-replica limit."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 6 60-realtime and 00-strategy)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22B: 60-realtime (20 files))."
   },
   "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md": {
    "sha256": "54f4609a348ead60c638593f3a3976b395bb0c99c45ca3139ef29b41136c36bd",
@@ -12539,7 +12539,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 6 60-realtime and 00-strategy)."
   },
   "60-realtime/60.1-websockets/INDEX.md": {
-   "sha256": "fadd11df435b4d339afca3a28cbe0aa03ec244f3d46fe164b8c5886c6302c4db",
+   "sha256": "dbe29fd94fa085f3f1a7930c9fe850b3ada0237168504b82c46e705f7aab7d1f",
    "lines": 118,
    "genre": "index",
    "status": "read",
@@ -12549,13 +12549,13 @@
     "readable": "Full read of 118 lines (248 prose words) four categories appear in study order, each with a purpose, priority and time.",
     "concise": "248 words across 118 lines. the category table plus one short why-real-time paragraph replace per-chapter summaries.",
     "focused": "Canonical section flow; chapters are linked and the 11+3 count note prevents double-counting revision companions.",
-    "fast": "Measured 16.5 KB raw / 4.7 KB gzip (the shared Jekyll shell is included.)",
+    "fast": "Measured 16.5 KB raw / 4.7 KB gzip. (the shared Jekyll shell is included.)",
     "best": "The table counts learning chapters only; the note states the three REVISION files bring the total to 14, and a navigation index does not count toward it."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 6 60-realtime and 00-strategy)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22B: 60-realtime (20 files))."
   },
   "60-realtime/INDEX.md": {
-   "sha256": "91797b23bd0e53bfeea53ca0b5af7975f2766f39ce9d5d442a8a280c3796b6ce",
+   "sha256": "cef362b063ee8e89398a3a6a76b53c76bde5076147c97d058e46f4ac1e860f81",
    "lines": 119,
    "genre": "index",
    "status": "read",
@@ -12565,10 +12565,10 @@
     "readable": "Full read of 119 lines (319 prose words) the three passes (protocols, implementation, architecture) precede the category table and study notes.",
     "concise": "319 words across 119 lines. the three-pass overview and one table carry the whole section map.",
     "focused": "Section navigation only; each protocol and scaling mechanism is owned by its chapter and not retold.",
-    "fast": "Measured 17.3 KB raw / 5.0 KB gzip (the shared Jekyll shell is included.)",
+    "fast": "Measured 17.3 KB raw / 5.0 KB gzip. (the shared Jekyll shell is included.)",
     "best": "The stack is optional and the page does not claim it is required for every role; the note separates 11 chapters from 3 revision companions, and a category index is not counted."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 6 60-realtime and 00-strategy)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 22B: 60-realtime (20 files))."
   },
   "70-interview-toolkit/70.1-behavioral/70.1.01-stakeholder-management-stories.md": {
    "sha256": "1a7bcc981924be880ceae55b520498bdc9b5eaccb120ea7789cb64643504aab6",
@@ -14395,7 +14395,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "c5f9b8a458d25dcc088c0977a96a2dcc14944613b4b6391bef5879317f614000",
+   "sha256": "29450e2f2651fafa8a95b29144a13e4a96d709a1d81c4fef9fb9498fa9107755",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14408,7 +14408,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 22A: 50-quality (64 files)."
+   "notes": "Synced live read-time and counts after Phase 22B: 60-realtime (20 files)."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14699,7 +14699,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "34ea561525583f90b932363cb2139e9aea077f4980529cab1288e3d47a14b915",
+   "sha256": "e2d7d24913de3fa07eec0f95bdf8a4b7ccd1535ae01bc52a762bfbde603870c0",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14712,7 +14712,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 22A: 50-quality (64 files)."
+   "notes": "Synced live read-time and counts after Phase 22B: 60-realtime (20 files)."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

@@ -1,6 +1,6 @@
 # Real-Time Stack
 
-> **Study time:** ≈ 1 h 58 m of reading (14 files, ~8 min average).
+> **Study time:** ≈ 1 h 59 m of reading (14 files, ~8 min average).
 > **WebSockets, Server-Sent Events (SSE), real-time architecture** — optional stack, study when a job description (JD) demands it. Shared by both lanes.
 >
 > Study in three passes: **I. Protocols** (which transport, and why) → **II. Implementation** (Socket.IO, NestJS gateways) → **III. Architecture at scale** (fan-out, sticky sessions, publish-subscribe (pub-sub) backbones).
@@ -73,7 +73,7 @@ Reading estimates do not include reproducing examples or interview rehearsal. Pr
 | Order | File | Topics | Role priority | General importance | Read time |
 | ----: | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------- | ------------------ | --------: |
 | 8 | [Real-Time Architecture](60.1-websockets/02-architecture-and-scaling/60.1.2.01-real-time-architecture.md) | Transport decision tree, presence, delivery guarantees | Important | Specialized | 8 min |
-| 9 | [Scaling Patterns](60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.md) | Sticky sessions, Redis adapter, pub-sub backbone, connection limits | Important | Specialized | 8 min |
+| 9 | [Scaling Patterns](60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.md) | Sticky sessions, Redis adapter, pub-sub backbone, connection limits | Important | Specialized | 9 min |
 
 ## Testing & Drills
 

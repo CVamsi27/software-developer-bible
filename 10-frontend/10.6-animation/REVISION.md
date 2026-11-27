@@ -16,7 +16,7 @@ Source: [CSS Animations](10.6.01-css-animations.md)
 
 **Q:** Why are `transform` and `opacity` preferred rather than guaranteed to be free?
 
-**A:** They are often eligible for compositing without layout or paint, but layer size, rasterization and browser decisions still matter. Verify the actual animation.
+**A:** They are often eligible for compositing without layout or paint, but layer size, rasterization, and browser decisions still matter. Verify the actual animation.
 
 **Q:** Why is replacing an animated `width` with `scale` sometimes incorrect?
 
@@ -28,7 +28,11 @@ Source: [CSS Animations](10.6.01-css-animations.md)
 
 **Q:** Does a reduced-motion media query replace a stop control for an endless automatic effect?
 
-**A:** No. The preference and pause/stop/hide conditions are separate. When automatic movement continues beyond five seconds beside other content, provide a user control unless that movement is essential.
+**A:** No. The preference and pause, stop, and hide conditions are separate. When automatic movement continues beyond five seconds beside other content, provide a user control unless that movement is essential.
+
+**Q:** How do `@starting-style` and `transition-behavior: allow-discrete` change animating an element from `display: none`?
+
+**A:** `@starting-style` defines initial before-change styles on the element's first render so entry transitions have a start state, while `transition-behavior: allow-discrete` delays flipping `display` to `none` until exit transitions finish.
 
 ## Motion for React
 
@@ -38,9 +42,13 @@ Source: [Motion for React](10.6.02-framer-motion.md)
 
 **A:** React normally removes an unmounted element immediately. Presence management keeps it available for its exit phase before completing removal.
 
-**Q:** What does Motion for React’s reduced-motion hook report, and which effects does `MotionConfig` change?
+**Q:** What does Motion for React's reduced-motion hook report, and which effects does `MotionConfig` change?
 
-**A:** `MotionConfig` can disable transform and layout animation while leaving opacity in place; CSS, video and Canvas motion need their own policy. Verify live updates against the installed package: in the Motion 14.x line the hook snapshots its initial preference and does not rerender for a media-query change. The chapter uses an owned subscription when changes must apply without remounting.
+**A:** `MotionConfig` can disable transform and layout animation while leaving opacity in place; CSS, video, and Canvas motion need their own policy. Verify live updates against the installed package: in the Motion 14.x line the hook snapshots its initial preference and does not rerender for a media-query change. The chapter uses an owned subscription when changes must apply without remounting.
+
+**Q:** When should you choose `AnimatePresence mode="popLayout"` over `mode="wait"`, and how does `<LazyMotion strict>` protect bundle size?
+
+**A:** `mode="popLayout"` removes an exiting child from document flow immediately so `layout` siblings shift into place right away, whereas `mode="wait"` blocks the replacement from mounting until exit finishes. `<LazyMotion features={domAnimation} strict>` loads a smaller feature subset for `m.*` components and warns in development if an eager `motion.*` import slips in.
 
 ## GSAP (GreenSock Animation Platform)
 
@@ -52,7 +60,7 @@ Source: [GSAP (GreenSock Animation Platform)](10.6.03-gsap.md)
 
 **Q:** Does `lazy: true` defer a ScrollTrigger animation until it enters the viewport?
 
-**A:** No. Tween lazy rendering batches initial writes within a ticker update. ScrollTrigger controls playback through its trigger/start configuration; it has no equivalent `lazy` offscreen-loading setting.
+**A:** No. Tween lazy rendering batches initial writes within a ticker update. ScrollTrigger controls playback through its trigger and start configuration; it has no equivalent `lazy` offscreen-loading setting.
 
 **Q:** Why can `immediateRender: false` make a delayed entrance flash?
 
@@ -68,7 +76,7 @@ Source: [React Spring](10.6.04-react-spring.md)
 
 **Q:** How does a spring's target differ from a fixed-duration tween?
 
-**A:** A spring evolves from its physical/configured state toward the target; tension, friction and mass shape settling behavior rather than one predetermined duration.
+**A:** A spring evolves from its physical or configured state toward the target; tension, friction, and mass shape settling behavior rather than one predetermined duration.
 
 **Q:** Why should React Spring's reduced-motion utility usually live near the app root?
 
@@ -88,11 +96,11 @@ Source: [View Transitions API & CSS Scroll-Driven Animations](10.6.06-view-trans
 
 **Q:** Why can reusing one `view-transition-name` on every card break a transition?
 
-**A:** Captured visible elements need unique names. Assign a shared transition identity only to the selected old/new pair and preserve a visible fallback when unsupported.
+**A:** Captured visible elements need unique names. Assign a shared transition identity only to the selected old and new pair and preserve a visible fallback when unsupported.
 
-**Q:** Why disable old/new snapshot animations as well as the view-transition group?
+**Q:** Why disable old and new snapshot animations as well as the view-transition group?
 
-**A:** A custom duration on an old/new pseudo-element can keep its fade active even when the group has no animation. Apply the reduced-motion override to all three kinds of pseudo-element.
+**A:** A custom duration on an old and new pseudo-element can keep its fade active even when the group has no animation. Apply the reduced-motion override to all three kinds of pseudo-element.
 
 ## Canvas & SVG Animation
 
@@ -100,11 +108,15 @@ Source: [Canvas & SVG Animation](10.6.07-canvas-svg-animation.md)
 
 **Q:** Why should canvas resolution differ from CSS size on a high-DPI display?
 
-**A:** The backing buffer needs enough device pixels for sharp output. Scale/reset the drawing transform deliberately and account for the memory and fill-rate cost. A DPR cap does not bound a huge CSS box; limit backing dimensions and total pixels as well.
+**A:** The backing buffer needs enough device pixels for sharp output. Scale and reset the drawing transform deliberately and account for the memory and fill-rate cost. A DPR cap does not bound a huge CSS box; limit backing dimensions and total pixels as well.
+
+**Q:** Why can rotating an individual SVG path with CSS `transform` make it orbit around the SVG's top-left corner, and how do you anchor it to the shape?
+
+**A:** By default, CSS resolves `transform-origin` against the SVG viewport rather than the shape's bounding box; setting `transform-box: fill-box` with `transform-origin: center` anchors rotation and scaling to the shape itself.
 
 ## Trace changed timing and cancellation
 
-Source: [CSS animation](10.6.01-css-animations.md), [GSAP](10.6.03-gsap.md), [WAAPI](10.6.05-web-animations-api.md), [View/scroll transitions](10.6.06-view-transitions-and-scroll-driven-animations.md), [Canvas](10.6.07-canvas-svg-animation.md)
+Source: [CSS animation](10.6.01-css-animations.md), [GSAP](10.6.03-gsap.md), [WAAPI](10.6.05-web-animations-api.md), [View and scroll transitions](10.6.06-view-transitions-and-scroll-driven-animations.md), [Canvas](10.6.07-canvas-svg-animation.md)
 
 **Q:** At half the duration, why is a transition not necessarily halfway in distance?
 

@@ -2571,84 +2571,84 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05))."
   },
   "10-frontend/10.6-animation/10.6.06-view-transitions-and-scroll-driven-animations.md": {
-   "sha256": "0c1ae01cd77c9d99965c79641563784608a0361ecba5a825996f2909f036f6a7",
-   "lines": 198,
+   "sha256": "cb5503f404b46f5b922055c6fe3e11a08108f07360b43bf356d9fc3e94243fb6",
+   "lines": 202,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against the React Router v8 view-transition guide, MDN animation-timeline and the Chrome view-transition documentation; the v8 guide confirms viewTransition props are deprecated in favor of React's ViewTransition with React 19.3, and npm reports react-router 8.5.1 current on 2026-11-18 (URLs 200).",
-    "readable": "Full read of 198 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "842 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 202 lines (965 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "965 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Snapshot capture and scroll/view timelines are owned here; Motion for React owns component presence, and the router chapters own navigation.",
-    "fast": "28.8 KB raw / 6.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 28.8 KB raw / 6.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "States the capture-before-update requirement and keeps content visible without support; a transition cannot recover a snapshot taken after the DOM changed."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 6B D1-D7 rework: 10.6-animation (completes 10.6-animation))."
   },
   "10-frontend/10.6-animation/10.6.07-canvas-svg-animation.md": {
-   "sha256": "d3c636fe3359133a238584ba0747577d516cefd7e07a9ec63caff2014e63f914",
-   "lines": 181,
+   "sha256": "712ed8a7f0f9ae2478e19fa473f1f9f120b983d03ded7659f79cc25fcd893150",
+   "lines": 185,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against MDN Canvas, requestAnimationFrame, OffscreenCanvas and SVG animate references; the DPR memory arithmetic, backing-store reset behavior and SMIL support status match those sources on 2026-11-18 (URLs 200).",
-    "readable": "Full read of 181 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "871 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 185 lines (992 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "992 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Canvas and SVG rendering ownership is owned here; CSS animations own declarative DOM effects, and browser rendering owns compositing.",
-    "fast": "30.5 KB raw / 7.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 30.5 KB raw / 7.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes the rendering owner the first decision and names the accessibility cost of dropping DOM nodes; no fixed element count limits the choice between Canvas and SVG."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 6B D1-D7 rework: 10.6-animation (completes 10.6-animation))."
   },
   "10-frontend/10.6-animation/10.6.08-interview-questions.md": {
-   "sha256": "ee8a43cfcaf346d45b57051c96b18686a6a6a5556fd67007b3c503bc16107ff5",
-   "lines": 232,
+   "sha256": "5eb14a1ce2c1d0a76ce74053f8f28355ce4db604ba34ec158d41cba97c6eeb9c",
+   "lines": 244,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "All 32 answer pairs were checked against their chapters and the official Motion, GSAP, React Spring, WAAPI, React Router and MDN references; the React Router v8 deprecation and Motion 14.x hook behavior were verified on 2026-11-18.",
-    "readable": "Full read of 232 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "2170 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 244 lines (2432 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "2432 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Drill bank: each question points at a chapter canonical treatment rather than re-teaching the mechanism.",
-    "fast": "29.2 KB raw / 9.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 29.2 KB raw / 9.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Provides 32 graded answers with failure boundaries; it is practice and cannot replace the chapters or prove an implementation."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 6B D1-D7 rework: 10.6-animation (completes 10.6-animation))."
   },
   "10-frontend/10.6-animation/INDEX.md": {
-   "sha256": "3e68fce9fee4423cd4a13f81719d51931c37d3afa2c4d3fba798febcbf6d018f",
+   "sha256": "0da465abec4e96a2a26dab54861c6d2c3f1bce1bcdf0b59d646d651fef62b0ef",
    "lines": 64,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "No version-sensitive claim; the 9-file count (eight chapters plus one revision companion), 65-minute total and status badge were re-derived from disk, and the table times sum to 65 on 2026-11-18.",
-    "readable": "Full read of 64 lines (334 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "334 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 64 lines (341 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "341 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Navigation only: it points at eight chapters and their revision drill without retelling their mechanisms.",
-    "fast": "Measured 11.9 KB raw / 4.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 11.9 KB raw / 4.2 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Orders the section from browser cost to control choice to drawing lifecycles; it does not teach any chapter itself."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05))."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 6B D1-D7 rework: 10.6-animation (completes 10.6-animation))."
   },
   "10-frontend/10.6-animation/REVISION.md": {
-   "sha256": "360eb056406e05da5c51462ae40b32cb9c2ab6b4d91b96ac42c294f54fa5d6cf",
-   "lines": 145,
+   "sha256": "63fbebc2f5696c447094615482b0d4982cea71fcbda4576e7b0864b2ac429cab",
+   "lines": 157,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Every answer was checked against its source chapter and the official Motion, GSAP, React Spring, WAAPI and MDN references; the Motion 14.x hook snapshot and React Router v8 deprecation match the sources on 2026-11-18.",
-    "readable": "Full read of 145 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1019 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 157 lines (1205 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1205 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Retrieval drill: each group names its source chapter and points at it for the full treatment.",
-    "fast": "16.2 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 16.2 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Tests timing, cancellation and fallback boundaries under changed conditions; it cannot replace the chapters."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 6B D1-D7 rework: 10.6-animation (completes 10.6-animation))."
   },
   "10-frontend/10.7-html-css/10.7.01-html-fundamentals.md": {
    "sha256": "396d94eb305648916103051927c47505348f0078fbd72cbeeeed05f6f0e92d61",
@@ -2987,7 +2987,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/INDEX.md": {
-   "sha256": "b7e2909ffd30ebfa7078936ed8684f72a6f7e850c2a234ce43301ecc89dd081c",
+   "sha256": "ba4f9165e954479a4392ae49286d60f6998ad3a92725adacfb1a69fd5270bd29",
    "lines": 75,
    "genre": "index",
    "status": "read",
@@ -3000,7 +3000,7 @@
     "fast": "Measured 14.7 KB raw / 4.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Sets the frontend study order from execution to optional capabilities; it limits itself to navigation and does not teach any mechanism."
    },
-   "notes": "Synced live read-time and counts after Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05)."
+   "notes": "Synced live read-time and counts after Phase 6B D1-D7 rework: 10.6-animation (completes 10.6-animation)."
   },
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md": {
    "sha256": "cbb48962f1b1c976f33493d3398af0e10c4deb7f49db4537cb50b8af762ebfe1",
@@ -14365,7 +14365,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "604c1ee46ebb89709a53c6cfecdcf26c68df33c286c38404fb939337da6a0bea",
+   "sha256": "c7fef1db90a2dc39dcef9b7994eb29f3721844f6f1aeccf665365fd782abab0a",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14378,7 +14378,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05)."
+   "notes": "Synced live read-time and counts after Phase 6B D1-D7 rework: 10.6-animation (completes 10.6-animation)."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14669,7 +14669,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "25d198d2b15dcfb83801522b274a6426fcebc7279fd02e556c0949f791fcc6d4",
+   "sha256": "e464b65403d7ca582fd5ff9adba67b9b2aa239af63f06d2d04ec703b4c8fc609",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14682,7 +14682,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05)."
+   "notes": "Synced live read-time and counts after Phase 6B D1-D7 rework: 10.6-animation (completes 10.6-animation)."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

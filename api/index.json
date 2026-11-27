@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "85bd6e8d260a877c622460d298af0317c0acb4b5ae2f5ecb310d37a19d932afc",
+ "corpus_digest": "9fafb8e743b76332194b0cb0a347871d6ca00c0731fd278bc1bed8598eed0790",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5520
+  "read_minutes": 5522
  },
  "chapters": [
   {
@@ -1401,7 +1401,7 @@
     "concept",
     "reference"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "10-frontend/10.6-animation/10.6.07-canvas-svg-animation.html",
@@ -1423,7 +1423,7 @@
     "interview-questions",
     "practice"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.6-animation/REVISION.html",

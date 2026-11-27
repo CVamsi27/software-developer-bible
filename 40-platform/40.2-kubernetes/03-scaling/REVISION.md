@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Kubernetes-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Optional-lightgrey)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../../docs/topic-importance.md)
 
@@ -28,7 +28,7 @@ Source: [Kubernetes HPA & Scaling](40.2.3.01-hpa-scaling.md)
 
 **Q:** Three Pods each request `500m` and use `400m`. With a 50% CPU target, trace the recommendation and the steps before new replicas serve traffic.
 
-**A:** Utilization is 80%, so the basic recommendation is `ceil(3 × 80 / 50) = 5`. HPA writes the scale target; Deployment/ReplicaSet reconciliation creates Pods, scheduling finds nodes, kubelets start containers, and readiness admits them to ordinary Service traffic. Five desired replicas can still mean only three ready replicas.
+**A:** Utilization is 80%, so the basic recommendation is `ceil(3 × 80 / 50) = 5`. HPA writes the scale target; Deployment and ReplicaSet reconciliation create Pods, scheduling finds nodes, kubelets start containers, and readiness admits them to ordinary Service traffic. Five desired replicas can still mean only three ready replicas.
 
 **Q:** What changes if each CPU request doubles while measured use stays the same?
 
@@ -50,13 +50,17 @@ Source: [Kubernetes HPA & Scaling](40.2.3.01-hpa-scaling.md)
 
 **A:** Not without its HPA-owned `ScaledToZero=True` state. Start with at least one replica so the controller can own a later transition to zero; manual zero remains a pause.
 
+**Q:** Why can a premature readiness probe cause an HPA scale-out storm during container startup?
+
+**A:** Kubernetes HPA excludes CPU samples from unready pods during `initialReadinessDelay` and initializing pods during `cpuInitializationPeriod` so boot-time JIT or cache warm-up spikes do not skew scaling. If a pod reports `Ready` before warm-up completes, its transient 200%–400% boot CPU enters the average utilization ratio and triggers unnecessary extra replicas.
+
 ## Node Autoscaling & Cluster Capacity (Cluster Autoscaler, Karpenter)
 
 Source: [Node Autoscaling & Cluster Capacity (Cluster Autoscaler, Karpenter)](40.2.3.02-node-autoscaling-cluster-capacity.md)
 
 **Q:** Why can adding Pods make no progress even with an HPA?
 
-**A:** If no nodes can satisfy their resource/placement requests, Pods remain pending. Node provisioning, quotas, capacity, and startup delays are separate constraints.
+**A:** If no nodes can satisfy their resource and placement requests, Pods remain pending. Node provisioning, quotas, capacity, and startup delays are separate constraints.
 
 **Q:** What do requests tell a node provisioner that usage does not?
 
@@ -80,7 +84,7 @@ Source: [Node Autoscaling & Cluster Capacity (Cluster Autoscaler, Karpenter)](40
 
 **Q:** Does an expiration event guarantee Karpenter immediately finishes deleting a node with protected Pods?
 
-**A:** No. Selection for disruption and completing drain are separate. A `karpenter.sh/do-not-disrupt` Pod can block expiration/manual termination without a `NodeClaim` grace deadline; when a configured deadline expires, forced deletion can interrupt the application.
+**A:** No. Selection for disruption and completing drain are separate. A `karpenter.sh/do-not-disrupt` Pod can block expiration or manual termination without a `NodeClaim` grace deadline; when a configured deadline expires, forced deletion can interrupt the application.
 
 **Q:** Why might a low-priority headroom buffer fail to refill after application Pods preempt it?
 

@@ -68,7 +68,7 @@ Source: [StatefulSets & DaemonSets](40.2.1.03-statefulsets-daemonsets.md)
 
 **Q:** What identity does a StatefulSet preserve across replacement?
 
-**A:** A stable ordinal/name and associated storage identity. It does not make application replication, backup, or consistency automatic.
+**A:** A stable ordinal and name and associated storage identity. It does not make application replication, backup, or consistency automatic.
 
 **Q:** What changes when a StatefulSet has `Parallel` management or an explicit PersistentVolumeClaim (PVC) retention policy?
 
@@ -76,7 +76,7 @@ Source: [StatefulSets & DaemonSets](40.2.1.03-statefulsets-daemonsets.md)
 
 **Q:** Does one desired DaemonSet Pod per node guarantee one healthy agent at every instant?
 
-**A:** No. Placement/startup failures can leave a node uncovered, and surge updates can briefly run two versions. Observe actual per-node readiness and update behavior.
+**A:** No. Placement and startup failures can leave a node uncovered, and surge updates can briefly run two versions. Observe actual per-node readiness and update behavior.
 
 ## Jobs & CronJobs
 
@@ -88,11 +88,11 @@ Source: [Jobs & CronJobs](40.2.1.04-jobs-cronjobs.md)
 
 **Q:** Does `Forbid` on a CronJob provide exactly-once scheduling?
 
-**A:** No. It prevents overlapping Jobs from that CronJob according to its policy; delayed/missed schedules and repeated work still require application-level handling.
+**A:** No. It prevents overlapping Jobs from that CronJob according to its policy; delayed and missed schedules and repeated work still require application-level handling.
 
 **Q:** A Job writes its output then crashes before successful exit. What must a replacement attempt assume?
 
-**A:** The prior business effect may already exist although Kubernetes recorded a failed attempt. Reuse a durable idempotency/index decision or otherwise make the effect safe to repeat; completion accounting is not a transaction over external data.
+**A:** The prior business effect may already exist although Kubernetes recorded a failed attempt. Reuse a durable idempotency and index decision or otherwise make the effect safe to repeat; completion accounting is not a transaction over external data.
 
 **Q:** One shard in an Indexed Job repeatedly fails while other indexes are useful. How can the controller stop retrying that shard without immediately canceling its siblings?
 

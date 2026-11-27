@@ -8827,52 +8827,52 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 20B: 30.3 infra patterns (04-06, INDEX) and 30-architecture INDEX)."
   },
   "40-platform/40.1-docker/40.1.01-images-containers.md": {
-   "sha256": "b248dd1fb71b1d733104d71b67efc21c161e7c2990cf5a60c602d2db3ba9aa4a",
+   "sha256": "fc48b8f41681fd562e1346dd8d768749b00dae9b8463c9b9743a746bca70d78b",
    "lines": 110,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against `node:24-alpine`, `npm ci --omit=dev`, OCI digest pinning, and Linux namespace/cgroup isolation mechanics.",
-    "readable": "Full read of 110 lines (928 prose words). Opens with environment drift between machines running the same commit before defining content-addressed images, disposable container writable layers, layer cache stability, `.dockerignore`, and host-kernel isolation boundaries.",
-    "concise": "928 words across 110 lines. One clean `node:24-alpine` Dockerfile and `.dockerignore`.",
+    "readable": "Full read of 110 lines (932 prose words). Opens with environment drift between machines running the same commit before defining content-addressed images, disposable container writable layers, layer cache stability, `.dockerignore`, and host-kernel isolation boundaries.",
+    "concise": "932 words across 110 lines. One clean `node:24-alpine` Dockerfile and `.dockerignore`.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for Docker images and containers: image vs container lifecycle, Dockerfile layer ordering, exec-form `CMD` signal delivery, `.dockerignore` build context hygiene, and what survives `docker stop` vs `docker rm`.",
     "fast": "Measured 17.1 KB raw / 5.6 KB gzip. Two compact code blocks and zero bloated prose.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Establishes the foundational isolation boundary immediately: a container is an isolated Linux process with a disposable writable layer sharing the host kernel, not a miniature VM."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.1-docker/40.1.02-volumes-networks.md": {
-   "sha256": "bf1874e3206616a81e254952dc0c513b5e0d8b39519f820bbe55d70cf491b666",
+   "sha256": "32836645121167657bad666428b26f1e6662edaa2b9f3aedcab563e84923d46b",
    "lines": 92,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against PostgreSQL 18 `/var/lib/postgresql` volume target, `busybox:1.37`, and loopback-scoped port publishing (`-p 127.0.0.1:8080:3000`).",
-    "readable": "Full read of 92 lines (619 prose words). Starts with a replacement API container seeing an empty database and failing to reach Redis on `localhost` before contrasting named volumes, bind mounts, and tmpfs alongside user-defined bridge DNS and port publishing.",
-    "concise": "619 words across 92 lines. Mount comparison table, ASCII routing diagram, and runnable CLI commands.",
+    "readable": "Full read of 92 lines (621 prose words). Starts with a replacement API container seeing an empty database and failing to reach Redis on `localhost` before contrasting named volumes, bind mounts, and tmpfs alongside user-defined bridge DNS and port publishing.",
+    "concise": "621 words across 92 lines. Mount comparison table, ASCII routing diagram, and runnable CLI commands.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for Docker volumes and networks: storage persistence lifetimes, user-defined vs default bridge DNS, host/overlay/internal network boundaries, and why volumes are not backups.",
     "fast": "Measured 15.0 KB raw / 5.1 KB gzip. Under 100 lines; fast scan.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Explains the storage boundary why PostgreSQL 18 official images require mounting `/var/lib/postgresql` rather than the legacy `/var/lib/postgresql/data` path."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.1-docker/40.1.03-compose.md": {
-   "sha256": "a8bb2b489e23f11b37cb159d05c4d3cfd350284f55b457621ac63598007c159f",
+   "sha256": "1fe5e8b1e440a37ef22e1898a2281fdfedeb5cf4286365d1d35aff2b2edf9666",
    "lines": 182,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against `postgres:18`, Compose v2.22+ `watch`, `depends_on` with `restart: true`, profiles, and `--exit-code-from` CI test runners.",
-    "readable": "Full read of 182 lines (855 prose words). Hooks with an API starting before its database accepts connections or finishes migrations before building a 3-service Compose stack (`api`, `migrate`, `db`) with `service_healthy`, `service_completed_successfully`, secrets, and internal networks.",
-    "concise": "855 words across 182 lines. One complete production-grade `compose.yaml` and targeted CLI commands.",
+    "readable": "Full read of 182 lines (859 prose words). Hooks with an API starting before its database accepts connections or finishes migrations before building a 3-service Compose stack (`api`, `migrate`, `db`) with `service_healthy`, `service_completed_successfully`, secrets, and internal networks.",
+    "concise": "859 words across 182 lines. One complete production-grade `compose.yaml` and targeted CLI commands.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for Docker Compose: startup vs runtime readiness, `.env` model interpolation vs container `env_file`, local file secrets, profiles, and single-host operational limits.",
     "fast": "Measured 24.0 KB raw / 6.2 KB gzip. Single cohesive YAML specification and short CLI blocks.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Clearly separates startup ordering boundaries (`service_healthy` + `service_completed_successfully` migration job) from ongoing runtime connection-pool recovery."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.1-docker/40.1.04-multi-stage-builds.md": {
    "sha256": "362de7fdc6058d572b8564df027500139ecedba27dcccb61a099ec0451ffa0fe",
@@ -8907,116 +8907,116 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
   },
   "40-platform/40.1-docker/40.1.06-production-patterns.md": {
-   "sha256": "897142a33ef3911627fb75adc1535f010755295c9c6dcef8ba0793480ac671dd",
+   "sha256": "2e82c1e140ec46f45de7aafee389f9ef2de4d6766f0b7d6694de82d27b711916",
    "lines": 85,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against `--read-only --tmpfs`, `--cap-drop=ALL`, `--security-opt=no-new-privileges`, cgroup v2 limits, and digest-based promotion.",
-    "readable": "Full read of 85 lines (865 prose words). Starts with a container that passes local smoke tests but fails in production under a read-only rootfs, 512MB cgroup cap, and SIGTERM drain window before defining the 5 pillars of production container operation.",
-    "concise": "865 words across 85 lines. Hardened `docker run` reference invocation and operational rules.",
+    "readable": "Full read of 85 lines (867 prose words). Starts with a container that passes local smoke tests but fails in production under a read-only rootfs, 512MB cgroup cap, and SIGTERM drain window before defining the 5 pillars of production container operation.",
+    "concise": "867 words across 85 lines. Hardened `docker run` reference invocation and operational rules.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for Docker production patterns: immutable digest promotion, least-privilege execution flags, healthcheck vs orchestrator probes, expand/contract schema rollbacks, and post-deployment verification.",
     "fast": "Measured 15.1 KB raw / 5.5 KB gzip. Under 85 lines; high signal density.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Distills a complete hardened runtime limit baseline (`--read-only`, `--tmpfs`, `--cap-drop=ALL`, `no-new-privileges`, memory/CPU/PID caps, digest pin) into one verifiable command."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.1-docker/40.1.07-container-runtime-internals-namespaces-cgroups.md": {
-   "sha256": "e3cae13877fdd808aeedcd73cfe56b893367048d064cbc9860485ad34ca44d11",
-   "lines": 180,
+   "sha256": "2a4566545a163eff3b70ff99b4bf6bd9d7c31ef974afbc84cad047168ab0e8d5",
+   "lines": 182,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Linux cgroup v2 unified hierarchy, containerd image store snapshotters, and OCI `runc` runtime delegation.",
-    "readable": "Full read of 180 lines (1046 prose words). (1,034 prose words). Opens with an ambiguous exit code 137 before dissecting Linux kernel namespaces (`unshare`), cgroup v2 resource files (`cpu.max`, `memory.high`, `memory.max`, `memory.events`), OverlayFS copy-up/whiteouts, and the `dockerd -> containerd -> shim -> runc` stack.",
-    "concise": "1046 words across 180 lines. 1,034 words across 178 lines. Namespace/cgroup tables, OverlayFS/runtime ASCII diagrams, and live diagnostic commands.",
+    "readable": "Full read of 182 lines (1156 prose words). (1,034 prose words). Opens with an ambiguous exit code 137 before dissecting Linux kernel namespaces (`unshare`), cgroup v2 resource files (`cpu.max`, `memory.high`, `memory.max`, `memory.events`), OverlayFS copy-up/whiteouts, and the `dockerd -> containerd -> shim -> runc` stack.",
+    "concise": "1156 words across 182 lines. 1,034 words across 178 lines. Namespace/cgroup tables, OverlayFS/runtime ASCII diagrams, and live diagnostic commands.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for container runtime internals: all 8 Linux namespaces, cgroup v2 accounting and OOM diagnosis, OverlayFS layer mechanics, CRI vs Docker Engine, and shared-kernel vs VM boundaries.",
     "fast": "Measured 22.9 KB raw / 7.2 KB gzip. Two compact ASCII diagrams and crisp tables.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Explains the failure diagnostic why `docker exec ... cat /sys/fs/cgroup/memory.events` fails after a crash (the container and its cgroup are gone) and how to correlate `State.OOMKilled` with node events."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.1-docker/40.1.08-image-signing-sbom-supply-chain.md": {
-   "sha256": "28a6d8cf3a5967caf1008128ccdf0f041bd2c63b988a826b3026337c7af3bb7d",
+   "sha256": "4d485fa63594d0dd34d60b5aafb79807a58e2bb9a74f1ea9af4574ac1c874671",
    "lines": 124,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Sigstore Cosign OIDC verification, Syft/Grype SPDX-JSON pipelines, `docker buildx build --provenance=mode=max --sbom=true`, and SLSA v1.2 Build track levels.",
-    "readable": "Full read of 124 lines (919 prose words). Hooks with a mutated release tag and a signed image containing a critical CVE before separating artifact identity (digest), authenticity (Cosign OIDC keyless signature), inventory (Syft/BuildKit SBOM), and build provenance (SLSA v1.2 Build L0-L3).",
-    "concise": "919 words across 124 lines. Runnable `cosign`, `syft`/`grype`, and `buildx` attestation commands plus SLSA 1.2 table.",
+    "readable": "Full read of 124 lines (921 prose words). Hooks with a mutated release tag and a signed image containing a critical CVE before separating artifact identity (digest), authenticity (Cosign OIDC keyless signature), inventory (Syft/BuildKit SBOM), and build provenance (SLSA v1.2 Build L0-L3).",
+    "concise": "921 words across 124 lines. Runnable `cosign`, `syft`/`grype`, and `buildx` attestation commands plus SLSA 1.2 table.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for container image signing and SBOMs: digest binding, keyless OIDC signing/verification, SBOM generation, BuildKit attestations, SLSA v1.2 L0-L3, and Kyverno admission enforcement.",
     "fast": "Measured 17.4 KB raw / 6.0 KB gzip. Three compact CLI blocks and one SLSA comparison table.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Clarifies the security boundary that `--provenance=mode=max` can leak build arguments if secrets are passed via `ARG`, and that SLSA v1.2 separates Build and Source tracks."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.1-docker/40.1.09-rootless-sandboxed-runtimes.md": {
-   "sha256": "9c5aaaf510694fffeaca8c4bf78fa27c920671d300302823c328fd96565cc4ee",
+   "sha256": "8b02450128c050db736bdcfe73d8f7653bb70915190bc39330330af843a1fbd0",
    "lines": 227,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Docker Engine 29 (`gvisor-tap-vsock` default and 29.5 rootless host networking), gVisor `systrap`/KVM platforms, Kata microVMs, and Podman Quadlet systemd units.",
-    "readable": "Full read of 227 lines (1298 prose words). (1,268 prose words). Starts with an untrusted CI build job sharing the host syscall table before comparing rootless user-namespace mappings (`/etc/subuid`), gVisor userspace kernel (`runsc` Sentry with `systrap`/KVM), and Kata Containers microVMs selected via Kubernetes `RuntimeClass`.",
-    "concise": "1298 words across 227 lines. 1,268 words across 223 lines. Architecture diagrams, rootless Docker/Podman setup, and Kubernetes `RuntimeClass` + `gvisor` runner manifests.",
+    "readable": "Full read of 227 lines (1310 prose words). (1,268 prose words). Starts with an untrusted CI build job sharing the host syscall table before comparing rootless user-namespace mappings (`/etc/subuid`), gVisor userspace kernel (`runsc` Sentry with `systrap`/KVM), and Kata Containers microVMs selected via Kubernetes `RuntimeClass`.",
+    "concise": "1310 words across 227 lines. 1,268 words across 223 lines. Architecture diagrams, rootless Docker/Podman setup, and Kubernetes `RuntimeClass` + `gvisor` runner manifests.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for rootless and sandboxed runtimes: `/etc/subuid` UID mapping, rootless network backends, systemd cgroup v2 CPU delegation requirements, gVisor vs Kata architecture, Kubernetes `RuntimeClass`, and hardened CI runner Deployments.",
     "fast": "Measured 29.3 KB raw / 8.5 KB gzip. Clean ASCII architecture diagrams and focused YAML manifests.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Details the cgroup v2 delegation limit in rootless mode (many hosts only delegate `memory` and `pids` by default, silently ignoring `--cpus` unless systemd CPU delegation is configured)."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.1-docker/40.1.10-interview-questions.md": {
-   "sha256": "e93154912bc13f89ec7854d6513a14a41b625a7aa62f521321e7d01dfc4eb2e9",
+   "sha256": "ca527cdc59530650cd6f030a61cad852d4538050d8fe297aa4e4aa68a5886af5",
    "lines": 293,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against BuildKit DAG execution, Artifact Registry (replacing legacy GCR), Compose `service_healthy` + `restart: true`, and cgroup v2 memory/CPU controllers.",
-    "readable": "Full read of 293 lines (2238 prose words). (2,153 prose words). 30-question Docker interview bank covering image layer caching, multi-stage ABI compatibility, BuildKit secret/cache mounts, Compose health/migration ordering, cgroup v2 resource limits, and production security.",
-    "concise": "2238 words across 293 lines. 2,153 words across 233 lines. Covers 30 questions without duplicating chapter code blocks.",
+    "readable": "Full read of 293 lines (2293 prose words). (2,153 prose words). 30-question Docker interview bank covering image layer caching, multi-stage ABI compatibility, BuildKit secret/cache mounts, Compose health/migration ordering, cgroup v2 resource limits, and production security.",
+    "concise": "2293 words across 293 lines. 2,153 words across 233 lines. Covers 30 questions without duplicating chapter code blocks.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical interview drill for 40.1-docker: answers all 30 questions with condition-based trade-off statements and cross-links to canonical chapters instead of repeating Dockerfiles.",
     "fast": "Measured 28.0 KB raw / 9.8 KB gzip. Pure text Q&A without redundant multi-page YAML/Dockerfile blocks.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Debunks common interview misconceptions and names exact failure boundaries (such as remote `ADD` caching behavior, non-existent `--mount=type=lock`, and `HEALTHCHECK` not restarting containers)."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.1-docker/INDEX.md": {
-   "sha256": "8e73f6fe60152a0353f118bfa1c57e1558a1e843f13f70bd730cbfcbd9f9a532",
+   "sha256": "2fe35e81518901868eacca7792bfd3bf9bae0463b0a0ff312378970dcb841316",
    "lines": 102,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against all 10 numbered chapters (`40.1.01` to `40.1.10`) and `REVISION.md`.",
-    "readable": "Full read of 102 lines (263 prose words). Structures the 12-file Docker & Containerization stack into 3 progressive passes: Core Workflows, Production Hardening & Internals, and Debugging & Interview Prep.",
-    "concise": "263 words across 102 lines. Pass roadmap and verification checklist.",
+    "readable": "Full read of 102 lines (265 prose words). Structures the 12-file Docker & Containerization stack into 3 progressive passes: Core Workflows, Production Hardening & Internals, and Debugging & Interview Prep.",
+    "concise": "265 words across 102 lines. Pass roadmap and verification checklist.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical index for 40.1-docker: maps each chapter to a specific production failure mode without duplicating chapter content.",
     "fast": "Measured 16.1 KB raw / 4.6 KB gzip. Fast-loading markdown index.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Connects everyday `docker build` commands directly to Linux kernel boundaries (namespaces, cgroups v2, OverlayFS) and OCI runtime layers."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.1-docker/REVISION.md": {
-   "sha256": "58c41e4c8fc0199c24f2689aec62e672e7da8d57436d1c29ed150d21938c7836",
-   "lines": 151,
+   "sha256": "1408262c1afa86d306a28ee33c204b059ce00cd9ff55e4658694efc8d1022664",
+   "lines": 155,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against PostgreSQL 18 official image `/var/lib/postgresql` volume change, SLSA v1.2 Build L0-L3 levels, cgroup v2 CPU delegation, and Podman Quadlet user units.",
-    "readable": "Full read of 151 lines (1086 prose words). (1,080 prose words). Active-recall revision companion for the 9 learning chapters of `40.1-docker/` plus changed-condition traces covering PostgreSQL 18 `PGDATA` volume layout and Docker Engine 29.5 rootless host networking.",
-    "concise": "1086 words across 151 lines. 1,080 words across 151 lines. Zero duplicate code and direct links to every chapter.",
+    "readable": "Full read of 155 lines (1167 prose words). (1,080 prose words). Active-recall revision companion for the 9 learning chapters of `40.1-docker/` plus changed-condition traces covering PostgreSQL 18 `PGDATA` volume layout and Docker Engine 29.5 rootless host networking.",
+    "concise": "1167 words across 155 lines. 1,080 words across 151 lines. Zero duplicate code and direct links to every chapter.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical revision companion for 40.1-docker: 18 source-linked Q&A prompts spanning image/container lifecycle, volumes/networks, Compose readiness, multi-stage boundaries, cgroups/namespaces, SLSA signing, and rootless runtimes.",
     "fast": "Measured 17.0 KB raw / 5.8 KB gzip. Pure markdown Q&A.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Highlights critical 2025\u20132026 operational upgrade failure modes like the PostgreSQL 18 `/var/lib/postgresql` volume mount change that silently leaves data in anonymous volumes if only the image tag is bumped."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.10-cdn/40.10.01-cdn-architecture.md": {
    "sha256": "a5b4bc5ac93c7fdf53c13f86e2fde0052914c15dfe6cd31879a1897c7a447c28",
@@ -9243,36 +9243,36 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.01-pods-replicasets.md": {
-   "sha256": "0e7fdaa6c6085f617e4b38578b51519ece630220606615e8eed5f2860337003e",
+   "sha256": "086b5bf1883976e0c297f33e9b60c240e922bb4f641b19c686f011a51c195f08",
    "lines": 152,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Kubernetes 1.33+ stable native sidecars, 1.34 beta `PodLevelResources`, and 1.37 beta `PodLevelResourceManagers`.",
-    "readable": "Full read of 152 lines (1218 prose words). (1,201 prose words). Opens with why deleting a Pod does not move a process across machines before tracing Pod isolation boundaries, native sidecar containers (`restartPolicy: Always`), ReplicaSet label ownership, the 6-step control-plane creation loop, and Pod-level resource requests.",
-    "concise": "1218 words across 152 lines. 1,201 words across 136 lines. ReplicaSet manifest, control-plane trace, and `kubectl` diagnostic sequence.",
+    "readable": "Full read of 152 lines (1222 prose words). (1,201 prose words). Opens with why deleting a Pod does not move a process across machines before tracing Pod isolation boundaries, native sidecar containers (`restartPolicy: Always`), ReplicaSet label ownership, the 6-step control-plane creation loop, and Pod-level resource requests.",
+    "concise": "1222 words across 152 lines. 1,201 words across 136 lines. ReplicaSet manifest, control-plane trace, and `kubectl` diagnostic sequence.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for Pods and ReplicaSets: Pod network/volume sharing, kubelet container restart vs ReplicaSet Pod replacement, API server -> etcd -> scheduler -> kubelet -> EndpointSlice flow, and effective resource requests.",
     "fast": "Measured 20.8 KB raw / 6.8 KB gzip. Single YAML manifest and 6-line ASCII control-plane flow.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Traces the exact asynchronous control-plane boundary from `Pod` deletion to `EndpointSlice` readiness so engineers know where to look when a replacement Pod is missing vs `Pending` vs y."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.02-deployments.md": {
-   "sha256": "35e75580e54f3e17fa8a718ebdda68f3727debb79e8e7e348abfaaa983f23878",
+   "sha256": "4f7ada6e8726bfd661f3eee59a35bf31cf90b6dac324bb90fde564fbbc5c7a10",
    "lines": 179,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Kubernetes Deployment rollout mechanics, startup/readiness/liveness probe contracts, ResourceQuota admission failures, and HPA vs GitOps `spec.replicas` ownership.",
-    "readable": "Full read of 179 lines (1103 prose words). (1,100 prose words). Starts with zero-downtime release hazards during live traffic before tracing how a Deployment reconciles old and new ReplicaSets under `maxSurge`, `maxUnavailable`, startup/readiness/liveness probes, rollout strategies, and HPA field ownership.",
-    "concise": "1103 words across 179 lines. 1,100 words across 169 lines. Production Deployment manifest (all 3 probes + resource budgets), rollout trace, and strategy decision table.",
+    "readable": "Full read of 179 lines (1105 prose words). (1,100 prose words). Starts with zero-downtime release hazards during live traffic before tracing how a Deployment reconciles old and new ReplicaSets under `maxSurge`, `maxUnavailable`, startup/readiness/liveness probes, rollout strategies, and HPA field ownership.",
+    "concise": "1105 words across 179 lines. 1,100 words across 169 lines. Production Deployment manifest (all 3 probes + resource budgets), rollout trace, and strategy decision table.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for Kubernetes Deployments: ReplicaSet revision transitions, surge/unavailability math, stalled rollout debugging (`ProgressDeadlineExceeded` vs quota rejection), RollingUpdate/Recreate/Canary/Blue-Green trade-offs, and PDB vs HPA boundaries.",
     "fast": "Measured 24.9 KB raw / 7.4 KB gzip. One complete YAML manifest and one strategy comparison table.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Explains the failure boundary why liveness probes must never check downstream database health (a brief DB blip would trigger cascading restarts across all replicas) and why `ProgressDeadlineExceeded` does not auto-rollback."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.03-statefulsets-daemonsets.md": {
    "sha256": "7dfdde42e228f494b73943ae6a7adde19dd378b7e0555a03512def69cc08ede9",
@@ -9307,7 +9307,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
   },
   "40-platform/40.2-kubernetes/01-core-workloads/INDEX.md": {
-   "sha256": "14a387c980ec72a43d0cea8a82b35f8d9c53366c6cac26f83aa19ef81756c272",
+   "sha256": "c9c8651c4a876d5ecbd0e0a8a0b9397d4012ad4bdeee2c8b867000d8229bef0f",
    "lines": 57,
    "genre": "index",
    "status": "read",
@@ -9320,167 +9320,167 @@
     "fast": "Measured 10.7 KB raw / 3.6 KB gzip. Under 60 lines; instant load.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Includes an honest Docita architectural boundary comparison contrasting Fly.io `[[vm]]` machines and Nest `@Cron` workers against Kubernetes ReplicaSets and CronJobs."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.2-kubernetes/01-core-workloads/REVISION.md": {
-   "sha256": "17ebd4b854583d43e0aaf2f327b31fec4b6b5b88f56b3132dde9dc84e09a0ab2",
+   "sha256": "5eba398434db37f39d2c8db604d32609d8d8c86eb35d74885d8d26bf04f49bc5",
    "lines": 111,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Kubernetes 1.33+ stable native sidecar containers (`restartPolicy: Always` on initContainers) and Indexed Job `backoffLimitPerIndex` / `podFailurePolicy` (`FailIndex`).",
-    "readable": "Full read of 111 lines (964 prose words). Active-recall revision companion for Kubernetes Core Workloads covering control-plane creation paths, native sidecars (`restartPolicy: Always`), Deployment rollout stalls/quotas, StatefulSet retention, and Indexed Job failure policies.",
-    "concise": "964 words across 111 lines. Dense diagnostic scenarios with source links.",
+    "readable": "Full read of 111 lines (972 prose words). Active-recall revision companion for Kubernetes Core Workloads covering control-plane creation paths, native sidecars (`restartPolicy: Always`), Deployment rollout stalls/quotas, StatefulSet retention, and Indexed Job failure policies.",
+    "concise": "972 words across 111 lines. Dense diagnostic scenarios with source links.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical revision companion for 01-core-workloads: 18 mechanism-focused Q&A pairs across all 4 chapters.",
     "fast": "Measured 15.1 KB raw / 5.1 KB gzip. Pure markdown Q&A.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Sharpens day-2 debugging failure analysis by distinguishing why a quota-blocked rollout shows zero `Pending` Pods (rejected at ReplicaSet `Pods/create` admission) vs a scheduler-blocked rollout."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.01-services-ingress.md": {
-   "sha256": "4d5b63eb1250a04d45be8224a0734bd1df50644bb52c424eafe32e56d33a3747",
+   "sha256": "3e4ba2100533758951e6e3e5ab16e31f1bbd030a748ad00ad2a77524961ff61d",
    "lines": 192,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against the March 2026 community `ingress-nginx` retirement (`kubernetes.io/blog/2025/11/11/ingress-nginx-retirement/`), frozen/stable Ingress v1 API, and Gateway API role-oriented routing.",
-    "readable": "Full read of 192 lines (1161 prose words). (1,134 prose words). Opens with callers reaching a logical API across Pod IP replacements before tracing DNS -> edge TLS termination -> Service port -> EndpointSlice -> targetPort, Service types, the March 2026 `ingress-nginx` retirement, and Gateway API (`GatewayClass -> Gateway -> HTTPRoute`).",
-    "concise": "1161 words across 192 lines. 1,134 words across 190 lines. Request trace diagram, Service/Ingress YAML manifests, and troubleshooting matrix.",
+    "readable": "Full read of 192 lines (1176 prose words). (1,134 prose words). Opens with callers reaching a logical API across Pod IP replacements before tracing DNS -> edge TLS termination -> Service port -> EndpointSlice -> targetPort, Service types, the March 2026 `ingress-nginx` retirement, and Gateway API (`GatewayClass -> Gateway -> HTTPRoute`).",
+    "concise": "1176 words across 192 lines. 1,134 words across 190 lines. Request trace diagram, Service/Ingress YAML manifests, and troubleshooting matrix.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for Kubernetes Services and Ingress: discovery vs connection forwarding vs HTTP routing, Service exposure types, `externalTrafficPolicy: Local` trade-offs, and backend-to-edge debugging.",
     "fast": "Measured 25.0 KB raw / 7.7 KB gzip. Two compact YAML manifests and clear comparison tables.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Separates the retired `ingress-nginx` controller from the stable Ingress API and explains why copying `nginx.ingress.kubernetes.io/*` annotations into a replacement controller silently drops rate-limit or rewrite boundaries."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.02-configmaps-secrets.md": {
-   "sha256": "35f2816a6e40d131a859adbe7fc869275f90da3b9c17594c0fb7eba9dc597089",
+   "sha256": "f1039a3f86929f6f33bf2624b0a1ada4639863e56592e9bf72fbc3785ff5de37",
    "lines": 215,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against immutable ConfigMaps/Secrets, kubelet volume refresh mechanics vs `subPath` static mounts, `fsGroup` and `defaultMode: 0400` permissions, and `kubernetes.io/tls` / `dockerconfigjson` Secret types.",
-    "readable": "Full read of 215 lines (1336 prose words). (1,321 prose words). Hooks with a rotated Secret in the API while a running process keeps the old credential in memory before tracing kubelet delivery across env vars, volume mounts, `subPath` mounts, `immutable: true` versioned rollouts, and etcd encryption at rest.",
-    "concise": "1336 words across 215 lines. 1,321 words across 201 lines. Delivery trace diagram, refresh-contract table, and immutable ConfigMap + Deployment manifests.",
+    "readable": "Full read of 215 lines (1352 prose words). (1,321 prose words). Hooks with a rotated Secret in the API while a running process keeps the old credential in memory before tracing kubelet delivery across env vars, volume mounts, `subPath` mounts, `immutable: true` versioned rollouts, and etcd encryption at rest.",
+    "concise": "1352 words across 215 lines. 1,321 words across 201 lines. Delivery trace diagram, refresh-contract table, and immutable ConfigMap + Deployment manifests.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for ConfigMaps and Secrets: consumption refresh contracts, versioned immutable rollouts, least-privilege mounting, Secret types, and RBAC Pod-creation privilege escalation.",
     "fast": "Measured 28.4 KB raw / 8.0 KB gzip. Compact YAML snippets and one refresh comparison table.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Highlights the RBAC security boundary: any principal allowed to create a Pod in a namespace can mount and exfiltrate that namespace's Secrets even without direct `get`/`list` permission on the Secret resource."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.03-podpresets.md": {
-   "sha256": "ec6595f4024516a6d6abc9736a272c0e8c5a1cbd330e68e374360b2e721c4d41",
+   "sha256": "ccc15473c1992e3585a4356b1e2ec643000987712748e726c4b3f1839ce107e0",
    "lines": 118,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Kubernetes 1.20+ removal of PodPreset and modern alternatives (Kustomize overlays, Helm values, Kyverno/OPA Gatekeeper/mutating admission webhooks).",
-    "readable": "Full read of 118 lines (744 prose words). Starts with an old repository failing on `kind: PodPreset` before explaining why Kubernetes 1.20 removed `settings.k8s.io/v1alpha1` and how to assign shared configuration ownership across workload templates, Helm/Kustomize, or mutating admission webhooks.",
-    "concise": "744 words across 118 lines. Ownership decision matrix, workload template fragment, and admission diagnostic commands.",
+    "readable": "Full read of 118 lines (750 prose words). Starts with an old repository failing on `kind: PodPreset` before explaining why Kubernetes 1.20 removed `settings.k8s.io/v1alpha1` and how to assign shared configuration ownership across workload templates, Helm/Kustomize, or mutating admission webhooks.",
+    "concise": "750 words across 118 lines. Ownership decision matrix, workload template fragment, and admission diagnostic commands.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for historical PodPreset migration and shared Pod configuration ownership without duplicating Helm or Kustomize chapters.",
     "fast": "Measured 17.2 KB raw / 5.7 KB gzip. 115 lines; fast scan.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Makes the mutation-vs-validation boundary explicit: a mutating webhook injects defaults, whereas only a validating policy or Pod Security Admission enforces compliance and blocks unsafe Pods."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.2-kubernetes/02-networking-and-config/INDEX.md": {
-   "sha256": "db5f0c58e92c4f2abfaf15a166cc423925427134e6ce277bfb77fc0d6e4f916c",
+   "sha256": "6fd8aa2fb765634ada46965a57e99d1ec9b7edffa7bb929dd60ca2737c700da0",
    "lines": 62,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against the March 2026 community `ingress-nginx` retirement, Gateway API recommendations, and Kubernetes 1.20+ PodPreset removal.",
-    "readable": "Full read of 62 lines (196 prose words). Structures the 4-file Kubernetes Networking & Config category (`40.2.2.01` to `40.2.2.03` + `REVISION.md`) across Services & Ingress/Gateway API, ConfigMaps & Secrets, and historical PodPresets / supported admission alternatives.",
-    "concise": "196 words across 62 lines. Pass roadmap, file index, and Docita anchor.",
+    "readable": "Full read of 62 lines (199 prose words). Structures the 4-file Kubernetes Networking & Config category (`40.2.2.01` to `40.2.2.03` + `REVISION.md`) across Services & Ingress/Gateway API, ConfigMaps & Secrets, and historical PodPresets / supported admission alternatives.",
+    "concise": "199 words across 62 lines. Pass roadmap, file index, and Docita anchor.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical index for 02-networking-and-config: 3-pass study sequence (traffic routing, config/secret injection, template/admission ownership) and Docita Cloudflare/Fly.io comparisons.",
     "fast": "Measured 11.3 KB raw / 3.7 KB gzip. Under 65 lines; instant scan.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Clearly distinguishes the stable/frozen Kubernetes Ingress API boundary from the retired community `ingress-nginx` controller."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.2-kubernetes/02-networking-and-config/REVISION.md": {
-   "sha256": "9c62e4af3fd2a48250b7b459d69efbb6f00911c3fc7b165c9a6ab722fae5146c",
+   "sha256": "afa6ed279ce90be933e0efcfc35cf90b3dc7492cda74aead6fefa9c72cfc468e",
    "lines": 75,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against the March 2026 `ingress-nginx` retirement, Gateway API migration guidance, and ConfigMap volume refresh vs `subPath`/env immutability.",
-    "readable": "Full read of 75 lines (561 prose words). Active-recall revision companion for Kubernetes Networking & Config covering Ingress object vs controller lifecycle, the March 2026 `ingress-nginx` retirement, Service port vs `targetPort`, Secret base64/etcd encryption, ConfigMap live-update behavior, and fail-closed admission webhooks.",
-    "concise": "561 words across 75 lines. High-signal production Q&A.",
+    "readable": "Full read of 75 lines (571 prose words). Active-recall revision companion for Kubernetes Networking & Config covering Ingress object vs controller lifecycle, the March 2026 `ingress-nginx` retirement, Service port vs `targetPort`, Secret base64/etcd encryption, ConfigMap live-update behavior, and fail-closed admission webhooks.",
+    "concise": "571 words across 75 lines. High-signal production Q&A.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical revision companion for 02-networking-and-config: 10 diagnostic Q&A prompts spanning `40.2.2.01` through `40.2.2.03`.",
     "fast": "Measured 11.4 KB raw / 4.0 KB gzip. Under 80 lines; pure markdown.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Tests subtle production failure traps like `subPath` volume mounts suppressing ConfigMap kubelet atomic symlink updates and `defaultMode: 0400` locking out non-root application UIDs."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.2-kubernetes/03-scaling/40.2.3.01-hpa-scaling.md": {
-   "sha256": "05f9865948dfa9407f385c3b31db3ba63e4da668de2272fdcfeb2cbf00466180",
-   "lines": 302,
+   "sha256": "8edc54d9f6fbc476efea9a467c28c1eb3025e6e29b5914fda85ad5fe8a87cb18",
+   "lines": 304,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against `autoscaling/v2`, Kubernetes v1.37 beta HPA scale-to-zero (`kubernetes.io/blog/2026/09/02/kubernetes-v1-37-hpa-scale-to-zero-beta/`), `ScaledToZero=True` condition, and `autoscaling.k8s.io/v1` VPA.",
-    "readable": "Full read of 302 lines (2003 prose words). (2,000 prose words). Opens with three busy web replicas and queueing requests before tracing kubelet -> Metrics Server -> HPA -> scale subresource -> ReplicaSet -> scheduler -> readiness, worked request-denominator math, stabilization/tolerance, custom/external queue metrics, Kubernetes v1.37 beta scale-to-zero, and VPA interaction.",
-    "concise": "2003 words across 302 lines. 2,000 words across 293 lines. End-to-end ASCII control loop, worked numerical trace, `autoscaling/v2` YAML manifests, and troubleshooting matrix.",
+    "readable": "Full read of 304 lines (2077 prose words). (2,000 prose words). Opens with three busy web replicas and queueing requests before tracing kubelet -> Metrics Server -> HPA -> scale subresource -> ReplicaSet -> scheduler -> readiness, worked request-denominator math, stabilization/tolerance, custom/external queue metrics, Kubernetes v1.37 beta scale-to-zero, and VPA interaction.",
+    "concise": "2077 words across 304 lines. 2,000 words across 293 lines. End-to-end ASCII control loop, worked numerical trace, `autoscaling/v2` YAML manifests, and troubleshooting matrix.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for HPA and VPA workload scaling: ratio math, tolerance/missing-sample dampening, custom/external metrics, scale-to-zero, and HPA-vs-VPA denominator interference.",
     "fast": "Measured 36.7 KB raw / 10.2 KB gzip. Clean ASCII diagram and focused YAML snippets.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Explains the Kubernetes v1.37 `ScaledToZero=True` boundary: HPA can only wake a zero-replica workload from object or external metrics (never CPU/memory), and a Deployment manually initialized at 0 replicas stays paused."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.2-kubernetes/03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md": {
-   "sha256": "6598f485b6c9d4dfbe1e12f950918121da1b6fb25214f82ef97afc72743bfb1f",
+   "sha256": "787214054639c00b01648a1b5df97a7450834cb405350d3755f6336db123c706",
    "lines": 181,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Karpenter `karpenter.sh/v1` (`NodePool`, `NodeClaim`, `WhenEmptyOrUnderutilized`, `karpenter.sh/do-not-disrupt`), Cluster Autoscaler, and Kubernetes GPU device-plugin request=limit rules.",
-    "readable": "Full read of 181 lines (1256 prose words). (1,243 prose words). Starts with HPA raising desired replicas while Pods sit Pending before comparing Cluster Autoscaler node groups against Karpenter `NodePool`/`EC2NodeClass` provisioning, GPU scheduling (`nvidia.com/gpu`), headroom overprovisioning buffers, and consolidation/expiration disruption boundaries.",
-    "concise": "1256 words across 181 lines. 1,243 words across 172 lines. CA vs Karpenter comparison table, GPU Pod spec, and `karpenter.sh/v1` NodePool YAML.",
+    "readable": "Full read of 181 lines (1258 prose words). (1,243 prose words). Starts with HPA raising desired replicas while Pods sit Pending before comparing Cluster Autoscaler node groups against Karpenter `NodePool`/`EC2NodeClass` provisioning, GPU scheduling (`nvidia.com/gpu`), headroom overprovisioning buffers, and consolidation/expiration disruption boundaries.",
+    "concise": "1258 words across 181 lines. 1,243 words across 172 lines. CA vs Karpenter comparison table, GPU Pod spec, and `karpenter.sh/v1` NodePool YAML.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for Node Autoscaling: CA vs Karpenter architecture, taints/tolerations/nodeSelector vs device requests, headroom  priority cutoffs, and safe node scale-in.",
     "fast": "Measured 25.0 KB raw / 7.6 KB gzip. Two compact YAML manifests and one comparison table.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Clarifies the disruption boundary: `karpenter.sh/do-not-disrupt` blocks consolidation, and if no `terminationGracePeriod` is set on the `NodeClaim`, it can block node expiration or manual drain indefinitely."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.2-kubernetes/03-scaling/INDEX.md": {
-   "sha256": "3cc1d9d57da26ee8143ea1309f968b8baa5f605ea14ced7d22d14c232fe84bc3",
+   "sha256": "ee5c5d03ef6d28f8758330238284a016eb8559f89d996ae48bcec90d3a828fd6",
    "lines": 55,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against both scaling chapters, `REVISION.md`, and Docita's Fly Proxy `auto_stop_machines='suspend'` and concurrency configuration.",
-    "readable": "Full read of 55 lines (116 prose words). Introduces the 3-file Kubernetes Scaling category (`40.2.3.01`, `40.2.3.02`, `REVISION.md`) connecting workload metric autoscaling (HPA/VPA) with node capacity provisioning (Cluster Autoscaler/Karpenter).",
-    "concise": "116 words across 55 lines. File table, cross-references, and Docita Fly.io comparison.",
+    "readable": "Full read of 55 lines (118 prose words). Introduces the 3-file Kubernetes Scaling category (`40.2.3.01`, `40.2.3.02`, `REVISION.md`) connecting workload metric autoscaling (HPA/VPA) with node capacity provisioning (Cluster Autoscaler/Karpenter).",
+    "concise": "118 words across 55 lines. File table, cross-references, and Docita Fly.io comparison.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical index for 03-scaling: maps the interaction between Pod scaling and node provisioning.",
     "fast": "Measured 10.2 KB raw / 3.5 KB gzip. 55 lines; instant render.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Contrasts Fly Proxy concurrency-based machine wake/suspend boundaries against Kubernetes HPA replica creation and node provisioning."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.2-kubernetes/03-scaling/REVISION.md": {
-   "sha256": "f65315a0718d84121fd57dd2876e5c5f6bd639ba8de5d7eaed5977d4accfbbd9",
-   "lines": 99,
+   "sha256": "e2aa5e392d19941a7df373e7a8c7240497eabc40a24ce5f5c45e6fd1da82f69b",
+   "lines": 103,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Kubernetes v1.37 beta `HPAScaleToZero` and Karpenter v1 `NodePool`/`NodeClaim` disruption semantics.",
-    "readable": "Full read of 99 lines (896 prose words). Active-recall revision companion for Kubernetes Scaling covering HPA request-denominator math, missing-metric downscale protection, Kubernetes v1.37 beta HPA scale-to-zero (`ScaledToZero=True`), Karpenter consolidation/expiration, and GPU request=limit rules.",
-    "concise": "896 words across 99 lines. 99 lines of dense quantitative and diagnostic Q&A.",
+    "readable": "Full read of 103 lines (967 prose words). Active-recall revision companion for Kubernetes Scaling covering HPA request-denominator math, missing-metric downscale protection, Kubernetes v1.37 beta HPA scale-to-zero (`ScaledToZero=True`), Karpenter consolidation/expiration, and GPU request=limit rules.",
+    "concise": "967 words across 103 lines. 99 lines of dense quantitative and diagnostic Q&A.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical revision companion for 03-scaling: 17 numerical and scenario Q&A prompts across `40.2.3.01` and `40.2.3.02`.",
     "fast": "Measured 14.0 KB raw / 4.9 KB gzip. Under 100 lines; pure markdown.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Drills the exact HPA ratio math and failure boundaries: doubling CPU requests halves reported utilization without changing load, and missing metrics block downscale while permitting scale-up."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.01-health-checks.md": {
    "sha256": "29d1bd26b09927a3731d5f240473e605ecad3cc8ca16cf71768300107d7088f0",
@@ -9499,36 +9499,36 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
   },
   "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.02-pod-disruption-budgets.md": {
-   "sha256": "d74055cc4a5dffe8574f57bbe0294ad90ce9708e104b9ea205e4e8967178eb88",
+   "sha256": "c5733b24131d122522972fdc90c643df9bdb0c599f2fdf3772d2af67c6383cf1",
    "lines": 122,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against `policy/v1` PodDisruptionBudget and Kubernetes 1.31+ stable `unhealthyPodEvictionPolicy: AlwaysAllow`.",
-    "readable": "Full read of 122 lines (802 prose words). Hooks with a node drain trying to evict a healthy Pod during peak traffic before tracing eviction API admission, `disruptionsAllowed` math, percentage rounding hazards on single-replica workloads, and `unhealthyPodEvictionPolicy: AlwaysAllow`.",
-    "concise": "802 words across 122 lines. Eviction trace, stateless and quorum PDB manifests, and pre-drain checklist.",
+    "readable": "Full read of 122 lines (806 prose words). Hooks with a node drain trying to evict a healthy Pod during peak traffic before tracing eviction API admission, `disruptionsAllowed` math, percentage rounding hazards on single-replica workloads, and `unhealthyPodEvictionPolicy: AlwaysAllow`.",
+    "concise": "806 words across 122 lines. Eviction trace, stateless and quorum PDB manifests, and pre-drain checklist.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for PodDisruptionBudgets: eviction API scope vs Deployment rollouts/HPA downscales, stateless vs quorum PDB manifests, and empty-selector pitfalls.",
     "fast": "Measured 18.0 KB raw / 5.5 KB gzip. 120 lines with two short YAML manifests.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Highlights two production failure traps: `selector: {}` in `policy/v1` matches every Pod in the namespace, and default `IfHealthyBudget` stalls node drains when a Pod is already unhealthy unless `unhealthyPodEvictionPolicy: AlwaysAllow` is set."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.03-rbac-network-policies.md": {
-   "sha256": "59365e9dedc7c52b4fb9fd1d98316385f8b21b4b4932a180099ff7d3d52eaa14",
+   "sha256": "7e115cacb22725950d24fffc5b3bfa29605392b3e2f7cd92af0cae91e9231563",
    "lines": 190,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Kubernetes 1.24/1.27+ removal of auto-created long-lived ServiceAccount token Secrets, short-lived projected tokens, and `networking.k8s.io/v1` NetworkPolicy evaluation.",
-    "readable": "Full read of 190 lines (1349 prose words). (1,338 prose words). Starts with why revoking a Pod's API Secret-read permission does not close its network path to the database before detailing RBAC Roles/ClusterRoles/Bindings, short-lived projected ServiceAccount tokens, and additive ingress/egress NetworkPolicies including `kube-dns` rules.",
-    "concise": "1349 words across 190 lines. 1,338 words across 180 lines. RBAC Role/RoleBinding YAML and 3-stage NetworkPolicy YAML (default-deny, app-allow, DNS-egress).",
+    "readable": "Full read of 190 lines (1354 prose words). (1,338 prose words). Starts with why revoking a Pod's API Secret-read permission does not close its network path to the database before detailing RBAC Roles/ClusterRoles/Bindings, short-lived projected ServiceAccount tokens, and additive ingress/egress NetworkPolicies including `kube-dns` rules.",
+    "concise": "1354 words across 190 lines. 1,338 words across 180 lines. RBAC Role/RoleBinding YAML and 3-stage NetworkPolicy YAML (default-deny, app-allow, DNS-egress).",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for Kubernetes RBAC and NetworkPolicy: API authorizer chain, subresource permissions (`pods/log`, `pods/exec`), default-deny + explicit allow + DNS egress policies, and CNI enforcement verification.",
     "fast": "Measured 26.5 KB raw / 7.0 KB gzip. Four focused YAML manifests and clear prose.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Shows the exact YAML selector boundary difference between a single peer entry combining `namespaceSelector` + `podSelector` (AND logic) versus two separate peer entries (OR logic that accidentally opens the cluster)."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.04-resource-quotas.md": {
    "sha256": "ae5427488a30b8f35920a3b9170082cffe3e8ee762fc279d11a31662e5480240",
@@ -9547,20 +9547,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
   },
   "40-platform/40.2-kubernetes/04-production-hardening/INDEX.md": {
-   "sha256": "d86ba2a52ce2cfb22662ea89a4c0658dca7c7a958b2ca3aeca8c06ad1c6c4925",
+   "sha256": "f75e7d1d89ab863119dd4ef8cfcad7223b490da96ed1e60063c9d23c5910568b",
    "lines": 58,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against all 4 hardening chapters, `REVISION.md`, and Docita's Fly health checks, Trivy filesystem scans, and PostgreSQL RLS/ABAC controls.",
-    "readable": "Full read of 58 lines (145 prose words). Structures the 5-file Kubernetes Production Hardening category (`40.2.4.01` to `40.2.4.04` + `REVISION.md`) connecting probes, PodDisruptionBudgets, RBAC & NetworkPolicies, and ResourceQuotas/LimitRanges.",
-    "concise": "145 words across 58 lines. File table, cross-references, and Docita anchor.",
+    "readable": "Full read of 58 lines (150 prose words). Structures the 5-file Kubernetes Production Hardening category (`40.2.4.01` to `40.2.4.04` + `REVISION.md`) connecting probes, PodDisruptionBudgets, RBAC & NetworkPolicies, and ResourceQuotas/LimitRanges.",
+    "concise": "150 words across 58 lines. File table, cross-references, and Docita anchor.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical index for 04-production-hardening: orders topics from container health to eviction budgets, API/network isolation, and namespace admission caps.",
     "fast": "Measured 11.2 KB raw / 3.8 KB gzip. 58 lines; instant scan.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Clearly separates application-level tenant controls (PostgreSQL RLS, ABAC) from Kubernetes cluster boundaries (RBAC, NetworkPolicy, ResourceQuota)."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.2-kubernetes/04-production-hardening/REVISION.md": {
    "sha256": "92947c8015d92edd366a41cd8eede0555a8d24ca0357b09c821ab272fdd37f86",
@@ -9691,20 +9691,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
   },
   "40-platform/40.2-kubernetes/INDEX.md": {
-   "sha256": "aa5d05b413bf7ab67ebf352044fe5e355e5feb977a4cfb125b042dea3e96237c",
+   "sha256": "295e6be9213b9e4f72bc9bc170df0a38eab3e82c267bc0c5c182e8dfa74010ea",
    "lines": 124,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Kubernetes 1.31\u20131.37 conventions (Gateway API, native sidecar containers, PodLevelResources, HPA scale-to-zero, Karpenter).",
-    "readable": "Full read of 124 lines (284 prose words). Guides readers through the 23-file Kubernetes stack across 6 numbered category folders from Core Workloads and Networking to Autoscaling, Production Hardening, Packaging/Operators, and Interview Prep.",
-    "concise": "284 words across 124 lines. Category breakdown and prerequisite graph.",
+    "readable": "Full read of 124 lines (286 prose words). Guides readers through the 23-file Kubernetes stack across 6 numbered category folders from Core Workloads and Networking to Autoscaling, Production Hardening, Packaging/Operators, and Interview Prep.",
+    "concise": "286 words across 124 lines. Category breakdown and prerequisite graph.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical index for 40.2-kubernetes: category ordering, pass-by-pass study flow, and cross-links to Docker (40.1) and Observability (40.4).",
     "fast": "Measured 19.8 KB raw / 5.1 KB gzip. Pure markdown navigation index.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Orders Kubernetes mastery around day-2 operational failure boundaries: workload lifecycle first, then traffic/config, scaling economics, security hardening, and GitOps/CRD extensibility."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4A 40-platform/INDEX, 40.1-docker, and 40.2-kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.md": {
    "sha256": "ea322f193139b7e0398af96ffa23dc7e6945603b01a55a851e64126f57f3e2e0",
@@ -11211,7 +11211,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/INDEX.md": {
-   "sha256": "8f0a47555445f8785253d92aa3d3084dccf0fe48cb8147ad0d66dda06b92413a",
+   "sha256": "0518805bc07ac1a89d51743c954aff21f4ad25f03193bb5c9be5e3069a2cf2f5",
    "lines": 132,
    "genre": "index",
    "status": "read",
@@ -11224,7 +11224,7 @@
     "fast": "Measured 17.1 KB raw / 5.8 KB gzip. Pure markdown navigation table.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Frames platform engineering as a single end-to-end production boundary: build (40.5/40.8) -> containerize (40.1) -> CI/CD (40.3) -> provision & orchestrate (40.12/40.2) -> route & cache (40.11/40.10/40.7) -> observe (40.4)."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "50-quality/50.1-testing/01-foundations/50.1.1.01-testing-overview.md": {
    "sha256": "d2ced7e46868c97e9316184ed2e009df0e895b7bc842e21a880f21976d62a7fe",
@@ -14395,7 +14395,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "6442b00380b239ec6d6a363f161711a014cd4d774d9a52cd65d55db654062bc5",
+   "sha256": "631eaa021b99d4291bf65949f2dede55553de7128e13c76548915074a56a7548",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14408,7 +14408,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 20B: 30.3 infra patterns (04-06, INDEX) and 30-architecture INDEX."
+   "notes": "Synced live read-time and counts after Phase 21A: 40.1 Docker and 40.2 Kubernetes."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14699,7 +14699,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "c248f8dd2332691ee1bb3e7983f3f99da0b22da77322cde4f293ee4443b88533",
+   "sha256": "047ac2ae4da5156dd18ea842e2e51111078df02a6e6f95dc82b2708fb90526ec",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14712,7 +14712,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 20B: 30.3 infra patterns (04-06, INDEX) and 30-architecture INDEX."
+   "notes": "Synced live read-time and counts after Phase 21A: 40.1 Docker and 40.2 Kubernetes."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

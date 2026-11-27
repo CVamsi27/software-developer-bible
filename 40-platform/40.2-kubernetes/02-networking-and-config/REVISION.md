@@ -44,11 +44,11 @@ Source: [Kubernetes ConfigMaps & Secrets](40.2.2.02-configmaps-secrets.md)
 
 **Q:** A mutable ConfigMap changes while one Pod uses env injection and another uses a normal volume. Trace what each process sees.
 
-**A:** The first process keeps its startup environment until replacement/restart. The ordinary mounted file can refresh eventually, but the second process changes its effective setting only if it rereads/reloads it. A `subPath` mount would not receive the file update.
+**A:** The first process keeps its startup environment until replacement or restart. The ordinary mounted file can refresh eventually, but the second process changes its effective setting only if it rereads and reloads it. A `subPath` mount would not receive the file update.
 
 **Q:** Why can `defaultMode: 0400` break a non-root application even though the Secret exists?
 
-**A:** Mode, owner/group, and Pod security settings determine access. The actual process user needs read permission; verify the mounted file as that user rather than treating a restrictive mode number as sufficient.
+**A:** Mode, owner and group, and Pod security settings determine access. The actual process user needs read permission; verify the mounted file as that user rather than treating a restrictive mode number as sufficient.
 
 ## PodPresets
 
@@ -56,11 +56,11 @@ Source: [PodPresets](40.2.2.03-podpresets.md)
 
 **Q:** What should replace reliance on a removed `PodPreset` API?
 
-**A:** Use supported workload templates, Helm/Kustomize composition, or a deliberately configured admission mechanism; verify the cluster version and avoid removed API manifests.
+**A:** Use supported workload templates, Helm and Kustomize composition, or a deliberately configured admission mechanism; verify the cluster version and avoid removed API manifests.
 
 **Q:** A fail-closed mutating webhook becomes unavailable. What can happen before the new application Pod reaches scheduling?
 
-**A:** Matching admission requests can fail, so the desired workload exists without its requested new Pods. Inspect admission configuration/events and recover the owned policy service; a new node cannot fix rejected creation.
+**A:** Matching admission requests can fail, so the desired workload exists without its requested new Pods. Inspect admission configuration and events and recover the owned policy service; a new node cannot fix rejected creation.
 
 ## Summary
 

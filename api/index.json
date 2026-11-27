@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "3b249d277be2dbc563b27a53318515b3646703c107682e6b3f970b85f74f8433",
+ "corpus_digest": "b0d03b2650325e07c0ac1421bcd910caf0ae5c6bb75970369dd21c112d6764a4",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5612
+  "read_minutes": 5614
  },
  "chapters": [
   {
@@ -4879,7 +4879,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "40-platform/40.1-docker/40.1.08-image-signing-sbom-supply-chain.html",
@@ -5166,7 +5166,7 @@
     "practice",
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.01-health-checks.html",

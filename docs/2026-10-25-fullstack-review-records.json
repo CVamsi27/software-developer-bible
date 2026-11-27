@@ -6303,35 +6303,35 @@
     },
     {
       "path": "40-platform/40.1-docker/40.1.01-images-containers.md",
-      "sha256": "b248dd1fb71b1d733104d71b67efc21c161e7c2990cf5a60c602d2db3ba9aa4a",
+      "sha256": "fc48b8f41681fd562e1346dd8d768749b00dae9b8463c9b9743a746bca70d78b",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "animation_coverage",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 110 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 110 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
       "path": "40-platform/40.1-docker/40.1.02-volumes-networks.md",
-      "sha256": "bf1874e3206616a81e254952dc0c513b5e0d8b39519f820bbe55d70cf491b666",
+      "sha256": "32836645121167657bad666428b26f1e6662edaa2b9f3aedcab563e84923d46b",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "animation_coverage",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 92 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 92 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
       "path": "40-platform/40.1-docker/40.1.03-compose.md",
-      "sha256": "a8bb2b489e23f11b37cb159d05c4d3cfd350284f55b457621ac63598007c159f",
+      "sha256": "1fe5e8b1e440a37ef22e1898a2281fdfedeb5cf4286365d1d35aff2b2edf9666",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 182 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 182 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
@@ -6358,24 +6358,24 @@
     },
     {
       "path": "40-platform/40.1-docker/40.1.06-production-patterns.md",
-      "sha256": "897142a33ef3911627fb75adc1535f010755295c9c6dcef8ba0793480ac671dd",
+      "sha256": "2e82c1e140ec46f45de7aafee389f9ef2de4d6766f0b7d6694de82d27b711916",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "animation_coverage",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 85 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 85 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
       "path": "40-platform/40.1-docker/40.1.07-container-runtime-internals-namespaces-cgroups.md",
-      "sha256": "e3cae13877fdd808aeedcd73cfe56b893367048d064cbc9860485ad34ca44d11",
+      "sha256": "2a4566545a163eff3b70ff99b4bf6bd9d7c31ef974afbc84cad047168ab0e8d5",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "animation_coverage",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 180 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 182 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [
         {
           "description": "Postmortem OOM diagnostic sequence used docker exec without stating it requires a running original container or preserves no removed cgroup counters.",
@@ -6386,24 +6386,24 @@
     },
     {
       "path": "40-platform/40.1-docker/40.1.08-image-signing-sbom-supply-chain.md",
-      "sha256": "28a6d8cf3a5967caf1008128ccdf0f041bd2c63b988a826b3026337c7af3bb7d",
+      "sha256": "4d485fa63594d0dd34d60b5aafb79807a58e2bb9a74f1ea9af4574ac1c874671",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 124 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 124 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
       "path": "40-platform/40.1-docker/40.1.09-rootless-sandboxed-runtimes.md",
-      "sha256": "9c5aaaf510694fffeaca8c4bf78fa27c920671d300302823c328fd96565cc4ee",
+      "sha256": "8b02450128c050db736bdcfe73d8f7653bb70915190bc39330330af843a1fbd0",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 227 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 227 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "31cfd27043346840442eb860d3eb915117f8a95d04a597fea983c2ce550bd5e4",
@@ -6414,24 +6414,24 @@
     },
     {
       "path": "40-platform/40.1-docker/40.1.10-interview-questions.md",
-      "sha256": "e93154912bc13f89ec7854d6513a14a41b625a7aa62f521321e7d01dfc4eb2e9",
+      "sha256": "ca527cdc59530650cd6f030a61cad852d4538050d8fe297aa4e4aa68a5886af5",
       "genre": "interview-bank",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 293 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 293 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
       "path": "40-platform/40.1-docker/INDEX.md",
-      "sha256": "8e73f6fe60152a0353f118bfa1c57e1558a1e843f13f70bd730cbfcbd9f9a532",
+      "sha256": "2fe35e81518901868eacca7792bfd3bf9bae0463b0a0ff312378970dcb841316",
       "genre": "index",
       "status": "reviewed",
       "reviewer": "animation_coverage",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 102 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 102 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "78ec4787a23db2679df0072fd66fdde72741e8d6716d3bf5963f1df5ab812a16",
@@ -6442,13 +6442,13 @@
     },
     {
       "path": "40-platform/40.1-docker/REVISION.md",
-      "sha256": "58c41e4c8fc0199c24f2689aec62e672e7da8d57436d1c29ed150d21938c7836",
+      "sha256": "1408262c1afa86d306a28ee33c204b059ce00cd9ff55e4658694efc8d1022664",
       "genre": "revision-companion",
       "status": "reviewed",
       "reviewer": "animation_coverage",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 151 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 155 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [
         {
           "description": "Updated companion retrieval to preserve corrected postmortem, rootless resource enforcement and Podman supervision boundaries.",
@@ -6593,24 +6593,24 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.01-pods-replicasets.md",
-      "sha256": "0e7fdaa6c6085f617e4b38578b51519ece630220606615e8eed5f2860337003e",
+      "sha256": "086b5bf1883976e0c297f33e9b60c240e922bb4f641b19c686f011a51c195f08",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 152 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 152 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
       "path": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.02-deployments.md",
-      "sha256": "35e75580e54f3e17fa8a718ebdda68f3727debb79e8e7e348abfaaa983f23878",
+      "sha256": "4f7ada6e8726bfd661f3eee59a35bf31cf90b6dac324bb90fde564fbbc5c7a10",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "animation_coverage",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 179 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 179 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [
         {
           "description": "Rollout diagnosis treated quota violation as an existing Pending Pod; admission can reject Pod creation while Deployment/ReplicaSet exist. Corrected controller event versus scheduling diagnosis.",
@@ -6654,13 +6654,13 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/01-core-workloads/INDEX.md",
-      "sha256": "14a387c980ec72a43d0cea8a82b35f8d9c53366c6cac26f83aa19ef81756c272",
+      "sha256": "c9c8651c4a876d5ecbd0e0a8a0b9397d4012ad4bdeee2c8b867000d8229bef0f",
       "genre": "index",
       "status": "reviewed",
       "reviewer": "animation_coverage",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 57 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 57 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [
         {
           "description": "Docita anchor implied an executed CI-driven rollout from configuration presence; now explicitly requires enabled-trigger and deployment-history evidence.",
@@ -6677,13 +6677,13 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/01-core-workloads/REVISION.md",
-      "sha256": "17ebd4b854583d43e0aaf2f327b31fec4b6b5b88f56b3132dde9dc84e09a0ab2",
+      "sha256": "5eba398434db37f39d2c8db604d32609d8d8c86eb35d74885d8d26bf04f49bc5",
       "genre": "revision-companion",
       "status": "reviewed",
       "reviewer": "animation_coverage",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 111 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 111 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [
         {
           "description": "Revision needed an explicit missing-Pod quota-admission case to preserve the corrected rollout diagnostic boundary.",
@@ -6700,46 +6700,46 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.01-services-ingress.md",
-      "sha256": "4d5b63eb1250a04d45be8224a0734bd1df50644bb52c424eafe32e56d33a3747",
+      "sha256": "3e4ba2100533758951e6e3e5ab16e31f1bbd030a748ad00ad2a77524961ff61d",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 192 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 192 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
       "path": "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.02-configmaps-secrets.md",
-      "sha256": "35f2816a6e40d131a859adbe7fc869275f90da3b9c17594c0fb7eba9dc597089",
+      "sha256": "f1039a3f86929f6f33bf2624b0a1ada4639863e56592e9bf72fbc3785ff5de37",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 215 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 215 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
       "path": "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.03-podpresets.md",
-      "sha256": "ec6595f4024516a6d6abc9736a272c0e8c5a1cbd330e68e374360b2e721c4d41",
+      "sha256": "ccc15473c1992e3585a4356b1e2ec643000987712748e726c4b3f1839ce107e0",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "animation_coverage",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 118 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 118 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
       "path": "40-platform/40.2-kubernetes/02-networking-and-config/INDEX.md",
-      "sha256": "db5f0c58e92c4f2abfaf15a166cc423925427134e6ce277bfb77fc0d6e4f916c",
+      "sha256": "6fd8aa2fb765634ada46965a57e99d1ec9b7edffa7bb929dd60ca2737c700da0",
       "genre": "index",
       "status": "reviewed",
       "reviewer": "animation_coverage",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 62 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 62 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [
         {
           "description": "Docita secrets anchor claimed universal absence of in-repository secrets from environment-reference evidence; scoped the claim to inspected configuration and explicit control verification.",
@@ -6756,24 +6756,24 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/02-networking-and-config/REVISION.md",
-      "sha256": "9c62e4af3fd2a48250b7b459d69efbb6f00911c3fc7b165c9a6ab722fae5146c",
+      "sha256": "afa6ed279ce90be933e0efcfc35cf90b3dc7492cda74aead6fefa9c72cfc468e",
       "genre": "revision-companion",
       "status": "reviewed",
       "reviewer": "animation_coverage",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 75 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 75 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
       "path": "40-platform/40.2-kubernetes/03-scaling/40.2.3.01-hpa-scaling.md",
-      "sha256": "05f9865948dfa9407f385c3b31db3ba63e4da668de2272fdcfeb2cbf00466180",
+      "sha256": "8edc54d9f6fbc476efea9a467c28c1eb3025e6e29b5914fda85ad5fe8a87cb18",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "animation_coverage",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 302 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 304 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [
         {
           "description": "Scale-to-zero example omitted starting from at least one replica; an initialized/manually zero target without ScaledToZero stays paused and will not wake.",
@@ -6795,24 +6795,24 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md",
-      "sha256": "6598f485b6c9d4dfbe1e12f950918121da1b6fb25214f82ef97afc72743bfb1f",
+      "sha256": "787214054639c00b01648a1b5df97a7450834cb405350d3755f6336db123c706",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 181 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 181 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
       "path": "40-platform/40.2-kubernetes/03-scaling/INDEX.md",
-      "sha256": "3cc1d9d57da26ee8143ea1309f968b8baa5f605ea14ced7d22d14c232fe84bc3",
+      "sha256": "ee5c5d03ef6d28f8758330238284a016eb8559f89d996ae48bcec90d3a828fd6",
       "genre": "index",
       "status": "reviewed",
       "reviewer": "animation_coverage",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 55 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 55 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "42872a8b4cf19eca0694ca4002e727637c9a0e1f98b430bda69f4fab02ac08e3",
@@ -6823,13 +6823,13 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/03-scaling/REVISION.md",
-      "sha256": "f65315a0718d84121fd57dd2876e5c5f6bd639ba8de5d7eaed5977d4accfbbd9",
+      "sha256": "e2aa5e392d19941a7df373e7a8c7240497eabc40a24ce5f5c45e6fd1da82f69b",
       "genre": "revision-companion",
       "status": "reviewed",
       "reviewer": "animation_coverage",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 99 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 103 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [
         {
           "description": "Companion lacked repaired integer-policy, scale-zero bootstrap, GPU validation and protected-drain failure boundaries; synchronized focused retrieval prompts.",
@@ -6851,24 +6851,24 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.02-pod-disruption-budgets.md",
-      "sha256": "d74055cc4a5dffe8574f57bbe0294ad90ce9708e104b9ea205e4e8967178eb88",
+      "sha256": "c5733b24131d122522972fdc90c643df9bdb0c599f2fdf3772d2af67c6383cf1",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "animation_coverage",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 122 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 122 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
       "path": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.03-rbac-network-policies.md",
-      "sha256": "59365e9dedc7c52b4fb9fd1d98316385f8b21b4b4932a180099ff7d3d52eaa14",
+      "sha256": "7e115cacb22725950d24fffc5b3bfa29605392b3e2f7cd92af0cae91e9231563",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "animation_coverage",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 190 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 190 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [
         {
           "description": "Default-deny explanation omitted standard own-node/self traffic exceptions and implementation-dependent hostNetwork behavior; stated host isolation as a separate control.",
@@ -6896,13 +6896,13 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/04-production-hardening/INDEX.md",
-      "sha256": "d86ba2a52ce2cfb22662ea89a4c0658dca7c7a958b2ca3aeca8c06ad1c6c4925",
+      "sha256": "f75e7d1d89ab863119dd4ef8cfcad7223b490da96ed1e60063c9d23c5910568b",
       "genre": "index",
       "status": "reviewed",
       "reviewer": "animation_coverage",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 58 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 58 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "3b86d6690528292c2bf24f61e6adb6acddd99e624cae16293cf4edd8e969eb47",
@@ -7037,13 +7037,13 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/INDEX.md",
-      "sha256": "aa5d05b413bf7ab67ebf352044fe5e355e5feb977a4cfb125b042dea3e96237c",
+      "sha256": "295e6be9213b9e4f72bc9bc170df0a38eab3e82c267bc0c5c182e8dfa74010ea",
       "genre": "index",
       "status": "reviewed",
       "reviewer": "animation_coverage",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4A C1-C8 refinement (2026-11-24): Full read of 124 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 124 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "ac1ab419f378d9a41eb62aa1eba8857b35988cf987b2168ee1413b9809bf2d7b",
@@ -8057,13 +8057,13 @@
     },
     {
       "path": "40-platform/INDEX.md",
-      "sha256": "8f0a47555445f8785253d92aa3d3084dccf0fe48cb8147ad0d66dda06b92413a",
+      "sha256": "0518805bc07ac1a89d51743c954aff21f4ad25f03193bb5c9be5e3069a2cf2f5",
       "genre": "index",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 132 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 132 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "006f685350cac4d3b8150851e252af5b62f433ddc0b206379ba665966a8dda57",
@@ -10101,12 +10101,12 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "6442b00380b239ec6d6a363f161711a014cd4d774d9a52cd65d55db654062bc5",
+      "sha256": "631eaa021b99d4291bf65949f2dede55553de7128e13c76548915074a56a7548",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 20B: 30.3 infra patterns (04-06, INDEX) and 30-architecture INDEX count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 20B: 30.3 infra patterns (04-06, INDEX) and 30-architecture INDEX.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 21A: 40.1 Docker and 40.2 Kubernetes.",
       "findings": []
     },
     {
@@ -10296,12 +10296,12 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "c248f8dd2332691ee1bb3e7983f3f99da0b22da77322cde4f293ee4443b88533",
+      "sha256": "047ac2ae4da5156dd18ea842e2e51111078df02a6e6f95dc82b2708fb90526ec",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 20B: 30.3 infra patterns (04-06, INDEX) and 30-architecture INDEX count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 20B: 30.3 infra patterns (04-06, INDEX) and 30-architecture INDEX.",
+      "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 21A: 40.1 Docker and 40.2 Kubernetes.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

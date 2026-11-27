@@ -1,7 +1,7 @@
 # Kubernetes — Index
 
-> **Study time:** ≈ 2 h 59 m of reading (22 files, ~8 min average).
-> **22 files** — Kubernetes orchestration from pods and replica sets to deployments, services, ingress, ConfigMaps, Horizontal Pod Autoscaler (HPA), node autoscaling (Karpenter/Cluster Autoscaler), health checks, Helm, Kustomize, Custom Resource Definitions (CRDs) and operators, security, batch workloads, Pod Disruption Budgets (PDBs), resource quotas, admission injection, and interview questions.
+> **Study time:** ≈ 3 h of reading (22 files, ~8 min average).
+> **22 files** — Kubernetes orchestration from pods and replica sets to deployments, services, ingress, ConfigMaps, Horizontal Pod Autoscaler (HPA), node autoscaling (Karpenter and Cluster Autoscaler), health checks, Helm, Kustomize, Custom Resource Definitions (CRDs) and operators, security, batch workloads, Pod Disruption Budgets (PDBs), resource quotas, admission injection, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-22-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
@@ -54,7 +54,7 @@ How traffic and configuration get in.
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 08 | [HPA & Scaling](03-scaling/40.2.3.01-hpa-scaling.md) | Horizontal pod autoscaling, metrics server, custom metrics, VPA | Optional | Specialized | 16 min |
-| 09 | [Node Autoscaling & Cluster Capacity](03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md) | Cluster Autoscaler rules, Karpenter consolidation, node pools/taints, overprovisioning buffers, Graphics Processing Unit (GPU) and stateful caveats | Optional | Specialized | 9 min |
+| 09 | [Node Autoscaling & Cluster Capacity](03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md) | Cluster Autoscaler rules, Karpenter consolidation, node pools and taints, overprovisioning buffers, Graphics Processing Unit (GPU) and stateful caveats | Optional | Specialized | 9 min |
 
 ---
 
@@ -96,7 +96,7 @@ The senior-level reliability and security layer.
 3. **ConfigMaps & Secrets** — must know
 4. **Health Checks** — must know
 5. **HPA & Node Autoscaling** — for production scale
-6. **Helm + Kustomize + Operators** — for the packaging/extension layer
+6. **Helm + Kustomize + Operators** — for the packaging and extension layer
 7. **StatefulSets, Jobs, PDBs, RBAC, Resource Quotas** — as relevant to the job description (JD)
 8. **Interview Questions** — final review
 

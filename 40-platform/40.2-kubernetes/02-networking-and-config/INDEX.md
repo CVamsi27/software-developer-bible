@@ -24,10 +24,10 @@ A Pod can be reached directly when routing allows, but its address is not a dura
 ## File Index
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| ----: | ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ | ----------: |
-| 01 | [Services & Ingress](40.2.2.01-services-ingress.md) | ClusterIP, NodePort, LoadBalancer, `kube-proxy`, Ingress controllers, Transport Layer Security (TLS) termination, host/path routing | Optional | Specialized | 9 min |
+| ----: | ------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ | ----------: |
+| 01 | [Services & Ingress](40.2.2.01-services-ingress.md) | ClusterIP, NodePort, LoadBalancer, `kube-proxy`, Ingress controllers, Transport Layer Security (TLS) termination, host and path routing | Optional | Specialized | 9 min |
 | 02 | [ConfigMaps & Secrets](40.2.2.02-configmaps-secrets.md) | ConfigMaps, Secrets, mounting vs env vars, encryption at rest, rolling config changes | Optional | Specialized | 10 min |
-| 03 | [PodPresets](40.2.2.03-podpresets.md) | Removed API history; supported templates, Helm/Kustomize and admission alternatives | Optional | Specialized | 5 min |
+| 03 | [PodPresets](40.2.2.03-podpresets.md) | Removed API history; supported templates, Helm and Kustomize, and admission alternatives | Optional | Specialized | 5 min |
 
 ---
 
@@ -48,14 +48,14 @@ A Pod can be reached directly when routing allows, but its address is not a dura
 
 Where [docita](https://github.com/CVamsi27/docita) meets this topic.
 
-_No direct docita implementation yet_ — no Services/Ingress/ConfigMaps; a Fly router + Cloudflare play those roles:
+_No direct docita implementation yet_ — no Services, Ingress, or ConfigMaps; a Fly router + Cloudflare play those roles:
 
 | Topic | Docita evidence |
-| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Ingress & TLS termination | Cloudflare edge (origin protection, Architecture Decision Record (ADR) 0014) → Fly `http_service` with `force_https = true` |
 | ConfigMap-like env config | `fly.toml [env]` block + turbo `globalEnv` allowlist, validated by `shared/modules/config/env-schema.ts` |
 | Secrets handling | Runtime environment references such as `RAZORPAY_KEY_SECRET` and database URLs in the inspected configuration; verify provisioning and repository secret controls separately. |
-| PodPresets / admission injection | _No direct docita implementation yet._ |
+| PodPresets and admission injection | _No direct docita implementation yet._ |
 
 ## Finish This Section
 

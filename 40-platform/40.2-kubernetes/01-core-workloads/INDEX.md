@@ -1,7 +1,7 @@
 # Core Workloads
 
 > **Study time:** ≈ 35 min of reading (5 files, ~7 min average).
-> **5 files.** What actually runs in a Kubernetes cluster: pods and ReplicaSets, Deployments on top, StatefulSets/DaemonSets for special cases, Jobs/CronJobs for batch. Read these before anything else in the Kubernetes stack.
+> **5 files.** What actually runs in a Kubernetes cluster: pods and ReplicaSets, Deployments on top, StatefulSets and DaemonSets for special cases, Jobs and CronJobs for batch. Read these before anything else in the Kubernetes stack.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Workloads-blue)](../INDEX.md)
@@ -50,7 +50,7 @@ _No direct docita implementation yet_ — the API runs as long-running Fly.io ma
 | Machine as replica analogy | `fly.toml [[vm]]` defines a 512 MB API machine and `min_machines_running = 0`; Fly machine scaling is not a Kubernetes ReplicaSet. The worker is a separate 256 MB app. |
 | Deployment-like rollout | `.github/workflows/deploy.yml` and `apps/api/Dockerfile` are candidate release configuration; inspect enabled triggers and deployment history before claiming an executed rollout. |
 | CronJob analog | The worker app enables Nest `@Cron` handlers; the API disables them. `CronHeartbeat` records outcomes for observability, but does not elect one worker or prevent duplicate execution. |
-| StatefulSet / DaemonSet | _No direct docita implementation yet._ |
+| StatefulSet and DaemonSet | _No direct docita implementation yet._ |
 
 ## Finish This Section
 

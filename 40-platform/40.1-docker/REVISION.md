@@ -74,13 +74,17 @@ Source: [Container Runtime Internals — Namespaces, cgroups and OverlayFS](40.1
 
 **A:** `docker exec` requires the original container to be running, and its cgroup may disappear during cleanup. Export counters while alive, then combine retained inspect state with runtime and node events; reading a replacement container does not recover the old counters.
 
+**Q:** Why can a two-CPU `cpu.max` limit still cause 75 ms tail-latency pauses on a multi-threaded container running on an 8-core host?
+
+**A:** Eight runnable threads can burn a 200 ms CPU quota in 25 ms of wall time, forcing the kernel CFS scheduler to throttle every thread in the cgroup until the next 100 ms period begins. Inspect `nr_throttled`, `throttled_usec`, and cgroup v2 `cpu.pressure` before tightening hard CPU limits on latency-sensitive services.
+
 ## Image Signing, SBOM & Supply Chain Security
 
 Source: [Image Signing, SBOM & Supply Chain Security](40.1.08-image-signing-sbom-supply-chain.md)
 
 **Q:** Why is a valid image signature insufficient to approve deployment?
 
-**A:** It authenticates a digest under an identity/key policy. Approval also needs expected provenance, source/build identity, contents, and vulnerability policy.
+**A:** It authenticates a digest under an identity and key policy. Approval also needs expected provenance, source and build identity, contents, and vulnerability policy.
 
 **Q:** What distinguishes SLSA Build L0 through L3 in version 1.2?
 
@@ -92,7 +96,7 @@ Source: [Rootless Mode & Sandboxed Runtimes (gVisor, Kata)](40.1.09-rootless-san
 
 **Q:** What does rootless mode leave shared with the host?
 
-**A:** The host kernel. Removing daemon root reduces privilege but does not eliminate kernel vulnerabilities; gVisor and VM-backed runtimes introduce additional isolation with compatibility/cost trade-offs.
+**A:** The host kernel. Removing daemon root reduces privilege but does not eliminate kernel vulnerabilities; gVisor and VM-backed runtimes introduce additional isolation with compatibility and cost trade-offs.
 
 **Q:** Why does rootless mode not eliminate container-escape risk?
 
@@ -100,7 +104,7 @@ Source: [Rootless Mode & Sandboxed Runtimes (gVisor, Kata)](40.1.09-rootless-san
 
 **Q:** Why might rootless `--cpus` fail to enforce the requested budget even on a cgroup-v2 host?
 
-**A:** Docker also needs systemd and delegation of the CPU controller. Many hosts delegate only memory and PID controllers by default. Inspect the actual driver/controllers instead of inferring enforcement from the command.
+**A:** Docker also needs systemd and delegation of the CPU controller. Many hosts delegate only memory and PID controllers by default. Inspect the actual driver and controllers instead of inferring enforcement from the command.
 
 **Q:** Does enabling `podman.socket` create a supervised container user service?
 

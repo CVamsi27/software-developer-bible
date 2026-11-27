@@ -1,6 +1,6 @@
 # Scaling
 
-> **Study time:** ≈ 27 min of reading (3 files, ~9 min average).
+> **Study time:** ≈ 28 min of reading (3 files, ~9 min average).
 > **3 files.** Matching capacity to load: Horizontal Pod Autoscaling (HPA) driven by metrics, plus node-level autoscaling (Cluster Autoscaler vs Karpenter) that gives pods somewhere to schedule.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
@@ -41,14 +41,14 @@ Workload autoscaling needs a reliable metric and honest resource requests; node 
 
 Where [docita](https://github.com/CVamsi27/docita) meets this topic.
 
-_No direct docita implementation yet_ — no HPA/Karpenter; scaling is deliberate Fly.io mechanics:
+_No direct docita implementation yet_ — no HPA or Karpenter; scaling is deliberate Fly.io mechanics:
 
 | Topic | Docita evidence |
-| ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Fly Proxy request concurrency | `fly.toml [http_service.concurrency]` sets soft 60 / hard 100 requests per machine. Proxy concurrency helps route requests and start an existing stopped machine; it does not create machines or implement an HPA control loop. [Fly Proxy autostop/autostart](https://fly.io/docs/reference/fly-proxy-autostop-autostart/) |
-| Scheduled scaling | `.github/workflows/scale-api-hours.yml` defines 8:30 AM/PM IST cron runs, but GitHub's Actions API reported `disabled_manually` on 2026-10-12; the configured schedule is not active. |
+| ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Fly Proxy request concurrency | `fly.toml [http_service.concurrency]` sets soft 60 and hard 100 requests per machine. Proxy concurrency helps route requests and start an existing stopped machine; it does not create machines or implement an HPA control loop. [Fly Proxy autostop and autostart](https://fly.io/docs/reference/fly-proxy-autostop-autostart/) |
+| Scheduled scaling | `.github/workflows/scale-api-hours.yml` defines 8:30 AM and 8:30 PM IST cron runs, but GitHub's Actions API reported `disabled_manually` on 2026-10-12; the configured schedule is not active. |
 | Idle suspend and wake | `fly.toml` sets `auto_stop_machines='suspend'`, `auto_start_machines=true`, and `min_machines_running=0`; Fly Proxy suspends and wakes existing machines based on traffic, but does not create or destroy machines. |
-| Node autoscaling / VPA / Karpenter | _No direct docita implementation yet._ |
+| Node autoscaling, VPA, and Karpenter | _No direct docita implementation yet._ |
 
 ## Finish This Section
 

@@ -45,7 +45,7 @@ Mark order COMPLETED and released
 
 Two concurrent releasers can both send before either marks completion. The repository's `markReleased` update filters identifier (ID) and clinic, without a conditional current-status or release-ownership predicate. A canceled order can also change after the earlier check. Reloading reduces staleness but does not create an atomic claim.
 
-The URL-generation call occurs outside the send `try`/`catch` block. A signing failure can stop release, while a caught send failure permits completion. A `ForbiddenException` does not necessarily mean template rejection; entitlement and other permission checks can produce it.
+The URL-generation call occurs outside the send `try` and `catch` block. A signing failure can stop release, while a caught send failure permits completion. A `ForbiddenException` does not necessarily mean template rejection; entitlement and other permission checks can produce it.
 
 No patient phone logs a warning and still permits local release. Distinguish released and available from notified and delivered. The WhatsApp stale sweep reports unresolved delivery; it does not automatically resend or repair it.
 

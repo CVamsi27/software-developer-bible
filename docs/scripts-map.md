@@ -6,7 +6,7 @@
 
 # Scripts Map — what runs, what owns what, what to reach for
 
-`roadmap-return.test.cjs` exercises safe dated return links and chapter/revision context; it runs with the JavaScript checks in `verify.sh`.
+`roadmap-return.test.cjs` exercises safe dated return links and chapter and revision context; it runs with the JavaScript checks in `verify.sh`.
 
 > The main verification and maintenance scripts, arranged by the job they do inside the 34-gate
 > verification suite: the gate that runs it, what it owns exclusively, the
@@ -64,8 +64,8 @@
 | 10 | `check_cross_refs.py` | `→ N.N.N` refs resolve to real files | a ref points nowhere |
 | 11 | `check_duplication.py --strict` | No chapter teaches another chapter's prose | near-duplicate sections appear |
 | 12 | `check_topic_twins.py` | Twin chapters cross-link both ways | twins stop linking |
-| 13 | `read_time.py --check` | Declared study/read times equal computed estimates | times drift from word counts |
-| 14 | `gen_master_index.py --check` | search.html + api/index.json + api/search-index.js byte-identical to corpus | generated files stale |
+| 13 | `read_time.py --check` | Declared study and read times equal computed estimates | times drift from word counts |
+| 14 | `gen_master_index.py --check` | `search.html` + `api/index.json` + `api/search-index.js` byte-identical to corpus | generated files stale |
 | 15 | `check_verify_wiring.py` | The harness itself: failure branches, gate count in 3 files, CI enforcement, trigger paths | the harness stops listening |
 | 16 | `test_md_fences.py` | The fence owner's semantics (16 characterization cases) | `md_fences.walk` drifts |
 | 17 | `test_fixers.py` | The fixers' repair output (7 planted-defect round trips, byte-exact) | a fixer repairs wrongly |
@@ -96,12 +96,12 @@ When a gate fails, identify the reported defect and use its matching repair. Met
 | Gate 6b metadata drift | `python3 scripts/read_time.py --write` after fixing placement |
 | Gate 13 or 14 study-time or search drift | `python3 scripts/read_time.py --write` → `python3 scripts/gen_master_index.py` → `python3 scripts/check_counts.py --write` (keep this order; earlier steps change later inputs) |
 | Gate 28 generic section label | `python3 scripts/check_readability.py --write` (mechanical: promotes the umbrella's own children, touches no prose) |
-| Gate 8, 8b, or 8c hygiene | `python3 scripts/fix_code_whitespace.py --trailing-ws --paste-shift` / `fix_box_code_indent.py --fix` / `fix_box_width.py --fix` then `check_alignment.py --fix` |
+| Gate 8, 8b, or 8c hygiene | `python3 scripts/fix_code_whitespace.py --trailing-ws --paste-shift`, `fix_box_code_indent.py --fix`, or `fix_box_width.py --fix` then `check_alignment.py --fix` |
 | Gate 6 new external URL | probe-verify in a browser, then `python3 scripts/link_baseline.py --update`, commit the JSON with the doc |
 | Gate 12 missing twin links | `python3 scripts/link_topic_twins.py` (dry-run first) |
 | Gate 15 wiring broken | fix by hand — that is the point; `--write` only restamps counts |
 | Gate 31 unreviewed or stale file | read it end to end, then `python3 scripts/review_ledger.py apply <batch.json>`; `status` shows the remaining queue |
-| Gate 16/17 test failure | fix the module under test (or deliberately re-pin with a probe run + commit note) |
+| Gate 16 or 17 test failure | fix the module under test (or deliberately re-pin with a probe run + commit note) |
 
 ### Scripts that serve specific workflows (not gates)
 

@@ -859,7 +859,7 @@ Sources: [Deployment and infrastructure](10-deployment-infrastructure.md), [capa
 
 **Q:** What evidence would justify moving from the temporary database profile to the balanced reference profile?
 
-**A:** Compare measured query time, pool wait, input/output (I/O) pressure, cold-start behavior, recovery needs, and cost over a representative workload. Identify the binding constraint and the expected benefit. A clinic-count milestone alone cannot establish that a different provider or larger instance solves the observed problem.
+**A:** Compare measured query time, pool wait, input and output (I/O) pressure, cold-start behavior, recovery needs, and cost over a representative workload. Identify the binding constraint and the expected benefit. A clinic-count milestone alone cannot establish that a different provider or larger instance solves the observed problem.
 
 ## Budget Connections, Memory, and Storage Together
 

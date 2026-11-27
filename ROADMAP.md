@@ -83,7 +83,7 @@ Include [forms](10-frontend/10.5-form-handling/INDEX.md) and [HTML and CSS](10-f
 | 2.3.4 | [Caching](20-backend/20.8-caching/INDEX.md) | cache-aside, write-through, and write-behind → invalidation → stampede defense → advanced Redis |
 
 ### 2.4 Auth & Security — *the dedicated learning track*
-Study as one connected story, not isolated files → **[20-backend/20.5-security/01-auth/INDEX.md](20-backend/20.5-security/01-auth/INDEX.md)**
+Study as one connected story, not isolated files → **[Auth Security Category Index](20-backend/20.5-security/01-auth/INDEX.md)**
 
 | Stage | Topic | Trade-off you must be able to defend |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -102,7 +102,7 @@ Study as one connected story, not isolated files → **[20-backend/20.5-security
 | ----- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 2.5.1 | [Microservices & distributed patterns](20-backend/20.6-microservices/INDEX.md) | foundations (discovery, gateway, gRPC) → data patterns (event sourcing, CQRS, saga, distributed transactions) → resilience (circuit breaker, bulkhead, mesh) → messaging (Kafka, RabbitMQ, dead-letter queues (DLQs), event-driven architecture) |
 | 2.5.2 | [Ops patterns](30-architecture/30.3-infra-patterns/INDEX.md) | retries and backoff → idempotency keys → health checks and graceful shutdown → leader election → zero-downtime deploys |
-| 2.5.3 | [Real-time](60-realtime/60.1-websockets/INDEX.md) *(JD-dependent)* | WebSockets (WS) vs. Server-Sent Events (SSE) vs. polling → scaling with publish-subscribe (pub/sub) → presence |
+| 2.5.3 | [Real-time](60-realtime/60.1-websockets/INDEX.md) *(JD-dependent)* | WebSockets (WS) vs. Server-Sent Events (SSE) vs. polling → scaling with publish-subscribe (Pub/Sub) → presence |
 | 2.5.4 | [AI Engineering](20-backend/20.12-ai-engineering/INDEX.md) *(if the role requires it)* | retrieval, streaming, and structured output → evaluation → safety and cost controls. Practice a proposed design; claim production ownership only when supported by your project evidence |
 
 **Checkpoint 2:** Design authorization for a multi-tenant service, trace a concurrent transaction failure, and choose pagination for a changing feed. Explain the invariant, enforcement point, and recovery behavior. Distinguish a worked study example from an incident you personally handled.

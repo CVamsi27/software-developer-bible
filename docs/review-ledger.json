@@ -13467,7 +13467,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 8 80-lanes-abroad-full-stack)."
   },
   "80-lanes-abroad-full-stack/80.07-company-profiles.md": {
-   "sha256": "199db945d544e5b310b8101695f7c353ce00e6a1230acef4fcfe415c1a0cf30e",
+   "sha256": "c710126b2553fa339ea5c23cccbd8e7461992b51482de732c555c2dba347700d",
    "lines": 72,
    "genre": "lane",
    "status": "read",
@@ -13477,10 +13477,10 @@
     "readable": "Full read of 72 lines (457 prose words). Rewritten with identity/acquisition traps, 30-minute research template, a complete worked public reference profile (n8n), and an honest motivation formula.",
     "concise": "457 words across 72 lines. Replaces abstract methodology with a tight 30-minute workflow and one concrete worked profile.",
     "focused": "Canonical employer research method; live ATS discovery lives in 00.05 and German ecosystem hubs in 80.23.",
-    "fast": "Measured 14.7 KB raw / 5.4 KB gzip (on the shared Jekyll shell; well under the 64 KiB gzip budget.)",
+    "fast": "Measured 14.7 KB raw / 5.4 KB gzip. (on the shared Jekyll shell; well under the 64 KiB gzip budget.)",
     "best": "Shows how to separate dated evidence from open screen questions; remaining limit is that public product docs never prove a specific team stack or active sponsorship."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 8 80-lanes-abroad-full-stack)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24A: lanes, projects, active docs, and root guides)."
   },
   "80-lanes-abroad-full-stack/80.08-system-design-case-bank.md": {
    "sha256": "6c83437efc1a7bc5bdf91ea973732dd5f7d3ee54f2f0795e2560297e1eb3c908",
@@ -13515,20 +13515,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 8 80-lanes-abroad-full-stack)."
   },
   "80-lanes-abroad-full-stack/80.10-weekly-tracker.md": {
-   "sha256": "3aa61532860c1cd09d64b364e5d379c7531e3e82b2cd7d74a2dc49c8c87ac5b4",
+   "sha256": "28d0c085b2b2c8abf1db12990748af47a15986a103babc2c14de27f4f72115b7",
    "lines": 56,
    "genre": "lane",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against 2026 EU hiring cycle timelines; no version-sensitive API claim.",
-    "readable": "Full read of 56 lines (405 prose words). Rewrote weekly execution tracker into an actionable log template with clear weekly metrics, review cadence, and pipeline health checks.",
-    "concise": "405 words across 56 lines. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "readable": "Full read of 56 lines (408 prose words). Rewrote weekly execution tracker into an actionable log template with clear weekly metrics, review cadence, and pipeline health checks.",
+    "concise": "408 words across 56 lines. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
     "focused": "Canonical weekly application and interview tracker template; points at 80.13 and 80.33 for study scheduling instead of duplicating curricula.",
     "fast": "Measured 11.5 KB raw / 4.3 KB gzip.",
     "best": "Remaining limit is that a static markdown template does not automate CRM reminders; pair it with a local tracker outside this public repo."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 8 80-lanes-abroad-full-stack)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24A: lanes, projects, active docs, and root guides)."
   },
   "80-lanes-abroad-full-stack/80.11-mock-interview-bank.md": {
    "sha256": "8e6a6732828930282c3606dc5f468a0c7f0b0ae092334f357f4c172f57588d59",
@@ -13723,7 +13723,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 8 80-lanes-abroad-full-stack)."
   },
   "80-lanes-abroad-full-stack/80.23-german-companies-database.md": {
-   "sha256": "38634d309c99db2c59e8b0a47f7dbd7d0c8bc930f4ab0383de3e659994042fe4",
+   "sha256": "7b4a6d4fa10a9b186f4e655500d16819dead397b1e2a02665c1b313603463bec",
    "lines": 96,
    "genre": "lane",
    "status": "read",
@@ -13733,10 +13733,10 @@
     "readable": "Full read of 96 lines (470 prose words). Rewritten from an empty schema note into a reference directory of 13 verified German/EU tech ecosystems + live ATS discovery JSON/CLI workflow + 3-layer record model + 8-field tracker.",
     "concise": "470 words across 96 lines. Combines a verified reference directory with a clean 3-layer schema and refresh rules without bloating into a stale vacancy list.",
     "focused": "Canonical German/EU role-database guide; broad VC hubs and search dorks stay in 00.05 and private application logs stay outside this repo.",
-    "fast": "Measured 17.5 KB raw / 5.6 KB gzip (on the shared Jekyll shell; well under the 64 KiB gzip budget.)",
+    "fast": "Measured 17.5 KB raw / 5.6 KB gzip. (on the shared Jekyll shell; well under the 64 KiB gzip budget.)",
     "best": "Provides live ATS hubs and automated discovery config; remaining limit is that company listings cannot guarantee active vacancies or visa sponsorship."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 8 80-lanes-abroad-full-stack)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24A: lanes, projects, active docs, and root guides)."
   },
   "80-lanes-abroad-full-stack/80.24-eu-regulatory-compliance.md": {
    "sha256": "191430ab90dbb65dcc054034ebe1de00ec8dd0ec12318136ac56f27b8dcd1758",
@@ -13915,7 +13915,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 8 80-lanes-abroad-full-stack)."
   },
   "80-lanes-abroad-full-stack/80.35-germany-target-engine.md": {
-   "sha256": "18d41f93f5b374a230cb1b350a833263755a4166a7196f6f931df81fb5268537",
+   "sha256": "f75e918759425ecb64e21b1367e9b951a66445b2e44e8b2881fda7e73600a216",
    "lines": 77,
    "genre": "lane",
    "status": "read",
@@ -13925,13 +13925,13 @@
     "readable": "Full read of 77 lines (617 prose words). Rewritten into a practical 6-step weekly search operating loop: live req check, 5-minute constraint screen, 4-record private layout, automation review boundary, honest rejection diagnosis, and weekly funnel math.",
     "concise": "617 words across 77 lines. Focused operational engine with clear boundaries and zero duplicated company lists.",
     "focused": "Canonical weekly job-search operating loop for Germany/EU; discovery channels stay in 00.05 and database schema in 80.23.",
-    "fast": "Measured 14.0 KB raw / 5.1 KB gzip (on the shared Jekyll shell; well under the 64 KiB gzip budget.)",
+    "fast": "Measured 14.0 KB raw / 5.1 KB gzip. (on the shared Jekyll shell; well under the 64 KiB gzip budget.)",
     "best": "Keeps outreach and applications evidence-driven; remaining limit is that fast rejections rarely expose their exact filter so funnel changes must be tracked over real sample sizes."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 8 80-lanes-abroad-full-stack)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24A: lanes, projects, active docs, and root guides)."
   },
   "80-lanes-abroad-full-stack/80.36-docita-complete-interview-defense.md": {
-   "sha256": "5aadc9ed7cb0327f06be94f5eaa10963cf430f5cbe207b23db855ebc8c6c2da7",
+   "sha256": "cd895589dccc652fa5115b57cfa702816f3b364b1f479eb49cd0d33414aa61c7",
    "lines": 96,
    "genre": "lane",
    "status": "read",
@@ -13944,7 +13944,7 @@
     "fast": "Measured 17.3 KB raw / 5.9 KB gzip.",
     "best": "Remaining limit is memorizing scripted answers fails under adversarial follow-ups; explain every decision from first principles."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 8 80-lanes-abroad-full-stack)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24A: lanes, projects, active docs, and root guides)."
   },
   "80-lanes-abroad-full-stack/INDEX.md": {
    "sha256": "33c9aaa81c6063e4ab7227422d3e4946106ddedadfb5e1d4000a1336bd8c15eb",
@@ -14123,20 +14123,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 9 81-lanes-indian-sde-faang and lanes)."
   },
   "81-lanes-indian-sde-faang/81.10-spaced-repetition-schedule.md": {
-   "sha256": "4c1ce10d6d8cf6c1fbbfcdd3728800194cc5bce322fbdc2f1703f37c5cb919f5",
+   "sha256": "f69843318596641ef4f7742e90145c92079f3db49a023bd99da005851ff25b76",
    "lines": 77,
    "genre": "lane",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against Dunlosky et al. (PubMed) and current Anki deck-options docs.",
-    "readable": "Full read of 77 lines (448 prose words). Practical spaced-repetition guide tying recall intervals to observed performance, concrete calendar due dates, and Anki deck options.",
-    "concise": "448 words across 77 lines. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "readable": "Full read of 77 lines (453 prose words). Practical spaced-repetition guide tying recall intervals to observed performance, concrete calendar due dates, and Anki deck options.",
+    "concise": "453 words across 77 lines. Concise, plain-English prose with clear tables, traces, and no padding.",
     "focused": "Canonical Lane 81 spacing schedule; separate from 81.13 learning loop and 81.14 flashcard import mechanics.",
-    "fast": "Measured excluded by _config.yml; no public page is built (excluded by _config.yml; no public page is built)",
+    "fast": "Measured excluded by _config.yml; no public page is built. Measured excluded by _config.yml; no public page is built (excluded by _config.yml; no public page is built)",
     "best": "Remaining limit is that spaced cards test recall of isolated mechanisms and do not prove end-to-end interview execution."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 9 81-lanes-indian-sde-faang and lanes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24A: lanes, projects, active docs, and root guides)."
   },
   "81-lanes-indian-sde-faang/81.11-daily-study-timer.md": {
    "sha256": "bc6755948697b2b70c880e133cbe872595ad71b65c3f4a6d332594926bb6934b",
@@ -14395,20 +14395,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "29450e2f2651fafa8a95b29144a13e4a96d709a1d81c4fef9fb9498fa9107755",
+   "sha256": "dcc91fbec728e2b6af6af286fc9d8dec6ab0641746764b6bda51905dea9e3f92",
    "lines": 207,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against docs/verification-gates.md gate list and https://github.com/CVamsi27/software-developer-bible repository navigation.",
-    "readable": "Full read of 207 lines (465 prose words). The root INDEX.md opens with the study contract, lists every stack with lane mapping, and uses topic-specific headings rather than a generic Why/How/Examples sequence.",
-    "concise": "465 words of prose after removing YAML fences, badge links and metadata rows.",
+    "readable": "Full read of 207 lines (475 prose words). The root INDEX.md opens with the study contract, lists every stack with lane mapping, and uses topic-specific headings rather than a generic Why/How/Examples sequence.",
+    "concise": "475 words of prose after removing YAML fences, badge links and metadata rows.",
     "focused": "Owned: this is the canonical root navigation index; it links out to stack indexes rather than retelling their content.",
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 22B: 60-realtime (20 files)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24A: lanes, projects, active docs, and root guides)."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14427,52 +14427,52 @@
    "notes": "Re-read after count restamp; hash now matches disk."
   },
   "ROADMAP.md": {
-   "sha256": "8b34611be83e4a6da4d3a25539c9bd63a993f373fb2ef595737a4d04252c62f3",
+   "sha256": "6c570c5cb14f622d6f43a9dd99a2aa5a447f1f09b2127a0d06d7945a940015ad",
    "lines": 275,
    "genre": "meta",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "No version-specific claim; Phase 1 stack links resolve to existing indexes and the 8 checkpoints match the phase sections.",
-    "readable": "Full read of 275 lines (643 prose words) the path is ordered by phase, each phase has a concrete checkpoint, and the weekly plan follows.",
-    "concise": "643 words across 275 lines. tables carry the study order and the prose explains only scheduling choices.",
+    "readable": "Full read of 275 lines (646 prose words) the path is ordered by phase, each phase has a concrete checkpoint, and the weekly plan follows.",
+    "concise": "646 words across 275 lines. tables carry the study order and the prose explains only scheduling choices.",
     "focused": "Canonical study path; it points at the stack indexes and readiness rubric instead of restating chapter content.",
-    "fast": "Measured 35.7 KB raw / 10.7 KB gzip (the shared Jekyll shell is included.)",
+    "fast": "Measured 35.7 KB raw / 10.7 KB gzip. (the shared Jekyll shell is included.)",
     "best": "A plan cannot guarantee an offer; the text says depth must follow the confirmed format and a weak checkpoint needs revisiting."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24A: lanes, projects, active docs, and root guides)."
   },
   "contributing.md": {
-   "sha256": "6053048098df2e7c7f6c5968b6c15d4f30d4ba406d1e63bcead407a23fee0247",
+   "sha256": "aef0e9f0f9e5e7f144a0c54ebc14b52c4b79c6d36f4e504b058ae540da62340b",
    "lines": 948,
    "genre": "meta",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against https://github.com/CVamsi27/software-developer-bible contributing conventions and AGENTS.md operating rules.",
-    "readable": "Full read of 948 lines (3308 prose words). The contributing guide opens with the hard rules, then walks through the expected workflow, repo conventions, and verification gates in order.",
-    "concise": "3308 words of prose after removing YAML fences, badge links and metadata rows.",
+    "readable": "Full read of 948 lines (3318 prose words). The contributing guide opens with the hard rules, then walks through the expected workflow, repo conventions, and verification gates in order.",
+    "concise": "3318 words of prose after removing YAML fences, badge links and metadata rows.",
     "focused": "Owned: this is the canonical contributor contract; it links to scripts and gates rather than restating their checks.",
-    "fast": "Measured not built as HTML; 53.1 KB Markdown source served raw. 1 KB Markdown source served raw. 1 KB Markdown source served raw. 1 KB Markdown source served raw.",
+    "fast": "Measured not built as HTML; 53.1 KB Markdown source served raw. 1 KB Markdown source served raw. 1 KB Markdown source served raw. 1 KB Markdown source served raw. 1 KB Markdown source served raw.",
     "best": "Does not retell stack content; its boundary is contribution process and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24A: lanes, projects, active docs, and root guides)."
   },
   "design-qa.md": {
-   "sha256": "4c7ab6ba5a188dc76d474a829bc7e1c1808c7032d41f351806bb1d1cb815bd93",
+   "sha256": "79c264d4f4d6cac8aeca0326ef47a59c76353d71b1533ffb99e0942a4d927df7",
    "lines": 372,
    "genre": "meta",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Historical pass dates are explicit; the opening 'now 34' was checked against scripts/verify.sh, which runs 34 gates.",
-    "readable": "Full read of 372 lines (6920 prose words) each dated pass states the reader flow it changed and the evidence it used.",
-    "concise": "6920 words across 372 lines. 6,807 words; long because it is an append-only QA log, with each pass kept separate by date.",
+    "readable": "Full read of 372 lines (6924 prose words) each dated pass states the reader flow it changed and the evidence it used.",
+    "concise": "6924 words across 372 lines. 6,807 words; long because it is an append-only QA log, with each pass kept separate by date.",
     "focused": "Owns the design-QA history; current gate ownership points at docs/verification-gates.md rather than duplicating the list.",
-    "fast": "Measured 73.5 KB raw / 21.6 KB gzip (the shared Jekyll shell is included.)",
+    "fast": "Measured 73.5 KB raw / 21.6 KB gzip. (the shared Jekyll shell is included.)",
     "best": "Records product-flow checks, not a fresh semantic review of every paragraph; the opening says so and the limit still holds."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24A: lanes, projects, active docs, and root guides)."
   },
   "docs/2026-09-10-modernization-changelog.md": {
    "sha256": "7a2f7d31b5d4a667201af16b1fe4264455177591cd8106d4be9c146b76f19744",
@@ -14779,7 +14779,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11B live operational and governance docs)."
   },
   "docs/readability-standard.md": {
-   "sha256": "fa08a6e782f4e320b3cd740b6490c9615f34a03d1e60dff98913fffe013ee1bd",
+   "sha256": "f2df16d2f97ec83ca34a8e9076e4c12cf2e55282837875af1ee7078eac6fbe4d",
    "lines": 170,
    "genre": "doc",
    "status": "read",
@@ -14789,13 +14789,13 @@
     "readable": "Full read of 170 lines (1571 prose words) end-to-end; verified structure, formatting, and reading flow.",
     "concise": "1571 words across 170 lines. Clear operational documentation for readability-standard grounded in current scripts and contracts.",
     "focused": "Canonical docs/ home for readability-standard; avoids duplicating AGENTS.md or script logic.",
-    "fast": "Measured 20.0 KB raw / 7.0 KB gzip (fast scan via headings and direct links.)",
+    "fast": "Measured 20.0 KB raw / 7.0 KB gzip. (fast scan via headings and direct links.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for readability-standard."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 11B live operational and governance docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24A: lanes, projects, active docs, and root guides)."
   },
   "docs/reference-coverage-audit.md": {
-   "sha256": "0c249e8ff34bbb322223c9b2893eee28fce501c75d43502c6c3102bcb0d221b1",
+   "sha256": "44fea88f7bf556f52cd180da855ac2ecdd65b4311e4b449ce4442d01afb68464",
    "lines": 121,
    "genre": "doc",
    "status": "read",
@@ -14805,10 +14805,10 @@
     "readable": "Full read of 121 lines (242 prose words) end-to-end; verified structure, formatting, and reading flow.",
     "concise": "242 words across 121 lines. Clear operational documentation for reference-coverage-audit grounded in current scripts and contracts.",
     "focused": "Canonical docs/ home for reference-coverage-audit; avoids duplicating AGENTS.md or script logic.",
-    "fast": "Measured 28.3 KB raw / 7.5 KB gzip (fast scan via headings and direct links.)",
+    "fast": "Measured 28.3 KB raw / 7.5 KB gzip. (fast scan via headings and direct links.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for reference-coverage-audit."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 11B live operational and governance docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24A: lanes, projects, active docs, and root guides)."
   },
   "docs/residential-verification-checklist.md": {
    "sha256": "676c4a8f46ee29f6d5a09cf42e078aadcd7a728f5bf3f74c1dfa13379d01fe9c",
@@ -14827,20 +14827,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11B live operational and governance docs)."
   },
   "docs/scripts-map.md": {
-   "sha256": "e2b91b0392845da9a149ff2ec41627da3f08ceeaefd47ba8e867e5f15b321c5c",
+   "sha256": "a662e3f75b746b82b2b519ea23661a05bd8d3d720fcb3f8ab28bae0f49e326d5",
    "lines": 227,
    "genre": "doc",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 repository governance/reference doc (scripts-map) verified against current 34-gate tooling.",
-    "readable": "Full read of 227 lines (993 prose words) end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "993 words across 227 lines. Clear operational documentation for scripts-map grounded in current scripts and contracts.",
+    "readable": "Full read of 227 lines (995 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "995 words across 227 lines. Clear operational documentation for scripts-map grounded in current scripts and contracts.",
     "focused": "Canonical docs/ home for scripts-map; avoids duplicating AGENTS.md or script logic.",
-    "fast": "Measured 41.9 KB raw / 11.9 KB gzip (fast scan via headings and direct links.)",
+    "fast": "Measured 41.9 KB raw / 11.9 KB gzip. (fast scan via headings and direct links.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for scripts-map."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 11B live operational and governance docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24A: lanes, projects, active docs, and root guides)."
   },
   "docs/superpowers/plans/2026-08-25-full-restructure.md": {
    "sha256": "d0cc7af7dadf23a7bbd363554de9f11c69ae4f1178014aab74ef478185d80c00",
@@ -15323,20 +15323,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
   },
   "projects/docita/03-async-processing.md": {
-   "sha256": "644ffae8c9f6699f415bc3407a98063ebb948e3131ec9c2b21dec2c5850ebde8",
+   "sha256": "4c7109dba000ae01204cf9552e891e829e71965423260e2713f23f9726bad273",
    "lines": 288,
    "genre": "project",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita healthcare SaaS case study (03 async processing) verified against current PostgreSQL/Node/Next.js patterns.",
-    "readable": "Full read of 288 lines (2692 prose words) end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "2692 words across 288 lines. Concrete production architecture walkthrough for 03 async processing with real schema and flow detail.",
+    "readable": "Full read of 288 lines (2694 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "2694 words across 288 lines. Concrete production architecture walkthrough for 03 async processing with real schema and flow detail.",
     "focused": "Canonical home for Docita 03 async processing; links to related chapters without duplication.",
-    "fast": "Measured 43.1 KB raw / 13.1 KB gzip (fast scan via headings and direct links.)",
+    "fast": "Measured 43.1 KB raw / 13.1 KB gzip. (fast scan via headings and direct links.)",
     "best": "Documents concrete failure mode, tenant/security boundary, and operational trade-off for 03 async processing."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24A: lanes, projects, active docs, and root guides)."
   },
   "projects/docita/04-payment-flows.md": {
    "sha256": "6a4cf965d4af46863924e7c9b7dcd7bc8136044af0c420db414071eaf0606bca",
@@ -15435,20 +15435,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
   },
   "projects/docita/10-deployment-infrastructure.md": {
-   "sha256": "5bd8b2db5b201f95546dc267ceb578228f1112486faa89c4cd0d3f7706cbbf60",
+   "sha256": "4cdbe2b21c501cdc5276848b8ac0033cf32c4fbfb87b6d890f6ae1b7b38829a3",
    "lines": 466,
    "genre": "project",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita healthcare SaaS case study (10 deployment infrastructure) verified against current PostgreSQL/Node/Next.js patterns.",
-    "readable": "Full read of 466 lines (3428 prose words) end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "3428 words across 466 lines. Concrete production architecture walkthrough for 10 deployment infrastructure with real schema and flow detail.",
+    "readable": "Full read of 466 lines (3432 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "3432 words across 466 lines. Concrete production architecture walkthrough for 10 deployment infrastructure with real schema and flow detail.",
     "focused": "Canonical home for Docita 10 deployment infrastructure; links to related chapters without duplication.",
-    "fast": "Measured 54.6 KB raw / 17.1 KB gzip (fast scan via headings and direct links.)",
+    "fast": "Measured 54.6 KB raw / 17.1 KB gzip. (fast scan via headings and direct links.)",
     "best": "Documents concrete failure mode, tenant/security boundary, and operational trade-off for 10 deployment infrastructure."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24A: lanes, projects, active docs, and root guides)."
   },
   "projects/docita/11-insurance-claims.md": {
    "sha256": "ab1ae6bd921ac1e4eae1c3e6c17266ebf00445ac5a03b63a82e7a68e4fbde75c",
@@ -15499,20 +15499,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
   },
   "projects/docita/14-analytics-and-dashboards.md": {
-   "sha256": "1062694a93d089ed65858b8b8718e5bf546e1baa3201780da9685bba6299e12c",
+   "sha256": "10ec7b3b62842446bd2ab035eb6af5d31e9fa4430b9f45b96635d2b78fc09e85",
    "lines": 364,
    "genre": "project",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita healthcare SaaS case study (14 analytics and dashboards) verified against current PostgreSQL/Node/Next.js patterns.",
-    "readable": "Full read of 364 lines (3290 prose words) end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "3290 words across 364 lines. Concrete production architecture walkthrough for 14 analytics and dashboards with real schema and flow detail.",
+    "readable": "Full read of 364 lines (3292 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "3292 words across 364 lines. Concrete production architecture walkthrough for 14 analytics and dashboards with real schema and flow detail.",
     "focused": "Canonical home for Docita 14 analytics and dashboards; links to related chapters without duplication.",
-    "fast": "Measured 48.4 KB raw / 15.4 KB gzip (fast scan via headings and direct links.)",
+    "fast": "Measured 48.4 KB raw / 15.4 KB gzip. (fast scan via headings and direct links.)",
     "best": "Documents concrete failure mode, tenant/security boundary, and operational trade-off for 14 analytics and dashboards."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24A: lanes, projects, active docs, and root guides)."
   },
   "projects/docita/15-doctors-verification-and-public-booking.md": {
    "sha256": "fcecbc45199e67e01e2b384419ebd2ad862c1332ec5dd988a13f3974daad4ee9",
@@ -15595,20 +15595,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 10B projects/docita 15-24)."
   },
   "projects/docita/20-clinical-lab-and-medical-coding.md": {
-   "sha256": "81722c7c405c7c2b70057132acf3f48b79440ad5579a91bfabf539d1ca0b30c2",
+   "sha256": "a1225490a742adb2ee3485c308d10476a2a77da836450bbc974de7da071771b7",
    "lines": 141,
    "genre": "project",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita healthcare SaaS case study (20 clinical lab and medical coding) verified against current PostgreSQL/Node/Next.js patterns.",
-    "readable": "Full read of 141 lines (1186 prose words) end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "1186 words across 141 lines. Concrete production architecture walkthrough for 20 clinical lab and medical coding with real schema and flow detail.",
+    "readable": "Full read of 141 lines (1188 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "1188 words across 141 lines. Concrete production architecture walkthrough for 20 clinical lab and medical coding with real schema and flow detail.",
     "focused": "Canonical home for Docita 20 clinical lab and medical coding; links to related chapters without duplication.",
-    "fast": "Measured 20.1 KB raw / 7.1 KB gzip (fast scan via headings and direct links.)",
+    "fast": "Measured 20.1 KB raw / 7.1 KB gzip. (fast scan via headings and direct links.)",
     "best": "Documents concrete failure mode, tenant/security boundary, and operational trade-off for 20 clinical lab and medical coding."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 10B projects/docita 15-24)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24A: lanes, projects, active docs, and root guides)."
   },
   "projects/docita/21-long-tail-domains.md": {
    "sha256": "06150d05cf61562583d92b78d5799c2c034556661e5d4abc8735bca40b56c649",
@@ -15691,20 +15691,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 10C projects/docita 25-27 and REVISION)."
   },
   "projects/docita/26-monthly-operating-costs.md": {
-   "sha256": "95cc70a2f93dbb4aeaaafe4adacb9796886d5d10a937a5066882280b10fab1ee",
+   "sha256": "5f88b01c171c25bf7d2d2c2bde689e7dfba7db2e570b3ae9505ea6749c24c027",
    "lines": 387,
    "genre": "project",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita healthcare SaaS case study (26 monthly operating costs) verified against current PostgreSQL/Node/Next.js patterns.",
-    "readable": "Full read of 387 lines (3855 prose words) end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "3855 words across 387 lines. Concrete production architecture walkthrough for 26 monthly operating costs with real schema and flow detail.",
+    "readable": "Full read of 387 lines (3857 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "3857 words across 387 lines. Concrete production architecture walkthrough for 26 monthly operating costs with real schema and flow detail.",
     "focused": "Canonical home for Docita 26 monthly operating costs; links to related chapters without duplication.",
-    "fast": "Measured 65.5 KB raw / 18.9 KB gzip (fast scan via headings and direct links.)",
+    "fast": "Measured 65.5 KB raw / 18.9 KB gzip. (fast scan via headings and direct links.)",
     "best": "Documents concrete failure mode, tenant/security boundary, and operational trade-off for 26 monthly operating costs."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 10C projects/docita 25-27 and REVISION)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24A: lanes, projects, active docs, and root guides)."
   },
   "projects/docita/27-operating-evidence-workbook.md": {
    "sha256": "826962d9dacd62eb74da1eee6bccf47113064f67550463c75fff94a264c1e1f2",
@@ -15739,20 +15739,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
   },
   "projects/docita/REVISION.md": {
-   "sha256": "8cb0b9b3474ab17881dbb8d01dee8391314dc99fc5a98c80b191c23ae95540e6",
+   "sha256": "37ed617766b86897b44748af2be0437b1a5a8af683d79eb40dbefab7a9f744c5",
    "lines": 1402,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita interview-defense drill verified against all 27 architecture and product chapters.",
-    "readable": "Full read of 1402 lines (13589 prose words) end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "13589 words across 1402 lines. Source-linked Q/A defense bank for senior full-stack and system-design interviews.",
+    "readable": "Full read of 1402 lines (13591 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "13591 words across 1402 lines. Source-linked Q/A defense bank for senior full-stack and system-design interviews.",
     "focused": "Canonical revision companion for projects/docita.",
-    "fast": "Measured 118.4 KB raw / 36.8 KB gzip (fast scan via headings and direct links.)",
+    "fast": "Measured 118.4 KB raw / 36.8 KB gzip. (fast scan via headings and direct links.)",
     "best": "Probes multi-tenant isolation failure, payment idempotency risk, and scale limit."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 10C projects/docita 25-27 and REVISION)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24A: lanes, projects, active docs, and root guides)."
   },
   "projects/maq/01-product-engineering.md": {
    "sha256": "e9b172780f548dd3aae0d48ca7021b94991f8f29e2f4b50e1abdcf0a986fb4d7",
@@ -15818,20 +15818,20 @@
    }
   },
   "docs/corpus-review/README.md": {
-   "sha256": "03f764d92362db16977ece8acd4d3dcaf82a5ab9feff21ee486bbe47584955d6",
+   "sha256": "8a7d222b9badc013edeb7680b3e8d647d0a3713aa18128ac26328be697d71b76",
    "lines": 98,
    "genre": "doc",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against scripts/review_ledger.py and scripts/measure_page_weight.py on 2026-11-23; repair rules updated to permit comprehension rewrites.",
-    "readable": "Full read of 98 lines (526 prose words) explains the 2026-11-14 audit reset, page-weight budget, reviewer protocol, CLI commands, and updated repair rules.",
-    "concise": "526 words across 98 lines. concise operational specification with one concrete JSON example.",
+    "readable": "Full read of 98 lines (528 prose words) explains the 2026-11-14 audit reset, page-weight budget, reviewer protocol, CLI commands, and updated repair rules.",
+    "concise": "528 words across 98 lines. concise operational specification with one concrete JSON example.",
     "focused": "Canonical protocol for docs/review-ledger.json; chapter quality rubric stays in docs/2026-11-quality-rubric.md.",
-    "fast": "Measured not built as HTML; 4.7 KB Markdown source served raw (not built as HTML; 4.7 KB Markdown source served raw.)",
+    "fast": "Measured not built as HTML; 4.7 KB Markdown source served raw. 7 KB Markdown source served raw (not built as HTML; 4.7 KB Markdown source served raw.)",
     "best": "Documents the explicit exception path for claims requiring paid accounts or missing runtimes, and notes that README.md itself is served raw rather than wrapped in Jekyll HTML."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 11B live operational and governance docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 24A: lanes, projects, active docs, and root guides)."
   },
   "docs/superpowers/plans/2026-11-18-performance-ui-implementation.md": {
    "sha256": "3b3438490f19076aa0a01a6e4771ba92a4f48c1b0960256283df826e05c3011b",

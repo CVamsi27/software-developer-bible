@@ -29174,7 +29174,7 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/80.07-company-profiles.md",
-      "sha256": "199db945d544e5b310b8101695f7c353ce00e6a1230acef4fcfe415c1a0cf30e",
+      "sha256": "c710126b2553fa339ea5c23cccbd8e7461992b51482de732c555c2dba347700d",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29194,12 +29194,12 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.07-company-profiles.md",
-        "sha256": "199db945d544e5b310b8101695f7c353ce00e6a1230acef4fcfe415c1a0cf30e",
+        "sha256": "c710126b2553fa339ea5c23cccbd8e7461992b51482de732c555c2dba347700d",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 72 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+        "notes": "Phase 24A: lanes, projects, active docs, and root guides C1-C8 refinement (2026-11-24): Full read of 72 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -29272,7 +29272,7 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/80.10-weekly-tracker.md",
-      "sha256": "3aa61532860c1cd09d64b364e5d379c7531e3e82b2cd7d74a2dc49c8c87ac5b4",
+      "sha256": "28d0c085b2b2c8abf1db12990748af47a15986a103babc2c14de27f4f72115b7",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29291,12 +29291,12 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.10-weekly-tracker.md",
-        "sha256": "3aa61532860c1cd09d64b364e5d379c7531e3e82b2cd7d74a2dc49c8c87ac5b4",
+        "sha256": "28d0c085b2b2c8abf1db12990748af47a15986a103babc2c14de27f4f72115b7",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 56 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+        "notes": "Phase 24A: lanes, projects, active docs, and root guides C1-C8 refinement (2026-11-24): Full read of 56 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -29675,7 +29675,7 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/80.23-german-companies-database.md",
-      "sha256": "38634d309c99db2c59e8b0a47f7dbd7d0c8bc930f4ab0383de3e659994042fe4",
+      "sha256": "7b4a6d4fa10a9b186f4e655500d16819dead397b1e2a02665c1b313603463bec",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29695,12 +29695,12 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.23-german-companies-database.md",
-        "sha256": "38634d309c99db2c59e8b0a47f7dbd7d0c8bc930f4ab0383de3e659994042fe4",
+        "sha256": "7b4a6d4fa10a9b186f4e655500d16819dead397b1e2a02665c1b313603463bec",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 96 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+        "notes": "Phase 24A: lanes, projects, active docs, and root guides C1-C8 refinement (2026-11-24): Full read of 96 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -30044,7 +30044,7 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/80.35-germany-target-engine.md",
-      "sha256": "18d41f93f5b374a230cb1b350a833263755a4166a7196f6f931df81fb5268537",
+      "sha256": "f75e918759425ecb64e21b1367e9b951a66445b2e44e8b2881fda7e73600a216",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30066,18 +30066,18 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.35-germany-target-engine.md",
-        "sha256": "18d41f93f5b374a230cb1b350a833263755a4166a7196f6f931df81fb5268537",
+        "sha256": "f75e918759425ecb64e21b1367e9b951a66445b2e44e8b2881fda7e73600a216",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 77 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+        "notes": "Phase 24A: lanes, projects, active docs, and root guides C1-C8 refinement (2026-11-24): Full read of 77 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "80-lanes-abroad-full-stack/80.36-docita-complete-interview-defense.md",
-      "sha256": "5aadc9ed7cb0327f06be94f5eaa10963cf430f5cbe207b23db855ebc8c6c2da7",
+      "sha256": "cd895589dccc652fa5115b57cfa702816f3b364b1f479eb49cd0d33414aa61c7",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30098,12 +30098,12 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.36-docita-complete-interview-defense.md",
-        "sha256": "5aadc9ed7cb0327f06be94f5eaa10963cf430f5cbe207b23db855ebc8c6c2da7",
+        "sha256": "cd895589dccc652fa5115b57cfa702816f3b364b1f479eb49cd0d33414aa61c7",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 8 C1-C8 refinement (2026-11-24): Full read of 96 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+        "notes": "Phase 24A: lanes, projects, active docs, and root guides C1-C8 refinement (2026-11-24): Full read of 96 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -30507,7 +30507,7 @@
     },
     {
       "path": "81-lanes-indian-sde-faang/81.10-spaced-repetition-schedule.md",
-      "sha256": "4c1ce10d6d8cf6c1fbbfcdd3728800194cc5bce322fbdc2f1703f37c5cb919f5",
+      "sha256": "f69843318596641ef4f7742e90145c92079f3db49a023bd99da005851ff25b76",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -30529,12 +30529,12 @@
       },
       "review": {
         "path": "81-lanes-indian-sde-faang/81.10-spaced-repetition-schedule.md",
-        "sha256": "4c1ce10d6d8cf6c1fbbfcdd3728800194cc5bce322fbdc2f1703f37c5cb919f5",
+        "sha256": "f69843318596641ef4f7742e90145c92079f3db49a023bd99da005851ff25b76",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 9 C1-C8 refinement (2026-11-24): Full read of 77 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+        "notes": "Phase 24A: lanes, projects, active docs, and root guides C1-C8 refinement (2026-11-24): Full read of 77 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -31071,7 +31071,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "29450e2f2651fafa8a95b29144a13e4a96d709a1d81c4fef9fb9498fa9107755",
+      "sha256": "dcc91fbec728e2b6af6af286fc9d8dec6ab0641746764b6bda51905dea9e3f92",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -31089,12 +31089,12 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "29450e2f2651fafa8a95b29144a13e4a96d709a1d81c4fef9fb9498fa9107755",
+        "sha256": "dcc91fbec728e2b6af6af286fc9d8dec6ab0641746764b6bda51905dea9e3f92",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 22B: 60-realtime (20 files) count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 22B: 60-realtime (20 files).",
+        "notes": "Phase 24A: lanes, projects, active docs, and root guides C1-C8 refinement (2026-11-24): Full read of 207 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -31130,7 +31130,7 @@
     },
     {
       "path": "ROADMAP.md",
-      "sha256": "8b34611be83e4a6da4d3a25539c9bd63a993f373fb2ef595737a4d04252c62f3",
+      "sha256": "6c570c5cb14f622d6f43a9dd99a2aa5a447f1f09b2127a0d06d7945a940015ad",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31157,18 +31157,18 @@
       },
       "review": {
         "path": "ROADMAP.md",
-        "sha256": "8b34611be83e4a6da4d3a25539c9bd63a993f373fb2ef595737a4d04252c62f3",
+        "sha256": "6c570c5cb14f622d6f43a9dd99a2aa5a447f1f09b2127a0d06d7945a940015ad",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 11A C1-C8 refinement (2026-11-24): Full read of 275 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+        "notes": "Phase 24A: lanes, projects, active docs, and root guides C1-C8 refinement (2026-11-24): Full read of 275 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "contributing.md",
-      "sha256": "6053048098df2e7c7f6c5968b6c15d4f30d4ba406d1e63bcead407a23fee0247",
+      "sha256": "aef0e9f0f9e5e7f144a0c54ebc14b52c4b79c6d36f4e504b058ae540da62340b",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31196,18 +31196,18 @@
       },
       "review": {
         "path": "contributing.md",
-        "sha256": "6053048098df2e7c7f6c5968b6c15d4f30d4ba406d1e63bcead407a23fee0247",
+        "sha256": "aef0e9f0f9e5e7f144a0c54ebc14b52c4b79c6d36f4e504b058ae540da62340b",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture count/read-time sync (2026-11-24): Full read of 948 lines. Updated generated counts/read-time navigation after Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture.",
+        "notes": "Phase 24A: lanes, projects, active docs, and root guides C1-C8 refinement (2026-11-24): Full read of 948 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "design-qa.md",
-      "sha256": "4c7ab6ba5a188dc76d474a829bc7e1c1808c7032d41f351806bb1d1cb815bd93",
+      "sha256": "79c264d4f4d6cac8aeca0326ef47a59c76353d71b1533ffb99e0942a4d927df7",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31227,12 +31227,12 @@
       },
       "review": {
         "path": "design-qa.md",
-        "sha256": "4c7ab6ba5a188dc76d474a829bc7e1c1808c7032d41f351806bb1d1cb815bd93",
+        "sha256": "79c264d4f4d6cac8aeca0326ef47a59c76353d71b1533ffb99e0942a4d927df7",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 11A C1-C8 refinement (2026-11-24): Full read of 372 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+        "notes": "Phase 24A: lanes, projects, active docs, and root guides C1-C8 refinement (2026-11-24): Full read of 372 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -31710,7 +31710,7 @@
     },
     {
       "path": "docs/corpus-review/README.md",
-      "sha256": "03f764d92362db16977ece8acd4d3dcaf82a5ab9feff21ee486bbe47584955d6",
+      "sha256": "8a7d222b9badc013edeb7680b3e8d647d0a3713aa18128ac26328be697d71b76",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31731,9 +31731,9 @@
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 11B C1-C8 refinement (2026-11-24): Full read of 98 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+        "notes": "Phase 24A: lanes, projects, active docs, and root guides C1-C8 refinement (2026-11-24): Full read of 98 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
-        "sha256": "03f764d92362db16977ece8acd4d3dcaf82a5ab9feff21ee486bbe47584955d6"
+        "sha256": "8a7d222b9badc013edeb7680b3e8d647d0a3713aa18128ac26328be697d71b76"
       }
     },
     {
@@ -31858,7 +31858,7 @@
     },
     {
       "path": "docs/readability-standard.md",
-      "sha256": "fa08a6e782f4e320b3cd740b6490c9615f34a03d1e60dff98913fffe013ee1bd",
+      "sha256": "f2df16d2f97ec83ca34a8e9076e4c12cf2e55282837875af1ee7078eac6fbe4d",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31878,18 +31878,18 @@
       },
       "review": {
         "path": "docs/readability-standard.md",
-        "sha256": "fa08a6e782f4e320b3cd740b6490c9615f34a03d1e60dff98913fffe013ee1bd",
+        "sha256": "f2df16d2f97ec83ca34a8e9076e4c12cf2e55282837875af1ee7078eac6fbe4d",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 11B C1-C8 refinement (2026-11-24): Full read of 170 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+        "notes": "Phase 24A: lanes, projects, active docs, and root guides C1-C8 refinement (2026-11-24): Full read of 170 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/reference-coverage-audit.md",
-      "sha256": "0c249e8ff34bbb322223c9b2893eee28fce501c75d43502c6c3102bcb0d221b1",
+      "sha256": "44fea88f7bf556f52cd180da855ac2ecdd65b4311e4b449ce4442d01afb68464",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31910,12 +31910,12 @@
       },
       "review": {
         "path": "docs/reference-coverage-audit.md",
-        "sha256": "0c249e8ff34bbb322223c9b2893eee28fce501c75d43502c6c3102bcb0d221b1",
+        "sha256": "44fea88f7bf556f52cd180da855ac2ecdd65b4311e4b449ce4442d01afb68464",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 11B C1-C8 refinement (2026-11-24): Full read of 121 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+        "notes": "Phase 24A: lanes, projects, active docs, and root guides C1-C8 refinement (2026-11-24): Full read of 121 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -31950,7 +31950,7 @@
     },
     {
       "path": "docs/scripts-map.md",
-      "sha256": "e2b91b0392845da9a149ff2ec41627da3f08ceeaefd47ba8e867e5f15b321c5c",
+      "sha256": "a662e3f75b746b82b2b519ea23661a05bd8d3d720fcb3f8ab28bae0f49e326d5",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31972,12 +31972,12 @@
       },
       "review": {
         "path": "docs/scripts-map.md",
-        "sha256": "e2b91b0392845da9a149ff2ec41627da3f08ceeaefd47ba8e867e5f15b321c5c",
+        "sha256": "a662e3f75b746b82b2b519ea23661a05bd8d3d720fcb3f8ab28bae0f49e326d5",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 11B C1-C8 refinement (2026-11-24): Full read of 227 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+        "notes": "Phase 24A: lanes, projects, active docs, and root guides C1-C8 refinement (2026-11-24): Full read of 227 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -33043,7 +33043,7 @@
     },
     {
       "path": "projects/docita/03-async-processing.md",
-      "sha256": "644ffae8c9f6699f415bc3407a98063ebb948e3131ec9c2b21dec2c5850ebde8",
+      "sha256": "4c7109dba000ae01204cf9552e891e829e71965423260e2713f23f9726bad273",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -33071,12 +33071,12 @@
       },
       "review": {
         "path": "projects/docita/03-async-processing.md",
-        "sha256": "644ffae8c9f6699f415bc3407a98063ebb948e3131ec9c2b21dec2c5850ebde8",
+        "sha256": "4c7109dba000ae01204cf9552e891e829e71965423260e2713f23f9726bad273",
         "status": "reviewed",
         "reviewer": "root + full-content evidence reviewers",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 10A C1-C8 refinement (2026-11-24): Full read of 288 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+        "notes": "Phase 24A: lanes, projects, active docs, and root guides C1-C8 refinement (2026-11-24): Full read of 288 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -33301,7 +33301,7 @@
     },
     {
       "path": "projects/docita/10-deployment-infrastructure.md",
-      "sha256": "5bd8b2db5b201f95546dc267ceb578228f1112486faa89c4cd0d3f7706cbbf60",
+      "sha256": "4cdbe2b21c501cdc5276848b8ac0033cf32c4fbfb87b6d890f6ae1b7b38829a3",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -33335,12 +33335,12 @@
       },
       "review": {
         "path": "projects/docita/10-deployment-infrastructure.md",
-        "sha256": "5bd8b2db5b201f95546dc267ceb578228f1112486faa89c4cd0d3f7706cbbf60",
+        "sha256": "4cdbe2b21c501cdc5276848b8ac0033cf32c4fbfb87b6d890f6ae1b7b38829a3",
         "status": "reviewed",
         "reviewer": "root + full-content evidence reviewers",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 10A C1-C8 refinement (2026-11-24): Full read of 466 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+        "notes": "Phase 24A: lanes, projects, active docs, and root guides C1-C8 refinement (2026-11-24): Full read of 466 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -33453,7 +33453,7 @@
     },
     {
       "path": "projects/docita/14-analytics-and-dashboards.md",
-      "sha256": "1062694a93d089ed65858b8b8718e5bf546e1baa3201780da9685bba6299e12c",
+      "sha256": "10ec7b3b62842446bd2ab035eb6af5d31e9fa4430b9f45b96635d2b78fc09e85",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -33481,12 +33481,12 @@
       },
       "review": {
         "path": "projects/docita/14-analytics-and-dashboards.md",
-        "sha256": "1062694a93d089ed65858b8b8718e5bf546e1baa3201780da9685bba6299e12c",
+        "sha256": "10ec7b3b62842446bd2ab035eb6af5d31e9fa4430b9f45b96635d2b78fc09e85",
         "status": "reviewed",
         "reviewer": "root + full-content evidence reviewers",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 10A C1-C8 refinement (2026-11-24): Full read of 364 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+        "notes": "Phase 24A: lanes, projects, active docs, and root guides C1-C8 refinement (2026-11-24): Full read of 364 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -33668,7 +33668,7 @@
     },
     {
       "path": "projects/docita/20-clinical-lab-and-medical-coding.md",
-      "sha256": "81722c7c405c7c2b70057132acf3f48b79440ad5579a91bfabf539d1ca0b30c2",
+      "sha256": "a1225490a742adb2ee3485c308d10476a2a77da836450bbc974de7da071771b7",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -33695,12 +33695,12 @@
       },
       "review": {
         "path": "projects/docita/20-clinical-lab-and-medical-coding.md",
-        "sha256": "81722c7c405c7c2b70057132acf3f48b79440ad5579a91bfabf539d1ca0b30c2",
+        "sha256": "a1225490a742adb2ee3485c308d10476a2a77da836450bbc974de7da071771b7",
         "status": "reviewed",
         "reviewer": "root-continuation",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 10B C1-C8 refinement (2026-11-24): Full read of 141 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
+        "notes": "Phase 24A: lanes, projects, active docs, and root guides C1-C8 refinement (2026-11-24): Full read of 141 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
       }
     },
     {
@@ -33896,7 +33896,7 @@
     },
     {
       "path": "projects/docita/26-monthly-operating-costs.md",
-      "sha256": "95cc70a2f93dbb4aeaaafe4adacb9796886d5d10a937a5066882280b10fab1ee",
+      "sha256": "5f88b01c171c25bf7d2d2c2bde689e7dfba7db2e570b3ae9505ea6749c24c027",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -33922,12 +33922,12 @@
       },
       "review": {
         "path": "projects/docita/26-monthly-operating-costs.md",
-        "sha256": "95cc70a2f93dbb4aeaaafe4adacb9796886d5d10a937a5066882280b10fab1ee",
+        "sha256": "5f88b01c171c25bf7d2d2c2bde689e7dfba7db2e570b3ae9505ea6749c24c027",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 10C C1-C8 refinement (2026-11-24): Full read of 387 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+        "notes": "Phase 24A: lanes, projects, active docs, and root guides C1-C8 refinement (2026-11-24): Full read of 387 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -34000,7 +34000,7 @@
     },
     {
       "path": "projects/docita/REVISION.md",
-      "sha256": "8cb0b9b3474ab17881dbb8d01dee8391314dc99fc5a98c80b191c23ae95540e6",
+      "sha256": "37ed617766b86897b44748af2be0437b1a5a8af683d79eb40dbefab7a9f744c5",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -34057,12 +34057,12 @@
       },
       "review": {
         "path": "projects/docita/REVISION.md",
-        "sha256": "8cb0b9b3474ab17881dbb8d01dee8391314dc99fc5a98c80b191c23ae95540e6",
+        "sha256": "37ed617766b86897b44748af2be0437b1a5a8af683d79eb40dbefab7a9f744c5",
         "status": "reviewed",
         "reviewer": "root + full-content evidence reviewers",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 10C C1-C8 refinement (2026-11-24): Full read of 1402 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+        "notes": "Phase 24A: lanes, projects, active docs, and root guides C1-C8 refinement (2026-11-24): Full read of 1402 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },

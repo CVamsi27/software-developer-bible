@@ -198,7 +198,7 @@ The formatted `pg_database_size` result is used database space, not purchased di
 
 Total server storage also needs WAL, temporary and maintenance work, logs, and provider-specific reserved space. Object-store PDFs and backup copies need their own accounting.
 
-For the future RDS reference, inspect instance class, allocated and maximum storage, storage type, Multi-AZ, and backup retention. Then inspect [RDS runtime metrics](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-metrics.html): CPU, freeable memory, connections, free storage, I/O latency and queueing, and applicable burst balances. A database can be connection-bound or I/O-bound before CPU reaches its limit. A high cache-hit ratio does not excuse a slow query or a long transaction.
+For the future RDS reference, inspect instance class, allocated and maximum storage, storage type, Multi-AZ, and backup retention. Then inspect [RDS runtime metrics](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-metrics.html): CPU, freeable memory, connections, free storage, I/O latency and queueing, and applicable burst balances. A database can be connection-bound or bound by I/O before CPU reaches its limit. A high cache-hit ratio does not excuse a slow query or a long transaction.
 
 ## Set Up and Release Through Explicit Gates
 
@@ -452,7 +452,7 @@ Docita's source separates API, worker, and SPA lifecycles and defines migration 
 
 ## References
 
-- [Fly autostop/autostart](https://docs.fly.io/launch/autostop-autostart).
+- [Fly autostop and autostart](https://docs.fly.io/launch/autostop-autostart).
 - [Cloudflare Workers limits](https://developers.cloudflare.com/workers/platform/limits/).
 - [Cloudflare Workers best practices](https://developers.cloudflare.com/workers/best-practices/workers-best-practices/).
 

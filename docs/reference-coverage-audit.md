@@ -32,9 +32,9 @@ Coverage is judged at **chapter** level, not mention level: a topic "covered" on
 
 | Roadmap topic | Chapter |
 | ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| HTTP protocol | [20.3.2.01 HTTP Methods](../20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.01-http-methods.md), [20.3.2.02 Status Codes](../20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.02-status-codes.md), [30.2.1.21 TCP/UDP Transport](../30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md) |
+| HTTP protocol | [20.3.2.01 HTTP Methods](../20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.01-http-methods.md), [20.3.2.02 Status Codes](../20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.02-status-codes.md), [30.2.1.21 TCP and UDP Transport](../30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md) |
 | Routing | [20.2.1.02 Controllers](../20-backend/20.2-nestjs/01-core-architecture/20.2.1.02-controllers.md) (+ [10.4.1.02 App Router](../10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md) for the frontend side) |
-| Serialisation / deserialisation | **NEW** [20.3.3.06](../20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.md) |
+| Serialization and deserialization | **NEW** [20.3.3.06](../20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.md) |
 | Authentication & authorisation | [20.5.1.01 Auth Fundamentals](../20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.md), [20.3.4.04 Authentication](../20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.04-authentication.md) |
 | Validation & transformation | [20.2.2.03 Pipes](../20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.03-pipes.md) |
 | Middlewares | [20.2.2.01 Middleware](../20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.01-middleware.md) |
@@ -65,15 +65,15 @@ Coverage is judged at **chapter** level, not mention level: a topic "covered" on
 ## "1 Million Requests per Second" → chapters
 
 | Topic the video exercises | Chapter |
-| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Load balancing (L4/L7, algorithms, health checks) | [30.2.1.04](../30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.md), [40.11.01 Nginx Internals](../40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md) |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Load balancing (L4 and L7, algorithms, health checks) | [30.2.1.04](../30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.md), [40.11.01 Nginx Internals](../40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md) |
 | Horizontal scaling & autoscaling | [40.2.3.01 HPA](../40-platform/40.2-kubernetes/03-scaling/40.2.3.01-hpa-scaling.md), [40.2.3.02 Node Autoscaling](../40-platform/40.2-kubernetes/03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md) |
-| Edge caching / CDN in front | [30.3.4.03 CDN Architecture](../30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md), [40.10.02 Multi-CDN Steering](../40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md) |
+| Edge caching and CDN in front | [30.3.4.03 CDN Architecture](../30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md), [40.10.02 Multi-CDN Steering](../40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md) |
 | Application-level caching | [20.8.01 Caching Deep-Dive](../20-backend/20.8-caching/20.8.01-caching-deep-dive.md) |
-| Database read scaling / sharding | [20.4.3.04 Replication](../20-backend/20.4-database/03-transactions-and-replication/20.4.3.04-database-replication.md), [30.3.4.01 Database Scaling](../30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md) |
+| Database read scaling and sharding | [20.4.3.04 Replication](../20-backend/20.4-database/03-transactions-and-replication/20.4.3.04-database-replication.md), [30.3.4.01 Database Scaling](../30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md) |
 | Connection pooling under load | [20.4.5.01 Connection Pooling](../20-backend/20.4-database/05-operations-and-scaling/20.4.5.01-connection-pooling.md) |
 | Asynchronous offload | [30.2.1.06 Queues & Async](../30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md), [20.6.2.05 Message Brokers](../20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md) |
-| Rate limiting / shedding abusive traffic | [30.2.1.08 Rate Limiting](../30-architecture/30.2-system-design/01-theory/30.2.1.08-rate-limiting.md), [20.3.4.01 Rate Limiting](../20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.01-rate-limiting.md) |
+| Rate limiting and shedding abusive traffic | [30.2.1.08 Rate Limiting](../30-architecture/30.2-system-design/01-theory/30.2.1.08-rate-limiting.md), [20.3.4.01 Rate Limiting](../20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.01-rate-limiting.md) |
 | Backpressure when consumers lag | [30.2.1.13 Backpressure](../30-architecture/30.2-system-design/01-theory/30.2.1.13-backpressure-and-flow-control.md) |
 | Capacity planning (back-of-envelope) | [30.2.1.12](../30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md) + case studies in [30.2.2](../30-architecture/30.2-system-design/02-case-studies/INDEX.md) |
 | Failure behavior at scale | [30.2.1.10 Failure Modes](../30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.md), [30.3.2.01 Resilience Patterns](../30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.01-resilience-patterns.md) |
@@ -81,12 +81,12 @@ Coverage is judged at **chapter** level, not mention level: a topic "covered" on
 ## Database laws → chapters
 
 | Law area | Chapter |
-| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Choosing relational vs NoSQL by access pattern | [20.4.1.04 NoSQL vs SQL](../20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md) |
 | Model first: normalization and constraints | [20.4.1.02 Normalization](../20-backend/20.4-database/01-postgresql-foundations/20.4.1.02-normalization.md) |
 | Index for the queries you actually run | [20.4.2.01 Indexes](../20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md), [20.4.2.03 Execution Plans](../20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md) |
 | Transactions and isolation realities | [20.4.3.01 Transactions](../20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.md), [20.4.1.03 MVCC](../20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.md) |
-| Capacity and consistency trade-offs (CAP/PACELC) | [30.2.1.01 CAP](../30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.md), [30.2.1.02 Consistency Models](../30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.md) |
+| Capacity and consistency trade-offs (CAP and PACELC) | [30.2.1.01 CAP](../30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.md), [30.2.1.02 Consistency Models](../30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.md) |
 | Connection management | [20.4.5.01 Connection Pooling](../20-backend/20.4-database/05-operations-and-scaling/20.4.5.01-connection-pooling.md) |
 | Growing past one node | [20.4.3.04 Replication](../20-backend/20.4-database/03-transactions-and-replication/20.4.3.04-database-replication.md), [30.2.1.03 Sharding & Replication](../30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.md) |
 | Migrations without downtime | [20.4.5.02 Migration Strategies](../20-backend/20.4-database/05-operations-and-scaling/20.4.5.02-migration-strategies.md), [30.3.5.01 Zero-Downtime Deployments](../30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md) |

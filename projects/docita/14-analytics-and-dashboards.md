@@ -230,7 +230,7 @@ Use known small records to establish the query's meaning before running a worklo
 
 For telemetry, include an observation made before the window but flushed inside it, a health probe, a customer 5xx with an invalid duration, a zero-duration valid sample, and an entirely empty window. These cases test the clock, population, and denominator independently. Reconcile the response with an independently computed result on an isolated PostgreSQL fixture, rather than relying only on mocked repository values.
 
-After correctness, test the modeled daily mix, busy window, and stress case. Record database plans and resource pressure at the same times as route latency; a percentile alone cannot distinguish pool wait, lock wait, input/output (I/O), garbage collection, a provider timeout, or a cold start. Infrastructure measurement and resource budgeting are developed in [deployment](10-deployment-infrastructure.md) and the [capacity model](23-hypothetical-clinic-metrics.md).
+After correctness, test the modeled daily mix, busy window, and stress case. Record database plans and resource pressure at the same times as route latency; a percentile alone cannot distinguish pool wait, lock wait, input and output (I/O), garbage collection, a provider timeout, or a cold start. Infrastructure measurement and resource budgeting are developed in [deployment](10-deployment-infrastructure.md) and the [capacity model](23-hypothetical-clinic-metrics.md).
 
 ### A Controlled Query Result Establishes the Definition
 

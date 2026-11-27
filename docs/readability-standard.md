@@ -62,7 +62,7 @@ than guessing at it:
 6. **## Summary**: dense 3–6 sentence recap, no new facts.
 7. **## See Also, ## References & Learn More, and previous and next footer**:
    preserved (see section 2).
-8. **Optional canon sections** (`Why It Matters`, `Code Examples`, `Real-World Use Cases`, `Common Mistakes`, `Best Practices`, `Performance Considerations`): add only when they contribute new reasoning, never to restate a mechanism. Keep Q/A and revision drills out of concept chapters.
+8. **Optional canon sections** (`Why It Matters`, `Code Examples`, `Real-World Use Cases`, `Common Mistakes`, `Best Practices`, `Performance Considerations`): add only when they contribute new reasoning, never to restate a mechanism. Keep question-and-answer and revision drills out of concept chapters.
 
 ## 2. Preservation contract (hard rules — violations break gates)
 

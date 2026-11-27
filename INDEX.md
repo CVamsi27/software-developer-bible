@@ -20,9 +20,9 @@
 **Everyone starts with the [00-strategy](00-strategy/INDEX.md) strategy folder** — communication, resume, Situation, Task, Action, Result (STAR), Human Resources (HR) questions — it is shared by both lanes, not a lane itself. Then pick one of the two lanes:
 
 | Lane | Folder | Preparation need | Practice |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------- |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------- |
 | **Abroad Full-Stack** | [80-lanes-abroad-full-stack](80-lanes-abroad-full-stack/INDEX.md) | Practical implementation, take-homes, and role research | Working features, tests, and design defense |
-| **Indian SDE / FAANG** | [81-lanes-indian-sde-faang (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) | Algorithms, complexity, and broader Software Development Engineer (SDE) systems work | Fresh coding problems and system-design decisions |
+| **Indian SDE and FAANG** | [81-lanes-indian-sde-faang (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) | Algorithms, complexity, and broader Software Development Engineer (SDE) systems work | Fresh coding problems and system-design decisions |
 
 Use the [lane decision](80-lanes-abroad-full-stack/INDEX.md#lane-decision--is-this-the-right-lane-for-you) to connect the paths. A role may need both; confirm its assessment instead of inferring rounds, preparation periods, or compensation from a country or employer name.
 
@@ -67,7 +67,7 @@ These are sample scheduling blocks, not readiness estimates. Use [ROADMAP checkp
 
 | Order | Sub-stack | Files | Topics |
 | ----- | ----------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 10.1 | [JavaScript](10-frontend/10.1-javascript/INDEX.md) | 36 | Execution context, closures, prototypes, event loop, promises, async/await, cancellation, ES2024, hash tables |
+| 10.1 | [JavaScript](10-frontend/10.1-javascript/INDEX.md) | 36 | Execution context, closures, prototypes, event loop, promises, `async` and `await`, cancellation, ES2024, hash tables |
 | 10.2 | [TypeScript](10-frontend/10.2-typescript/INDEX.md) | 19 | Generics, utility types, conditional types, narrowing, `satisfies` operator |
 | 10.3 | [React](10-frontend/10.3-react/INDEX.md) | 23 | Virtual DOM, Fiber, hooks (18-19), Suspense, performance, state management |
 | 10.4 | [Next.js](10-frontend/10.4-next.js/INDEX.md) | 17 | App Router, Server Components, Server Actions, Middleware, caching, streaming |
@@ -168,7 +168,7 @@ projects → Docita architecture deep-dives, interview defense
 ## Cross-Reference Map
 
 | Stack | Depends on | Used by |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | -------------------------------------------------------------- |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ---------------------------------------------------------------- |
 | [00-strategy](00-strategy/INDEX.md) | — | Both lanes (everyone starts here) |
 | [10-frontend](10-frontend/INDEX.md) | — | Both lanes |
 | [20-backend](20-backend/INDEX.md) | — | Both lanes |
@@ -176,7 +176,7 @@ projects → Docita architecture deep-dives, interview defense
 | [40-platform](40-platform/INDEX.md) | — | Both lanes |
 | [50-quality](50-quality/INDEX.md) | — | Both lanes |
 | [60-realtime](60-realtime/INDEX.md) | — | Abroad Full-Stack (occasionally) |
-| [70-interview-toolkit](70-interview-toolkit/INDEX.md) | All stacks | Both lanes (Indian SDE / FAANG heavy, Abroad Full-Stack light) |
+| [70-interview-toolkit](70-interview-toolkit/INDEX.md) | All stacks | Both lanes (Indian SDE and FAANG heavy, Abroad Full-Stack light) |
 | [80-lanes-abroad-full-stack](80-lanes-abroad-full-stack/INDEX.md) or [81-lanes-indian-sde-faang (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) | All stacks | Role-specific execution |
 | [projects](projects/INDEX.md) | — | Project-specific (Docita interview prep) |
 
@@ -186,10 +186,10 @@ projects → Docita architecture deep-dives, interview defense
 
 **Strategy & lanes:**
 
-- [00-strategy/index](00-strategy/INDEX.md) — Cross-lane strategy
-- [80-lanes-abroad-full-stack/index](80-lanes-abroad-full-stack/INDEX.md) — Abroad Full-Stack lane (recommended for EU)
-- [81-lanes-indian-sde-faang/index (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) — Indian SDE / FAANG lane
-- [projects/index](projects/INDEX.md) — Project deep-dives (Docita)
+- [Strategy Index](00-strategy/INDEX.md) — Cross-lane strategy
+- [Abroad Full-Stack Lane Index](80-lanes-abroad-full-stack/INDEX.md) — Abroad Full-Stack lane (recommended for EU)
+- [Indian SDE and FAANG Lane Index (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) — Indian SDE and FAANG lane
+- [Projects Index](projects/INDEX.md) — Project deep-dives (Docita)
 
 **Stacks (in study order):**
 

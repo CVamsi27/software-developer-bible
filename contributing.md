@@ -24,7 +24,7 @@
 
 ## Getting Started
 
-This repository documents senior full-stack engineering interview topics across 7 study stacks (10-70), a strategy folder (00), two terminal interview lanes (80, 81), and project deep-dives (projects/docita, projects/maq). All content is written in **GitHub Flavored Markdown** (`.md`).
+This repository documents senior full-stack engineering interview topics across 7 study stacks (10-70), a strategy folder (00), two terminal interview lanes (80, 81), and project deep-dives (`projects/docita`, `projects/maq`). All content is written in **GitHub Flavored Markdown** (`.md`).
 
 Before contributing, review the existing files in the relevant section to understand the established conventions before creating or modifying content.
 
@@ -173,7 +173,7 @@ Teaching-template content files **must** begin with metadata in two forms. Navig
 - `tags` is a comma-separated list: `concept, lld, principles, theory`
 - Metadata line goes BEFORE the title (H1)
 - INDEX.md and README.md files do **not** have the HTML comment, but they have badges
-- Badges are clickable — in content files they link to `#`; in INDEX files the Files badge links to the central repo-root `INDEX.md` and Category/Status link to `#`
+- Badges are clickable — in content files they link to `#`; in INDEX files the Files badge links to the central repo-root `INDEX.md` and Category and Status link to `#`
 - Files whose body contains Liquid or Jinja template snippets (`{{ }}`, `{% %}`) open with a `{% raw %}` line *above* the HTML comment and close with a matching endraw tag at the end of file, so GitHub Pages renders them literally (65 files use this today)
 - **Enforced by gate 6b** (`check_template.py`): the comment must sit at the file top (only `{% raw %}` may precede it), `category` must be one of the 14 canonical values below, and all four badges must appear in the header in canonical order (Section → Category → Tags → Read time)
 
@@ -231,11 +231,11 @@ The Files badge links to the **central `INDEX.md`** at the repo root (relative p
 Category badge colors follow the **Category Values** table above (one color per category, used on both content and INDEX category badges). The fixed labels use these colors:
 
 | Badge label | Color | Notes |
-| ------------------- | -------------------------------------- | ------------------------------------------------------------- |
+| ------------------- | --------------------------------------- | ------------------------------------------------------------- |
 | `section` (content) | `blue` | Always blue, whatever the section |
 | `tags` (content) | `lightgrey` | Always lightgrey |
 | `files` (INDEX) | `blue` | Always blue |
-| `status` | `brightgreen` / `yellow` / `lightgrey` | `complete` / `in-progress` / `planned` (see below) |
+| `status` | `brightgreen`, `yellow`, or `lightgrey` | `complete`, `in-progress`, or `planned` (see below) |
 
 ### Status Badge Values
 
@@ -404,7 +404,7 @@ Every section has an `INDEX.md` file. Format:
 [← Previous: Microservices](../../20-backend/20.6-microservices/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Kubernetes →](../40.2-kubernetes/INDEX.md)
 ```
 
-> The Files badge links to the **central INDEX.md** at the repo root (relative path from the file's folder, e.g. `../../INDEX.md`); Category/Status link to `#`. File rows link each chapter by its actual `<stack>.<seq>-slug.md` name.
+> The Files badge links to the **central INDEX.md** at the repo root (relative path from the file's folder, e.g. `../../INDEX.md`); Category and Status link to `#`. File rows link each chapter by its actual `<stack>.<seq>-slug.md` name.
 
 ### INDEX.md Rules
 
@@ -412,7 +412,7 @@ Every section has an `INDEX.md` file. Format:
 - **Table**: 4 columns: `#`, `File` (linked), `Topics` (comma-separated keywords), `Read time` (most stack INDEXes include it; category INDEXes may drop it)
 - **Cross-references**: Bold `**Cross-references:**` with pipe-separated links to related sections
 - **Navigation**: Previous (sibling section), Back to Index, Next (sibling section). Use `·` as separator.
-- The first/last section in a series may show `(start of series)` / `(end of series)` instead of a sibling link.
+- The first or last section in a series may show `(start of series)` or `(end of series)` instead of a sibling link.
 
 ---
 
@@ -488,7 +488,7 @@ When doing batch operations on code blocks (e.g., fixing language tags), always 
 
 - **All files must end with a single newline** — no more, no less
 - **No trailing whitespace** on any line
-- Check with: `python3 scripts/check_alignment.py` (whitespace inside code blocks is part of the alignment gate) and a quick newline/trailing-whitespace sweep:
+- Check with: `python3 scripts/check_alignment.py` (whitespace inside code blocks is part of the alignment gate) and a quick newline and trailing-whitespace sweep:
 
 ```bash
 python3 - <<'EOF'
@@ -718,7 +718,7 @@ These files (in `70-interview-toolkit/70.1-behavioral/`) start with a `## Table 
 - [Section](#section)
 ```
 
-- Narrative/storytelling style rather than reference style
+- Narrative or storytelling style rather than reference style
 - Has `## Summary` and `## References & Learn More` at the end
 
 ### Coding Pattern Guides
@@ -834,7 +834,7 @@ After making changes, verify the following:
 **Coding Pattern files** (`70-interview-toolkit/70.2-coding-patterns/`):
 - [ ] Uses `## When to Use` instead of `## Why Do We Need It?`
 - [ ] Has `## Template` section with code skeleton
-- [ ] Section order: Definition → First Principles → When to Use → numbered mechanism sections with topic-specific titles (no `## How It Works` label) → Template → Code Examples → Common Mistakes → Time/Space Complexity → Interview Problems → Summary
+- [ ] Section order: Definition → First Principles → When to Use → numbered mechanism sections with topic-specific titles (no `## How It Works` label) → Template → Code Examples → Common Mistakes → Time and Space Complexity → Interview Problems → Summary
 - [ ] Has `## Time/Space Complexity` table instead of `## Performance Considerations`
 - [ ] Has `## Interview Problems` grouped by practice stage or verified difficulty with LeetCode references
 
@@ -921,7 +921,7 @@ It runs in order with clear pass or fail output:
 | First Principles | `python3 scripts/check_first_principles.py --diff` | Gate 9/34: concept chapters must carry a hand-authored `## First Principles` section deriving the topic from unavoidable constraints (follows Definition — never a restatement of the definition, never a benefit list). The committed baseline locks per-stack counts: removing sections fails the build; growing coverage re-baselines with `--baseline` |
 | Cross-references | `python3 scripts/check_cross_refs.py` | Gate 10/34: every inline `→ N.N.N` reference resolves to a real chapter in the live inventory (padding-normalized, fence- and prose-aware, so `→ 401` is not a ref). A renamed chapter can no longer silently orphan the refs pointing at it |
 | Duplication | `python3 scripts/check_duplication.py --strict` | Gate 11/34: no chapter repeats another chapter's prose — fence-aware 5-word shingles over `##` bodies with template sections (Definition, Summary, See Also…) excluded, and a `--min-words` floor so a short paragraph cannot trip it. The chaos-engineering pair grew to ~250 overlapping lines because nothing measured overlap |
-| Read time | `python3 scripts/read_time.py --check` | Gate 13/34: the study time declared on every `INDEX.md` *and* each chapter's 4th `Read time` badge match the computed estimate. Times are computed — never guessed — from one documented model: prose words / 200 words per minute (wpm) + code lines / 25 + table rows / 40, with reference genres (interview banks, cheat sheets) counted at half prose weight because they are searched, not read linearly. Drift fails the build; `--write` refreshes every `INDEX.md` and badge (idempotent — the second run is a no-op) |
+| Read time | `python3 scripts/read_time.py --check` | Gate 13/34: the study time declared on every `INDEX.md` *and* each chapter's 4th `Read time` badge match the computed estimate. Times are computed — never guessed — from one documented model: `prose words / 200` words per minute (wpm) + `code lines / 25` + `table rows / 40`, with reference genres (interview banks, cheat sheets) counted at half prose weight because they are searched, not read linearly. Drift fails the build; `--write` refreshes every `INDEX.md` and badge (idempotent — the second run is a no-op) |
 | Topic twins | `python3 scripts/check_topic_twins.py` | Gate 12/34: chapters that teach the same topic must cross-link. A pattern chapter, its framework implementation, and its case study are a deliberate parallel treatment — only if a reader landing on either half is routed to the other. Unlinked twins are how the chaos pair drifted into two copies; fix with `python3 scripts/link_topic_twins.py`, which derives each description from the target chapter's own opening |
 | Harness wiring | `python3 scripts/check_verify_wiring.py` | Gate 15/34 (since 2026-09-18): `verify.sh` audits **itself** — every gate's failure branch must set the same variable the trailing summary reads, no `X=$((X+1))` on an uninitialized variable under `set -u`, every script a gate invokes exists on disk, gate labels are unique, gap-free, and monotonic, and the gate count agrees across `verify.sh`, this file, and `docs/verification-gates.md`. It also audits **CI**, where the same false green can hide one level up: a workflow step that runs a gate under `set +e` must propagate its exit status (audit workflows that deliberately turn a non-zero exit into a tracking issue — `job-board-watch.yml`, `link-rot-audit.yml`, `drift-drill.yml` — are exempt by name and reason), every gate must actually be enforced by CI, and every script a workflow references must appear in its `paths:` trigger filter. Born from a false green: gate 10 wrote `FAILURES` instead of `FAIL`, so the unbound-variable abort killed the script before its `exit $FAIL` — a broken cross-reference printed FAIL, skipped gates 11–14, and still exited 0. `--write` restamps the count |
 | Search page | `python3 scripts/gen_master_index.py --check` | Gate 14/34 (since 2026-09-17): the site's filterable master index (`search.html`) is generated from the same enforced metadata (gate 6b) and read times (gate 13) and must be byte-identical to what the live corpus produces — a hand-edit or an unregenerated corpus change makes the site's search lie. Regenerate with the same script (no args). Data flow means the page cannot show a chapter whose metadata fails gate 6b |
@@ -943,6 +943,6 @@ Each script also runs standalone; all exit non-zero on failure so they can gate 
 
 ## Full-corpus readability pass
 
-[docs/full-corpus-readability-pass.md](docs/full-corpus-readability-pass.md) tracks the ordered review of every chapter against a single defect: a section that names a mechanism without showing it work. It records the repair standard, the per-stack review counts, and the defects found so far, so a later pass resumes at the first unread file instead of guessing.
+[`docs/full-corpus-readability-pass.md`](docs/full-corpus-readability-pass.md) tracks the ordered review of every chapter against a single defect: a section that names a mechanism without showing it work. It records the repair standard, the per-stack review counts, and the defects found so far, so a later pass resumes at the first unread file instead of guessing.
 
 {% endraw %}

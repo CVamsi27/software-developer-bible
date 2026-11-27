@@ -124,7 +124,7 @@ Consolidated the reference stylesheet and refined header gaps, tablet sizing, me
 
 New behavior checks cover named keyboard-scrollable code panels and mobile outline closing after selection while retaining heading focus. A separate failing regression test reproduced desktop outline collapse; the heading now keeps the outline open and leaves keyboard disclosure behavior available on mobile.
 
-Ctrl/Cmd+K focuses the visible header search field on reading pages. Clipboard text excludes decorative line numbers and icons.
+`Ctrl`+`K` or `Cmd`+`K` focuses the visible header search field on reading pages. Clipboard text excludes decorative line numbers and icons.
 
 Observed no whole-page overflow at 320, 390, 768, 1024, and 1487px. At 320px, playback with Pause and Stop wraps without overflow, and all 31 revision answers reveal without widening the document. Metadata expands without overflow, and mobile section selection closes the disclosure, updates the fragment, and focuses the destination.
 
@@ -253,7 +253,7 @@ Auditing those surfaces exposed four structural defects with rendering consequen
 Implemented changes across Markdown and CSS:
 
 - **Markdown** — every list-adjacent heading and `---` gained a blank line and every stray list separator was removed (352 instances in 304 files across the stacks; the gate run found 20 more in `docs/`, `projects/`, and governance files — 372 findings over 972 files). Two new `scripts/prose_hygiene.py` rules (5–6) now gate both classes.
-- **Revision migration** — the 18 numbered companions moved to the top-level `**Q:**` and `**A:**` paragraph format the other 95 already use (737 pairs moved with Q/A text verified identical). Their 429 bold section labels were dropped so the reveal UI would not hide each label inside the preceding answer, and `scripts/check_template.py` rejects numbered or indented revision pairs.
+- **Revision migration** — the 18 numbered companions moved to the top-level `**Q:**` and `**A:**` paragraph format the other 95 already use (737 pairs moved with question and answer text verified identical). Their 429 bold section labels were dropped so the reveal UI would not hide each label inside the preceding answer, and `scripts/check_template.py` rejects numbered or indented revision pairs.
 - **Revision answers** — the box subtracts its own 18px inset (`calc(62ch - 18px)`) so an open answer ends on the same right edge as every other column, and Wide resets it like the rest of the article.
 - **Tables** — cells go from Minima's `10x15` to `12x16` padding (riding a higher-specificity selector because Minima's `table th, table td` outranks bare `th` and `td`) and rows relax to a 1.55 line-height.
 - **Wrap** — headings balance (`text-wrap: balance`) and paragraphs and list items avoid one-word last lines (`text-wrap: pretty`).

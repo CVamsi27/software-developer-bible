@@ -131,7 +131,7 @@ The row models one **public endpoint protected by strict source allowlisting and
 
 One AWS public IPv4 at [$0.005 per hour](https://aws.amazon.com/vpc/pricing/) adds $3.60. Verify actual IP count, routing, and provider support before choosing this path. Private connectivity is an alternative requiring its own design and quote; a Network Address Translation (NAT) gateway is not automatically required by this public-endpoint example.
 
-This row is **not high availability**. Price Multi-AZ, any read replica, extra storage and Input/Output Operations Per Second (IOPS), surplus burst CPU credits (currently $0.075 per vCPU-hour for PostgreSQL T4g and T3), backup storage beyond the included allowance, snapshots retained after deletion, AWS outbound transfer, monitoring and log retention, support, and migration overlap separately.
+This row is **not high availability**. Price Multi-AZ, any read replica, extra storage and Input and Output Operations Per Second (IOPS), surplus burst CPU credits (currently $0.075 per vCPU-hour for PostgreSQL T4g and T3), backup storage beyond the included allowance, snapshots retained after deletion, AWS outbound transfer, monitoring and log retention, support, and migration overlap separately.
 
 A Single-AZ instance does not become resilient because two API machines exist. Use region-specific service pricing and account-wide transfer allowances before assigning an AWS network total. No AWS outbound amount is assumed in the subtotal.
 

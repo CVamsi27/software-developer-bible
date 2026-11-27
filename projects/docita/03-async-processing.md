@@ -278,7 +278,7 @@ Source paths refer to the 2 October inspection, the 9 October relay recheck, the
 - `apps/api/src/domains/prescriptions/application/services/prescription-pdf-orchestrator.service.ts` and `apps/api/src/domains/prescriptions/presentation/controllers/prescription.controller.ts` — local byte-return branch and required doctor context.
 - `apps/api/src/shared/modules/public/public-patient-documents.service.ts` and `apps/api/src/shared/modules/public/public-document-token.service.ts` — verified-capability proxy and stored-object read versus fallback.
 - `apps/api/src/domains/documents/infrastructure/local-storage.provider.ts` and `apps/api/src/domains/documents/infrastructure/local-storage-path.helpers.ts` — provider keys, upload roots, and browser URLs.
-- `apps/api/src/seed/seed-pdfs.ts` and `apps/api/src/seed/seed-patients-encounters.ts` — fixture key/doctor-field corrections published at `6465632a7`.
+- `apps/api/src/seed/seed-pdfs.ts` and `apps/api/src/seed/seed-patients-encounters.ts` — fixture key and doctor-field corrections published at `6465632a7`.
 - `apps/api/src/shared/modules/outbox/outbox.service.ts`
 - `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts`
 - `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.spec.ts` — asynchronous acknowledgment and retry tests.

@@ -54,7 +54,7 @@ Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a he
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Metrics | `shared/common/utils/prom-metric-factories.ts` + monitoring services (`metrics-recording`, `metrics-aggregation`, `metrics-query`) alongside persisted application monitoring records; source still imports legacy `prom-client`, distinct from the maintained client used in this chapter |
 | Logs | Pino structured logging via `observability/pino-options.factory.ts`; selected Protected Health Information (PHI) fields and value patterns scrubbed by serializers and redaction (`phi-redactor.ts`); this is a scoped implementation, not proof that every free-text value is safe |
-| Traces / errors | Sentry, bootstrapped in `apps/api/src/instrument.ts` — **not** OpenTelemetry (`@opentelemetry/core` is only a transitive pin) |
+| Traces and errors | Sentry, bootstrapped in `apps/api/src/instrument.ts` — **not** OpenTelemetry (`@opentelemetry/core` is only a transitive pin) |
 | Client-side pillar | Real User Monitoring (RUM): `web-vitals-metrics.service.ts` + `monitoring-rum.controller.ts` ingest Web Vitals |
 
 ## Finish This Section

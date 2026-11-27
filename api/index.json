@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "b0d03b2650325e07c0ac1421bcd910caf0ae5c6bb75970369dd21c112d6764a4",
+ "corpus_digest": "cbda7f2d8f2a9b8e33793ace7e1452049c2845c2fd0c24fe41f987e4816be820",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5614
+  "read_minutes": 5615
  },
  "chapters": [
   {
@@ -5900,7 +5900,7 @@
     "concept",
     "reference"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.html",

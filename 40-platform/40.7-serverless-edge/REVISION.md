@@ -46,6 +46,10 @@ Source: [AWS Lambda](40.7.02-aws-lambda.md)
 
 **A:** Lambda reports the invocation failure without forcibly stopping the handler. The original code can continue to commit an effect while the caller retries. Check remaining time, stop at a safe boundary, and use a stable idempotency key or reconcile the authoritative result before retrying.
 
+**Q:** What causes Amazon RDS Proxy session pinning under AWS Lambda bursts, and how do you prevent connection-pool exhaustion?
+
+**A:** RDS Proxy pins a Lambda client to one backend database connection for the rest of its session whenever the handler issues session-level `SET` statements, temporary tables, session advisory locks, or unsupported SQL prepared statements, silently disabling multiplexing. Monitor `DatabaseConnectionsCurrentlySessionPinned` and keep Lambda queries stateless or scoped with `SET LOCAL` inside transactions.
+
 ## Vercel Deployments
 
 Source: [Vercel Deployments](40.7.03-vercel-deployments.md)
@@ -80,7 +84,7 @@ Source: [Edge Functions](40.7.04-edge-functions.md)
 
 **Q:** Why can a single-threaded Durable Object still lose an invariant between an `await` and the next write?
 
-**A:** Awaiting external Input/Output (I/O) yields the event loop, allowing another request to interleave before the first resumes. Put the invariant inside a storage transaction or an input gate; if a successful write can be retried after its response is lost, also persist a stable operation identity. See Cloudflare's [Durable Object concurrency guidance](https://developers.cloudflare.com/durable-objects/best-practices/rules-of-durable-objects/).
+**A:** Awaiting external Input and Output (I/O) yields the event loop, allowing another request to interleave before the first resumes. Put the invariant inside a storage transaction or an input gate; if a successful write can be retried after its response is lost, also persist a stable operation identity. See Cloudflare's [Durable Object concurrency guidance](https://developers.cloudflare.com/durable-objects/best-practices/rules-of-durable-objects/).
 
 **Q:** Why is Workers KV a poor authority for immediate session revocation?
 
@@ -220,7 +224,7 @@ Source: [Lambda](40.7.02-aws-lambda.md), [patterns](40.7.05-serverless-patterns.
 
 **Q:** Does a successful EventBridge HTTP request prove every entry was published?
 
-**A:** No. Inspect the failed-entry count and entry errors, retry eligible entries with stable identities, and verify the target/bus configuration and delivery evidence.
+**A:** No. Inspect the failed-entry count and entry errors, retry eligible entries with stable identities, and verify the target and bus configuration and delivery evidence.
 
 **Q:** Why does a FIFO handler stop after the first failed record instead of processing later records anyway?
 

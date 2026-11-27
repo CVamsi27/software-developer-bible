@@ -28,7 +28,7 @@ Source: [Turborepo](40.8.02-turborepo.md)
 
 **Q:** Why can an undeclared environment input produce a wrong cache hit?
 
-**A:** The hash may treat different build behavior as identical and restore an artifact from another configuration. Declare output-affecting inputs and avoid caching side-effecting tasks. See Turborepo’s [cache inputs and outputs](https://turborepo.dev/docs/crafting-your-repository/caching) and [task configuration](https://turborepo.dev/docs/reference/configuration).
+**A:** The hash may treat different build behavior as identical and restore an artifact from another configuration. Declare output-affecting inputs and avoid caching side-effecting tasks. See Turborepo's [cache inputs and outputs](https://turborepo.dev/docs/crafting-your-repository/caching) and [task configuration](https://turborepo.dev/docs/reference/configuration).
 
 ## Nx
 
@@ -36,7 +36,7 @@ Source: [Nx](40.8.03-nx.md)
 
 **Q:** Why are dependency boundaries needed even with an accurate project graph?
 
-**A:** A graph describes coupling; it does not prevent unwanted coupling. Tags and rules establish which dependencies are allowed, and lint or conformance must run as a required check. See Nx’s [module-boundary enforcement](https://nx.dev/docs/features/enforce-module-boundaries).
+**A:** A graph describes coupling; it does not prevent unwanted coupling. Tags and rules establish which dependencies are allowed, and lint or conformance must run as a required check. See Nx's [module-boundary enforcement](https://nx.dev/docs/features/enforce-module-boundaries).
 
 **Q:** Why can two Nx 24 workspaces select different tasks for the same change?
 
@@ -52,7 +52,7 @@ Source: [Monorepo Tools Deep-Dive (Lerna, pnpm, Yarn, Rush, Bazel)](40.8.04-mono
 
 **Q:** Can engineer count determine whether a repository needs Bazel?
 
-**A:** No. Compare declared toolchains, generated inputs, and reproducibility needs with supported rules and maintenance cost. A small repository can need those controls; a large one can still have a simple script graph. Bazel’s [build model](https://bazel.build/) makes targets and actions explicit, so pilot the rules required by your languages.
+**A:** No. Compare declared toolchains, generated inputs, and reproducibility needs with supported rules and maintenance cost. A small repository can need those controls; a large one can still have a simple script graph. Bazel's [build model](https://bazel.build/) makes targets and actions explicit, so pilot the rules required by your languages.
 
 **Q:** What should a monorepo tooling pilot prove before trusting remote cache hits?
 
@@ -84,7 +84,7 @@ Source: [Versioning & Publishing](40.8.05-versioning-publishing-strategies.md)
 
 **Q:** Does enabling npm provenance remove the need for publish authorization?
 
-**A:** No. Provenance supplies verifiable build-origin information; trusted publishing or a scoped credential authorizes the registry operation. Verify both independently against npm’s [trusted-publisher](https://docs.npmjs.com/trusted-publishers/) and [provenance](https://docs.npmjs.com/generating-provenance-statements/) guidance.
+**A:** No. Provenance supplies verifiable build-origin information; trusted publishing or a scoped credential authorizes the registry operation. Verify both independently against npm's [trusted-publisher](https://docs.npmjs.com/trusted-publishers/) and [provenance](https://docs.npmjs.com/generating-provenance-statements/) guidance.
 
 ## Summary
 

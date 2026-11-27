@@ -7,7 +7,7 @@
 [![Category](https://img.shields.io/badge/category-Tooling-%2364748b)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why build tools:** Senior frontend interviews ask about bundlers, transpilers, and build optimization. Start from the framework’s supported integration, understand side effects and lazy loading, then compare transforms and measured workloads.
+**Why build tools:** Senior frontend interviews ask about bundlers, transpilers, and build optimization. Start from the framework's supported integration, understand side effects and lazy loading, then compare transforms and measured workloads.
 
 ---
 
@@ -76,7 +76,7 @@ How TypeScript (TS) and JSX become browser-compatible JavaScript (JS).
 1. **Webpack + Vite** — the two main ones
 2. **Build Optimization** — tree shaking, code splitting
 3. **Asset Pipelines** — CSS, images, and fonts, where page weight actually lives
-4. **Babel + esbuild/SWC** — source transformation, type-erasure boundaries, and generated output
+4. **Babel + esbuild and SWC** — source transformation, type-erasure boundaries, and generated output
 5. **Turbopack + Rspack** — the new Rust-based options
 6. **Tool Comparison** — when to use what
 7. **Revision** — [Bundlers](01-bundlers/REVISION.md), [Compilers](02-compilers/REVISION.md), [Optimization](03-optimization-and-comparison/REVISION.md)

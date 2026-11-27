@@ -30,7 +30,7 @@
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [40.10.01-cdn-architecture.md](40.10.01-cdn-architecture.md) | Content delivery network (CDN) caching strategies, invalidation, edge computing (Cloudflare Workers, Vercel Edge), protected health information (PHI), provider evaluation | Important | Specialized | 8 min |
 | 02 | [40.10.02-multi-cdn-traffic-steering.md](40.10.02-multi-cdn-traffic-steering.md) | When a second provider pays off, DNS, client, and managed steering, RUM and synthetic evidence, failover readiness, per-provider purge state and cost | Important | Specialized | 8 min |
-| 03 | [40.10.03-media-optimization-at-the-edge.md](40.10.03-media-optimization-at-the-edge.md) | Responsive image selection, bounded transforms and versioned cache keys, signed access, HLS/DASH streaming with adaptive bitrate (ABR), manifest and segment freshness | Important | Specialized | 10 min |
+| 03 | [40.10.03-media-optimization-at-the-edge.md](40.10.03-media-optimization-at-the-edge.md) | Responsive image selection, bounded transforms and versioned cache keys, signed access, HLS and DASH streaming with adaptive bitrate (ABR), manifest and segment freshness | Important | Specialized | 10 min |
 | 04 | [Interview Questions](40.10.04-interview-questions.md) | Applied Q&A: cache-key design, purge strategy, origin shields, dynamic edge caching, media delivery, multi-CDN steering | Important | Specialized | 6 min |
 
 ---

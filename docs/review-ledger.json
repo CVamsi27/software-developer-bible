@@ -9051,20 +9051,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md": {
-   "sha256": "91ad24c151b2377a5cf2a8f5046349061726eb66e133450bd07441b7ebf8c377",
+   "sha256": "c1ac3e3ac19318b2912031d5ee21f7d65e52db803061838eec36d20b763e2b3b",
    "lines": 169,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against AVIF/WebP edge transformation pipelines, CMAF low-latency HLS/DASH segments, and HMAC token / CloudFront Signed Cookie auth.",
-    "readable": "Full read of 169 lines (1367 prose words). (1,350 prose words). Hooks with a 4MB unoptimized hero PNG and buffering MP4 video before tracing edge image negotiation (AVIF/WebP via normalized `Accept` headers), responsive `srcset`, and adaptive bitrate video (HLS/CMAF) with signed URLs.",
-    "concise": "1367 words across 169 lines. 1,350 words across 159 lines. Worker normalization code, responsive HTML picture markup, and HLS caching rules.",
+    "readable": "Full read of 169 lines (1383 prose words). (1,350 prose words). Hooks with a 4MB unoptimized hero PNG and buffering MP4 video before tracing edge image negotiation (AVIF/WebP via normalized `Accept` headers), responsive `srcset`, and adaptive bitrate video (HLS/CMAF) with signed URLs.",
+    "concise": "1383 words across 169 lines. 1,350 words across 159 lines. Worker normalization code, responsive HTML picture markup, and HLS caching rules.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for edge media delivery: `Vary: Accept` normalization, deterministic image resize tiers, HLS manifest/segment caching TTLs, and signed cookies vs signed URLs.",
     "fast": "Measured 36.1 KB raw / 8.8 KB gzip. Compact code blocks and zero binary assets.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Explains the entitlement boundary why Signed Cookies beat Signed URLs for HLS/DASH streaming: individual `.m4s` segment URLs stay identical across viewers, preserving 99%+ CDN edge cache hit ratios."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.10-cdn/40.10.04-interview-questions.md": {
    "sha256": "9fea6658274809a0749895710829a577199b34baf051366cc5fe7206e7486875",
@@ -9083,7 +9083,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.10-cdn/INDEX.md": {
-   "sha256": "ce662b6641f5c8bea2a55fddffa006dfbf36da55534ce9bf804d32a6b00c7108",
+   "sha256": "72366f358cc98b29177b3b96c759f69a922eb223ce163ab770a68e787993ceda",
    "lines": 93,
    "genre": "index",
    "status": "read",
@@ -9096,7 +9096,7 @@
     "fast": "Measured 15.6 KB raw / 5.2 KB gzip. Under 100 lines; pure markdown.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Frames CDNs as programmable global traffic and media engines with explicit origin-shielding boundaries."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.10-cdn/REVISION.md": {
    "sha256": "5d0294501f4e43fe161d872d8985571629f2cc2cac62d11f2c714481236ad8e8",
@@ -9115,20 +9115,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md": {
-   "sha256": "bc89250824d9a274dd8e49c4b5d6e691eedf1d4ab736e84efdbc60409253218e",
+   "sha256": "5d88f392d684819158cf429612ff219d8ac5884a62f59d566f2b2a280a19e5a6",
    "lines": 186,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: NGINX 1.29.7 (April 2026) built-in upstream HTTP/1.1 keepalive pooling and 1.28 LTS explicit `keepalive` directives.",
-    "readable": "Full read of 186 lines (2083 prose words). (2,036 prose words). Covers NGINX master/worker `epoll`/`kqueue` state machines, upstream connection pooling (including NGINX 1.29.7 default HTTP/1.1 keepalive cache of 32), `proxy_cache_lock` stampede protection, and `limit_req`.",
-    "concise": "2083 words across 186 lines. 2,036 words across 154 lines. Covers NGINX master/worker `epoll`/`kqueue` state machines, upstream connection pooling (including NGINX 1.29.7 default HTTP/1.1 keepalive cache of 32), `proxy_cache_lock` stampede protection, and `limit_req`.",
+    "readable": "Full read of 186 lines (2085 prose words). (2,036 prose words). Covers NGINX master/worker `epoll`/`kqueue` state machines, upstream connection pooling (including NGINX 1.29.7 default HTTP/1.1 keepalive cache of 32), `proxy_cache_lock` stampede protection, and `limit_req`.",
+    "concise": "2085 words across 186 lines. 2,036 words across 154 lines. Covers NGINX master/worker `epoll`/`kqueue` state machines, upstream connection pooling (including NGINX 1.29.7 default HTTP/1.1 keepalive cache of 32), `proxy_cache_lock` stampede protection, and `limit_req`.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers NGINX master/worker `epoll`/`kqueue` state machines, upstream connection pooling (including NGINX 1.29.7 default HTTP/1.1 keepalive cache of 32), `proxy_cache_lock` stampede protection, and `limit_req`.",
     "fast": "Measured 26.7 KB raw / 8.9 KB gzip. Covers NGINX master/worker `epoll`/`kqueue` state machines, upstream connection pooling (including NGINX 1.29.7 default HTTP/1.1 keepalive cache of 32), `proxy_cache_lock` stampede protection, and `limit_req`.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers NGINX master/worker `epoll`/`kqueue` state machines, upstream connection pooling (including NGINX 1.29.7 default HTTP/1.1 keepalive cache of 32), `proxy_cache_lock` stampede protection, and `limit_req`."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.11-reverse-proxy/40.11.02-interview-questions.md": {
    "sha256": "b72a886a90b628261e4c1c8537367a2c9916165cb8136e2711289639d1f7bd2e",
@@ -9195,7 +9195,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.12-iac/40.12.02-interview-questions.md": {
-   "sha256": "45101a6fb04647c2ec323d04fff169ca210168c13580f428724e3a69a9e5c269",
+   "sha256": "b0ed153f4e07fec10d3a1590ab5513f85b4123e878915bfb480d3eb64ec96112",
    "lines": 165,
    "genre": "interview",
    "status": "read",
@@ -9208,7 +9208,7 @@
     "fast": "Measured 23.3 KB raw / 8.2 KB gzip. Covers senior IaC interview scenarios on concurrent state corruption, zero-downtime module refactoring with `moved`, secret leakage in state files, and multi-environment blast-radius isolation.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers senior IaC interview scenarios on concurrent state corruption, zero-downtime module refactoring with `moved`, secret leakage in state files, and multi-environment blast-radius isolation."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.12-iac/INDEX.md": {
    "sha256": "c91f708d7d0401b41860845d9d20fd0032944d5a90cad1f5f95d9aa20094a429",
@@ -9707,20 +9707,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
   },
   "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.md": {
-   "sha256": "ea322f193139b7e0398af96ffa23dc7e6945603b01a55a851e64126f57f3e2e0",
-   "lines": 262,
+   "sha256": "61ea1d4b84f3ae858f8d28e434a87113f52c6ee7bdf73399949a68bc1e35054a",
+   "lines": 264,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: GitHub Actions Sept 23 2026 Node 20 deprecation, Node 24 actions (checkout@v7.0.1, setup-node@v7.1.0), and July 15 2026 immutable OIDC subject claims.",
-    "readable": "Full read of 262 lines (1484 prose words). (1,424 prose words). Covers GitHub Actions runner model, job permissions, reusable workflows, matrix builds, OIDC cloud federation, and artifact caching.",
-    "concise": "1484 words across 262 lines. 1,424 words across 252 lines. Covers GitHub Actions runner model, job permissions, reusable workflows, matrix builds, OIDC cloud federation, and artifact caching.",
+    "readable": "Full read of 264 lines (1579 prose words). (1,424 prose words). Covers GitHub Actions runner model, job permissions, reusable workflows, matrix builds, OIDC cloud federation, and artifact caching.",
+    "concise": "1579 words across 264 lines. 1,424 words across 252 lines. Covers GitHub Actions runner model, job permissions, reusable workflows, matrix builds, OIDC cloud federation, and artifact caching.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers GitHub Actions runner model, job permissions, reusable workflows, matrix builds, OIDC cloud federation, and artifact caching.",
     "fast": "Measured 33.6 KB raw / 9.7 KB gzip. Covers GitHub Actions runner model, job permissions, reusable workflows, matrix builds, OIDC cloud federation, and artifact caching.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers GitHub Actions runner model, job permissions, reusable workflows, matrix builds, OIDC cloud federation, and artifact caching."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.02-gitlab-ci.md": {
    "sha256": "4ac482a298eeed3f7f6f151128ddd635867fc9edde4a542bc95edeb8bb16eae4",
@@ -9787,20 +9787,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
   },
   "40-platform/40.3-ci-cd/01-ci-platforms/REVISION.md": {
-   "sha256": "720e8e591da25c4bc5e820ce992d4fe67955f7118c8ec9c9df8f205c3c62e18c",
-   "lines": 99,
+   "sha256": "368270f3b47dfa62ccff17ef5d1623592fd8d5276e90ae4e5c499d85dda6d60a",
+   "lines": 103,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against GitHub Actions OIDC, GitLab ID tokens, and Argo CD sync hooks / ApplicationSet namespace boundaries.",
-    "readable": "Full read of 99 lines (726 prose words). Active-recall revision companion for CI Platforms covering GitHub Actions token permissions, PR-vs-release trust boundaries, OIDC AWS role conditions, monorepo path-filter pitfalls, GitLab `needs` vs `stages` and ID tokens, Jenkins reproducibility, and Argo CD self-heal/hooks/ApplicationSet namespaces.",
-    "concise": "726 words across 99 lines. 99 lines of high-signal security and operational Q&A.",
+    "readable": "Full read of 103 lines (788 prose words). Active-recall revision companion for CI Platforms covering GitHub Actions token permissions, PR-vs-release trust boundaries, OIDC AWS role conditions, monorepo path-filter pitfalls, GitLab `needs` vs `stages` and ID tokens, Jenkins reproducibility, and Argo CD self-heal/hooks/ApplicationSet namespaces.",
+    "concise": "788 words across 103 lines. 99 lines of high-signal security and operational Q&A.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical revision companion for 01-ci-platforms: 15 scenario Q&A prompts spanning `40.3.1.01` through `40.3.1.04`.",
     "fast": "Measured 12.6 KB raw / 4.4 KB gzip. Under 100 lines; pure markdown.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Highlights critical CI/CD security boundaries: interpolating PR titles in `run:` causes shell injection, narrow monorepo path filters skip shared-package breakage, and Argo CD selective sync skips `PreSync` migration hooks."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.01-docker-build-deploy.md": {
    "sha256": "2deafe2ccb34e3c9f7668e8ef61987f3b277c7bcd564f6da1191b6b760d73078",
@@ -9835,39 +9835,39 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
   },
   "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md": {
-   "sha256": "c4701ffa751d4531d4a72e681a66a75f170c4e7bd858082c32bed78d195d4bea",
+   "sha256": "b7751314253270d88d18d70b849bc5a364cb1fbb1cff690bb5e345335e3c510f",
    "lines": 185,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: OCI Distribution Spec v1.1 artifact promotion, Cosign signature verification, and Kyverno verifyImages policies.",
-    "readable": "Full read of 185 lines (1253 prose words). (1,212 prose words). Covers OCI artifact promotion across dev/staging/prod registries, immutable digest pinning, and admission signature verification.",
-    "concise": "1253 words across 185 lines. 1,212 words across 183 lines. Covers OCI artifact promotion across dev/staging/prod registries, immutable digest pinning, and admission signature verification.",
+    "readable": "Full read of 185 lines (1255 prose words). (1,212 prose words). Covers OCI artifact promotion across dev/staging/prod registries, immutable digest pinning, and admission signature verification.",
+    "concise": "1255 words across 185 lines. 1,212 words across 183 lines. Covers OCI artifact promotion across dev/staging/prod registries, immutable digest pinning, and admission signature verification.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers OCI artifact promotion across dev/staging/prod registries, immutable digest pinning, and admission signature verification.",
     "fast": "Measured 29.7 KB raw / 8.6 KB gzip. Covers OCI artifact promotion across dev/staging/prod registries, immutable digest pinning, and admission signature verification.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers OCI artifact promotion across dev/staging/prod registries, immutable digest pinning, and admission signature verification."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md": {
-   "sha256": "531c33e08978d3089fdf8d1e1a96b1a61e73361589f06ff179257214716c779d",
+   "sha256": "673e6da05e2b7b97e2239d400346d4277ab4be7f778476130dd42c7e833f795d",
    "lines": 297,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: SLSA v1.2 specification (Nov 2025), actions/attest@v4.2.2, Cosign keyless Fulcio/Rekor verification, and Kyverno cluster admission gates.",
-    "readable": "Full read of 297 lines (1727 prose words). (1,653 prose words). Covers SLSA v1.2 Build and Source tracks, Sigstore keyless OIDC signing with Cosign, CycloneDX/SPDX SBOM attestation, and Kyverno admission verification.",
-    "concise": "1727 words across 297 lines. 1,653 words across 295 lines. Covers SLSA v1.2 Build and Source tracks, Sigstore keyless OIDC signing with Cosign, CycloneDX/SPDX SBOM attestation, and Kyverno admission verification.",
+    "readable": "Full read of 297 lines (1729 prose words). (1,653 prose words). Covers SLSA v1.2 Build and Source tracks, Sigstore keyless OIDC signing with Cosign, CycloneDX/SPDX SBOM attestation, and Kyverno admission verification.",
+    "concise": "1729 words across 297 lines. 1,653 words across 295 lines. Covers SLSA v1.2 Build and Source tracks, Sigstore keyless OIDC signing with Cosign, CycloneDX/SPDX SBOM attestation, and Kyverno admission verification.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers SLSA v1.2 Build and Source tracks, Sigstore keyless OIDC signing with Cosign, CycloneDX/SPDX SBOM attestation, and Kyverno admission verification.",
     "fast": "Measured 37.0 KB raw / 10.9 KB gzip. Covers SLSA v1.2 Build and Source tracks, Sigstore keyless OIDC signing with Cosign, CycloneDX/SPDX SBOM attestation, and Kyverno admission verification.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers SLSA v1.2 Build and Source tracks, Sigstore keyless OIDC signing with Cosign, CycloneDX/SPDX SBOM attestation, and Kyverno admission verification."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.3-ci-cd/02-build-and-deploy/INDEX.md": {
-   "sha256": "3a4ce1e0b341e1e68e95b9edab5f2967ede07ffb991fa0ff3d021f16cf1a7730",
+   "sha256": "fd430a51673cc7cbe7ae30b98fd061416b8fc36604fb5470e4fa92b030e74b84",
    "lines": 62,
    "genre": "index",
    "status": "read",
@@ -9880,7 +9880,7 @@
     "fast": "Measured 12.2 KB raw / 4.0 KB gzip. Under 65 lines; instant render.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Maintains strict evidence discipline in the Docita anchor by noting that commented-out `deploy.yml` triggers and `scan-type: fs` Trivy runs are source config rather than live image-scan evidence."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.3-ci-cd/02-build-and-deploy/REVISION.md": {
    "sha256": "f40e29f6b5b4df0c291f399789c5338fce35eea59c7f183adeb6f4abc808f2c4",
@@ -9899,36 +9899,36 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
   },
   "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.01-blue-green-canary.md": {
-   "sha256": "c269a19e9fec0dc66b15da09a30e3d3d78d53da000e464cd983df1d1dbcc7301",
+   "sha256": "91d8d817cfb871d7f2ef6701113398870d3c31201ed9c769a0059e09c37db58e",
    "lines": 143,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Argo Rollouts Canary AnalysisTemplate specification and Prometheus error-budget rollback queries.",
-    "readable": "Full read of 143 lines (1033 prose words). Covers Blue-Green traffic cutovers, progressive Canary rollouts with Argo Rollouts and metric analysis, and expand-contract schema compatibility.",
-    "concise": "1033 words across 143 lines. Covers Blue-Green traffic cutovers, progressive Canary rollouts with Argo Rollouts and metric analysis, and expand-contract schema compatibility.",
+    "readable": "Full read of 143 lines (1035 prose words). Covers Blue-Green traffic cutovers, progressive Canary rollouts with Argo Rollouts and metric analysis, and expand-contract schema compatibility.",
+    "concise": "1035 words across 143 lines. Covers Blue-Green traffic cutovers, progressive Canary rollouts with Argo Rollouts and metric analysis, and expand-contract schema compatibility.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers Blue-Green traffic cutovers, progressive Canary rollouts with Argo Rollouts and metric analysis, and expand-contract schema compatibility.",
     "fast": "Measured 24.6 KB raw / 7.3 KB gzip. Covers Blue-Green traffic cutovers, progressive Canary rollouts with Argo Rollouts and metric analysis, and expand-contract schema compatibility.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers Blue-Green traffic cutovers, progressive Canary rollouts with Argo Rollouts and metric analysis, and expand-contract schema compatibility."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md": {
-   "sha256": "ca4a56e8c96f9a59da69b45b947fef17d1d9418cd0092032259fbb93fd29351b",
+   "sha256": "33b966968162b3c136aa54d7036287506f16f54077d5570646ec2d1dfb79fa82",
    "lines": 325,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: DORA 5-metric model including Deployment Rework Rate and Failed Deployment Recovery Time.",
-    "readable": "Full read of 325 lines (1162 prose words). (1,114 prose words). Covers the 5-metric DORA delivery performance framework (Lead Time, Deploy Frequency, Change Fail Rate, Failed Deployment Recovery Time, Rework Rate) and telemetry extraction.",
-    "concise": "1162 words across 325 lines. 1,114 words across 323 lines. Covers the 5-metric DORA delivery performance framework (Lead Time, Deploy Frequency, Change Fail Rate, Failed Deployment Recovery Time, Rework Rate) and telemetry extraction.",
+    "readable": "Full read of 325 lines (1163 prose words). (1,114 prose words). Covers the 5-metric DORA delivery performance framework (Lead Time, Deploy Frequency, Change Fail Rate, Failed Deployment Recovery Time, Rework Rate) and telemetry extraction.",
+    "concise": "1163 words across 325 lines. 1,114 words across 323 lines. Covers the 5-metric DORA delivery performance framework (Lead Time, Deploy Frequency, Change Fail Rate, Failed Deployment Recovery Time, Rework Rate) and telemetry extraction.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers the 5-metric DORA delivery performance framework (Lead Time, Deploy Frequency, Change Fail Rate, Failed Deployment Recovery Time, Rework Rate) and telemetry extraction.",
     "fast": "Measured 52.7 KB raw / 10.6 KB gzip. Covers the 5-metric DORA delivery performance framework (Lead Time, Deploy Frequency, Change Fail Rate, Failed Deployment Recovery Time, Rework Rate) and telemetry extraction.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers the 5-metric DORA delivery performance framework (Lead Time, Deploy Frequency, Change Fail Rate, Failed Deployment Recovery Time, Rework Rate) and telemetry extraction."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.3-ci-cd/03-releases-and-metrics/INDEX.md": {
    "sha256": "f83a6c863523dbf7cc6aa162b7a9930c69e0bcdff665371cfad6b452a6371c08",
@@ -9979,7 +9979,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
   },
   "40-platform/40.3-ci-cd/04-interview-prep/INDEX.md": {
-   "sha256": "e447c80ed9a139a752bdd0514435a8a438f9266bebc8759810ec75dc3bb6e45d",
+   "sha256": "89571b9bbc39e673c90ad11ad0dbac09df8306196a0d7b983f457f286e2669aa",
    "lines": 48,
    "genre": "index",
    "status": "read",
@@ -9992,7 +9992,7 @@
     "fast": "Measured 8.9 KB raw / 3.2 KB gzip. Under 50 lines; instant render.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Frames CI/CD interview answers around concrete monorepo task caching, pre-push vs merge gates, and honest evidence boundaries."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.3-ci-cd/INDEX.md": {
    "sha256": "13eeaa9f241a617e4b2a0e08b25c5f7e440274223c9711082a777d907e8a4444",
@@ -10027,20 +10027,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
   },
   "40-platform/40.4-observability/01-pillars/40.4.1.02-monitoring.md": {
-   "sha256": "7b957b0700f34a73e1d991ac5679173cc1b1bab99e9c92c7c2aee8658736879b",
+   "sha256": "21134f27e52b532661e3580d370a004cd90ca9c872fb281350828e938f858faa",
    "lines": 159,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Prometheus `@prometheus-io/client` v1.x (official successor to prom-client on Node 22/24/26+) and Prometheus 3.x native histograms.",
-    "readable": "Full read of 159 lines (972 prose words). Covers Counters, Gauges, Histograms, and Native Histograms, RED and USE methodologies, cardinality explosions, and `@prometheus-io/client` instrumentation.",
-    "concise": "972 words across 159 lines. Covers Counters, Gauges, Histograms, and Native Histograms, RED and USE methodologies, cardinality explosions, and `@prometheus-io/client` instrumentation.",
+    "readable": "Full read of 159 lines (976 prose words). Covers Counters, Gauges, Histograms, and Native Histograms, RED and USE methodologies, cardinality explosions, and `@prometheus-io/client` instrumentation.",
+    "concise": "976 words across 159 lines. Covers Counters, Gauges, Histograms, and Native Histograms, RED and USE methodologies, cardinality explosions, and `@prometheus-io/client` instrumentation.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers Counters, Gauges, Histograms, and Native Histograms, RED and USE methodologies, cardinality explosions, and `@prometheus-io/client` instrumentation.",
     "fast": "Measured 29.9 KB raw / 7.5 KB gzip. Covers Counters, Gauges, Histograms, and Native Histograms, RED and USE methodologies, cardinality explosions, and `@prometheus-io/client` instrumentation.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers Counters, Gauges, Histograms, and Native Histograms, RED and USE methodologies, cardinality explosions, and `@prometheus-io/client` instrumentation."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.4-observability/01-pillars/40.4.1.03-tracing.md": {
    "sha256": "abb30a0daebaac2179ea3885a200e5fac2265967bea9d20c6402e876f3fd29df",
@@ -10059,7 +10059,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
   },
   "40-platform/40.4-observability/01-pillars/INDEX.md": {
-   "sha256": "998004f5e515ee2b3786a9dab6fdbbc64bb7124c47cd62e4b62a60cfe35ceead",
+   "sha256": "f63d4055aaa3c62097844e766ed369812e6e5f0c9d925b5cd5699a8e987c76bd",
    "lines": 62,
    "genre": "index",
    "status": "read",
@@ -10072,7 +10072,7 @@
     "fast": "Measured 11.3 KB raw / 3.9 KB gzip. Learning-flow index for the three core observability pillars: structured logging, Prometheus/RED/USE metrics, and W3C distributed tracing.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for the three core observability pillars: structured logging, Prometheus/RED/USE metrics, and W3C distributed tracing."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.4-observability/01-pillars/REVISION.md": {
    "sha256": "35995f4db623f818eafed352b23c95176b78d359f455f34b6b73b24ee2bce666",
@@ -10171,23 +10171,23 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
   },
   "40-platform/40.4-observability/03-sre-targets/40.4.3.02-alerting.md": {
-   "sha256": "4f326c8805dc7e234169016463dbdbc40740c86e01dfcfd482f7d4e089ff0b06",
+   "sha256": "618b0342cc78a01e2f5eea7aa0e66240dff675551bb715713dfd1e3e676b3b1b",
    "lines": 140,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Prometheus Alertmanager routing, inhibition, and Google SRE multi-window burn-rate equations.",
-    "readable": "Full read of 140 lines (967 prose words). Covers symptom-based paging vs cause-based tickets, multi-window multi-burn-rate PromQL rules (14.4x 1h/5m and 6x 6h/30m), and runbook discipline.",
-    "concise": "967 words across 140 lines. Covers symptom-based paging vs cause-based tickets, multi-window multi-burn-rate PromQL rules (14.4x 1h/5m and 6x 6h/30m), and runbook discipline.",
+    "readable": "Full read of 140 lines (966 prose words). Covers symptom-based paging vs cause-based tickets, multi-window multi-burn-rate PromQL rules (14.4x 1h/5m and 6x 6h/30m), and runbook discipline.",
+    "concise": "966 words across 140 lines. Covers symptom-based paging vs cause-based tickets, multi-window multi-burn-rate PromQL rules (14.4x 1h/5m and 6x 6h/30m), and runbook discipline.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers symptom-based paging vs cause-based tickets, multi-window multi-burn-rate PromQL rules (14.4x 1h/5m and 6x 6h/30m), and runbook discipline.",
     "fast": "Measured 21.2 KB raw / 6.5 KB gzip. Covers symptom-based paging vs cause-based tickets, multi-window multi-burn-rate PromQL rules (14.4x 1h/5m and 6x 6h/30m), and runbook discipline.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers symptom-based paging vs cause-based tickets, multi-window multi-burn-rate PromQL rules (14.4x 1h/5m and 6x 6h/30m), and runbook discipline."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.4-observability/03-sre-targets/INDEX.md": {
-   "sha256": "476dbcebac17c4a07811cd55649ad8edcb3cccae1c8efd22bc11ab2e262171b9",
+   "sha256": "bd305cf2b7ce78a1b2bcb1ca6947d0be4f42f7134fed616fc8e47b68c0f3efa1",
    "lines": 66,
    "genre": "index",
    "status": "read",
@@ -10200,7 +10200,7 @@
     "fast": "Measured 11.0 KB raw / 3.9 KB gzip. Learning-flow index for SLIs, SLOs, SLAs, error budgets, and multi-window multi-burn-rate alerting.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for SLIs, SLOs, SLAs, error budgets, and multi-window multi-burn-rate alerting."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.4-observability/03-sre-targets/REVISION.md": {
    "sha256": "11a64fe3cc7ba3164a5ab3fe44d01df46db3bea0094a734db8c897450d577e94",
@@ -10219,20 +10219,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
   },
   "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md": {
-   "sha256": "5500cbe44f5aedc2c6a56a1ac0248b3518ecb1f8f23ab6113be86528a0e56224",
+   "sha256": "bfa3354d0d64c0059aaf170b29206905e70556c7da3e6c2c32ab15fdc3c6e0c8",
    "lines": 165,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: OpenTelemetry JS SDK 2.x (`@opentelemetry/sdk-node`, `@opentelemetry/resources` v2 `resourceFromAttributes`) and Collector configuration.",
-    "readable": "Full read of 165 lines (1364 prose words). (1,336 prose words). Covers OpenTelemetry Node SDK 2.x initialization (`resourceFromAttributes`), OTLP gRPC/HTTP exporters, and OTel Collector batch/memory_limiter pipelines.",
-    "concise": "1364 words across 165 lines. 1,336 words across 161 lines. Covers OpenTelemetry Node SDK 2.x initialization (`resourceFromAttributes`), OTLP gRPC/HTTP exporters, and OTel Collector batch/memory_limiter pipelines.",
+    "readable": "Full read of 165 lines (1367 prose words). (1,336 prose words). Covers OpenTelemetry Node SDK 2.x initialization (`resourceFromAttributes`), OTLP gRPC/HTTP exporters, and OTel Collector batch/memory_limiter pipelines.",
+    "concise": "1367 words across 165 lines. 1,336 words across 161 lines. Covers OpenTelemetry Node SDK 2.x initialization (`resourceFromAttributes`), OTLP gRPC/HTTP exporters, and OTel Collector batch/memory_limiter pipelines.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers OpenTelemetry Node SDK 2.x initialization (`resourceFromAttributes`), OTLP gRPC/HTTP exporters, and OTel Collector batch/memory_limiter pipelines.",
     "fast": "Measured 29.0 KB raw / 8.4 KB gzip. Covers OpenTelemetry Node SDK 2.x initialization (`resourceFromAttributes`), OTLP gRPC/HTTP exporters, and OTel Collector batch/memory_limiter pipelines.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers OpenTelemetry Node SDK 2.x initialization (`resourceFromAttributes`), OTLP gRPC/HTTP exporters, and OTel Collector batch/memory_limiter pipelines."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.02-continuous-profiling.md": {
    "sha256": "3d4196c00097c95562238843e3e2602addcbc46637057cb82271daac5d0ca2b6",
@@ -10251,20 +10251,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
   },
   "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.03-ebpf-observability.md": {
-   "sha256": "ef9edd6f6e0478a5ac8e292133529da05166c31da8c4626bf98807663c677c5c",
+   "sha256": "89e61d43e37401a6425692eaaf7ac26523320973e419b6d57400a9359cfb5932",
    "lines": 161,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Linux eBPF CO-RE (BTF), Cilium Tetragon/Hubble, and OpenTelemetry eBPF Instrumentation (Grafana Beyla).",
-    "readable": "Full read of 161 lines (1593 prose words). (1,538 prose words). Covers eBPF in-kernel verifier, kprobes/tracepoints/uprobes, BPF maps and ring buffers, Cilium Hubble, and Grafana Beyla zero-code auto-instrumentation.",
-    "concise": "1593 words across 161 lines. 1,538 words across 155 lines. Covers eBPF in-kernel verifier, kprobes/tracepoints/uprobes, BPF maps and ring buffers, Cilium Hubble, and Grafana Beyla zero-code auto-instrumentation.",
+    "readable": "Full read of 161 lines (1597 prose words). (1,538 prose words). Covers eBPF in-kernel verifier, kprobes/tracepoints/uprobes, BPF maps and ring buffers, Cilium Hubble, and Grafana Beyla zero-code auto-instrumentation.",
+    "concise": "1597 words across 161 lines. 1,538 words across 155 lines. Covers eBPF in-kernel verifier, kprobes/tracepoints/uprobes, BPF maps and ring buffers, Cilium Hubble, and Grafana Beyla zero-code auto-instrumentation.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers eBPF in-kernel verifier, kprobes/tracepoints/uprobes, BPF maps and ring buffers, Cilium Hubble, and Grafana Beyla zero-code auto-instrumentation.",
     "fast": "Measured 23.3 KB raw / 8.3 KB gzip. Covers eBPF in-kernel verifier, kprobes/tracepoints/uprobes, BPF maps and ring buffers, Cilium Hubble, and Grafana Beyla zero-code auto-instrumentation.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers eBPF in-kernel verifier, kprobes/tracepoints/uprobes, BPF maps and ring buffers, Cilium Hubble, and Grafana Beyla zero-code auto-instrumentation."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.4-observability/04-advanced-telemetry/INDEX.md": {
    "sha256": "82a3c31e28017244b208bfa351355268b872d13531b128a085c6bf879e48f8b4",
@@ -10299,20 +10299,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
   },
   "40-platform/40.4-observability/05-interview-prep/40.4.5.01-interview-questions.md": {
-   "sha256": "e002322cd2a2d0dd6ba5f6da6a067517bae2939d76c57420cd4b5fda3ae548c0",
+   "sha256": "56265b1199e31aa4657f99c5e0dfee2c471efdab8909178d85999296d14b70ce",
    "lines": 359,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: OpenTelemetry 2.x, Prometheus `@prometheus-io/client`, W3C Trace Context, and SRE burn-rate alerting.",
-    "readable": "Full read of 359 lines (3639 prose words). (3,438 prose words). Covers senior interview questions on high-cardinality mitigation, tail sampling, liveness vs readiness outages, multi-window burn rates, and eBPF.",
-    "concise": "3639 words across 359 lines. 3,438 words across 352 lines. Covers senior interview questions on high-cardinality mitigation, tail sampling, liveness vs readiness outages, multi-window burn rates, and eBPF.",
+    "readable": "Full read of 359 lines (3641 prose words). (3,438 prose words). Covers senior interview questions on high-cardinality mitigation, tail sampling, liveness vs readiness outages, multi-window burn rates, and eBPF.",
+    "concise": "3641 words across 359 lines. 3,438 words across 352 lines. Covers senior interview questions on high-cardinality mitigation, tail sampling, liveness vs readiness outages, multi-window burn rates, and eBPF.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers senior interview questions on high-cardinality mitigation, tail sampling, liveness vs readiness outages, multi-window burn rates, and eBPF.",
     "fast": "Measured 47.2 KB raw / 14.7 KB gzip. Covers senior interview questions on high-cardinality mitigation, tail sampling, liveness vs readiness outages, multi-window burn rates, and eBPF.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers senior interview questions on high-cardinality mitigation, tail sampling, liveness vs readiness outages, multi-window burn rates, and eBPF."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.4-observability/05-interview-prep/INDEX.md": {
    "sha256": "03ddede92600beec8e464fcf8926deaea5698fb5f582998ecf377c86ab5b7a5f",
@@ -10331,7 +10331,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
   },
   "40-platform/40.4-observability/INDEX.md": {
-   "sha256": "878fd27112a6bc347188373288325743a57dca5292aebee04c54c13419c042a3",
+   "sha256": "9c813ec6661ca95ad9cc47d4e616b3ca119cf92a91a17f1330bda45d35185b98",
    "lines": 104,
    "genre": "index",
    "status": "read",
@@ -10344,7 +10344,7 @@
     "fast": "Measured 16.6 KB raw / 4.5 KB gzip. Pure markdown index.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Centers the entire observability curriculum on actionable SLO burn-rate alerting boundaries rather than dashboard hoarding."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md": {
    "sha256": "d3c3d9e31c3494c547780b4f93db9018804b88097c42b316d3353840bc0c92f8",
@@ -10427,7 +10427,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.5-build-tools/01-bundlers/REVISION.md": {
-   "sha256": "0c649ece8118e343aa908ffabca33bc6516aa8356f412a6e783c41eb896a3796",
+   "sha256": "a9679ddf52803343d163fde864d3d1335d119ab41a946ae9dccd977bb1950dd9",
    "lines": 111,
    "genre": "revision",
    "status": "read",
@@ -10440,7 +10440,7 @@
     "fast": "Measured 19.6 KB raw / 6.0 KB gzip. Active-recall Q&A companion covering ESM dev servers vs bundle-based HMR, Vite 8 Rolldown migration, Turbopack function-level caching, and Rspack.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering ESM dev servers vs bundle-based HMR, Vite 8 Rolldown migration, Turbopack function-level caching, and Rspack."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.5-build-tools/02-compilers/40.5.2.01-babel.md": {
    "sha256": "7ad66a3f35dd8b3691559406d4d664636491a71640ee94da9ad8b24f57b2962d",
@@ -10491,7 +10491,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.5-build-tools/02-compilers/REVISION.md": {
-   "sha256": "8cc3a979fcf7a0fe1b2f0e32f0bf3ded47842bafe97bcb9ea96220ae94baf69f",
+   "sha256": "d45d97d10f20a9bdbee6ce52fdaae281e03a9f6f041a424cc8ce445504239351",
    "lines": 59,
    "genre": "revision",
    "status": "read",
@@ -10504,7 +10504,7 @@
     "fast": "Measured 10.4 KB raw / 3.5 KB gzip. Active-recall Q&A companion covering AST parse-transform-print pipelines, `isolatedModules` single-file transpilation constraints, and polyfill injection.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering AST parse-transform-print pipelines, `isolatedModules` single-file transpilation constraints, and polyfill injection."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.01-build-optimization.md": {
    "sha256": "a0e60e2e044fe7c8da25d7eaf1d2a90c8d1d6dd14522e4d6cfed934da9eaae99",
@@ -10539,20 +10539,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md": {
-   "sha256": "33f9a7f420f275b1d2544da71ad8c9536c00f2a373309fd5238d7d5f475430f1",
+   "sha256": "ca1104247353c1cc0955e3a73823a15c40cb02131b973114037701bbcbd7587d",
    "lines": 90,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: 2026 bundler selection matrix across greenfield SPAs, Next.js apps, and enterprise Webpack migrations.",
-    "readable": "Full read of 90 lines (714 prose words). Compares Vite 8.3 (Rolldown), Turbopack (Next.js 16.4), Rspack 2.2, esbuild, and Webpack 5.109 across HMR latency, plugin ecosystems, and migration costs.",
-    "concise": "714 words across 90 lines. Compares Vite 8.3 (Rolldown), Turbopack (Next.js 16.4), Rspack 2.2, esbuild, and Webpack 5.109 across HMR latency, plugin ecosystems, and migration costs.",
+    "readable": "Full read of 90 lines (716 prose words). Compares Vite 8.3 (Rolldown), Turbopack (Next.js 16.4), Rspack 2.2, esbuild, and Webpack 5.109 across HMR latency, plugin ecosystems, and migration costs.",
+    "concise": "716 words across 90 lines. Compares Vite 8.3 (Rolldown), Turbopack (Next.js 16.4), Rspack 2.2, esbuild, and Webpack 5.109 across HMR latency, plugin ecosystems, and migration costs.",
     "focused": "Single canonical home with no duplicate code across chapters. Compares Vite 8.3 (Rolldown), Turbopack (Next.js 16.4), Rspack 2.2, esbuild, and Webpack 5.109 across HMR latency, plugin ecosystems, and migration costs.",
     "fast": "Measured 16.5 KB raw / 5.6 KB gzip. Compares Vite 8.3 (Rolldown), Turbopack (Next.js 16.4), Rspack 2.2, esbuild, and Webpack 5.109 across HMR latency, plugin ecosystems, and migration costs.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Compares Vite 8.3 (Rolldown), Turbopack (Next.js 16.4), Rspack 2.2, esbuild, and Webpack 5.109 across HMR latency, plugin ecosystems, and migration costs."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.5-build-tools/03-optimization-and-comparison/INDEX.md": {
    "sha256": "211a85eae799117c5c3d78cfeacbefa6cf7b6541f872227867941bac8bde61c4",
@@ -10571,7 +10571,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md": {
-   "sha256": "29edf26f7809c0ae11a1025beea6509e9a7ea3bbd55e12526d79fbc28f583405",
+   "sha256": "21306fb537f1c7a808b6870a3e6cb6f73527f3016452c644d1bea3f0c2154b23",
    "lines": 95,
    "genre": "revision",
    "status": "read",
@@ -10584,7 +10584,7 @@
     "fast": "Measured 16.4 KB raw / 5.4 KB gzip. Active-recall Q&A companion covering why barrel files defeat tree shaking, content-hash cache busting, and bundler decision trade-offs.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering why barrel files defeat tree shaking, content-hash cache busting, and bundler decision trade-offs."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.5-build-tools/04-interview-prep/40.5.4.01-interview-questions.md": {
    "sha256": "439f267d9ab31e89390b50c8947b857317c293c99f65347c9ca1d526d1dee071",
@@ -10619,20 +10619,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.5-build-tools/INDEX.md": {
-   "sha256": "ae2aec04b9e9ef92a8fb367b9c18fd383df1eda4bdd4b0b70a7569044f86eb96",
+   "sha256": "f1b076ffa5b2b43725684323aea80180314ec64224ca5064a0a2cb8d4b01ef1a",
    "lines": 108,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: 2026 bundler landscape: Vite 8.3 (Rolldown + Oxc), Next.js 16.4 (Turbopack default), Rspack 2.2, and Webpack 5.109.",
-    "readable": "Full read of 108 lines (211 prose words). Learning-flow index for frontend and full-stack build tools: bundlers (Webpack, Vite 8.3, Turbopack, Rspack), compilers (Babel 8, esbuild, SWC, Oxc), and asset pipelines.",
-    "concise": "211 words across 108 lines. Learning-flow index for frontend and full-stack build tools: bundlers (Webpack, Vite 8.3, Turbopack, Rspack), compilers (Babel 8, esbuild, SWC, Oxc), and asset pipelines.",
+    "readable": "Full read of 108 lines (213 prose words). Learning-flow index for frontend and full-stack build tools: bundlers (Webpack, Vite 8.3, Turbopack, Rspack), compilers (Babel 8, esbuild, SWC, Oxc), and asset pipelines.",
+    "concise": "213 words across 108 lines. Learning-flow index for frontend and full-stack build tools: bundlers (Webpack, Vite 8.3, Turbopack, Rspack), compilers (Babel 8, esbuild, SWC, Oxc), and asset pipelines.",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for frontend and full-stack build tools: bundlers (Webpack, Vite 8.3, Turbopack, Rspack), compilers (Babel 8, esbuild, SWC, Oxc), and asset pipelines.",
     "fast": "Measured 15.4 KB raw / 4.3 KB gzip. Learning-flow index for frontend and full-stack build tools: bundlers (Webpack, Vite 8.3, Turbopack, Rspack), compilers (Babel 8, esbuild, SWC, Oxc), and asset pipelines.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for frontend and full-stack build tools: bundlers (Webpack, Vite 8.3, Turbopack, Rspack), compilers (Babel 8, esbuild, SWC, Oxc), and asset pipelines."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md": {
    "sha256": "f2c4ad275f4741d1218f6be7b1e9e5c25b52298992af61d88b34c95dc4b4fb9e",
@@ -10795,7 +10795,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.6-git-advanced/INDEX.md": {
-   "sha256": "d3933ea95c8116b379b1f508e76f873c015cf839dd0d51ccae6e9434a3a569fb",
+   "sha256": "8b0cc5af66595992615193ed2b384d78c0b7e6c82f3fb87c471a2478f37ae07d",
    "lines": 165,
    "genre": "index",
    "status": "read",
@@ -10808,7 +10808,7 @@
     "fast": "Measured 20.0 KB raw / 5.6 KB gzip. Learning-flow index for Git internals, branching models, history rewriting, hooks, bisect archaeology, monorepo scaling, and cryptographic commit signing.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for Git internals, branching models, history rewriting, hooks, bisect archaeology, monorepo scaling, and cryptographic commit signing."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.6-git-advanced/REVISION.md": {
    "sha256": "92b55b7c43fca427efb9d0682282bde3163f2c201427c13824547ee96d5adb7b",
@@ -10843,20 +10843,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md": {
-   "sha256": "2f7c0b5938b98d1b0af9378ecb56b71473e4210fb2c649ece7f53d44bcd0b851",
-   "lines": 157,
+   "sha256": "779524c7cda8f3b8c2bd1173f48591ff73378beb6952793a42ee2a568bed1c1f",
+   "lines": 159,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: AWS Lambda 2026 Managed Instances, native Lambda Durable Functions, and Node.js 24.x runtime.",
-    "readable": "Full read of 157 lines (1696 prose words). (1,676 prose words). Covers AWS Lambda Firecracker execution environments, Provisioned Concurrency vs SnapStart, Lambda Managed Instances (multi-concurrency and 90-min async timeout), and Durable Functions.",
-    "concise": "1696 words across 157 lines. 1,676 words across 147 lines. Covers AWS Lambda Firecracker execution environments, Provisioned Concurrency vs SnapStart, Lambda Managed Instances (multi-concurrency and 90-min async timeout), and Durable Functions.",
+    "readable": "Full read of 159 lines (1778 prose words). (1,676 prose words). Covers AWS Lambda Firecracker execution environments, Provisioned Concurrency vs SnapStart, Lambda Managed Instances (multi-concurrency and 90-min async timeout), and Durable Functions.",
+    "concise": "1778 words across 159 lines. 1,676 words across 147 lines. Covers AWS Lambda Firecracker execution environments, Provisioned Concurrency vs SnapStart, Lambda Managed Instances (multi-concurrency and 90-min async timeout), and Durable Functions.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers AWS Lambda Firecracker execution environments, Provisioned Concurrency vs SnapStart, Lambda Managed Instances (multi-concurrency and 90-min async timeout), and Durable Functions.",
     "fast": "Measured 28.5 KB raw / 8.7 KB gzip. Covers AWS Lambda Firecracker execution environments, Provisioned Concurrency vs SnapStart, Lambda Managed Instances (multi-concurrency and 90-min async timeout), and Durable Functions.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers AWS Lambda Firecracker execution environments, Provisioned Concurrency vs SnapStart, Lambda Managed Instances (multi-concurrency and 90-min async timeout), and Durable Functions."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md": {
    "sha256": "1573fe310a0a52d7ca951d48f8acc91cf1c91e0b140220f49e57853813afb08c",
@@ -10875,20 +10875,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md": {
-   "sha256": "a3a94c0cc7964d42c3d976969af23cf93bcb54c325731d3be1b8f1e4fd3521a0",
+   "sha256": "6bb7cde45d1f73189fa5447422d32b0a05ac62445ab9fe6b76d0563e8c41f982",
    "lines": 142,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Cloudflare Workers V8 isolates, 64 MiB uncompressed bundle cap, WinterTC Web APIs, and Hyperdrive/Durable Objects.",
-    "readable": "Full read of 142 lines (1490 prose words). (1,484 prose words). Covers V8 isolate edge runtimes (Cloudflare Workers), sub-5ms cold starts, the database gravity problem (multi-round-trip latency penalty), and Durable Objects / D1.",
-    "concise": "1490 words across 142 lines. 1,484 words across 132 lines. Covers V8 isolate edge runtimes (Cloudflare Workers), sub-5ms cold starts, the database gravity problem (multi-round-trip latency penalty), and Durable Objects / D1.",
+    "readable": "Full read of 142 lines (1492 prose words). (1,484 prose words). Covers V8 isolate edge runtimes (Cloudflare Workers), sub-5ms cold starts, the database gravity problem (multi-round-trip latency penalty), and Durable Objects / D1.",
+    "concise": "1492 words across 142 lines. 1,484 words across 132 lines. Covers V8 isolate edge runtimes (Cloudflare Workers), sub-5ms cold starts, the database gravity problem (multi-round-trip latency penalty), and Durable Objects / D1.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers V8 isolate edge runtimes (Cloudflare Workers), sub-5ms cold starts, the database gravity problem (multi-round-trip latency penalty), and Durable Objects / D1.",
     "fast": "Measured 23.2 KB raw / 8.0 KB gzip. Covers V8 isolate edge runtimes (Cloudflare Workers), sub-5ms cold starts, the database gravity problem (multi-round-trip latency penalty), and Durable Objects / D1.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers V8 isolate edge runtimes (Cloudflare Workers), sub-5ms cold starts, the database gravity problem (multi-round-trip latency penalty), and Durable Objects / D1."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md": {
    "sha256": "bab12768e31f659f3a1d1a86f614184af0dfd6bee1450138a5c69a9baf426988",
@@ -10923,20 +10923,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md": {
-   "sha256": "3c186328f99ac21a41f35d1ff56f8b1648135354b38ca8158dd159af97a3342c",
+   "sha256": "2cbeef68399a3d4a67a409c4c70750ad705767f59f56bd7829aabc9f608b9957",
    "lines": 165,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Inngest TypeScript SDK v4 (March 2026), Temporal deterministic workflow replay, and AWS Lambda Durable Functions.",
-    "readable": "Full read of 165 lines (1358 prose words). (1,347 prose words). Covers deterministic replay history and checkpointed durable execution across Temporal (Workflows vs Activities), Inngest TypeScript SDK v4 (`step.run`), and AWS Lambda Durable Functions.",
-    "concise": "1358 words across 165 lines. 1,347 words across 159 lines. Covers deterministic replay history and checkpointed durable execution across Temporal (Workflows vs Activities), Inngest TypeScript SDK v4 (`step.run`), and AWS Lambda Durable Functions.",
+    "readable": "Full read of 165 lines (1360 prose words). (1,347 prose words). Covers deterministic replay history and checkpointed durable execution across Temporal (Workflows vs Activities), Inngest TypeScript SDK v4 (`step.run`), and AWS Lambda Durable Functions.",
+    "concise": "1360 words across 165 lines. 1,347 words across 159 lines. Covers deterministic replay history and checkpointed durable execution across Temporal (Workflows vs Activities), Inngest TypeScript SDK v4 (`step.run`), and AWS Lambda Durable Functions.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers deterministic replay history and checkpointed durable execution across Temporal (Workflows vs Activities), Inngest TypeScript SDK v4 (`step.run`), and AWS Lambda Durable Functions.",
     "fast": "Measured 29.8 KB raw / 8.3 KB gzip. Covers deterministic replay history and checkpointed durable execution across Temporal (Workflows vs Activities), Inngest TypeScript SDK v4 (`step.run`), and AWS Lambda Durable Functions.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers deterministic replay history and checkpointed durable execution across Temporal (Workflows vs Activities), Inngest TypeScript SDK v4 (`step.run`), and AWS Lambda Durable Functions."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.7-serverless-edge/40.7.08-interview-questions.md": {
    "sha256": "144fb9ca7cd65b8b003e46c55a9666acffc179424daf5114277180405ea6d399",
@@ -10987,7 +10987,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.7-serverless-edge/INDEX.md": {
-   "sha256": "4c6eb0e88aa01acf930aee4bd0794421c13a2f4e611f1a0dd55e9ab39c759473",
+   "sha256": "b13e267ad39a919cbfd51c0518f9e5d4e8df3e855fef75d5c3cba7565a674ed0",
    "lines": 136,
    "genre": "index",
    "status": "read",
@@ -11000,23 +11000,23 @@
     "fast": "Measured 17.5 KB raw / 5.0 KB gzip. Learning-flow index for serverless and edge compute: AWS Lambda, Vercel Fluid Compute, Cloudflare Workers V8 isolates, durable execution (Temporal/Inngest), and Fly.io Firecracker Machines.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for serverless and edge compute: AWS Lambda, Vercel Fluid Compute, Cloudflare Workers V8 isolates, durable execution (Temporal/Inngest), and Fly.io Firecracker Machines."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.7-serverless-edge/REVISION.md": {
-   "sha256": "577c31c3424846f9b64d1a6edf46cc9ea9004ee7be5e9092535d85f2a2abd6c9",
-   "lines": 251,
+   "sha256": "3bc4aa0b8619f318b474e7dd10cb3d828a1b39ddfed3fdfd084be9937eb495c5",
+   "lines": 255,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: 2026 serverless and edge architecture boundaries across AWS Lambda, Cloudflare Workers, Vercel, Temporal, and Fly.io.",
-    "readable": "Full read of 251 lines (2729 prose words). (2,676 prose words). Active-recall Q&A companion covering Firecracker microVMs vs V8 isolates, Lambda SnapStart, RDS Proxy connection pooling, durable step replay, and Cloudflare SPA routing.",
-    "concise": "2729 words across 251 lines. 2,676 words across 251 lines. Active-recall Q&A companion covering Firecracker microVMs vs V8 isolates, Lambda SnapStart, RDS Proxy connection pooling, durable step replay, and Cloudflare SPA routing.",
+    "readable": "Full read of 255 lines (2804 prose words). (2,676 prose words). Active-recall Q&A companion covering Firecracker microVMs vs V8 isolates, Lambda SnapStart, RDS Proxy connection pooling, durable step replay, and Cloudflare SPA routing.",
+    "concise": "2804 words across 255 lines. 2,676 words across 251 lines. Active-recall Q&A companion covering Firecracker microVMs vs V8 isolates, Lambda SnapStart, RDS Proxy connection pooling, durable step replay, and Cloudflare SPA routing.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering Firecracker microVMs vs V8 isolates, Lambda SnapStart, RDS Proxy connection pooling, durable step replay, and Cloudflare SPA routing.",
     "fast": "Measured 31.1 KB raw / 10.0 KB gzip. Active-recall Q&A companion covering Firecracker microVMs vs V8 isolates, Lambda SnapStart, RDS Proxy connection pooling, durable step replay, and Cloudflare SPA routing.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering Firecracker microVMs vs V8 isolates, Lambda SnapStart, RDS Proxy connection pooling, durable step replay, and Cloudflare SPA routing."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md": {
    "sha256": "1127acfa210890d65a3d9516dee2a6ad44288e42317df38e9faa7edc9de77f3b",
@@ -11067,7 +11067,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md": {
-   "sha256": "e5478388f121ffea2a3dc92bb0cc08271f87061b7ac9a69b00ebfb4eee35cfcd",
+   "sha256": "0f2aff67d5fa2a041229183dfc9ef417339b65b2ff4a2cfb5d4467f707c246c2",
    "lines": 190,
    "genre": "chapter",
    "status": "read",
@@ -11080,7 +11080,7 @@
     "fast": "Measured 24.2 KB raw / 7.6 KB gzip. Covers pnpm workspaces (`workspace:*` protocol and `catalog:` shared dependency pinning), hard-link CAS store preventing phantom dependencies, vs npm/Yarn Plug'n'Play and Bazel.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers pnpm workspaces (`workspace:*` protocol and `catalog:` shared dependency pinning), hard-link CAS store preventing phantom dependencies, vs npm/Yarn Plug'n'Play and Bazel."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md": {
    "sha256": "6fab9b7cb98962fea70d86445b22ad389cdd0845a780e966a5ab51a4b67a5288",
@@ -11099,7 +11099,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/40.8-monorepo/40.8.06-interview-questions.md": {
-   "sha256": "f24a23643df9fac3c933c112498fa0fb5665904a71ea7b36bf5fbbd52ca5df8f",
+   "sha256": "7635c53f943f20cbef99f1a5663a69a52f3a8db21a12d2e4c95be05323050ef0",
    "lines": 187,
    "genre": "interview",
    "status": "read",
@@ -11112,10 +11112,10 @@
     "fast": "Measured 24.9 KB raw / 8.5 KB gzip. Covers senior monorepo interview questions on remote cache poisoning, phantom dependencies, circular workspace imports, and Docker image bloat.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers senior monorepo interview questions on remote cache poisoning, phantom dependencies, circular workspace imports, and Docker image bloat."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.8-monorepo/INDEX.md": {
-   "sha256": "0e312ed1d7bc78b6b50c4b897d964601dcc6133ff3737992d0a4dd1c5796eb87",
+   "sha256": "cb369797c346f93fb50c7a859213f95144018160f6e9331b9d9c31c0eb49688b",
    "lines": 128,
    "genre": "index",
    "status": "read",
@@ -11128,10 +11128,10 @@
     "fast": "Measured 16.0 KB raw / 4.6 KB gzip. Learning-flow index for monorepo architecture: pnpm workspaces, Turborepo task caching, Nx 24 project graphs and module boundaries, and Changesets release automation.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for monorepo architecture: pnpm workspaces, Turborepo task caching, Nx 24 project graphs and module boundaries, and Changesets release automation."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.8-monorepo/REVISION.md": {
-   "sha256": "ebff783920152c448bc31231530fdd7170e17c659368a0b6aeb90e54a81af9e2",
+   "sha256": "24d1968b316025941d82279a7850d4c103521d26868ce3e20dc8afa7fe4b2365",
    "lines": 99,
    "genre": "revision",
    "status": "read",
@@ -11144,42 +11144,42 @@
     "fast": "Measured 13.5 KB raw / 4.6 KB gzip. Active-recall Q&A companion covering topological task DAGs, content-addressable remote caching, phantom dependencies, and fixed vs independent versioning.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering topological task DAGs, content-addressable remote caching, phantom dependencies, and fixed vs independent versioning."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md": {
-   "sha256": "2ef21a3e676a095eb245509bb10c059c1a593a8c30dd6fc898ce2748f8a32c4f",
+   "sha256": "aa1da4635abb02c5a49973800fd43b15990dc44306428591b14f69afd2bf2456",
    "lines": 149,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against OCI image digests, Kubernetes Secrets/ConfigMaps, graceful SIGTERM draining, and OpenTelemetry stdout/OTLP pipelines.",
-    "readable": "Full read of 149 lines (1689 prose words). (1,621 prose words). Opens with a snowflaked VM deployment that fails during horizontal scaling before walking through all 12 factors grouped by Code & Build (I-V), Runtime & State (VI-IX), and Operations (X-XII), plus modern cloud-native extensions.",
-    "concise": "1689 words across 149 lines. 1,621 words across 133 lines. Complete 12-factor table, SIGTERM drain example, and Beyond-12-Factor extensions.",
+    "readable": "Full read of 149 lines (1691 prose words). (1,621 prose words). Opens with a snowflaked VM deployment that fails during horizontal scaling before walking through all 12 factors grouped by Code & Build (I-V), Runtime & State (VI-IX), and Operations (X-XII), plus modern cloud-native extensions.",
+    "concise": "1691 words across 149 lines. 1,621 words across 133 lines. Complete 12-factor table, SIGTERM drain example, and Beyond-12-Factor extensions.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for the Twelve-Factor App: explains the failure mode behind each factor, its concrete Kubernetes/Docker implementation, and modern secret-delivery adaptations.",
     "fast": "Measured 22.5 KB raw / 8.2 KB gzip. Compact table and single Node.js graceful shutdown snippet.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Calls out the security boundary on Factor III (Config): environment variables leak into crash dumps and `/proc/<pid>/environ`, so sensitive credentials belong in tmpfs volume mounts (`/var/run/secrets`)."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.9-twelve-factor/40.9.02-interview-questions.md": {
-   "sha256": "70bfa3e1a80ef3056d115b573e5c6664cf802e903db958c2b36ff01816e7dea8",
+   "sha256": "6cafa7c2fddfbd61ba3a1c3d0a8676f88447803bf731555256c340e417753133",
    "lines": 164,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against the 2024\u20132026 Twelve-Factor community refresh (`12factor.net` and `github.com/twelve-factor/twelve-factor`), OpenTelemetry OTLP vs stdout, and Kubernetes Pod lifecycle contracts.",
-    "readable": "Full read of 164 lines (1816 prose words). (1,767 prose words). 25-question Twelve-Factor interview bank spanning Beginner, Intermediate, Advanced, Behavioral/Scenario Drills, and The Modern Contract (OpenTelemetry, secret delivery, Kubernetes/serverless mappings).",
-    "concise": "1816 words across 164 lines. 1,767 words across 164 lines. Covers 25 scenario and architecture questions without filler.",
+    "readable": "Full read of 164 lines (1820 prose words). (1,767 prose words). 25-question Twelve-Factor interview bank spanning Beginner, Intermediate, Advanced, Behavioral/Scenario Drills, and The Modern Contract (OpenTelemetry, secret delivery, Kubernetes/serverless mappings).",
+    "concise": "1820 words across 164 lines. 1,767 words across 164 lines. Covers 25 scenario and architecture questions without filler.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical interview drill for 40.9-twelve-factor: frames every answer around Factor name, Mechanism, Failure mode, Fix, and Legitimate deviation boundary.",
     "fast": "Measured 22.5 KB raw / 8.1 KB gzip. Pure markdown Q&A with a single 8-line text answer framework.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Distinguishes reconstructible in-process warmth (connection pools, JIT caches) from durable business state boundaries so candidates do not over-apply Factor VI statelessness."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.9-twelve-factor/INDEX.md": {
-   "sha256": "efa713835f9f30473fa4b39897217d482c3a0358c7b97591adb3652b254b265e",
+   "sha256": "46140758196a39ba53e4568cbdc413054e73f0c24181e90f05a8bc6fe3fa721a",
    "lines": 109,
    "genre": "index",
    "status": "read",
@@ -11192,7 +11192,7 @@
     "fast": "Measured 17.3 KB raw / 5.4 KB gzip. Lightweight index table.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Maps every 2011 Heroku factor boundary directly to its 2026 Kubernetes/cloud primitive (OCI digests, External Secrets Operator, HPA, SIGTERM graceful drain)."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "40-platform/40.9-twelve-factor/REVISION.md": {
    "sha256": "576d06fa0c4a80dcce8a756be1ce5589518dd55f9e0c2dabc268ebd91adecfdc",
@@ -11211,20 +11211,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4D 40.7-serverless-edge through 40.12-iac)."
   },
   "40-platform/INDEX.md": {
-   "sha256": "0518805bc07ac1a89d51743c954aff21f4ad25f03193bb5c9be5e3069a2cf2f5",
+   "sha256": "f0d17677106a2454b5c215d6c9d207877008001e2c8ae53ba37473e1bbf22fb2",
    "lines": 132,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against all 12 sub-stack directory links, file counts, and learning-flow stages.",
-    "readable": "Full read of 132 lines (694 prose words). Organizes the 150-file Platform Engineering & DevOps curriculum into 12 sub-stacks across 4 progressive passes (Containers & Delivery, Orchestration & Observability, Edge & Proxy, Monorepos & IaC).",
-    "concise": "694 words across 132 lines. Complete sub-stack table and learning progression.",
+    "readable": "Full read of 132 lines (699 prose words). Organizes the 150-file Platform Engineering & DevOps curriculum into 12 sub-stacks across 4 progressive passes (Containers & Delivery, Orchestration & Observability, Edge & Proxy, Monorepos & IaC).",
+    "concise": "699 words across 132 lines. Complete sub-stack table and learning progression.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical root index for 40-platform: study passes, architecture flow from developer commit to global edge delivery, and sub-stack navigation.",
     "fast": "Measured 17.1 KB raw / 5.8 KB gzip. Pure markdown navigation table.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Frames platform engineering as a single end-to-end production boundary: build (40.5/40.8) -> containerize (40.1) -> CI/CD (40.3) -> provision & orchestrate (40.12/40.2) -> route & cache (40.11/40.10/40.7) -> observe (40.4)."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 21A: 40.1 Docker and 40.2 Kubernetes)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX)."
   },
   "50-quality/50.1-testing/01-foundations/50.1.1.01-testing-overview.md": {
    "sha256": "d2ced7e46868c97e9316184ed2e009df0e895b7bc842e21a880f21976d62a7fe",
@@ -14395,7 +14395,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "631eaa021b99d4291bf65949f2dede55553de7128e13c76548915074a56a7548",
+   "sha256": "6fadfad53d68e74db013856d034aef4bfb1765b876f3879366bc67a2ed84273e",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14408,7 +14408,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 21A: 40.1 Docker and 40.2 Kubernetes."
+   "notes": "Synced live read-time and counts after Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14699,7 +14699,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "047ac2ae4da5156dd18ea842e2e51111078df02a6e6f95dc82b2708fb90526ec",
+   "sha256": "d6113e52e722fc507affbb01ddea9d53bf03d438d99d77512a1e0fcdfa9e0560",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14712,7 +14712,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 21A: 40.1 Docker and 40.2 Kubernetes."
+   "notes": "Synced live read-time and counts after Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

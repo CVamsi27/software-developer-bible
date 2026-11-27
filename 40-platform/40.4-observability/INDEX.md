@@ -1,7 +1,7 @@
 # Observability — Index
 
 > **Study time:** ≈ 1 h 33 m of reading (15 files, ~6 min average).
-> **15 files** — Observability fundamentals from logging and monitoring to distributed tracing, OpenTelemetry, continuous profiling, eBPF, error tracking, health checks, SLI/SLO/SLA, alerting, and interview questions.
+> **15 files** — Observability fundamentals from logging and monitoring to distributed tracing, OpenTelemetry, continuous profiling, eBPF, error tracking, health checks, SLIs, SLOs, and SLAs, plus alerting and interview questions.
 
 [![Files](https://img.shields.io/badge/files-15-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Observability-%230ea5e9)](#)
@@ -52,7 +52,7 @@ Define the eligible event, good outcome, target, and window before writing alert
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 06 | [SLI / SLO / SLA](03-sre-targets/40.4.3.01-sli-slo-sla.md) | Reliability targets, error budgets, multi-window burn rate, SLO-driven alerting | Important | Important | 7 min |
+| 06 | [SLIs, SLOs, and SLAs](03-sre-targets/40.4.3.01-sli-slo-sla.md) | Reliability targets, error budgets, multi-window burn rate, SLO-driven alerting | Important | Important | 7 min |
 | 07 | [Alerting](03-sre-targets/40.4.3.02-alerting.md) | Alerting principles, PagerDuty, Alertmanager, runbooks, what to alert on | Important | Important | 7 min |
 
 ---

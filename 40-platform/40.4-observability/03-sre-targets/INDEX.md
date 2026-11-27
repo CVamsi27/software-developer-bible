@@ -23,8 +23,8 @@ Quick distinction:
 ## File Index
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| ----: | ------------------------------------------- | -------------------------------------------------------------------------------- | ------------- | ------------------ | ----------: |
-| 01 | [SLI / SLO / SLA](40.4.3.01-sli-slo-sla.md) | Reliability targets, error budgets, multi-window burn rates, SLO-driven alerting | Important | Important | 7 min |
+| ----: | ------------------------------------------------ | -------------------------------------------------------------------------------- | ------------- | ------------------ | ----------: |
+| 01 | [SLIs, SLOs, and SLAs](40.4.3.01-sli-slo-sla.md) | Reliability targets, error budgets, multi-window burn rates, SLO-driven alerting | Important | Important | 7 min |
 | 02 | [Alerting](40.4.3.02-alerting.md) | Alert principles, PagerDuty, Alertmanager, runbooks, symptom versus cause alerts | Important | Important | 7 min |
 
 ---
@@ -47,13 +47,13 @@ Quick distinction:
 Source-level examples from [Docita](https://github.com/CVamsi27/docita); a Continuous Integration (CI) threshold or domain notification is not evidence of a measured production SLO or a working paging integration.
 
 | Topic | Docita evidence |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Latency SLOs as CI gates | `scripts/checks/api-latency-slos.mjs` + `check-api-latency-budget.mjs` — performance regression thresholds; not a production eligible-request SLI |
 | Web-vitals SLOs | `check:web-vitals:enforce` baseline regression gate; distinct from a production user population and window |
 | Alerting | `ops-alert.service.ts` wired to domain events via listener; admin alert channel under `messaging/admin-alerts` |
 | Runbooks for breaches | `docs/operations/playbooks/*` (database exhaustion, upstream timeouts, queue backlog) |
 | Synthetic probes | `.github/workflows/synthetic-monitoring.yml` — the source records a historical disabled status; current scheduling and delivery need live verification |
-| Burn-rate dashboards / PagerDuty | _No direct docita implementation yet._ |
+| Burn-rate dashboards and PagerDuty | _No direct docita implementation yet._ |
 
 ## Learning Passes
 

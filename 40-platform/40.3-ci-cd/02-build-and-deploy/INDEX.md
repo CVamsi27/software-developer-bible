@@ -49,13 +49,13 @@ Source inspection on October 10, 2026 found all triggers in `deploy.yml` comment
 Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React, and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
 
 | Topic | Docita evidence |
-| --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Docker build in CI | API image built from `apps/api/Dockerfile`; Fly `[build]` consumes it; `container-scan.yml` performs scheduled Trivy filesystem scans of `apps/api` and `apps/worker`, not a built-image scan |
 | Deploy pipeline | `deploy.yml` + `scripts/deploy/fly-deploy-in-primary-region.sh` (pins deploys to primary region `sin`) |
 | DB migration gate | `db-migrations.yml` + `verify-db-schema-sync.sh` before rollout |
 | Canary deploy | `scripts/deploy/worker-canary-deploy.sh` for the worker app |
 | Supply-chain checks | `osv-scanner.toml`, `pnpm audit --audit-level=high` gate, workflow script-ref checks |
-| Artifact registries / SLSA attestations | _No direct docita implementation yet._ |
+| Artifact registries and SLSA attestations | _No direct docita implementation yet._ |
 
 ## Finish This Section
 

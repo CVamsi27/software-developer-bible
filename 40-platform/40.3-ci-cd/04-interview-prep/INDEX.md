@@ -45,4 +45,4 @@ Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a he
 | "Zero-downtime deploy?" | Configured Fly checks, worker started-state canary settling, and migration ordering; not proof of current zero downtime |
 | "How do you keep Continuous Integration (CI) fast?" | Pre-push `husky` subset of gates; full `verify:standard` reserved for merge; Turborepo task caching |
 | "Release metrics?" | Latency-budget scripts and dated release evidence; synthetic workflow records a historical manually disabled note |
-| GitOps / Argo CD stories | _No direct docita implementation yet._ |
+| GitOps and Argo CD stories | _No direct docita implementation yet._ |

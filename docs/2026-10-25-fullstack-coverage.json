@@ -19717,7 +19717,7 @@
     },
     {
       "path": "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md",
-      "sha256": "91ad24c151b2377a5cf2a8f5046349061726eb66e133450bd07441b7ebf8c377",
+      "sha256": "c1ac3e3ac19318b2912031d5ee21f7d65e52db803061838eec36d20b763e2b3b",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -19739,12 +19739,12 @@
       },
       "review": {
         "path": "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md",
-        "sha256": "91ad24c151b2377a5cf2a8f5046349061726eb66e133450bd07441b7ebf8c377",
+        "sha256": "c1ac3e3ac19318b2912031d5ee21f7d65e52db803061838eec36d20b763e2b3b",
         "status": "reviewed",
         "reviewer": "root-continuation",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 169 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment."
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 169 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
       }
     },
     {
@@ -19781,7 +19781,7 @@
     },
     {
       "path": "40-platform/40.10-cdn/INDEX.md",
-      "sha256": "ce662b6641f5c8bea2a55fddffa006dfbf36da55534ce9bf804d32a6b00c7108",
+      "sha256": "72366f358cc98b29177b3b96c759f69a922eb223ce163ab770a68e787993ceda",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -19803,12 +19803,12 @@
       },
       "review": {
         "path": "40-platform/40.10-cdn/INDEX.md",
-        "sha256": "ce662b6641f5c8bea2a55fddffa006dfbf36da55534ce9bf804d32a6b00c7108",
+        "sha256": "72366f358cc98b29177b3b96c759f69a922eb223ce163ab770a68e787993ceda",
         "status": "reviewed",
         "reviewer": "root-continuation",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 93 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment."
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 93 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
       }
     },
     {
@@ -19842,7 +19842,7 @@
     },
     {
       "path": "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md",
-      "sha256": "bc89250824d9a274dd8e49c4b5d6e691eedf1d4ab736e84efdbc60409253218e",
+      "sha256": "5d88f392d684819158cf429612ff219d8ac5884a62f59d566f2b2a280a19e5a6",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -19865,12 +19865,12 @@
       },
       "review": {
         "path": "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md",
-        "sha256": "bc89250824d9a274dd8e49c4b5d6e691eedf1d4ab736e84efdbc60409253218e",
+        "sha256": "5d88f392d684819158cf429612ff219d8ac5884a62f59d566f2b2a280a19e5a6",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 186 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 186 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -20002,7 +20002,7 @@
     },
     {
       "path": "40-platform/40.12-iac/40.12.02-interview-questions.md",
-      "sha256": "45101a6fb04647c2ec323d04fff169ca210168c13580f428724e3a69a9e5c269",
+      "sha256": "b0ed153f4e07fec10d3a1590ab5513f85b4123e878915bfb480d3eb64ec96112",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -20025,12 +20025,12 @@
       },
       "review": {
         "path": "40-platform/40.12-iac/40.12.02-interview-questions.md",
-        "sha256": "45101a6fb04647c2ec323d04fff169ca210168c13580f428724e3a69a9e5c269",
+        "sha256": "b0ed153f4e07fec10d3a1590ab5513f85b4123e878915bfb480d3eb64ec96112",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 165 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 165 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -21209,7 +21209,7 @@
     },
     {
       "path": "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.md",
-      "sha256": "ea322f193139b7e0398af96ffa23dc7e6945603b01a55a851e64126f57f3e2e0",
+      "sha256": "61ea1d4b84f3ae858f8d28e434a87113f52c6ee7bdf73399949a68bc1e35054a",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -21236,13 +21236,13 @@
       },
       "review": {
         "path": "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.md",
-        "sha256": "ea322f193139b7e0398af96ffa23dc7e6945603b01a55a851e64126f57f3e2e0",
+        "sha256": "61ea1d4b84f3ae858f8d28e434a87113f52c6ee7bdf73399949a68bc1e35054a",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "animation_coverage",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4B C1-C8 refinement (2026-11-24): Full read of 262 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 264 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -21402,7 +21402,7 @@
     },
     {
       "path": "40-platform/40.3-ci-cd/01-ci-platforms/REVISION.md",
-      "sha256": "720e8e591da25c4bc5e820ce992d4fe67955f7118c8ec9c9df8f205c3c62e18c",
+      "sha256": "368270f3b47dfa62ccff17ef5d1623592fd8d5276e90ae4e5c499d85dda6d60a",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -21416,19 +21416,19 @@
           "References & Learn More"
         ],
         "code_fences": 0,
-        "revision_questions": 15,
+        "revision_questions": 16,
         "has_summary": true,
         "has_first_principles": false
       },
       "review": {
         "path": "40-platform/40.3-ci-cd/01-ci-platforms/REVISION.md",
-        "sha256": "720e8e591da25c4bc5e820ce992d4fe67955f7118c8ec9c9df8f205c3c62e18c",
+        "sha256": "368270f3b47dfa62ccff17ef5d1623592fd8d5276e90ae4e5c499d85dda6d60a",
         "genre": "revision-companion",
         "status": "reviewed",
         "reviewer": "animation_coverage",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4B C1-C8 refinement (2026-11-24): Full read of 99 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 103 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [
           {
             "description": "Companion needed the controller namespace boundary behind an accepted but unreconciled ApplicationSet.",
@@ -21515,7 +21515,7 @@
     },
     {
       "path": "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md",
-      "sha256": "c4701ffa751d4531d4a72e681a66a75f170c4e7bd858082c32bed78d195d4bea",
+      "sha256": "b7751314253270d88d18d70b849bc5a364cb1fbb1cff690bb5e345335e3c510f",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -21541,13 +21541,13 @@
       },
       "review": {
         "path": "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md",
-        "sha256": "c4701ffa751d4531d4a72e681a66a75f170c4e7bd858082c32bed78d195d4bea",
+        "sha256": "b7751314253270d88d18d70b849bc5a364cb1fbb1cff690bb5e345335e3c510f",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "animation_coverage",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4B C1-C8 refinement (2026-11-24): Full read of 185 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 185 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [
           {
             "description": "Retention delete list treated old untagged layers as expendable despite potentially deployed untagged digests; conditioned deletion on live/recovery references and registry collection semantics.",
@@ -21565,7 +21565,7 @@
     },
     {
       "path": "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md",
-      "sha256": "531c33e08978d3089fdf8d1e1a96b1a61e73361589f06ff179257214716c779d",
+      "sha256": "673e6da05e2b7b97e2239d400346d4277ab4be7f778476130dd42c7e833f795d",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -21593,19 +21593,19 @@
       },
       "review": {
         "path": "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md",
-        "sha256": "531c33e08978d3089fdf8d1e1a96b1a61e73361589f06ff179257214716c779d",
+        "sha256": "673e6da05e2b7b97e2239d400346d4277ab4be7f778476130dd42c7e833f795d",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "animation_coverage",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4B C1-C8 refinement (2026-11-24): Full read of 297 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 297 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.3-ci-cd/02-build-and-deploy/INDEX.md",
-      "sha256": "3a4ce1e0b341e1e68e95b9edab5f2967ede07ffb991fa0ff3d021f16cf1a7730",
+      "sha256": "fd430a51673cc7cbe7ae30b98fd061416b8fc36604fb5470e4fa92b030e74b84",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -21624,13 +21624,13 @@
       },
       "review": {
         "path": "40-platform/40.3-ci-cd/02-build-and-deploy/INDEX.md",
-        "sha256": "3a4ce1e0b341e1e68e95b9edab5f2967ede07ffb991fa0ff3d021f16cf1a7730",
+        "sha256": "fd430a51673cc7cbe7ae30b98fd061416b8fc36604fb5470e4fa92b030e74b84",
         "genre": "index",
         "status": "reviewed",
         "reviewer": "animation_coverage",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4B C1-C8 refinement (2026-11-24): Full read of 62 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 62 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "b2c87b2d683cb4b07c202dea93caa268975996d98325265277b48bcb1bfc7da2",
@@ -21674,7 +21674,7 @@
     },
     {
       "path": "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.01-blue-green-canary.md",
-      "sha256": "c269a19e9fec0dc66b15da09a30e3d3d78d53da000e464cd983df1d1dbcc7301",
+      "sha256": "91d8d817cfb871d7f2ef6701113398870d3c31201ed9c769a0059e09c37db58e",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -21699,19 +21699,19 @@
       },
       "review": {
         "path": "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.01-blue-green-canary.md",
-        "sha256": "c269a19e9fec0dc66b15da09a30e3d3d78d53da000e464cd983df1d1dbcc7301",
+        "sha256": "91d8d817cfb871d7f2ef6701113398870d3c31201ed9c769a0059e09c37db58e",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "animation_coverage",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4B C1-C8 refinement (2026-11-24): Full read of 143 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 143 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md",
-      "sha256": "ca4a56e8c96f9a59da69b45b947fef17d1d9418cd0092032259fbb93fd29351b",
+      "sha256": "33b966968162b3c136aa54d7036287506f16f54077d5570646ec2d1dfb79fa82",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -21735,13 +21735,13 @@
       },
       "review": {
         "path": "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md",
-        "sha256": "ca4a56e8c96f9a59da69b45b947fef17d1d9418cd0092032259fbb93fd29351b",
+        "sha256": "33b966968162b3c136aa54d7036287506f16f54077d5570646ec2d1dfb79fa82",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "animation_coverage",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4B C1-C8 refinement (2026-11-24): Full read of 325 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 325 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [
           {
             "description": "SQL recovery aggregation counted a deployment with one restored and another unresolved incident as complete; retained open rows and excluded incomplete groups before median calculation.",
@@ -21850,7 +21850,7 @@
     },
     {
       "path": "40-platform/40.3-ci-cd/04-interview-prep/INDEX.md",
-      "sha256": "e447c80ed9a139a752bdd0514435a8a438f9266bebc8759810ec75dc3bb6e45d",
+      "sha256": "89571b9bbc39e673c90ad11ad0dbac09df8306196a0d7b983f457f286e2669aa",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -21867,13 +21867,13 @@
       },
       "review": {
         "path": "40-platform/40.3-ci-cd/04-interview-prep/INDEX.md",
-        "sha256": "e447c80ed9a139a752bdd0514435a8a438f9266bebc8759810ec75dc3bb6e45d",
+        "sha256": "89571b9bbc39e673c90ad11ad0dbac09df8306196a0d7b983f457f286e2669aa",
         "genre": "index",
         "status": "reviewed",
         "reviewer": "animation_coverage",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4B C1-C8 refinement (2026-11-24): Full read of 48 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 48 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -21953,7 +21953,7 @@
     },
     {
       "path": "40-platform/40.4-observability/01-pillars/40.4.1.02-monitoring.md",
-      "sha256": "7b957b0700f34a73e1d991ac5679173cc1b1bab99e9c92c7c2aee8658736879b",
+      "sha256": "21134f27e52b532661e3580d370a004cd90ca9c872fb281350828e938f858faa",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -21976,12 +21976,12 @@
       },
       "review": {
         "path": "40-platform/40.4-observability/01-pillars/40.4.1.02-monitoring.md",
-        "sha256": "7b957b0700f34a73e1d991ac5679173cc1b1bab99e9c92c7c2aee8658736879b",
+        "sha256": "21134f27e52b532661e3580d370a004cd90ca9c872fb281350828e938f858faa",
         "status": "reviewed",
         "reviewer": "platform_finish",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4B C1-C8 refinement (2026-11-24): Full read of 159 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 159 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -22022,7 +22022,7 @@
     },
     {
       "path": "40-platform/40.4-observability/01-pillars/INDEX.md",
-      "sha256": "998004f5e515ee2b3786a9dab6fdbbc64bb7124c47cd62e4b62a60cfe35ceead",
+      "sha256": "f63d4055aaa3c62097844e766ed369812e6e5f0c9d925b5cd5699a8e987c76bd",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -22041,12 +22041,12 @@
       },
       "review": {
         "path": "40-platform/40.4-observability/01-pillars/INDEX.md",
-        "sha256": "998004f5e515ee2b3786a9dab6fdbbc64bb7124c47cd62e4b62a60cfe35ceead",
+        "sha256": "f63d4055aaa3c62097844e766ed369812e6e5f0c9d925b5cd5699a8e987c76bd",
         "status": "reviewed",
         "reviewer": "platform_finish",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4B C1-C8 refinement (2026-11-24): Full read of 62 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 62 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -22245,7 +22245,7 @@
     },
     {
       "path": "40-platform/40.4-observability/03-sre-targets/40.4.3.02-alerting.md",
-      "sha256": "4f326c8805dc7e234169016463dbdbc40740c86e01dfcfd482f7d4e089ff0b06",
+      "sha256": "618b0342cc78a01e2f5eea7aa0e66240dff675551bb715713dfd1e3e676b3b1b",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -22268,18 +22268,18 @@
       },
       "review": {
         "path": "40-platform/40.4-observability/03-sre-targets/40.4.3.02-alerting.md",
-        "sha256": "4f326c8805dc7e234169016463dbdbc40740c86e01dfcfd482f7d4e089ff0b06",
+        "sha256": "618b0342cc78a01e2f5eea7aa0e66240dff675551bb715713dfd1e3e676b3b1b",
         "status": "reviewed",
         "reviewer": "platform_finish",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4B C1-C8 refinement (2026-11-24): Full read of 140 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 140 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.4-observability/03-sre-targets/INDEX.md",
-      "sha256": "476dbcebac17c4a07811cd55649ad8edcb3cccae1c8efd22bc11ab2e262171b9",
+      "sha256": "bd305cf2b7ce78a1b2bcb1ca6947d0be4f42f7134fed616fc8e47b68c0f3efa1",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -22299,12 +22299,12 @@
       },
       "review": {
         "path": "40-platform/40.4-observability/03-sre-targets/INDEX.md",
-        "sha256": "476dbcebac17c4a07811cd55649ad8edcb3cccae1c8efd22bc11ab2e262171b9",
+        "sha256": "bd305cf2b7ce78a1b2bcb1ca6947d0be4f42f7134fed616fc8e47b68c0f3efa1",
         "status": "reviewed",
         "reviewer": "platform_finish",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4B C1-C8 refinement (2026-11-24): Full read of 66 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 66 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -22340,7 +22340,7 @@
     },
     {
       "path": "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md",
-      "sha256": "5500cbe44f5aedc2c6a56a1ac0248b3518ecb1f8f23ab6113be86528a0e56224",
+      "sha256": "bfa3354d0d64c0059aaf170b29206905e70556c7da3e6c2c32ab15fdc3c6e0c8",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -22364,12 +22364,12 @@
       },
       "review": {
         "path": "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md",
-        "sha256": "5500cbe44f5aedc2c6a56a1ac0248b3518ecb1f8f23ab6113be86528a0e56224",
+        "sha256": "bfa3354d0d64c0059aaf170b29206905e70556c7da3e6c2c32ab15fdc3c6e0c8",
         "status": "reviewed",
         "reviewer": "platform_finish",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4B C1-C8 refinement (2026-11-24): Full read of 165 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 165 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -22411,7 +22411,7 @@
     },
     {
       "path": "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.03-ebpf-observability.md",
-      "sha256": "ef9edd6f6e0478a5ac8e292133529da05166c31da8c4626bf98807663c677c5c",
+      "sha256": "89e61d43e37401a6425692eaaf7ac26523320973e419b6d57400a9359cfb5932",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -22437,12 +22437,12 @@
       },
       "review": {
         "path": "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.03-ebpf-observability.md",
-        "sha256": "ef9edd6f6e0478a5ac8e292133529da05166c31da8c4626bf98807663c677c5c",
+        "sha256": "89e61d43e37401a6425692eaaf7ac26523320973e419b6d57400a9359cfb5932",
         "status": "reviewed",
         "reviewer": "platform_finish",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4B C1-C8 refinement (2026-11-24): Full read of 161 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 161 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -22510,7 +22510,7 @@
     },
     {
       "path": "40-platform/40.4-observability/05-interview-prep/40.4.5.01-interview-questions.md",
-      "sha256": "e002322cd2a2d0dd6ba5f6da6a067517bae2939d76c57420cd4b5fda3ae548c0",
+      "sha256": "56265b1199e31aa4657f99c5e0dfee2c471efdab8909178d85999296d14b70ce",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -22533,12 +22533,12 @@
       },
       "review": {
         "path": "40-platform/40.4-observability/05-interview-prep/40.4.5.01-interview-questions.md",
-        "sha256": "e002322cd2a2d0dd6ba5f6da6a067517bae2939d76c57420cd4b5fda3ae548c0",
+        "sha256": "56265b1199e31aa4657f99c5e0dfee2c471efdab8909178d85999296d14b70ce",
         "status": "reviewed",
         "reviewer": "platform_finish",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4B C1-C8 refinement (2026-11-24): Full read of 359 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 359 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -22572,7 +22572,7 @@
     },
     {
       "path": "40-platform/40.4-observability/INDEX.md",
-      "sha256": "878fd27112a6bc347188373288325743a57dca5292aebee04c54c13419c042a3",
+      "sha256": "9c813ec6661ca95ad9cc47d4e616b3ca119cf92a91a17f1330bda45d35185b98",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -22594,12 +22594,12 @@
       },
       "review": {
         "path": "40-platform/40.4-observability/INDEX.md",
-        "sha256": "878fd27112a6bc347188373288325743a57dca5292aebee04c54c13419c042a3",
+        "sha256": "9c813ec6661ca95ad9cc47d4e616b3ca119cf92a91a17f1330bda45d35185b98",
         "status": "reviewed",
         "reviewer": "platform_finish",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4B C1-C8 refinement (2026-11-24): Full read of 104 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 104 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -22765,7 +22765,7 @@
     },
     {
       "path": "40-platform/40.5-build-tools/01-bundlers/REVISION.md",
-      "sha256": "0c649ece8118e343aa908ffabca33bc6516aa8356f412a6e783c41eb896a3796",
+      "sha256": "a9679ddf52803343d163fde864d3d1335d119ab41a946ae9dccd977bb1950dd9",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -22785,12 +22785,12 @@
       },
       "review": {
         "path": "40-platform/40.5-build-tools/01-bundlers/REVISION.md",
-        "sha256": "0c649ece8118e343aa908ffabca33bc6516aa8356f412a6e783c41eb896a3796",
+        "sha256": "a9679ddf52803343d163fde864d3d1335d119ab41a946ae9dccd977bb1950dd9",
         "status": "reviewed",
         "reviewer": "platform_finish",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4C C1-C8 refinement (2026-11-24): Full read of 111 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 111 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -22890,7 +22890,7 @@
     },
     {
       "path": "40-platform/40.5-build-tools/02-compilers/REVISION.md",
-      "sha256": "8cc3a979fcf7a0fe1b2f0e32f0bf3ded47842bafe97bcb9ea96220ae94baf69f",
+      "sha256": "d45d97d10f20a9bdbee6ce52fdaae281e03a9f6f041a424cc8ce445504239351",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -22908,12 +22908,12 @@
       },
       "review": {
         "path": "40-platform/40.5-build-tools/02-compilers/REVISION.md",
-        "sha256": "8cc3a979fcf7a0fe1b2f0e32f0bf3ded47842bafe97bcb9ea96220ae94baf69f",
+        "sha256": "d45d97d10f20a9bdbee6ce52fdaae281e03a9f6f041a424cc8ce445504239351",
         "status": "reviewed",
         "reviewer": "platform_finish",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4C C1-C8 refinement (2026-11-24): Full read of 59 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 59 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -22986,7 +22986,7 @@
     },
     {
       "path": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md",
-      "sha256": "33f9a7f420f275b1d2544da71ad8c9536c00f2a373309fd5238d7d5f475430f1",
+      "sha256": "ca1104247353c1cc0955e3a73823a15c40cb02131b973114037701bbcbd7587d",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -23007,12 +23007,12 @@
       },
       "review": {
         "path": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md",
-        "sha256": "33f9a7f420f275b1d2544da71ad8c9536c00f2a373309fd5238d7d5f475430f1",
+        "sha256": "ca1104247353c1cc0955e3a73823a15c40cb02131b973114037701bbcbd7587d",
         "status": "reviewed",
         "reviewer": "platform_finish",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4C C1-C8 refinement (2026-11-24): Full read of 90 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 90 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -23048,7 +23048,7 @@
     },
     {
       "path": "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md",
-      "sha256": "29edf26f7809c0ae11a1025beea6509e9a7ea3bbd55e12526d79fbc28f583405",
+      "sha256": "21306fb537f1c7a808b6870a3e6cb6f73527f3016452c644d1bea3f0c2154b23",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -23067,12 +23067,12 @@
       },
       "review": {
         "path": "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md",
-        "sha256": "29edf26f7809c0ae11a1025beea6509e9a7ea3bbd55e12526d79fbc28f583405",
+        "sha256": "21306fb537f1c7a808b6870a3e6cb6f73527f3016452c644d1bea3f0c2154b23",
         "status": "reviewed",
         "reviewer": "platform_finish",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4C C1-C8 refinement (2026-11-24): Full read of 95 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 95 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -23135,7 +23135,7 @@
     },
     {
       "path": "40-platform/40.5-build-tools/INDEX.md",
-      "sha256": "ae2aec04b9e9ef92a8fb367b9c18fd383df1eda4bdd4b0b70a7569044f86eb96",
+      "sha256": "f1b076ffa5b2b43725684323aea80180314ec64224ca5064a0a2cb8d4b01ef1a",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -23157,12 +23157,12 @@
       },
       "review": {
         "path": "40-platform/40.5-build-tools/INDEX.md",
-        "sha256": "ae2aec04b9e9ef92a8fb367b9c18fd383df1eda4bdd4b0b70a7569044f86eb96",
+        "sha256": "f1b076ffa5b2b43725684323aea80180314ec64224ca5064a0a2cb8d4b01ef1a",
         "status": "reviewed",
         "reviewer": "platform_finish",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4C C1-C8 refinement (2026-11-24): Full read of 108 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 108 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -23505,7 +23505,7 @@
     },
     {
       "path": "40-platform/40.6-git-advanced/INDEX.md",
-      "sha256": "d3933ea95c8116b379b1f508e76f873c015cf839dd0d51ccae6e9434a3a569fb",
+      "sha256": "8b0cc5af66595992615193ed2b384d78c0b7e6c82f3fb87c471a2478f37ae07d",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -23532,12 +23532,12 @@
       },
       "review": {
         "path": "40-platform/40.6-git-advanced/INDEX.md",
-        "sha256": "d3933ea95c8116b379b1f508e76f873c015cf839dd0d51ccae6e9434a3a569fb",
+        "sha256": "8b0cc5af66595992615193ed2b384d78c0b7e6c82f3fb87c471a2478f37ae07d",
         "status": "reviewed",
         "reviewer": "platform_finish",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4C C1-C8 refinement (2026-11-24): Full read of 165 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 165 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -23612,7 +23612,7 @@
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md",
-      "sha256": "2f7c0b5938b98d1b0af9378ecb56b71473e4210fb2c649ece7f53d44bcd0b851",
+      "sha256": "779524c7cda8f3b8c2bd1173f48591ff73378beb6952793a42ee2a568bed1c1f",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -23638,12 +23638,12 @@
       },
       "review": {
         "path": "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md",
-        "sha256": "2f7c0b5938b98d1b0af9378ecb56b71473e4210fb2c649ece7f53d44bcd0b851",
+        "sha256": "779524c7cda8f3b8c2bd1173f48591ff73378beb6952793a42ee2a568bed1c1f",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 157 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 159 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -23682,7 +23682,7 @@
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",
-      "sha256": "a3a94c0cc7964d42c3d976969af23cf93bcb54c325731d3be1b8f1e4fd3521a0",
+      "sha256": "6bb7cde45d1f73189fa5447422d32b0a05ac62445ab9fe6b76d0563e8c41f982",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -23705,12 +23705,12 @@
       },
       "review": {
         "path": "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",
-        "sha256": "a3a94c0cc7964d42c3d976969af23cf93bcb54c325731d3be1b8f1e4fd3521a0",
+        "sha256": "6bb7cde45d1f73189fa5447422d32b0a05ac62445ab9fe6b76d0563e8c41f982",
         "status": "reviewed",
         "reviewer": "root-continuation",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 142 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 142 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "metadataReview": {
           "previousReviewedSha256": "9bec18a32585e9d515105545a4b226823f521447f8c7fd4917e282f18ffc2016",
           "reviewDate": "2026-10-26",
@@ -23785,7 +23785,7 @@
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md",
-      "sha256": "3c186328f99ac21a41f35d1ff56f8b1648135354b38ca8158dd159af97a3342c",
+      "sha256": "2cbeef68399a3d4a67a409c4c70750ad705767f59f56bd7829aabc9f608b9957",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -23808,12 +23808,12 @@
       },
       "review": {
         "path": "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md",
-        "sha256": "3c186328f99ac21a41f35d1ff56f8b1648135354b38ca8158dd159af97a3342c",
+        "sha256": "2cbeef68399a3d4a67a409c4c70750ad705767f59f56bd7829aabc9f608b9957",
         "status": "reviewed",
         "reviewer": "root-continuation",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 165 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment."
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 165 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
       }
     },
     {
@@ -23915,7 +23915,7 @@
     },
     {
       "path": "40-platform/40.7-serverless-edge/INDEX.md",
-      "sha256": "4c6eb0e88aa01acf930aee4bd0794421c13a2f4e611f1a0dd55e9ab39c759473",
+      "sha256": "b13e267ad39a919cbfd51c0518f9e5d4e8df3e855fef75d5c3cba7565a674ed0",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -23940,17 +23940,17 @@
       },
       "review": {
         "path": "40-platform/40.7-serverless-edge/INDEX.md",
-        "sha256": "4c6eb0e88aa01acf930aee4bd0794421c13a2f4e611f1a0dd55e9ab39c759473",
+        "sha256": "b13e267ad39a919cbfd51c0518f9e5d4e8df3e855fef75d5c3cba7565a674ed0",
         "status": "reviewed",
         "reviewer": "root-continuation",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 136 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment."
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 136 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
       }
     },
     {
       "path": "40-platform/40.7-serverless-edge/REVISION.md",
-      "sha256": "577c31c3424846f9b64d1a6edf46cc9ea9004ee7be5e9092535d85f2a2abd6c9",
+      "sha256": "3bc4aa0b8619f318b474e7dd10cb3d828a1b39ddfed3fdfd084be9937eb495c5",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -23970,18 +23970,18 @@
           "References & Learn More"
         ],
         "code_fences": 0,
-        "revision_questions": 47,
+        "revision_questions": 48,
         "has_summary": true,
         "has_first_principles": false
       },
       "review": {
         "path": "40-platform/40.7-serverless-edge/REVISION.md",
-        "sha256": "577c31c3424846f9b64d1a6edf46cc9ea9004ee7be5e9092535d85f2a2abd6c9",
+        "sha256": "3bc4aa0b8619f318b474e7dd10cb3d828a1b39ddfed3fdfd084be9937eb495c5",
         "status": "reviewed",
         "reviewer": "buffy",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 251 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 255 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -24089,7 +24089,7 @@
     },
     {
       "path": "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md",
-      "sha256": "e5478388f121ffea2a3dc92bb0cc08271f87061b7ac9a69b00ebfb4eee35cfcd",
+      "sha256": "0f2aff67d5fa2a041229183dfc9ef417339b65b2ff4a2cfb5d4467f707c246c2",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -24114,12 +24114,12 @@
       },
       "review": {
         "path": "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md",
-        "sha256": "e5478388f121ffea2a3dc92bb0cc08271f87061b7ac9a69b00ebfb4eee35cfcd",
+        "sha256": "0f2aff67d5fa2a041229183dfc9ef417339b65b2ff4a2cfb5d4467f707c246c2",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 190 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 190 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -24160,7 +24160,7 @@
     },
     {
       "path": "40-platform/40.8-monorepo/40.8.06-interview-questions.md",
-      "sha256": "f24a23643df9fac3c933c112498fa0fb5665904a71ea7b36bf5fbbd52ca5df8f",
+      "sha256": "7635c53f943f20cbef99f1a5663a69a52f3a8db21a12d2e4c95be05323050ef0",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -24182,18 +24182,18 @@
       },
       "review": {
         "path": "40-platform/40.8-monorepo/40.8.06-interview-questions.md",
-        "sha256": "f24a23643df9fac3c933c112498fa0fb5665904a71ea7b36bf5fbbd52ca5df8f",
+        "sha256": "7635c53f943f20cbef99f1a5663a69a52f3a8db21a12d2e4c95be05323050ef0",
         "status": "reviewed",
         "reviewer": "platform_finish",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 187 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 187 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.8-monorepo/INDEX.md",
-      "sha256": "0e312ed1d7bc78b6b50c4b897d964601dcc6133ff3737992d0a4dd1c5796eb87",
+      "sha256": "cb369797c346f93fb50c7a859213f95144018160f6e9331b9d9c31c0eb49688b",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -24218,18 +24218,18 @@
       },
       "review": {
         "path": "40-platform/40.8-monorepo/INDEX.md",
-        "sha256": "0e312ed1d7bc78b6b50c4b897d964601dcc6133ff3737992d0a4dd1c5796eb87",
+        "sha256": "cb369797c346f93fb50c7a859213f95144018160f6e9331b9d9c31c0eb49688b",
         "status": "reviewed",
         "reviewer": "platform_finish",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 128 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 128 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.8-monorepo/REVISION.md",
-      "sha256": "ebff783920152c448bc31231530fdd7170e17c659368a0b6aeb90e54a81af9e2",
+      "sha256": "24d1968b316025941d82279a7850d4c103521d26868ce3e20dc8afa7fe4b2365",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -24251,18 +24251,18 @@
       },
       "review": {
         "path": "40-platform/40.8-monorepo/REVISION.md",
-        "sha256": "ebff783920152c448bc31231530fdd7170e17c659368a0b6aeb90e54a81af9e2",
+        "sha256": "24d1968b316025941d82279a7850d4c103521d26868ce3e20dc8afa7fe4b2365",
         "status": "reviewed",
         "reviewer": "platform_finish",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 99 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 99 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md",
-      "sha256": "2ef21a3e676a095eb245509bb10c059c1a593a8c30dd6fc898ce2748f8a32c4f",
+      "sha256": "aa1da4635abb02c5a49973800fd43b15990dc44306428591b14f69afd2bf2456",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -24290,18 +24290,18 @@
       },
       "review": {
         "path": "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md",
-        "sha256": "2ef21a3e676a095eb245509bb10c059c1a593a8c30dd6fc898ce2748f8a32c4f",
+        "sha256": "aa1da4635abb02c5a49973800fd43b15990dc44306428591b14f69afd2bf2456",
         "status": "reviewed",
         "reviewer": "buffy",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 149 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 149 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.9-twelve-factor/40.9.02-interview-questions.md",
-      "sha256": "70bfa3e1a80ef3056d115b573e5c6664cf802e903db958c2b36ff01816e7dea8",
+      "sha256": "6cafa7c2fddfbd61ba3a1c3d0a8676f88447803bf731555256c340e417753133",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -24324,18 +24324,18 @@
       },
       "review": {
         "path": "40-platform/40.9-twelve-factor/40.9.02-interview-questions.md",
-        "sha256": "70bfa3e1a80ef3056d115b573e5c6664cf802e903db958c2b36ff01816e7dea8",
+        "sha256": "6cafa7c2fddfbd61ba3a1c3d0a8676f88447803bf731555256c340e417753133",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 164 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 164 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "40-platform/40.9-twelve-factor/INDEX.md",
-      "sha256": "efa713835f9f30473fa4b39897217d482c3a0358c7b97591adb3652b254b265e",
+      "sha256": "46140758196a39ba53e4568cbdc413054e73f0c24181e90f05a8bc6fe3fa721a",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -24357,12 +24357,12 @@
       },
       "review": {
         "path": "40-platform/40.9-twelve-factor/INDEX.md",
-        "sha256": "efa713835f9f30473fa4b39897217d482c3a0358c7b97591adb3652b254b265e",
+        "sha256": "46140758196a39ba53e4568cbdc413054e73f0c24181e90f05a8bc6fe3fa721a",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4D C1-C8 refinement (2026-11-24): Full read of 109 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 109 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -24397,7 +24397,7 @@
     },
     {
       "path": "40-platform/INDEX.md",
-      "sha256": "0518805bc07ac1a89d51743c954aff21f4ad25f03193bb5c9be5e3069a2cf2f5",
+      "sha256": "f0d17677106a2454b5c215d6c9d207877008001e2c8ae53ba37473e1bbf22fb2",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -24417,13 +24417,13 @@
       },
       "review": {
         "path": "40-platform/INDEX.md",
-        "sha256": "0518805bc07ac1a89d51743c954aff21f4ad25f03193bb5c9be5e3069a2cf2f5",
+        "sha256": "f0d17677106a2454b5c215d6c9d207877008001e2c8ae53ba37473e1bbf22fb2",
         "genre": "index",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes C1-C8 refinement (2026-11-24): Full read of 132 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX C1-C8 refinement (2026-11-24): Full read of 132 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "006f685350cac4d3b8150851e252af5b62f433ddc0b206379ba665966a8dda57",
@@ -31071,7 +31071,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "631eaa021b99d4291bf65949f2dede55553de7128e13c76548915074a56a7548",
+      "sha256": "6fadfad53d68e74db013856d034aef4bfb1765b876f3879366bc67a2ed84273e",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -31089,12 +31089,12 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "631eaa021b99d4291bf65949f2dede55553de7128e13c76548915074a56a7548",
+        "sha256": "6fadfad53d68e74db013856d034aef4bfb1765b876f3879366bc67a2ed84273e",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 21A: 40.1 Docker and 40.2 Kubernetes.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX.",
         "findings": []
       }
     },
@@ -31674,7 +31674,7 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "047ac2ae4da5156dd18ea842e2e51111078df02a6e6f95dc82b2708fb90526ec",
+      "sha256": "d6113e52e722fc507affbb01ddea9d53bf03d438d99d77512a1e0fcdfa9e0560",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31692,12 +31692,12 @@
       },
       "review": {
         "path": "docs/api-contract.md",
-        "sha256": "047ac2ae4da5156dd18ea842e2e51111078df02a6e6f95dc82b2708fb90526ec",
+        "sha256": "d6113e52e722fc507affbb01ddea9d53bf03d438d99d77512a1e0fcdfa9e0560",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 21A: 40.1 Docker and 40.2 Kubernetes count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 21A: 40.1 Docker and 40.2 Kubernetes.",
+        "notes": "Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 21B: 40-platform stacks 40.3-40.12 and 40-platform INDEX.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

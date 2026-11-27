@@ -17,10 +17,10 @@ The original twelve factors are grouped here into four study categories. This gr
 
 | Category | Original factors | The principle in one line |
 | ---------------------------------------- | -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| [Build & Ship](#factor-categories) | 1 Codebase · 2 Dependencies · 5 Build/Release/Run | One codebase per app; declare dependencies and separate build from release and run |
+| [Build & Ship](#factor-categories) | 1 Codebase · 2 Dependencies · 5 Build, Release, and Run | One codebase per app; declare dependencies and separate build from release and run |
 | [Config & Bindings](#factor-categories) | 3 Config · 4 Backing services | The original recommends env vars; bindings select compatible attached resources |
 | [Runtime Model](#factor-categories) | 6 Processes · 7 Port binding · 8 Concurrency · 9 Disposability | Stateless processes, self-port-binding, scale by process count, die gracefully |
-| [Operational Parity](#factor-categories) | 10 Dev/prod parity · 11 Logs · 12 Admin processes | Reduce relevant differences between environments; logs are event streams; admin = one-off processes |
+| [Operational Parity](#factor-categories) | 10 Dev and prod parity · 11 Logs · 12 Admin processes | Reduce relevant differences between environments; logs are event streams; admin = one-off processes |
 | Optional book extensions | API first · Telemetry · Authentication and authorization | Additional concerns discussed in a 2016 book; not part of the original twelve or an official update |
 
 ---
@@ -38,11 +38,11 @@ The original twelve factors are grouped here into four study categories. This gr
 | 7 | **Port binding** | Export services via port binding (a self-contained server) |
 | 8 | **Concurrency** | Scale out via the process model |
 | 9 | **Disposability** | Fast startup, graceful shutdown |
-| 10 | **Dev/prod parity** | Keep dev, staging, and prod as similar as possible |
+| 10 | **Dev and prod parity** | Keep dev, staging, and prod as similar as possible |
 | 11 | **Logs** | Treat logs as event streams |
-| 12 | **Admin processes** | Run admin/maintenance tasks as one-off processes |
+| 12 | **Admin processes** | Run admin and maintenance tasks as one-off processes |
 
-**Beyond the original factors:** Kevin Hoffman’s 2016 book discusses Application Programming Interface (API) first, telemetry, and authentication and authorization as additional concerns. They are useful topics, not an official replacement factor list. The [community refresh](https://github.com/twelve-factor/twelve-factor) remains in progress.
+**Beyond the original factors:** Kevin Hoffman's 2016 book discusses Application Programming Interface (API) first, telemetry, and authentication and authorization as additional concerns. They are useful topics, not an official replacement factor list. The [community refresh](https://github.com/twelve-factor/twelve-factor) remains in progress.
 
 ---
 
@@ -102,7 +102,7 @@ These existing [Docita](https://github.com/CVamsi27/docita) pointers locate rela
 | VI. Processes | Stateless Application Programming Interface (API) and separate worker app; inspect replacement and accepted-work recovery; `auto_stop_machines` alone does not prove disposability |
 | V. Build, release, and run | `turbo.json` defines build task inputs and outputs. `.github/workflows/deploy.yml` runs a `migrate-db` job before API and worker deployment; API deploy also depends on startup-smoke and latency gates. The separate migration-validation job in `ci.yml` is manually triggered. |
 | XI. Logs | Pino defaults to `stdout`; its options disable automatic request logs and configure request serializers plus protected health information (PHI) redaction for payloads and errors in `apps/api/src/shared/modules/observability/`. This code does not establish collector durability or retention. |
-| X. Dev/prod parity | `docker-compose.yml` provides local PostgreSQL 15 with `pg_stat_statements`; this does not prove parity. Compare the deployed database and test production-specific permissions, latency, scale, and failure behavior. |
+| X. Dev and prod parity | `docker-compose.yml` provides local PostgreSQL 15 with `pg_stat_statements`; this does not prove parity. Compare the deployed database and test production-specific permissions, latency, scale, and failure behavior. |
 
 ## Finish This Section
 

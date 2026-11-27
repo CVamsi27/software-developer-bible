@@ -38,6 +38,10 @@ Source: [GitHub Actions](40.3.1.01-github-actions.md)
 
 **A:** They are untrusted input. Environment passing plus appropriate quoting treats the value as data instead of allowing it to alter the generated script.
 
+**Q:** Why is checking out `github.event.pull_request.head.sha` inside a `pull_request_target` workflow a critical security vulnerability?
+
+**A:** `pull_request_target` executes from the trusted base branch with repository secrets and a potentially writable `GITHUB_TOKEN`. Checking out and running untrusted fork code such as `npm ci` or unit tests inside that privileged job lets an external contributor execute arbitrary scripts that exfiltrate secrets or modify protected branches.
+
 ## GitLab CI/CD
 
 Source: [GitLab CI/CD](40.3.1.02-gitlab-ci.md)

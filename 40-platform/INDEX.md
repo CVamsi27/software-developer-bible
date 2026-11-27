@@ -1,6 +1,6 @@
 # Platform Stack
 
-> **Study time:** ≈ 13 h 40 m of reading (118 files, ~7 min average).
+> **Study time:** ≈ 13 h 41 m of reading (118 files, ~7 min average).
 > **Docker, Kubernetes, CI/CD, Observability, Build Tools, Git, Serverless, Monorepo, 12-Factor, CDN, Reverse Proxy, IaC** — shared by both the [indian-sde-faang lane (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
 > 118 files across 12 sub-stacks — the "how it runs" layer of the bible.
@@ -16,12 +16,12 @@
 Platform questions connect application behavior to finite resources, release safety and recovery. Match depth to the role, then practice these concrete operations:
 - Containerize an app with Docker (write a `Dockerfile`, use multi-stage builds)
 - Explain Kubernetes architecture (pods, deployments, services, ingress)
-- Set up Continuous Integration / Continuous Delivery (CI/CD) (GitHub Actions, blue-green, canary)
+- Set up Continuous Integration and Continuous Delivery (CI/CD) (GitHub Actions, blue-green, canary)
 - Know observability (logging, metrics, tracing, OpenTelemetry)
 - Understand build tools (Webpack vs Vite vs Turbopack)
 - Use Git fluently (rebase, cherry-pick, bisect, submodules)
 
-Each sub-stack establishes prerequisites, learning chapters, separate revision and interview practice. Explain what takes an input, which runtime/controller acts, and what observable evidence shows the result.
+Each sub-stack establishes prerequisites, learning chapters, separate revision and interview practice. Explain what takes an input, which runtime or controller acts, and what observable evidence shows the result.
 
 ---
 
@@ -31,16 +31,16 @@ Each sub-stack establishes prerequisites, learning chapters, separate revision a
 | ----: | -------------------------------------------------- | ----: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1 | [Docker](40.1-docker/INDEX.md) | 10 | Images, containers, volumes, networks, compose, multi-stage builds, production patterns |
 | 2 | [Kubernetes](40.2-kubernetes/INDEX.md) | 17 | Pods, deployments, services, ingress, ConfigMaps, Horizontal Pod Autoscaler (HPA), Helm, Role-Based Access Control (RBAC) |
-| 3 | [CI/CD](40.3-ci-cd/INDEX.md) | 11 | GitHub Actions, Docker build/deploy, blue-green/canary, Jenkins, GitLab CI, ArgoCD |
-| 4 | [Observability](40.4-observability/INDEX.md) | 11 | Logging, monitoring, tracing, OpenTelemetry, error tracking, Service Level Indicator / Objective / Agreement (SLI/SLO/SLA), alerting |
+| 3 | [CI/CD](40.3-ci-cd/INDEX.md) | 11 | GitHub Actions, Docker build and deploy, blue-green and canary, Jenkins, GitLab CI, ArgoCD |
+| 4 | [Observability](40.4-observability/INDEX.md) | 11 | Logging, monitoring, tracing, OpenTelemetry, error tracking, Service Level Indicators, Objectives, and Agreements (SLIs, SLOs, and SLAs), alerting |
 | 5 | [Build Tools](40.5-build-tools/INDEX.md) | 10 | Webpack, Vite, Turbopack, Rspack, ESBuild, SWC, Babel |
-| 6 | [Git Advanced](40.6-git-advanced/INDEX.md) | 10 | Internals (objects/refs/packfiles), branching, rebase, hooks, archaeology, Large File Storage (LFS) and partial clones, signed commits |
-| 7 | [Serverless & Edge](40.7-serverless-edge/INDEX.md) | 10 | Lambda, Vercel Edge, serverless patterns, SAM/CDK/SST, durable execution (Temporal/Inngest) |
+| 6 | [Git Advanced](40.6-git-advanced/INDEX.md) | 10 | Internals (objects, refs, and packfiles), branching, rebase, hooks, archaeology, Large File Storage (LFS) and partial clones, signed commits |
+| 7 | [Serverless & Edge](40.7-serverless-edge/INDEX.md) | 10 | Lambda, Vercel Edge, serverless patterns, SAM, CDK, and SST, durable execution (Temporal and Inngest) |
 | 8 | [Monorepo](40.8-monorepo/INDEX.md) | 6 | Turborepo, Nx, pnpm, Rush, Bazel, versioning and publishing strategies |
 | 9 | [Twelve-Factor App](40.9-twelve-factor/INDEX.md) | 2 | The original twelve-factor methodology: deployment inputs, resource bindings, release stages, process lifecycle, and operational trade-offs; refresh in progress |
 | 10 | [CDN & Edge](40.10-cdn/INDEX.md) | 4 | Content Delivery Network (CDN) caching strategies, invalidation, edge functions, multi-CDN steering, media optimization at the edge, Protected Health Information (PHI)-at-edge considerations |
 | 11 | [Reverse Proxy](40.11-reverse-proxy/INDEX.md) | 2 | Nginx internals: C10K, master–worker and `epoll` event loop, config contexts, `sendfile` vs `proxy_pass`, upstream load-balancing (LB) algorithms, health checks, Transport Layer Security (TLS) termination, buffering, rate limiting, `proxy_cache`, zero-downtime reload, Nginx vs HAProxy vs Envoy vs Application Load Balancer (ALB) |
-| 12 | [IaC & Terraform](40.12-iac/INDEX.md) | 2 | Infrastructure as Code (IaC), HashiCorp Configuration Language (HCL), state and drift, plan/apply, backends and locking, modules, workspaces, brownfield import, OpenTofu/Pulumi/CDKTF, IaC in CI/CD |
+| 12 | [IaC & Terraform](40.12-iac/INDEX.md) | 2 | Infrastructure as Code (IaC), HashiCorp Configuration Language (HCL), state and drift, plan and apply, backends and locking, modules, workspaces, brownfield import, OpenTofu, Pulumi, and CDKTF, IaC in CI/CD |
 
 ---
 
@@ -83,7 +83,7 @@ Use these four layers to connect development, release and operation. The numbere
 3. **CI/CD core: GitHub Actions** (1.5 hrs) — must know
 4. **Observability core: signals + OpenTelemetry** (1.5 hrs) — must know
 5. **Git Advanced essentials** (1 hr) — must know
-6. **IaC essentials: plan, apply + state** (45 min) — for platform/DevOps-flavored JDs
+6. **IaC essentials: plan, apply + state** (45 min) — for platform and DevOps-flavored JDs
 7. Choose Build Tools, Serverless, Monorepo and Twelve-Factor chapters that match the JD.
 8. Use each chosen category's `REVISION.md`, then its interview bank. The time boxes are practice budgets; they do not replace the generated reading estimates.
 
@@ -104,7 +104,7 @@ Use each selected stack's revision companion first. Reopen a chapter only when y
 - Docker: re-read Dockerfile + Multi-stage + Compose
 - K8s: re-read Pods + Services + Deployments
 - CI/CD: re-read GitHub Actions workflow
-- Observability: re-read SLI/SLO + OpenTelemetry
+- Observability: re-read SLIs, SLOs, and OpenTelemetry
 - Git: re-read Rebase + Cherry-pick + Bisect
 
 ---

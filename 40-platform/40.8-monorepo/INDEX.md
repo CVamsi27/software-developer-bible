@@ -1,7 +1,7 @@
 # Monorepo — Index
 
 > **Study time:** ≈ 45 min of reading (7 files, ~6 min average).
-> **7 files** — Learn repository and package boundaries, compare task-graph tools, evaluate workspace/build systems, then follow a package change through publication and interview practice.
+> **7 files** — Learn repository and package boundaries, compare task-graph tools, evaluate workspace and build systems, then follow a package change through publication and interview practice.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
@@ -37,8 +37,8 @@ Two task-graph approaches; choose by the contracts your workspace needs.
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
-| 02 | [Turborepo](40.8.02-turborepo.md) | Task dependencies, input/output hashes, filtering, affected selection, remote cache | A workspace that benefits from a compact task graph and cache model | Important | Specialized | 8 min |
-| 03 | [Nx](40.8.03-nx.md) | Project discovery, inferred targets, task ordering, affected selection, cache correctness, generators, module boundaries | Workspaces that benefit from plugins, architectural constraints, and richer project/task graphs | Important | Specialized | 7 min |
+| 02 | [Turborepo](40.8.02-turborepo.md) | Task dependencies, input and output hashes, filtering, affected selection, remote cache | A workspace that benefits from a compact task graph and cache model | Important | Specialized | 8 min |
+| 03 | [Nx](40.8.03-nx.md) | Project discovery, inferred targets, task ordering, affected selection, cache correctness, generators, module boundaries | Workspaces that benefit from plugins, architectural constraints, and richer project and task graphs | Important | Specialized | 7 min |
 
 **Decision:**
 

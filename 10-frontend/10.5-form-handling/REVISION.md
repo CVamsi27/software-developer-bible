@@ -18,13 +18,21 @@ Source: [React Hook Form](10.5.01-react-hook-form.md)
 
 **A:** Watch and form-state subscribers react to changes. Uncontrolled DOM values avoid one root state update per keystroke, but do not make the whole application render-free.
 
+**Q:** Why can a background query refresh overwrite unsaved typing in React Hook Form, and how do you preserve in-progress edits?
+
+**A:** Calling `reset(loadedValues)` or passing a reactive `values` prop replaces all field values by default; pass `{ keepDirtyValues: true }` (or `resetOptions: { keepDirtyValues: true }`) so untouched fields sync with server updates while dirty user edits remain intact.
+
 ## Zod
 
 Source: [Zod](10.5.02-zod.md)
 
 **Q:** Why can `z.input` and `z.output` differ for the same Zod schema?
 
-**A:** Transforms, preprocessing and coercion can accept one input type and return another. `z.infer` describes the output, so form defaults and parsed results may need different types.
+**A:** Transforms, preprocessing, and coercion can accept one input type and return another. `z.infer` describes the output, so form defaults and parsed results may need different types.
+
+**Q:** How do Zod 4's `.default(v)` and `.prefault(v)` behave differently when an input field is `undefined`?
+
+**A:** `.default(v)` short-circuits parsing and returns `v` directly as the output type without running transforms or refinements, whereas `.prefault(v)` injects `v` as raw input so the full schema pipeline still parses and transforms it.
 
 ## Formik
 
@@ -62,13 +70,17 @@ Source: [Autosave & Draft Recovery](10.5.06-autosave-draft-recovery.md)
 
 **A:** A queued or in-flight write can recreate the draft after deletion. Stop new scheduling, await prior writes, then clear storage.
 
+**Q:** Why must a `beforeunload` handler be attached only while unsaved edits exist, and why is it insufficient on its own in a single-page app?
+
+**A:** Registering `beforeunload` unconditionally prevents browsers from storing the page in the Back-Forward Cache (bfcache), slowing back navigation; and because client-side SPA route transitions do not fire `beforeunload`, you must pair it with a router navigation blocker until drafts flush or clear.
+
 ## Form state versus business commitment
 
 Source: [Learning chapter](10.5.01-react-hook-form.md)
 
 **Q:** Why does disabling submit while `isSubmitting` not guarantee one booking?
 
-**A:** It controls this UI while the awaited callback runs. Network uncertainty, another client or direct API retry still needs a server-side idempotency/transaction contract.
+**A:** It controls this UI while the awaited callback runs. Network uncertainty, another client, or direct API retry still needs a server-side idempotency and transaction contract.
 
 **Q:** What must a multistep form do beyond retaining unmounted values?
 
@@ -88,7 +100,7 @@ Source: [Learning chapter](10.5.02-zod.md)
 
 **Q:** Does a parsed invoice payload establish tenant permission?
 
-**A:** No. The schema establishes shape/constraints; authorization, ownership and transactional business invariants remain separate checks.
+**A:** No. The schema establishes shape and constraints; authorization, ownership, and transactional business invariants remain separate checks.
 
 ## Controlled submission and selected subscriptions
 
@@ -100,7 +112,7 @@ Source: [Formik](10.5.03-formik.md), [TanStack Form](10.5.04-tanstack-form.md)
 
 **Q:** Why does a stable row ID coexist with an indexed form path?
 
-**A:** React identity should follow the row after removal/reordering, while its field path describes the current position in the model.
+**A:** React identity should follow the row after removal or reordering, while its field path describes the current position in the model.
 
 **Q:** A schema transform validates successfully. Does TanStack automatically submit that transformed value?
 

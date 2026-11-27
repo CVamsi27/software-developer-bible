@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "a9c3c4260f56818f7e1ec32a0d45f866028dcf3115db4f234a85f4b60e14f35c",
+ "corpus_digest": "7afac38ebe75b44cf7155e9a72d55c1e96574493fcf36909b1690e2047b97795",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5558
+  "read_minutes": 5560
  },
  "chapters": [
   {
@@ -2436,7 +2436,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.02-api-gateway.html",
@@ -2479,7 +2479,7 @@
    "g": [
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "20-backend/20.3-rest-apis/05-interview-drills/20.3.5.01-interview-questions.html",

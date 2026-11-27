@@ -1,6 +1,6 @@
 # Edge & Scale - REST APIs
 
-> **Study time:** ≈ 34 min of reading (5 files, ~7 min average).
+> **Study time:** ≈ 36 min of reading (5 files, ~7 min average).
 > **5 files.** Surviving traffic and integrating systems: rate limiting algorithms, API gateways, backend-for-frontend, and authentication schemes in the API context.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../INDEX.md)
@@ -16,11 +16,11 @@ Start by bounding admission and choosing the budget scope. Place trusted HTTP fo
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | :------: | --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ | --------: |
-| 01 | [Rate Limiting](20.3.4.01-rate-limiting.md) | Algorithms (token bucket, sliding window), distributed limits | Essential | Foundational | 8 min |
+| 01 | [Rate Limiting](20.3.4.01-rate-limiting.md) | Algorithms (token bucket, sliding window), distributed limits | Essential | Foundational | 9 min |
 | 02 | [API Gateway](20.3.4.02-api-gateway.md) | Routing, aggregation, auth, rate limiting at the edge; deep patterns in [microservices](../../20.6-microservices/INDEX.md) | Important | Important | 8 min |
 | 03 | [BFF](20.3.4.03-bff.md) | Backend-for-frontend pattern, per-client payload shaping, gateway-routes vs dedicated-BFF vs GraphQL-BFF variants | Essential | Foundational | 8 min |
 | 04 | [Authentication](20.3.4.04-authentication.md) | Auth schemes for APIs; pairs with the [auth track](../../20.5-security/01-auth/INDEX.md) | Essential | Foundational | 8 min |
-| Revision | [Category recall](REVISION.md) | Test quota scope, gateway authority, composition failures and refresh races | Essential | Foundational | — |
+| Revision | [Category recall](REVISION.md) | Test quota scope, gateway authority, composition failures, and refresh races | Essential | Foundational | — |
 
 ---
 

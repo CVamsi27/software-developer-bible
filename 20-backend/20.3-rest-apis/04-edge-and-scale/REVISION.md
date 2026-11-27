@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-REST%20APIs-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -16,11 +16,11 @@ Source: [API Rate Limiting](20.3.4.01-rate-limiting.md)
 
 **Q:** Why should admission limits reflect sustainable resource capacity?
 
-**A:** Database slots, CPU and downstream quotas are finite. Admission protects those resources before a client's burst consumes capacity needed by others; choose limits from measured workload cost.
+**A:** Database slots, CPU, and downstream quotas are finite. Admission protects those resources before a client's burst consumes capacity needed by others; choose limits from measured workload cost.
 
 **Q:** Which limits belong at the edge and which need application-level enforcement?
 
-**A:** The edge can reject coarse abuse early; application-level limits can enforce tenant, operation and downstream budgets. Global quotas need coordinated accounting, while local limits can deliberately protect each instance.
+**A:** The edge can reject coarse abuse early; application-level limits can enforce tenant, operation, and downstream budgets. Global quotas need coordinated accounting, while local limits can deliberately protect each instance.
 
 **Q:** How does a rate-limiting algorithm determine permitted bursts?
 
@@ -32,11 +32,11 @@ Source: [API Gateway Pattern](20.3.4.02-api-gateway.md)
 
 **Q:** Why can shared edge concerns benefit from centralized enforcement?
 
-**A:** A shared gateway can apply TLS termination, coarse admission and logging consistently. Services still need resource-specific authorization and safe behavior when traffic reaches them by another trusted path.
+**A:** A shared gateway can apply TLS termination, coarse admission, and logging consistently. Services still need resource-specific authorization and safe behavior when traffic reaches them by another trusted path.
 
 **Q:** What latency and availability costs does a gateway introduce?
 
-**A:** The gateway adds a hop and another component whose saturation or failure can affect requests. Replicate it, bound work and deploy routing policy with observable rollback.
+**A:** The gateway adds a hop and another component whose saturation or failure can affect requests. Replicate it, bound work, and deploy routing policy with observable rollback.
 
 **Q:** How does gateway routing decouple clients from service topology?
 
@@ -48,7 +48,7 @@ Source: [BFF — Backend for Frontend](20.3.4.03-bff.md)
 
 **Q:** When do differing client needs justify separate API composition?
 
-**A:** Separate composition is useful when client payloads, latency budgets or release ownership differ materially. Small differences may be handled by one documented API without another deployable layer.
+**A:** Separate composition is useful when client payloads, latency budgets, or release ownership differ materially. Small differences may be handled by one documented API without another deployable layer.
 
 **Q:** What should a client-specific aggregation layer own?
 
@@ -56,7 +56,11 @@ Source: [BFF — Backend for Frontend](20.3.4.03-bff.md)
 
 **Q:** What deployment and ownership costs does adding a BFF create?
 
-**A:** Another BFF adds deployment, telemetry and failure paths, and composition may be duplicated. Keep ownership clear and share stable domain APIs when several clients need the same operation.
+**A:** Another BFF adds deployment, telemetry, and failure paths, and composition may be duplicated. Keep ownership clear and share stable domain APIs when several clients need the same operation.
+
+**Q:** How does the OAuth2 BFF (Token Handler) pattern keep OAuth access and refresh tokens out of browser JavaScript?
+
+**A:** The browser authenticates to the BFF with an `HttpOnly; Secure; SameSite` session cookie while the BFF stores OAuth tokens server-side and attaches `Authorization: Bearer` only on internal downstream API requests.
 
 ## API Authentication
 
@@ -64,7 +68,7 @@ Source: [API Authentication](20.3.4.04-authentication.md)
 
 **Q:** What evidence lets an API verify a caller's identity claim?
 
-**A:** Evidence can include a session identifier, opaque token, signed token, API key or client certificate. Validate it under the issuer and application contract before establishing a principal.
+**A:** Evidence can include a session identifier, opaque token, signed token, API key, or client certificate. Validate it under the issuer and application contract before establishing a principal.
 
 **Q:** How does verification state affect scaling and revocation?
 
@@ -84,7 +88,7 @@ Source: [Rate limiting](20.3.4.01-rate-limiting.md)
 
 **Q:** Does a Redis pipeline or an always-fail-open policy enforce every shared quota correctly?
 
-**A:** No. Combined read/refill/compare/consume needs an atomic decision, while pipelines only batch commands. Store-outage policy depends on the operation: hard quota, availability and degraded local protection have different risks.
+**A:** No. Combined read, refill, compare, and consume needs an atomic decision, while pipelines only batch commands. Store-outage policy depends on the operation: hard quota, availability, and degraded local protection have different risks.
 
 Source: [Gateway forwarding](20.3.4.02-api-gateway.md)
 
@@ -104,7 +108,7 @@ Source: [BFF composition](20.3.4.03-bff.md)
 
 **Q:** Does a partner requesting only `displayName` prove it may see that user?
 
-**A:** No. Field selection shapes output; verified principal, tenant and resource policy authorize it. Enforce access at the data-owning boundary and scope private caches appropriately.
+**A:** No. Field selection shapes output; verified principal, tenant, and resource policy authorize it. Enforce access at the data-owning boundary and scope private caches appropriately.
 
 Source: [API authentication](20.3.4.04-authentication.md)
 
@@ -114,7 +118,11 @@ Source: [API authentication](20.3.4.04-authentication.md)
 
 **Q:** Two refresh calls read one unused token, then independently mark and replace it. What is missing?
 
-**A:** Atomic consumption and successor creation under the session/family contract. Single-flight clients help legitimate concurrency but do not close server races or lost-response recovery; logout also needs an explicit access-token revocation window.
+**A:** Atomic consumption and successor creation under the session and family contract. Single-flight clients help legitimate concurrency but do not close server races or lost-response recovery; logout also needs an explicit access-token revocation window.
+
+**Q:** How do DPoP (RFC 9449) and mTLS certificate-bound tokens (RFC 8705) harden stolen bearer tokens?
+
+**A:** Both sender-constrain the token so possession alone is unusable: DPoP binds tokens to a client-held asymmetric key via a signed per-request proof header, and RFC 8705 binds them to the client's mutual-TLS certificate.
 
 ## Summary
 

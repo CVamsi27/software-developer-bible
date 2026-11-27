@@ -1,6 +1,6 @@
 # React — Index
 
-> **Study time:** ≈ 3 h 18 m of reading (28 files, ~7 min average).
+> **Study time:** ≈ 3 h 24 m of reading (28 files, ~7 min average).
 > **28 files** — React internals from Virtual DOM to Fiber, hooks, patterns, custom hooks, portals, compound components, external stores, server-state ownership with TanStack Query, React Router data routers, React 18/19 concurrent APIs, performance, state management, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-28-blue)](../../INDEX.md)
@@ -72,13 +72,13 @@ The patterns that solve real problems in production code.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 11 | [Suspense](03-advanced-hooks-and-patterns/10.3.3.01-suspense.md) | Suspense boundaries, data fetching, `useTransition`, streaming SSR | Important | Specialized | 7 min |
-| 12 | [Error Boundary](03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md) | Error boundaries, error recovery, logging, Sentry integration | Important | Important | 8 min |
-| 13 | [Custom Hooks](03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md) | Per-caller state, Hook rules, debounced values, query cancellation, Effect testing | Essential | Important | 7 min |
-| 14 | [`useSyncExternalStore`](03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md) | Tearing in concurrent rendering, subscribe/getSnapshot contract, snapshot caching, Zustand/Redux integration, infinite-loop mistakes | Important | Specialized | 6 min |
-| 15 | [Performance](03-advanced-hooks-and-patterns/10.3.3.05-performance.md) | Profiler, `React.memo`, virtualization, windowing, debouncing, Web Workers | Essential | Foundational | 5 min |
-| 16 | [State Management](03-advanced-hooks-and-patterns/10.3.3.06-state-management.md) | Redux Toolkit, Zustand, Jotai, Context vs external state, when to use which | Essential | Important | 6 min |
-| 17 | [TanStack Query](03-advanced-hooks-and-patterns/10.3.3.07-tanstack-query.md) | Query identity, staleness/refetch, cancellation, mutations, concurrent writes and SSR hydration | Essential | Important | 8 min |
+| 11 | [Suspense](03-advanced-hooks-and-patterns/10.3.3.01-suspense.md) | Suspense boundaries, render-as-you-fetch, sibling pre-warming, `useTransition`, and streaming SSR | Important | Specialized | 8 min |
+| 12 | [Error Boundary](03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md) | Class boundary, `resetKey`, recovery scope, React 19 root error callbacks, and query error reset | Important | Important | 9 min |
+| 13 | [Custom Hooks](03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md) | Per-caller state, Hook rules, return contracts, callback stability, effect ownership, and lifecycle tests | Essential | Important | 7 min |
+| 14 | [`useSyncExternalStore`](03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md) | Concurrent tearing, `subscribe` and `getSnapshot` contract, browser adapters, selector caching, and SSR snapshots | Important | Specialized | 7 min |
+| 15 | [Performance](03-advanced-hooks-and-patterns/10.3.3.05-performance.md) | Profiler metrics, `memo` comparators, virtualization vs. `content-visibility`, code splitting, and deferred values | Essential | Foundational | 6 min |
+| 16 | [State Management](03-advanced-hooks-and-patterns/10.3.3.06-state-management.md) | Ownership boundaries, Zustand, Redux Toolkit, Jotai, reducers, query caches, and version conflicts | Essential | Important | 6 min |
+| 17 | [TanStack Query](03-advanced-hooks-and-patterns/10.3.3.07-tanstack-query.md) | Query keys, `queryOptions`, `keepPreviousData`, freshness, mutations, optimistic rollback, and SSR hydration | Essential | Important | 9 min |
 
 ---
 

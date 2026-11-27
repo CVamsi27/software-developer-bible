@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "96a2c6459cb2a8025f063e2cd5c21ec7c0fd2f55b224b5f4c52bb9c03c7c5426",
+ "corpus_digest": "cacc6fb90abc6ca3b504c2c87ccf33e42111baa8f83e06f0c094ca5435aca30c",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5481
+  "read_minutes": 5487
  },
  "chapters": [
   {
@@ -879,7 +879,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.html",
@@ -889,7 +889,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.html",
@@ -909,7 +909,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.05-performance.html",
@@ -919,7 +919,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.html",
@@ -939,7 +939,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/REVISION.html",
@@ -950,7 +950,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.html",

@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-React-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-8_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-9_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -24,7 +24,7 @@ Source: [Suspense](10.3.3.01-suspense.md)
 
 **Q:** Which work can activate Suspense besides a `React.lazy` component?
 
-**A:** A Promise read with `use` or by a Suspense-enabled data source can suspend; streaming server rendering and selective hydration also integrate with boundaries. A library must own a stable Promise/cache, because Suspense does not cache arbitrary requests.
+**A:** A Promise read with `use` or by a Suspense-enabled data source can suspend; streaming server rendering and selective hydration also integrate with boundaries. A library must own a stable Promise or cache, because Suspense does not cache arbitrary requests.
 
 **Q:** What happens when a lazy child suspends but has no nearby boundary?
 
@@ -46,6 +46,10 @@ Source: [Suspense](10.3.3.01-suspense.md)
 
 **A:** It preserves one component type so rerenders do not reset its state. It does not preload the chunk or remove first-use latency; choose a fallback and measure whether preloading is needed.
 
+**Q:** How does render-as-you-fetch differ from fetch-on-render, and what does React 19 sibling pre-warming change?
+
+**A:** Render-as-you-fetch kicks off independent Promises before rendering starts (in a route loader, Server Component, or Suspense cache) so siblings do not stall behind parent renders in a waterfall. In React 19, when one child inside a `<Suspense>` boundary suspends, React pre-warms sibling trees in the background instead of stalling sibling fetches until the first child settles.
+
 ## Error Boundary
 
 Source: [Error Boundary](10.3.3.02-error-boundary.md)
@@ -56,7 +60,7 @@ Source: [Error Boundary](10.3.3.02-error-boundary.md)
 
 **Q:** Which errors does a boundary catch, and which slip through?
 
-**A:** It handles errors thrown while React renders descendants. Ordinary event handlers, detached async callbacks and server-rendering failures need their own handling. A rejected promise read with `use` and an error from a React 19 `useTransition` Action can reach a boundary; a pending promise belongs to Suspense.
+**A:** It handles errors thrown while React renders descendants. Ordinary event handlers, detached async callbacks, and server-rendering failures need their own handling. A rejected promise read with `use` and an error from a React 19 `useTransition` Action can reach a boundary; a pending promise belongs to Suspense.
 
 **Q:** What's the difference between `getDerivedStateFromError` and `componentDidCatch`?
 
@@ -80,7 +84,7 @@ Source: [Error Boundary](10.3.3.02-error-boundary.md)
 
 **Q:** Where should boundaries sit in a real application?
 
-**A:** Put a boundary around each independently recoverable route, feature or widget, with a higher-level fallback for failures the local boundaries cannot contain. Keep expected form validation in form state so a bad field does not discard the whole draft.
+**A:** Put a boundary around each independently recoverable route, feature, or widget, with a higher-level fallback for failures the local boundaries cannot contain. Keep expected form validation in form state so a bad field does not discard the whole draft.
 
 **Q:** Why can a retry button immediately return to the fallback when Suspense data failed?
 
@@ -89,6 +93,10 @@ Source: [Error Boundary](10.3.3.02-error-boundary.md)
 **Q:** Why does the example store a boolean failure flag rather than treating the caught value as an Error?
 
 **A:** JavaScript can throw a string or even null. A truthiness check on the thrown value can miss the failure; an explicit flag selects the fallback while the unknown value goes to a safe reporting adapter.
+
+**Q:** When should you use `resetKey={selectedId}` vs. `<ErrorBoundary key={selectedId}>`, and what do React 19 root error callbacks cover?
+
+**A:** Changing React's `key` unmounts and remounts the entire child subtree on every `selectedId` change even when healthy, discarding local state; passing `resetKey` clears the boundary only when it is currently showing a fallback. At the root, `createRoot` and `hydrateRoot` expose `onCaughtError`, `onUncaughtError`, and `onRecoverableError` for centralized telemetry across caught, uncaught, and recovered errors.
 
 ## Custom Hooks
 
@@ -125,6 +133,10 @@ Source: [Custom Hooks](10.3.3.03-custom-hooks.md)
 **Q:** Why should an Effect dependency remain when changing it requires a new subscription or request?
 
 **A:** That value is part of the external system's synchronization contract. Removing it can leave the Effect connected to stale inputs. `useEffectEvent` is for non-reactive logic called by an Effect, not a way to suppress a dependency that should restart the work.
+
+**Q:** When should a custom Hook return a tuple instead of an object, and when must it stabilize returned callbacks?
+
+**A:** Return a tuple (`[value, setValue]`) when mimicking `useState` so callers can rename bindings freely across multiple calls; return a named object (`{ data, error, reset }`) once exposing three or more fields or optional entries. Wrap returned action callbacks in `useCallback` whenever callers may pass them into Effects or memoized children.
 
 ## useSyncExternalStore
 
@@ -168,7 +180,7 @@ Source: [React Performance Optimization](10.3.3.05-performance.md)
 
 **Q:** Which evidence separates expensive React rendering from browser layout and paint work?
 
-**A:** The React Profiler shows which components rendered and how much React work they did. A browser Performance trace exposes long tasks, DOM updates, layout and paint. Use the tool that measures the stage users are waiting on.
+**A:** The React Profiler shows which components rendered and how much React work they did. A browser Performance trace exposes long tasks, DOM updates, layout, and paint. Use the tool that measures the stage users are waiting on.
 
 **Q:** Why is "reduce the work, don't memoize it" the right first instinct?
 
@@ -192,11 +204,15 @@ Source: [React Performance Optimization](10.3.3.05-performance.md)
 
 **Q:** When does wrapping a tiny handler in `useCallback` actually hurt?
 
-**A:** When no identity-sensitive consumer uses its stable reference, the cache adds bookkeeping without skipping useful work. Effects, providers and custom Hook APIs can also supply legitimate consumers besides memoized children.
+**A:** When no identity-sensitive consumer uses its stable reference, the cache adds bookkeeping without skipping useful work. Effects, providers, and custom Hook APIs can also supply legitimate consumers besides memoized children.
 
 **Q:** What evidence should you collect before adding a memo layer?
 
 **A:** Profile the real interaction, separate React work from browser work, and choose the lever that addresses the measured cost. Compare the same workload after the change; unmeasured memoization may only move the bottleneck.
+
+**Q:** Why are custom `React.memo` comparators risky, and how do `Profiler` `actualDuration` and `baseDuration` differ?
+
+**A:** Skipping callback props in a custom `arePropsEqual` comparator can leave a memoized child invoking an outdated handler over stale state. In React `Profiler`, `actualDuration` measures the time spent rendering the commit with current memoization, whereas `baseDuration` estimates un-memoized worst-case render cost.
 
 ## State Management
 
@@ -204,11 +220,11 @@ Source: [State Management](10.3.3.06-state-management.md)
 
 **Q:** Why does remote data need more than a global client-state container?
 
-**A:** The remote owner can change data without a local event, so cached copies need freshness, requests, invalidation and retry policies. A plain client store can hold that data but does not provide those policies automatically. TanStack Query manages the request/cache lifecycle; application-specific optimistic rollback still needs an explicit policy.
+**A:** The remote owner can change data without a local event, so cached copies need freshness, requests, invalidation, and retry policies. A plain client store can hold that data but does not provide those policies automatically. TanStack Query manages the request and cache lifecycle; application-specific optimistic rollback still needs an explicit policy.
 
 **Q:** What is the selector model, and why is it "the performance contract"?
 
-**A:** A binding reads a selected slice and compares it with the previous selected value. An unchanged slice can suppress a store-triggered render; the component can still render from its parent, local state or context. Immutable normalized data and focused selectors help unchanged slices retain identity.
+**A:** A binding reads a selected slice and compares it with the previous selected value. An unchanged slice can suppress a store-triggered render; the component can still render from its parent, local state, or context. Immutable normalized data and focused selectors help unchanged slices retain identity.
 
 **Q:** When can one broad context value cause costly updates?
 
@@ -216,7 +232,7 @@ Source: [State Management](10.3.3.06-state-management.md)
 
 **Q:** What actually distinguishes server state from client state?
 
-**A:** Ownership and timing. Server state arrives asynchronously with loading/error and can be invalidated externally, so it needs cache/revalidate/retry semantics; client state is owned by the application; React schedules its local updates, and persistence is optional.
+**A:** Ownership and timing. Server state arrives asynchronously with loading and error states and can be invalidated externally, so it needs caching, revalidation, and retry semantics; client state is owned by the application; React schedules its local updates, and persistence is optional.
 
 **Q:** Why does the mutation example show pending text as an independent UI overlay instead of patching the query cache?
 
@@ -224,7 +240,7 @@ Source: [State Management](10.3.3.06-state-management.md)
 
 **Q:** How can a selector reduce store-driven renders without preventing every render?
 
-**A:** It compares only the selected slice and can ignore an unrelated store update. The component may still render because of its parent, local state or Context.
+**A:** It compares only the selected slice and can ignore an unrelated store update. The component may still render because of its parent, local state, or Context.
 
 **Q:** What shape keeps a large client-owned relational collection normalized?
 
@@ -232,7 +248,11 @@ Source: [State Management](10.3.3.06-state-management.md)
 
 **Q:** State appears and the team asks "where does it go?" — give the decision rule.
 
-**A:** Component-only → `useState`/`useReducer`; shared by siblings → lift to the common ancestor; shared provider values → Context; independently selected external state or action tooling → a suitable store; remote copies needing freshness/invalidation → a server-state cache; shareable filters → validated URL state. Frequency and complexity are considerations rather than rigid library boundaries.
+**A:** Component-only → `useState` or `useReducer`; shared by siblings → lift to the common ancestor; shared provider values → Context; independently selected external state or action tooling → a suitable store; remote copies needing freshness and invalidation → a server-state cache; shareable filters → validated URL state. Frequency and complexity are considerations rather than rigid library boundaries.
+
+**Q:** When does Zustand, Redux Toolkit, or Jotai fit best for shared client state?
+
+**A:** Choose Zustand for lightweight external store slices with minimal boilerplate (`useShallow` for derived objects), Redux Toolkit when a large codebase benefits from explicit action logs, middleware, DevTools time-travel, and structured slices, and Jotai when bottom-up atomic derivations fit interdependent UI state better than one monolithic store.
 
 ## TanStack Query — Server State Ownership
 
@@ -244,11 +264,11 @@ Source: [TanStack Query: Server State Ownership](10.3.3.07-tanstack-query.md)
 
 **Q:** What happens if an optimistic update succeeds in the UI but the server rejects the mutation?
 
-**A:** The application must implement its `onError` reconciliation. A saved snapshot can restore an isolated edit, but blindly restoring it can erase a later concurrent optimistic edit. Keep one write owner or use pending variables/version-aware patches.
+**A:** The application must implement its `onError` reconciliation. A saved snapshot can restore an isolated edit, but blindly restoring it can erase a later concurrent optimistic edit. Keep one write owner or use pending variables or version-aware patches.
 
 **Q:** Does passing a stale-time deadline start a background request?
 
-**A:** It changes freshness. Mount, focus, reconnect, explicit invalidation/refetch or a separately configured polling interval supplies the trigger. Test an idle query to avoid confusing staleness with polling.
+**A:** It changes freshness. Mount, focus, reconnect, explicit invalidation or refetch, or a separately configured polling interval supplies the trigger. Test an idle query to avoid confusing staleness with polling.
 
 **Q:** Why must `staleTime` agree between server (`dehydrate`) and client hydration?
 
@@ -264,7 +284,11 @@ Source: [TanStack Query: Server State Ownership](10.3.3.07-tanstack-query.md)
 
 **Q:** A clinician switches clinics while a detail request is pending. What does a tenant key solve?
 
-**A:** Including tenant identity separates cached results and query work. It does not authorize access: the API must verify the caller's tenant/resource rights, and sign-out/account changes need an explicit cache-clearing policy.
+**A:** Including tenant identity separates cached results and query work. It does not authorize access: the API must verify the caller's tenant and resource rights, and sign-out and account changes need an explicit cache-clearing policy.
+
+**Q:** What problem does TanStack Query v5 `queryOptions` solve, and how does `placeholderData: keepPreviousData` differ from `initialData`?
+
+**A:** `queryOptions` collocates `queryKey`, `queryFn`, and defaults in one type-safe factory shared by hooks, prefetching, and cache reads without key drift. `placeholderData: keepPreviousData` keeps the previous page visible transiently without persisting into the new key's cache entry, whereas `initialData` writes directly into the cache and obeys `staleTime`.
 
 ## Ownership under changed conditions
 
@@ -288,7 +312,7 @@ Source: [Custom Hooks](10.3.3.03-custom-hooks.md), [Suspense](10.3.3.01-suspense
 
 **Q:** Does `navigator.onLine` establish that an authenticated API request will succeed?
 
-**A:** No. It is a browser connectivity hint; DNS, service health, authorization or a particular route can still fail.
+**A:** No. It is a browser connectivity hint; DNS, service health, authorization, or a particular route can still fail.
 
 **Q:** Does an optimistic rollback always restore the correct displayed state?
 
@@ -296,7 +320,7 @@ Source: [Custom Hooks](10.3.3.03-custom-hooks.md), [Suspense](10.3.3.01-suspense
 
 ## Summary
 
-Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
+Revisit the linked chapter when an answer misses the mechanism, a boundary, or a failure case.
 
 ---
 

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "7afac38ebe75b44cf7155e9a72d55c1e96574493fcf36909b1690e2047b97795",
+ "corpus_digest": "c57c1940324f14649a71b174ba2b1cb98f08ef207419ec9b1167bbed1c2cd5e5",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5560
+  "read_minutes": 5566
  },
  "chapters": [
   {
@@ -2509,7 +2509,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.html",
@@ -2551,7 +2551,7 @@
     "postgresql",
     "security"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "20-backend/20.4-database/01-postgresql-foundations/REVISION.html",
@@ -2571,7 +2571,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "20-backend/20.4-database/02-querying-and-optimization/20.4.2.02-joins.html",
@@ -2602,7 +2602,7 @@
     "concept",
     "sql"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "20-backend/20.4-database/02-querying-and-optimization/20.4.2.05-jsonb.html",
@@ -2614,7 +2614,7 @@
     "nosql",
     "sql"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "20-backend/20.4-database/02-querying-and-optimization/REVISION.html",
@@ -2624,7 +2624,7 @@
    "g": [
     "revision"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.html",

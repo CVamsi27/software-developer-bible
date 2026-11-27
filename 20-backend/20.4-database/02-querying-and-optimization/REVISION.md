@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Database-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -20,7 +20,7 @@ Source: [Database Indexes](20.4.2.01-indexes.md)
 
 **Q:** What write and storage costs does adding an index introduce?
 
-**A:** Indexes store additional entries and add relevant write/WAL/maintenance work. Eligible HOT updates can avoid new ordinary index entries, partial membership matters, and physical cleanup is separate from logical deletion. Measure workload benefits/costs rather than multiplying a universal per-write tax.
+**A:** Indexes store additional entries and add relevant write, WAL, and maintenance work. Eligible HOT updates can avoid new ordinary index entries, partial membership matters, and physical cleanup is separate from logical deletion. Measure workload benefits and costs rather than multiplying a universal per-write tax.
 
 **Q:** Why does column order matter in a composite B-tree index?
 
@@ -32,7 +32,11 @@ Source: [Database Indexes](20.4.2.01-indexes.md)
 
 **Q:** What changes when the paid-row query becomes an open-row query?
 
-**A:** The partial index excludes open rows and cannot supply them. Predicate implication, query/operator compatibility and planning parameters decide eligibility; merely retaining the index does not retain its usefulness.
+**A:** The partial index excludes open rows and cannot supply them. Predicate implication, query and operator compatibility, and planning parameters decide eligibility; merely retaining the index does not retain its usefulness.
+
+**Q:** Why can a write-heavy GIN index with default `fastupdate = on` cause periodic tail-latency spikes, and how do you mitigate it?
+
+**A:** Inserted entries accumulate in a pending list up to `gin_pending_list_limit`; whichever foreground write crosses the limit pays the full synchronous flush cost. Mitigate by lowering the limit, cleaning proactively via autovacuum or `gin_clean_pending_list()`, or disabling `fastupdate` when steady latency matters more than bulk insert throughput.
 
 ## SQL Joins
 
@@ -40,7 +44,7 @@ Source: [SQL Joins](20.4.2.02-joins.md)
 
 **Q:** When can a nested-loop join be an appropriate plan?
 
-**A:** It repeats inner matching for each outer row. A small/selective outer input and economical inner lookup can fit well; without such support, pair comparisons and output fan-out can dominate. A B-tree lookup is not universally constant-time.
+**A:** It repeats inner matching for each outer row. A small, selective outer input and economical inner lookup can fit well; without such support, pair comparisons and output fan-out can dominate. A B-tree lookup is not universally constant-time.
 
 **Q:** How does sorted input help a merge join find matching rows?
 
@@ -48,7 +52,7 @@ Source: [SQL Joins](20.4.2.02-joins.md)
 
 **Q:** How does a hash join use memory to find matches?
 
-**A:** It builds a key-organized candidate table for one input and probes from the other. Equality, skew, output multiplicity and memory/batches affect work. Spill can increase temporary I/O; this does not imply that an indexed nested loop is always better.
+**A:** It builds a key-organized candidate table for one input and probes from the other. Equality, skew, output multiplicity, and memory and batches affect work. Spill can increase temporary I/O; this does not imply that an indexed nested loop is always better.
 
 **Q:** Why does `COUNT(*)` over a left join report one row for a patient with no appointment?
 
@@ -72,11 +76,11 @@ Source: [Execution Plans & Query Optimization](20.4.2.03-execution-plans.md)
 
 **Q:** What does the execution plan add beyond the SQL query text?
 
-**A:** It shows scans/operators, row-flow structure and estimates; instrumented execution adds observations. Pool wait, network transfer and client decoding remain outside executor time. Lock and I/O waits during execution count toward it; PostgreSQL 17+ can separately measure server-side result serialization.
+**A:** It shows scans and operators, row-flow structure, and estimates; instrumented execution adds observations. Pool wait, network transfer and client decoding remain outside executor time. Lock and I/O waits during execution count toward it; PostgreSQL 17+ can separately measure server-side result serialization.
 
 **Q:** What does `Index Searches` add to `loops` in a PostgreSQL 18 plan?
 
-**A:** One node execution can do multiple index searches, such as for an `IN`/`ANY` condition or B-tree skip scan. Read the search count alongside loops to understand repeated access; neither value alone gives the total endpoint latency.
+**A:** One node execution can do multiple index searches, such as for an `IN` or `ANY` condition or B-tree skip scan. Read the search count alongside loops to understand repeated access; neither value alone gives the total endpoint latency.
 
 **Q:** How can a generic plan help diagnose parameter-sensitive behavior, and what does it leave out?
 
@@ -88,15 +92,19 @@ Source: [Execution Plans & Query Optimization](20.4.2.03-execution-plans.md)
 
 **Q:** How should you trace a slow plan from its inputs to its result?
 
-**A:** Follow input rows through filtering, joins, sorting and output; inspect estimates against observed rows and repetition. Rows/time are generally per-loop averages and parent time/buffers include children. `LIMIT` may stop early, so avoid adding inclusive numbers or labeling the largest cost the measured bottleneck.
+**A:** Follow input rows through filtering, joins, sorting and output; inspect estimates against observed rows and repetition. Rows and time are generally per-loop averages, and parent time and buffers include children. `LIMIT` may stop early, so avoid adding inclusive numbers or labeling the largest cost the measured bottleneck.
 
 **Q:** Does a lower estimated cost prove a lower observed runtime across two different queries?
 
-**A:** No. Cost is a planner estimate under its model, not milliseconds or an independent benchmark. Compare equivalent output, representative parameters and observed rows/loops/buffers; output shape and cache/environment can change work.
+**A:** No. Cost is a planner estimate under its model, not milliseconds or an independent benchmark. Compare equivalent output, representative parameters and observed rows, loops, and buffers; output shape and cache or environment can change work.
 
 **Q:** What happens when `EXPLAIN ANALYZE` instruments an `UPDATE` inside a transaction that later rolls back?
 
 **A:** The mutation runs and takes locks; its transactional fixture value changes before rollback. Rollback restores that value, but sequence increments or external effects are not universally undone. Use a safe environment.
+
+**Q:** Why can `WHERE city = 'Paris' AND country = 'France'` cause a catastrophic Nested Loop plan even right after `ANALYZE`, and what fixes it?
+
+**A:** Standard per-column statistics assume independence, so the planner multiplies both selectivities and drastically underestimates matching rows. Creating multivariate extended statistics (`CREATE STATISTICS` with `dependencies` or `mcv`) followed by `ANALYZE` corrects the joint estimate.
 
 ## PostgreSQL Window Functions
 
@@ -108,11 +116,11 @@ Source: [PostgreSQL Window Functions](20.4.2.04-window-functions.md)
 
 **Q:** What do `PARTITION BY`, `ORDER BY`, and the frame clause each control?
 
-**A:** Partition divides the filtered input; window `ORDER BY` sequences rows and defines peers through equal ordering keys; a frame bounds contributing rows for frame-sensitive functions. Ranking and lag/lead have partition/order semantics rather than treating all functions as frame aggregates. Final output ordering is separate.
+**A:** Partition divides the filtered input; window `ORDER BY` sequences rows and defines peers through equal ordering keys; a frame bounds contributing rows for frame-sensitive functions. Ranking and lag or lead have partition and order semantics rather than treating all functions as frame aggregates. Final output ordering is separate.
 
 **Q:** Why must a query use an outer filter to select rows by a window-function result?
 
-**A:** `WHERE` decides the input before window calculations exist. Compute the value in a subquery/CTE, then filter outside. Moving a filter outside can deliberately change which rows contributed to ranking/totals; PostgreSQL 18 has no `QUALIFY` clause.
+**A:** `WHERE` decides the input before window calculations exist. Compute the value in a subquery or CTE, then filter outside. Moving a filter outside can deliberately change which rows contributed to ranking or totals; PostgreSQL 18 has no `QUALIFY` clause.
 
 **Q:** Can `lag` skip NULL values in PostgreSQL 18?
 
@@ -122,7 +130,7 @@ Source: [PostgreSQL Window Functions](20.4.2.04-window-functions.md)
 
 **A:** The salary-only order makes them peers, and default `RANGE` extends through the current row's last peer. Explicit `ROWS` ordered by salary and ID yields 180 then 260. `last_value` also sees its frame unless a full-partition frame is specified.
 
-**Q:** What changes if “top two” means two distinct salary levels rather than two employees?
+**Q:** What changes if "top two" means two distinct salary levels rather than two employees?
 
 **A:** Deterministic `row_number` selects two rows; salary-only `dense_rank <= 2` includes every peer in the top two salary groups. Adding an ID to rank ordering removes salary-only peers and changes that meaning.
 
@@ -132,11 +140,11 @@ Source: [PostgreSQL JSONB](20.4.2.05-jsonb.md)
 
 **Q:** When is JSONB useful for data whose fields vary between records?
 
-**A:** It keeps queryable variable attributes inside a relational row while stable identity/tenant/relationships can remain columns. Define the document shape/version and update ownership; flexible syntax does not remove business validation.
+**A:** It keeps queryable variable attributes inside a relational row while stable identity, tenant, and relationships can remain columns. Define the document shape and version and update ownership; flexible syntax does not remove business validation.
 
 **Q:** What write, indexing, and estimation costs come with JSONB?
 
-**A:** Document parsing/new row versions, compatible indexes, value size and whole-row contention all matter. A document GIN does not accelerate every extracted expression. Frequently queried paths can be indexed or promoted to typed columns when their stable constraints/statistics/ownership benefit.
+**A:** Document parsing and new row versions, compatible indexes, value size, and whole-row contention all matter. A document GIN does not accelerate every extracted expression. Frequently queried paths can be indexed or promoted to typed columns when their stable constraints, statistics, and ownership benefit.
 
 **Q:** Where should validation happen when data is stored in JSONB?
 
@@ -144,7 +152,7 @@ Source: [PostgreSQL JSONB](20.4.2.05-jsonb.md)
 
 **Q:** In the JSONB fixture, how can `note` exist while its text extraction is SQL `NULL`?
 
-**A:** `note` stores JSON `null`. Existence is true and `jsonb_typeof` yields the text `null`, while `->>` yields SQL `NULL`. A missing key also extracts SQL `NULL`, so use existence/type to distinguish the states.
+**A:** `note` stores JSON `null`. Existence is true and `jsonb_typeof` yields the text `null`, while `->>` yields SQL `NULL`. A missing key also extracts SQL `NULL`, so use existence and type to distinguish the states.
 
 **Q:** Why does a stale replacement affect no row, and does `jsonb_path_ops` support a key-existence query?
 
@@ -152,7 +160,11 @@ Source: [PostgreSQL JSONB](20.4.2.05-jsonb.md)
 
 **Q:** When is `JSON_TABLE` useful, and which boundary should a senior engineer make explicit?
 
-**A:** PostgreSQL 17+ can project matching JSON values into relational rows and typed columns. Choose the row/path shape and define `ON EMPTY` and `ON ERROR` behavior so missing fields and failed conversions do not silently become accepted values.
+**A:** PostgreSQL 17+ can project matching JSON values into relational rows and typed columns. Choose the row and path shape and define `ON EMPTY` and `ON ERROR` behavior so missing fields and failed conversions do not silently become accepted values.
+
+**Q:** Why does updating a single 10-byte counter inside a 20 KiB JSONB document amplify WAL and table bloat?
+
+**A:** Large JSONB values are compressed and stored out-of-line in TOAST tables; any mutation decompresses, rewrites, and re-TOASTs the entire document as a new version, so hot scalar fields belong in separate ordinary columns.
 
 ## Summary
 

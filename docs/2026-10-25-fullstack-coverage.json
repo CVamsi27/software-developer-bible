@@ -10083,7 +10083,7 @@
     },
     {
       "path": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-postgresql.md",
-      "sha256": "924216f5713c48f91f6c893d83dbc728a27adcd385a0f2e897b34bf6774982c7",
+      "sha256": "e313aa1c3d98cee627ce230ade469fa37be5b44a766f628ac962576808f6428d",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -10105,19 +10105,19 @@
       },
       "review": {
         "path": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-postgresql.md",
-        "sha256": "924216f5713c48f91f6c893d83dbc728a27adcd385a0f2e897b34bf6774982c7",
+        "sha256": "e313aa1c3d98cee627ce230ade469fa37be5b44a766f628ac962576808f6428d",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 12A D1-D7 rework of 20.4.1 and 20.4.2 C1-C8 refinement (2026-11-24): Full read of 203 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.02-normalization.md",
-      "sha256": "12d2f5bd324f3be8c61da3bbabfb8c5e98216f858d621978e84fe49285985d45",
+      "sha256": "9b6c78543c6500880dd17aac8186782cd0717c155e446aec307cccc8abccf34c",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -10139,19 +10139,19 @@
       },
       "review": {
         "path": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.02-normalization.md",
-        "sha256": "12d2f5bd324f3be8c61da3bbabfb8c5e98216f858d621978e84fe49285985d45",
+        "sha256": "9b6c78543c6500880dd17aac8186782cd0717c155e446aec307cccc8abccf34c",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 12A D1-D7 rework of 20.4.1 and 20.4.2 C1-C8 refinement (2026-11-24): Full read of 209 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.md",
-      "sha256": "86ab1d0261877291dfc17526628b38abf507c879432f19234a162be5d93c344e",
+      "sha256": "9ac44b033db7a6be0f96df7d546f625e7b0f611863bcc2a193b910691c3e19f6",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -10173,19 +10173,19 @@
       },
       "review": {
         "path": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.md",
-        "sha256": "86ab1d0261877291dfc17526628b38abf507c879432f19234a162be5d93c344e",
+        "sha256": "9ac44b033db7a6be0f96df7d546f625e7b0f611863bcc2a193b910691c3e19f6",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 12A D1-D7 rework of 20.4.1 and 20.4.2 C1-C8 refinement (2026-11-24): Full read of 259 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md",
-      "sha256": "52fd5966ddc6d0c345db7309463e87ce67f6a9a661a67267583510e8882342a8",
+      "sha256": "bef8036ed3e83faf9f645d59043fc780a7b16533f47d47ac1fac7c871fd4eabc",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -10206,19 +10206,19 @@
       },
       "review": {
         "path": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md",
-        "sha256": "52fd5966ddc6d0c345db7309463e87ce67f6a9a661a67267583510e8882342a8",
+        "sha256": "bef8036ed3e83faf9f645d59043fc780a7b16533f47d47ac1fac7c871fd4eabc",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 12A D1-D7 rework of 20.4.1 and 20.4.2 C1-C8 refinement (2026-11-24): Full read of 196 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.05-postgresql-performance.md",
-      "sha256": "a6b4b9d322f3d9fa8de9dd8c7f3e748338b7b164393dc6d75f1c9d391a78359a",
+      "sha256": "06d6ab9ed13e688dc09b9cc209541c14d8e5061670711dec268fa8cfe1451ab5",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -10241,19 +10241,19 @@
       },
       "review": {
         "path": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.05-postgresql-performance.md",
-        "sha256": "a6b4b9d322f3d9fa8de9dd8c7f3e748338b7b164393dc6d75f1c9d391a78359a",
+        "sha256": "06d6ab9ed13e688dc09b9cc209541c14d8e5061670711dec268fa8cfe1451ab5",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 12A D1-D7 rework of 20.4.1 and 20.4.2 C1-C8 refinement (2026-11-24): Full read of 229 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.06-row-level-security.md",
-      "sha256": "28640d9367ced45bbb660abd11b3885e20f3e56a040984ccc72f320456fb8d9a",
+      "sha256": "fe40d799c07d176ccd17beec6c317bf7183fa178b2dc064aa7db2f6eb63f62b8",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -10276,10 +10276,10 @@
       },
       "review": {
         "path": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.06-row-level-security.md",
-        "sha256": "28640d9367ced45bbb660abd11b3885e20f3e56a040984ccc72f320456fb8d9a",
+        "sha256": "fe40d799c07d176ccd17beec6c317bf7183fa178b2dc064aa7db2f6eb63f62b8",
         "genre": "learning-chapter",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 12A D1-D7 rework of 20.4.1 and 20.4.2 C1-C8 refinement (2026-11-24): Full read of 245 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -10288,7 +10288,7 @@
     },
     {
       "path": "20-backend/20.4-database/01-postgresql-foundations/INDEX.md",
-      "sha256": "1e816719f30d0a51598b93fa6da0f3e34a3576cd8adea44c69df46b47162ec37",
+      "sha256": "0dd6675507aa5eb48b34a62c465b1cdb60f639f614ca27e9d3c8ffc44b1b1bac",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -10305,10 +10305,10 @@
       },
       "review": {
         "path": "20-backend/20.4-database/01-postgresql-foundations/INDEX.md",
-        "sha256": "1e816719f30d0a51598b93fa6da0f3e34a3576cd8adea44c69df46b47162ec37",
+        "sha256": "0dd6675507aa5eb48b34a62c465b1cdb60f639f614ca27e9d3c8ffc44b1b1bac",
         "genre": "index",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 12A D1-D7 rework of 20.4.1 and 20.4.2 C1-C8 refinement (2026-11-24): Full read of 57 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -10317,7 +10317,7 @@
     },
     {
       "path": "20-backend/20.4-database/01-postgresql-foundations/REVISION.md",
-      "sha256": "d0f9835fb026186f3973c5d4071e2d3569cade9595d0e940f3067f19334a5bfc",
+      "sha256": "58a02d905dbfae2bb7f5c94142c6610deac98f19dbf8e84afa79d15e23f23d77",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -10333,16 +10333,16 @@
           "References & Learn More"
         ],
         "code_fences": 0,
-        "revision_questions": 37,
+        "revision_questions": 40,
         "has_summary": true,
         "has_first_principles": false
       },
       "review": {
         "path": "20-backend/20.4-database/01-postgresql-foundations/REVISION.md",
-        "sha256": "d0f9835fb026186f3973c5d4071e2d3569cade9595d0e940f3067f19334a5bfc",
+        "sha256": "58a02d905dbfae2bb7f5c94142c6610deac98f19dbf8e84afa79d15e23f23d77",
         "genre": "revision",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 12A D1-D7 rework of 20.4.1 and 20.4.2 C1-C8 refinement (2026-11-24): Full read of 207 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -10351,7 +10351,7 @@
     },
     {
       "path": "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md",
-      "sha256": "3dfe1f4eabd8e79a01f2f04c85020571b1623d9e60a7d5cf1de9be3ecd355bac",
+      "sha256": "3739904015bd468442c2ac1741e00985b2d14f880a23cb4b249bef7070db654f",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -10373,19 +10373,19 @@
       },
       "review": {
         "path": "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md",
-        "sha256": "3dfe1f4eabd8e79a01f2f04c85020571b1623d9e60a7d5cf1de9be3ecd355bac",
+        "sha256": "3739904015bd468442c2ac1741e00985b2d14f880a23cb4b249bef7070db654f",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 12A D1-D7 rework of 20.4.1 and 20.4.2 C1-C8 refinement (2026-11-24): Full read of 171 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.4-database/02-querying-and-optimization/20.4.2.02-joins.md",
-      "sha256": "1120faf6744844e66033a9879d28a8f3f25a5277312b2867fd37c3bee538bc91",
+      "sha256": "61dec1dbfcc4cfa905b35d367d2a751de56900fa9507c16e548d5ac32e534a26",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -10410,19 +10410,19 @@
       },
       "review": {
         "path": "20-backend/20.4-database/02-querying-and-optimization/20.4.2.02-joins.md",
-        "sha256": "1120faf6744844e66033a9879d28a8f3f25a5277312b2867fd37c3bee538bc91",
+        "sha256": "61dec1dbfcc4cfa905b35d367d2a751de56900fa9507c16e548d5ac32e534a26",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 12A D1-D7 rework of 20.4.1 and 20.4.2 C1-C8 refinement (2026-11-24): Full read of 225 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md",
-      "sha256": "c7d6b6666f6aefcd30087274f3d457478acb3d305ad6b17263bc1d38e90cfa08",
+      "sha256": "0c9020c316ba0d2302a4aef9c2b58bc0b56d83565ee08ab2b9345591ee5cf319",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -10444,12 +10444,12 @@
       },
       "review": {
         "path": "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md",
-        "sha256": "c7d6b6666f6aefcd30087274f3d457478acb3d305ad6b17263bc1d38e90cfa08",
+        "sha256": "0c9020c316ba0d2302a4aef9c2b58bc0b56d83565ee08ab2b9345591ee5cf319",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 12A D1-D7 rework of 20.4.1 and 20.4.2 C1-C8 refinement (2026-11-24): Full read of 171 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": [],
         "metadataReview": {
@@ -10462,7 +10462,7 @@
     },
     {
       "path": "20-backend/20.4-database/02-querying-and-optimization/20.4.2.04-window-functions.md",
-      "sha256": "c050a4805972c245a392306913545149d63c62578c0fc0ca0a164472a65cedba",
+      "sha256": "c1de870467f2bed1e4b49ed9e22efa05a9afa950d6ebc8718e3b6d3e0014a840",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -10484,19 +10484,19 @@
       },
       "review": {
         "path": "20-backend/20.4-database/02-querying-and-optimization/20.4.2.04-window-functions.md",
-        "sha256": "c050a4805972c245a392306913545149d63c62578c0fc0ca0a164472a65cedba",
+        "sha256": "c1de870467f2bed1e4b49ed9e22efa05a9afa950d6ebc8718e3b6d3e0014a840",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 12A D1-D7 rework of 20.4.1 and 20.4.2 C1-C8 refinement (2026-11-24): Full read of 223 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.4-database/02-querying-and-optimization/20.4.2.05-jsonb.md",
-      "sha256": "1080410b09f6d036e43bda21a360c8d42071f6e3cfc4afcf913f2430f2f6577f",
+      "sha256": "7c8766a2be1dcb9fb403cc718e0fe5372a0f5bfe5f20e84aae4bee21c8beda80",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -10519,19 +10519,19 @@
       },
       "review": {
         "path": "20-backend/20.4-database/02-querying-and-optimization/20.4.2.05-jsonb.md",
-        "sha256": "1080410b09f6d036e43bda21a360c8d42071f6e3cfc4afcf913f2430f2f6577f",
+        "sha256": "7c8766a2be1dcb9fb403cc718e0fe5372a0f5bfe5f20e84aae4bee21c8beda80",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 12A D1-D7 rework of 20.4.1 and 20.4.2 C1-C8 refinement (2026-11-24): Full read of 211 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.4-database/02-querying-and-optimization/INDEX.md",
-      "sha256": "fcfc067535e9093dfd9196e26df73deee2def472d0095928358b1922ceec48c1",
+      "sha256": "cc48ed5b78f18e5b19efc08e28e7e0f26f48040acf22c48ab96946b6b5f2a789",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -10547,12 +10547,12 @@
       },
       "review": {
         "path": "20-backend/20.4-database/02-querying-and-optimization/INDEX.md",
-        "sha256": "fcfc067535e9093dfd9196e26df73deee2def472d0095928358b1922ceec48c1",
+        "sha256": "cc48ed5b78f18e5b19efc08e28e7e0f26f48040acf22c48ab96946b6b5f2a789",
         "genre": "navigation-index",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 12A D1-D7 rework of 20.4.1 and 20.4.2 C1-C8 refinement (2026-11-24): Full read of 53 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": [],
         "metadataReview": {
@@ -10565,7 +10565,7 @@
     },
     {
       "path": "20-backend/20.4-database/02-querying-and-optimization/REVISION.md",
-      "sha256": "9032a0b791017ede312f09d545f00acc7e65a32736f6eeb7e95eb00d8508af32",
+      "sha256": "f28e6fd2de5d921f7c5a66a86fa6a4277fb1244bd133b79ac1e17e757046b98b",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -10580,18 +10580,18 @@
           "References & Learn More"
         ],
         "code_fences": 0,
-        "revision_questions": 31,
+        "revision_questions": 34,
         "has_summary": true,
         "has_first_principles": false
       },
       "review": {
         "path": "20-backend/20.4-database/02-querying-and-optimization/REVISION.md",
-        "sha256": "9032a0b791017ede312f09d545f00acc7e65a32736f6eeb7e95eb00d8508af32",
+        "sha256": "f28e6fd2de5d921f7c5a66a86fa6a4277fb1244bd133b79ac1e17e757046b98b",
         "genre": "revision-companion",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 12A D1-D7 rework of 20.4.1 and 20.4.2 C1-C8 refinement (2026-11-24): Full read of 179 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
@@ -11237,7 +11237,7 @@
     },
     {
       "path": "20-backend/20.4-database/INDEX.md",
-      "sha256": "e23bce594013af6bd317775bc924786227686ed866cabb07c04788ef53b2a8b7",
+      "sha256": "b5902c0ae61e9518d9f8c4a5a232951f70fab360fd7b2cc714404ad679471f20",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -11262,12 +11262,12 @@
       },
       "review": {
         "path": "20-backend/20.4-database/INDEX.md",
-        "sha256": "e23bce594013af6bd317775bc924786227686ed866cabb07c04788ef53b2a8b7",
+        "sha256": "b5902c0ae61e9518d9f8c4a5a232951f70fab360fd7b2cc714404ad679471f20",
         "genre": "navigation-index",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 12A D1-D7 rework of 20.4.1 and 20.4.2 C1-C8 refinement (2026-11-24): Full read of 172 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": [],
         "metadataReview": {
@@ -14227,7 +14227,7 @@
     },
     {
       "path": "20-backend/INDEX.md",
-      "sha256": "a159d54d891599b6d3ad3e97c1ac984d8e781605dfd616b0d61261df6aa7518e",
+      "sha256": "8d3aad30a8b62341e921f83b9468c43a44bdeb9ffa5542199e082a1ed8b195cc",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -14246,12 +14246,12 @@
       },
       "review": {
         "path": "20-backend/INDEX.md",
-        "sha256": "a159d54d891599b6d3ad3e97c1ac984d8e781605dfd616b0d61261df6aa7518e",
+        "sha256": "8d3aad30a8b62341e921f83b9468c43a44bdeb9ffa5542199e082a1ed8b195cc",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 11C D1-D7 rework of 20.3.4, 20.3.5, and 20.3 INDEX (completes 20.3-rest-apis) count/read-time sync (2026-11-24): Full read of 122 lines. Updated generated counts/read-time navigation after Phase 11C D1-D7 rework of 20.3.4, 20.3.5, and 20.3 INDEX (completes 20.3-rest-apis).",
+        "notes": "Phase 12A D1-D7 rework of 20.4.1 and 20.4.2 count/read-time sync (2026-11-24): Full read of 122 lines. Updated generated counts/read-time navigation after Phase 12A D1-D7 rework of 20.4.1 and 20.4.2.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "ab7ced08ffe012474a86db7f5ff38398ca691458b124ed67f5bf5a2780894865",
@@ -31035,7 +31035,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "87b3bbcd0a9fabdcb866142d9ef7a38c3aff335387be03eeb40ba41b8aa6ecbc",
+      "sha256": "4df7603bbb0c1976f5684bc7a0fbbfa351566e98632a3c2f17ef49e902142896",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -31053,12 +31053,12 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "87b3bbcd0a9fabdcb866142d9ef7a38c3aff335387be03eeb40ba41b8aa6ecbc",
+        "sha256": "4df7603bbb0c1976f5684bc7a0fbbfa351566e98632a3c2f17ef49e902142896",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 11C D1-D7 rework of 20.3.4, 20.3.5, and 20.3 INDEX (completes 20.3-rest-apis) count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 11C D1-D7 rework of 20.3.4, 20.3.5, and 20.3 INDEX (completes 20.3-rest-apis).",
+        "notes": "Phase 12A D1-D7 rework of 20.4.1 and 20.4.2 count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 12A D1-D7 rework of 20.4.1 and 20.4.2.",
         "findings": []
       }
     },
@@ -31638,7 +31638,7 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "7f225fb7e5f3b8b168bdc736850cbfbb9f0b34d15c6570e7fc8f181a3cd048ff",
+      "sha256": "bdeedbfaf88016cf3c735d648fd51d43aa22e89e28b603985bb2604d93b8882f",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31656,12 +31656,12 @@
       },
       "review": {
         "path": "docs/api-contract.md",
-        "sha256": "7f225fb7e5f3b8b168bdc736850cbfbb9f0b34d15c6570e7fc8f181a3cd048ff",
+        "sha256": "bdeedbfaf88016cf3c735d648fd51d43aa22e89e28b603985bb2604d93b8882f",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 11C D1-D7 rework of 20.3.4, 20.3.5, and 20.3 INDEX (completes 20.3-rest-apis) count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 11C D1-D7 rework of 20.3.4, 20.3.5, and 20.3 INDEX (completes 20.3-rest-apis).",
+        "notes": "Phase 12A D1-D7 rework of 20.4.1 and 20.4.2 count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 12A D1-D7 rework of 20.4.1 and 20.4.2.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

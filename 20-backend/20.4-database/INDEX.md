@@ -1,6 +1,6 @@
 # Database — Index
 
-> **Study time:** ≈ 4 h 17 m of reading (29 files, ~9 min average).
+> **Study time:** ≈ 4 h 23 m of reading (29 files, ~9 min average).
 > **29 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma (plus the ORM/query-builder landscape), execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, backups/PITR recovery, search infrastructure at scale, window functions, JSONB, replication, row-level security, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-29-blue)](../../INDEX.md)
@@ -46,11 +46,11 @@ Trace how PostgreSQL stores changes, enforces constraints and exposes visible ro
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [PostgreSQL](01-postgresql-foundations/20.4.1.01-postgresql.md) | Architecture, WAL, vacuum, configuration, extensions, autovacuum | Essential | Foundational | 12 min |
-| 02 | [Normalization](01-postgresql-foundations/20.4.1.02-normalization.md) | 1NF, 2NF, 3NF, BCNF, denormalization trade-offs, when to denormalize | Important | Important | 10 min |
+| 02 | [Normalization](01-postgresql-foundations/20.4.1.02-normalization.md) | 1NF, 2NF, 3NF, BCNF, denormalization trade-offs, when to denormalize | Important | Important | 11 min |
 | 03 | [MVCC](01-postgresql-foundations/20.4.1.03-mvcc.md) | Multiversion concurrency control, visibility rules, tuple versions, vacuum | Important | Important | 13 min |
 | 04 | [SQL vs NoSQL](01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md) | Workload fit, CAP, consistency models, polyglot persistence, when to use what | Essential | Foundational | 11 min |
 | 05 | [PostgreSQL Performance](01-postgresql-foundations/20.4.1.05-postgresql-performance.md) | Connection tuning, memory tuning, query optimization, VACUUM, partitioning, monitoring queries | Essential | Foundational | 12 min |
-| 06 | [Row-Level Security](01-postgresql-foundations/20.4.1.06-row-level-security.md) | Subject roles, transaction context, old-row visibility, new-row checks, policy composition | Essential | Foundational | 12 min |
+| 06 | [Row-Level Security](01-postgresql-foundations/20.4.1.06-row-level-security.md) | Subject roles, transaction context, old-row visibility, new-row checks, policy composition | Essential | Foundational | 13 min |
 
 ---
 
@@ -60,11 +60,11 @@ Choose indexes and query shapes from filters, joins and measured execution plans
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Indexes](02-querying-and-optimization/20.4.2.01-indexes.md) | B-tree, hash, GiST, GIN, BRIN, composite indexes, index-only scans, partial indexes | Essential | Foundational | 9 min |
+| 01 | [Indexes](02-querying-and-optimization/20.4.2.01-indexes.md) | B-tree, hash, GiST, GIN, BRIN, composite indexes, index-only scans, partial indexes | Essential | Foundational | 10 min |
 | 02 | [Joins](02-querying-and-optimization/20.4.2.02-joins.md) | INNER, LEFT, RIGHT, FULL, CROSS, LATERAL, hash/merge/nested loop joins, join order | Essential | Foundational | 10 min |
 | 03 | [Execution Plans](02-querying-and-optimization/20.4.2.03-execution-plans.md) | EXPLAIN ANALYZE, row estimates and loops, buffers, generic plans (16+), serialization (17+), index searches (18+) | Essential | Foundational | 9 min |
-| 04 | [Window Functions](02-querying-and-optimization/20.4.2.04-window-functions.md) | ROW_NUMBER, RANK, LAG, LEAD, aggregate OVER, running totals, moving averages | Essential | Foundational | 10 min |
-| 05 | [JSONB](02-querying-and-optimization/20.4.2.05-jsonb.md) | Extraction, missing vs null, operator-compatible GIN, SQL/JSON `JSON_TABLE` (PostgreSQL 17+) | Essential | Foundational | 10 min |
+| 04 | [Window Functions](02-querying-and-optimization/20.4.2.04-window-functions.md) | ROW_NUMBER, RANK, LAG, LEAD, aggregate OVER, running totals, moving averages | Essential | Foundational | 11 min |
+| 05 | [JSONB](02-querying-and-optimization/20.4.2.05-jsonb.md) | Extraction, missing vs null, operator-compatible GIN, SQL/JSON `JSON_TABLE` (PostgreSQL 17+) | Essential | Foundational | 11 min |
 
 ---
 

@@ -4628,244 +4628,244 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 11C D1-D7 rework of 20.3.4, 20.3.5, and 20.3 INDEX (completes 20.3-rest-apis))."
   },
   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-postgresql.md": {
-   "sha256": "924216f5713c48f91f6c893d83dbc728a27adcd385a0f2e897b34bf6774982c7",
+   "sha256": "e313aa1c3d98cee627ce230ade469fa37be5b44a766f628ac962576808f6428d",
    "lines": 203,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current PostgreSQL documentation for WAL, resource settings, constraints, and materialized-view refresh.",
-    "readable": "Full read of 203 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1756 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 203 lines (1827 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1827 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical PostgreSQL overview; points at 20.4.1.03 for MVCC traces, 20.4.1.05 for tuning, and 20.4.5.04 for backups/PITR.",
-    "fast": "30.9 KB raw / 9.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 30.9 KB raw / 9.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that SQL fixtures target PostgreSQL 16+ in a disposable database and were reviewed against docs rather than run on a live Postgres instance."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12A D1-D7 rework of 20.4.1 and 20.4.2)."
   },
   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.02-normalization.md": {
-   "sha256": "12d2f5bd324f3be8c61da3bbabfb8c5e98216f858d621978e84fe49285985d45",
+   "sha256": "9b6c78543c6500880dd17aac8186782cd0717c155e446aec307cccc8abccf34c",
    "lines": 209,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against relational normalization theory and PostgreSQL constraint/materialized-view docs.",
-    "readable": "Full read of 209 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1489 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 209 lines (1532 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1532 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical normalization chapter; points at 20.4.3.01 for cross-row transactions and 20.4.1.05 for read-cost measurement.",
-    "fast": "31.4 KB raw / 8.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 31.4 KB raw / 8.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that SQL keys and foreign keys enforce local structural dependencies but cannot express every multi-row lifecycle invariant without transactions."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12A D1-D7 rework of 20.4.1 and 20.4.2)."
   },
   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.md": {
-   "sha256": "86ab1d0261877291dfc17526628b38abf507c879432f19234a162be5d93c344e",
+   "sha256": "9ac44b033db7a6be0f96df7d546f625e7b0f611863bcc2a193b910691c3e19f6",
    "lines": 259,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current PostgreSQL MVCC, transaction-isolation, system-columns, and routine-vacuuming docs.",
-    "readable": "Full read of 259 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1694 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 259 lines (1745 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1745 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical MVCC visibility and cleanup chapter; points at 20.4.3.01 for isolation/retry design and 20.4.3.03 for locking.",
-    "fast": "34.2 KB raw / 9.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 34.2 KB raw / 9.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that MVCC snapshots never protect read-then-write stock invariants alone and long-running snapshots delay tuple reclamation."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12A D1-D7 rework of 20.4.1 and 20.4.2)."
   },
   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md": {
-   "sha256": "52fd5966ddc6d0c345db7309463e87ce67f6a9a661a67267583510e8882342a8",
+   "sha256": "bef8036ed3e83faf9f645d59043fc780a7b16533f47d47ac1fac7c871fd4eabc",
    "lines": 196,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against MongoDB data-modeling/transactions docs, DynamoDB ConsistentRead/partition-key docs, Gilbert & Lynch CAP, and Elasticsearch NRT docs.",
-    "readable": "Full read of 196 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1518 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 196 lines (1559 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1559 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical database-model selection chapter; points at 20.8.01 for caching, 20.4.5.05 for search, and 20.6.3.06 for outbox sync.",
-    "fast": "31.3 KB raw / 9.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 31.3 KB raw / 9.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that driver fragments are illustrative model traces and product guarantees always depend on exact deployment topology and configuration."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12A D1-D7 rework of 20.4.1 and 20.4.2)."
   },
   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.05-postgresql-performance.md": {
-   "sha256": "a6b4b9d322f3d9fa8de9dd8c7f3e748338b7b164393dc6d75f1c9d391a78359a",
+   "sha256": "06d6ab9ed13e688dc09b9cc209541c14d8e5061670711dec268fa8cfe1451ab5",
    "lines": 229,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current PostgreSQL EXPLAIN, pg_stat_statements, cumulative statistics, resource settings, and partitioning docs.",
-    "readable": "Full read of 229 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1636 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 229 lines (1699 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1699 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical PostgreSQL tuning chapter; points at 20.4.2.01 for index types, 20.4.2.03 for plan nodes, and 20.4.5.01 for connection pooling.",
-    "fast": "32.0 KB raw / 9.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 32.0 KB raw / 9.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that the 10,000-row fixture illustrates selective plan changes rather than guaranteeing production latency improvements across different distributions."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12A D1-D7 rework of 20.4.1 and 20.4.2)."
   },
   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.06-row-level-security.md": {
-   "sha256": "28640d9367ced45bbb660abd11b3885e20f3e56a040984ccc72f320456fb8d9a",
+   "sha256": "fe40d799c07d176ccd17beec6c317bf7183fa178b2dc064aa7db2f6eb63f62b8",
    "lines": 245,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current PostgreSQL DDL rowsecurity, CREATE POLICY, PostgreSQL 15+ security_invoker views, and SECURITY DEFINER docs.",
-    "readable": "Full read of 245 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1592 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 245 lines (1635 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1635 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical PostgreSQL RLS chapter; points at 30.3.4.04 for multi-tenant isolation trade-offs and projects/docita/02-multi-tenancy-rls.md for the staged rollout case.",
-    "fast": "33.1 KB raw / 9.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 33.1 KB raw / 9.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that RLS using custom session settings trusts application code not to expose SQL injection and does not cover TRUNCATE, REFERENCES, superusers, or BYPASSRLS roles."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12A D1-D7 rework of 20.4.1 and 20.4.2)."
   },
   "20-backend/20.4-database/01-postgresql-foundations/INDEX.md": {
-   "sha256": "1e816719f30d0a51598b93fa6da0f3e34a3576cd8adea44c69df46b47162ec37",
+   "sha256": "0dd6675507aa5eb48b34a62c465b1cdb60f639f614ca27e9d3c8ffc44b1b1bac",
    "lines": 57,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against live files in 01-postgresql-foundations/; all links verified.",
-    "readable": "Full read of 57 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "201 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 57 lines (203 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "203 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical PostgreSQL Foundations category index; points at numbered chapters and REVISION.md.",
-    "fast": "12.3 KB raw / 3.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 12.3 KB raw / 3.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that index order assumes relational foundations before querying and transactions; experienced Postgres users can skip straight to MVCC or RLS."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12A D1-D7 rework of 20.4.1 and 20.4.2)."
   },
   "20-backend/20.4-database/01-postgresql-foundations/REVISION.md": {
-   "sha256": "d0f9835fb026186f3973c5d4071e2d3569cade9595d0e940f3067f19334a5bfc",
-   "lines": 195,
+   "sha256": "58a02d905dbfae2bb7f5c94142c6610deac98f19dbf8e84afa79d15e23f23d77",
+   "lines": 207,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against all 6 chapters in 01-postgresql-foundations/; all source links verified.",
-    "readable": "Full read of 195 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1902 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 207 lines (2073 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "2073 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical PostgreSQL Foundations revision companion; kept separate from learning chapters.",
-    "fast": "22.3 KB raw / 7.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 22.3 KB raw / 7.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that written recall checks conceptual accuracy and should be reinforced with live psql experiments and EXPLAIN ANALYZE reads."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12A D1-D7 rework of 20.4.1 and 20.4.2)."
   },
   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md": {
-   "sha256": "3dfe1f4eabd8e79a01f2f04c85020571b1623d9e60a7d5cf1de9be3ecd355bac",
+   "sha256": "3739904015bd468442c2ac1741e00985b2d14f880a23cb4b249bef7070db654f",
    "lines": 171,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against PostgreSQL 16-18 docs for index types, partial indexes, index-only scans, skip scan, HOT updates, and CREATE INDEX CONCURRENTLY.",
-    "readable": "Full read of 171 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1284 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 171 lines (1379 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1379 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical database indexing chapter; points at 20.4.2.03 for plan analysis and 20.4.5.02 for concurrent migration protocol.",
-    "fast": "26.7 KB raw / 7.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 26.7 KB raw / 7.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that SQL fixtures were verified against PostgreSQL 16-18 docs rather than executed on a live server, and index choice always depends on real workload distribution."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12A D1-D7 rework of 20.4.1 and 20.4.2)."
   },
   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.02-joins.md": {
-   "sha256": "1120faf6744844e66033a9879d28a8f3f25a5277312b2867fd37c3bee538bc91",
+   "sha256": "61dec1dbfcc4cfa905b35d367d2a751de56900fa9507c16e548d5ac32e534a26",
    "lines": 225,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against PostgreSQL joins tutorial and table expressions/LATERAL docs.",
-    "readable": "Full read of 225 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1242 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 225 lines (1304 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1304 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical SQL joins chapter; points at 20.4.2.01 for index access paths and 20.4.2.03 for execution-plan inspection.",
-    "fast": "33.4 KB raw / 8.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 33.4 KB raw / 8.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that planner join reordering and physical algorithm choice depend on table statistics and actual data skew."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12A D1-D7 rework of 20.4.1 and 20.4.2)."
   },
   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md": {
-   "sha256": "c7d6b6666f6aefcd30087274f3d457478acb3d305ad6b17263bc1d38e90cfa08",
+   "sha256": "0c9020c316ba0d2302a4aef9c2b58bc0b56d83565ee08ab2b9345591ee5cf319",
    "lines": 171,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against PostgreSQL 16, 17, and 18 EXPLAIN documentation and planner statistics docs.",
-    "readable": "Full read of 171 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1298 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 171 lines (1382 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1382 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical execution-plan chapter; points at 20.4.1.05 for holistic tuning and 20.4.5.01 for connection-pool wait outside plans.",
-    "fast": "26.7 KB raw / 7.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 26.7 KB raw / 7.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that EXPLAIN ANALYZE measures database execution only and excludes pool acquisition, network latency, and client decoding."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12A D1-D7 rework of 20.4.1 and 20.4.2)."
   },
   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.04-window-functions.md": {
-   "sha256": "c050a4805972c245a392306913545149d63c62578c0fc0ca0a164472a65cedba",
+   "sha256": "c1de870467f2bed1e4b49ed9e22efa05a9afa950d6ebc8718e3b6d3e0014a840",
    "lines": 223,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against PostgreSQL 18 window-function syntax, frame defaults, and NULL-handling docs.",
-    "readable": "Full read of 223 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1105 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 223 lines (1190 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1190 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical window-functions chapter; points at 20.4.2.02 for input grain before windowing and 20.4.2.03 for sort-spill diagnosis.",
-    "fast": "33.8 KB raw / 8.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 33.8 KB raw / 8.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that late-arriving events can change historical sessionization results unless persisted versions or correction rules are defined."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12A D1-D7 rework of 20.4.1 and 20.4.2)."
   },
   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.05-jsonb.md": {
-   "sha256": "1080410b09f6d036e43bda21a360c8d42071f6e3cfc4afcf913f2430f2f6577f",
+   "sha256": "7c8766a2be1dcb9fb403cc718e0fe5372a0f5bfe5f20e84aae4bee21c8beda80",
    "lines": 211,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against PostgreSQL 17+ SQL/JSON release notes and current JSONB operator/GIN documentation.",
-    "readable": "Full read of 211 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1250 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 211 lines (1361 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1361 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical PostgreSQL JSONB chapter; points at 20.4.1.04 for document-store comparisons and 20.4.3.03 for optimistic concurrency.",
-    "fast": "33.0 KB raw / 8.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 33.0 KB raw / 8.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that JSONB updates still lock and rewrite the containing row, and CHECK expressions yielding SQL NULL pass unless explicitly guarded."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12A D1-D7 rework of 20.4.1 and 20.4.2)."
   },
   "20-backend/20.4-database/02-querying-and-optimization/INDEX.md": {
-   "sha256": "fcfc067535e9093dfd9196e26df73deee2def472d0095928358b1922ceec48c1",
+   "sha256": "cc48ed5b78f18e5b19efc08e28e7e0f26f48040acf22c48ab96946b6b5f2a789",
    "lines": 53,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against all 6 files in 02-querying-and-optimization/ and PostgreSQL 16-18 plan/JSON features.",
-    "readable": "Full read of 53 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "132 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 53 lines (138 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "138 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical Querying & Optimization category index; points at numbered chapters and REVISION.md.",
-    "fast": "11.1 KB raw / 3.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 11.1 KB raw / 3.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is Docita anchors name source files to inspect and do not establish current production query plans."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12A D1-D7 rework of 20.4.1 and 20.4.2)."
   },
   "20-backend/20.4-database/02-querying-and-optimization/REVISION.md": {
-   "sha256": "9032a0b791017ede312f09d545f00acc7e65a32736f6eeb7e95eb00d8508af32",
-   "lines": 167,
+   "sha256": "f28e6fd2de5d921f7c5a66a86fa6a4277fb1244bd133b79ac1e17e757046b98b",
+   "lines": 179,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against all 5 chapters in 02-querying-and-optimization/; all links and version specifics verified.",
-    "readable": "Full read of 167 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1612 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 179 lines (1837 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1837 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical Querying & Optimization revision companion; kept separate from concept chapters.",
-    "fast": "21.5 KB raw / 7.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 21.5 KB raw / 7.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that conceptual recall does not replace reading live EXPLAIN (ANALYZE, BUFFERS) plans on production-shaped datasets."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12A D1-D7 rework of 20.4.1 and 20.4.2)."
   },
   "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.md": {
    "sha256": "fc003149e4df86fe08788028f8890b6780039b63965c4fe1a0f38baa5aa85dda",
@@ -5168,20 +5168,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
   },
   "20-backend/20.4-database/INDEX.md": {
-   "sha256": "e23bce594013af6bd317775bc924786227686ed866cabb07c04788ef53b2a8b7",
+   "sha256": "b5902c0ae61e9518d9f8c4a5a232951f70fab360fd7b2cc714404ad679471f20",
    "lines": 172,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against live files in 20.4-database/; all 29 file counts and category links verified.",
-    "readable": "Full read of 172 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 172 lines (425 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "425 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical Database stack index; points at category INDEX files without duplicating chapter explanations.",
-    "fast": "27.5 KB raw / 6.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 27.5 KB raw / 6.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is Docita anchors name source files to inspect and do not assert live production settings."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 12A D1-D7 rework of 20.4.1 and 20.4.2)."
   },
   "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.md": {
    "sha256": "91d2a09ec136f0548629d732ae2ed8cef90fb5313c62c1ead16d6db8763ee377",
@@ -6561,7 +6561,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
   },
   "20-backend/INDEX.md": {
-   "sha256": "a159d54d891599b6d3ad3e97c1ac984d8e781605dfd616b0d61261df6aa7518e",
+   "sha256": "8d3aad30a8b62341e921f83b9468c43a44bdeb9ffa5542199e082a1ed8b195cc",
    "lines": 122,
    "genre": "index",
    "status": "read",
@@ -6574,7 +6574,7 @@
     "fast": "Measured 15.4 KB raw / 5.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Remaining limit is study-hour path estimates are rough guides and depend on each reader's prior backend background."
    },
-   "notes": "Synced live read-time and counts after Phase 11C D1-D7 rework of 20.3.4, 20.3.5, and 20.3 INDEX (completes 20.3-rest-apis)."
+   "notes": "Synced live read-time and counts after Phase 12A D1-D7 rework of 20.4.1 and 20.4.2."
   },
   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md": {
    "sha256": "065e2b7d573b2298550d061453667084b1d010e6fadf07f903f6fdd34a8e5185",
@@ -14367,7 +14367,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "87b3bbcd0a9fabdcb866142d9ef7a38c3aff335387be03eeb40ba41b8aa6ecbc",
+   "sha256": "4df7603bbb0c1976f5684bc7a0fbbfa351566e98632a3c2f17ef49e902142896",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14380,7 +14380,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 11C D1-D7 rework of 20.3.4, 20.3.5, and 20.3 INDEX (completes 20.3-rest-apis)."
+   "notes": "Synced live read-time and counts after Phase 12A D1-D7 rework of 20.4.1 and 20.4.2."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14671,7 +14671,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "7f225fb7e5f3b8b168bdc736850cbfbb9f0b34d15c6570e7fc8f181a3cd048ff",
+   "sha256": "bdeedbfaf88016cf3c735d648fd51d43aa22e89e28b603985bb2604d93b8882f",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14684,7 +14684,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 11C D1-D7 rework of 20.3.4, 20.3.5, and 20.3 INDEX (completes 20.3-rest-apis)."
+   "notes": "Synced live read-time and counts after Phase 12A D1-D7 rework of 20.4.1 and 20.4.2."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

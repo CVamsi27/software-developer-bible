@@ -30,6 +30,10 @@ Source: [PostgreSQL for Backend Engineers](20.4.1.01-postgresql.md)
 
 **A:** Transaction and local settings belong to a database session. A query sent through another pooled connection does not inherit them; ending the transaction before release prevents the next request from inheriting unfinished state.
 
+**Q:** Why does `full_page_writes = on` prevent torn-page corruption, and why do overly frequent checkpoints inflate WAL volume?
+
+**A:** After each checkpoint, PostgreSQL writes a complete 8 KiB page image to WAL on the first change to that page so crash recovery can repair a partially written disk block. Checkpointing too often resets that cycle frequently and logs far more full-page images.
+
 ## Database Normalization
 
 Source: [Database Normalization](20.4.1.02-normalization.md)
@@ -68,7 +72,7 @@ Source: [MVCC (Multi-Version Concurrency Control)](20.4.1.03-mvcc.md)
 
 **Q:** How can a long-running transaction cause table bloat?
 
-**A:** A long-lived snapshot can prevent vacuum from reclaiming row versions still needed by that transaction. Monitor transaction age, retained versions and vacuum progress; MVCC reduces ordinary read/write blocking but adds cleanup and storage costs.
+**A:** A long-lived snapshot can prevent vacuum from reclaiming row versions still needed by that transaction. Monitor transaction age, retained versions, and vacuum progress; MVCC reduces ordinary read and write blocking but adds cleanup and storage costs.
 
 **Q:** A writer commits between two `SELECT`s in a transaction begun with plain `BEGIN`. Which balance does the second `SELECT` see?
 
@@ -96,15 +100,19 @@ Source: [SQL vs NoSQL — Choosing the Right Database](20.4.1.04-nosql-vs-sql.md
 
 **Q:** Which PostgreSQL features support workloads that might otherwise need a specialized store?
 
-**A:** JSONB can hold optional document attributes, partitioning can align data with query/retention boundaries, and replication can serve additional copies. Each has limits: not every JSON expression is indexed, partitions do not replace access paths, and replicas can lag.
+**A:** JSONB can hold optional document attributes, partitioning can align data with query and retention boundaries, and replication can serve additional copies. Each has limits: not every JSON expression is indexed, partitions do not replace access paths, and replicas can lag.
 
 **Q:** A committed order is present in its owner database but absent from search. Which part of the trace needs investigation?
 
-**A:** Publication, consumer progress and search refresh can lag or fail after the owner commit. Verify the durable publication/rebuild contract and the search freshness requirement; a transaction in the owner does not atomically update the derived index.
+**A:** Publication, consumer progress, and search refresh can lag or fail after the owner commit. Verify the durable publication and rebuild contract and the search freshness requirement; a transaction in the owner does not atomically update the derived index.
 
-**Q:** Does “eventual consistency” establish a fixed short delay or guarantee an immediate inventory decision?
+**Q:** Does "eventual consistency" establish a fixed short delay or guarantee an immediate inventory decision?
 
-**A:** No. Convergence depends on propagation and failure conditions and does not by itself bound staleness. Select an operation-specific read/mutation guarantee for authoritative decisions.
+**A:** No. Convergence depends on propagation and failure conditions and does not by itself bound staleness. Select an operation-specific read or mutation guarantee for authoritative decisions.
+
+**Q:** What trade-off does PACELC add beyond CAP when the network is healthy?
+
+**A:** Even without a partition (Else), distributed replication trades lower Latency against stronger Consistency—waiting for synchronous replica confirmation increases write or read latency while returning early allows stale observations.
 
 ## PostgreSQL Performance Tuning
 
@@ -112,7 +120,7 @@ Source: [PostgreSQL Performance Tuning](20.4.1.05-postgresql-performance.md)
 
 **Q:** How do you distinguish CPU work, I/O waits, and lock waits when tuning PostgreSQL?
 
-**A:** Use execution plans and buffer instrumentation to inspect query work, and activity/wait-event views to identify blocking or I/O waits. `EXPLAIN` alone does not report every wait cause; correlate observations with workload and host metrics.
+**A:** Use execution plans and buffer instrumentation to inspect query work, and activity and wait-event views to identify blocking or I/O waits. `EXPLAIN` alone does not report every wait cause; correlate observations with workload and host metrics.
 
 **Q:** Why can the same SQL query run with different execution plans?
 
@@ -128,11 +136,11 @@ Source: [PostgreSQL Performance Tuning](20.4.1.05-postgresql-performance.md)
 
 **Q:** How do you identify a slow query?
 
-**A:** Correlate application latency, pool waiting and database activity. Use workload statistics to prioritize, then safely inspect execution plans or wait/blocker evidence. A sequential scan or high mean time alone does not establish the cause.
+**A:** Correlate application latency, pool waiting and database activity. Use workload statistics to prioritize, then safely inspect execution plans or wait and blocker evidence. A sequential scan or high mean time alone does not establish the cause.
 
 **Q:** What's the difference between `VACUUM` and `VACUUM FULL`?
 
-**A:** Ordinary `VACUUM` makes eligible space reusable and normally permits ordinary reads/writes. `VACUUM FULL` rewrites with an exclusive lock and can return space to the operating system; plan capacity and availability before using it.
+**A:** Ordinary `VACUUM` makes eligible space reusable and normally permits ordinary reads and writes. `VACUUM FULL` rewrites with an exclusive lock and can return space to the operating system; plan capacity and availability before using it.
 
 **Q:** How do you prevent table bloat?
 
@@ -181,6 +189,10 @@ Source: [PostgreSQL Row-Level Security (RLS)](20.4.1.06-row-level-security.md)
 **Q:** What concurrency risk appears when an RLS policy reads a separate permission table?
 
 **A:** A protected query can evaluate an older permission snapshot while a concurrent transaction changes authorization. Define how revocation synchronizes with in-flight operations; use appropriate locks or another explicit serialization boundary when stale authorization is unacceptable.
+
+**Q:** Why does PostgreSQL prevent non-`LEAKPROOF` user predicates from running before an RLS policy filter?
+
+**A:** Evaluating an untrusted predicate (like division by zero or a failing cast) against hidden rows would create an error-based side channel exposing another tenant's data; restricting pushdown to `LEAKPROOF` functions protects confidentiality at a potential plan cost.
 
 ## Summary
 

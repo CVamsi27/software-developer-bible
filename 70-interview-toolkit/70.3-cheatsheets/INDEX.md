@@ -71,7 +71,7 @@ Read the opening trace first, then use the role tables to find the relevant comp
 
 ## Docita Anchor
 
-These references summarize mechanisms. Use a codebase artifact only after checking how it implements the stated contract. Docita itself lives at [github.com/CVamsi27/docita](https://github.com/CVamsi27/docita).
+These references summarize mechanisms. Use a codebase artifact only after checking how it implements the stated contract. Docita itself lives at [`github.com/CVamsi27/docita`](https://github.com/CVamsi27/docita).
 
 ## Finish This Section
 

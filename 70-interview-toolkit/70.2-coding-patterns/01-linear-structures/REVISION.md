@@ -92,6 +92,10 @@ Source: [Binary Search](70.2.1.03-binary-search.md)
 
 **A:** `mid` itself may be the minimum, so the right boundary becomes `mid` rather than `mid - 1`. Equal `mid` and `right` values do not identify the sorted side; a duplicates-aware search may need to remove one endpoint and take linear time.
 
+**Q:** Why does `left + ((right - left) >> 1)` break on large JavaScript answer-space searches, and why can `while (right - left > eps)` hang in floating-point binary search?
+
+**A:** Bitwise right shift coerces operands to signed 32-bit integers, corrupting midpoints above `2^31 - 1`; use `left + Math.floor((right - left) / 2)` across safe integers. On large floating-point intervals, `eps` can be smaller than the IEEE 754 gap between neighboring numbers so `mid` equals `left` or `right` indefinitely; cap the search with a fixed number of halving iterations instead.
+
 ### Linked Lists
 
 Source: [Linked Lists](70.2.1.04-linked-list-manipulation-patterns.md)

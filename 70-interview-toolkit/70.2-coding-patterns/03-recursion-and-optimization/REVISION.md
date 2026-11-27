@@ -32,7 +32,7 @@ Source: [Dynamic Programming](70.2.3.02-dynamic-programming.md)
 
 **Q:** Why does loop direction distinguish 0-1 from unbounded knapsack in one dimension?
 
-**A:** In 0/1 knapsack, each item can be used once. Updating capacities from high to low reads results from before that item was added. Updating low to high can read a result already updated with the current item, allowing it to be used again; that suits unbounded knapsack. Follow which earlier result each update reads.
+**A:** In 0-1 knapsack, each item can be used once. Updating capacities from high to low reads results from before that item was added. Updating low to high can read a result already updated with the current item, allowing it to be used again; that suits unbounded knapsack. Follow which earlier result each update reads.
 
 ## Bit Manipulation
 

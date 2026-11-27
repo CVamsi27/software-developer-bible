@@ -76,6 +76,10 @@ Source: [Shortest Paths](70.2.2.02-shortest-paths-dijkstra-bellman-ford.md)
 
 **A:** It indicates a reachable negative cycle; affected values cannot be treated as finite shortest distances. The helper does not mark all affected targets. A target is unbounded only if a reachable negative cycle can also reach it.
 
+**Q:** In point-to-point Dijkstra, why is early exit sound on popping `dst` but unsound on pushing `dst`, and how do you mark every vertex affected by a negative cycle in Bellman-Ford?
+
+**A:** Under nonnegative edge weights, the first non-stale pop of `dst` guarantees no shorter path remains in the heap, whereas a node can be pushed multiple times with progressively shorter distances before settling. In Bellman-Ford, collect every vertex whose distance still improves in round `V` and traverse outward with BFS or DFS to mark all vertices reachable from those cycles as unbounded (`-Infinity`).
+
 ### Union-Find
 
 Source: [Union-Find](70.2.2.03-union-find.md)

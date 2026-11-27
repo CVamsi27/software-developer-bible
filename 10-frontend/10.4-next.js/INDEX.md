@@ -1,6 +1,6 @@
 # Next.js — Index
 
-> **Study time:** ≈ 3 h 22 m of reading (21 files, ~10 min average).
+> **Study time:** ≈ 3 h 27 m of reading (21 files, ~10 min average).
 > **21 files** — App Router, rendering strategies, server components, data fetching patterns, caching, streaming, ISR, authentication, static exports, deployment (Docker/Vercel/self-hosted), and interview questions.
 
 [![Files](https://img.shields.io/badge/files-21-blue)](../../INDEX.md)
@@ -17,7 +17,7 @@ The 21 content files — 17 chapters and four revision companions — are organi
 
 | Category | Chapters | Why it matters |
 | -------------------------------------------------------------- | -------: | ----------------------------------------------------------------------------------------------------- |
-| [Rendering Fundamentals](01-rendering-fundamentals/INDEX.md) | 4 | Request rendering, reusable output, streaming, and server/client boundaries |
+| [Rendering Fundamentals](01-rendering-fundamentals/INDEX.md) | 4 | Request rendering, reusable output, streaming, and server and client boundaries |
 | [Routing, HTTP & Metadata](02-routing-and-middleware/INDEX.md) | 3 | Next.js 16 Proxy, Route Handlers, and page metadata |
 | [Data & Caching](03-data-and-caching/INDEX.md) | 6 | Data access, mutations, two cache models, streaming, regeneration, and static export |
 | [Production](04-production/INDEX.md) | 3 | Session-to-resource authorization, responsive image delivery, deployment runtime and cache operations |
@@ -42,10 +42,10 @@ The mental model for choosing the right rendering strategy.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [SSR / CSR / SSG / ISR](01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md) | Rendering strategies comparison, when to use each, hydration, streaming | Important | Specialized | 10 min |
-| 02 | [App Router](01-rendering-fundamentals/10.4.1.02-app-router.md) | URL segments, persistent layouts, navigation, and fallback boundaries | Important | Important | 12 min |
-| 03 | [Server Components](01-rendering-fundamentals/10.4.1.03-server-components.md) | Authorized server reads, RSC payload, serialization, and streaming | Important | Important | 9 min |
-| 04 | [Client Components](01-rendering-fundamentals/10.4.1.04-client-components.md) | Hydration, browser state, client module boundaries, and server-validated writes | Important | Specialized | 12 min |
+| 01 | [SSR, CSR, SSG, and ISR](01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md) | Separate execution location, output timing, and cache policy; Cache Components, `dynamicParams`, and hydration vs. CSR | Important | Specialized | 12 min |
+| 02 | [App Router](01-rendering-fundamentals/10.4.1.02-app-router.md) | URL segments, persistent layouts, `<Link>` prefetching, `useSearchParams` Suspense, error retry, and parallel or intercepting routes | Important | Important | 13 min |
+| 03 | [Server Components](01-rendering-fundamentals/10.4.1.03-server-components.md) | Authorized server reads, RSC payload, serialization, DAL DTOs and taint guards, and Suspense streaming | Important | Important | 10 min |
+| 04 | [Client Components](01-rendering-fundamentals/10.4.1.04-client-components.md) | Hydration, browser state, `'use client'` and `client-only` boundaries, `suppressHydrationWarning`, and `next/dynamic` | Important | Specialized | 13 min |
 
 ---
 
@@ -112,7 +112,7 @@ Protect current identity/resource boundaries, deliver appropriate image variants
 4. Interview Questions (focus on RSC, caching, streaming)
 
 ### Path C — Interview tomorrow
-- Review each chapter’s definition, example and summary; focus on the topics listed above
+- Review each chapter's definition, example, and summary; focus on the topics listed above
 - Re-read Caching + Server Components
 - Run through the 40 Interview Questions
 
@@ -129,4 +129,4 @@ Protect current identity/resource boundaries, deliver appropriate image variants
 
 ## Navigation
 
-[← Previous: React](../10.3-react/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Form Handling →](../10.5-form-handling/INDEX.md)
+[← Previous: React](../10.3-react/INDEX.md) · [Back to Index](../../INDEX.md) · [Next: Form Handling →](../10.5-form-handling/INDEX.md)

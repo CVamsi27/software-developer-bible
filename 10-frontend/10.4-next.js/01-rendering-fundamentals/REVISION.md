@@ -14,7 +14,7 @@ Complete the learning chapters first, then answer these questions without reopen
 
 Source: [SSR, CSR, SSG, and ISR in Next.js](10.4.1.01-ssr-csr-ssg-isr.md)
 
-**Q:** How do rendering time and freshness differ across static rendering, SSR, CSR and ISR?
+**Q:** How do rendering time and freshness differ across static rendering, SSR, CSR, and ISR?
 
 **A:** Static output is produced before a request; SSR produces request-dependent output; CSR produces or updates UI in the browser; ISR revalidates cached static output. ISR is a freshness policy, and a Client Component can still appear in the initial server-rendered HTML.
 
@@ -37,6 +37,10 @@ Source: [SSR, CSR, SSG, and ISR in Next.js](10.4.1.01-ssr-csr-ssg-isr.md)
 **Q:** Can rendering mode alone predict a route's JavaScript bundle size?
 
 **A:** No. Component boundaries and imported dependencies determine the browser code; Server Components can reduce it under several rendering modes.
+
+**Q:** How do Cache Components combine `'use cache'` with `<Suspense>`, and what does `dynamicParams = false` change on unknown IDs?
+
+**A:** Marking a reusable component with `'use cache'` and `cacheLife(...)` includes its output in the static shell while uncached request-time children stream behind `<Suspense>`. Setting `export const dynamicParams = false` (in the previous App Router cache model) returns `404` for dynamic IDs omitted from `generateStaticParams` instead of rendering and caching them on demand.
 
 ## App Router in Next.js
 
@@ -70,6 +74,10 @@ Source: [App Router in Next.js](10.4.1.02-app-router.md)
 
 **A:** No. Both own the same URL, so place the handler in a different segment.
 
+**Q:** Why must `useSearchParams` sit inside `<Suspense>` on prerendered routes, and how should an intercepted modal close?
+
+**A:** Wrapping `useSearchParams` in `<Suspense>` isolates query-dependent rendering so the static shell can still prerender instead of opting the entire route out to client rendering. Dismiss an intercepted modal with `router.back()` to unwind history cleanly, paired with `@modal/default.tsx` returning `null` so soft navigation clears the overlay.
+
 ## Server Components in Next.js
 
 Source: [Server Components in Next.js](10.4.1.03-server-components.md)
@@ -96,7 +104,11 @@ Source: [Server Components in Next.js](10.4.1.03-server-components.md)
 
 **Q:** Why is zero client component-code bytes different from zero delivery cost?
 
-**A:** HTML and the RSC payload still carry rendered output, and the app needs client routing/runtime support. Large serialized results can remain expensive even without server component code.
+**A:** HTML and the RSC payload still carry rendered output, and the app needs client routing and runtime support. Large serialized results can remain expensive even without server component code.
+
+**Q:** How do DAL DTO projection, taint guards, and `use(promise)` protect and stream server data across the client boundary?
+
+**A:** Projecting narrow DTOs in a Data Access Layer ensures passwords or internal fields never reach rendered RSC props, while experimental `taintUniqueValue` and `taintObjectReference` throw if sensitive objects accidentally cross the boundary. Passing an unawaited `Promise` of serializable DTOs lets a Client Component inside `<Suspense>` unwrap streamed data with `use()` without blocking the server shell.
 
 ## Client Components in Next.js
 
@@ -124,7 +136,11 @@ Source: [Client Components in Next.js](10.4.1.04-client-components.md)
 
 **Q:** Why do local product-filter controls not change a server-rendered grid by themselves?
 
-**A:** Their state belongs only to the client control. Connect it to URL parameters/server navigation or a client data layer to affect the product results.
+**A:** Their state belongs only to the client control. Connect it to URL parameters and server navigation or a client data layer to affect the product results.
+
+**Q:** What separates `import 'client-only'` from `import 'server-only'`, and what is the scope limit of `suppressHydrationWarning`?
+
+**A:** `import 'client-only'` fails the build if a Server Component pulls in a browser-dependent module, mirroring how `import 'server-only'` guards secret server modules from the client bundle. `suppressHydrationWarning` silences text or attribute mismatch warnings only one level deep on a single leaf node and never fixes structural DOM errors.
 
 ## Trace and Boundary Checks
 
@@ -136,7 +152,7 @@ Source: [Rendering comparison](10.4.1.01-ssr-csr-ssg-isr.md), [App Router](10.4.
 
 **Q:** Does a middleware header naming ISR prove regeneration happened?
 
-**A:** No. It labels a request match. Verify production output and cache/timestamp behavior with controlled requests.
+**A:** No. It labels a request match. Verify production output and cache and timestamp behavior with controlled requests.
 
 **Q:** Which interception marker reaches `/photos` from `feed/@modal`, and why?
 
@@ -164,7 +180,7 @@ Source: [Rendering comparison](10.4.1.01-ssr-csr-ssg-isr.md), [App Router](10.4.
 
 ## Summary
 
-Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
+Revisit the linked chapter when an answer misses the mechanism, a boundary, or a failure case.
 
 ---
 

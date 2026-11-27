@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "677d4e7759503df4fe83218a04e8a89ee948671b71d7ec22ecc625872f6729dc",
+ "corpus_digest": "a260228fcbfb18f032100a304133d58d62d957645e3f0f578392b25bdaa5de0d",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5497
+  "read_minutes": 5502
  },
  "chapters": [
   {
@@ -1042,7 +1042,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 12
   },
   {
    "p": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.html",
@@ -1052,7 +1052,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.03-server-components.html",
@@ -1062,7 +1062,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.04-client-components.html",
@@ -1072,7 +1072,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "10-frontend/10.4-next.js/01-rendering-fundamentals/REVISION.html",

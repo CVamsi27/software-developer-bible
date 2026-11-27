@@ -4205,7 +4205,7 @@
     },
     {
       "path": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md",
-      "sha256": "4643edcd97314081446d567f5cbe9fa93195f4412ad852e51e17e56cff5ef39e",
+      "sha256": "b1f41aa120a54513fdd1be7948af9eecf0040fa5830e8b564fdfa60be45a68b2",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -4221,17 +4221,17 @@
           "See Also",
           "References & Learn More"
         ],
-        "code_fences": 6,
+        "code_fences": 7,
         "revision_questions": 0,
         "has_summary": true,
         "has_first_principles": true
       },
       "review": {
         "path": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md",
-        "sha256": "4643edcd97314081446d567f5cbe9fa93195f4412ad852e51e17e56cff5ef39e",
+        "sha256": "b1f41aa120a54513fdd1be7948af9eecf0040fa5830e8b564fdfa60be45a68b2",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 4A D1-D7 rework: 10.4-next.js/01-rendering-fundamentals C1-C8 refinement (2026-11-24): Full read of 278 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -4240,7 +4240,7 @@
     },
     {
       "path": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md",
-      "sha256": "7db143e379dc4d7f29e6a1f1f056cc4f9e6a4530a38b3f6734740714ddf560eb",
+      "sha256": "d18e816e21cea66e27f233143fb149749e238582428fa67b724b3bebc8004216",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -4265,10 +4265,10 @@
       },
       "review": {
         "path": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md",
-        "sha256": "7db143e379dc4d7f29e6a1f1f056cc4f9e6a4530a38b3f6734740714ddf560eb",
+        "sha256": "d18e816e21cea66e27f233143fb149749e238582428fa67b724b3bebc8004216",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 4A D1-D7 rework: 10.4-next.js/01-rendering-fundamentals C1-C8 refinement (2026-11-24): Full read of 287 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -4277,7 +4277,7 @@
     },
     {
       "path": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.03-server-components.md",
-      "sha256": "6af9fcd003331174c4b0462d72fc90a6ca5550ed6b737b9373465eac94496f1c",
+      "sha256": "f409a90413e4cb3f804ed9c037f17873324012cde7c0c12ddadb05ee92a547ed",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -4300,10 +4300,10 @@
       },
       "review": {
         "path": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.03-server-components.md",
-        "sha256": "6af9fcd003331174c4b0462d72fc90a6ca5550ed6b737b9373465eac94496f1c",
+        "sha256": "f409a90413e4cb3f804ed9c037f17873324012cde7c0c12ddadb05ee92a547ed",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 4A D1-D7 rework: 10.4-next.js/01-rendering-fundamentals C1-C8 refinement (2026-11-24): Full read of 219 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -4312,7 +4312,7 @@
     },
     {
       "path": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.04-client-components.md",
-      "sha256": "6b7b80e68c850f57b710c14152586d7576f2d290f549c36dfbfcbc4d90372c81",
+      "sha256": "32a9ffbad11e6192c36b5dde96cba7ab06ae0a6d7bf9735df489a0f24db589f8",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -4335,10 +4335,10 @@
       },
       "review": {
         "path": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.04-client-components.md",
-        "sha256": "6b7b80e68c850f57b710c14152586d7576f2d290f549c36dfbfcbc4d90372c81",
+        "sha256": "32a9ffbad11e6192c36b5dde96cba7ab06ae0a6d7bf9735df489a0f24db589f8",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 4A D1-D7 rework: 10.4-next.js/01-rendering-fundamentals C1-C8 refinement (2026-11-24): Full read of 295 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -4347,7 +4347,7 @@
     },
     {
       "path": "10-frontend/10.4-next.js/01-rendering-fundamentals/INDEX.md",
-      "sha256": "1b57e46585d7a42f10326f2284db637c2197db66e13da7d0c2a47eb3aae65f7e",
+      "sha256": "26764edf640fa0b3e092ff7cce51379c3518671bba01c619cd36b8931a69940c",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -4364,10 +4364,10 @@
       },
       "review": {
         "path": "10-frontend/10.4-next.js/01-rendering-fundamentals/INDEX.md",
-        "sha256": "1b57e46585d7a42f10326f2284db637c2197db66e13da7d0c2a47eb3aae65f7e",
+        "sha256": "26764edf640fa0b3e092ff7cce51379c3518671bba01c619cd36b8931a69940c",
         "genre": "index",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 4A D1-D7 rework: 10.4-next.js/01-rendering-fundamentals C1-C8 refinement (2026-11-24): Full read of 38 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -4376,7 +4376,7 @@
     },
     {
       "path": "10-frontend/10.4-next.js/01-rendering-fundamentals/REVISION.md",
-      "sha256": "89bc5f54750ac0f79dc1e1fdb9531af90c8b860bda8b06f559062809061b59da",
+      "sha256": "798968aedc6d1b83563f7144a33d3ee791ca3210e1a96b9bd3869a87bd969897",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -4391,16 +4391,16 @@
           "References & Learn More"
         ],
         "code_fences": 0,
-        "revision_questions": 33,
+        "revision_questions": 37,
         "has_summary": true,
         "has_first_principles": false
       },
       "review": {
         "path": "10-frontend/10.4-next.js/01-rendering-fundamentals/REVISION.md",
-        "sha256": "89bc5f54750ac0f79dc1e1fdb9531af90c8b860bda8b06f559062809061b59da",
+        "sha256": "798968aedc6d1b83563f7144a33d3ee791ca3210e1a96b9bd3869a87bd969897",
         "genre": "revision",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 4A D1-D7 rework: 10.4-next.js/01-rendering-fundamentals C1-C8 refinement (2026-11-24): Full read of 193 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -5089,7 +5089,7 @@
     },
     {
       "path": "10-frontend/10.4-next.js/INDEX.md",
-      "sha256": "bda22c025d49d10c39f860e57a04061212b0cf521714d969cf752593ea1e510d",
+      "sha256": "2943c9f0a708a5562daa27faee9921ef8cfdd4d1dac9802aa587d3f197c35f18",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -5112,10 +5112,10 @@
       },
       "review": {
         "path": "10-frontend/10.4-next.js/INDEX.md",
-        "sha256": "bda22c025d49d10c39f860e57a04061212b0cf521714d969cf752593ea1e510d",
+        "sha256": "2943c9f0a708a5562daa27faee9921ef8cfdd4d1dac9802aa587d3f197c35f18",
         "genre": "index",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 4A D1-D7 rework: 10.4-next.js/01-rendering-fundamentals C1-C8 refinement (2026-11-24): Full read of 132 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -6555,7 +6555,7 @@
     },
     {
       "path": "10-frontend/INDEX.md",
-      "sha256": "11625d3537fff31d52f1acfda64c0ad7c618ca9fe6cd968bae6bacac22859871",
+      "sha256": "0e4849c17f0462ecc03e027e1b53b8ebcecc1f06fe361f483b5733b72978d253",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -6577,10 +6577,10 @@
       },
       "review": {
         "path": "10-frontend/INDEX.md",
-        "sha256": "11625d3537fff31d52f1acfda64c0ad7c618ca9fe6cd968bae6bacac22859871",
+        "sha256": "0e4849c17f0462ecc03e027e1b53b8ebcecc1f06fe361f483b5733b72978d253",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index count/read-time sync (2026-11-24): Full read of 75 lines. Updated generated counts/read-time navigation after Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index.",
+        "notes": "Phase 4A D1-D7 rework: 10.4-next.js/01-rendering-fundamentals count/read-time sync (2026-11-24): Full read of 75 lines. Updated generated counts/read-time navigation after Phase 4A D1-D7 rework: 10.4-next.js/01-rendering-fundamentals.",
         "findings": [],
         "reviewer": "root",
         "metadataReview": {
@@ -31034,7 +31034,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "abcd6f9818b4435ad2d1f303025fbb46f215e528a76e9110d03ba14834a306e5",
+      "sha256": "a8a5c4b2abeb1ef8a44453288daa901f5671d78997ebcd662870bbc209057b57",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -31052,12 +31052,12 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "abcd6f9818b4435ad2d1f303025fbb46f215e528a76e9110d03ba14834a306e5",
+        "sha256": "a8a5c4b2abeb1ef8a44453288daa901f5671d78997ebcd662870bbc209057b57",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index.",
+        "notes": "Phase 4A D1-D7 rework: 10.4-next.js/01-rendering-fundamentals count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 4A D1-D7 rework: 10.4-next.js/01-rendering-fundamentals.",
         "findings": []
       }
     },
@@ -31637,7 +31637,7 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "c91e658f6b84640b495d6aeb74ec6a2fbd5be136560b8615bab33bc82a3a1fa0",
+      "sha256": "5d4f369c64370dae9e57a8a333141a09d46a978acd0287fb88ac6cd31e608f23",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31655,12 +31655,12 @@
       },
       "review": {
         "path": "docs/api-contract.md",
-        "sha256": "c91e658f6b84640b495d6aeb74ec6a2fbd5be136560b8615bab33bc82a3a1fa0",
+        "sha256": "5d4f369c64370dae9e57a8a333141a09d46a978acd0287fb88ac6cd31e608f23",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index.",
+        "notes": "Phase 4A D1-D7 rework: 10.4-next.js/01-rendering-fundamentals count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 4A D1-D7 rework: 10.4-next.js/01-rendering-fundamentals.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

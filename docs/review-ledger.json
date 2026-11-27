@@ -3748,132 +3748,132 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture)."
   },
   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.01-middleware.md": {
-   "sha256": "20c06a8e37a599768185e2f3189164d7e47bca311874fb4504086b232c4c99d4",
-   "lines": 153,
+   "sha256": "5124fe19c81a73a0308e2905f9826d22a426a9503abd805f96b2bd669bb3d333",
+   "lines": 155,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Middleware matching, wildcard syntax, ordering and adapter boundaries were checked against the official Middleware and Request lifecycle docs; the Nest 11 fixture compiled and ran with one terminal event.",
-    "readable": "Full read of 153 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "887 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 155 lines (980 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "980 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Middleware admission and adapter context are canonical here; guards, pipes and filters are linked as later lifecycle stages, not duplicated.",
-    "fast": "30.0 KB raw / 7.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 30.0 KB raw / 7.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Calling next is not completion and a middleware error is not automatically safe; async rejection, proxy trust, parser limits and one-terminal-event rules are the boundaries."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 10B D1-D7 rework: 20.2-nestjs/02-request-lifecycle)."
   },
   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.02-guards.md": {
-   "sha256": "cdc6a08688dc9d3219dcd3a5872f5c21da0ce8422bd3d835191dd9d467b1ee0f",
-   "lines": 168,
+   "sha256": "87ebc14204dfe1e14754a14523fb60311660aa350d1e252e42cc0b22b918561c",
+   "lines": 170,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Guard metadata, APP_GUARD registration, transport context and guard-before-pipe ordering were checked against the official Guards, Execution context and Request lifecycle docs; the Nest 11 fixture compiled and ran.",
-    "readable": "Full read of 168 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "832 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 170 lines (911 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "911 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Authorization admission is canonical here; authentication implementation, pipes and exception mapping are separate linked mechanisms.",
-    "fast": "36.2 KB raw / 7.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 36.2 KB raw / 7.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "A guard is admission control, not a transaction or tenant proof; missing policy, raw-input trust and verifier failure remain explicit limits."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 10B D1-D7 rework: 20.2-nestjs/02-request-lifecycle)."
   },
   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.03-pipes.md": {
-   "sha256": "e067b6d2e120e7c6dc01c0d3ce9accff3575b9cfca45a7440a48cf2e009d3050",
-   "lines": 132,
+   "sha256": "006077705f648861579da6d47c44b75e9ac765d5c18018df74a9dc7c126ababe",
+   "lines": 136,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "ValidationPipe, Standard Schema/Zod behavior, Joi conversion and parameter ordering were checked against the official Pipes, Validation and Request lifecycle docs; the Nest 11 fixture compiled and produced two accepts and four 400 responses.",
-    "readable": "Full read of 132 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1022 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 136 lines (1113 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1113 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Argument validation and transformation are owned here; guard authorization and filter formatting are linked, not retold.",
-    "fast": "24.1 KB raw / 7.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 24.1 KB raw / 7.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Pipes validate one invocation argument, not uniqueness or authorization; coercion, unknown fields, async schemas and database races define the limits."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 10B D1-D7 rework: 20.2-nestjs/02-request-lifecycle)."
   },
   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.04-interceptors.md": {
-   "sha256": "ac3d0bc9d7d16ca223eebfdfee52be7333009eb824ae1232fbc0a2711fd48720",
-   "lines": 152,
+   "sha256": "1c5278f50d02ccf1b64572c250002dadec29099ee7b29163442a21f96d79b881",
+   "lines": 156,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Nested interceptor order, RxJS mapping/finalization and timeout semantics were checked against the official Interceptors and Request lifecycle docs; both exact Nest 11 fixtures compiled and ran.",
-    "readable": "Full read of 152 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "929 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 156 lines (1039 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1039 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Wrapper composition and Observable ownership are canonical here; timeout cancellation and durable effects are treated as boundaries, not reimplemented elsewhere.",
-    "fast": "28.5 KB raw / 7.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 28.5 KB raw / 7.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Timeout stops waiting, not necessarily the underlying effect; wrapper order, Observable cancellation and cache authorization are the important failure boundaries."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 10B D1-D7 rework: 20.2-nestjs/02-request-lifecycle)."
   },
   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.05-exception-filters.md": {
-   "sha256": "9ac595034f3a5940bf320ee8861a125598848c99430c15e9e3a574c27c47a6da",
-   "lines": 145,
+   "sha256": "cdae983317a581c759d8e9770f99a049ec4b4df351bcc307a8726b25f2a8fef2",
+   "lines": 147,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "HTTP filter selection, BaseExceptionFilter delegation and transport error boundaries were checked against the official Exception filters and Request lifecycle docs; the Nest 11 fixture compiled and ran with 404, 400 and 500 outputs.",
-    "readable": "Full read of 145 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1053 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 147 lines (1159 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1159 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Exception-to-transport mapping is canonical here; validation, authorization and business transaction policy are linked to their owners.",
-    "fast": "29.7 KB raw / 7.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 29.7 KB raw / 7.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "A filter can shape a response but cannot undo a committed side effect; headers-sent, transaction, transport and detached-work failures remain visible limits."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 10B D1-D7 rework: 20.2-nestjs/02-request-lifecycle)."
   },
   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.06-request-context-and-async-local-storage.md": {
-   "sha256": "172bf746cd5834ce23173282b4d5b74c3fc87d17b3601fbc7e0ec3ce222c07a7",
-   "lines": 146,
+   "sha256": "3e54bd365ff62c1e0c6a70467aeef0119d51c17df13701a7e7ffadfcf4dcfae2",
+   "lines": 148,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "AsyncLocalStorage propagation and Nest request-context ordering were checked against the official Node AsyncLocalStorage and Nest lifecycle docs; the exact fixture compiled and ran on Node 26.13.0.",
-    "readable": "Full read of 146 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1322 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 148 lines (1420 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1420 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Request context propagation is owned here; authentication, transaction and database isolation are explicit adjacent boundaries, not claimed as ALS features.",
-    "fast": "27.6 KB raw / 8.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 27.6 KB raw / 8.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "ALS preserves association, not trust or database isolation; worker roots, escaped clients, retained stores, transaction expiry and metric cardinality are explicit limits."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 10B D1-D7 rework: 20.2-nestjs/02-request-lifecycle)."
   },
   "20-backend/20.2-nestjs/02-request-lifecycle/INDEX.md": {
-   "sha256": "ec2cfdfa17a649b691c3a55fccaf9cdd11995c0b65bded3a1beeb54cc72b2690",
+   "sha256": "b7aca29cda9bbec9f38eee536ec8ccc189fbd215bccddf41bbcb6ae493c88a88",
    "lines": 58,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "No version-sensitive claim; the lifecycle sequence, source anchors and revision placement were checked against the six request-lifecycle chapters.",
-    "readable": "Full read of 58 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 58 lines (159 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "159 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "The index owns lifecycle navigation; each stage has one canonical chapter and the revision companion owns drills rather than another explanation.",
-    "fast": "12.4 KB raw / 3.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 12.4 KB raw / 3.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "The order is useful because each stage has a different failure boundary; no single global hook can replace validation, authorization, mapping or context discipline."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 10B D1-D7 rework: 20.2-nestjs/02-request-lifecycle)."
   },
   "20-backend/20.2-nestjs/02-request-lifecycle/REVISION.md": {
-   "sha256": "123135393653b42cd34019d95259d99eb69df1266a26029b637deed8ba144146",
-   "lines": 197,
+   "sha256": "b18a50f92c00b4cecce1a594810112b7b45d6f3814a00ad38b7bb22cdf481a12",
+   "lines": 213,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "All source-linked lifecycle answers were checked against the current six chapters, official Nest request-lifecycle docs and Node AsyncLocalStorage documentation; the linked ALS fixture was executed.",
-    "readable": "Full read of 197 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1360 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 213 lines (1672 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1672 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "The companion owns lifecycle retrieval; it links to canonical chapters and adds changed-condition questions instead of repeating their fixtures.",
-    "fast": "19.3 KB raw / 6.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 19.3 KB raw / 6.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "The drills keep the important limits: guard order, reverse parameter order, no automatic timeout cancellation and local filter selection."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 10B D1-D7 rework: 20.2-nestjs/02-request-lifecycle)."
   },
   "20-backend/20.2-nestjs/03-patterns/20.2.3.01-cqrs.md": {
    "sha256": "37266f436e5067c9499e520e1a7156c85d427f80997c7464d2d991a276ebbe44",
@@ -4115,7 +4115,7 @@
    }
   },
   "20-backend/20.2-nestjs/INDEX.md": {
-   "sha256": "3194d8e5c272debcf0d09e34fb6cbb8834a274eb17f9374af88d7e6283db5250",
+   "sha256": "d22357766639eca45a8ea98503253db3052bc16773dd2ec2566bee51aca706b2",
    "lines": 149,
    "genre": "index",
    "status": "read",
@@ -4125,10 +4125,10 @@
     "readable": "Full read of 149 lines (291 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "291 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "The stack index owns cross-category learning order and canonical-home links; it does not repeat lifecycle, operations or pattern explanations.",
-    "fast": "Measured 24.2 KB raw / 6.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 24.2 KB raw / 6.1 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The stack is a framework study path, not a production checklist; its final boundary points to persistence, security and delivery decisions outside Nest decorators."
    },
-   "notes": "Synced live read-time and counts after Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture."
+   "notes": "Synced live read-time and counts after Phase 10B D1-D7 rework: 20.2-nestjs/02-request-lifecycle."
   },
   "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.01-api-design-patterns.md": {
    "sha256": "7aad1fd9245d0180548b6d03ad04f6e17e3542c5b5c906c8ede24a1c31c74fdc",
@@ -6560,7 +6560,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
   },
   "20-backend/INDEX.md": {
-   "sha256": "041b19b8538144a76b99648578c74ebceee6a78a7131c097bbdc1bb32d45d258",
+   "sha256": "bc9e543670b4b10b17ab87bc02c2743ad8c4906388a3ed271456483e8dd472f5",
    "lines": 122,
    "genre": "index",
    "status": "read",
@@ -6573,7 +6573,7 @@
     "fast": "Measured 15.4 KB raw / 5.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Remaining limit is study-hour path estimates are rough guides and depend on each reader's prior backend background."
    },
-   "notes": "Synced live read-time and counts after Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture."
+   "notes": "Synced live read-time and counts after Phase 10B D1-D7 rework: 20.2-nestjs/02-request-lifecycle."
   },
   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md": {
    "sha256": "065e2b7d573b2298550d061453667084b1d010e6fadf07f903f6fdd34a8e5185",
@@ -14366,7 +14366,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "9e654693fef552968a78c1086fb5c9955790e2125fe9837a0282de7c45fce619",
+   "sha256": "6b5a74932657280d010a3dfc55e48221140bf430e19528be5adf43d330fb8257",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14379,7 +14379,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture."
+   "notes": "Synced live read-time and counts after Phase 10B D1-D7 rework: 20.2-nestjs/02-request-lifecycle."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14670,7 +14670,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "0e55aa7b9f6c77313df022a475a3979850f4cc572068964451d81297761f5907",
+   "sha256": "fc8bba336adbe0c8571e4813b584c924da1f0faf9ac9165b7a8844773d80ca00",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14683,7 +14683,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture."
+   "notes": "Synced live read-time and counts after Phase 10B D1-D7 rework: 20.2-nestjs/02-request-lifecycle."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

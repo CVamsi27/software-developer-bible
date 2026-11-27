@@ -16,15 +16,19 @@ Source: [NestJS Middleware](20.2.2.01-middleware.md)
 
 **Q:** Which shared request tasks are suited to middleware?
 
-**A:** Middleware suits early transport tasks such as correlation, session parsing and completion observation on its matched routes. It can respond or pass control; parser, guard and service boundaries still own their respective contracts.
+**A:** Middleware suits early transport tasks such as correlation, session parsing, and completion observation on its matched routes. It can respond or pass control; parser, guard, and service boundaries still own their respective contracts.
 
 **Q:** How does the context available to middleware differ from handler-level components?
 
-**A:** Class middleware supports module DI and sees adapter request/response/next. A guard/interceptor `ExecutionContext` additionally identifies the selected controller and handler, enabling route-metadata policy.
+**A:** Class middleware supports module DI and sees adapter request, response, and next. A guard or interceptor `ExecutionContext` additionally identifies the selected controller and handler, enabling route-metadata policy.
 
 **Q:** Why must middleware registration order follow dependencies between tasks?
 
-**A:** Create correlation before logging, and establish verified identity before policies that consume it. Global/module registration and adapter behavior affect ordering; test the intended matches and exclusions.
+**A:** Create correlation before logging, and establish verified identity before policies that consume it. Global and module registration and adapter behavior affect ordering; test the intended matches and exclusions.
+
+**Q:** How does Nest middleware behave under the Fastify adapter, and how should webhook signature verification access the unmodified request payload?
+
+**A:** Under Fastify, Nest middleware runs through `@fastify/middie` on raw Node `IncomingMessage` and `ServerResponse` objects rather than `FastifyRequest` and `FastifyReply`, so use Fastify hooks or Nest guards and interceptors when you need Fastify reply features. For webhooks, enable `{ rawBody: true }` in `NestFactory.create(...)` and verify signatures against `req.rawBody`.
 
 ## NestJS Guards
 
@@ -32,7 +36,7 @@ Source: [NestJS Guards](20.2.2.02-guards.md)
 
 **Q:** Why perform access checks in a guard before the handler?
 
-**A:** A denied guard prevents protected downstream work. The decision still needs verified identity, the intended action/resource, and a consistency boundary for changing authorization state.
+**A:** A denied guard prevents protected downstream work. The decision still needs verified identity, the intended action and resource, and a consistency boundary for changing authorization state.
 
 **Q:** How do a roles decorator and a guard divide policy declaration from enforcement?
 
@@ -40,7 +44,7 @@ Source: [NestJS Guards](20.2.2.02-guards.md)
 
 **Q:** Which responsibilities belong outside a guard's allow-or-deny decision?
 
-**A:** A guard can enforce admission, permissions, flags or quotas; services own the detailed operation and data consistency. Response field projection and durable effects need their own explicit boundaries.
+**A:** A guard can enforce admission, permissions, flags, or quotas; services own the detailed operation and data consistency. Response field projection and durable effects need their own explicit boundaries.
 
 ## NestJS Pipes
 
@@ -48,15 +52,19 @@ Source: [NestJS Pipes](20.2.2.03-pipes.md)
 
 **Q:** How can a pipe convert, validate, or default an argument?
 
-**A:** A pipe receives an extracted argument, returns its validated/transformed/defaulted value or throws. Default missing input deliberately; reject malformed nonmissing representations rather than accepting a numeric prefix.
+**A:** A pipe receives an extracted argument, returns its validated, transformed, or defaulted value or throws. Default missing input deliberately; reject malformed nonmissing representations rather than accepting a numeric prefix.
 
 **Q:** What must be configured to validate a DTO at runtime?
 
-**A:** Register `ValidationPipe`, use runtime DTO classes with suitable decorators/nested metadata, and select `transform`/`whitelist`/null/coercion policies. TypeScript annotations alone perform no runtime validation or authorization.
+**A:** Register `ValidationPipe`, use runtime DTO classes with suitable decorators and nested metadata, and select `transform`, `whitelist`, null, and coercion policies. TypeScript annotations alone perform no runtime validation or authorization.
 
 **Q:** Why does the order of guards and pipes matter, and which argument is piped first in `update(@Body() body, @Param('id', ParseUUIDPipe) id)`?
 
 **A:** Guards execute before argument pipes, so they cannot assume a later `ParseUUIDPipe` has already validated raw input. Parameter pipes resolve from the last handler parameter to the first, so the ID is piped before the body. Avoid cross-parameter side effects that depend on this ordering.
+
+**Q:** Why can a custom parameter decorator bypass `ValidationPipe` by default, and how do built-in parsing pipes accept optional query parameters?
+
+**A:** `ValidationPipe` skips parameters produced by `createParamDecorator` unless `validateCustomDecorators: true` is configured, which can silently admit unvalidated custom-extracted inputs. Built-in parsing pipes such as `ParseIntPipe` and `ParseUUIDPipe` accept `{ optional: true }` so an omitted query parameter stays `undefined` instead of throwing a 400 error or requiring a synthetic default.
 
 ## NestJS Interceptors
 
@@ -64,15 +72,15 @@ Source: [NestJS Interceptors](20.2.2.04-interceptors.md)
 
 **Q:** What does an interceptor observe that an argument pipe or guard does not?
 
-**A:** An interceptor wraps remaining execution and can observe/map/replace its emitted values/errors. A guard decides admission and an argument pipe validates input; none alone proves client delivery.
+**A:** An interceptor wraps remaining execution and can observe, map, or replace its emitted values and errors. A guard decides admission and an argument pipe validates input; none alone proves client delivery.
 
 **Q:** How do RxJS operators add behavior around `next.handle()`?
 
-**A:** `map` changes values, `tap` observes notifications, `finalize` handles subscription termination, and `catchError` replaces/rethrows errors. `timeout` stops waiting and `retry` resubscribes; neither implies cancellation, rollback or idempotency.
+**A:** `map` changes values, `tap` observes notifications, `finalize` handles subscription termination, and `catchError` replaces or rethrows errors. `timeout` stops waiting and `retry` resubscribes; neither implies cancellation, rollback, or idempotency.
 
 **Q:** In what order do nested interceptors run before and after the handler?
 
-**A:** Before-work nests from global to controller to route; result transformations unwind in reverse. Short-circuiting `next.handle` can deliberately skip downstream pipes/handler, so cache eligibility and access policy must remain safe.
+**A:** Before-work nests from global to controller to route; result transformations unwind in reverse. Short-circuiting `next.handle` can deliberately skip downstream pipes and handler, so cache eligibility and access policy must remain safe.
 
 ## NestJS Exception Filters
 
@@ -80,19 +88,23 @@ Source: [NestJS Exception Filters](20.2.2.05-exception-filters.md)
 
 **Q:** Why should known application failures map to specific HTTP status codes?
 
-**A:** A known missing resource can map to 404 and a known domain conflict to 409. Unexpected failures receive a generic safe 500; status/message choices must match the business/protocol meaning.
+**A:** A known missing resource can map to 404 and a known domain conflict to 409. Unexpected failures receive a generic safe 500; status and message choices must match the business and protocol meaning.
 
 **Q:** What should a shared error response contain or omit?
 
-**A:** A stable bounded envelope and server-owned correlation ID can identify the failure. Omit stacks, arbitrary exception messages, rejected secrets and raw database details; diagnostics need redaction and access controls too.
+**A:** A stable bounded envelope and server-owned correlation ID can identify the failure. Omit stacks, arbitrary exception messages, rejected secrets, and raw database details; diagnostics need redaction and access controls too.
 
 **Q:** Where do exception filters fit when request processing throws?
 
-**A:** An uncaught supported request failure selects an applicable route, controller or global filter. A handled exception is not automatically forwarded through every outer filter, and detached work remains outside that request ownership.
+**A:** An uncaught supported request failure selects an applicable route, controller, or global filter. A handled exception is not automatically forwarded through every outer filter, and detached work remains outside that request ownership.
 
 **Q:** Which filters can handle an exception thrown by Nest middleware?
 
 **A:** Only global exception filters apply because middleware runs before a route or controller is selected. A caught exception never enters the filter layer.
+
+**Q:** In what order do multiple `APP_FILTER` providers execute when both a catch-all filter and a domain-specific filter are registered globally?
+
+**A:** Nest evaluates globally registered `APP_FILTER` providers in reverse registration order, meaning the last registered provider executes first. Register the broad `@Catch()` fallback filter first and more specific `@Catch(DomainError)` filters after it in the module's `providers` array, then verify exact precedence through an HTTP test.
 
 ## Request Context & AsyncLocalStorage
 
@@ -108,7 +120,11 @@ Source: [Request Context & AsyncLocalStorage](20.2.2.06-request-context-and-asyn
 
 **Q:** What dependency tradeoff comes with reading request context implicitly?
 
-**A:** Ambient context hides inputs from signatures. Keep the store small and documented, require verified identity where used for enforcement, and give transaction/resource handles a real lifetime contract.
+**A:** Ambient context hides inputs from signatures. Keep the store small and documented, require verified identity where used for enforcement, and give transaction and resource handles a real lifetime contract.
+
+**Q:** Why should request middleware use `AsyncLocalStorage.run(store, next)` instead of `enterWith(store)`?
+
+**A:** `enterWith(store)` mutates the current synchronous execution frame rather than wrapping a bounded callback subtree, so the store can leak into subsequent sibling callbacks executed in the same turn. Calling `run(store, next)` restores the outer context when the synchronous callback returns while cleanly isolating descendant asynchronous resources.
 
 ## Traces and changed conditions
 
@@ -118,7 +134,7 @@ Source: [Middleware fixture](20.2.2.01-middleware.md).
 
 **Q:** Trace the generated request ID through the middleware fixture and completion log.
 
-**A:** Correlation assigns a server UUID, the handler returns it and `finish` records the same ID. The client-supplied ID does not select it. Stages are `identified`, `handler`, `finished`.
+**A:** Correlation assigns a server UUID, the handler returns it, and `finish` records the same ID. The client-supplied ID does not select it. Stages are `identified`, `handler`, `finished`.
 
 **Q:** What changes when the response closes before `finish`?
 
@@ -128,7 +144,7 @@ Source: [Middleware fixture](20.2.2.01-middleware.md).
 
 Source: [Guard fixture](20.2.2.02-guards.md).
 
-**Q:** Explain health 200, missing credential 401, reader 403 and admin 200 in order.
+**Q:** Explain health 200, missing credential 401, reader 403, and admin 200 in order.
 
 **A:** Public health bypasses authentication. Reports without a credential stop at authentication; a verified reader fails the inherited admin policy; an admin passes both guards.
 
@@ -140,7 +156,7 @@ Source: [Guard fixture](20.2.2.02-guards.md).
 
 Source: [Bounded page-size pipe](20.2.2.03-pipes.md).
 
-**Q:** What do `undefined`, `'25'`, `'10junk'` and a repeated-value array produce?
+**Q:** What do `undefined`, `'25'`, `'10junk'`, and a repeated-value array produce?
 
 **A:** Default 10, accepted 25, then two 400 rejections. Absence differs from malformed input; accepted values are safe positive integers at most 100.
 
@@ -164,19 +180,19 @@ Source: [Wrapper and timeout fixtures](20.2.2.04-interceptors.md).
 
 Source: [Safe HTTP filter](20.2.2.05-exception-filters.md).
 
-**Q:** What reaches clients for private 404, private 400 and an unexpected database-secret error?
+**Q:** What reaches clients for private 404, private 400, and an unexpected database-secret error?
 
-**A:** Fixed Not found/Invalid request/Internal server error messages with 404/400/500. The arbitrary exception text remains outside the public envelope.
+**A:** Fixed Not found, Invalid request, and Internal server error messages with statuses 404, 400, and 500. The arbitrary exception text remains outside the public envelope.
 
 **Q:** What changes if response headers were already sent or a local filter handles the error?
 
-**A:** A new complete JSON/status cannot replace sent bytes; the adapter/stream must handle the existing response. A local applicable filter handles its scope rather than automatically forwarding through every global filter.
+**A:** A new complete JSON body or status cannot replace sent bytes; the adapter and stream must handle the existing response. A local applicable filter handles its scope rather than automatically forwarding through every global filter.
 
 ### Async context
 
 Source: [ALS interleaving fixture](20.2.2.06-request-context-and-async-local-storage.md).
 
-**Q:** Why do overlapping operations return `clinic-a`/`clinic-b` and the later A timer still returns `clinic-a`?
+**Q:** Why do overlapping operations return `clinic-a` and `clinic-b` and the later A timer still returns `clinic-a`?
 
 **A:** Their supported descendant resources retain distinct stores. The timer was created inside A even though it outlives the main callback. Outside both roots `getStore()` is `undefined` and required tenant access throws.
 

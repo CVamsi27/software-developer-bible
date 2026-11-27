@@ -3652,100 +3652,100 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
   },
   "20-backend/20.2-nestjs/01-core-architecture/20.2.1.01-modules.md": {
-   "sha256": "fea5b1422b3476f5dc7aebba567c9a58556f922772cb12916056c69beaf6cb1b",
-   "lines": 165,
+   "sha256": "3f4f5b0207e129b3364224ca17c2bd21baa52678b1d3df6b87c7ea465be30958",
+   "lines": 167,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Nest module imports, exports, provider ownership, dynamic modules and scopes were checked against the official Modules, Custom providers, Dynamic modules and Injection scopes docs; the page makes no unbounded version promise.",
-    "readable": "Full read of 165 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "817 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 167 lines (884 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "884 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Module ownership is canonical here; controller behavior, provider implementation and DI resolution are linked as separate treatments rather than duplicated.",
-    "fast": "23.0 KB raw / 6.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 23.0 KB raw / 6.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "The module graph is useful only while ownership and readiness are explicit; duplicate registration, dynamic-factory failure and lazy-loading limits are the decision boundaries."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture)."
   },
   "20-backend/20.2-nestjs/01-core-architecture/20.2.1.02-controllers.md": {
-   "sha256": "731c0a8e4a0d5f45b8cb2ae04f963d1c8149c125d22c9248fe26ffb5f8629811",
-   "lines": 179,
+   "sha256": "fef83befbb16e43d3bc4c2208a084b850669448233b1aaae87b0e25b80835181",
+   "lines": 185,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Routing, parameter extraction, status codes, DTO projection and native-response boundaries were checked against the official Controllers, Pipes and Request lifecycle docs; the complete Nest 11 fixture compiled and ran.",
-    "readable": "Full read of 179 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1012 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 185 lines (1126 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1126 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "HTTP route and response contracts are canonical here; module visibility, provider lifetimes and persistence durability are linked, not retold.",
-    "fast": "34.3 KB raw / 8.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 34.3 KB raw / 8.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "HTTP decorators cannot enforce durable business effects; the page names status, serialization, native-response, retry and delivery boundaries."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture)."
   },
   "20-backend/20.2-nestjs/01-core-architecture/20.2.1.03-providers.md": {
-   "sha256": "64946cf02cefe79cb9087d8b20776c96d718e5425b4772700daf31c487073db5",
-   "lines": 143,
+   "sha256": "f58dc01a37cb512a189f0e53a1ba727bbb8be8dc32b63c019fe10c989000c371",
+   "lines": 145,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Provider tokens, useExisting identity, factories, scopes and lifecycle ownership were checked against the official Providers, Custom providers and Injection scopes docs; the exact fixture compiled and ran.",
-    "readable": "Full read of 143 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "877 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 145 lines (963 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "963 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Provider construction and lifetime are owned here; module topology, controller routing and request-pipeline ordering point to their canonical pages.",
-    "fast": "26.6 KB raw / 7.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 26.6 KB raw / 7.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "DI solves construction and sharing, not tenant isolation or event durability; scope races, partial factory failure and shutdown ownership are explicit limits."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture)."
   },
   "20-backend/20.2-nestjs/01-core-architecture/20.2.1.04-dependency-injection.md": {
-   "sha256": "d4af46745413be4275d7243b33bf9db851116a2c35c2450c566bd199f92efd6d",
-   "lines": 141,
+   "sha256": "6a920a8eaaa4f5e295bc6fbc8c17f134629d7002b2cd95086e08c6e09356da01",
+   "lines": 145,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "ModuleRef get/resolve behavior, context IDs, scopes and cycles were checked against the official Module reference, Injection scopes and Circular dependency docs; no unsupported version-specific claim is made.",
-    "readable": "Full read of 141 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "984 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 145 lines (1073 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1073 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Resolution context and token identity are canonical here; provider recipes and module visibility remain linked rather than receiving a second treatment.",
-    "fast": "26.4 KB raw / 7.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 26.4 KB raw / 7.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "A resolvable provider is not proof of correct lifetime or cleanup; the page calls out cycles, absent request context, scope bubbling and factory failure boundaries."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture)."
   },
   "20-backend/20.2-nestjs/01-core-architecture/INDEX.md": {
-   "sha256": "b6439bd5518ffb51bb50591503e6344f82ac74c1a0d7b911881e4b2bfe6ee1b8",
+   "sha256": "9a9dc57976565155cd700c949f48cb34edfba99c7deae851bc95948eef17352d",
    "lines": 52,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "No version-sensitive claim; the learning sequence and source links were checked against the four current core-architecture pages and their revision companion.",
-    "readable": "Full read of 52 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "109 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 52 lines (114 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "114 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "This index owns study order and category boundaries; mechanism details remain in the four canonical chapters and revision stays a separate companion.",
-    "fast": "10.7 KB raw / 3.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 10.7 KB raw / 3.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "The learning path cannot replace application architecture; the index marks the boundary between framework mechanics and the later patterns/operations stacks."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture)."
   },
   "20-backend/20.2-nestjs/01-core-architecture/REVISION.md": {
-   "sha256": "b0d419820ea1759ea469c39501f6233acf15fd0c8968541a8424f4897e35a211",
-   "lines": 131,
+   "sha256": "71ac4a1d37eeb1ca62dd928b5672a1cca00a116eca9c9768d6c1d31cb8851010",
+   "lines": 143,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The source-linked revision answers were checked against the current core-architecture pages and official Nest module, controller, provider and scope docs; no version-sensitive claim is introduced.",
-    "readable": "Full read of 131 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1025 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 143 lines (1262 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1262 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Retrieval practice is owned here; full module, controller, provider and DI explanations remain in their canonical chapters, not repeated in the answers.",
-    "fast": "15.7 KB raw / 5.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 15.7 KB raw / 5.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "The questions preserve the failure boundaries: visibility is not identity, a status code is not durability, and a scoped graph is not automatic tenant isolation."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture)."
   },
   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.01-middleware.md": {
    "sha256": "20c06a8e37a599768185e2f3189164d7e47bca311874fb4504086b232c4c99d4",
@@ -4115,20 +4115,20 @@
    }
   },
   "20-backend/20.2-nestjs/INDEX.md": {
-   "sha256": "7e8e35d49d42098a6152679983345eb4fbd1425d95d9e91cb4fc29710bc745de",
+   "sha256": "3194d8e5c272debcf0d09e34fb6cbb8834a274eb17f9374af88d7e6283db5250",
    "lines": 149,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "No version-sensitive claim; the stack learning flow, category links, revision-before-interview ordering and canonical ownership table were checked against all five categories.",
-    "readable": "Full read of 149 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 149 lines (291 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "291 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "The stack index owns cross-category learning order and canonical-home links; it does not repeat lifecycle, operations or pattern explanations.",
-    "fast": "24.2 KB raw / 6.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 24.2 KB raw / 6.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "The stack is a framework study path, not a production checklist; its final boundary points to persistence, security and delivery decisions outside Nest decorators."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "Synced live read-time and counts after Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture."
   },
   "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.01-api-design-patterns.md": {
    "sha256": "7aad1fd9245d0180548b6d03ad04f6e17e3542c5b5c906c8ede24a1c31c74fdc",
@@ -6560,7 +6560,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
   },
   "20-backend/INDEX.md": {
-   "sha256": "14106b67c7a1ab0389d810d470e307df19dccc5b9130aad69c87eb9f409a1692",
+   "sha256": "041b19b8538144a76b99648578c74ebceee6a78a7131c097bbdc1bb32d45d258",
    "lines": 122,
    "genre": "index",
    "status": "read",
@@ -6573,7 +6573,7 @@
     "fast": "Measured 15.4 KB raw / 5.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Remaining limit is study-hour path estimates are rough guides and depend on each reader's prior backend background."
    },
-   "notes": "Synced live read-time and counts after Phase 9C D1-D7 rework: 20.1-node.js/04-security-and-operations and 20.1 INDEX (completes 20.1-node.js)."
+   "notes": "Synced live read-time and counts after Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture."
   },
   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md": {
    "sha256": "065e2b7d573b2298550d061453667084b1d010e6fadf07f903f6fdd34a8e5185",
@@ -14366,7 +14366,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "dc8f18e80ca4a77ad3330633c4229404e21296df3e1ff341293f3c49f3e5537d",
+   "sha256": "9e654693fef552968a78c1086fb5c9955790e2125fe9837a0282de7c45fce619",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14379,7 +14379,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 9C D1-D7 rework: 20.1-node.js/04-security-and-operations and 20.1 INDEX (completes 20.1-node.js)."
+   "notes": "Synced live read-time and counts after Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14414,7 +14414,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "contributing.md": {
-   "sha256": "0272bec4f30d6b6c8b6e6f948e28f028d3230b9b132f6436fe4fc67639659896",
+   "sha256": "6053048098df2e7c7f6c5968b6c15d4f30d4ba406d1e63bcead407a23fee0247",
    "lines": 948,
    "genre": "meta",
    "status": "read",
@@ -14424,10 +14424,10 @@
     "readable": "Full read of 948 lines (3308 prose words). The contributing guide opens with the hard rules, then walks through the expected workflow, repo conventions, and verification gates in order.",
     "concise": "3308 words of prose after removing YAML fences, badge links and metadata rows.",
     "focused": "Owned: this is the canonical contributor contract; it links to scripts and gates rather than restating their checks.",
-    "fast": "Measured not built as HTML; 53.1 KB Markdown source served raw. 1 KB Markdown source served raw. 1 KB Markdown source served raw.",
+    "fast": "Measured not built as HTML; 53.1 KB Markdown source served raw. 1 KB Markdown source served raw. 1 KB Markdown source served raw. 1 KB Markdown source served raw.",
     "best": "Does not retell stack content; its boundary is contribution process and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep."
+   "notes": "Synced live read-time and counts after Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture."
   },
   "design-qa.md": {
    "sha256": "4c7ab6ba5a188dc76d474a829bc7e1c1808c7032d41f351806bb1d1cb815bd93",
@@ -14670,7 +14670,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "fedf01a70d41e4910ed2daf7f572b84dcf1687f539e047b872ef8235bc2cca5f",
+   "sha256": "0e55aa7b9f6c77313df022a475a3979850f4cc572068964451d81297761f5907",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14683,7 +14683,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 9C D1-D7 rework: 20.1-node.js/04-security-and-operations and 20.1 INDEX (completes 20.1-node.js)."
+   "notes": "Synced live read-time and counts after Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",
@@ -15214,7 +15214,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11B live operational and governance docs)."
   },
   "docs/verification-gates.md": {
-   "sha256": "eb32a0844dbb2cf295f6c843f6d1ab8a785a669b040ff33b6f7ed987c01c53c1",
+   "sha256": "6914bdefb2dcb8252c3b6938a3cd50687350122b2f8880b285889e8a74cc549b",
    "lines": 137,
    "genre": "doc",
    "status": "read",
@@ -15227,7 +15227,7 @@
     "fast": "Measured 78.9 KB raw / 23.7 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not implement any gate; its boundary is documentation and it cannot replace running scripts/verify.sh."
    },
-   "notes": "Synced live read-time and counts after Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep."
+   "notes": "Synced live read-time and counts after Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture."
   },
   "lanes/INDEX.md": {
    "sha256": "c644b6e72d032c28309afec9141ec84c7489f4a6819c209b90073e97d8d489a5",

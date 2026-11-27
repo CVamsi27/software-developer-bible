@@ -2725,43 +2725,43 @@
     },
     {
       "path": "20-backend/20.2-nestjs/01-core-architecture/20.2.1.01-modules.md",
-      "sha256": "fea5b1422b3476f5dc7aebba567c9a58556f922772cb12916056c69beaf6cb1b",
+      "sha256": "3f4f5b0207e129b3364224ca17c2bd21baa52678b1d3df6b87c7ea465be30958",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+      "notes": "Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture C1-C8 refinement (2026-11-24): Full read of 167 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "fullContentRead": true,
       "findings": []
     },
     {
       "path": "20-backend/20.2-nestjs/01-core-architecture/20.2.1.02-controllers.md",
-      "sha256": "731c0a8e4a0d5f45b8cb2ae04f963d1c8149c125d22c9248fe26ffb5f8629811",
+      "sha256": "fef83befbb16e43d3bc4c2208a084b850669448233b1aaae87b0e25b80835181",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+      "notes": "Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture C1-C8 refinement (2026-11-24): Full read of 185 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "fullContentRead": true,
       "findings": []
     },
     {
       "path": "20-backend/20.2-nestjs/01-core-architecture/20.2.1.03-providers.md",
-      "sha256": "64946cf02cefe79cb9087d8b20776c96d718e5425b4772700daf31c487073db5",
+      "sha256": "f58dc01a37cb512a189f0e53a1ba727bbb8be8dc32b63c019fe10c989000c371",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+      "notes": "Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture C1-C8 refinement (2026-11-24): Full read of 145 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "fullContentRead": true,
       "findings": []
     },
     {
       "path": "20-backend/20.2-nestjs/01-core-architecture/20.2.1.04-dependency-injection.md",
-      "sha256": "d4af46745413be4275d7243b33bf9db851116a2c35c2450c566bd199f92efd6d",
+      "sha256": "6a920a8eaaa4f5e295bc6fbc8c17f134629d7002b2cd95086e08c6e09356da01",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+      "notes": "Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture C1-C8 refinement (2026-11-24): Full read of 145 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-24",
@@ -2769,23 +2769,23 @@
     },
     {
       "path": "20-backend/20.2-nestjs/01-core-architecture/INDEX.md",
-      "sha256": "b6439bd5518ffb51bb50591503e6344f82ac74c1a0d7b911881e4b2bfe6ee1b8",
+      "sha256": "9a9dc57976565155cd700c949f48cb34edfba99c7deae851bc95948eef17352d",
       "genre": "index",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+      "notes": "Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture C1-C8 refinement (2026-11-24): Full read of 52 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "fullContentRead": true,
       "findings": []
     },
     {
       "path": "20-backend/20.2-nestjs/01-core-architecture/REVISION.md",
-      "sha256": "b0d419820ea1759ea469c39501f6233acf15fd0c8968541a8424f4897e35a211",
+      "sha256": "71ac4a1d37eeb1ca62dd928b5672a1cca00a116eca9c9768d6c1d31cb8851010",
       "genre": "revision",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+      "notes": "Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture C1-C8 refinement (2026-11-24): Full read of 143 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "fullContentRead": true,
       "findings": []
     },
@@ -3047,12 +3047,12 @@
     },
     {
       "path": "20-backend/20.2-nestjs/INDEX.md",
-      "sha256": "7e8e35d49d42098a6152679983345eb4fbd1425d95d9e91cb4fc29710bc745de",
+      "sha256": "3194d8e5c272debcf0d09e34fb6cbb8834a274eb17f9374af88d7e6283db5250",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+      "notes": "Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture count/read-time sync (2026-11-24): Full read of 149 lines. Updated generated counts/read-time navigation after Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture.",
       "findings": []
     },
     {
@@ -4764,12 +4764,12 @@
     },
     {
       "path": "20-backend/INDEX.md",
-      "sha256": "14106b67c7a1ab0389d810d470e307df19dccc5b9130aad69c87eb9f409a1692",
+      "sha256": "041b19b8538144a76b99648578c74ebceee6a78a7131c097bbdc1bb32d45d258",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 9C D1-D7 rework: 20.1-node.js/04-security-and-operations and 20.1 INDEX (completes 20.1-node.js) count/read-time sync (2026-11-24): Full read of 122 lines. Updated generated counts/read-time navigation after Phase 9C D1-D7 rework: 20.1-node.js/04-security-and-operations and 20.1 INDEX (completes 20.1-node.js).",
+      "notes": "Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture count/read-time sync (2026-11-24): Full read of 122 lines. Updated generated counts/read-time navigation after Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "ab7ced08ffe012474a86db7f5ff38398ca691458b124ed67f5bf5a2780894865",
@@ -10066,12 +10066,12 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "dc8f18e80ca4a77ad3330633c4229404e21296df3e1ff341293f3c49f3e5537d",
+      "sha256": "9e654693fef552968a78c1086fb5c9955790e2125fe9837a0282de7c45fce619",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 9C D1-D7 rework: 20.1-node.js/04-security-and-operations and 20.1 INDEX (completes 20.1-node.js) count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 9C D1-D7 rework: 20.1-node.js/04-security-and-operations and 20.1 INDEX (completes 20.1-node.js).",
+      "notes": "Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture.",
       "findings": []
     },
     {
@@ -10096,12 +10096,12 @@
     },
     {
       "path": "contributing.md",
-      "sha256": "0272bec4f30d6b6c8b6e6f948e28f028d3230b9b132f6436fe4fc67639659896",
+      "sha256": "6053048098df2e7c7f6c5968b6c15d4f30d4ba406d1e63bcead407a23fee0247",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep count/read-time sync (2026-11-24): Full read of 948 lines. Updated generated counts/read-time navigation after Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep.",
+      "notes": "Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture count/read-time sync (2026-11-24): Full read of 948 lines. Updated generated counts/read-time navigation after Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture.",
       "findings": []
     },
     {
@@ -10261,12 +10261,12 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "fedf01a70d41e4910ed2daf7f572b84dcf1687f539e047b872ef8235bc2cca5f",
+      "sha256": "0e55aa7b9f6c77313df022a475a3979850f4cc572068964451d81297761f5907",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 9C D1-D7 rework: 20.1-node.js/04-security-and-operations and 20.1 INDEX (completes 20.1-node.js) count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 9C D1-D7 rework: 20.1-node.js/04-security-and-operations and 20.1 INDEX (completes 20.1-node.js).",
+      "notes": "Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",
@@ -10618,12 +10618,12 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "eb32a0844dbb2cf295f6c843f6d1ab8a785a669b040ff33b6f7ed987c01c53c1",
+      "sha256": "6914bdefb2dcb8252c3b6938a3cd50687350122b2f8880b285889e8a74cc549b",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep count/read-time sync (2026-11-24): Full read of 137 lines. Updated generated counts/read-time navigation after Phase 2J D1-D7 rework: 10.2-typescript/05-interview-prep.",
+      "notes": "Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture count/read-time sync (2026-11-24): Full read of 137 lines. Updated generated counts/read-time navigation after Phase 10A D1-D7 rework: 20.2-nestjs/01-core-architecture.",
       "findings": []
     },
     {

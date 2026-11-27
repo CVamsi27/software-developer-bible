@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "fa73bf7d37c43185dc80e26c4aad1c20726e398fc6e90ab5ce59a800e3069078",
+ "corpus_digest": "9014a8c52269270117fbc4733af8c8d9619ada980be2c798cf5ae16ec26fbc1c",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5547
+  "read_minutes": 5548
  },
  "chapters": [
   {
@@ -2020,7 +2020,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "20-backend/20.2-nestjs/01-core-architecture/REVISION.html",

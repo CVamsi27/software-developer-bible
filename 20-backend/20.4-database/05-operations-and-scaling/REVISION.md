@@ -28,11 +28,14 @@ Source: [Connection Pooling](20.4.5.01-connection-pooling.md)
 
 **Q:** In the max-one-connection fixture, what does the queued borrower consume while waiting?
 
-**A:** It is a waiting request, not a second physical connection. `waitingCount` is 1 until the checked-out connection is released; with `max: 2`, the second borrower can acquire another connection and need not queue. Across ten processes, each local maximum still contributes to the server/proxy budget.
+**A:** It is a waiting request, not a second physical connection. `waitingCount` is 1 until the checked-out connection is released; with `max: 2`, the second borrower can acquire another connection and need not queue. Across ten processes, each local maximum still contributes to the server or proxy budget.
 
 **Q:** What changes if a transaction helper runs its `UPDATE` through `pool.query` after acquiring a client?
 
-**A:** It can execute on another connection outside the original `BEGIN`. A later rollback cannot undo that write. Every statement belonging to the transaction must use the same checked-out client, with release/discard and uncertain-commit handling defined.
+**A:** It can execute on another connection outside the original `BEGIN`. A later rollback cannot undo that write. Every statement belonging to the transaction must use the same checked-out client, with release, discard, and uncertain-commit handling defined.
+
+**Q:** Why can prepared statements still fail or misbehave under PgBouncer transaction pooling unless configured explicitly?
+**A:** A named server-side prepared statement belongs to one backend PostgreSQL session, so switching server connections between transactions raises an unrecognized statement error unless the proxy maps client prepared names across backends; in PgBouncer 1.21 and newer, enabling `max_prepared_statements` caches protocol-level prepared statements across handoffs, while `LISTEN`, temporary tables, and session advisory locks still require session pooling (source: [Connection pooling](20.4.5.01-connection-pooling.md)).
 
 ## Database Migrations & Zero-Downtime Schema Changes
 
@@ -44,7 +47,7 @@ Source: [Database Migrations & Zero-Downtime Schema Changes](20.4.5.02-migration
 
 **Q:** What does each phase of expand, migrate, and contract change?
 
-**A:** Expansion adds a compatible representation; migration establishes writer ownership, backfills current values, verifies invariants and switches readers; contraction retires old writers/readers and removes the obsolete representation after the rollback window. The phases can require several deployments and validation gates.
+**A:** Expansion adds a compatible representation; migration establishes writer ownership, backfills current values, verifies invariants and switches readers; contraction retires old writers and readers and removes the obsolete representation after the rollback window. The phases can require several deployments and validation gates.
 
 **Q:** Why can a short `ALTER TABLE` statement still interrupt application traffic?
 
@@ -58,6 +61,9 @@ Source: [Database Migrations & Zero-Downtime Schema Changes](20.4.5.02-migration
 
 **A:** Once writers stop providing the old representation, its constraint can reject otherwise valid new-format inserts. Retire the old requirement only after compatibility gates permit it, and preserve the intended rollback contract.
 
+
+**Q:** Why can an `ALTER TABLE` command block ordinary reads across a busy table even when the schema edit itself performs no table rewrite?
+**A:** `ALTER TABLE` requests an `ACCESS EXCLUSIVE` lock; if an earlier long query holds `ACCESS SHARE`, PostgreSQL places the waiting DDL ahead of new `SELECT`, `INSERT`, and `UPDATE` requests in the lock queue, stalling normal traffic until the blocker finishes or a short `SET LOCAL lock_timeout` aborts and retries with backoff (source: [Migration strategies](20.4.5.02-migration-strategies.md)).
 ## Soft Delete & Tombstones
 
 Source: [Soft Delete & Tombstones](20.4.5.03-soft-delete-and-tombstones.md)
@@ -80,7 +86,7 @@ Source: [Soft Delete & Tombstones](20.4.5.03-soft-delete-and-tombstones.md)
 
 **Q:** Why can restoring an inactive account fail after another account reuses its email?
 
-**A:** The active-only unique index permits reuse while the original is inactive, then rejects making both active. The fixture raises SQLSTATE `23505` and rolls back; resolve the product/authorization conflict without silently replacing another account.
+**A:** The active-only unique index permits reuse while the original is inactive, then rejects making both active. The fixture raises SQLSTATE `23505` and rolls back; resolve the product and authorization conflict without silently replacing another account.
 
 ## Backups, PITR & Recovery
 
@@ -92,19 +98,19 @@ Source: [Backups, PITR & Recovery](20.4.5.04-backups-pitr-recovery.md)
 
 **Q:** What must a restore test prove about a backup?
 
-**A:** Prove artifact/key access, compatible environment, a reachable target, application invariants, isolation of side effects and usable cutover. Measure the whole recovery path and newest independently recoverable work, rather than inferring success from file existence or server startup.
+**A:** Prove artifact and key access, a compatible environment, a reachable target, application invariants, isolation of side effects, and usable cutover. Measure the whole recovery path and newest independently recoverable work, rather than inferring success from file existence or server startup.
 
 **Q:** How do recovery-point and recovery-time targets influence the backup design?
 
-**A:** RPO limits lost business work and drives independently durable history; segment switching alone does not guarantee upload. RTO includes detection, provisioning, retrieval, restore/replay, validation and cutover. Measure the deployed chain at representative volume and revisit its dependencies.
+**A:** RPO limits lost business work and drives independently durable history; segment switching alone does not guarantee upload. RTO includes detection, provisioning, retrieval, restore, replay, validation, and cutover. Measure the deployed chain at representative volume and revisit its dependencies.
 
 **Q:** What if the `before_bad` restore marker is placed after the destructive commit?
 
-**A:** The named target includes that committed bad state. Verify marker/commit order and the recovered values. An earlier target also omits legitimate later writes, so choose whole-service rollback or selective repair with reconciliation.
+**A:** The named target includes that committed bad state. Verify marker and commit order and the recovered values. An earlier target also omits legitimate later writes, so choose whole-service rollback or selective repair with reconciliation.
 
 **Q:** Why can a retained base backup become unusable despite every recent upload succeeding?
 
-**A:** It may require an older missing WAL segment or inaccessible key/extension. Recovery needs a continuous applicable chain and environment; recent success does not repair a historical gap. A sixty-second `archive_timeout` does not prove archive durability or RPO.
+**A:** It may require an older missing WAL segment or inaccessible key or extension. Recovery needs a continuous applicable chain and environment; recent success does not repair a historical gap. A sixty-second `archive_timeout` does not prove archive durability or RPO.
 
 **Q:** Why can PostgreSQL 18 not restore an incremental `pg_basebackup` by itself, and what must the drill validate?
 
@@ -116,11 +122,11 @@ Source: [Search Infrastructure at Scale](20.4.5.05-search-infrastructure-at-scal
 
 **Q:** How does relevance ranking differ from simply selecting matching rows?
 
-**A:** Filtering decides which documents satisfy a query; ranking orders those candidates by a scoring policy. PostgreSQL supports term-based ranking as well as filtering. A separate engine is justified by evaluated capabilities/workload, not by assuming that SQL cannot score matches.
+**A:** Filtering decides which documents satisfy a query; ranking orders those candidates by a scoring policy. PostgreSQL supports term-based ranking as well as filtering. A separate engine is justified by evaluated capabilities and workload, not by assuming that SQL cannot score matches.
 
 **Q:** Why can an asynchronously updated search index return older data?
 
-**A:** Source commit, remote application and search visibility are separate milestones. An asynchronous projection can serve older versions until publication and visibility complete. Define a measured freshness contract and, where required, bounded version/task waiting or an authoritative read; delays are not universally seconds.
+**A:** Source commit, remote application and search visibility are separate milestones. An asynchronous projection can serve older versions until publication and visibility complete. Define a measured freshness contract and, where required, bounded version or task waiting or an authoritative read; delays are not universally seconds.
 
 **Q:** What workload and expected growth should determine whether search needs a separate engine?
 
@@ -132,7 +138,10 @@ Source: [Search Infrastructure at Scale](20.4.5.05-search-infrastructure-at-scal
 
 **Q:** A bulk request returns HTTP success, and an old upsert arrives after a deletion. Is the projection confirmed correct?
 
-**A:** No. Inspect per-item failures/task completion and the required visibility milestone. Enforce per-key/version/delete ordering so the old event cannot recreate the document; `SKIP LOCKED` claims and individually idempotent upserts alone do not provide that ordering.
+**A:** No. Inspect per-item failures, task completion, and the required visibility milestone. Enforce per-key version and deletion ordering so the old event cannot recreate the document; `SKIP LOCKED` claims and individually idempotent upserts alone do not provide that ordering.
+
+**Q:** When does PostgreSQL `pg_trgm` solve typo tolerance without standing up an external search cluster, and what index choices does it expose?
+**A:** `pg_trgm` breaks text into overlapping three-character trigrams for `%` similarity filtering and `<->` distance ordering; use `gin_trgm_ops` for fast threshold matches or `gist_trgm_ops` when top-k `<->` index sorting is needed, while recognizing that terms shorter than three characters fall back poorly and external engines still own multi-language analyzers or hybrid vector fusion (source: [Search infrastructure at scale](20.4.5.05-search-infrastructure-at-scale.md)).
 
 ## Summary
 

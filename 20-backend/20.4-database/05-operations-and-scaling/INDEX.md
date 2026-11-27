@@ -1,7 +1,7 @@
 # Operations & Scaling - Database
 
-> **Study time:** ≈ 1 h 4 m of reading (7 files, ~9 min average).
-> **7 files.** Keeping the database healthy at scale: connection pooling, zero-downtime migrations, soft delete & tombstones, backups/PITR recovery, search infrastructure at scale — plus the interview question bank.
+> **Study time:** ≈ 1 h 5 m of reading (7 files, ~9 min average).
+> **7 files.** Keeping the database healthy at scale: connection pooling, zero-downtime migrations, soft delete & tombstones, backups and PITR recovery, search infrastructure at scale — plus the interview question bank.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Operations%20%26%20Scaling-8b5cf6)](../INDEX.md)
@@ -10,10 +10,10 @@
 
 ## Learning Flow
 
-Start with transaction, locking and WAL basics from the foundations/transactions categories. Then follow the operational ownership changes:
+Start with transaction, locking and WAL basics from the foundations and transactions categories. Then follow the operational ownership changes:
 
 1. Bound connection borrowers and keep each transaction on one session.
-2. Change a representation while old/new application versions coexist; verify writer ownership and backfill completeness.
+2. Change a representation while old and new application versions coexist; verify writer ownership and backfill completeness.
 3. Follow deletion through restoration, conflicting keys, delayed jobs and derived-store cleanup.
 4. Recover a reachable historical state and reconcile excluded work before exposing a restored service.
 5. Build search as a useful projection with explicit visibility, ordering and rebuild contracts.
@@ -25,11 +25,11 @@ Start with transaction, locking and WAL basics from the foundations/transactions
 | Order | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Connection Pooling](20.4.5.01-connection-pooling.md) | PgBouncer, connection lifecycle, pool sizing, transaction pooling, prepared statements | Important | Important | 10 min |
-| 02 | [Migration Strategies](20.4.5.02-migration-strategies.md) | Expand/contract, lock-aware migrations, backfills, zero-downtime, blue-green DB | Important | Important | 10 min |
-| 03 | [Soft Delete & Tombstones](20.4.5.03-soft-delete-and-tombstones.md) | `deleted_at` columns, partial indexes, GDPR right-to-erasure, CDC tombstones, log compaction retention | Essential | Foundational | 11 min |
-| 04 | [Backups, PITR & Recovery](20.4.5.04-backups-pitr-recovery.md) | `pg_dump` vs physical backups, WAL archiving, incremental backup dependencies, `recovery_target_time` PITR, RPO/RTO targets and restore drills | Important | Important | 10 min |
-| 05 | [Search Infrastructure at Scale](20.4.5.05-search-infrastructure-at-scale.md) | Term analysis, PostgreSQL matching/ranking, measured engine choice, item/task outcomes, ordered deletion, snapshot/replay rebuilds | Essential | Foundational | 11 min |
-| Revision | [Revision](REVISION.md) | Explain pool wait, schema/backfill races, deletion generations, restore boundaries and search ordering | Essential | Foundational | 4 min |
+| 02 | [Migration Strategies](20.4.5.02-migration-strategies.md) | Expand-and-contract, lock-aware migrations, backfills, zero-downtime, blue-green DB | Important | Important | 10 min |
+| 03 | [Soft Delete & Tombstones](20.4.5.03-soft-delete-and-tombstones.md) | `deleted_at` columns, partial indexes, GDPR right-to-erasure, CDC tombstones, log compaction retention | Essential | Foundational | 12 min |
+| 04 | [Backups, PITR & Recovery](20.4.5.04-backups-pitr-recovery.md) | `pg_dump` vs physical backups, WAL archiving, incremental backup dependencies, `recovery_target_time` PITR, RPO and RTO targets, and restore drills | Important | Important | 10 min |
+| 05 | [Search Infrastructure at Scale](20.4.5.05-search-infrastructure-at-scale.md) | Term analysis, PostgreSQL matching and ranking, measured engine choice, per-item and task outcomes, ordered deletion, snapshot and replay rebuilds | Essential | Foundational | 11 min |
+| Revision | [Revision](REVISION.md) | Explain pool wait, schema and backfill races, deletion generations, restore boundaries and search ordering | Essential | Foundational | 4 min |
 | 06 | [Interview Questions](20.4.5.06-interview-questions.md) | Authored database questions with mechanism and changed-condition follow-ups | Essential | Foundational | 8 min |
 
 ---
@@ -44,7 +44,7 @@ The [Docita case study](../../../projects/docita/INDEX.md) provides implementati
 
 | Topic | Docita evidence |
 | --------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| Connection pooling | `apps/api/src/shared/modules/database/database-pooling.service.ts` — min/max/idle/maxUses pool policy |
+| Connection pooling | `apps/api/src/shared/modules/database/database-pooling.service.ts` — `min`, `max`, `idle`, and `maxUses` pool policy |
 | Migrations | `packages/db/prisma/migrations/` — inspect ordering and compatibility gates |
 | Backups | `apps/api/src/shared/modules/database/database-backup.service.ts` — spawned `pg_dump`, retention window, Prometheus metrics |
 | Soft delete | `apps/api/src/shared/common/prisma/active-user.filter.ts` — `deletedAt: null` filter keeps tombstoned users out of reads |

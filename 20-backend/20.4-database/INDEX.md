@@ -1,7 +1,7 @@
 # Database — Index
 
-> **Study time:** ≈ 4 h 24 m of reading (29 files, ~9 min average).
-> **29 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma (plus the ORM/query-builder landscape), execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, backups/PITR recovery, search infrastructure at scale, window functions, JSONB, replication, row-level security, and interview questions.
+> **Study time:** ≈ 4 h 25 m of reading (29 files, ~9 min average).
+> **29 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma (plus the ORM and query-builder landscape), execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, backups and PITR recovery, search infrastructure at scale, window functions, JSONB, replication, row-level security, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-29-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Data-8b5cf6)](#)
@@ -61,7 +61,7 @@ Choose indexes and query shapes from filters, joins and measured execution plans
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Indexes](02-querying-and-optimization/20.4.2.01-indexes.md) | B-tree, hash, GiST, GIN, BRIN, composite indexes, index-only scans, partial indexes | Essential | Foundational | 10 min |
-| 02 | [Joins](02-querying-and-optimization/20.4.2.02-joins.md) | INNER, LEFT, RIGHT, FULL, CROSS, LATERAL, hash/merge/nested loop joins, join order | Essential | Foundational | 10 min |
+| 02 | [Joins](02-querying-and-optimization/20.4.2.02-joins.md) | INNER, LEFT, RIGHT, FULL, CROSS, LATERAL, hash, merge, and nested loop joins, join order | Essential | Foundational | 10 min |
 | 03 | [Execution Plans](02-querying-and-optimization/20.4.2.03-execution-plans.md) | EXPLAIN ANALYZE, row estimates and loops, buffers, generic plans (16+), serialization (17+), index searches (18+) | Essential | Foundational | 9 min |
 | 04 | [Window Functions](02-querying-and-optimization/20.4.2.04-window-functions.md) | ROW_NUMBER, RANK, LAG, LEAD, aggregate OVER, running totals, moving averages | Essential | Foundational | 11 min |
 | 05 | [JSONB](02-querying-and-optimization/20.4.2.05-jsonb.md) | Extraction, missing vs null, operator-compatible GIN, SQL/JSON `JSON_TABLE` (PostgreSQL 17+) | Essential | Foundational | 11 min |
@@ -74,7 +74,7 @@ Preserve transaction invariants and make isolation, lock and replication behavio
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Transactions](03-transactions-and-replication/20.4.3.01-transactions.md) | ACID, BEGIN/COMMIT, SAVEPOINT, isolation levels (read committed, repeatable read, serializable) | Essential | Foundational | 8 min |
+| 01 | [Transactions](03-transactions-and-replication/20.4.3.01-transactions.md) | ACID, BEGIN and COMMIT, SAVEPOINT, isolation levels (read committed, repeatable read, serializable) | Essential | Foundational | 8 min |
 | 02 | [Deadlocks](03-transactions-and-replication/20.4.3.02-deadlocks.md) | Detection, prevention, timeout-based resolution, retry strategies, lock ordering | Essential | Foundational | 6 min |
 | 03 | [Optimistic & Pessimistic Locking](03-transactions-and-replication/20.4.3.03-optimistic-pessimistic-locking.md) | Version-based locking, row-level locking, advisory locks, SELECT FOR UPDATE | Important | Important | 7 min |
 | 04 | [Database Replication](03-transactions-and-replication/20.4.3.04-database-replication.md) | Streaming vs logical, read replicas, Patroni failover, replication lag, conflict resolution | Important | Important | 8 min |
@@ -95,15 +95,15 @@ Application query and transaction ownership. Category INDEX: [ORM & Access](04-o
 
 ## Operations & Scaling
 
-Operate connections, schema changes, deletion, backup/recovery and search integrations. Category INDEX: [Operations & Scaling](05-operations-and-scaling/INDEX.md).
+Operate connections, schema changes, deletion, backup and recovery, and search integrations. Category INDEX: [Operations & Scaling](05-operations-and-scaling/INDEX.md).
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Connection Pooling](05-operations-and-scaling/20.4.5.01-connection-pooling.md) | PgBouncer, connection lifecycle, pool sizing, transaction pooling, prepared statements | Important | Important | 10 min |
-| 02 | [Migration Strategies](05-operations-and-scaling/20.4.5.02-migration-strategies.md) | Expand/contract, lock-aware migrations, backfills, zero-downtime, blue-green DB | Important | Important | 10 min |
-| 03 | [Soft Delete & Tombstones](05-operations-and-scaling/20.4.5.03-soft-delete-and-tombstones.md) | `deleted_at` columns, partial indexes, GDPR right-to-erasure, CDC tombstones, log compaction retention | Essential | Foundational | 11 min |
-| 04 | [Backups, PITR & Recovery](05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md) | `pg_dump` vs physical backups, WAL archiving, PITR (`recovery_target_time`), pgBackRest/WAL-G, RPO/RTO, restore drills, cross-region copies | Important | Important | 10 min |
-| 05 | [Search Infrastructure at Scale](05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md) | Postgres FTS ceiling (GIN/tsvector), Elasticsearch/OpenSearch vs Meilisearch/Typesense, CDC/outbox sync, BM25 tuning, multilingual analysis | Essential | Foundational | 11 min |
+| 02 | [Migration Strategies](05-operations-and-scaling/20.4.5.02-migration-strategies.md) | Expand-and-contract, lock-aware migrations, backfills, zero-downtime, blue-green DB | Important | Important | 10 min |
+| 03 | [Soft Delete & Tombstones](05-operations-and-scaling/20.4.5.03-soft-delete-and-tombstones.md) | `deleted_at` columns, partial indexes, GDPR right-to-erasure, CDC tombstones, log compaction retention | Essential | Foundational | 12 min |
+| 04 | [Backups, PITR & Recovery](05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md) | `pg_dump` vs physical backups, WAL archiving, PITR (`recovery_target_time`), pgBackRest and WAL-G, RPO and RTO, restore drills, cross-region copies | Important | Important | 10 min |
+| 05 | [Search Infrastructure at Scale](05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md) | Postgres FTS ceiling (GIN and `tsvector`), Elasticsearch or OpenSearch vs Meilisearch or Typesense, CDC and outbox sync, BM25 tuning, multilingual analysis | Essential | Foundational | 11 min |
 | 06 | [Interview Questions](05-operations-and-scaling/20.4.5.06-interview-questions.md) | Authored questions with mechanism and boundary answers | Essential | Foundational | 8 min |
 
 ---
@@ -130,14 +130,14 @@ The paths below estimate focused study time, including practice and review. The 
 
 ### Path C — Interview tomorrow
 - Use 60–90 minutes to refresh MVCC, transaction isolation, indexes and execution plans, locking, and recovery.
-- Rehearse five questions from the interview bank. For each, state the invariant, trace normal operation, explain a failure/retry boundary, and name an operational signal.
+- Rehearse five questions from the interview bank. For each, state the invariant, trace normal operation, explain a failure or retry boundary, and name an operational signal.
 - Revisit weak chapter summaries instead of trying to read all 29 files.
 
 ---
 
 ## Recall before interview practice
 
-Each category has a separate revision companion. Use [foundations revision](01-postgresql-foundations/REVISION.md) after its learning pass, [query revision](02-querying-and-optimization/REVISION.md) after query mechanics, [transaction revision](03-transactions-and-replication/REVISION.md) after concurrency/replication, and [ORM revision](04-orm-and-access/REVISION.md) after application access. Complete [operations revision](05-operations-and-scaling/REVISION.md) before the final interview bank.
+Each category has a separate revision companion. Use [foundations revision](01-postgresql-foundations/REVISION.md) after its learning pass, [query revision](02-querying-and-optimization/REVISION.md) after query mechanics, [transaction revision](03-transactions-and-replication/REVISION.md) after concurrency and replication, and [ORM revision](04-orm-and-access/REVISION.md) after application access. Complete [operations revision](05-operations-and-scaling/REVISION.md) before the final interview bank.
 
 ## Cross-References
 
@@ -159,7 +159,7 @@ Each category has a separate revision companion. Use [foundations revision](01-p
 These [Docita](https://github.com/CVamsi27/docita) healthcare-platform paths (NestJS + Prisma + Postgres) are starting points for inspecting schema, pooling, RLS, and backup code alongside the case studies:
 
 | Topic | Docita evidence |
-| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Schema & models | `packages/db/prisma/schema.prisma` (workspace package `@workspace/db`) — the full data model with `@@index` declarations |
 | Migrations | `packages/db/prisma/migrations/` — versioned schema migrations |
 | Transactions | `apps/api/src/prisma/transaction-runner.ts` + `shared/common/database-transaction-options.ts`; outbox rows append inside the same `prisma.$transaction` as the business write |
@@ -169,4 +169,4 @@ These [Docita](https://github.com/CVamsi27/docita) healthcare-platform paths (Ne
 | Repository pattern | `apps/api/src/shared/common/repositories/` (`base.repository.ts`) + per-domain `infrastructure/repositories/prisma-*.ts` — DB access behind interfaces |
 | Multi-tenant RLS | `apps/api/src/shared/modules/rls/` — `rls.service.ts` + `apply-rls-scope.ts` scoping every query to the clinic tenant |
 | Backups | `apps/api/src/shared/modules/database/database-backup.service.ts` |
-| Replication / read replicas | No read-replica fan-out — single managed Postgres (see `shared/modules/database/database-rds.service.ts`) |
+| Replication and read replicas | No read-replica fan-out — single managed Postgres (see `shared/modules/database/database-rds.service.ts`) |

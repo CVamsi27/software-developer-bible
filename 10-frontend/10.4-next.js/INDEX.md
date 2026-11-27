@@ -1,13 +1,13 @@
 # Next.js — Index
 
-> **Study time:** ≈ 3 h 37 m of reading (21 files, ~10 min average).
-> **21 files** — App Router, rendering strategies, server components, data fetching patterns, caching, streaming, ISR, authentication, static exports, deployment (Docker/Vercel/self-hosted), and interview questions.
+> **Study time:** ≈ 3 h 39 m of reading (21 files, ~10 min average).
+> **21 files** — App Router, rendering strategies, server components, data fetching patterns, caching, streaming, ISR, authentication, static exports, deployment (Docker, Vercel, and self-hosted), and interview questions.
 
 [![Files](https://img.shields.io/badge/files-21-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why Next.js:** A React framework that integrates routing, server rendering and deployment conventions. This section follows the concepts in dependency order and points to the contract that applies to each router and cache model.
+**Why Next.js:** A React framework that integrates routing, server rendering, and deployment conventions. This section follows the concepts in dependency order and points to the contract that applies to each router and cache model.
 
 ---
 
@@ -21,7 +21,7 @@ The 21 content files — 17 chapters and four revision companions — are organi
 | [Routing, HTTP & Metadata](02-routing-and-middleware/INDEX.md) | 3 | Next.js 16 Proxy, Route Handlers, and page metadata |
 | [Data & Caching](03-data-and-caching/INDEX.md) | 6 | Data access, mutations, two cache models, streaming, regeneration, and static export |
 | [Production](04-production/INDEX.md) | 3 | Session-to-resource authorization, responsive image delivery, deployment runtime, and cache operations |
-| [Interview Prep](05-interview-prep/INDEX.md) | 1 | 40 interview questions |
+| [Interview Prep](05-interview-prep/INDEX.md) | 1 | 44 interview questions |
 
 ---
 
@@ -92,7 +92,7 @@ Protect current identity and resource boundaries, deliver appropriate image vari
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 17 | [Interview Questions](05-interview-prep/10.4.5.01-interview-questions.md) | 40 questions with answers | Important | Specialized | 32 min |
+| 17 | [Interview Questions](05-interview-prep/10.4.5.01-interview-questions.md) | 44 questions with answers | Important | Specialized | 34 min |
 
 ---
 
@@ -114,14 +114,14 @@ Protect current identity and resource boundaries, deliver appropriate image vari
 ### Path C — Interview tomorrow
 - Review each chapter's definition, example, and summary; focus on the topics listed above
 - Re-read Caching + Server Components
-- Run through the 40 Interview Questions
+- Run through the 44 Interview Questions
 
 ---
 
 ## Cross-References
 
 - [React](../10.3-react/INDEX.md) — Next.js builds on React; Next.js integrates React Server Components with its router
-- [Serverless & Edge](../../40-platform/40.7-serverless-edge/INDEX.md) — middleware/Proxy runtime choices depend on framework version and host
+- [Serverless & Edge](../../40-platform/40.7-serverless-edge/INDEX.md) — Middleware and Proxy runtime choices depend on framework version and host
 - [Performance Monitoring](../../50-quality/50.3-performance-monitoring/INDEX.md) — measuring Next.js performance
 - [Auth & Security](../../20-backend/20.5-security/INDEX.md) — auth patterns
 

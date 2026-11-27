@@ -2299,52 +2299,52 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 4D D1-D7 rework: 10.4-next.js/04-production)."
   },
   "10-frontend/10.4-next.js/05-interview-prep/10.4.5.01-interview-questions.md": {
-   "sha256": "973c83e53f8904750fe4062fd85d11a492c33130d9a3b6e992d8855b361818bc",
-   "lines": 1009,
+   "sha256": "b4a3c2838d0a7d52d70e751b0688ff6025bfc689b674166fdf9a726219851043",
+   "lines": 1045,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "All 40 answer pairs were checked against their chapters and the official Next.js 16.4.6 documentation; the 15-versus-16 cache scope, Cache Components from 16.0, partialPrefetching from 16.3, retry from 16.3, priority deprecation and image version boundaries were verified on 2026-11-18.",
-    "readable": "Full read of 1009 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "4345 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 1045 lines (5074 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "5074 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Drill bank: each question points at a chapter canonical treatment rather than re-teaching the mechanism.",
-    "fast": "125.4 KB raw / 23.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 125.4 KB raw / 23.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Provides 40 graded answers with follow-up boundaries; it is interview practice and does not replace the learning chapters."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 4E D1-D7 rework: 10.4-next.js/05-interview-prep (completes 10.4-next.js))."
   },
   "10-frontend/10.4-next.js/05-interview-prep/INDEX.md": {
-   "sha256": "69bcccd6fad29b8e8897c453f0570ee5e820d5291dc1347f68ead54ad5562aac",
+   "sha256": "3cb7db5787bbbfbe64ffbc47ec087cb6054e4a79bf6c7c3544a6cf7b2eaa0a3e",
    "lines": 28,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "No version-sensitive claim; the 1-file count, 31-minute total and status badge were re-derived from disk on 2026-11-18.",
-    "readable": "Full read of 28 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "56 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 28 lines (60 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "60 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Navigation only: it points at the 40-question bank without retelling its answers.",
-    "fast": "7.3 KB raw / 2.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 7.3 KB raw / 2.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Explains how to practise the bank in dependency order; it does not substitute for answering the questions."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 4E D1-D7 rework: 10.4-next.js/05-interview-prep (completes 10.4-next.js))."
   },
   "10-frontend/10.4-next.js/INDEX.md": {
-   "sha256": "7866013c8f7861494d09f4f1913d91fb25bb5eafe7918c573c52100d474d2e5e",
+   "sha256": "55634f08e19b64b39a436deef95ac879482d7cdedb0b32a0c8875fc0a13ef081",
    "lines": 132,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Next.js 16.4.6 and the 204-minute total were checked against npm and the five category tables; 17 chapters plus four revision companions gives the stated 21 content files on 2026-11-18.",
-    "readable": "Full read of 132 lines (308 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "308 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 132 lines (310 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "310 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Section map: it points at five category indexes and the cross-reference table without retelling their chapters.",
     "fast": "Measured 18.9 KB raw / 5.0 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Sets the senior-level scope and three study paths; it does not try to be a sixth tutorial."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 4D D1-D7 rework: 10.4-next.js/04-production)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 4E D1-D7 rework: 10.4-next.js/05-interview-prep (completes 10.4-next.js))."
   },
   "10-frontend/10.5-form-handling/10.5.01-react-hook-form.md": {
    "sha256": "de1ef83bf4d319b99e32ee39d28e0f3771b8c8b2456c4d4c4f1f463add6f6cef",
@@ -2987,7 +2987,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/INDEX.md": {
-   "sha256": "4f04c8e1cc1f7e5f8a00b78ba99e4eb941dd806933cb83772b0e7cd744befe92",
+   "sha256": "0729fa50679e31c0b88595bcc5628bb95e08dc18c7a097637beb7b77d9edc86c",
    "lines": 75,
    "genre": "index",
    "status": "read",
@@ -3000,7 +3000,7 @@
     "fast": "Measured 14.7 KB raw / 4.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Sets the frontend study order from execution to optional capabilities; it limits itself to navigation and does not teach any mechanism."
    },
-   "notes": "Synced live read-time and counts after Phase 4D D1-D7 rework: 10.4-next.js/04-production."
+   "notes": "Synced live read-time and counts after Phase 4E D1-D7 rework: 10.4-next.js/05-interview-prep (completes 10.4-next.js)."
   },
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md": {
    "sha256": "cbb48962f1b1c976f33493d3398af0e10c4deb7f49db4537cb50b8af762ebfe1",
@@ -14365,7 +14365,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "78b1ceb96d8d41bfa7238fe84b25a2c2a9773564228aa4df9106788a73a1f3f2",
+   "sha256": "0ac783efcceebc8eb4072916c8ceab423ffa07b16b34b9d58f6314da3eb987c6",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14378,7 +14378,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 4D D1-D7 rework: 10.4-next.js/04-production."
+   "notes": "Synced live read-time and counts after Phase 4E D1-D7 rework: 10.4-next.js/05-interview-prep (completes 10.4-next.js)."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14669,7 +14669,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "afc258e8cd16dc322986ebc8cfa952ec084182c5b7c28a8d9b99e64f3cbdccbc",
+   "sha256": "0dfa2d5b50f990711313b3131d8b372d322ee651790bce6095a4a03e138740f5",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14682,7 +14682,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 4D D1-D7 rework: 10.4-next.js/04-production."
+   "notes": "Synced live read-time and counts after Phase 4E D1-D7 rework: 10.4-next.js/05-interview-prep (completes 10.4-next.js)."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

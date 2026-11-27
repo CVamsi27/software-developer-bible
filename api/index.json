@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "915bdb6cd3ab03cd352ef46a18ee663ee97c253e0982769f470cf60818b3cae6",
+ "corpus_digest": "3332dbd09ef55612909456654c5a8119bac02b5fee802576ec522fc97057ee47",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5512
+  "read_minutes": 5514
  },
  "chapters": [
   {
@@ -1246,7 +1246,7 @@
    "g": [
     "concept"
    ],
-   "m": 32
+   "m": 34
   },
   {
    "p": "10-frontend/10.5-form-handling/10.5.01-react-hook-form.html",

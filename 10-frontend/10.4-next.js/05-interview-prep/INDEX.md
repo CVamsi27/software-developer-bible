@@ -1,6 +1,6 @@
 # Interview Prep — Next.js
 
-> **Study time:** ≈ 32 min of reading (1 file, ~32 min average).
+> **Study time:** ≈ 34 min of reading (1 file, ~34 min average).
 > **1 file.** The practice bank connects version-scoped App Router, rendering, data and cache policy, security, deployment, and system-design decisions. Answer each question before reading its model answer, then trace the failure condition.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](#files)
@@ -13,15 +13,15 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | ----: | ------------------------------------------------------- | ------------------------- | ------------- | ------------------ | ----------: |
-| 01 | [Interview Questions](10.4.5.01-interview-questions.md) | 40 questions with answers | Important | Specialized | 32 min |
+| 01 | [Interview Questions](10.4.5.01-interview-questions.md) | 44 questions with answers | Important | Specialized | 34 min |
 
 ---
 
 ## Practice order
 
 1. Complete each learning category and its revision companion.
-2. Answer the rendering and routing questions before data/cache and production decisions.
-3. For senior scenarios, state workload, privacy/freshness requirements, failure behavior and the evidence that would validate the design. Revisit the source chapter when a code fragment relies on an unexplained adapter.
+2. Answer the rendering and routing questions before data and cache and production decisions.
+3. For senior scenarios, state workload, privacy and freshness requirements, failure behavior, and the evidence that would validate the design. Revisit the source chapter when a code fragment relies on an unexplained adapter.
 
 ## Navigation
 

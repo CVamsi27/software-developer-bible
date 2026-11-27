@@ -3003,56 +3003,56 @@
     },
     {
       "path": "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.01-custom-decorators.md",
-      "sha256": "3dffb421b063d42069ff1630b7e11df8f360239af1b03e3cbc4abba95f4624e5",
+      "sha256": "c6cef8aa65cd8e13f895c7c70b607ba4384ebe452b8a14216e722ca3eef74d48",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+      "notes": "Phase 10D D1-D7 rework: 20.2-nestjs/05-advanced-and-interview and 20.2 INDEX (completes 20.2-nestjs) C1-C8 refinement (2026-11-24): Full read of 135 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "fullContentRead": true,
       "findings": []
     },
     {
       "path": "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.02-interview-questions.md",
-      "sha256": "7c76626f088d67a74f56667440241a41b623306ac6f96971e9029a827a62e028",
+      "sha256": "926291004e1408a5d6d42e0afc912f1cd4e78442455f352cd54efc5010245408",
       "genre": "interview-bank",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+      "notes": "Phase 10D D1-D7 rework: 20.2-nestjs/05-advanced-and-interview and 20.2 INDEX (completes 20.2-nestjs) C1-C8 refinement (2026-11-24): Full read of 221 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "fullContentRead": true,
       "findings": []
     },
     {
       "path": "20-backend/20.2-nestjs/05-advanced-and-interview/INDEX.md",
-      "sha256": "5b0330b9e3a9dbedd6ceaa89997ed78c602513a5e93716e686c62a0baf58c109",
+      "sha256": "1142881f6b52512a3c17f189c5adae2476836cde280a56bd7b0cd5c764b1d1ec",
       "genre": "index",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+      "notes": "Phase 10D D1-D7 rework: 20.2-nestjs/05-advanced-and-interview and 20.2 INDEX (completes 20.2-nestjs) C1-C8 refinement (2026-11-24): Full read of 43 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "fullContentRead": true,
       "findings": []
     },
     {
       "path": "20-backend/20.2-nestjs/05-advanced-and-interview/REVISION.md",
-      "sha256": "1613e043dd3f22dafb5745d72c9fb03a18ec6867647a656cbddeccb2c38c1b72",
+      "sha256": "0ee5750a19c68d9c66aa91de0a779edb05de93eae14ef90b01e2c4d8d1065242",
       "genre": "revision",
       "status": "reviewed",
       "reviewer": "backend",
-      "reviewDate": "2026-11-18",
-      "notes": "Full-content read (2026-11-18): re-checked all source-linked advanced Q/A against the custom-decorator chapter, guard contract and official Nest decorator docs; writer/reader metadata agreement remains explicit.",
+      "reviewDate": "2026-11-24",
+      "notes": "Phase 10D D1-D7 rework: 20.2-nestjs/05-advanced-and-interview and 20.2 INDEX (completes 20.2-nestjs) C1-C8 refinement (2026-11-24): Full read of 87 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "fullContentRead": true,
       "findings": []
     },
     {
       "path": "20-backend/20.2-nestjs/INDEX.md",
-      "sha256": "e6ca3593a7d0e57f00f4419366e49f3a77244f23bfa6edbf81073d63786000a4",
+      "sha256": "16c27037ead8e593eb40e7986e1de0fe8d532e0ad82e14a4883dec35018914f2",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 10C D1-D7 rework: 20.2-nestjs/03-patterns and 04-quality-and-operations C1-C8 refinement (2026-11-24): Full read of 149 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+      "notes": "Phase 10D D1-D7 rework: 20.2-nestjs/05-advanced-and-interview and 20.2 INDEX (completes 20.2-nestjs) C1-C8 refinement (2026-11-24): Full read of 149 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
@@ -4764,12 +4764,12 @@
     },
     {
       "path": "20-backend/INDEX.md",
-      "sha256": "a5dc5edfadd89024fe67328bc367648ff8841dfc05be438ea16e5dd439f38957",
+      "sha256": "7a14d090adf6f34fbc89b87352949c949109de12a24828528bbac22840be4a18",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 10C D1-D7 rework: 20.2-nestjs/03-patterns and 04-quality-and-operations count/read-time sync (2026-11-24): Full read of 122 lines. Updated generated counts/read-time navigation after Phase 10C D1-D7 rework: 20.2-nestjs/03-patterns and 04-quality-and-operations.",
+      "notes": "Phase 10D D1-D7 rework: 20.2-nestjs/05-advanced-and-interview and 20.2 INDEX (completes 20.2-nestjs) count/read-time sync (2026-11-24): Full read of 122 lines. Updated generated counts/read-time navigation after Phase 10D D1-D7 rework: 20.2-nestjs/05-advanced-and-interview and 20.2 INDEX (completes 20.2-nestjs).",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "ab7ced08ffe012474a86db7f5ff38398ca691458b124ed67f5bf5a2780894865",
@@ -10066,12 +10066,12 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "8807cd875cfb92a6e6d374a13082e2ef60b73bc8d09052e6becdaeed7a5b0302",
+      "sha256": "4f55a9bd1793b02a3b15e666129da34030c7daf8c341507b3b0b930dfd47d70e",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 10C D1-D7 rework: 20.2-nestjs/03-patterns and 04-quality-and-operations count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 10C D1-D7 rework: 20.2-nestjs/03-patterns and 04-quality-and-operations.",
+      "notes": "Phase 10D D1-D7 rework: 20.2-nestjs/05-advanced-and-interview and 20.2 INDEX (completes 20.2-nestjs) count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 10D D1-D7 rework: 20.2-nestjs/05-advanced-and-interview and 20.2 INDEX (completes 20.2-nestjs).",
       "findings": []
     },
     {
@@ -10261,12 +10261,12 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "db24139dc3ef385de9aa84773657639a285509fe075d2a6063542b7df7d0b497",
+      "sha256": "16db369497d15b9ae90f971b3c4b7f0801f4a2b611a0dae41bc0c98a2d83fa3d",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 10C D1-D7 rework: 20.2-nestjs/03-patterns and 04-quality-and-operations count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 10C D1-D7 rework: 20.2-nestjs/03-patterns and 04-quality-and-operations.",
+      "notes": "Phase 10D D1-D7 rework: 20.2-nestjs/05-advanced-and-interview and 20.2 INDEX (completes 20.2-nestjs) count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 10D D1-D7 rework: 20.2-nestjs/05-advanced-and-interview and 20.2 INDEX (completes 20.2-nestjs).",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

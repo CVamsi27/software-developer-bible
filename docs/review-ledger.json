@@ -4052,70 +4052,71 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 10C D1-D7 rework: 20.2-nestjs/03-patterns and 04-quality-and-operations)."
   },
   "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.01-custom-decorators.md": {
-   "sha256": "3dffb421b063d42069ff1630b7e11df8f360239af1b03e3cbc4abba95f4624e5",
-   "lines": 116,
+   "sha256": "c6cef8aa65cd8e13f895c7c70b607ba4384ebe452b8a14216e722ca3eef74d48",
+   "lines": 135,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Custom parameter decorators, metadata composition and legacy decorator boundaries were checked against the official Nest Custom decorators and Execution context docs; the page does not promise drop-in compatibility across unrelated guard tokens.",
-    "readable": "Full read of 116 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "693 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 135 lines (745 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "745 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Decorator declaration and extraction are canonical here; guard policy and metadata contracts are linked as consumers rather than silently copied.",
-    "fast": "20.8 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 20.8 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "A decorator records intent but cannot enforce it without a consumer; metadata key identity, extraction validation, registration and legacy decorator support are limits."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 10D D1-D7 rework: 20.2-nestjs/05-advanced-and-interview and 20.2 INDEX (completes 20.2-nestjs))."
   },
   "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.02-interview-questions.md": {
-   "sha256": "7c76626f088d67a74f56667440241a41b623306ac6f96971e9029a827a62e028",
-   "lines": 207,
+   "sha256": "926291004e1408a5d6d42e0afc912f1cd4e78442455f352cd54efc5010245408",
+   "lines": 221,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "The interview answers were checked against the current canonical Nest chapters, official lifecycle/CQRS/microservices/OpenAPI sources and the executed representative fixtures; deferred code is linked rather than invented.",
-    "readable": "Full read of 207 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "2559 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 221 lines (2839 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "2839 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "The bank is a retrieval surface, not a second code home: answers point to canonical lifecycle, DI, operations and pattern chapters.",
-    "fast": "35.4 KB raw / 11.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 35.4 KB raw / 11.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "The bank tests decisions rather than memorized APIs: delivery, scope, transaction, replay, rollout and tracing failures remain in the answers."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 10D D1-D7 rework: 20.2-nestjs/05-advanced-and-interview and 20.2 INDEX (completes 20.2-nestjs))."
   },
   "20-backend/20.2-nestjs/05-advanced-and-interview/INDEX.md": {
-   "sha256": "5b0330b9e3a9dbedd6ceaa89997ed78c602513a5e93716e686c62a0baf58c109",
+   "sha256": "1142881f6b52512a3c17f189c5adae2476836cde280a56bd7b0cd5c764b1d1ec",
    "lines": 43,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "No version-sensitive claim; the advanced topic, revision and interview ordering was checked against the custom-decorator and interview pages.",
-    "readable": "Full read of 43 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 43 lines (78 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "78 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "This index owns the category order; custom decorators, revision and interview practice each retain one distinct canonical role.",
-    "fast": "9.3 KB raw / 3.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 9.3 KB raw / 3.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "The category is best as retrieval after mechanisms and revision; the index avoids turning interview prompts into a second canonical implementation home, with that separation as its boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 10D D1-D7 rework: 20.2-nestjs/05-advanced-and-interview and 20.2 INDEX (completes 20.2-nestjs))."
   },
   "20-backend/20.2-nestjs/05-advanced-and-interview/REVISION.md": {
-   "sha256": "1613e043dd3f22dafb5745d72c9fb03a18ec6867647a656cbddeccb2c38c1b72",
-   "lines": 83,
+   "sha256": "0ee5750a19c68d9c66aa91de0a779edb05de93eae14ef90b01e2c4d8d1065242",
+   "lines": 87,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-18",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Each source-linked advanced/revision answer was checked against the custom-decorator chapter, guard contract and official Nest decorator documentation; the writer/reader metadata boundary remains explicit.",
-    "readable": "Full read of 83 lines; The revision questions test decorator extraction, metadata consumers, validation opt-in, registration and tenant/pagination boundaries in the same order as the source.",
-    "concise": "511 words; the document uses its examples, table or links to carry the point without repeating the mechanism.",
+    "readable": "Full read of 87 lines (574 prose words). The revision questions test decorator extraction, metadata consumers, validation opt-in, registration and tenant/pagination boundaries in the same order as the source.",
+    "concise": "574 words across 87 lines. the document uses its examples, table or links to carry the point without repeating the mechanism.",
     "focused": "The companion owns advanced retrieval; it points back to the canonical decorator chapter and guard contract rather than duplicating implementation.",
-    "fast": "11.8 KB raw / 3.9 KB gzip built page; the shared Jekyll shell is included.",
+    "fast": "Measured 11.8 KB raw / 3.9 KB gzip (the shared Jekyll shell is included.)",
     "best": "The companion keeps the decision limits visible: custom metadata needs a matching reader, validation is opt-in, and tenant pagination can still fail."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 10D D1-D7 rework: 20.2-nestjs/05-advanced-and-interview and 20.2 INDEX (completes 20.2-nestjs))."
   },
   "20-backend/20.2-nestjs/INDEX.md": {
-   "sha256": "e6ca3593a7d0e57f00f4419366e49f3a77244f23bfa6edbf81073d63786000a4",
+   "sha256": "16c27037ead8e593eb40e7986e1de0fe8d532e0ad82e14a4883dec35018914f2",
    "lines": 149,
    "genre": "index",
    "status": "read",
@@ -4128,7 +4129,7 @@
     "fast": "Measured 24.2 KB raw / 6.1 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "The stack is a framework study path, not a production checklist; its final boundary points to persistence, security and delivery decisions outside Nest decorators."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 10C D1-D7 rework: 20.2-nestjs/03-patterns and 04-quality-and-operations)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 10D D1-D7 rework: 20.2-nestjs/05-advanced-and-interview and 20.2 INDEX (completes 20.2-nestjs))."
   },
   "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.01-api-design-patterns.md": {
    "sha256": "7aad1fd9245d0180548b6d03ad04f6e17e3542c5b5c906c8ede24a1c31c74fdc",
@@ -6560,7 +6561,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
   },
   "20-backend/INDEX.md": {
-   "sha256": "a5dc5edfadd89024fe67328bc367648ff8841dfc05be438ea16e5dd439f38957",
+   "sha256": "7a14d090adf6f34fbc89b87352949c949109de12a24828528bbac22840be4a18",
    "lines": 122,
    "genre": "index",
    "status": "read",
@@ -6573,7 +6574,7 @@
     "fast": "Measured 15.4 KB raw / 5.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Remaining limit is study-hour path estimates are rough guides and depend on each reader's prior backend background."
    },
-   "notes": "Synced live read-time and counts after Phase 10C D1-D7 rework: 20.2-nestjs/03-patterns and 04-quality-and-operations."
+   "notes": "Synced live read-time and counts after Phase 10D D1-D7 rework: 20.2-nestjs/05-advanced-and-interview and 20.2 INDEX (completes 20.2-nestjs)."
   },
   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md": {
    "sha256": "065e2b7d573b2298550d061453667084b1d010e6fadf07f903f6fdd34a8e5185",
@@ -14366,7 +14367,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "8807cd875cfb92a6e6d374a13082e2ef60b73bc8d09052e6becdaeed7a5b0302",
+   "sha256": "4f55a9bd1793b02a3b15e666129da34030c7daf8c341507b3b0b930dfd47d70e",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14379,7 +14380,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 10C D1-D7 rework: 20.2-nestjs/03-patterns and 04-quality-and-operations."
+   "notes": "Synced live read-time and counts after Phase 10D D1-D7 rework: 20.2-nestjs/05-advanced-and-interview and 20.2 INDEX (completes 20.2-nestjs)."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14670,7 +14671,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "db24139dc3ef385de9aa84773657639a285509fe075d2a6063542b7df7d0b497",
+   "sha256": "16db369497d15b9ae90f971b3c4b7f0801f4a2b611a0dae41bc0c98a2d83fa3d",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14683,7 +14684,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 10C D1-D7 rework: 20.2-nestjs/03-patterns and 04-quality-and-operations."
+   "notes": "Synced live read-time and counts after Phase 10D D1-D7 rework: 20.2-nestjs/05-advanced-and-interview and 20.2 INDEX (completes 20.2-nestjs)."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

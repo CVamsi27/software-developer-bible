@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "6844691041eb19ea343794b198b22db18111c67154baf2f9b490c1c501b6c203",
+ "corpus_digest": "bcec4fd7add8aa6e98ff34d4a04a9cb2bdcdaeb9d82bd6364c129d8f03f89259",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5552
+  "read_minutes": 5553
  },
  "chapters": [
   {
@@ -2213,7 +2213,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "20-backend/20.2-nestjs/05-advanced-and-interview/REVISION.html",

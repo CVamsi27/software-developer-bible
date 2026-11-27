@@ -1,7 +1,7 @@
 # Advanced & Interview — NestJS
 
-> **Study time:** ≈ 15 min of reading (3 files, ~5 min average).
-> **3 files.** Senior-level customization with parameter/method decorators and decorator composition, then the curated question bank for final review.
+> **Study time:** ≈ 16 min of reading (3 files, ~5 min average).
+> **3 files.** Senior-level customization with parameter and method decorators and decorator composition, then the curated question bank for final review.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Advanced%20%26%20Interview-success)](../INDEX.md)
@@ -16,9 +16,9 @@ First trace a parameter extractor after authentication and distinguish extractio
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Custom Decorators](20.2.5.01-custom-decorators.md) | Request-value extraction, metadata consumers, validation boundaries and decorator composition | Essential | Important | 6 min |
-| Revision | [Category recall](REVISION.md) | Extraction, metadata and enforcement boundaries before the interview drill | Essential | Important | — |
-| 02 | [Interview Questions](20.2.5.02-interview-questions.md) | 40 practice questions with answers | Essential | Important | 7 min |
+| 01 | [Custom Decorators](20.2.5.01-custom-decorators.md) | Request-value extraction, metadata consumers, validation boundaries, and decorator composition | Essential | Important | 6 min |
+| Revision | [Category recall](REVISION.md) | Extraction, metadata, and enforcement boundaries before the interview drill | Essential | Important | — |
+| 02 | [Interview Questions](20.2.5.02-interview-questions.md) | 43 practice questions with answers | Essential | Important | 8 min |
 
 ---
 

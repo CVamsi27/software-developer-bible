@@ -30,6 +30,10 @@ Source: [NestJS Custom Decorators](20.2.5.01-custom-decorators.md)
 
 **A:** It skips custom-decorator arguments by default. Enable `validateCustomDecorators` or attach an appropriate pipe; authentication and authorization still belong to their own request-lifecycle components.
 
+**Q:** How does `Reflector.createDecorator<T>()` prevent metadata-key drift, and how can you validate a single custom parameter without enabling `validateCustomDecorators` globally?
+
+**A:** `Reflector.createDecorator<string[]>()` returns a typed decorator function that doubles as the metadata lookup token passed to `reflector.getAllAndOverride(...)`, eliminating string-key or duplicate-Symbol mismatches. To validate one extracted value without enabling global custom-decorator validation, pass a targeted pipe directly such as `@CurrentUser('clinicId', ParseUUIDPipe)`.
+
 ## NestJS Custom Decorators Edge Cases
 
 Source: [NestJS Custom Decorators](20.2.5.01-custom-decorators.md)
@@ -52,7 +56,7 @@ Source: [Custom decorators](20.2.5.01-custom-decorators.md)
 
 **Q:** Why is `emitDecoratorMetadata` different from a custom `SetMetadata` key?
 
-**A:** The compiler emits design-type metadata for implicit injection. `SetMetadata` explicitly writes the application's chosen key/value.
+**A:** The compiler emits design-type metadata for implicit injection. `SetMetadata` explicitly writes the application's chosen key and value.
 
 **Q:** Why should a missing clinic identity fail before a repository call?
 

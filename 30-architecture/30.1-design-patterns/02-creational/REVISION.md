@@ -8,7 +8,7 @@
 
 # Creational — Revision
 
-Read the section's learning chapters first. Close them, explain each answer with a concrete failure or tradeoff, then use the source link to check what you missed.
+Read the section's learning chapters first. Close them, explain each answer with a concrete failure or trade-off, then use the source link to check what you missed.
 
 ## Singleton Pattern
 
@@ -16,7 +16,7 @@ Source: [Singleton Pattern](30.1.2.01-singleton.md)
 
 **Q:** Does a JavaScript singleton guarantee one instance across workers or application replicas?
 
-**A:** No. Its scope is the module/runtime instance. Separate processes or module copies can have separate instances; distributed coordination needs another mechanism.
+**A:** No. Its scope is the module or runtime instance. Separate processes or module copies can have separate instances; distributed coordination needs another mechanism.
 
 **Q:** Does a TypeScript `private` constructor stop JavaScript code from constructing another instance?
 
@@ -113,6 +113,12 @@ Source: [Prototype Pattern](30.1.2.05-prototype.md)
 **Q:** Suppose `RequestConfig` also held a mutable array of rules and `clone()` used only `{ ...this }`. What would break, and what does the chapter require instead?
 
 **A:** A shallow spread shares that array, so one worker's edit would change the template and every other clone. The chapter requires a per-field decision: copy per-instance mutable data, share documented immutable values, and handle resource handles and identity separately.
+
+Source: [Singleton Pattern](30.1.2.01-singleton.md)
+
+**Q:** How can a single Node.js process end up with two separate instances of a module-scoped singleton, and how should application code prevent split state?
+
+**A:** Dual ESM and CommonJS entry points or duplicated dependencies in `node_modules` cause Node.js to evaluate the module twice with distinct module state. Construct and inject one shared owner at the composition root (or key process registries with a versioned `Symbol.for()`).
 
 ## Summary
 

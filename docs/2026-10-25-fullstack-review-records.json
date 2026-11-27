@@ -4780,13 +4780,14 @@
     },
     {
       "path": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md",
-      "sha256": "065e2b7d573b2298550d061453667084b1d010e6fadf07f903f6fdd34a8e5185",
+      "sha256": "ee372c07bebcdf57a2b3c8e35235ca161de7bea96530f32820c22de46bb0b1b9",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: actor-driven SRP, known-axis OCP, mutable-square LSP counterexample, client ISP and policy-owned DIP. Omitted sketches labelled; no inference that interfaces or patterns alone prove design quality. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+      "notes": "Phase 17A D1-D7 rework of 30.1.1-30.1.3 design patterns C1-C8 refinement (2026-11-24): Full read of 349 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "architecture-final",
-      "reviewDate": "2026-11-24"
+      "reviewDate": "2026-11-24",
+      "fullContentRead": true
     },
     {
       "path": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.02-dry-kiss-yagni.md",
@@ -4810,63 +4811,69 @@
     },
     {
       "path": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.04-uml-basics.md",
-      "sha256": "e12bbd0948480b5649c9ca568e82b54604b8e0e08d4e1218bf49c222416290cf",
+      "sha256": "46948b0c9f1d7173880d009158ef10ccfbe1bdefbc3df5441b49d2cdbb2a45e7",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: relationship directions/multiplicity and lifecycle distinction, Mermaid vs exact UML tokens, library copy/current-loan model, ATM uncertain dispense and parking recovery, 60min budget sums correctly. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+      "notes": "Phase 17A D1-D7 rework of 30.1.1-30.1.3 design patterns C1-C8 refinement (2026-11-24): Full read of 262 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "architecture-final",
-      "reviewDate": "2026-11-24"
+      "reviewDate": "2026-11-24",
+      "fullContentRead": true
     },
     {
       "path": "30-architecture/30.1-design-patterns/01-foundations/INDEX.md",
-      "sha256": "6a584d5aaed35e63ffc0b8ffbcc7311650ca2a859faf324a0dc36fcce8d0c31f",
+      "sha256": "323e380031b4c2a23746ff5ccbe27762578e96e87142d1087f7e0cf39da1dab4",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full read foundational prerequisite flow OOP\u2192principles\u2192UML, tradeoff completion drill before revision, qualified Docita locations; study estimates illustrative, disk totals writer owned. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+      "notes": "Phase 17A D1-D7 rework of 30.1.1-30.1.3 design patterns C1-C8 refinement (2026-11-24): Full read of 104 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "architecture-final",
-      "reviewDate": "2026-11-24"
+      "reviewDate": "2026-11-24",
+      "fullContentRead": true
     },
     {
       "path": "30-architecture/30.1-design-patterns/01-foundations/REVISION.md",
-      "sha256": "37d2a746760d9a91d053b39eea6d5e87a5a5d194c749e6ecf3d7ca74f6935dc7",
+      "sha256": "dba85d0dadbb02c10a65f72cea35df940265f838757826de5ea1041ab4f9bf33",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Full read all source-linked and preserved authored questions: stakeholder/extension/substitution boundaries, knowledge/complexity choices, OOP state/runtime privacy and UML diagram outcomes agree. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+      "notes": "Phase 17A D1-D7 rework of 30.1.1-30.1.3 design patterns C1-C8 refinement (2026-11-24): Full read of 191 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "architecture-final",
-      "reviewDate": "2026-11-24"
+      "reviewDate": "2026-11-24",
+      "fullContentRead": true
     },
     {
       "path": "30-architecture/30.1-design-patterns/02-creational/30.1.2.01-singleton.md",
-      "sha256": "b3e2658fff02d6a3626f36d8721ecc891bccf0d81ba5a55a03ad7c504c19268f",
+      "sha256": "9b472a2412c1519f69401a98f3bccfb1a4b74eed2951e55688cc5e34ff9f912d",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: runtime/module scope, TS private versus runtime, sync-agent construction and async single-flight, shutdown/tenant ownership. Actual canonical concurrent identity and failure retry fixture passed. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+      "notes": "Phase 17A D1-D7 rework of 30.1.1-30.1.3 design patterns C1-C8 refinement (2026-11-24): Full read of 134 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "architecture-final",
-      "reviewDate": "2026-11-24"
+      "reviewDate": "2026-11-24",
+      "fullContentRead": true
     },
     {
       "path": "30-architecture/30.1-design-patterns/02-creational/30.1.2.02-factory-method.md",
-      "sha256": "fbffc42cf6fb700926d5c019b2be49d08141f3ed4e891ad7de7b2ac07fc1526a",
+      "sha256": "eab01c06bcb6a36df5d3b4be49291c5bf565335f45e23dc64489091d17cd5586",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: simple selector vs overridable creator workflow vs registry; erased generic, duplicate/missing registration and scope/resource policies; toy notification calls explicitly log only. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+      "notes": "Phase 17A D1-D7 rework of 30.1.1-30.1.3 design patterns C1-C8 refinement (2026-11-24): Full read of 268 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "architecture-final",
-      "reviewDate": "2026-11-24"
+      "reviewDate": "2026-11-24",
+      "fullContentRead": true
     },
     {
       "path": "30-architecture/30.1-design-patterns/02-creational/30.1.2.03-builder.md",
-      "sha256": "d48ada8296be614a5d5050e5198bd873237b93e3ea77ba810fe7731445f7ef88",
+      "sha256": "1b8061eaeaa481134f3fdeb85b34709c17c8a62655f8232c0f008e1935e6a2ee",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: optional director/reset, domain vs assembly validation, shallow body sharing, copied normalized headers and Fetch GET/HEAD compatibility. Actual builder validation/alias fixture passed. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+      "notes": "Phase 17A D1-D7 rework of 30.1.1-30.1.3 design patterns C1-C8 refinement (2026-11-24): Full read of 353 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "architecture-final",
-      "reviewDate": "2026-11-24"
+      "reviewDate": "2026-11-24",
+      "fullContentRead": true
     },
     {
       "path": "30-architecture/30.1-design-patterns/02-creational/30.1.2.04-abstract-factory.md",
@@ -4890,20 +4897,21 @@
     },
     {
       "path": "30-architecture/30.1-design-patterns/02-creational/INDEX.md",
-      "sha256": "5c5076b4ee502c6b85858a4b711508ff2e7fc814306ae2ce7cdd19a080d72ac5",
+      "sha256": "bee6f9705900d9894e1656b915f21a5a3a52d6c0cb3713f483cdf2cba86b231e",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full read learning sequence, variation decision tree, pattern comparisons, completion/revision ordering and qualified Docita candidate pointers; disk totals remain metadata-writer owned. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+      "notes": "Phase 17A D1-D7 rework of 30.1.1-30.1.3 design patterns C1-C8 refinement (2026-11-24): Full read of 178 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "architecture-final",
-      "reviewDate": "2026-11-24"
+      "reviewDate": "2026-11-24",
+      "fullContentRead": true
     },
     {
       "path": "30-architecture/30.1-design-patterns/02-creational/REVISION.md",
-      "sha256": "c1a6fd3b7b3304ed067bc15c80046b25ea75acf80c081cfc09cb0f2672110365",
+      "sha256": "ebaf55987954cce3129191113416cf87c211d261f2604c1ae2de07428f09f146",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Full-content read (2026-11-14): Question order follows Singleton, Factory Method, Abstract Factory, Builder, Prototype. One or two prompts per pattern; no prompt repeats the previous pattern's tradeoff. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+      "notes": "Phase 17A D1-D7 rework of 30.1.1-30.1.3 design patterns C1-C8 refinement (2026-11-24): Full read of 135 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-24",
@@ -4911,53 +4919,58 @@
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.01-adapter.md",
-      "sha256": "7f25a420e4a4b6adccf0752acbb94790525f3c182da9fd5665a81c311bf93ff8",
+      "sha256": "6e7cb926b3c276e3aabf0651a12eb5f82cfc003beabbb75e89cd7c5aeae3b3d5",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: target/adaptee semantic mapping, units, strict unknown profile decoder/null/name/date policies, payment uncertainty and unsupported behavior. Actual malformed-date/blank-email decoder fixture passed. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+      "notes": "Phase 17A D1-D7 rework of 30.1.1-30.1.3 design patterns C1-C8 refinement (2026-11-24): Full read of 239 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "architecture-final",
-      "reviewDate": "2026-11-24"
+      "reviewDate": "2026-11-24",
+      "fullContentRead": true
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.02-facade.md",
-      "sha256": "35344e364bb1a59c99de0a4c823c227463a4b77fc64c1a3d07e2530a60390496",
+      "sha256": "363c101a92bf2c78af1f74eb53d5a0df172c22a9ec88bd6dab7f4c5106b64c21",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: dependent boot-data trace, simulation caveat, sequence not distributed transaction, Saga/idempotency/authorization ownership and independent Promise.all failures. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+      "notes": "Phase 17A D1-D7 rework of 30.1.1-30.1.3 design patterns C1-C8 refinement (2026-11-24): Full read of 137 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "architecture-final",
-      "reviewDate": "2026-11-24"
+      "reviewDate": "2026-11-24",
+      "fullContentRead": true
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.03-decorator.md",
-      "sha256": "d52bb98257a60303da8fc86e6eff948f1cc85384b47f1c709bf3c61cbcde7da8",
+      "sha256": "cfa823e98fec7d0548ef055fb584f30de57eb30c9b041c3d37a7b4714cd511ba",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: wrapper call/result ordering, floating-point price caveat, cache auth bypass, logger/retry positions, async/resource preservation and modern/legacy TS syntax distinct. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+      "notes": "Phase 17A D1-D7 rework of 30.1.1-30.1.3 design patterns C1-C8 refinement (2026-11-24): Full read of 106 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "architecture-final",
-      "reviewDate": "2026-11-24"
+      "reviewDate": "2026-11-24",
+      "fullContentRead": true
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.04-proxy.md",
-      "sha256": "030fc34c1c00ebc4353bccf2ccf2169218105276294ac53ff8ed10bf1e983e08",
+      "sha256": "7f577aaf28c38d870acfffce00675c38412c87de39717ee03b8b99c9c9ff0f67",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: lazy subject lifecycle, sync constructor failure retry, async single-flight link, protection/cache/remote contracts and JS Proxy distinction. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+      "notes": "Phase 17A D1-D7 rework of 30.1.1-30.1.3 design patterns C1-C8 refinement (2026-11-24): Full read of 134 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "architecture-final",
-      "reviewDate": "2026-11-24"
+      "reviewDate": "2026-11-24",
+      "fullContentRead": true
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.05-module-pattern.md",
-      "sha256": "e76d90ce8dd4f79f10091427e015a5440268c81b91dc1874c5ad27282deaed56",
+      "sha256": "193c8664e486ec47cf5cc1764c61d8331858d72908689d0acce6aa394550b77f",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: ESM vs historical closure modules, hidden bindings vs returned references, per-instance shared state, factories, imports/paths/exports, tree-shaking and cycle limitations. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+      "notes": "Phase 17A D1-D7 rework of 30.1.1-30.1.3 design patterns C1-C8 refinement (2026-11-24): Full read of 153 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "architecture-final",
-      "reviewDate": "2026-11-24"
+      "reviewDate": "2026-11-24",
+      "fullContentRead": true
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.06-composite.md",
@@ -4981,33 +4994,36 @@
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.08-flyweight.md",
-      "sha256": "ef3efa2d8db62a54e29e9f14d9b56f252d361064c4e64203957d86226db7829e",
+      "sha256": "e4a18f2b491ad62e02425c138f80b0e2efe214abd0671b05b0fc2be2d36c7c00",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: intrinsic/extrinsic modeling, complete tuple key, string-field freeze, illustrative payload assumptions, cache bounds and external resources. Actual identity/version/limit/clear fixture passed. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+      "notes": "Phase 17A D1-D7 rework of 30.1.1-30.1.3 design patterns C1-C8 refinement (2026-11-24): Full read of 166 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "architecture-final",
-      "reviewDate": "2026-11-24"
+      "reviewDate": "2026-11-24",
+      "fullContentRead": true
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/INDEX.md",
-      "sha256": "a5497a030bfc2755832fd208a58025751e7dc9cf642d0edc4468aef3b86bb3d7",
+      "sha256": "9c7467b76f84ba2999b4b9ba1b8ffb0c59b506fe0551ab3382f56665b0cd9f22",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full read learning flow, wrapper intent and contract comparison, recursive/shared/two-axis decisions, revision ordering and qualified source pointers; no blocking teaching contradiction. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+      "notes": "Phase 17A D1-D7 rework of 30.1.1-30.1.3 design patterns C1-C8 refinement (2026-11-24): Full read of 152 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "architecture-final",
-      "reviewDate": "2026-11-24"
+      "reviewDate": "2026-11-24",
+      "fullContentRead": true
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/REVISION.md",
-      "sha256": "00089c33cd171ac8ebd61ee1082e9146d83132ae009297e9a590dd755957d777",
+      "sha256": "5c4e940704535b62dfcd495457bb9e15d32c128f36886d49673d82c8cf1cfaf5",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Full read all source-linked questions: numeric adapter, facade partial failure, decorator order/auth, proxy lifecycle, module refs/paths, composite DAG, bridge contract and flyweight clear agree. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+      "notes": "Phase 17A D1-D7 rework of 30.1.1-30.1.3 design patterns C1-C8 refinement (2026-11-24): Full read of 175 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "architecture-final",
-      "reviewDate": "2026-11-24"
+      "reviewDate": "2026-11-24",
+      "fullContentRead": true
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.01-strategy.md",

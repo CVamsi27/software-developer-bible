@@ -8,7 +8,7 @@
 
 # Structural — Revision
 
-Read the section's learning chapters first. Close them, explain each answer with a concrete failure or tradeoff, then use the source link to check what you missed.
+Read the section's learning chapters first. Close them, explain each answer with a concrete failure or trade-off, then use the source link to check what you missed.
 
 ## Adapter Pattern
 
@@ -56,7 +56,7 @@ Source: [Decorator Pattern](30.1.3.03-decorator.md)
 
 **Q:** What if a cache wrapper sits outside an authorization wrapper and returns a hit without delegation?
 
-**A:** The inner authorization check is bypassed. Place authoritative permission checking on a path that covers hits and misses, and scope cached data/permissions appropriately. Matching interfaces alone does not establish safe substitution.
+**A:** The inner authorization check is bypassed. Place authoritative permission checking on a path that covers hits and misses, and scope cached data and permissions appropriately. Matching interfaces alone does not establish safe substitution.
 
 ## Proxy Pattern
 
@@ -106,7 +106,7 @@ Source: [Composite Pattern](30.1.3.06-composite.md)
 
 **A:** The client can use a shared component contract for leaves and containers. The design still must decide how to expose operations that only containers support.
 
-**Q:** Trace root size through home/user files and the root config file.
+**Q:** Trace root size through `home` and `user` files and the root config file.
 
 **A:** User sums 1,024 + 500,000, home delegates that sum, and root adds 256 for 501,280. Both leaves and containers satisfy `size`; only the container recursively asks children.
 
@@ -116,7 +116,7 @@ Source: [Composite Pattern](30.1.3.06-composite.md)
 
 **Q:** What if a directory adds an ancestor, or one leaf appears under two different parents?
 
-**A:** The supplied `add` rejects self/ancestor cycles and duplicate children within a container. It does not enforce one parent globally; shared placements can therefore be counted per edge. Enforce exclusive ownership for a strict tree or define graph traversal/counting explicitly.
+**A:** The supplied `add` rejects self and ancestor cycles and duplicate children within a container. It does not enforce one parent globally; shared placements can therefore be counted per edge. Enforce exclusive ownership for a strict tree or define graph traversal and counting explicitly.
 
 ## Bridge Pattern
 
@@ -148,11 +148,17 @@ Source: [Flyweight Pattern](30.1.3.08-flyweight.md)
 
 **Q:** Trace two oak lookups with the same appearance tuple and two different positions.
 
-**A:** The factory returns one shared `TreeType` for the same name/color/texture version. Each `Tree` owns its coordinates and passes them to that type during drawing. Shared type identity does not merge logical placement identity.
+**A:** The factory returns one shared `TreeType` for the same name, color, and texture version. Each `Tree` owns its coordinates and passes them to that type during drawing. Shared type identity does not merge logical placement identity.
 
 **Q:** What if texture version changes but the cache key omits it, or the factory clears while trees remain alive?
 
 **A:** An incomplete key can return the wrong appearance. Clearing removes factory references, while the trees still retain their types; it neither destroys the types nor disposes an external texture. Identity and resource lifetime need their own contract.
+
+Source: [Decorator Pattern](30.1.3.03-decorator.md)
+
+**Q:** When composing timeout and retry decorators around a remote call, why does placing the retry wrapper outside a per-attempt timeout behave differently from placing a single timeout outside retries?
+
+**A:** Wrapping retries outside a per-attempt timeout grants each retry its own deadline while an outer total-request timeout caps overall latency; putting a single timeout outside lets one stalled attempt exhaust the whole budget before a retry can begin.
 
 ## Summary
 

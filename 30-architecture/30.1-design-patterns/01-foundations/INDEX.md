@@ -31,7 +31,7 @@ Begin with state ownership and caller contracts. Then assess a real change using
 Five diagnostics for responsibility, extension, substitution, client contracts, and dependency direction. Apply them to a concrete change rather than treating interface counts as design quality.
 
 - **SRP** — Single Responsibility Principle: one reason to change
-- **OCP** — Open/Closed: open for extension, closed for modification
+- **OCP** — Open-Closed: open for extension, closed for modification
 - **LSP** — Liskov Substitution: subtypes must be substitutable
 - **ISP** — Interface Segregation: clients depend on the operations they need
 - **DIP** — Dependency Inversion: depend on abstractions, not concretions
@@ -81,7 +81,7 @@ The visual language of software design. Low-level design (LLD) interviews expect
 
 ## Reading Path and Completion Check
 
-Read object behavior before design heuristics, then use UML to make one concrete interaction visible. Revisit SOLID and DRY/KISS/YAGNI against that example.
+Read object behavior before design heuristics, then use UML to make one concrete interaction visible. Revisit SOLID and DRY, KISS, and YAGNI against that example.
 
 Show one case where applying a principle reduces change cost and one where it adds unnecessary abstraction. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
 
@@ -97,8 +97,8 @@ Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a he
 
 | Topic | Docita evidence |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| DIP / Dependency Inversion | Repository token and constructor-injection checks in `scripts/checks/check-repository-di-tokens.mjs` |
+| DIP (Dependency Inversion) | Repository token and constructor-injection checks in `scripts/checks/check-repository-di-tokens.mjs` |
 | OCP | Strategy registries (`search-strategy.registry.ts`, `bulk-import-strategy.registry.ts`) — examples of registration boundaries; callers still need stable strategy contracts |
-| SRP | Command/query service split: `appointment-command.service.ts` vs `appointment-query.service.ts` |
+| SRP | Command and query service split: `appointment-command.service.ts` vs `appointment-query.service.ts` |
 | ISP | Narrow per-domain ports: `domains/*/application/ports/*`, `shared/common/ports/clock.port.ts` |
-| SoC / module boundaries | Domain layout enforced in continuous integration (CI) by `scripts/checks/check-api-domain-layout.mjs` + cross-domain import checks |
+| SoC and module boundaries | Domain layout enforced in continuous integration (CI) by `scripts/checks/check-api-domain-layout.mjs` + cross-domain import checks |

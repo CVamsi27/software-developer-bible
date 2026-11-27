@@ -18,7 +18,7 @@ Inheritance couples a subtype to a base contract and implementation. Structural 
 - "I need to use a 3rd-party class but its interface doesn't match mine."
 - "I want to add behavior to an object without affecting other instances of the same class."
 - "I have a complex subsystem and want a single, simple entry point."
-- "Loading this object is expensive — I want lazy / cached / proxied access."
+- "Loading this object is expensive — I want lazy, cached, or proxied access."
 
 ---
 
@@ -27,10 +27,10 @@ Inheritance couples a subtype to a base contract and implementation. Structural 
 | # | Pattern | Intent | Use when | Avoid when | Role priority | General importance |
 | --: | --------- | -------- | ---------- | ------------ | --- | --- |
 | 1 | [Adapter](30.1.3.01-adapter.md) | Translate an existing interface to the client's contract | 3rd-party software development kit (SDK), legacy integration | Refactoring both sides already preserves compatibility | Important | Foundational |
-| 2 | [Facade](30.1.3.02-facade.md) | Simplify common access to a complex subsystem | Library/SDK, multi-subsystem workflow | Single subsystem, already simple | Important | Specialized |
+| 2 | [Facade](30.1.3.02-facade.md) | Simplify common access to a complex subsystem | Library or SDK, multi-subsystem workflow | Single subsystem, already simple | Important | Specialized |
 | 3 | [Decorator](30.1.3.03-decorator.md) | Add a responsibility around a component | Per-instance logging, metrics or transformation | Wrapper order obscures the contract | Important | Specialized |
-| 4 | [Proxy](30.1.3.04-proxy.md) | Controlled access (lazy, protection, remote, caching) | Image/DB lazy loading, role-based access control (RBAC) checks, network stubs | Direct access is fine | Important | Specialized |
-| 5 | [Module](30.1.3.05-module-pattern.md) | Encapsulation at the file level | File/package visibility boundaries | N/A | Important | Specialized |
+| 4 | [Proxy](30.1.3.04-proxy.md) | Controlled access (lazy, protection, remote, caching) | Image and DB lazy loading, role-based access control (RBAC) checks, network stubs | Direct access is fine | Important | Specialized |
+| 5 | [Module](30.1.3.05-module-pattern.md) | Encapsulation at the file level | File and package visibility boundaries | Not applicable | Important | Specialized |
 | 6 | [Composite](30.1.3.06-composite.md) | Apply shared operations across a part-whole tree | File and directory aggregation, abstract syntax tree (AST) operations, nested menus | Flat data or no meaningful common operation | Important | Specialized |
 | 7 | [Bridge](30.1.3.07-bridge.md) | Separate a client abstraction from a varying implementation | Independent abstraction and implementation axes (shape × renderer) | One varying axis or a direct function suffices | Important | Specialized |
 | 8 | [Flyweight](30.1.3.08-flyweight.md) | Share state to support many fine-grained objects | Text rendering (chars), particle systems, glyph caches | Few objects, no memory pressure | Important | Specialized |
@@ -99,7 +99,7 @@ Both use recursive composition, but Composite's recursion is structural, Decorat
 
 ### Module vs Facade
 
-- **Module** organizes code at the file/package level (language-level encapsulation).
+- **Module** organizes code at the file and package level (language-level encapsulation).
 - **Facade** is a client-facing entry point that coordinates subsystem behavior; it can be a class, function or module export.
 
 Modern TypeScript: a `module.ts` file often *contains* a Facade.
@@ -123,7 +123,7 @@ Modern TypeScript: a `module.ts` file often *contains* a Facade.
 
 Compare Adapter, Facade, Decorator and Proxy as wrappers with different intentions. Then move to Module, Composite, Bridge and Flyweight as larger structural decisions.
 
-Explain a wrapper by its contract and a shared/tree structure by the state it owns; avoid choosing by class shape alone. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
+Explain a wrapper by its contract and a shared or tree structure by the state it owns; avoid choosing by class shape alone. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
 
 ## Cross-References
 
@@ -144,9 +144,9 @@ Explain a wrapper by its contract and a shared/tree structure by the state it ow
 Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests to confirm deployed behavior.
 
 | Topic | Docita evidence |
-| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Facade | `shared/modules/imports/ocr-facade.service.ts` hides the optical character recognition (OCR) pipeline; `shared/whatsapp/templates-facade.service.ts` hides template resolution — construction/delegation guard source: `scripts/checks/check-facade-delegation.mjs` |
+| --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Facade | `shared/modules/imports/ocr-facade.service.ts` hides the optical character recognition (OCR) pipeline; `shared/whatsapp/templates-facade.service.ts` hides template resolution — construction and delegation guard source: `scripts/checks/check-facade-delegation.mjs` |
 | Adapter | India's Ayushman Bharat Digital Mission (ABDM) government API wrapped by `domains/abdm/infrastructure/abdm-abha.client.ts`; Razorpay SDK behind `payments/infrastructure/adapters/razorpay/` |
-| Decorator (framework-shaped) | NestJS interceptor/guard pipelines in `shared/common/interceptors/*` add logging, Cross-Site Request Forgery (CSRF), tenant-context around handlers |
+| Decorator (framework-shaped) | NestJS interceptor and guard pipelines in `shared/common/interceptors/*` add logging, Cross-Site Request Forgery (CSRF), tenant-context around handlers |
 | Module | ES module scope and curated entry points; a barrel alone does not enforce every import boundary |
-| Proxy / Flyweight / Composite / Bridge | Confirm which Gang of Four (GoF) mechanism applies directly in the relevant source files. |
+| Proxy, Flyweight, Composite, and Bridge | Confirm which Gang of Four (GoF) mechanism applies directly in the relevant source files. |

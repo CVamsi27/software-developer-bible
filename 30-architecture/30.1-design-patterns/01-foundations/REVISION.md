@@ -8,7 +8,7 @@
 
 # Foundations — Revision
 
-Read the section's learning chapters first. Close them, explain each answer with a concrete failure or tradeoff, then use the source link to check what you missed.
+Read the section's learning chapters first. Close them, explain each answer with a concrete failure or trade-off, then use the source link to check what you missed.
 
 ## SOLID Principles
 
@@ -24,7 +24,7 @@ Source: [SOLID Principles](30.1.1.01-solid-principles.md)
 
 **Q:** When should a design principle yield to a concrete requirement?
 
-**A:** Principles are heuristics. Compare their coupling, complexity and change costs against the actual constraints; explain the tradeoff rather than claiming a slogan proves the design.
+**A:** Principles are heuristics. Compare their coupling, complexity and change costs against the actual constraints; explain the trade-off rather than claiming a slogan proves the design.
 
 **Q:** Trace `test(new Square(1, 1))` through the width and height assignments. Which promised behavior breaks?
 
@@ -169,6 +169,12 @@ Source: [UML Basics — Class & Sequence Diagrams](30.1.1.04-uml-basics.md)
 **Q:** Does a Mermaid arrow token by itself specify that a sequence message is a formal UML reply?
 
 **A:** No. Mermaid chooses rendered line and arrow shapes; it does not encode every UML message kind. Use the preceding call, message label, and interaction context to identify a reply, and use a UML-specific tool when exact symbol semantics matter.
+
+Source: [SOLID Principles](30.1.1.01-solid-principles.md)
+
+**Q:** Why does passing a mutable `Array<Dog>` as `Array<Animal>` violate the Liskov Substitution Principle even though `Dog` extends `Animal`, and what fixes the type boundary?
+
+**A:** A caller holding an `Array<Animal>` can push a `Cat` into it, corrupting the caller's underlying `Array<Dog>`. Covariant read-only views preserve LSP only when mutation is disallowed, such as `ReadonlyArray<Animal>`.
 
 ## Summary
 

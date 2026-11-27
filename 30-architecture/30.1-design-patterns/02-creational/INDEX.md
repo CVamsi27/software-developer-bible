@@ -20,7 +20,7 @@ The client receives a product contract; setup and its construction owner retain 
 - "I have a `switch` on type to decide which class to instantiate."
 - "Every time I add a new subclass, I have to edit 5 files."
 - "My test setup involves mocking 10 concrete classes."
-- "I need different instances for different environments (dev / staging / prod)."
+- "I need different instances for different environments (dev, staging, and prod)."
 
 ---
 
@@ -43,8 +43,8 @@ Shares one instance within a defined runtime scope. A module export or dependenc
 
 **When to use:**
 - Logger (one place, all writes go there)
-- Configuration / settings (read once, read everywhere)
-- Thread pool / connection pool manager
+- Configuration and settings (read once, read everywhere)
+- Thread pool or connection pool manager
 - Cache registry
 
 **When NOT to use:**
@@ -68,7 +68,7 @@ Keeps partial choices behind named steps and returns the product at a final cons
 **When to use:**
 - The object needs meaningful staged assembly or a reusable construction recipe
 - An object needs many steps to construct (validate, transform, normalize)
-- You want a clear build boundary and a deliberate copying/immutability policy (`new UserBuilder().name('x').age(30).build()`)
+- You want a clear build boundary and a deliberate copying and immutability policy (`new UserBuilder().name('x').age(30).build()`)
 - You want different representations of the same construction process
 
 **Real-world examples:** `new RequestBuilder().url('...').method('POST').header(...).body(...).build()`, SQL query builders, test data builders.
@@ -174,5 +174,5 @@ Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a he
 | Factory techniques | Fast Healthcare Interoperability Resources (FHIR) resource factories (`shared/modules/fhir/factories/fhir-patient.factory.ts`…), analytics factories (`domains/analytics/core/factories/*`), compliance factories (`anonymization.factory.ts`, `data-export.factory.ts`) |
 | Factory families | `apps/api/src/domains/payments/infrastructure/factories/payment-gateway.factory.ts`, `apps/api/src/shared/modules/monitoring/monitoring/factories/monitoring.factory.ts` |
 | Builder | FHIR observation builders: `fhir/factories/observations/builders/*.builder.ts` (blood pressure, heart rate, SpO₂…) behind a shared port |
-| Construction ownership guard | Construction/value-import restricted to one source file by `scripts/checks/check-openai-client-singleton.mjs` over `shared/modules/ai/openai.service.ts` |
-| Abstract Factory / Prototype | Check each factory and builder implementation directly to confirm whether its pattern uses Abstract Factory, Prototype, or a simpler factory. |
+| Construction ownership guard | Construction and value-import restricted to one source file by `scripts/checks/check-openai-client-singleton.mjs` over `shared/modules/ai/openai.service.ts` |
+| Abstract Factory and Prototype | Check each factory and builder implementation directly to confirm whether its pattern uses Abstract Factory, Prototype, or a simpler factory. |

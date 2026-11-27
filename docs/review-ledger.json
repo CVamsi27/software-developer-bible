@@ -6116,271 +6116,276 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 14B D1-D7 rework of 20.6.3-20.6.5 and 20.6 INDEX (completes 20.6-microservices))."
   },
   "20-backend/20.7-graphql/01-fundamentals/20.7.1.01-graphql-overview.md": {
-   "sha256": "feda42bac0a302215434cdf7eba5d577fb202d03b2f3ccaf583cebe025a11699",
+   "sha256": "8019ec0636bab80d05cc9fd4a5cce63a2b2109dd15cdf1d899c43077e7cbbcbb",
    "lines": 169,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against the GraphQL September 2025 specification and GraphQL over HTTP specification.",
-    "readable": "Full read of 169 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1175 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 169 lines (1177 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1177 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for the GraphQL execution pipeline and REST comparison without repeating resolver batching code.",
-    "fast": "23.7 KB raw / 7.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 23.7 KB raw / 7.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Explains CDN HTTP caching limits, N+1 fan-out failure boundary, and schema-client trade-offs."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15A D1-D7 rework of 20.7-graphql)."
   },
   "20-backend/20.7-graphql/01-fundamentals/20.7.1.02-schema-design.md": {
-   "sha256": "8b3687fafab40d75b0189f489ccedd1ef5584a0b5bee8f11ab3fee22bb1593da",
-   "lines": 235,
+   "sha256": "affdb651f9d384f95ded50b4e4b2d965e64267ae4e00eab3376d7a9e799edcc0",
+   "lines": 237,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against GraphQL September 2025 specification and Relay Cursor Connections specification.",
-    "readable": "Full read of 235 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1603 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 237 lines (1689 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1689 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for SDL modeling, nullability propagation, and Relay cursor contracts.",
-    "fast": "36.8 KB raw / 9.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 36.8 KB raw / 9.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Traces null-bubbling failure boundary conditions and breaking vs additive schema evolution trade-offs."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15A D1-D7 rework of 20.7-graphql)."
   },
   "20-backend/20.7-graphql/01-fundamentals/20.7.1.03-queries-mutations.md": {
-   "sha256": "f2272256d6f4386b78d802bf461cae26bcd40c625133a7d9115d302660ad37fd",
+   "sha256": "6ce1fb1a527d4a2fac5f6c5314b37941f065f0e50938bfa9d559320b21bf1bf1",
    "lines": 210,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against GraphQL September 2025 spec and `graphql-ws` protocol source.",
-    "readable": "Full read of 210 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1289 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 210 lines (1297 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1297 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for client operation syntax, variable parameterization, and serial top-level mutation semantics.",
-    "fast": "31.5 KB raw / 8.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 31.5 KB raw / 8.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Explains why serial mutations do not create a database transaction boundary and traces subscription reconnect failure modes."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15A D1-D7 rework of 20.7-graphql)."
   },
   "20-backend/20.7-graphql/01-fundamentals/INDEX.md": {
-   "sha256": "77d5869a1b22c39f46791a1dc3df8e8db0eb66d99784279513be9c14bd7a6ff6",
+   "sha256": "47011ab007998d13508a575d5b1d9d60e84b1ecc3c8977d80305f7c30b9e5284",
    "lines": 41,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against the GraphQL September 2025 specification.",
-    "readable": "Full read of 41 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 41 lines (115 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "115 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical category index for GraphQL fundamentals with zero duplication.",
-    "fast": "9.1 KB raw / 3.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 9.1 KB raw / 3.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Highlights selection-set, nullability, and mutation ordering failure boundary conditions."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15A D1-D7 rework of 20.7-graphql)."
   },
   "20-backend/20.7-graphql/01-fundamentals/REVISION.md": {
-   "sha256": "c3632f3b67b17dca09a86622658ceea36bc5c103ce96af048267756f2902a84c",
-   "lines": 115,
+   "sha256": "21483d7493a6cb8d9ad89c3ef166e61f7cc2b47def400623c27188451eda4442",
+   "lines": 121,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against GraphQL September 2025 specification.",
-    "readable": "Full read of 115 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "807 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 121 lines (879 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "879 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical revision companion for 01-fundamentals distinct from the stack interview bank.",
-    "fast": "13.6 KB raw / 4.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 13.6 KB raw / 4.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Tests null-propagation failure boundary conditions and REST vs GraphQL trade-offs."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15A D1-D7 rework of 20.7-graphql)."
   },
   "20-backend/20.7-graphql/02-execution/20.7.2.01-resolvers.md": {
-   "sha256": "eb9ea647a5bec6b7feeb9a285e25edb146f387fd72036b6a9c9978b9a702edb2",
+   "sha256": "803eff8a3bb78f12d99cfe42024cc7fe0f35ebe8246eb16b412bdbe726333894",
    "lines": 140,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against GraphQL.js 17.0.2 and DataLoader 2.2.3 sources.",
-    "readable": "Full read of 140 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "956 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 140 lines (1010 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1010 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for resolver execution and DataLoader key-order invariant without duplicating ORM chapters.",
-    "fast": "27.6 KB raw / 6.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 27.6 KB raw / 6.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Traces cross-tenant cache leak failure boundary when DataLoader is shared across requests."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15A D1-D7 rework of 20.7-graphql)."
   },
   "20-backend/20.7-graphql/02-execution/20.7.2.02-apollo-server.md": {
-   "sha256": "1cedc030456984c2b8f646860f55a9f69d7231c1f482b87fc87e30e638e1cd9e",
+   "sha256": "5b394518dc536c1a3c26166b7018489e364dcfcf042258a623babb4bf31f0356",
    "lines": 191,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Apollo Server 5.5.1 and Express 5.3.0 documentation.",
-    "readable": "Full read of 191 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "980 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 191 lines (984 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "984 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for Apollo Server HTTP integration, request context creation, and lifecycle plugins.",
-    "fast": "34.4 KB raw / 8.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 34.4 KB raw / 8.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Explains stack-trace disclosure failure boundary, CSRF limits, and in-flight drain trade-offs."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15A D1-D7 rework of 20.7-graphql)."
   },
   "20-backend/20.7-graphql/02-execution/INDEX.md": {
-   "sha256": "755fbf5122829498dcbecb98c2960d64f9478592679488227a88d070810e538e",
+   "sha256": "c877fbf0f06f3d77975d234ba4e328670c0e43b27d157c4fd2837eff8aff05de",
    "lines": 22,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against DataLoader 2.2.3 and Apollo Server 5.5.1 sources.",
-    "readable": "Full read of 22 lines. Category index for 20.7-graphql/02-execution sequencing resolvers/DataLoader and Apollo Server 5 production wiring.",
-    "concise": "131 words across 22 lines; zero filler or duplicate explanations.",
+    "readable": "Full read of 22 lines (133 prose words). Category index for 20.7-graphql/02-execution sequencing resolvers/DataLoader and Apollo Server 5 production wiring.",
+    "concise": "133 words across 22 lines. zero filler or duplicate explanations.",
     "focused": "Focused single-topic scope: Canonical category index connecting field-level execution trees to per-request batching and HTTP lifecycle.",
-    "fast": "Fast to scan: 7.7 KB raw / 2.7 KB gzip.",
+    "fast": "Measured 7.7 KB raw / 2.7 KB gzip. Fast to scan: 7.7 KB raw / 2.7 KB gzip.",
     "best": "Best-practice depth: Highlights request-scoped context isolation and error-masking failure boundary conditions."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15A D1-D7 rework of 20.7-graphql)."
   },
   "20-backend/20.7-graphql/02-execution/REVISION.md": {
-   "sha256": "ccee76934aa40cc9942dd66de442e32efa9789414b8010a960047e698d435d61",
-   "lines": 89,
+   "sha256": "3f8c0dd2d99064a6f7b82680143af4d3c2e1e673d8e1243c08420f0c8ea1b6e2",
+   "lines": 95,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Apollo Server 5.5.1 and DataLoader 2.2.3.",
-    "readable": "Full read of 89 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "661 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 95 lines (733 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "733 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical revision companion for 02-execution separate from chapter narratives.",
-    "fast": "12.2 KB raw / 4.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 12.2 KB raw / 4.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Drills batch-function ordering failure modes and singleton context security boundary conditions."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15A D1-D7 rework of 20.7-graphql)."
   },
   "20-backend/20.7-graphql/03-clients-and-production/20.7.3.01-apollo-client.md": {
-   "sha256": "c45ebe3dd5e9d59c020e6f8eefd6759ac512116580c10f3517edfdd1708ffcb8",
+   "sha256": "bbb934441b0d2030b683804a1182741edc038c0934d371066394e0ff5eacb3f4",
    "lines": 173,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Apollo Client 4.3.3, GraphQL.js 17.0.2, React 19.3.0, and TypeScript 7.0.2.",
-    "readable": "Full read of 173 lines. Apollo Client 4 chapter opening with the Task:t1 project reassignment list-membership gap, tracing normalized cache identity (`__typename:id`), `@apollo/client/react` 4.3.3 `useQuery`/`useMutation` with `TypedDocumentNode`, fetch policies, optimistic rollback, and `clearStore()` vs `resetStore()`.",
-    "concise": "1164 words across 173 lines; zero filler or duplicate explanations.",
+    "readable": "Full read of 173 lines (1223 prose words). Apollo Client 4 chapter opening with the Task:t1 project reassignment list-membership gap, tracing normalized cache identity (`__typename:id`), `@apollo/client/react` 4.3.3 `useQuery`/`useMutation` with `TypedDocumentNode`, fetch policies, optimistic rollback, and `clearStore()` vs `resetStore()`.",
+    "concise": "1223 words across 173 lines. zero filler or duplicate explanations.",
     "focused": "Focused single-topic scope: Canonical home for normalized GraphQL client state without duplicating React or TanStack Query chapters.",
-    "fast": "Fast to scan: 31.9 KB raw / 8.0 KB gzip.",
+    "fast": "Measured 31.9 KB raw / 8.0 KB gzip. Fast to scan: 31.9 KB raw / 8.0 KB gzip.",
     "best": "Best-practice depth: Traces optimistic rollback failure boundary, list membership drift, and logout cache-leakage risks."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15A D1-D7 rework of 20.7-graphql)."
   },
   "20-backend/20.7-graphql/03-clients-and-production/20.7.3.02-performance-security.md": {
-   "sha256": "4d42f06dddc6105359e354d94ece3add3da8afcc8889eca52bc0079a6c41f689",
+   "sha256": "65438eedc48e6d801ecfa634c11c8d74880ad54503b1fe830911e54ac19de67d",
    "lines": 167,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Apollo Server 5.5.1, GraphQL.js 16.14.2, and OWASP GraphQL Cheat Sheet.",
-    "readable": "Full read of 167 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1263 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 167 lines (1320 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1320 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for GraphQL admission control, query cost estimation, and field/resource authorization.",
-    "fast": "28.4 KB raw / 8.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 28.4 KB raw / 8.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Demonstrates `didResolveOperation` operation-allowlist boundary enforcement and variable bound failure handling."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15A D1-D7 rework of 20.7-graphql)."
   },
   "20-backend/20.7-graphql/03-clients-and-production/20.7.3.03-codegen-schema-safety-ci.md": {
-   "sha256": "9398cd70d1ea80533485febcc40a8bc81117bd2eb058f098bdb0b4a43be66a46",
+   "sha256": "3ac803fa2b600ac62af7ca9a63f37ccdedbe93c62d0c66e4a6d60ac103d2e95f",
    "lines": 168,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against GraphQL Code Generator 7.4.6, client preset 6.2.3, and GraphQL Inspector 7.0.1.",
-    "readable": "Full read of 168 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1010 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 168 lines (1023 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1023 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for build-time GraphQL type generation and schema compatibility CI checks.",
-    "fast": "29.0 KB raw / 7.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 29.0 KB raw / 7.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Explains why compile-time scalar mappings do not replace runtime parsing or deployed-schema boundary limits."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15A D1-D7 rework of 20.7-graphql)."
   },
   "20-backend/20.7-graphql/03-clients-and-production/INDEX.md": {
-   "sha256": "23d84e69a3a40a68a800378836538bfd082f048d2da1cc1da442496b8e4fed0a",
+   "sha256": "107632b3b3cb9f9c90cf9c9859bc9c56d80a0e5f023403ce3aa598fdfb15ab2c",
    "lines": 22,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Apollo Client 4.3.3, Apollo Server 5.5.1, and GraphQL Codegen 7.4.6.",
-    "readable": "Full read of 22 lines. Category index for 20.7-graphql/03-clients-and-production sequencing Apollo Client 4, performance/security controls, codegen/CI safety, and revision.",
-    "concise": "148 words across 22 lines; zero filler or duplicate explanations.",
+    "readable": "Full read of 22 lines (150 prose words). Category index for 20.7-graphql/03-clients-and-production sequencing Apollo Client 4, performance/security controls, codegen/CI safety, and revision.",
+    "concise": "150 words across 22 lines. zero filler or duplicate explanations.",
     "focused": "Focused single-topic scope: Canonical category index connecting normalized client caching to server operation admission and build-time codegen.",
-    "fast": "Fast to scan: 8.0 KB raw / 2.9 KB gzip.",
+    "fast": "Measured 8.0 KB raw / 2.9 KB gzip. Fast to scan: 8.0 KB raw / 2.9 KB gzip.",
     "best": "Best-practice depth: Separates client cache freshness boundary limits from server authorization and runtime failure validation."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15A D1-D7 rework of 20.7-graphql)."
   },
   "20-backend/20.7-graphql/03-clients-and-production/REVISION.md": {
-   "sha256": "ef1e8cf717d27a68ffea06e743b8d0398b95cd219950f3a35759d258693f7717",
-   "lines": 109,
+   "sha256": "4f2258fa2055be48458c4df7c9faa3dff0c3fc53a8df9f1da140add5ecf79626",
+   "lines": 121,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Apollo Client 4.3.3, Apollo Server 5.5.1, and GraphQL Codegen 7.4.6.",
-    "readable": "Full read of 109 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "814 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 121 lines (934 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "934 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical revision drill for 03-clients-and-production.",
-    "fast": "14.1 KB raw / 4.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 14.1 KB raw / 4.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Tests cache list-membership failure boundary, GraphQL.js peer-dependency limits, and untracked codegen CI diffs."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15A D1-D7 rework of 20.7-graphql)."
   },
   "20-backend/20.7-graphql/04-interview-prep/20.7.4.01-interview-questions.md": {
-   "sha256": "39de82514453b4b42aed07bcc86ad58974607f74c0912811248da9beb7da6670",
+   "sha256": "24ba5fcb3f1a87cb254a25e1169d66122b17f3f1578b5f5ee9a86f9b9c0574f9",
    "lines": 247,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against the GraphQL September 2025 specification, Apollo Server 5.5.1, and Apollo Client 4.3.3.",
-    "readable": "Full read of 247 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "3123 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 247 lines (3215 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "3215 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical interview bank for 20.7-graphql consolidating all four sub-tracks without repeating full code listings.",
-    "fast": "36.5 KB raw / 12.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 36.5 KB raw / 12.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Every answer pairs the runtime mechanism with its failure boundary and trade-off decision."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15A D1-D7 rework of 20.7-graphql)."
   },
   "20-backend/20.7-graphql/04-interview-prep/INDEX.md": {
-   "sha256": "3b2c37d2e6bfe197d656624d3eadf9fde178f1596a906e38e8b1fc97730702a3",
+   "sha256": "eb68a881ea4fead1769a9473291a364667ea19fd0e7148f660fa9b0622c10a88",
    "lines": 22,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against the 20.7-graphql track and Docita experience boundary note.",
-    "readable": "Full read of 22 lines. Category index for 20.7-graphql/04-interview-prep guiding timed practice across all 50 authored GraphQL interview and domain-design questions.",
-    "concise": "149 words across 22 lines; zero filler or duplicate explanations.",
+    "readable": "Full read of 22 lines (157 prose words). Category index for 20.7-graphql/04-interview-prep guiding timed practice across all 50 authored GraphQL interview and domain-design questions.",
+    "concise": "157 words across 22 lines. zero filler or duplicate explanations.",
     "focused": "Focused single-topic scope: Canonical entrypoint for GraphQL interview practice after the three category revision companions.",
-    "fast": "Fast to scan: 7.7 KB raw / 2.8 KB gzip.",
+    "fast": "Measured 7.7 KB raw / 2.8 KB gzip. Fast to scan: 7.7 KB raw / 2.8 KB gzip.",
     "best": "Best-practice depth: Reinforces mechanism-first answers with explicit failure boundary conditions and honest project attribution."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15A D1-D7 rework of 20.7-graphql)."
   },
   "20-backend/20.7-graphql/INDEX.md": {
-   "sha256": "12f1af535660bf76fc753da2350ebf1165f6e697b41be28d06d0a31fc567de08",
+   "sha256": "99c6d743a3d720dfee90d1dd5d3304746fda26b9b8f79c246c535e0ec4c6b29b",
    "lines": 37,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against the GraphQL September 2025 specification, GraphQL.js 17.0.2, Apollo Server 5.5.1, and Apollo Client 4.3.3.",
-    "readable": "Full read of 37 lines. GraphQL stack index mapping 15 files across 01-fundamentals, 02-execution, 03-clients-and-production, and 04-interview-prep.",
-    "concise": "183 words across 37 lines; zero filler or duplicate explanations.",
+    "readable": "Full read of 37 lines (193 prose words). GraphQL stack index mapping 15 files across 01-fundamentals, 02-execution, 03-clients-and-production, and 04-interview-prep.",
+    "concise": "193 words across 37 lines. zero filler or duplicate explanations.",
     "focused": "Focused single-topic scope: Canonical stack entrypoint guiding readers from schema modeling to production caching, security, and CI governance.",
-    "fast": "Fast to scan: 9.6 KB raw / 3.4 KB gzip.",
+    "fast": "Measured 9.6 KB raw / 3.4 KB gzip. Fast to scan: 9.6 KB raw / 3.4 KB gzip.",
     "best": "Best-practice depth: Frames GraphQL vs REST failure boundary conditions and operational trade-offs."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 15A D1-D7 rework of 20.7-graphql)."
   },
   "20-backend/20.8-caching/20.8.01-caching-deep-dive.md": {
    "sha256": "1d650cf79fc9fb8929130d90a1b17172c43835110384bf92a2fe6e82b591454e",
@@ -6575,7 +6580,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
   },
   "20-backend/INDEX.md": {
-   "sha256": "a53f6daa855fb1ad9e7d18a60b7099f3f43cbb331b215c247750b3f59cc9c854",
+   "sha256": "16568c3e66692a5a225be59ea58a45fc001ae547f4b0ddcd5a281d63fc493275",
    "lines": 122,
    "genre": "index",
    "status": "read",
@@ -6588,7 +6593,7 @@
     "fast": "Measured 15.4 KB raw / 5.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Remaining limit is study-hour path estimates are rough guides and depend on each reader's prior backend background."
    },
-   "notes": "Synced live read-time and counts after Phase 14B D1-D7 rework of 20.6.3-20.6.5 and 20.6 INDEX (completes 20.6-microservices)."
+   "notes": "Synced live read-time and counts after Phase 15A D1-D7 rework of 20.7-graphql."
   },
   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md": {
    "sha256": "065e2b7d573b2298550d061453667084b1d010e6fadf07f903f6fdd34a8e5185",
@@ -14381,7 +14386,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "988bb2c77e0f176227758213a4ffae6a8641b367b3837910f70ab985d679ea2b",
+   "sha256": "0c8ca31ffa1e4cba78dba929881990cfd66b0bd02cf46a61b6b68cc46c7575d7",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14394,7 +14399,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 14B D1-D7 rework of 20.6.3-20.6.5 and 20.6 INDEX (completes 20.6-microservices)."
+   "notes": "Synced live read-time and counts after Phase 15A D1-D7 rework of 20.7-graphql."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14685,7 +14690,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "898a4dda43231421f5f2e81fcd9de68fb4061e24b5054efe027287172b0f8c59",
+   "sha256": "6fe80a5e62d97ed8e30f1e595ed0bcd90b5e1e925684010c818c2645b617182f",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14698,7 +14703,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 14B D1-D7 rework of 20.6.3-20.6.5 and 20.6 INDEX (completes 20.6-microservices)."
+   "notes": "Synced live read-time and counts after Phase 15A D1-D7 rework of 20.7-graphql."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

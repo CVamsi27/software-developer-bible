@@ -40,7 +40,7 @@ Source: [Performance & Security](20.7.3.02-performance-security.md)
 
 **Q:** Why must authorization account for fields, objects and resolver paths?
 
-**A:** A single endpoint can reach many objects through different paths. Apply the same resource and tenant policy at authoritative access boundaries, with additional field/property checks where access differs.
+**A:** A single endpoint can reach many objects through different paths. Apply the same resource and tenant policy at authoritative access boundaries, with additional field and property checks where access differs.
 
 ## GraphQL Code Generator — Schema Safety & CI
 
@@ -64,7 +64,7 @@ Source: [Apollo Client](20.7.3.01-apollo-client.md)
 
 **Q:** A task's project ID changed in a normalized record. Why can the old project's task list still be wrong?
 
-**A:** Entity normalization updates the task's fields, but cannot infer filtered list membership, counts or order. Explicitly update the relevant list representation or invalidate/refetch the affected operations; test concurrent pages and optimistic rollback.
+**A:** Entity normalization updates the task's fields, but cannot infer filtered list membership, counts or order. Explicitly update the relevant list representation or invalidate and refetch the affected operations; test concurrent pages and optimistic rollback.
 
 **Q:** How do `network-only` and `no-cache` differ after receiving a result?
 
@@ -90,11 +90,23 @@ Source: [Apollo Client](20.7.3.01-apollo-client.md) & [Apollo Server](../02-exec
 
 **Q:** Can one GraphQL.js major version be assumed compatible across Apollo Client and Apollo Server?
 
-**A:** No. Apollo Client 4.3.3 accepts GraphQL.js 16 or 17, while Apollo Server 5.5.1 declares `^16.11.0`. When practical, share a compatible 16.x runtime in a combined server/client project and check peer dependencies on upgrades.
+**A:** No. Apollo Client 4.3.3 accepts GraphQL.js 16 or 17, while Apollo Server 5.5.1 declares `^16.11.0`. When practical, share a compatible 16.x runtime in a combined server-and-client project and check peer dependencies on upgrades.
 
 **Q:** Why can regeneration plus `git diff` miss a new generated file?
 
 **A:** `git diff` checks tracked changes and does not include untracked output. A committed-artifact workflow must also reject unexpected untracked files or compare a clean generated directory; compilation and runtime tests remain separate checks.
+
+Source: [Apollo Client](20.7.3.01-apollo-client.md)
+
+**Q:** Why does `typePolicies` set `keyArgs` to semantic filters and sort while excluding pagination arguments (`after`, `first`) before `merge` runs?
+
+**A:** Including cursors in the cache key stores each page separately instead of appending into one list. Excluding pagination arguments while keeping `filter`, `sort`, and tenant keys lets `merge` combine pages cleanly without mixing distinct views.
+
+Source: [Performance & Security](20.7.3.02-performance-security.md)
+
+**Q:** How can alias-amplified mutations (`a1: login(...) a2: login(...)`) bypass per-HTTP-request rate limits, and which controls close the gap?
+
+**A:** One HTTP request executes each aliased field separately while consuming only one HTTP rate-limit tick. Enforcing parser `maxTokens` limits, bounding alias counts, and charging domain throttles per field execution prevents batch brute force.
 
 ## Summary
 

@@ -11,7 +11,7 @@
 1. Read [Apollo Client](20.7.3.01-apollo-client.md). Trace one normalized entity, an optimistic rollback and a list membership change. Distinguish entity updates from pagination and private-cache lifetime.
 2. Read [Performance and security](20.7.3.02-performance-security.md). Explain APQ versus a trusted allowlist, then reject a valid but oversized page and trace resource authorization.
 3. Read [Code generation and schema safety](20.7.3.03-codegen-schema-safety-ci.md). Generate the actual client-preset output, compile its consumer and identify what still needs runtime validation.
-4. Use [Client and production revision](REVISION.md) before the [interview bank](../04-interview-prep/20.7.4.01-interview-questions.md). Back-end roles can emphasize admission and compatibility; front-end roles should also explain cache/identity transitions.
+4. Use [Client and production revision](REVISION.md) before the [interview bank](../04-interview-prep/20.7.4.01-interview-questions.md). Back-end roles can emphasize admission and compatibility; front-end roles should also explain cache and identity transitions.
 
 ## Project comparison
 

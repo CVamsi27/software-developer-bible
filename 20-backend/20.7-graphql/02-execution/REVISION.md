@@ -20,7 +20,7 @@ Source: [Resolvers](20.7.2.01-resolvers.md)
 
 **Q:** How does request-scoped batching address repeated nested lookups?
 
-**A:** A request-scoped loader groups compatible key requests and may memoize them for that request. Its batch must preserve key/result correspondence and authorization context; separate requests must not accidentally share tenant data.
+**A:** A request-scoped loader groups compatible key requests and may memoize them for that request. Its batch must preserve key-to-result correspondence and authorization context; separate requests must not accidentally share tenant data.
 
 **Q:** What information do a resolver's parent, arguments, context and execution info provide?
 
@@ -52,7 +52,7 @@ Source: [Resolvers](20.7.2.01-resolvers.md)
 
 **Q:** Why is executing two mutation fields serially different from using a transaction?
 
-**A:** Serial execution orders top-level mutation fields but does not roll back the first field when the second fails. Put atomic business changes in an authoritative transaction and specify retry/idempotency behavior independently.
+**A:** Serial execution orders top-level mutation fields but does not roll back the first field when the second fails. Put atomic business changes in an authoritative transaction and specify retry and idempotency behavior independently.
 
 **Q:** Why can a missing non-null author remove an entire `posts` response?
 
@@ -62,7 +62,7 @@ Source: [Apollo Server](20.7.2.02-apollo-server.md)
 
 **Q:** Does `executeOperation` with a principal prove that Express authentication works?
 
-**A:** No. It exercises GraphQL processing with supplied context, bypassing HTTP middleware. Use HTTP integration tests for credentials, body limits and CORS/CSRF boundaries, plus schema-execution tests for resource policy and null behavior.
+**A:** No. It exercises GraphQL processing with supplied context, bypassing HTTP middleware. Use HTTP integration tests for credentials, body limits and CORS and CSRF boundaries, plus schema-execution tests for resource policy and null behavior.
 
 **Q:** How should the HTTP boundary handle malformed or oversized JSON before Apollo sees a request?
 
@@ -75,6 +75,12 @@ Source: [Apollo Server](20.7.2.02-apollo-server.md)
 **Q:** Why should current variables not be inspected only by a static validation rule?
 
 **A:** The server may cache validation results for a document. A new request can reuse that document with different variables or identity, so admission checks depending on them must execute on every request before resolver work.
+
+Source: [Resolvers](20.7.2.01-resolvers.md)
+
+**Q:** Why does passing `{ tenantId, id }` objects to DataLoader break memoization without a `cacheKeyFn`, and why do mutations call `.clear(id).prime(id, updated)` rather than `.prime()` alone?
+
+**A:** DataLoader checks cache keys by strict reference equality (`===`), so newly allocated objects miss every lookup unless a canonical `cacheKeyFn` serializes them. Because `.prime()` ignores keys already in the cache, clearing first is required to overwrite stale values.
 
 ## Summary
 

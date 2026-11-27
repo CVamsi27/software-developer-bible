@@ -78,7 +78,7 @@ Source: [Schema design](20.7.1.02-schema-design.md)
 
 **Q:** A user's required name fails while another root post succeeds. What remains in the response?
 
-**A:** The nullable user becomes null, the unrelated post can remain, and the error path names the failing user/name field. Making the user root non-null can instead propagate the failure to all data.
+**A:** The nullable user becomes null, the unrelated post can remain, and the error path names the failing `user` and `name` field path. Making the user root non-null can instead propagate the failure to all data.
 
 **Q:** Why cannot `SearchResult` expose `id` directly even though both union members have one?
 
@@ -86,7 +86,7 @@ Source: [Schema design](20.7.1.02-schema-design.md)
 
 **Q:** Does declaring `DateTime` or `@auth` install date validation or a permission check?
 
-**A:** No. The scalar needs parsing/serialization behavior and the directive needs a corresponding implementation. Names and generated types alone do not enforce those contracts.
+**A:** No. The scalar needs parsing and serialization behavior and the directive needs a corresponding implementation. Names and generated types alone do not enforce those contracts.
 
 Source: [Queries and mutations](20.7.1.03-queries-mutations.md)
 
@@ -101,6 +101,12 @@ Source: [Queries and mutations](20.7.1.03-queries-mutations.md)
 **Q:** What delivery guarantees come from a GraphQL subscription declaration by itself?
 
 **A:** It defines one event-producing root field and result execution for its source events. Transport, authorization changes, ordering, bounded queues and replay after reconnect need separate implementation contracts.
+
+Source: [Schema design](20.7.1.02-schema-design.md)
+
+**Q:** Why does `Query.node(id: ID!)` need globally unique type-scoped identifiers instead of raw table primary keys, and is decoding the type prefix enough for access control?
+
+**A:** Raw table IDs collide across tables (`User` `42` versus `Post` `42`), breaking server dispatch and client cache identity. Encoding both type and key prevents collisions, while authorization checks must still verify caller access to that decoded object.
 
 ## Summary
 

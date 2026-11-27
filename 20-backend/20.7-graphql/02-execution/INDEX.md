@@ -1,6 +1,6 @@
 # Execution - GraphQL
 
-> **Study time:** ≈ 18 min of reading (3 files, ~6 min average).
+> **Study time:** ≈ 19 min of reading (3 files, ~6 min average).
 > **3 files.** How the server resolves fields, uses request-scoped batching for repeated relationship reads, and connects Apollo Server's plugin model, federation and subscription transports to HTTP.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
@@ -9,7 +9,7 @@
 ## Learning passes
 
 1. Read [Resolvers](20.7.2.01-resolvers.md). Trace parent values, default resolution, ordered batching and a missing author's nullable boundary. Explain why the loader is request-scoped.
-2. Read [Apollo Server](20.7.2.02-apollo-server.md). Run the Server 5/Express 5 fixture, then distinguish HTTP authentication from schema execution and resource authorization.
+2. Read [Apollo Server](20.7.2.02-apollo-server.md). Run the Server 5 and Express 5 fixture, then distinguish HTTP authentication from schema execution and resource authorization.
 3. Use [Execution revision](REVISION.md) without looking at the answers. Return to a chapter when you cannot explain its failure boundary.
 4. Continue to [Clients and production](../03-clients-and-production/INDEX.md), then the [interview bank](../04-interview-prep/20.7.4.01-interview-questions.md).
 

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "f00bc704d3fd656e4e91f618ab30996fc556ccbb4dcc466d7badb2f627c88b47",
+ "corpus_digest": "3b249d277be2dbc563b27a53318515b3646703c107682e6b3f970b85f74f8433",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5607
+  "read_minutes": 5612
  },
  "chapters": [
   {
@@ -4724,7 +4724,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.04-multi-tenant-saas-architecture.html",
@@ -4757,7 +4757,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.02-technical-debt.html",
@@ -4777,7 +4777,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.html",
@@ -4787,7 +4787,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/REVISION.html",
@@ -4798,7 +4798,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "30-architecture/30.3-infra-patterns/06-interview-prep/30.3.6.01-interview-questions.html",

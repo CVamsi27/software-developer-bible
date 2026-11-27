@@ -24,15 +24,15 @@ Source: [Database Scaling — Partitioning, Replication, Connection Pooling, Que
 
 **Q:** Does a UUID default establish global uniqueness on a table partitioned by time?
 
-**A:** No. Generation and constraints are separate. A parent unique/primary key must include supported partition keys; uniqueness of `(id, scheduled_at)` does not guarantee `id` alone is globally unique.
+**A:** No. Generation and constraints are separate. A parent unique or primary key must include supported partition keys; uniqueness of `(id, scheduled_at)` does not guarantee `id` alone is globally unique.
 
 **Q:** Does PgBouncer `default_pool_size = 20` limit the entire database to twenty connections?
 
-**A:** No. The size is per user/database pool, with other pools/reserve configuration and direct clients adding demand. Budget fleet-wide useful execution and queueing, not just one setting.
+**A:** No. The size is per user and database pool, with other pools or reserve configuration and direct clients adding demand. Budget fleet-wide useful execution and queueing, not just one setting.
 
 **Q:** In PgBouncer transaction mode, which session assumptions must an application avoid, and when can it use named prepared statements?
 
-**A:** The server connection is released at transaction end, so session `SET` state and session-level advisory locks do not follow the client to its next transaction. PgBouncer supports protocol-level named prepared statements in this mode only when `max_prepared_statements` is nonzero; SQL `PREPARE`/`DEALLOCATE` remains incompatible. Verify the driver's protocol behavior against the [PgBouncer feature matrix](https://www.pgbouncer.org/features.html).
+**A:** The server connection is released at transaction end, so session `SET` state and session-level advisory locks do not follow the client to its next transaction. PgBouncer supports protocol-level named prepared statements in this mode only when `max_prepared_statements` is nonzero; SQL `PREPARE` and `DEALLOCATE` remain incompatible. Verify the driver's protocol behavior against the [PgBouncer feature matrix](https://www.pgbouncer.org/features.html).
 
 ## Data Pipelines — ETL, Stream Processing, Data Lake
 
@@ -40,19 +40,19 @@ Source: [Data Pipelines — ETL, Stream Processing, Data Lake](30.3.4.02-data-pi
 
 **Q:** What should a pipeline checkpoint commit together with its output?
 
-**A:** The position/state corresponding to the applied output, within the chosen processing boundary. Otherwise restart may skip work or apply it twice.
+**A:** The position and state corresponding to the applied output, within the chosen processing boundary. Otherwise restart may skip work or apply it twice.
 
 **Q:** Why does a highest-version upsert fit an after-image but not every additive event?
 
-**A:** A complete newer image replaces older state. An additive event may carry a distinct required contribution; dropping older events can lose it. Deduplication and ordering/aggregation semantics depend on the event contract.
+**A:** A complete newer image replaces older state. An additive event may carry a distinct required contribution; dropping older events can lose it. Deduplication and ordering or aggregation semantics depend on the event contract.
 
 **Q:** Can deleting a projection tombstone resurrect old data during replay?
 
-**A:** Yes. Without the retained higher deletion version, an older image can insert again. Match tombstone retention to the replay/correction contract and required deletion policy.
+**A:** Yes. Without the retained higher deletion version, an older image can insert again. Match tombstone retention to the replay and correction contract and required deletion policy.
 
 **Q:** Is a fixed, non-overlapping five-minute window a sliding window?
 
-**A:** It is a tumbling window. Sliding windows overlap; late data and watermark/correction behavior require additional explicit policies.
+**A:** It is a tumbling window. Sliding windows overlap; late data and watermark and correction behavior require additional explicit policies.
 
 **Q:** What does Kafka's exactly-once transaction cover when the sink is PostgreSQL?
 
@@ -76,7 +76,11 @@ Source: [CDN Architecture — Edge Caching, Geographic Distribution, Cache Inval
 
 **Q:** Does serving through a chosen region prove where sensitive data is retained?
 
-**A:** No. Origin, backups, logs, telemetry and provider processing have separate location/trust contracts. `Cache-Control: no-store` controls relevant caching, not all processing or compliance.
+**A:** No. Origin, backups, logs, telemetry and provider processing have separate location and trust contracts. `Cache-Control: no-store` controls relevant caching, not all processing or compliance.
+
+**Q:** How can an unkeyed header such as `X-Forwarded-Host` cause CDN cache poisoning, and how do edge and origin rules prevent it?
+
+**A:** When an origin reflects an unkeyed request header into generated asset URLs or redirects while the CDN keys the cached response only on path and host, one crafted request stores a hostile payload served to subsequent visitors. Prevent it by stripping or overwriting untrusted forwarding headers at the edge and ensuring every response-shaping input is validated or included in the cache key.
 
 ## Multi-Tenant SaaS Architecture
 
@@ -92,7 +96,7 @@ Source: [Multi-Tenant SaaS Architecture](30.3.4.04-multi-tenant-saas-architectur
 
 **Q:** Does installing a transaction-local tenant setting protect a later query on another pooled connection?
 
-**A:** No. Context installation and protected statements must use the same transaction/connection. Authorized application context and an RLS-constrained runtime role are also necessary; RLS cannot make query injection safe.
+**A:** No. Context installation and protected statements must use the same transaction and connection. Authorized application context and an RLS-constrained runtime role are also necessary; RLS cannot make query injection safe.
 
 **Q:** Why might a SaaS use a pooled database for ordinary tenants and a silo for a high-load or contract-sensitive tenant?
 

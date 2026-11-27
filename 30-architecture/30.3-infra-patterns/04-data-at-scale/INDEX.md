@@ -1,6 +1,6 @@
 # Data at Scale
 
-> **Study time:** ≈ 38 min of reading (5 files, ~8 min average).
+> **Study time:** ≈ 39 min of reading (5 files, ~8 min average).
 > **5 files.** Scale measured data paths: database capacity levers, batch and streaming pipelines, CDN reuse and invalidation under access rules, and multi-tenant SaaS patterns.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#file-index)
@@ -20,8 +20,8 @@ Measure resource and consistency requirements before choosing a lever. Replicas 
 | Order | File | Topics | Role priority | General importance | Read time |
 | ----: | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- | ------------------ | ----------: |
 | 01 | [Database Scaling](30.3.4.01-database-scaling.md) | Read replicas, vertical vs horizontal scaling, partitioning, connection pooling, measured bottlenecks and independent levers | Important | Specialized | 11 min |
-| 02 | [Data Pipelines](30.3.4.02-data-pipelines.md) | ETL vs ELT vs streaming, Bronze/Silver/Gold framing, batch vs stream trade-offs, pipeline reliability | Important | Specialized | 10 min |
-| 03 | [CDN Architecture](30.3.4.03-cdn-architecture.md) | Edge reuse, cache identity, authorization, freshness, origin load and invalidation (provider examples: [40.10-cdn](../../../40-platform/40.10-cdn/INDEX.md)) | Important | Specialized | 7 min |
+| 02 | [Data Pipelines](30.3.4.02-data-pipelines.md) | ETL vs ELT vs streaming, Bronze, Silver, and Gold framing, batch vs stream trade-offs, pipeline reliability | Important | Specialized | 10 min |
+| 03 | [CDN Architecture](30.3.4.03-cdn-architecture.md) | Edge reuse, cache identity, authorization, freshness, origin load and invalidation (provider examples: [40.10-cdn](../../../40-platform/40.10-cdn/INDEX.md)) | Important | Specialized | 8 min |
 | 04 | [Multi-Tenant SaaS Architecture](30.3.4.04-multi-tenant-saas-architecture.md) | Pool, bridge and silo choices; verified tenant context; database, cache, storage and job boundaries; lifecycle and noisy-neighbor controls | Important | Specialized | 7 min |
 
 ---
@@ -48,7 +48,7 @@ Explain which bottleneck each added component removes and how consistency, autho
 
 ## Docita Anchor
 
-Candidate implementation locations in [Docita](https://github.com/CVamsi27/docita). Source names and tests guide inspection; verify the actual checked-out revision/configuration and failure evidence before presenting them as deployed capacity or isolation proof.
+Candidate implementation locations in [Docita](https://github.com/CVamsi27/docita). Source names and tests guide inspection; verify the actual checked-out revision and configuration and failure evidence before presenting them as deployed capacity or isolation proof.
 
 | Topic | Docita evidence |
 | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

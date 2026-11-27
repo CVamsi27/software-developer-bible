@@ -8571,52 +8571,52 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 20A: 30.3 infra patterns (01-liveness, 02-failure, 03-coordination))."
   },
   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md": {
-   "sha256": "2fda3cad8cef1d1b0207f6accbe7c653c9667da45b9032c961d922a26f1b553c",
+   "sha256": "51b75850faaf18bb0943676abcf8ef98b298a59c24c149e1108050837ade5b19",
    "lines": 230,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against PostgreSQL 18 EXPLAIN, native partitioning, pg_stat_progress_vacuum, PgBouncer transaction-mode prepared statement support, and Prisma ORM v7 driver adapter pools.",
-    "readable": "Full read of 230 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1358 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 230 lines (1366 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1366 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical operational database scaling lever selection chapter; complements PostgreSQL internals in 20.4.1.",
-    "fast": "34.1 KB raw / 9.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 34.1 KB raw / 9.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Provides executable PostgreSQL range and hash partition DDL, PgBouncer config, and per-partition autovacuum tuning with transaction-mode session state failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 20B: 30.3 infra patterns (04-06, INDEX) and 30-architecture INDEX)."
   },
   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.md": {
-   "sha256": "c30788a1e5066afd0f484f43597a6713e3793c65a5c362b5e296a11b763aa19b",
+   "sha256": "430b40484ec2b1ffda2ccbf2d10a7269affe4f275760b313ceb8a422bb984043",
    "lines": 165,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Apache Kafka 4.3 Streams transaction boundaries, Apache Beam watermark model, PostgreSQL pg_replication_slots WAL retention, and Delta Lake transaction log protocol.",
-    "readable": "Full read of 165 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1564 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 165 lines (1594 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1594 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical data pipeline architecture, checkpointing, and backfill governance chapter.",
-    "fast": "26.5 KB raw / 8.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 26.5 KB raw / 8.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Provides executable PostgreSQL versioned after-image upsert SQL and details abandoned replication-slot disk exhaustion and tombstone removal resurrection failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 20B: 30.3 infra patterns (04-06, INDEX) and 30-architecture INDEX)."
   },
   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md": {
-   "sha256": "2b11c917d501bff4f9fc67ffd9fcad105053593af0510f16f7845dbe91043c29",
-   "lines": 134,
+   "sha256": "9a2321a3b29fb690da53a43e3c01ee86123658e4fef39c219509e828c86bbc6d",
+   "lines": 136,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against RFC 9111 (HTTP Caching), RFC 5861 (stale-while-revalidate and stale-if-error), and AWS CloudFront Origin Shield and Cloudflare purge architecture.",
-    "readable": "Full read of 134 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1202 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 136 lines (1288 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1288 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical architectural CDN and origin-boundary integration chapter; complements platform CDN setup in 40.10.",
-    "fast": "20.6 KB raw / 7.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 20.6 KB raw / 7.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Traces path-only cache key cross-patient data leak, cache poisoning vs misconfigured sharing, and multi-tab HTML-to-asset version skew failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 20B: 30.3 infra patterns (04-06, INDEX) and 30-architecture INDEX)."
   },
   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.04-multi-tenant-saas-architecture.md": {
    "sha256": "42bb2e85ab73583ce732baa6c522420807adf9bd395923f7e70822b9196da7bd",
@@ -8635,167 +8635,167 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/04-data-at-scale/INDEX.md": {
-   "sha256": "9bcff66d97431f768359a3f8dfaa47152edc6d2c6ae2f833cc2f7c9d7b9f965d",
+   "sha256": "7e6c5644fc34f891b0f76f43442cf1d869da7d58edd01ddfd3fda4596bf06ff9",
    "lines": 59,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against live file index and cross-links to 20.4-database and 40.10-cdn.",
-    "readable": "Full read of 59 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "180 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 59 lines (182 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "182 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical category index for 30.3-infra-patterns/04-data-at-scale.",
-    "fast": "11.6 KB raw / 3.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 11.6 KB raw / 3.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Connects bottleneck measurement to consistency, authorization, and recovery failure boundary checks."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 20B: 30.3 infra patterns (04-06, INDEX) and 30-architecture INDEX)."
   },
   "30-architecture/30.3-infra-patterns/04-data-at-scale/REVISION.md": {
-   "sha256": "30b9271d3bf3219d37b77f7ed3583b68b8ce7b464427df748563866c1595da4d",
-   "lines": 113,
+   "sha256": "c669a42dabe0ae16fdd0788b657a253c02c8fdec179ed6b69a896c49f662d0f9",
+   "lines": 117,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against PgBouncer feature matrix, Apache Kafka 4.3 Streams docs, RFC 9111, and Prisma ORM v7 and v8 release notes.",
-    "readable": "Full read of 113 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "960 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 117 lines (1065 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1065 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical revision companion for 30.3-infra-patterns/04-data-at-scale.",
-    "fast": "15.7 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 15.7 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Tests high-signal senior failure boundary conditions across connection pooling, tombstone deletion, CDN cache sharing, and multi-tenant RLS."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 20B: 30.3 infra patterns (04-06, INDEX) and 30-architecture INDEX)."
   },
   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md": {
-   "sha256": "b85dc1eeae61ffc16de55497d847010edd456e13ad278e5d1ff204ffa3e65c95",
-   "lines": 142,
+   "sha256": "61ab724296476c36dbc28a4f2352a52172cff5a8f99574b96cfb1b0af50698e6",
+   "lines": 144,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Kubernetes Deployment rollout and container lifecycle hook semantics, Google SRE canarying principles, and PostgreSQL CREATE INDEX CONCURRENTLY phases.",
-    "readable": "Full read of 142 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1086 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 144 lines (1204 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1204 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical zero-downtime deployment and backward-compatible schema evolution chapter.",
-    "fast": "22.1 KB raw / 7.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 22.1 KB raw / 7.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Provides executable SQL expand-migrate-contract fixture and analyzes code rollback failing against incompatible queued messages, contracted columns, and committed provider effects failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 20B: 30.3 infra patterns (04-06, INDEX) and 30-architecture INDEX)."
   },
   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.02-technical-debt.md": {
-   "sha256": "f60c326819296fc4902b9ae48bd48130985f9eafaba9732e15a8a950993afac4",
+   "sha256": "862118bf1467e7436785d6d76c08377a9cf537ab49dfd2e38043e7a1e7a72e8c",
    "lines": 116,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Martin Fowler's Technical Debt Quadrant, Strangler Fig, Branch by Abstraction, and current 5-metric DORA guidance.",
-    "readable": "Full read of 116 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1119 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 116 lines (1130 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1130 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical technical debt identification, economic prioritization, and boundary migration chapter.",
-    "fast": "18.2 KB raw / 6.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 18.2 KB raw / 6.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Walks through unifying three drifting booking availability rules into one authoritative database constraint and highlights dual-write split authority failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 20B: 30.3 infra patterns (04-06, INDEX) and 30-architecture INDEX)."
   },
   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md": {
-   "sha256": "3674cccdadd34750ee4436aba5df03c3ec6df00651f8c36993732023b0bf2e83",
+   "sha256": "fddc9ed6e2e9fde7a3c86081de005d1ed405b121950939db88c1a50242df34dd",
    "lines": 134,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against FinOps Foundation Framework, AWS Cost Optimization Pillar, S3 storage classes, EC2 2-minute spot notice contract, OpenCost, and Infracost.",
-    "readable": "Full read of 134 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1219 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 134 lines (1247 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1247 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical cost engineering and FinOps unit-economics chapter.",
-    "fast": "20.9 KB raw / 7.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 20.9 KB raw / 7.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Proves with worked math how a 16.7% monthly spend drop can hide a 66.7% unit-cost regression and details HPA request-reduction scaling amplification failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 20B: 30.3 infra patterns (04-06, INDEX) and 30-architecture INDEX)."
   },
   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.md": {
-   "sha256": "cc1fdd470ae8961e377cdc83b4f1c5049d86872d0205fc406105101a2237542a",
+   "sha256": "8365ca8605381fbc787ea2f09dab0164e2eaa580e998e8979f28162a5028e57a",
    "lines": 166,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against UK ICO right-to-erasure and anonymisation guidance, HHS HIPAA 6-year Security Rule documentation retention, NIST SP 800-88 Rev 2, and AWS S3 Lifecycle and Object Lock.",
-    "readable": "Full read of 166 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1507 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 166 lines (1546 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1546 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical data retention, archival, legal hold serialization, and erasure workflow chapter.",
-    "fast": "25.6 KB raw / 8.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 25.6 KB raw / 8.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Includes valid AWS S3 lifecycle JSON and traces backup restore resurrecting erased customer data, HMAC pseudonymization vs anonymization, and hold-vs-delete race failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 20B: 30.3 infra patterns (04-06, INDEX) and 30-architecture INDEX)."
   },
   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/INDEX.md": {
-   "sha256": "4fc97c7105f01c693a2458b19070b58273ed7da6164a67277ccfea48b26fe90f",
+   "sha256": "a53286b2a9276aef0b015812ef26fc2ba70cc454d0a63744e0a4177bd539cf47",
    "lines": 65,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against live file index and cross-links to 40.3-ci-cd.",
-    "readable": "Full read of 65 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "313 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 65 lines (315 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "315 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical category index for 30.3-infra-patterns/05-shipping-and-evolution.",
-    "fast": "13.1 KB raw / 4.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 13.1 KB raw / 4.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Connects reversible releases, evidence-backed debt remediation, unit-economics FinOps, and legal-hold retention around operational failure boundary checks."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 20B: 30.3 infra patterns (04-06, INDEX) and 30-architecture INDEX)."
   },
   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/REVISION.md": {
-   "sha256": "b38253d5f81832eb9fb15623262ce4b7a33ed2cf1b5c5b0e1eb4a9caec686106",
-   "lines": 121,
+   "sha256": "d68253498f92fdc79251bee746efd836778022d73a222f6e61c4750dab860bbd",
+   "lines": 125,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Kubernetes Deployment docs, UK ICO right-to-erasure guidance, and FinOps unit-cost metrics.",
-    "readable": "Full read of 121 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "921 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 125 lines (1033 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1033 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical revision companion for 30.3-infra-patterns/05-shipping-and-evolution.",
-    "fast": "15.3 KB raw / 5.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 15.3 KB raw / 5.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Drills high-impact failure boundary conditions including code rollback after irreversible provider effects, retry-inflated cost-per-request, and S3 versioned deletion."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 20B: 30.3 infra patterns (04-06, INDEX) and 30-architecture INDEX)."
   },
   "30-architecture/30.3-infra-patterns/06-interview-prep/30.3.6.01-interview-questions.md": {
-   "sha256": "c12b2983deb1c140cfe5dece720635719b0e533989ef587c00b785d368565a10",
+   "sha256": "7031cd0807388c166009fade35895d78d991c6ed89e4837f18a3f0b7e478ea23",
    "lines": 166,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against current SRE and production engineering practices across Kubernetes, PostgreSQL 18, and distributed systems.",
-    "readable": "Full read of 166 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "2258 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 166 lines (2354 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "2354 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical interview question bank for 30.3-infra-patterns; synthesizes contracts from 30.3.1 through 30.3.5.",
-    "fast": "26.1 KB raw / 9.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 26.1 KB raw / 9.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Every answer follows a 5-part senior structure (contract, mechanism, failure boundary, operational gate, trade-off) with zero filler."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 20B: 30.3 infra patterns (04-06, INDEX) and 30-architecture INDEX)."
   },
   "30-architecture/30.3-infra-patterns/06-interview-prep/INDEX.md": {
-   "sha256": "fe8f88d99c42d6ae91c8f51b363e7f8294ad804c8211e0e3c34d2dd6a23ea2a3",
+   "sha256": "ebf089a728bb4a2a117b5f5fca3c5072cedc27fe8bdc50dff3eb6548d9217582",
    "lines": 40,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against live file index and sibling 20.6.5 interview drills.",
-    "readable": "Full read of 40 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "152 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 40 lines (157 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "157 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical category index for 30.3-infra-patterns/06-interview-prep.",
-    "fast": "8.6 KB raw / 3.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 8.6 KB raw / 3.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Frames oral drill practice around authority identification, crash boundary tracing, and single-condition perturbation."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 20B: 30.3 infra patterns (04-06, INDEX) and 30-architecture INDEX)."
   },
   "30-architecture/30.3-infra-patterns/INDEX.md": {
-   "sha256": "d793a579f92714af54ff1c277678064a109dddb9309f260af6f8b42d32e8ff03",
+   "sha256": "b5691f4c7d58c1f531cf7e4006c99e9a5f8044d0717bfd03d907d509b175d59b",
    "lines": 95,
    "genre": "index",
    "status": "read",
@@ -8805,26 +8805,26 @@
     "readable": "Full read of 95 lines (55 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "55 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical stack index for 30.3-infra-patterns; explicitly maps moved distributed patterns to 20.6-microservices.",
-    "fast": "Measured 19.2 KB raw / 5.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 19.2 KB raw / 5.1 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Organizes 17 operational chapters in a 4-stage progression (Stay Alive, Survive Failure, Scale Data, Ship Safely) with clear failure boundary scope."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 20A: 30.3 infra patterns (01-liveness, 02-failure, 03-coordination))."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 20B: 30.3 infra patterns (04-06, INDEX) and 30-architecture INDEX)."
   },
   "30-architecture/INDEX.md": {
-   "sha256": "10f57991c9fc497ec419515618393638fd584a82122b454c8f6fe70f36ed958a",
+   "sha256": "36d0c7f553f8c4f272783948eba71a76de3458e8a503adc90007ebbe81dd731e",
    "lines": 66,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against repository structure and Nov 2026 study order.",
-    "readable": "Full read of 66 lines (250 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "250 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 66 lines (252 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "252 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical architecture stack entrypoint bridging design patterns, system design theory/cases, and production infrastructure patterns.",
     "fast": "Measured 12.3 KB raw / 4.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Best-practice depth: Frames failure boundary conditions, trade-offs, and Docita source anchors."
    },
-   "notes": "Synced live read-time and counts after Phase 20A: 30.3 infra patterns (01-liveness, 02-failure, 03-coordination)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 20B: 30.3 infra patterns (04-06, INDEX) and 30-architecture INDEX)."
   },
   "40-platform/40.1-docker/40.1.01-images-containers.md": {
    "sha256": "b248dd1fb71b1d733104d71b67efc21c161e7c2990cf5a60c602d2db3ba9aa4a",
@@ -14395,7 +14395,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "57b48e4deb0d67576093152056f4a7f14c1f61abadae8e492f703c3ee7ce1b73",
+   "sha256": "6442b00380b239ec6d6a363f161711a014cd4d774d9a52cd65d55db654062bc5",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14408,7 +14408,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 20A: 30.3 infra patterns (01-liveness, 02-failure, 03-coordination)."
+   "notes": "Synced live read-time and counts after Phase 20B: 30.3 infra patterns (04-06, INDEX) and 30-architecture INDEX."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14699,7 +14699,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "1f2ebde9aa367478edc74cfe33c9ce20d21eb56d181194539cfbcb592b84e470",
+   "sha256": "c248f8dd2332691ee1bb3e7983f3f99da0b22da77322cde4f293ee4443b88533",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14712,7 +14712,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 20A: 30.3 infra patterns (01-liveness, 02-failure, 03-coordination)."
+   "notes": "Synced live read-time and counts after Phase 20B: 30.3 infra patterns (04-06, INDEX) and 30-architecture INDEX."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

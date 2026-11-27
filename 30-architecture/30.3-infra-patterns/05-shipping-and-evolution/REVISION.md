@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Infra%20Patterns-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../../docs/topic-importance.md)
 
@@ -16,11 +16,11 @@ Source: [Zero-Downtime Deployments — Blue-Green, Canary, Rolling, Feature Flag
 
 **Q:** Why must a rollback plan include database compatibility?
 
-**A:** The previous binary may encounter a schema or data format introduced by the new version. Expand/contract changes keep old and new readers/writers compatible during overlap.
+**A:** The previous binary may encounter a schema or data format introduced by the new version. Expand-and-contract changes keep old and new readers and writers compatible during overlap.
 
 **Q:** What should precede a canary percentage increase?
 
-**A:** A defined observation window and checks for errors, latency, saturation and business correctness, with a tested stop/rollback path and compatible data changes.
+**A:** A defined observation window and checks for errors, latency, saturation and business correctness, with a tested stop and rollback path and compatible data changes.
 
 **Q:** Does `maxUnavailable: 0` make every request succeed during a rollout?
 
@@ -32,11 +32,15 @@ Source: [Zero-Downtime Deployments — Blue-Green, Canary, Rolling, Feature Flag
 
 **Q:** Why can a one-time old-to-new-column backfill become stale before reader cutover?
 
-**A:** Old writers may keep modifying only the old column. Bridge/upgrade every writer, capture concurrent changes and revalidate meaning before making the new field authoritative.
+**A:** Old writers may keep modifying only the old column. Bridge and upgrade every writer, capture concurrent changes and revalidate meaning before making the new field authoritative.
 
 **Q:** Does switching back to the old fleet undo an accepted payment?
 
-**A:** No. Routing changes future work. Shared schema/data, queued events, client assets and remote effects need compatibility and reconciliation; rollback can be unsafe after new effects commit.
+**A:** No. Routing changes future work. Shared schema and data, queued events, client assets and remote effects need compatibility and reconciliation; rollback can be unsafe after new effects commit.
+
+**Q:** Why can a fast metadata-only PostgreSQL `ALTER TABLE` still cause a site-wide outage, and how do `lock_timeout` and `NOT VALID` constraints mitigate it?
+
+**A:** `ALTER TABLE` requests an `ACCESS EXCLUSIVE` lock; if a slow query already holds `ACCESS SHARE`, the waiting DDL blocks every subsequent read and write queued behind it. Setting a short `lock_timeout` with retry backoff aborts the migration before traffic stalls, and adding constraints as `NOT VALID` followed by `VALIDATE CONSTRAINT` avoids holding an exclusive lock during table scans.
 
 ## Technical Debt — Identification, Prioritization, Remediation
 
@@ -48,15 +52,15 @@ Source: [Technical Debt — Identification, Prioritization, Remediation](30.3.5.
 
 **Q:** Must technical debt have been deliberately chosen?
 
-**A:** No. Inadvertent debt can be discovered when new information reveals a costly boundary. The useful decision records actual future friction/risk, remediation cost and affected work.
+**A:** No. Inadvertent debt can be discovered when new information reveals a costly boundary. The useful decision records actual future friction and risk, remediation cost and affected work.
 
-**Q:** When is parallel comparison of old/new implementations unsafe?
+**Q:** When is parallel comparison of old and new implementations unsafe?
 
-**A:** When both execute authoritative writes or remote effects, such as charging a payment. Use pure reads/calculations or isolated/suppressed side effects and a deliberate ownership transition.
+**A:** When both execute authoritative writes or remote effects, such as charging a payment. Use pure reads and calculations or isolated and suppressed side effects and a deliberate ownership transition.
 
 **Q:** What must precede consolidating divergent booking checks, and where should concurrency be enforced?
 
-**A:** Derive the intended rule from booking policy before choosing which behavior to keep. Then enforce the no-overlap invariant at the authoritative write boundary: two requests can both pass a preflight check before either writes. Use a storage constraint or transaction/locking mechanism suited to the data model and test competing requests. See [Technical Debt](30.3.5.02-technical-debt.md).
+**A:** Derive the intended rule from booking policy before choosing which behavior to keep. Then enforce the no-overlap invariant at the authoritative write boundary: two requests can both pass a preflight check before either writes. Use a storage constraint or transaction locking mechanism suited to the data model and test competing requests. See [Technical Debt](30.3.5.02-technical-debt.md).
 
 ## Cost Engineering & FinOps
 
@@ -88,15 +92,15 @@ Source: [Data Retention & Archival](30.3.5.04-data-retention-archival.md)
 
 **Q:** Does a keyed pseudonym or name redaction automatically anonymize a record?
 
-**A:** No. Identifiers, relationships and other attributes can remain linkable. Assess the actual data/context; pseudonymization is not automatic erasure or a compliance certificate.
+**A:** No. Identifiers, relationships and other attributes can remain linkable. Assess the actual data and context; pseudonymization is not automatic erasure or a compliance certificate.
 
 **Q:** Why can a held record still disappear after a deletion worker checks no hold?
 
-**A:** A hold can arrive between the check and action. Serialize hold/deletion decisions at an authority and revalidate action boundaries; remote work already submitted needs its own recovery.
+**A:** A hold can arrive between the check and action. Serialize hold and deletion decisions at an authority and revalidate action boundaries; remote work already submitted needs its own recovery.
 
 **Q:** Does deleting a current S3 object guarantee all earlier versions are gone?
 
-**A:** No. A delete marker/current expiration can leave noncurrent versions, while holds/retention can protect others. Verify relevant versions and the asynchronous policy outcome.
+**A:** No. A delete marker or current expiration can leave noncurrent versions, while holds and retention can protect others. Verify relevant versions and the asynchronous policy outcome.
 
 **Q:** Does the United Kingdom's one-month response period mean every backup must be physically erased within that month?
 
@@ -104,7 +108,7 @@ Source: [Data Retention & Archival](30.3.5.04-data-retention-archival.md)
 
 **Q:** What can defeat cryptographic erasure after a key is deleted?
 
-**A:** Other usable/wrapped/cached/backed-up keys or plaintext copies can still expose the data. Scope and verify every decryption path; deleting one key is not evidence that all copies are unreadable.
+**A:** Other usable, wrapped, cached, or backed-up keys or plaintext copies can still expose the data. Scope and verify every decryption path; deleting one key is not evidence that all copies are unreadable.
 
 ## Summary
 

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "26b5dd6ad2178efde827105062b678f0867a5f831181cf45895adcbf8e88bc5e",
+ "corpus_digest": "539d192a1fd8c2d5dff702914f6a08e18f555d81f410ac9ae548b75dc67e0137",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5593
+  "read_minutes": 5597
  },
  "chapters": [
   {
@@ -4005,7 +4005,7 @@
     "scaling",
     "theory"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.html",
@@ -4055,7 +4055,7 @@
     "scaling",
     "theory"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.html",
@@ -4067,7 +4067,7 @@
     "distributed-systems",
     "theory"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.html",
@@ -4105,7 +4105,7 @@
     "scaling",
     "theory"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.13-backpressure-and-flow-control.html",

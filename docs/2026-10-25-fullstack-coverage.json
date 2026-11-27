@@ -15970,7 +15970,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.md",
-      "sha256": "dc5f3d1122c55acf0fdb50f83dbddc6d652209f522ae1d9c46562c9476f9e4ff",
+      "sha256": "d727876d4a87e2efe036cc17407e9331718a9a9ab1a55a90b2b4b6006319de32",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -15993,10 +15993,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.md",
-        "sha256": "dc5f3d1122c55acf0fdb50f83dbddc6d652209f522ae1d9c46562c9476f9e4ff",
+        "sha256": "d727876d4a87e2efe036cc17407e9331718a9a9ab1a55a90b2b4b6006319de32",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Phase 0 pilot comprehension rewrite (2026-11-23): plain-English Frankfurt/Berlin double-booking hook, C/A/P contracts, indistinguishable-realities proof, majority-quorum diagram, per-operation CP/AP table, PACELC with PostgreSQL WAL flush vs remote_apply visibility, and 5 common mistakes. Aligned with 30.2.1 REVISION.md Q&As and cited Gilbert & Lynch / PostgreSQL docs. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 18A: 30.2.1 system design theory (01-12) C1-C8 refinement (2026-11-24): Full read of 141 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "architecture_coverage",
@@ -16005,7 +16005,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.md",
-      "sha256": "88ed81b63ee34ba683947f71c0d86bdca0f14fea192eb6864d29651a58a3dc5e",
+      "sha256": "2e3956571bcff3e3f48641d1e8d6228609e2cff41b192381a5a4841315cd0e97",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16033,10 +16033,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.md",
-        "sha256": "88ed81b63ee34ba683947f71c0d86bdca0f14fea192eb6864d29651a58a3dc5e",
+        "sha256": "2e3956571bcff3e3f48641d1e8d6228609e2cff41b192381a5a4841315cd0e97",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked convergence/merge assumptions and no fixed eventual deadline, read-your-writes versus monotonic session barriers, causal dependent views without requiring intermediate values, sequential versus real-time orders, overlapping linearizable histories, unknown timeout effect, serializability versus strict serializability and atomic inventory claim. No product-name guarantee inference. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 18A: 30.2.1 system design theory (01-12) C1-C8 refinement (2026-11-24): Full read of 213 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "architecture_coverage",
@@ -16045,7 +16045,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.md",
-      "sha256": "cd2bc5a32f29e42fb309b42f212c3828d3f733e4462805e2294869960607ce98",
+      "sha256": "bf776ef8cc17333c107cdd4d803c8061a32f33c44df956a9b3afe75f2f1255a7",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16069,10 +16069,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.md",
-        "sha256": "cd2bc5a32f29e42fb309b42f212c3828d3f733e4462805e2294869960607ce98",
+        "sha256": "bf776ef8cc17333c107cdd4d803c8061a32f33c44df956a9b3afe75f2f1255a7",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content read (2026-11-14): Read end to end: replication topologies, lag, failover, then shard keys, routing, rebalancing. Each tradeoff appears once; the summary does not re-list the section headings. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 18A: 30.2.1 system design theory (01-12) C1-C8 refinement (2026-11-24): Full read of 326 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "root",
@@ -16081,7 +16081,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.md",
-      "sha256": "ad85e9ea143916edd32dff5a069e6020c1223b4031cf3aa94e69dae5f4262dfd",
+      "sha256": "0a9712ac8440e327df62e940b39541326e020905030d5f8d5879e26d3a05d20f",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16106,10 +16106,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.md",
-        "sha256": "ad85e9ea143916edd32dff5a069e6020c1223b4031cf3aa94e69dae5f4262dfd",
+        "sha256": "0a9712ac8440e327df62e940b39541326e020905030d5f8d5879e26d3a05d20f",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: L4 connection vs L7 request trace, independent placement/algorithm axes, active/passive health, draining/unsafe retries, DNS/affinity/consistent-hash hot key constraints. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 18A: 30.2.1 system design theory (01-12) C1-C8 refinement (2026-11-24): Full read of 170 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
@@ -16118,7 +16118,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.md",
-      "sha256": "df4d3eed4711f32750947f1e5f5b9d4d44afdf72e42682db2b62cb6df131c0f5",
+      "sha256": "d0ddf37583651ae3cc63701d38187bb647c5a92df6d5c7dafc45590e05c37ba9",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16142,10 +16142,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.md",
-        "sha256": "df4d3eed4711f32750947f1e5f5b9d4d44afdf72e42682db2b62cb6df131c0f5",
+        "sha256": "d0ddf37583651ae3cc63701d38187bb647c5a92df6d5c7dafc45590e05c37ba9",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: source vs disposable state, fill/write six patterns, acknowledged-write durability, expiry/capacity separation, delayed refill/lost invalidation races, auth/poisoning and source overload. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 18A: 30.2.1 system design theory (01-12) C1-C8 refinement (2026-11-24): Full read of 228 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
@@ -16154,7 +16154,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md",
-      "sha256": "ed20ff3e0a8a9ad31d4828751ad11959a80b4af7be0cbdfe64eb959ed5e7f68c",
+      "sha256": "59e80b1462877a35c571511543d17bfcedd0a4f7bf7ea5d8b5eeeb8ff67b671f",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16180,10 +16180,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md",
-        "sha256": "ed20ff3e0a8a9ad31d4828751ad11959a80b4af7be0cbdfe64eb959ed5e7f68c",
+        "sha256": "59e80b1462877a35c571511543d17bfcedd0a4f7bf7ea5d8b5eeeb8ff67b671f",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read including every product table/failure section: durable acceptance vs completion, local commit-before-ack duplicate protection, external idempotency, ordered effects, DLQ/backpressure. Google current primary docs confirm pull-only exactly-once regional subscription scope. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 18A: 30.2.1 system design theory (01-12) C1-C8 refinement (2026-11-24): Full read of 269 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
@@ -16192,7 +16192,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.07-distributed-transactions.md",
-      "sha256": "a49ac5999b861b47366230f92e22810e90ebff8b67859fcf0fd48edf15dec346",
+      "sha256": "984ee032a61c67afb018cd883cccf1c8424260caeadff71c0d0c52e6f84ec1aa",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16216,10 +16216,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.07-distributed-transactions.md",
-        "sha256": "a49ac5999b861b47366230f92e22810e90ebff8b67859fcf0fd48edf15dec346",
+        "sha256": "984ee032a61c67afb018cd883cccf1c8424260caeadff71c0d0c52e6f84ec1aa",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked shared durable atomic-commit decision versus consensus replication, prepared participant recovery cannot independently abort after uncertainty, locks/conflict resources, 2PC versus 2PL, atomic outcome versus independent-reader visibility, 3PC timing assumptions, saga visible local commits/irreversible compensation, stable step identity and persisted recovery/manual terminal path. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 18A: 30.2.1 system design theory (01-12) C1-C8 refinement (2026-11-24): Full read of 126 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "architecture_coverage",
@@ -16228,7 +16228,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.08-rate-limiting.md",
-      "sha256": "735ae219d542cf0ae369f240f754a34636d706c08f13705c7f3b7fc9687ea3f5",
+      "sha256": "a7fa62fde18f891bf81c8bd7b3cc22a7bbf455a8e00c5f3349ee702e61db207e",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16253,10 +16253,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.08-rate-limiting.md",
-        "sha256": "735ae219d542cf0ae369f240f754a34636d706c08f13705c7f3b7fc9687ea3f5",
+        "sha256": "a7fa62fde18f891bf81c8bd7b3cc22a7bbf455a8e00c5f3349ee702e61db207e",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked fleet/global authority versus local full quotas, weighted costs and trusted identities, exact sliding-log versus weighted estimate, token credit/refill expiry horizon, leaky queue deadline/capacity, HTTP 429 cache/retry rules, Lua validation/atomic first-arrival window versus sliding algorithm and failover/eviction boundaries. Primary Datatracker, NGINX, Envoy and API Gateway docs verify current draft and limiter guarantees; Lua inspected statically, not executed. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 18A: 30.2.1 system design theory (01-12) C1-C8 refinement (2026-11-24): Full read of 251 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "architecture_coverage",
@@ -16265,7 +16265,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md",
-      "sha256": "db07bc813150591d33d63c0c515ec478c43b1003072f2e720bd6d22df4f24e18",
+      "sha256": "c386a515abd42cec18d1aa1bfb6c03a742e904756abf06f13511d18222c305bc",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16290,10 +16290,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md",
-        "sha256": "db07bc813150591d33d63c0c515ec478c43b1003072f2e720bd6d22df4f24e18",
+        "sha256": "c386a515abd42cec18d1aa1bfb6c03a742e904756abf06f13511d18222c305bc",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked consensus safety/termination assumptions, non-Byzantine majority scope, durable Paxos promises/accepted values, Raft up-to-date voting/current-term commit/old-entry indirect commit, reconfiguration/read authority barriers, Zab activation/read freshness, retry deduplication and separate external fencing. Official Kafka 4.3 upgrade source verifies ZooKeeper removal/KRaft boundary. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 18A: 30.2.1 system design theory (01-12) C1-C8 refinement (2026-11-24): Full read of 164 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "architecture_coverage",
@@ -16302,7 +16302,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.md",
-      "sha256": "63b2fa46143753add899c6cc65786481e4035890bb02f9c6345b89695ce1235c",
+      "sha256": "141e25523b7459e68ee88284e0cac1e1a37b0748fa63f2eb363a01a53e0c1951",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16325,10 +16325,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.md",
-        "sha256": "63b2fa46143753add899c6cc65786481e4035890bb02f9c6345b89695ce1235c",
+        "sha256": "141e25523b7459e68ee88284e0cac1e1a37b0748fa63f2eb363a01a53e0c1951",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: fault/error/failure, partial/uncertain writes and crash assumptions, bounded propagated budgets and retry amplification, fencing/shared failure domains, realistic backups/data recovery and evidence. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 18A: 30.2.1 system design theory (01-12) C1-C8 refinement (2026-11-24): Full read of 222 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
@@ -16337,7 +16337,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.md",
-      "sha256": "6794cae9638113ada83c9c63cbde1383e237107274709d56acd6d0d1c17b0547",
+      "sha256": "e26c6302ca1f7e10d60a10a6180c53b52e368367839f038a51423891dc6382df",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16360,10 +16360,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.md",
-        "sha256": "6794cae9638113ada83c9c63cbde1383e237107274709d56acd6d0d1c17b0547",
+        "sha256": "e26c6302ca1f7e10d60a10a6180c53b52e368367839f038a51423891dc6382df",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: separate deployment/data/timing/dependency axes, logical ownership vs physical DB, runtime vs source dependency arrows, plain/clean/hex boundaries, plugin isolation and migration costs. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 18A: 30.2.1 system design theory (01-12) C1-C8 refinement (2026-11-24): Full read of 309 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
@@ -16372,7 +16372,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
-      "sha256": "026caa4cf0fe40100a00f0547021143cfe98f2e2e2020d828fe29a087d96d901",
+      "sha256": "ca7138fb8353f1f27ff9a6fa1982255ee525e3ccdb4a10739560d4bfef7e9db1",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16395,10 +16395,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
-        "sha256": "026caa4cf0fe40100a00f0547021143cfe98f2e2e2020d828fe29a087d96d901",
+        "sha256": "ca7138fb8353f1f27ff9a6fa1982255ee525e3ccdb4a10739560d4bfef7e9db1",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked all workload arithmetic and decimal units: ~11.6K average/35K peak, 36.5TB logical/109.5TB three copies, 385MB/s payload, 500GB cache values, 140 CPU cores/280 provisioned at 50 percent, 36 instances for one failure/54 equal-zone layout. Little Law uses stable averages and correct boundary, not p99 times peak. Covers retries/fanout, actual cache origin bytes, failure/recovery tests and cost scope. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 18A: 30.2.1 system design theory (01-12) C1-C8 refinement (2026-11-24): Full read of 132 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "architecture_coverage",
@@ -16801,7 +16801,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/INDEX.md",
-      "sha256": "f32375164d5827bccda428ac730842aac9039980e3f006a344799a0aaa90007f",
+      "sha256": "a71a4851c0294a7a50195bb8f463d50c3e18912c713abc9de3c618b848302d3c",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -16820,12 +16820,12 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/INDEX.md",
-        "sha256": "f32375164d5827bccda428ac730842aac9039980e3f006a344799a0aaa90007f",
+        "sha256": "a71a4851c0294a7a50195bb8f463d50c3e18912c713abc9de3c618b848302d3c",
         "status": "reviewed",
         "reviewer": "root-continuation",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 0 restamp (2026-11-23): read_time.py updated CAP Theorem row and section study-time total after 30.2.1.01 rewrite. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 18A: 30.2.1 system design theory (01-12) C1-C8 refinement (2026-11-24): Full read of 98 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "metadataReview": {
           "previousReviewedSha256": "51a3c78a7efaf667d389f96f5b40578d005cbab0055c899cae7a7288c47c58c5",
           "reviewDate": "2026-10-26",
@@ -18181,7 +18181,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/INDEX.md",
-      "sha256": "afae2b3acc5500233afc10dfe362fdffcb8527d5c8ea1cd66dafcb98cd052b8a",
+      "sha256": "76c3193b17ee2172bbefe6c7d7c9e161dbfa52d219e22d3cc8bb3825ed80a516",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -18198,10 +18198,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/INDEX.md",
-        "sha256": "afae2b3acc5500233afc10dfe362fdffcb8527d5c8ea1cd66dafcb98cd052b8a",
+        "sha256": "76c3193b17ee2172bbefe6c7d7c9e161dbfa52d219e22d3cc8bb3825ed80a516",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Phase 0 restamp (2026-11-23): read_time.py updated System Design study-time total after 30.2.1.01 rewrite. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 18A: 30.2.1 system design theory (01-12) count/read-time sync (2026-11-24): Full read of 52 lines. Updated generated counts/read-time navigation after Phase 18A: 30.2.1 system design theory (01-12).",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "root",
@@ -19183,7 +19183,7 @@
     },
     {
       "path": "30-architecture/INDEX.md",
-      "sha256": "dd00b1e893fd530bd52ea2bc5d6f925036e5a63ef1afc485fb1c340ec6209047",
+      "sha256": "565aa2c7dd19913738ed18ce991ea495679298800df9a3c7131b51b4c708c0e4",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -19200,10 +19200,10 @@
       },
       "review": {
         "path": "30-architecture/INDEX.md",
-        "sha256": "dd00b1e893fd530bd52ea2bc5d6f925036e5a63ef1afc485fb1c340ec6209047",
+        "sha256": "565aa2c7dd19913738ed18ce991ea495679298800df9a3c7131b51b4c708c0e4",
         "genre": "index",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design + synced index/docs, 2026-11-24).",
+        "notes": "Phase 18A: 30.2.1 system design theory (01-12) count/read-time sync (2026-11-24): Full read of 66 lines. Updated generated counts/read-time navigation after Phase 18A: 30.2.1 system design theory (01-12).",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "root",
@@ -31070,7 +31070,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "b4af1417175ae68959de3dfa0f12f87a62dbcadf8776b741ee5ab4312f79e27a",
+      "sha256": "54385db33e22cb0435917844ef5fa2c2bb602d2c62db28a65351fb2c757b3730",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -31088,12 +31088,12 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "b4af1417175ae68959de3dfa0f12f87a62dbcadf8776b741ee5ab4312f79e27a",
+        "sha256": "54385db33e22cb0435917844ef5fa2c2bb602d2c62db28a65351fb2c757b3730",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 16A D1-D7 rework of 20.12-ai-engineering count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 16A D1-D7 rework of 20.12-ai-engineering.",
+        "notes": "Phase 18A: 30.2.1 system design theory (01-12) count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 18A: 30.2.1 system design theory (01-12).",
         "findings": []
       }
     },
@@ -31673,7 +31673,7 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "3ed0ca69bea179667a53a4d5e9771db12a1ceeceb2d4ed54bcaa2f7c9d9e2cdb",
+      "sha256": "4a28f430d9ec02bbc8c0b5b89f17be52fa6b546b19d64dd644584319cbd4c788",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31691,12 +31691,12 @@
       },
       "review": {
         "path": "docs/api-contract.md",
-        "sha256": "3ed0ca69bea179667a53a4d5e9771db12a1ceeceb2d4ed54bcaa2f7c9d9e2cdb",
+        "sha256": "4a28f430d9ec02bbc8c0b5b89f17be52fa6b546b19d64dd644584319cbd4c788",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 16A D1-D7 rework of 20.12-ai-engineering count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 16A D1-D7 rework of 20.12-ai-engineering.",
+        "notes": "Phase 18A: 30.2.1 system design theory (01-12) count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 18A: 30.2.1 system design theory (01-12).",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

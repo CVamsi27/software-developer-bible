@@ -7403,196 +7403,196 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX)."
   },
   "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.md": {
-   "sha256": "dc5f3d1122c55acf0fdb50f83dbddc6d652209f522ae1d9c46562c9476f9e4ff",
+   "sha256": "d727876d4a87e2efe036cc17407e9331718a9a9ab1a55a90b2b4b6006319de32",
    "lines": 141,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against Gilbert & Lynch CAP proof, PostgreSQL synchronous_commit docs (on vs remote_apply WAL visibility), and Kleppmann DDIA; no stale version claim.",
-    "readable": "Full read of 141 lines. Rewritten for first-pass comprehension: Frankfurt/Berlin double-booking hook, plain-English C/A/P definitions, indistinguishable-realities proof, majority-quorum diagram, per-operation policy table, PACELC with PostgreSQL WAL flush vs remote_apply, and 5 common mistakes.",
-    "concise": "1336 words. Every section advances the mental model from partition physics to majority quorums to everyday PACELC latency trade-offs.",
+    "readable": "Full read of 141 lines (1342 prose words). Rewritten for first-pass comprehension: Frankfurt/Berlin double-booking hook, plain-English C/A/P definitions, indistinguishable-realities proof, majority-quorum diagram, per-operation policy table, PACELC with PostgreSQL WAL flush vs remote_apply, and 5 common mistakes.",
+    "concise": "1342 words across 141 lines. Every section advances the mental model from partition physics to majority quorums to everyday PACELC latency trade-offs.",
     "focused": "Canonical home for CAP & PACELC. Consistency model hierarchy stays in 30.2.1.02, sharding/replication in 30.2.1.03, and Raft/Paxos consensus in 30.2.1.09.",
-    "fast": "23.9 KB raw / 8.1 KB gzip built page on the shared Jekyll shell; text only, well under budget.",
+    "fast": "Measured 23.9 KB raw / 8.1 KB gzip (on the shared Jekyll shell; text only, well under budget.)",
     "best": "Separates CAP C from ACID C, HTTP errors from CAP availability, and WAL flush durability from remote_apply read visibility; remaining limit is that partition testing is a conceptual recipe rather than a live Jepsen run."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 18A: 30.2.1 system design theory (01-12))."
   },
   "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.md": {
-   "sha256": "88ed81b63ee34ba683947f71c0d86bdca0f14fea192eb6864d29651a58a3dc5e",
+   "sha256": "2e3956571bcff3e3f48641d1e8d6228609e2cff41b192381a5a4841315cd0e97",
    "lines": 213,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Spanner TrueTime linearizability, CockroachDB serializable Snapshot Isolation, and Dynamo-style quorum semantics.",
-    "readable": "Full read of 213 lines: opens with stale replication balance anomaly, derives strict, linearizable, sequential, causal, read-your-writes, and eventual consistency spectrum, and traces quorum read-write math (R + W > N) and vector clock causal tracking.",
-    "concise": "1750 words across 213 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 213 lines (1764 prose words) opens with stale replication balance anomaly, derives strict, linearizable, sequential, causal, read-your-writes, and eventual consistency spectrum, and traces quorum read-write math (R + W > N) and vector clock causal tracking.",
+    "concise": "1764 words across 213 lines. zero filler or duplicate mechanism prose.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical chapter on distributed data consistency models; defers CAP and PACELC partition proofs to 30.2.1.01.",
-    "fast": "Measured 25.1 KB raw / 8.4 KB gzip. Measured {'path': '30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.html', 'status': 'built', 'sourceBytes': 16207, 'rawBytes': 25703, 'gzipBytes': 8565, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "Measured 25.1 KB raw / 8.4 KB gzip. }; lightweight markdown and compact diagrams.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Includes runnable quorum overlap and vector-clock causal ordering checks and explicit sloppy-quorum and clock-skew LWW failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 18A: 30.2.1 system design theory (01-12))."
   },
   "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.md": {
-   "sha256": "cd2bc5a32f29e42fb309b42f212c3828d3f733e4462805e2294869960607ce98",
+   "sha256": "bf776ef8cc17333c107cdd4d803c8061a32f33c44df956a9b3afe75f2f1255a7",
    "lines": 326,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against consistent hashing virtual-node ring semantics, Vitess and CockroachDB range splitting, and PostgreSQL streaming replication.",
-    "readable": "Full read of 326 lines: contrasts single-leader, multi-leader, and leaderless replication with range, hash, and consistent-hashing virtual-node sharding, plus rebalancing and celebrity hot-key salting.",
-    "concise": "2549 words across 326 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 326 lines (2555 prose words) contrasts single-leader, multi-leader, and leaderless replication with range, hash, and consistent-hashing virtual-node sharding, plus rebalancing and celebrity hot-key salting.",
+    "concise": "2555 words across 326 lines. zero filler or duplicate mechanism prose.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical chapter on sharding and replication topologies; defers consensus election mechanics to 30.2.1.09.",
-    "fast": "Measured 33.6 KB raw / 11.2 KB gzip. Measured {'path': '30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.html', 'status': 'built', 'sourceBytes': 23893, 'rawBytes': 34423, 'gzipBytes': 11503, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "Measured 33.6 KB raw / 11.2 KB gzip. }; lightweight markdown and compact diagrams.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Traces write-amplification and cross-shard scatter-gather latency along with replication lag and resharding hot-spot failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 18A: 30.2.1 system design theory (01-12))."
   },
   "30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.md": {
-   "sha256": "ad85e9ea143916edd32dff5a069e6020c1223b4031cf3aa94e69dae5f4262dfd",
-   "lines": 168,
+   "sha256": "0a9712ac8440e327df62e940b39541326e020905030d5f8d5879e26d3a05d20f",
+   "lines": 170,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Envoy L7 power-of-two-choices (P2C), Maglev consistent L4 hashing, and RFC 7239 Forwarded headers.",
-    "readable": "Full read of 168 lines: derives L4 transport vs L7 application load balancing, anycast DNS and BGP edge routing, round-robin, least-connections, and power-of-two-choices algorithms, and active vs passive health checks.",
-    "concise": "1698 words across 168 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 170 lines (1795 prose words) derives L4 transport vs L7 application load balancing, anycast DNS and BGP edge routing, round-robin, least-connections, and power-of-two-choices algorithms, and active vs passive health checks.",
+    "concise": "1795 words across 170 lines. zero filler or duplicate mechanism prose.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical chapter on traffic distribution and load balancing layers; defers API gateway auth and rate-limiting policy to 30.2.2.31.",
-    "fast": "Measured 23.7 KB raw / 8.2 KB gzip. Measured {'path': '30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.html', 'status': 'built', 'sourceBytes': 15777, 'rawBytes': 24314, 'gzipBytes': 8421, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "Measured 23.7 KB raw / 8.2 KB gzip. }; lightweight markdown and compact diagrams.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Analyzes long-lived WebSocket and gRPC connection pinning and health-check thundering-herd cascade failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 18A: 30.2.1 system design theory (01-12))."
   },
   "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.md": {
-   "sha256": "df4d3eed4711f32750947f1e5f5b9d4d44afdf72e42682db2b62cb6df131c0f5",
+   "sha256": "d0ddf37583651ae3cc63701d38187bb647c5a92df6d5c7dafc45590e05c37ba9",
    "lines": 228,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Redis 8.x eviction policies (allkeys-lfu, volatile-lru) and CDN stale-while-revalidate (RFC 5861) semantics.",
-    "readable": "Full read of 228 lines: compares cache-aside, read-through, write-through, write-behind, and refresh-ahead patterns, then traces stampede mitigation (singleflight request coalescing, jittered TTLs, early probabilistic recomputation) and negative caching.",
-    "concise": "1900 words across 228 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 228 lines (1908 prose words) compares cache-aside, read-through, write-through, write-behind, and refresh-ahead patterns, then traces stampede mitigation (singleflight request coalescing, jittered TTLs, early probabilistic recomputation) and negative caching.",
+    "concise": "1908 words across 228 lines. zero filler or duplicate mechanism prose.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical system-design caching patterns chapter; complements runtime Redis operational commands in 20.8.02.",
-    "fast": "Measured 27.7 KB raw / 9.4 KB gzip. Measured {'path': '30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.html', 'status': 'built', 'sourceBytes': 18789, 'rawBytes': 28357, 'gzipBytes': 9615, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "Measured 27.7 KB raw / 9.4 KB gzip. }; lightweight markdown and compact diagrams.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Contrasts cache-aside race conditions on concurrent write + stale read and details cache penetration, cache avalanche, and hot-key failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 18A: 30.2.1 system design theory (01-12))."
   },
   "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md": {
-   "sha256": "ed20ff3e0a8a9ad31d4828751ad11959a80b4af7be0cbdfe64eb959ed5e7f68c",
+   "sha256": "59e80b1462877a35c571511543d17bfcedd0a4f7bf7ea5d8b5eeeb8ff67b671f",
    "lines": 269,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against Apache Kafka 4.3, RabbitMQ, AWS SQS/SNS, Google Pub/Sub, Redis Streams, NATS JetStream, Apache Pulsar 5.0, and DDIA Chapter 11.",
-    "readable": "Full read of 269 lines. Message Queues and Async Patterns chapter separating request acceptance (`202 + job ID`) from worker completion, comparing work queues, pub/sub, priority, and delay topologies, defining at-most-once, at-least-once, and scoped exactly-once delivery, and detailing transactional deduplication, per-partition ordering, DLQs, jittered backoff, and a 9-broker contract matrix (Kafka 4.3, RabbitMQ, SQS, SNS, Pub/Sub, Redis Streams, NATS JetStream, Pulsar 5.0).",
-    "concise": "2398 words across 269 lines; zero filler or duplicate explanations.",
+    "readable": "Full read of 269 lines (2415 prose words). Message Queues and Async Patterns chapter separating request acceptance (`202 + job ID`) from worker completion, comparing work queues, pub/sub, priority, and delay topologies, defining at-most-once, at-least-once, and scoped exactly-once delivery, and detailing transactional deduplication, per-partition ordering, DLQs, jittered backoff, and a 9-broker contract matrix (Kafka 4.3, RabbitMQ, SQS, SNS, Pub/Sub, Redis Streams, NATS JetStream, Pulsar 5.0).",
+    "concise": "2415 words across 269 lines. zero filler or duplicate explanations.",
     "focused": "Focused single-topic scope: Canonical home for asynchronous queue topology and delivery-guarantee theory in system design.",
-    "fast": "Fast to scan: 34.3 KB raw / 11.5 KB gzip.",
+    "fast": "Measured 34.3 KB raw / 11.5 KB gzip. Fast to scan: 34.3 KB raw / 11.5 KB gzip.",
     "best": "Best-practice depth: Traces commit-before-ack vs ack-before-commit crash failure boundaries and external payment provider idempotency limits."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 18A: 30.2.1 system design theory (01-12))."
   },
   "30-architecture/30.2-system-design/01-theory/30.2.1.07-distributed-transactions.md": {
-   "sha256": "a49ac5999b861b47366230f92e22810e90ebff8b67859fcf0fd48edf15dec346",
+   "sha256": "984ee032a61c67afb018cd883cccf1c8424260caeadff71c0d0c52e6f84ec1aa",
    "lines": 126,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against PostgreSQL `PREPARE TRANSACTION` docs, DDIA Chapter 9, Microservices.io, and AWS Saga guidance.",
-    "readable": "Full read of 126 lines. Distributed Transactions theory chapter contrasting Two-Phase Commit (2PC Prepare/Decide blocking and 2PC vs 2PL distinction) and Three-Phase Commit (3PC asynchronous network limits) against Saga orchestration/choreography and uncertain-outcome reconciliation.",
-    "concise": "951 words across 126 lines; zero filler or duplicate explanations.",
+    "readable": "Full read of 126 lines (961 prose words). Distributed Transactions theory chapter contrasting Two-Phase Commit (2PC Prepare/Decide blocking and 2PC vs 2PL distinction) and Three-Phase Commit (3PC asynchronous network limits) against Saga orchestration/choreography and uncertain-outcome reconciliation.",
+    "concise": "961 words across 126 lines. zero filler or duplicate explanations.",
     "focused": "Focused single-topic scope: Canonical home for atomic commit protocol theory (2PC/3PC) vs workflow compensation in system design.",
-    "fast": "Fast to scan: 19.0 KB raw / 6.5 KB gzip.",
+    "fast": "Measured 19.0 KB raw / 6.5 KB gzip. Fast to scan: 19.0 KB raw / 6.5 KB gzip.",
     "best": "Best-practice depth: Explains why 2PC prepared participants cannot unilaterally abort on timeout and why 3PC fails under arbitrary network partitions."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 18A: 30.2.1 system design theory (01-12))."
   },
   "30-architecture/30.2-system-design/01-theory/30.2.1.08-rate-limiting.md": {
-   "sha256": "735ae219d542cf0ae369f240f754a34636d706c08f13705c7f3b7fc9687ea3f5",
-   "lines": 248,
+   "sha256": "a7fa62fde18f891bf81c8bd7b3cc22a7bbf455a8e00c5f3349ee702e61db207e",
+   "lines": 251,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against IETF RateLimit header fields draft, Redis atomic Lua eval scripts, and Envoy global vs local rate-limit tiers.",
-    "readable": "Full read of 248 lines: derives token bucket, leaky bucket, fixed window counter, sliding window log, and sliding window weighted counter algorithms with atomic Redis Lua execution and HTTP 429 Retry-After headers.",
-    "concise": "1727 words across 248 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 251 lines (1841 prose words) derives token bucket, leaky bucket, fixed window counter, sliding window log, and sliding window weighted counter algorithms with atomic Redis Lua execution and HTTP 429 Retry-After headers.",
+    "concise": "1841 words across 251 lines. zero filler or duplicate mechanism prose.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical algorithm derivation for rate limiting; complements system-wide distributed rate-limiter case study in 30.2.2.13.",
-    "fast": "Measured 33.1 KB raw / 10.2 KB gzip. Measured {'path': '30-architecture/30.2-system-design/01-theory/30.2.1.08-rate-limiting.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.2-system-design/01-theory/30.2.1.08-rate-limiting.html', 'status': 'built', 'sourceBytes': 19970, 'rawBytes': 33889, 'gzipBytes': 10465, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "Measured 33.1 KB raw / 10.2 KB gzip. }; lightweight markdown and compact diagrams.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Includes runnable token-bucket and sliding-window counter logic and analyzes boundary burst traffic and Redis cluster outage fail-open vs fail-closed failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 18A: 30.2.1 system design theory (01-12))."
   },
   "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md": {
-   "sha256": "db07bc813150591d33d63c0c515ec478c43b1003072f2e720bd6d22df4f24e18",
-   "lines": 160,
+   "sha256": "c386a515abd42cec18d1aa1bfb6c03a742e904756abf06f13511d18222c305bc",
+   "lines": 164,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Raft paper (Ongaro & Ousterhout), etcd v3 lease APIs, and Kafka KRaft controller quorum design.",
-    "readable": "Full read of 160 lines: explains FLP impossibility intuition, derives Raft leader election, term numbers, log replication, and commit safety rules, and shows lease-based leader election with fencing tokens.",
-    "concise": "1939 words across 160 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 164 lines (2103 prose words) explains FLP impossibility intuition, derives Raft leader election, term numbers, log replication, and commit safety rules, and shows lease-based leader election with fencing tokens.",
+    "concise": "2103 words across 164 lines. zero filler or duplicate mechanism prose.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical consensus and leader election chapter; defers distributed lock client patterns to 30.2.1.14.",
-    "fast": "Measured 24.8 KB raw / 8.7 KB gzip. Measured {'path': '30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.html', 'status': 'built', 'sourceBytes': 16473, 'rawBytes': 25380, 'gzipBytes': 8894, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "Measured 24.8 KB raw / 8.7 KB gzip. }; lightweight markdown and compact diagrams.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Traces split-vote randomized election timeout recovery and zombie leader GC-pause stale-write failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 18A: 30.2.1 system design theory (01-12))."
   },
   "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.md": {
-   "sha256": "63b2fa46143753add899c6cc65786481e4035890bb02f9c6345b89695ce1235c",
+   "sha256": "141e25523b7459e68ee88284e0cac1e1a37b0748fa63f2eb363a01a53e0c1951",
    "lines": 222,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against AWS Builders Library lessons on retry storms, metastable failures, and load shedding.",
-    "readable": "Full read of 222 lines: categorizes fail-stop, gray failure, cascading retry amplification, metastable overload, thundering herd, and resource exhaustion failure modes with concrete detection and mitigation strategies.",
-    "concise": "2075 words across 222 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 222 lines (2081 prose words) categorizes fail-stop, gray failure, cascading retry amplification, metastable overload, thundering herd, and resource exhaustion failure modes with concrete detection and mitigation strategies.",
+    "concise": "2081 words across 222 lines. zero filler or duplicate mechanism prose.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical taxonomy of distributed system failure modes; pairs with specific circuit-breaker and bulkhead code in 30.2.1.19.",
-    "fast": "Measured 28.3 KB raw / 10.0 KB gzip. Measured {'path': '30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.html', 'status': 'built', 'sourceBytes': 19878, 'rawBytes': 29002, 'gzipBytes': 10225, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "Measured 28.3 KB raw / 10.0 KB gzip. }; lightweight markdown and compact diagrams.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Quantifies multi-tier retry multiplication (3x3x3 = 27x amplification) and gray-failure partial packet drop failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 18A: 30.2.1 system design theory (01-12))."
   },
   "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.md": {
-   "sha256": "6794cae9638113ada83c9c63cbde1383e237107274709d56acd6d0d1c17b0547",
+   "sha256": "e26c6302ca1f7e10d60a10a6180c53b52e368367839f038a51423891dc6382df",
    "lines": 309,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against modern modular monolith and event-sourced CQRS architecture practices (no version-specific API drift).",
-    "readable": "Full read of 309 lines: compares modular monolith, microservices, event-driven architecture, CQRS, event sourcing, hexagonal ports-and-adapters, and serverless topologies with migration decision criteria.",
-    "concise": "2318 words across 309 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 309 lines (2325 prose words) compares modular monolith, microservices, event-driven architecture, CQRS, event sourcing, hexagonal ports-and-adapters, and serverless topologies with migration decision criteria.",
+    "concise": "2325 words across 309 lines. zero filler or duplicate mechanism prose.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical high-level architecture pattern comparison; defers microservices decomposition tactics to 20.6.1.01.",
-    "fast": "Measured 31.1 KB raw / 10.1 KB gzip. Measured {'path': '30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.html', 'status': 'built', 'sourceBytes': 22231, 'rawBytes': 31860, 'gzipBytes': 10316, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "Measured 31.1 KB raw / 10.1 KB gzip. }; lightweight markdown and compact diagrams.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Maps team topology and deployment independence against distributed-monolith coupling and eventual-consistency lag failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 18A: 30.2.1 system design theory (01-12))."
   },
   "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md": {
-   "sha256": "026caa4cf0fe40100a00f0547021143cfe98f2e2e2020d828fe29a087d96d901",
-   "lines": 130,
+   "sha256": "ca7138fb8353f1f27ff9a6fa1982255ee525e3ccdb4a10739560d4bfef7e9db1",
+   "lines": 132,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against 2026 NVMe SSD latency (~20-100us), 100GbE network throughput, and standard memory and network hierarchy benchmarks.",
-    "readable": "Full read of 130 lines: provides latency reference numbers, Little's Law (L = lambda * W), QPS and peak-to-average estimation, storage and bandwidth back-of-the-envelope formulas, and worked sizing examples.",
-    "concise": "1455 words across 130 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 132 lines (1575 prose words) provides latency reference numbers, Little's Law (L = lambda * W), QPS and peak-to-average estimation, storage and bandwidth back-of-the-envelope formulas, and worked sizing examples.",
+    "concise": "1575 words across 132 lines. zero filler or duplicate mechanism prose.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical back-of-the-envelope capacity planning reference for system design interviews and production sizing.",
-    "fast": "Measured 20.3 KB raw / 7.3 KB gzip. Measured {'path': '30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.html', 'status': 'built', 'sourceBytes': 12740, 'rawBytes': 20740, 'gzipBytes': 7464, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "Measured 20.3 KB raw / 7.3 KB gzip. }; lightweight markdown and compact diagrams.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Applies Little's Law to thread-pool and connection-pool sizing and highlights tail-latency amplification and utilization knee (>70-80%) failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 18A: 30.2.1 system design theory (01-12))."
   },
   "30-architecture/30.2-system-design/01-theory/30.2.1.13-backpressure-and-flow-control.md": {
    "sha256": "78e242cb7fc6e55cc7402e560b21fa184b0d340d81ba181739028f086faa2b29",
@@ -7770,20 +7770,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
   },
   "30-architecture/30.2-system-design/01-theory/INDEX.md": {
-   "sha256": "f32375164d5827bccda428ac730842aac9039980e3f006a344799a0aaa90007f",
+   "sha256": "a71a4851c0294a7a50195bb8f463d50c3e18912c713abc9de3c618b848302d3c",
    "lines": 98,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against the 25-file 01-theory directory.",
-    "readable": "Full read of 98 lines. Category index for 30.2-system-design/01-theory sequencing 23 theory and prerequisite chapters (CAP/PACELC through TLS 1.3 certificate lifecycle), REVISION.md, and 30 design prompts with Docita evidence anchors.",
-    "concise": "287 words across 98 lines; zero filler or duplicate explanations.",
+    "readable": "Full read of 98 lines (287 prose words). Category index for 30.2-system-design/01-theory sequencing 23 theory and prerequisite chapters (CAP/PACELC through TLS 1.3 certificate lifecycle), REVISION.md, and 30 design prompts with Docita evidence anchors.",
+    "concise": "287 words across 98 lines. zero filler or duplicate explanations.",
     "focused": "Focused single-topic scope: Canonical reading-order guide for system design theory.",
-    "fast": "Fast to scan: 22.8 KB raw / 6.8 KB gzip.",
+    "fast": "Measured 22.8 KB raw / 6.8 KB gzip. Fast to scan: 22.8 KB raw / 6.8 KB gzip.",
     "best": "Best-practice depth: Connects data consistency, traffic scaling, delivery, and topology failure boundary conditions."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 18A: 30.2.1 system design theory (01-12))."
   },
   "30-architecture/30.2-system-design/01-theory/REVISION.md": {
    "sha256": "684fccfc9e276c98fe98899e48802dab0f5759e4fd0de88f1ac68a2dd244c786",
@@ -8329,20 +8329,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
   },
   "30-architecture/30.2-system-design/INDEX.md": {
-   "sha256": "afae2b3acc5500233afc10dfe362fdffcb8527d5c8ea1cd66dafcb98cd052b8a",
+   "sha256": "76c3193b17ee2172bbefe6c7d7c9e161dbfa52d219e22d3cc8bb3825ed80a516",
    "lines": 52,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against 01-theory and 02-case-studies tracks.",
-    "readable": "Full read of 52 lines. System Design index mapping 59 files across 01-theory (foundational mechanisms and method) and 02-case-studies (31 applied domain designs) in a 3-pass study sequence.",
-    "concise": "128 words across 52 lines; zero filler or duplicate explanations.",
+    "readable": "Full read of 52 lines (128 prose words). System Design index mapping 59 files across 01-theory (foundational mechanisms and method) and 02-case-studies (31 applied domain designs) in a 3-pass study sequence.",
+    "concise": "128 words across 52 lines. zero filler or duplicate explanations.",
     "focused": "Focused single-topic scope: Canonical system-design track entrypoint connecting theory mechanisms to domain case studies.",
-    "fast": "Fast to scan: 10.9 KB raw / 3.6 KB gzip.",
+    "fast": "Measured 10.9 KB raw / 3.6 KB gzip. Fast to scan: 10.9 KB raw / 3.6 KB gzip.",
     "best": "Best-practice depth: Emphasizes tracing invariants through normal execution, failure boundary conditions, and recovery."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "Synced live read-time and counts after Phase 18A: 30.2.1 system design theory (01-12)."
   },
   "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md": {
    "sha256": "6259ab27f5569b7ad1362bca40b4e0af6aabaabc9f297f097187a6b711cdc58a",
@@ -8809,20 +8809,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/INDEX.md": {
-   "sha256": "dd00b1e893fd530bd52ea2bc5d6f925036e5a63ef1afc485fb1c340ec6209047",
+   "sha256": "565aa2c7dd19913738ed18ce991ea495679298800df9a3c7131b51b4c708c0e4",
    "lines": 66,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against repository structure and Nov 2026 study order.",
-    "readable": "Full read of 66 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 66 lines (250 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "250 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical architecture stack entrypoint bridging design patterns, system design theory/cases, and production infrastructure patterns.",
-    "fast": "12.3 KB raw / 4.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 12.3 KB raw / 4.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Frames failure boundary conditions, trade-offs, and Docita source anchors."
    },
-   "notes": "Synced live counts/read-time after Wave 3C (30.2-system-design)."
+   "notes": "Synced live read-time and counts after Phase 18A: 30.2.1 system design theory (01-12)."
   },
   "40-platform/40.1-docker/40.1.01-images-containers.md": {
    "sha256": "b248dd1fb71b1d733104d71b67efc21c161e7c2990cf5a60c602d2db3ba9aa4a",
@@ -14393,7 +14393,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "b4af1417175ae68959de3dfa0f12f87a62dbcadf8776b741ee5ab4312f79e27a",
+   "sha256": "54385db33e22cb0435917844ef5fa2c2bb602d2c62db28a65351fb2c757b3730",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14406,7 +14406,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 16A D1-D7 rework of 20.12-ai-engineering."
+   "notes": "Synced live read-time and counts after Phase 18A: 30.2.1 system design theory (01-12)."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14697,7 +14697,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "3ed0ca69bea179667a53a4d5e9771db12a1ceeceb2d4ed54bcaa2f7c9d9e2cdb",
+   "sha256": "4a28f430d9ec02bbc8c0b5b89f17be52fa6b546b19d64dd644584319cbd4c788",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14710,7 +14710,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 16A D1-D7 rework of 20.12-ai-engineering."
+   "notes": "Synced live read-time and counts after Phase 18A: 30.2.1 system design theory (01-12)."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

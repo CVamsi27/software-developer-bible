@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "7c0f4ae31d3b8cc4b4627f688fbe83cea378c11a74bad502c2e85bc906018903",
+ "corpus_digest": "fa73bf7d37c43185dc80e26c4aad1c20726e398fc6e90ab5ce59a800e3069078",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5544
+  "read_minutes": 5547
  },
  "chapters": [
   {
@@ -1789,7 +1789,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "20-backend/20.1-node.js/04-security-and-operations/20.1.4.02-debugging-profiling-nodejs.html",
@@ -1819,7 +1819,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "20-backend/20.1-node.js/04-security-and-operations/REVISION.html",
@@ -1829,7 +1829,7 @@
    "g": [
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "20-backend/20.12-ai-engineering/20.12.01-llm-app-architecture.html",

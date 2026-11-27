@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Node.js-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -16,11 +16,11 @@ Source: [Node.js Security](20.1.4.01-node-security.md)
 
 **Q:** Why is a valid report format insufficient permission to export an order?
 
-**A:** Validation checks the request shape. The server must separately authenticate the caller and authorize the specific tenant/resource before invoking the export operation.
+**A:** Validation checks the request shape. The server must separately authenticate the caller and authorize the specific tenant and resource before invoking the export operation.
 
 **Q:** What remains dangerous after shell interpretation is removed?
 
-**A:** The executable still interprets options and accesses resources using process authority. A fixed operation, validated arguments, controlled paths/privileges and bounded output/runtime remain necessary.
+**A:** The executable still interprets options and accesses resources using process authority. A fixed operation, validated arguments, controlled paths and privileges, and bounded output and runtime remain necessary.
 
 **Q:** Why does a null-prototype dictionary not solve every prototype-pollution path?
 
@@ -30,21 +30,29 @@ Source: [Node.js Security](20.1.4.01-node-security.md)
 
 **A:** The official permission model protects trusted code from unintended resource use; it does not promise isolation from malicious code. Use a separate OS isolation boundary for untrusted execution.
 
+**Q:** Why can validating a hostname before calling `fetch` still leave an application vulnerable to SSRF?
+
+**A:** Checking DNS before the socket connects creates a Time-of-Check to Time-of-Use (TOCTOU) race where a short-TTL record rebinds to a loopback or private address on connect. Resolve once, reject blocked ranges, and pin the validated IP inside a custom `lookup` function or Undici dispatcher across redirects.
+
 ## Debugging & Profiling Node.js
 
 Source: [Debugging & Profiling Node.js](20.1.4.02-debugging-profiling-nodejs.md)
 
 **Q:** How do CPU usage and event-loop utilization describe different resources?
 
-**A:** Process CPU includes other threads and isolates. Utilization describes active/idle loop time and is not a CPU percentage; correlate interval differences with delay, traces and workload.
+**A:** Process CPU includes other threads and isolates. Utilization describes active and idle loop time and is not a CPU percentage; correlate interval differences with delay, traces, and workload.
 
 **Q:** Why can an automatic snapshot near OOM worsen an incident?
 
-**A:** Building the snapshot stops work in its thread and needs substantial additional memory, potentially doubling heap use and crashing the process. Capture on an instance whose interruption/loss is acceptable with private storage and spare capacity.
+**A:** Building the snapshot stops work in its thread and needs substantial additional memory, potentially doubling heap use and crashing the process. Capture on an instance whose interruption or loss is acceptable with private storage and spare capacity.
 
 **Q:** Why is counting `TCPSocketWrap` resources not an FD metric?
 
 **A:** Active resource types describe work keeping the loop alive. They are not an exhaustive count of OS descriptors; use platform metrics for open descriptors.
+
+**Q:** When should you collect `--heap-prof` allocation sampling instead of a full heap snapshot, and how does `node:diagnostics_channel` avoid unused telemetry overhead?
+
+**A:** Use `--heap-prof` or `HeapProfiler.startSampling` when a stop-the-world heap snapshot pause would stall or crash live traffic, since statistical allocation call trees point to heavy allocators with low overhead. `node:diagnostics_channel` avoids monkey-patching by returning near-zero-work no-ops when no subscriber listens.
 
 ## Express & Fastify Internals
 
@@ -56,7 +64,7 @@ Source: [Express & Fastify Internals](20.1.4.03-express-fastify-internals.md)
 
 **Q:** Which Fastify phase receives the object before it becomes the response payload?
 
-**A:** `preSerialization` can shape suitable object payloads before serialization; `onSend` sees the serialized payload and may also receive stream/buffer/string/null forms. Return that payload rather than encoding it again.
+**A:** `preSerialization` can shape suitable object payloads before serialization; `onSend` sees the serialized payload and may also receive stream, buffer, string, or null forms. Return that payload rather than encoding it again.
 
 **Q:** Does `fastify-plugin` always make a decoration global?
 
@@ -64,7 +72,11 @@ Source: [Express & Fastify Internals](20.1.4.03-express-fastify-internals.md)
 
 **Q:** Why does a response schema not make every data leak impossible?
 
-**A:** It constrains the response path/status/schema where it is applied. Other schemas, `additionalProperties`, raw writes, streams and later hooks can emit different data; authorization and every response path still need review.
+**A:** It constrains the response path, status, and schema where it is applied. Other schemas, `additionalProperties`, raw writes, streams, and later hooks can emit different data; authorization and every response path still need review.
+
+**Q:** Why should a Fastify request decoration start as `null` instead of `{}`, and when is `reply.hijack()` required?
+
+**A:** Registering `decorateRequest('authContext', {})` shares one mutable object reference across every incoming request, so initialize reference values from `null` inside an `onRequest` hook. Call `reply.hijack()` before writing directly to `reply.raw` so Fastify skips remaining lifecycle hooks and its automatic finalizer.
 
 ## Request and diagnostic traces
 
@@ -78,9 +90,9 @@ Sources: [query construction](20.1.4.01-node-security.md), [profile capture](20.
 
 **A:** Exclusive writing rejects with `EEXIST` and preserves the old profile. Sampling and disconnect still have owned cleanup; a successful new file is stack evidence, not proof of a latency improvement.
 
-**Q:** Trace the Fastify fixture's health, unauthenticated order and authenticated order requests.
+**Q:** Trace the Fastify fixture's health, unauthenticated order, and authenticated order requests.
 
-**A:** Health returns 200 outside the admin hook. The unverified order request returns 401 before lookup. The verified admin request returns 200 after lookup and projects `id`/`totalCents` without the internal field.
+**A:** Health returns 200 outside the admin hook. The unverified order request returns 401 before lookup. The verified admin request returns 200 after lookup and projects `id` and `totalCents` without the internal field.
 
 **Q:** What changes if an authenticated order ID is malformed or well formed but absent?
 
@@ -88,7 +100,7 @@ Sources: [query construction](20.1.4.01-node-security.md), [profile capture](20.
 
 **Q:** Why must a custom error handler deliberately preserve parser errors?
 
-**A:** Replacing the default handler transfers response ownership to the application. Map malformed input, body limits and unsupported content types to safe 400/413/415 messages; avoid turning expected rejection into 500 or exposing arbitrary error text.
+**A:** Replacing the default handler transfers response ownership to the application. Map malformed input, body limits, and unsupported content types to safe 400, 413, and 415 messages; avoid turning expected rejection into 500 or exposing arbitrary error text.
 
 ## Summary
 

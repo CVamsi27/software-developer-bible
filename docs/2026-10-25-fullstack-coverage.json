@@ -7172,7 +7172,7 @@
     },
     {
       "path": "20-backend/20.1-node.js/04-security-and-operations/20.1.4.01-node-security.md",
-      "sha256": "7e5261f509f63c0ec05589224fb8b23b301757236c94f84271e593cd8ee17bb8",
+      "sha256": "8a9a27e9ce061b0d78c0809a6b8aad61f5b1ee60f9c39c9e634b74b3eeb2624a",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -7197,19 +7197,19 @@
       },
       "review": {
         "path": "20-backend/20.1-node.js/04-security-and-operations/20.1.4.01-node-security.md",
-        "sha256": "7e5261f509f63c0ec05589224fb8b23b301757236c94f84271e593cd8ee17bb8",
+        "sha256": "8a9a27e9ce061b0d78c0809a6b8aad61f5b1ee60f9c39c9e634b74b3eeb2624a",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 9C D1-D7 rework: 20.1-node.js/04-security-and-operations and 20.1 INDEX (completes 20.1-node.js) C1-C8 refinement (2026-11-24): Full read of 206 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.1-node.js/04-security-and-operations/20.1.4.02-debugging-profiling-nodejs.md",
-      "sha256": "7c1d566e621f7555af8347dea1ae6d2d288ce6d023f5d80cd367766ca013fd3e",
+      "sha256": "6f47db83e91162406befa600df487f4f181b84a6da2414a3103924485eb9a37a",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -7234,19 +7234,19 @@
       },
       "review": {
         "path": "20-backend/20.1-node.js/04-security-and-operations/20.1.4.02-debugging-profiling-nodejs.md",
-        "sha256": "7c1d566e621f7555af8347dea1ae6d2d288ce6d023f5d80cd367766ca013fd3e",
+        "sha256": "6f47db83e91162406befa600df487f4f181b84a6da2414a3103924485eb9a37a",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 9C D1-D7 rework: 20.1-node.js/04-security-and-operations and 20.1 INDEX (completes 20.1-node.js) C1-C8 refinement (2026-11-24): Full read of 228 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.1-node.js/04-security-and-operations/20.1.4.03-express-fastify-internals.md",
-      "sha256": "e1574a9436ac84ea1cee313afc17700e72406135efd9fc1dedc592ef363cba01",
+      "sha256": "717271a3849063b758a3a9216cefc4a43693cdc0a855df6141f8142f806bf0a5",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -7269,19 +7269,19 @@
       },
       "review": {
         "path": "20-backend/20.1-node.js/04-security-and-operations/20.1.4.03-express-fastify-internals.md",
-        "sha256": "e1574a9436ac84ea1cee313afc17700e72406135efd9fc1dedc592ef363cba01",
+        "sha256": "717271a3849063b758a3a9216cefc4a43693cdc0a855df6141f8142f806bf0a5",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 9C D1-D7 rework: 20.1-node.js/04-security-and-operations and 20.1 INDEX (completes 20.1-node.js) C1-C8 refinement (2026-11-24): Full read of 288 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.1-node.js/04-security-and-operations/20.1.4.04-interview-questions.md",
-      "sha256": "42d260c9c95b35baa7387a28646f33d1f8c8edaead0ff768349bd4dbad67c5b3",
+      "sha256": "da127acdf334c7494f00022dcc7de0be62e52192c9bd91143f0a49d14a9c560e",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -7305,10 +7305,10 @@
       },
       "review": {
         "path": "20-backend/20.1-node.js/04-security-and-operations/20.1.4.04-interview-questions.md",
-        "sha256": "42d260c9c95b35baa7387a28646f33d1f8c8edaead0ff768349bd4dbad67c5b3",
+        "sha256": "da127acdf334c7494f00022dcc7de0be62e52192c9bd91143f0a49d14a9c560e",
         "genre": "interview-bank",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 9C D1-D7 rework: 20.1-node.js/04-security-and-operations and 20.1 INDEX (completes 20.1-node.js) C1-C8 refinement (2026-11-24): Full read of 338 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -7317,7 +7317,7 @@
     },
     {
       "path": "20-backend/20.1-node.js/04-security-and-operations/INDEX.md",
-      "sha256": "b964145788b7fdce218b40fee7cb016a6747fe3bf212d9f5f41275e931db2f6b",
+      "sha256": "e1912b1da812891994d299e1638b89b7b2a7a4722b6d1cfc02d9f74983c550cf",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -7333,19 +7333,19 @@
       },
       "review": {
         "path": "20-backend/20.1-node.js/04-security-and-operations/INDEX.md",
-        "sha256": "b964145788b7fdce218b40fee7cb016a6747fe3bf212d9f5f41275e931db2f6b",
+        "sha256": "e1912b1da812891994d299e1638b89b7b2a7a4722b6d1cfc02d9f74983c550cf",
         "genre": "index",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 9C D1-D7 rework: 20.1-node.js/04-security-and-operations and 20.1 INDEX (completes 20.1-node.js) C1-C8 refinement (2026-11-24): Full read of 49 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.1-node.js/04-security-and-operations/REVISION.md",
-      "sha256": "7724daccc72118123348065b0547cbfad254950021d80be0bc5aa7c660bd534b",
+      "sha256": "faea6664c9f4f3cf1df5a7b56e3207b51a2f7cad4ad04a53020e8d6a31051003",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -7359,25 +7359,25 @@
           "References & Learn More"
         ],
         "code_fences": 0,
-        "revision_questions": 16,
+        "revision_questions": 19,
         "has_summary": true,
         "has_first_principles": false
       },
       "review": {
         "path": "20-backend/20.1-node.js/04-security-and-operations/REVISION.md",
-        "sha256": "7724daccc72118123348065b0547cbfad254950021d80be0bc5aa7c660bd534b",
+        "sha256": "faea6664c9f4f3cf1df5a7b56e3207b51a2f7cad4ad04a53020e8d6a31051003",
         "genre": "revision",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 9C D1-D7 rework: 20.1-node.js/04-security-and-operations and 20.1 INDEX (completes 20.1-node.js) C1-C8 refinement (2026-11-24): Full read of 115 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.1-node.js/INDEX.md",
-      "sha256": "931e7173c8c83f33d97e769ff0675027d622b6df232acf3963934a470d9b4b01",
+      "sha256": "501e7b18ce5076a95aa8121ef17d0bd6e034aaa8fe0734592bc024274119036a",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -7400,12 +7400,12 @@
       },
       "review": {
         "path": "20-backend/20.1-node.js/INDEX.md",
-        "sha256": "931e7173c8c83f33d97e769ff0675027d622b6df232acf3963934a470d9b4b01",
+        "sha256": "501e7b18ce5076a95aa8121ef17d0bd6e034aaa8fe0734592bc024274119036a",
         "genre": "index",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "Phase 9B D1-D7 rework: 20.1-node.js/03-processes-and-concurrency C1-C8 refinement (2026-11-24): Full read of 122 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+        "notes": "Phase 9C D1-D7 rework: 20.1-node.js/04-security-and-operations and 20.1 INDEX (completes 20.1-node.js) C1-C8 refinement (2026-11-24): Full read of 122 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
@@ -14226,7 +14226,7 @@
     },
     {
       "path": "20-backend/INDEX.md",
-      "sha256": "abd3d2c758819204ef386c8f4aa6be4e72c531ae916588e8a8d520673cf7fb4d",
+      "sha256": "14106b67c7a1ab0389d810d470e307df19dccc5b9130aad69c87eb9f409a1692",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -14245,12 +14245,12 @@
       },
       "review": {
         "path": "20-backend/INDEX.md",
-        "sha256": "abd3d2c758819204ef386c8f4aa6be4e72c531ae916588e8a8d520673cf7fb4d",
+        "sha256": "14106b67c7a1ab0389d810d470e307df19dccc5b9130aad69c87eb9f409a1692",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 9B D1-D7 rework: 20.1-node.js/03-processes-and-concurrency count/read-time sync (2026-11-24): Full read of 122 lines. Updated generated counts/read-time navigation after Phase 9B D1-D7 rework: 20.1-node.js/03-processes-and-concurrency.",
+        "notes": "Phase 9C D1-D7 rework: 20.1-node.js/04-security-and-operations and 20.1 INDEX (completes 20.1-node.js) count/read-time sync (2026-11-24): Full read of 122 lines. Updated generated counts/read-time navigation after Phase 9C D1-D7 rework: 20.1-node.js/04-security-and-operations and 20.1 INDEX (completes 20.1-node.js).",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "ab7ced08ffe012474a86db7f5ff38398ca691458b124ed67f5bf5a2780894865",
@@ -31034,7 +31034,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "5602f59ffe1fdfe93a6bae8d436366c337739163025b0d997bc92f93dfb08d28",
+      "sha256": "dc8f18e80ca4a77ad3330633c4229404e21296df3e1ff341293f3c49f3e5537d",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -31052,12 +31052,12 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "5602f59ffe1fdfe93a6bae8d436366c337739163025b0d997bc92f93dfb08d28",
+        "sha256": "dc8f18e80ca4a77ad3330633c4229404e21296df3e1ff341293f3c49f3e5537d",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 9B D1-D7 rework: 20.1-node.js/03-processes-and-concurrency count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 9B D1-D7 rework: 20.1-node.js/03-processes-and-concurrency.",
+        "notes": "Phase 9C D1-D7 rework: 20.1-node.js/04-security-and-operations and 20.1 INDEX (completes 20.1-node.js) count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 9C D1-D7 rework: 20.1-node.js/04-security-and-operations and 20.1 INDEX (completes 20.1-node.js).",
         "findings": []
       }
     },
@@ -31637,7 +31637,7 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "a422f5b0c452a1f09cd3534c4abd393eb2c97eab7e01be338eed291a13625832",
+      "sha256": "fedf01a70d41e4910ed2daf7f572b84dcf1687f539e047b872ef8235bc2cca5f",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31655,12 +31655,12 @@
       },
       "review": {
         "path": "docs/api-contract.md",
-        "sha256": "a422f5b0c452a1f09cd3534c4abd393eb2c97eab7e01be338eed291a13625832",
+        "sha256": "fedf01a70d41e4910ed2daf7f572b84dcf1687f539e047b872ef8235bc2cca5f",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 9B D1-D7 rework: 20.1-node.js/03-processes-and-concurrency count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 9B D1-D7 rework: 20.1-node.js/03-processes-and-concurrency.",
+        "notes": "Phase 9C D1-D7 rework: 20.1-node.js/04-security-and-operations and 20.1 INDEX (completes 20.1-node.js) count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 9C D1-D7 rework: 20.1-node.js/04-security-and-operations and 20.1 INDEX (completes 20.1-node.js).",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

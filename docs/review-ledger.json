@@ -2491,84 +2491,84 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 5B D1-D7 rework: 10.5-form-handling (completes 10.5-form-handling))."
   },
   "10-frontend/10.6-animation/10.6.01-css-animations.md": {
-   "sha256": "f24e7ba5d14a09b6a443eb7a08dcdb46992ef2501e72c5f448f672d1b299d1c9",
-   "lines": 224,
+   "sha256": "207fe8001b84d8a5a9afa0bf30ef11027b3ae6ad95557f73fbc10c2e52c760a5",
+   "lines": 228,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against the MDN animation-fill-mode, will-change and prefers-reduced-motion references plus the W3C WCAG 2.2.2 pause/stop/hide guidance; the direction-dependent fill behavior, compositor eligibility and five-second control threshold match those sources on 2026-11-18 (URLs 200).",
-    "readable": "Full read of 224 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "812 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 228 lines (943 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "943 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "CSS transition and keyframe mechanics are owned here; browser rendering owns the layout, paint and composite stages, and the reduced-motion policy points at accessibility.",
-    "fast": "30.7 KB raw / 7.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 30.7 KB raw / 7.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Separates interpolation from rendering cost and does not promise a frame rate from transform alone; a fill mode cannot rewrite the underlying CSS state."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05))."
   },
   "10-frontend/10.6-animation/10.6.02-framer-motion.md": {
-   "sha256": "4c715da2e98069cdeb2e359fbe420d50a40314e475aae6e909177130a6ea706c",
-   "lines": 186,
+   "sha256": "d3e1bccd9a1b699eb301b028ff5093b7a4250abcb6bf0eaf5a86596ba128bce8",
+   "lines": 190,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against the Motion for React presence, layout and accessibility documentation and the 14.x reduced-motion hook source; npm reports motion 14.14.0 as current, and the hook still snapshots its initial preference at 14.14.0 on 2026-11-18 (URLs 200).",
-    "readable": "Full read of 186 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "821 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 190 lines (931 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "931 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "React presence, layout projection and reduced-motion policy are owned here; CSS owns property cost, and the view-transition chapter owns router integration.",
-    "fast": "29.6 KB raw / 7.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 29.6 KB raw / 7.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Shows why an exiting node needs presence retention and why layout animation is not a transform; MotionConfig cannot disable CSS, video or Canvas motion."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05))."
   },
   "10-frontend/10.6-animation/10.6.03-gsap.md": {
-   "sha256": "4f48c655988ee12cde82427c22ebbde9c87977412c2aa8ba4133a4c750db3c4c",
-   "lines": 182,
+   "sha256": "7664596efd555a6f7a2d4565d4723f3b8219f32520885f54dd501661542a5c73",
+   "lines": 186,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against the GSAP fromTo, matchMedia, ScrollTrigger and React guides; matchMedia takes no scope argument, the third argument to add() scopes selector text, and npm reports gsap 3.15.1 and @gsap/react 2.1.2 current on 2026-11-18 (URLs 200).",
-    "readable": "Full read of 182 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "756 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 186 lines (853 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "853 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Imperative tween and timeline ownership is owned here; Motion for React owns declarative presence, and WAAPI owns browser playback objects.",
-    "fast": "28.6 KB raw / 6.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 28.6 KB raw / 6.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Explains playhead position and scoped cleanup; a GSAP timeline cannot make layout or paint free, and immediateRender false is not a general optimization."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05))."
   },
   "10-frontend/10.6-animation/10.6.04-react-spring.md": {
-   "sha256": "d12e2ed8e8c053ade32e2484e364966246d83428365da80454407c59b7734c18",
-   "lines": 123,
+   "sha256": "9a6f643503f1643d04d931e585ac1773bf8f4562ca6514cdd0891a16f3d43bb1",
+   "lines": 127,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against the React Spring use-reduced-motion and config documentation; the hook sets the global skipAnimation flag so controllers jump to their targets, and npm reports @react-spring/web 10.1.2 current on 2026-11-18 (URLs 200).",
-    "readable": "Full read of 123 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "652 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 127 lines (757 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "757 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Spring value and controller composition are owned here; Motion for React owns declarative presence and layout, and CSS owns keyframe timing.",
-    "fast": "22.0 KB raw / 5.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 22.0 KB raw / 5.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Shows why a spring continues from value and velocity; a fixed tween cannot respond without a jump, and settling time is not a schedule guarantee."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05))."
   },
   "10-frontend/10.6-animation/10.6.05-web-animations-api.md": {
-   "sha256": "8a7510250be30728bba2ed8c8bf1ea775c48c920db078961be2a049230ced7c9",
-   "lines": 222,
+   "sha256": "b2006b1b1b6ea22e8fcc8e25f0bce281f2fd7e13733036b5caff49c5b3e0ffba",
+   "lines": 226,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against MDN animation.finished, commitStyles and iterationComposite; finished rejects with AbortError on cancellation, and browser-compat data shows iterationComposite remains unimplemented in Chrome while Firefox and Safari support it on 2026-11-18 (URLs 200).",
-    "readable": "Full read of 222 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "698 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 226 lines (804 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "804 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Browser animation objects and playback control are owned here; GSAP owns timeline sequencing, and Canvas owns application-drawn frames.",
-    "fast": "38.6 KB raw / 7.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 38.6 KB raw / 7.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Explains ownership and cancellation of animation objects; cancel cannot reverse application state, and an infinite animation has no completion to await."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05))."
   },
   "10-frontend/10.6-animation/10.6.06-view-transitions-and-scroll-driven-animations.md": {
    "sha256": "0c1ae01cd77c9d99965c79641563784608a0361ecba5a825996f2909f036f6a7",
@@ -2619,20 +2619,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/10.6-animation/INDEX.md": {
-   "sha256": "242c884816f6cd94a71276fe32a3bf9cf7a2bedbc240d7775c8672a3e2f04484",
+   "sha256": "3e68fce9fee4423cd4a13f81719d51931c37d3afa2c4d3fba798febcbf6d018f",
    "lines": 64,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "No version-sensitive claim; the 9-file count (eight chapters plus one revision companion), 65-minute total and status badge were re-derived from disk, and the table times sum to 65 on 2026-11-18.",
-    "readable": "Full read of 64 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 64 lines (334 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "334 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Navigation only: it points at eight chapters and their revision drill without retelling their mechanisms.",
-    "fast": "11.9 KB raw / 4.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 11.9 KB raw / 4.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Orders the section from browser cost to control choice to drawing lifecycles; it does not teach any chapter itself."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05))."
   },
   "10-frontend/10.6-animation/REVISION.md": {
    "sha256": "360eb056406e05da5c51462ae40b32cb9c2ab6b4d91b96ac42c294f54fa5d6cf",
@@ -2987,7 +2987,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/INDEX.md": {
-   "sha256": "b4e2d9016d9331df7860c62fb5894a35f4bdcd3e7d788c90b4f5e101650286b7",
+   "sha256": "b7e2909ffd30ebfa7078936ed8684f72a6f7e850c2a234ce43301ecc89dd081c",
    "lines": 75,
    "genre": "index",
    "status": "read",
@@ -3000,7 +3000,7 @@
     "fast": "Measured 14.7 KB raw / 4.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Sets the frontend study order from execution to optional capabilities; it limits itself to navigation and does not teach any mechanism."
    },
-   "notes": "Synced live read-time and counts after Phase 5B D1-D7 rework: 10.5-form-handling (completes 10.5-form-handling)."
+   "notes": "Synced live read-time and counts after Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05)."
   },
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md": {
    "sha256": "cbb48962f1b1c976f33493d3398af0e10c4deb7f49db4537cb50b8af762ebfe1",
@@ -14365,7 +14365,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "c68769a0e1fb4d0fbc9938b5d5f96caa59bed28bc76caf3d826e6e1f05ddc5cb",
+   "sha256": "604c1ee46ebb89709a53c6cfecdcf26c68df33c286c38404fb939337da6a0bea",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14378,7 +14378,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 5B D1-D7 rework: 10.5-form-handling (completes 10.5-form-handling)."
+   "notes": "Synced live read-time and counts after Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05)."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14669,7 +14669,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "aaa5a432637b4fabc621e6efa10898068c50a6e5f72891c62ed12817bfd90ea9",
+   "sha256": "25d198d2b15dcfb83801522b274a6426fcebc7279fd02e556c0949f791fcc6d4",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14682,7 +14682,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 5B D1-D7 rework: 10.5-form-handling (completes 10.5-form-handling)."
+   "notes": "Synced live read-time and counts after Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05)."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

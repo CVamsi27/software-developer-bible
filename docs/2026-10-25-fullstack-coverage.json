@@ -5449,7 +5449,7 @@
     },
     {
       "path": "10-frontend/10.6-animation/10.6.01-css-animations.md",
-      "sha256": "f24e7ba5d14a09b6a443eb7a08dcdb46992ef2501e72c5f448f672d1b299d1c9",
+      "sha256": "207fe8001b84d8a5a9afa0bf30ef11027b3ae6ad95557f73fbc10c2e52c760a5",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -5472,19 +5472,19 @@
       },
       "review": {
         "path": "10-frontend/10.6-animation/10.6.01-css-animations.md",
-        "sha256": "f24e7ba5d14a09b6a443eb7a08dcdb46992ef2501e72c5f448f672d1b299d1c9",
+        "sha256": "207fe8001b84d8a5a9afa0bf30ef11027b3ae6ad95557f73fbc10c2e52c760a5",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05) C1-C8 refinement (2026-11-24): Full read of 228 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "10-frontend/10.6-animation/10.6.02-framer-motion.md",
-      "sha256": "4c715da2e98069cdeb2e359fbe420d50a40314e475aae6e909177130a6ea706c",
+      "sha256": "d3e1bccd9a1b699eb301b028ff5093b7a4250abcb6bf0eaf5a86596ba128bce8",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -5507,13 +5507,13 @@
       },
       "review": {
         "path": "10-frontend/10.6-animation/10.6.02-framer-motion.md",
-        "sha256": "4c715da2e98069cdeb2e359fbe420d50a40314e475aae6e909177130a6ea706c",
+        "sha256": "d3e1bccd9a1b699eb301b028ff5093b7a4250abcb6bf0eaf5a86596ba128bce8",
         "genre": "teaching",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05) C1-C8 refinement (2026-11-24): Full read of 190 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "bbf89160d7cedcd73bf72812dac6cb1938b89cb69f4cb756795df36b3c7d2c46",
@@ -5525,7 +5525,7 @@
     },
     {
       "path": "10-frontend/10.6-animation/10.6.03-gsap.md",
-      "sha256": "4f48c655988ee12cde82427c22ebbde9c87977412c2aa8ba4133a4c750db3c4c",
+      "sha256": "7664596efd555a6f7a2d4565d4723f3b8219f32520885f54dd501661542a5c73",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -5547,19 +5547,19 @@
       },
       "review": {
         "path": "10-frontend/10.6-animation/10.6.03-gsap.md",
-        "sha256": "4f48c655988ee12cde82427c22ebbde9c87977412c2aa8ba4133a4c750db3c4c",
+        "sha256": "7664596efd555a6f7a2d4565d4723f3b8219f32520885f54dd501661542a5c73",
         "genre": "teaching",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05) C1-C8 refinement (2026-11-24): Full read of 186 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "10-frontend/10.6-animation/10.6.04-react-spring.md",
-      "sha256": "d12e2ed8e8c053ade32e2484e364966246d83428365da80454407c59b7734c18",
+      "sha256": "9a6f643503f1643d04d931e585ac1773bf8f4562ca6514cdd0891a16f3d43bb1",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -5581,19 +5581,19 @@
       },
       "review": {
         "path": "10-frontend/10.6-animation/10.6.04-react-spring.md",
-        "sha256": "d12e2ed8e8c053ade32e2484e364966246d83428365da80454407c59b7734c18",
+        "sha256": "9a6f643503f1643d04d931e585ac1773bf8f4562ca6514cdd0891a16f3d43bb1",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05) C1-C8 refinement (2026-11-24): Full read of 127 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "10-frontend/10.6-animation/10.6.05-web-animations-api.md",
-      "sha256": "8a7510250be30728bba2ed8c8bf1ea775c48c920db078961be2a049230ced7c9",
+      "sha256": "b2006b1b1b6ea22e8fcc8e25f0bce281f2fd7e13733036b5caff49c5b3e0ffba",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -5616,13 +5616,13 @@
       },
       "review": {
         "path": "10-frontend/10.6-animation/10.6.05-web-animations-api.md",
-        "sha256": "8a7510250be30728bba2ed8c8bf1ea775c48c920db078961be2a049230ced7c9",
+        "sha256": "b2006b1b1b6ea22e8fcc8e25f0bce281f2fd7e13733036b5caff49c5b3e0ffba",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05) C1-C8 refinement (2026-11-24): Full read of 226 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "d4a39116b2f06dd702f6ddab1971332bbeacdb90dda1d0f57c7e20c5371f985d",
@@ -5745,7 +5745,7 @@
     },
     {
       "path": "10-frontend/10.6-animation/INDEX.md",
-      "sha256": "242c884816f6cd94a71276fe32a3bf9cf7a2bedbc240d7775c8672a3e2f04484",
+      "sha256": "3e68fce9fee4423cd4a13f81719d51931c37d3afa2c4d3fba798febcbf6d018f",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -5765,13 +5765,13 @@
       },
       "review": {
         "path": "10-frontend/10.6-animation/INDEX.md",
-        "sha256": "242c884816f6cd94a71276fe32a3bf9cf7a2bedbc240d7775c8672a3e2f04484",
+        "sha256": "3e68fce9fee4423cd4a13f81719d51931c37d3afa2c4d3fba798febcbf6d018f",
         "genre": "index",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+        "notes": "Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05) C1-C8 refinement (2026-11-24): Full read of 64 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "b13122514488b816984657e2323eb24abf1b328f8c5593ad077008a651d30092",
@@ -6555,7 +6555,7 @@
     },
     {
       "path": "10-frontend/INDEX.md",
-      "sha256": "b4e2d9016d9331df7860c62fb5894a35f4bdcd3e7d788c90b4f5e101650286b7",
+      "sha256": "b7e2909ffd30ebfa7078936ed8684f72a6f7e850c2a234ce43301ecc89dd081c",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -6577,10 +6577,10 @@
       },
       "review": {
         "path": "10-frontend/INDEX.md",
-        "sha256": "b4e2d9016d9331df7860c62fb5894a35f4bdcd3e7d788c90b4f5e101650286b7",
+        "sha256": "b7e2909ffd30ebfa7078936ed8684f72a6f7e850c2a234ce43301ecc89dd081c",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Phase 5B D1-D7 rework: 10.5-form-handling (completes 10.5-form-handling) count/read-time sync (2026-11-24): Full read of 75 lines. Updated generated counts/read-time navigation after Phase 5B D1-D7 rework: 10.5-form-handling (completes 10.5-form-handling).",
+        "notes": "Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05) count/read-time sync (2026-11-24): Full read of 75 lines. Updated generated counts/read-time navigation after Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05).",
         "findings": [],
         "reviewer": "root",
         "metadataReview": {
@@ -31034,7 +31034,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "c68769a0e1fb4d0fbc9938b5d5f96caa59bed28bc76caf3d826e6e1f05ddc5cb",
+      "sha256": "604c1ee46ebb89709a53c6cfecdcf26c68df33c286c38404fb939337da6a0bea",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -31052,12 +31052,12 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "c68769a0e1fb4d0fbc9938b5d5f96caa59bed28bc76caf3d826e6e1f05ddc5cb",
+        "sha256": "604c1ee46ebb89709a53c6cfecdcf26c68df33c286c38404fb939337da6a0bea",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 5B D1-D7 rework: 10.5-form-handling (completes 10.5-form-handling) count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 5B D1-D7 rework: 10.5-form-handling (completes 10.5-form-handling).",
+        "notes": "Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05) count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05).",
         "findings": []
       }
     },
@@ -31637,7 +31637,7 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "aaa5a432637b4fabc621e6efa10898068c50a6e5f72891c62ed12817bfd90ea9",
+      "sha256": "25d198d2b15dcfb83801522b274a6426fcebc7279fd02e556c0949f791fcc6d4",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31655,12 +31655,12 @@
       },
       "review": {
         "path": "docs/api-contract.md",
-        "sha256": "aaa5a432637b4fabc621e6efa10898068c50a6e5f72891c62ed12817bfd90ea9",
+        "sha256": "25d198d2b15dcfb83801522b274a6426fcebc7279fd02e556c0949f791fcc6d4",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 5B D1-D7 rework: 10.5-form-handling (completes 10.5-form-handling) count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 5B D1-D7 rework: 10.5-form-handling (completes 10.5-form-handling).",
+        "notes": "Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05) count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 6A D1-D7 rework: 10.6-animation (10.6.01-10.6.05).",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

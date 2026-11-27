@@ -5396,258 +5396,260 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 13A D1-D7 rework of 20.5.1 (01-auth))."
   },
   "20-backend/20.5-security/02-attacks-and-defense/20.5.2.01-xss.md": {
-   "sha256": "25819cc24f89df07bff91a2f1aec06e41536332c80d91036d04d370457616882",
+   "sha256": "3559c037c7eb9236bfa98b32ffcf979875e3b5298e6e1b165b6d621c442e006c",
    "lines": 123,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against OWASP XSS Prevention, DOM-based XSS, and CSP Cheat Sheets, React 19 DOM reference, and DOMPurify.",
-    "readable": "Full read of 123 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "823 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 123 lines (905 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "905 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for browser script-injection prevention and context-aware output handling.",
-    "fast": "21.2 KB raw / 6.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 21.2 KB raw / 6.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Explains why `HttpOnly` does not stop injected script from issuing authenticated requests and why `javascript:` URLs fail attribute escaping."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13B D1-D7 rework of 20.5.2-20.5.4 and 20.5 INDEX (completes 20.5-security))."
   },
   "20-backend/20.5-security/02-attacks-and-defense/20.5.2.02-csrf.md": {
-   "sha256": "34df1b6c2fbb3e2c4a4ca2bb5ec57209628079da6169598125af4f4e3ea132c0",
+   "sha256": "7434d79b44cd73faa6604f96534348223f475f07dd74b5c1999ebbae00a5265d",
    "lines": 126,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against OWASP CSRF Prevention Cheat Sheet and MDN `Set-Cookie` specification; executed `createSignedCsrf` in Node v26.13.0.",
-    "readable": "Full read of 126 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "942 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 126 lines (1011 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1011 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for cross-site request-forgery mechanics and token/origin defenses.",
-    "fast": "26.2 KB raw / 6.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 26.2 KB raw / 6.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Demonstrates why naive cookie-header equality fails under sibling-subdomain cookie injection and why session binding closes that failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13B D1-D7 rework of 20.5.2-20.5.4 and 20.5 INDEX (completes 20.5-security))."
   },
   "20-backend/20.5-security/02-attacks-and-defense/20.5.2.03-sql-injection.md": {
-   "sha256": "a1fa2a4340bc13b0242d84456795c317376dfe5d711d3d1c875697b47257f54b",
+   "sha256": "a312c0282489cbcb388a7455ba3519f669389c4bcf579c39a556abdf07fc7f05",
    "lines": 117,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against OWASP SQL Injection Prevention Cheat Sheet, PostgreSQL 18 pattern matching docs, and Prisma ORM v7 raw-query docs; executed `buildProductSearch` in Node v26.13.0.",
-    "readable": "Full read of 117 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "927 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 117 lines (976 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "976 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for SQL code/data separation and dynamic identifier allowlisting.",
-    "fast": "23.5 KB raw / 6.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 23.5 KB raw / 6.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Clarifies why bound parameter markers cannot substitute identifiers or disable `LIKE` wildcards, and why safe SQL syntax does not replace tenant authorization."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13B D1-D7 rework of 20.5.2-20.5.4 and 20.5 INDEX (completes 20.5-security))."
   },
   "20-backend/20.5-security/02-attacks-and-defense/20.5.2.04-api-security-best-practices.md": {
-   "sha256": "68eb2544d04d3e575aaf3d7d07b48e8487c488b5ccd2dc57663a7e096685cd24",
+   "sha256": "bff7d3be4a16f0f04223528ad2df213d8e4b1170c5825a63b428e2b432c6ba32",
    "lines": 181,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against OWASP API Security Top 10 (2023), OWASP SSRF and REST Security Cheat Sheets, and RFC 9457; executed `partnerProfileUrl` in Node v26.13.0.",
-    "readable": "Full read of 181 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1489 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 181 lines (1531 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1531 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for API authorization boundaries, resource budgets, and SSRF prevention.",
-    "fast": "28.9 KB raw / 9.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 28.9 KB raw / 9.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Traces DNS-rebinding/redirect SSRF failure boundary conditions and BOLA/BOPLA mass-assignment trade-offs."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13B D1-D7 rework of 20.5.2-20.5.4 and 20.5 INDEX (completes 20.5-security))."
   },
   "20-backend/20.5-security/02-attacks-and-defense/INDEX.md": {
-   "sha256": "1a783644031d1e57b1eb2f6fcb5404666368303055d37a16134457bb0864efcd",
+   "sha256": "3f9496e88bd9d629423be1913aa26a3444e6216e8597ccea745f460173f694b3",
    "lines": 50,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against OWASP Top 10, OWASP API Security Top 10 (2023), and Prisma ORM v7.",
-    "readable": "Full read of 50 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 50 lines (98 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "98 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical category index for application exploit paths and defensive output/request/query boundaries.",
-    "fast": "10.7 KB raw / 3.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 10.7 KB raw / 3.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Maps each attack class to its parser or ambient-credential failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13B D1-D7 rework of 20.5.2-20.5.4 and 20.5 INDEX (completes 20.5-security))."
   },
   "20-backend/20.5-security/02-attacks-and-defense/REVISION.md": {
-   "sha256": "c69f7a01a69b17df29e7ba9f2274f7c2a31d4bec4afe44ffbdbfe75d286949bc",
-   "lines": 179,
+   "sha256": "f63992dc9fe702bc9f95c2cb2767a49924b0c3154841faafdad43ca4dbd03466",
+   "lines": 188,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against OWASP Cheat Sheets, Prisma ORM v7, PostgreSQL 18, and RFC 9457.",
-    "readable": "Full read of 179 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1476 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 188 lines (1652 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1652 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical revision companion for 02-attacks-and-defense distinct from the stack interview bank.",
-    "fast": "20.4 KB raw / 6.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 20.4 KB raw / 6.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Tests changed-boundary failure traces including `javascript:` URLs, sibling-subdomain cookie injection, `LIKE` wildcards, and DNS-rebinding SSRF."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13B D1-D7 rework of 20.5.2-20.5.4 and 20.5 INDEX (completes 20.5-security))."
   },
   "20-backend/20.5-security/03-hardening-and-operations/20.5.3.01-encryption.md": {
-   "sha256": "5589698637b8f7e89eb7ad281f397608379f24ae2a8fd87c5ae58af1db1b259c",
+   "sha256": "4d5ab842e2689988a4d945b0808ec144df6a6197f32f923cba85a7813b7ca005",
    "lines": 133,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against RFC 8446 (TLS 1.3), OWASP Cryptographic Storage Cheat Sheet, and Node.js `node:crypto`; executed `fieldCipher` in Node v26.13.0.",
-    "readable": "Full read of 133 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "973 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 133 lines (1028 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1028 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for application cryptography, AES-256-GCM AAD record binding, and TLS 1.3 handshake mechanics.",
-    "fast": "27.3 KB raw / 7.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 27.3 KB raw / 7.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Demonstrates ciphertext record-swap failure boundary detection via AAD and explains why randomized encryption prevents standard equality indexing."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13B D1-D7 rework of 20.5.2-20.5.4 and 20.5 INDEX (completes 20.5-security))."
   },
   "20-backend/20.5-security/03-hardening-and-operations/20.5.3.02-web-security.md": {
-   "sha256": "d45ebdc0fed09637431e0015008b57936cff2fa3f5c9eec2dc5fa0a452b7e75a",
+   "sha256": "b13a2973b8df5555738bd02b23fa028da9a524c71d65be47c7ed270f67fa76c1",
    "lines": 145,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against OWASP CSP, HSTS, REST, Redirect, and XXE Cheat Sheets, Express 5 migration guide, and Helmet docs; executed `redirectTarget` in Node v26.13.0.",
-    "readable": "Full read of 145 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1183 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 145 lines (1238 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1238 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for HTTP security headers, HSTS lifecycle, and safe redirect/XML parser policies.",
-    "fast": "31.7 KB raw / 8.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 31.7 KB raw / 8.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Traces CDN cached-nonce mismatch failure boundary conditions and why `startsWith('/')` fails URL parser normalization."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13B D1-D7 rework of 20.5.2-20.5.4 and 20.5 INDEX (completes 20.5-security))."
   },
   "20-backend/20.5-security/03-hardening-and-operations/20.5.3.03-threat-modeling-stride.md": {
-   "sha256": "b68dddca5cfa4dc6eb743534265fe07741d7353958002870c12dc3d0496d9b67",
+   "sha256": "8e1bfffbb7d9b4acb62c66755fd56dea19ed0aef410218c48e61de6d01b48d88",
    "lines": 124,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against OWASP Threat Modeling Cheat Sheet, Microsoft SDL, and OWASP API Security Top 10.",
-    "readable": "Full read of 124 lines. Threat Modeling with STRIDE and Attack Surfaces chapter tracing an order-read data flow across Browser, Gateway, Orders service, Orders DB, and Audit store trust boundaries, mapping all 6 STRIDE categories to concrete controls and tests, providing a structured YAML threat record (`THREAT-ORD-001`), and decomposing multi-path goals with attack trees.",
-    "concise": "1030 words across 124 lines; zero filler or duplicate explanations.",
+    "readable": "Full read of 124 lines (1029 prose words). Threat Modeling with STRIDE and Attack Surfaces chapter tracing an order-read data flow across Browser, Gateway, Orders service, Orders DB, and Audit store trust boundaries, mapping all 6 STRIDE categories to concrete controls and tests, providing a structured YAML threat record (`THREAT-ORD-001`), and decomposing multi-path goals with attack trees.",
+    "concise": "1029 words across 124 lines. zero filler or duplicate explanations.",
     "focused": "Focused single-topic scope: Canonical home for architectural threat modeling, STRIDE classification, and attack-tree decomposition.",
-    "fast": "Fast to scan: 19.6 KB raw / 6.8 KB gzip.",
+    "fast": "Measured 19.6 KB raw / 6.8 KB gzip. Fast to scan: 19.6 KB raw / 6.8 KB gzip.",
     "best": "Best-practice depth: Distinguishes attack surface from trust boundary and explains why STRIDE classifies threat types rather than measuring risk likelihood."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13B D1-D7 rework of 20.5.2-20.5.4 and 20.5 INDEX (completes 20.5-security))."
   },
   "20-backend/20.5-security/03-hardening-and-operations/20.5.3.04-secrets-management.md": {
-   "sha256": "7cb00a24110ebb12e0635c844e81cd66a83e880b8f439d11cf3d4b3162b7f4c8",
+   "sha256": "4606cf9c955f34fb8ebee33d97f9a916a966693f3ccc52466266449078c84baf",
    "lines": 151,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against OWASP Secrets Management Cheat Sheet, Kubernetes Secret docs, External Secrets v1 spec, HashiCorp Vault dynamic leases, and AWS KMS `Sign` API; executed `cachedSecret` in Node v26.13.0.",
-    "readable": "Full read of 151 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1118 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 151 lines (1167 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1167 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for secret lifecycle, rotation, Kubernetes synchronization, and remote KMS signing boundaries.",
-    "fast": "23.9 KB raw / 7.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 23.9 KB raw / 7.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Explains why updating a secret store or K8s Secret does not drain active database connections or mutate running process env vars."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13B D1-D7 rework of 20.5.2-20.5.4 and 20.5 INDEX (completes 20.5-security))."
   },
   "20-backend/20.5-security/03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.md": {
-   "sha256": "d8f01ce9f70f0df5d076177742c808fb0e60663e1ebe589e57577d5683e30574",
+   "sha256": "78b5d82ff8095f229e3e90aa9b2b28ca159f3c3ca6b08688d7951b7283533a60",
    "lines": 254,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against FIRST CVSS v4.0, FIRST EPSS, CISA KEV, CycloneDX, Syft, Trivy, and Renovate documentation.",
-    "readable": "Full read of 254 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1522 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 254 lines (1566 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1566 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for supply-chain vulnerability triage, SBOM provenance, and patch governance SLAs.",
-    "fast": "42.9 KB raw / 10.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 42.9 KB raw / 10.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Highlights why source-branch scans miss deployed image OS packages and why `--ignore-unfixed` hides unresolved risk. Includes failure boundary analysis."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13B D1-D7 rework of 20.5.2-20.5.4 and 20.5 INDEX (completes 20.5-security))."
   },
   "20-backend/20.5-security/03-hardening-and-operations/INDEX.md": {
-   "sha256": "9890f0e334341118348f00fe0ee8e2c2ba8e9e0176c4a790df8f3a2a82195780",
+   "sha256": "4bd5d24e058e6b581813d2695cbc934417b1ddf18dcd983dffac77590b86d632",
    "lines": 52,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against OWASP Top 10:2025, RFC 8446 (TLS 1.3), CVSS v4.0, and External Secrets v1.",
-    "readable": "Full read of 52 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "173 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 52 lines (175 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "175 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical category index for cryptographic primitives, browser hardening, threat modeling, and security operations.",
-    "fast": "12.1 KB raw / 4.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 12.1 KB raw / 4.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Frames operational verification and deployment boundary limits."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13B D1-D7 rework of 20.5.2-20.5.4 and 20.5 INDEX (completes 20.5-security))."
   },
   "20-backend/20.5-security/03-hardening-and-operations/REVISION.md": {
-   "sha256": "4de3bcf09adefd4284aebef082efc6182c766312e5e706aaa0adc413b8db5dfb",
-   "lines": 193,
+   "sha256": "020e886ec6d153348e4088355391544749575cbf019a7d2b884652159ea3937c",
+   "lines": 202,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against OWASP Cheat Sheets, FIRST CVSS v4.0/EPSS, CISA KEV, External Secrets v1, and AWS KMS.",
-    "readable": "Full read of 193 lines. Revision companion for 20.5-security/03-hardening-and-operations containing 24 source-linked Q&A pairs across AES-GCM AAD, CSP nonces, HSTS, `frame-ancestors`, open redirects, XXE, STRIDE vs attack surface, secret rotation, KMS `Sign`, CVSS v4.0/EPSS/KEV, and SBOM digest verification.",
-    "concise": "1673 words across 193 lines; zero filler or duplicate explanations.",
+    "readable": "Full read of 202 lines (1840 prose words). Revision companion for 20.5-security/03-hardening-and-operations containing 24 source-linked Q&A pairs across AES-GCM AAD, CSP nonces, HSTS, `frame-ancestors`, open redirects, XXE, STRIDE vs attack surface, secret rotation, KMS `Sign`, CVSS v4.0/EPSS/KEV, and SBOM digest verification.",
+    "concise": "1840 words across 202 lines. zero filler or duplicate explanations.",
     "focused": "Focused single-topic scope: Canonical revision companion for 03-hardening-and-operations.",
-    "fast": "Fast to scan: 23.4 KB raw / 7.7 KB gzip.",
+    "fast": "Measured 23.4 KB raw / 7.7 KB gzip. Fast to scan: 23.4 KB raw / 7.7 KB gzip.",
     "best": "Best-practice depth: Drills AAD context tampering, CDN nonce caching, KMS ECDSA signature encoding, and K8s `subPath` secret reload failure boundary conditions."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13B D1-D7 rework of 20.5.2-20.5.4 and 20.5 INDEX (completes 20.5-security))."
   },
   "20-backend/20.5-security/04-interview-drills/20.5.4.01-interview-questions.md": {
-   "sha256": "4971be4f3c34e8157b1bdcbe6f692f39f8d0e48977f5b9ec05cee869e5dcad1e",
+   "sha256": "72e7f2b543d74abfe1d8eac78220b4905441847aa3041a62f518ba3327d15f44",
    "lines": 292,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against OWASP Top 10:2025, OWASP Cheat Sheet Series, and NIST CSF.",
-    "readable": "Full read of 292 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "2691 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 292 lines (2818 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "2818 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical stack-wide security interview bank linking back to canonical code implementations in 01-auth, 02-attacks-and-defense, and 03-hardening-and-operations.",
-    "fast": "37.0 KB raw / 11.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 37.0 KB raw / 11.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Every answer pairs the concrete threat with its preventive mechanism, failure boundary, and verification test."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13B D1-D7 rework of 20.5.2-20.5.4 and 20.5 INDEX (completes 20.5-security))."
   },
   "20-backend/20.5-security/04-interview-drills/INDEX.md": {
-   "sha256": "6414531d6335ba6637c4da024d6e4798ade11b5ebf56708aade0426f1aab2119",
+   "sha256": "847c74315bd077b30f5e072bbb54fce0c057a070449cd528d7d6f3fe7b6a4c99",
    "lines": 21,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against the 20.5-security track structure.",
-    "readable": "Full read of 21 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 21 lines (35 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "35 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical entrypoint for end-of-stack security interview drills.",
-    "fast": "7.0 KB raw / 2.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 7.0 KB raw / 2.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Prompts mechanism-plus-changed-condition answers across auth, exploit defense, and operational hardening. Includes failure boundary analysis."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13B D1-D7 rework of 20.5.2-20.5.4 and 20.5 INDEX (completes 20.5-security))."
   },
   "20-backend/20.5-security/INDEX.md": {
-   "sha256": "429387219a28a8b59a43da3b5facc5be778f2c9348e67aaf466eae9ebf7565dd",
+   "sha256": "694104653074b494f5b2d8cbcbf03aeb96c3df0d8a2b4bb534e850e6116ddfad",
    "lines": 164,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against OWASP Top 10, WebAuthn Level 3, OAuth 2.1 / RFC 9700, Argon2id RFC 9106, and Node.js 26 security primitives.",
-    "readable": "Full read of 164 lines (442 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "442 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 164 lines (448 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "448 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical security stack entrypoint sequencing identity, exploit defense, operational hardening, and drills.",
-    "fast": "Measured 26.0 KB raw / 6.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 26.0 KB raw / 6.9 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Best-practice depth: Frames trust boundary conditions, failure modes, and defense-in-depth trade-offs."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 13A D1-D7 rework of 20.5.1 (01-auth))."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 13B D1-D7 rework of 20.5.2-20.5.4 and 20.5 INDEX (completes 20.5-security))."
   },
   "20-backend/20.6-microservices/01-service-topology/20.6.1.01-service-discovery.md": {
    "sha256": "dc761b140212a9392335273e22505958909be05baf97051eef0c3a0d460ed328",
@@ -6565,7 +6567,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
   },
   "20-backend/INDEX.md": {
-   "sha256": "46b6ff4019e416bb65a7ce683cd791e0edf778205aca800f4040f2ff2c83a228",
+   "sha256": "a80b1960cb15e69746ac7f8e086d191568b2969504bca6a3cb815fc9ab9e14ac",
    "lines": 122,
    "genre": "index",
    "status": "read",
@@ -6578,7 +6580,7 @@
     "fast": "Measured 15.4 KB raw / 5.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Remaining limit is study-hour path estimates are rough guides and depend on each reader's prior backend background."
    },
-   "notes": "Synced live read-time and counts after Phase 13A D1-D7 rework of 20.5.1 (01-auth)."
+   "notes": "Synced live read-time and counts after Phase 13B D1-D7 rework of 20.5.2-20.5.4 and 20.5 INDEX (completes 20.5-security)."
   },
   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md": {
    "sha256": "065e2b7d573b2298550d061453667084b1d010e6fadf07f903f6fdd34a8e5185",
@@ -14371,7 +14373,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "4205f6837cefeedb0d02b335495175240393b76d11f195677e862d8152ee3cc6",
+   "sha256": "1a8dc95bfd1d8206fff3701c7c04d5cb82fa43bf6d29b2c746d2833b6dcfc294",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14384,7 +14386,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 13A D1-D7 rework of 20.5.1 (01-auth)."
+   "notes": "Synced live read-time and counts after Phase 13B D1-D7 rework of 20.5.2-20.5.4 and 20.5 INDEX (completes 20.5-security)."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14675,7 +14677,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "58be210c133a0e08c90adc6081466dd137c278fbe4829ecec18f310f2067aeae",
+   "sha256": "2cc83debe86dc7d02f7a376007cec1ac1ee477e944512660ec424315d0710a17",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14688,7 +14690,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 13A D1-D7 rework of 20.5.1 (01-auth)."
+   "notes": "Synced live read-time and counts after Phase 13B D1-D7 rework of 20.5.2-20.5.4 and 20.5 INDEX (completes 20.5-security)."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

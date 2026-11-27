@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Security-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -24,7 +24,10 @@ Source: [Encryption, Hashing & TLS](20.5.3.01-encryption.md)
 
 **Q:** How can weak key management defeat a sound encryption algorithm?
 
-**A:** An attacker who can retrieve or replace keys can bypass the intended confidentiality boundary. Restrict key access, separate responsibilities, rotate deliberately and inspect logs and backups for exposure.
+**A:** An attacker who can retrieve or replace keys can bypass the intended confidentiality boundary. Restrict key access, separate responsibilities, rotate deliberately, and inspect logs and backups for exposure.
+
+**Q:** Why does NIST SP 800-38D cap a single AES-GCM key at 2^32 random 96-bit nonces?
+**A:** Under the birthday bound, 96-bit random nonces risk collision past roughly 2^32 messages, and reusing a single AES-GCM nonce reveals the authentication subkey alongside plaintext XORs—rotate data-encryption keys early, use deterministic counters under single-writer ownership, or choose XChaCha20-Poly1305 or AES-GCM-SIV (source: [Encryption, Hashing & TLS](20.5.3.01-encryption.md)).
 
 ## Web Security Headers & HTTPS
 
@@ -74,7 +77,7 @@ Source: [OWASP XXE Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/ch
 
 **Q:** Why must a security review examine framework and deployment defaults?
 
-**A:** Defaults and route syntax vary by framework version and deployment adapter. Inspect the headers actually emitted after proxy/CDN processing, then permit required behavior deliberately and test it on the routes that serve browser content.
+**A:** Defaults and route syntax vary by framework version and deployment adapter. Inspect the headers actually emitted after proxy and CDN processing, then permit required behavior deliberately and test it on the routes that serve browser content.
 
 Source: [Express 5 migration guide](https://expressjs.com/en/guide/migrating-5/) · [Helmet CSP nonce example](https://helmet.js.org/faq/csp-nonce-example/)
 
@@ -126,6 +129,9 @@ Sources: [OWASP Secrets Management Cheat Sheet](https://cheatsheetseries.owasp.o
 
 **A:** Consumers must fetch or receive it, establish and verify replacement connections, and drain old connections before the old credential is revoked. A projected volume updates eventually unless it uses `subPath`, and the application must reload the changed file; environment variables require a Pod restart. Neither delivery method replaces existing database sessions, so test the destination and pool behavior.
 
+**Q:** How does OIDC Workload Identity Federation remove static bootstrap secrets from pods and CI runners?
+**A:** The workload exchanges a short-lived signed platform identity token (such as AWS EKS Pod Identity, GCP Workload Identity Federation, or GitHub Actions OIDC) for temporary cloud or Vault credentials instead of baking static keys into environment configuration (source: [Secrets Management](20.5.3.04-secrets-management.md)).
+
 ## Vulnerability Management & Patch Governance
 
 Source: [Vulnerability Management & Patch Governance](20.5.3.05-vulnerability-management-patch-governance.md)
@@ -152,6 +158,9 @@ Sources: [FIRST CVSS v4.0](https://www.first.org/cvss/v4.0/) · [FIRST EPSS](htt
 
 **A:** Build and deploy a new immutable artifact, confirm the fixed component version in that artifact, rescan its digest, and verify the intended service is running it. Record the evidence and any remaining exposure; a clean source branch alone does not close the production finding.
 
+**Q:** What role does VEX (Vulnerability Exploitability eXchange) play alongside an SBOM?
+**A:** VEX records machine-readable `not_affected` justifications (such as `vulnerable_code_not_in_execute_path`) alongside the SBOM so scanners suppress audited unreachable advisories transparently rather than stripping items from the inventory (source: [Vulnerability Management & Patch Governance](20.5.3.05-vulnerability-management-patch-governance.md)).
+
 ## Trace the rotation and verification boundary
 
 Source: [Encryption](20.5.3.01-encryption.md), [Web security](20.5.3.02-web-security.md), [Threat modeling](20.5.3.03-threat-modeling-stride.md), [Secrets management](20.5.3.04-secrets-management.md), [Vulnerability management](20.5.3.05-vulnerability-management-patch-governance.md).
@@ -174,7 +183,7 @@ Source: [Encryption](20.5.3.01-encryption.md), [Web security](20.5.3.02-web-secu
 
 **Q:** Does changing a mounted manager-backed Secret immediately replace every database session?
 
-**A:** No. Consumer reload and pool replacement/draining need explicit handling; environment values do not update in an existing process. Destination expiry and existing session termination are separate rules.
+**A:** No. Consumer reload and pool replacement and draining need explicit handling; environment values do not update in an existing process. Destination expiry and existing session termination are separate rules.
 
 **Q:** An unfixed critical finding disappears under a scanner option. Has exposure ended?
 

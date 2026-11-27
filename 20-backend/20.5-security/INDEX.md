@@ -1,7 +1,7 @@
 # Security — Index
 
-> **Study time:** ≈ 3 h 42 m of reading (24 files, ~9 min average).
-> **The senior security learning track.** Study in three passes: **I. Auth** (the [01-auth](01-auth/INDEX.md) deep-dive: fundamentals → Basic/Digest → API keys → sessions → JWT → OAuth/OIDC → SSO/SAML → MFA/passkeys → RBAC → ABAC) → **II. Attacks & Defense** (XSS, CSRF, SQL injection, API security) → **III. Hardening & Operations** (encryption/TLS, browser policy, threat modeling, secrets and vulnerability response). Finish with the interview banks.
+> **Study time:** ≈ 3 h 45 m of reading (24 files, ~9 min average).
+> **The senior security learning track.** Study in three passes: **I. Auth** (the [01-auth](01-auth/INDEX.md) deep-dive: fundamentals → Basic and Digest → API keys → sessions → JWT → OAuth and OIDC → SSO and SAML → MFA and passkeys → RBAC → ABAC) → **II. Attacks & Defense** (XSS, CSRF, SQL injection, API security) → **III. Hardening & Operations** (encryption and TLS, browser policy, threat modeling, secrets, and vulnerability response). Finish with the interview banks.
 >
 > The 21 learning and interview files, plus three revision companions, cover HTTP authentication through passkeys, common application attacks, and production security operations.
 
@@ -21,7 +21,7 @@ The 21 learning and interview files are organized into 4 categories. Three categ
 | -------------------------------------------------------------- | ----: | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Auth (the deep-dive)](01-auth/INDEX.md) | 11 | Ten concept chapters from credential handling through policy enforcement, followed by an auth interview bank |
 | [Attacks & Defense](02-attacks-and-defense/INDEX.md) | 4 | XSS, CSRF, SQL injection and API abuse patterns |
-| [Hardening & Operations](03-hardening-and-operations/INDEX.md) | 5 | Encryption/TLS primer, headers/CSP, STRIDE threat modeling, secrets, vulnerability management |
+| [Hardening & Operations](03-hardening-and-operations/INDEX.md) | 5 | Encryption and TLS primer, headers and CSP, STRIDE threat modeling, secrets, vulnerability management |
 | [Interview Drills](04-interview-drills/INDEX.md) | 1 | Full security bank; pairs with the auth-track question set |
 
 ---
@@ -45,16 +45,16 @@ The files take about 3 h 36 m to read. Reserve roughly 12 hours for a complete p
 Ten auth and authorization chapters build from credentials to policy enforcement. Finish the learning sequence before attempting either interview bank.
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| ----: | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ------------- | ------------------ | --------: |
+| ----: | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ------------- | ------------------ | --------: |
 | 1 | [Auth Fundamentals](01-auth/20.5.1.01-auth-fundamentals.md) | Identity vs permissions, hashing vs encryption vs signing, Argon2id, CSPRNG, TLS | Essential | Foundational | 7 min |
 | 2 | [HTTP Basic & Digest Auth](01-auth/20.5.1.02-http-basic-digest-auth.md) | Authorization header, Base64-over-TLS, 401 handshake, Digest challenge-response legacy, nginx patterns | Important | Specialized | 12 min |
 | 3 | [API Keys](01-auth/20.5.1.03-api-keys.md) | CSPRNG generation, hashing keys at rest, `sk_live_` prefixes, rotation windows, scopes, leak runbook | Essential | Foundational | 13 min |
-| 4 | [Sessions & Cookies](01-auth/20.5.1.04-sessions-cookies.md) | Cookie flags, session stores, fixation/hijacking, timeouts | Essential | Foundational | 9 min |
+| 4 | [Sessions & Cookies](01-auth/20.5.1.04-sessions-cookies.md) | Cookie flags, session stores, fixation and hijacking, timeouts | Essential | Foundational | 9 min |
 | 5 | [JWT](01-auth/20.5.1.05-jwt.md) | Token structure, signing algorithms, storage trade-offs, refresh rotation, revocation | Essential | Foundational | 10 min |
-| 6 | [OAuth2 / OIDC](01-auth/20.5.1.06-oauth2-oidc.md) | Grants, PKCE, scopes, social login, the OIDC identity layer | Essential | Foundational | 14 min |
-| 7 | [SSO / SAML / Federation](01-auth/20.5.1.07-sso-saml-federation.md) | One IdP many SPs, SAML flows, assertions & certs, SAML vs OIDC, SCIM/JIT provisioning | Important | Specialized | 13 min |
-| 8 | [MFA / Passkeys / WebAuthn](01-auth/20.5.1.08-mfa-passkeys-webauthn.md) | TOTP mechanics, SMS weaknesses, WebAuthn ceremonies, passkey sync, AAL levels, recovery | Important | Specialized | 14 min |
-| 9 | [RBAC / ABAC](01-auth/20.5.1.09-rbac-abac.md) | Role assignment and activation, policy models, and the boundary between a role and object access | Essential | Foundational | 10 min |
+| 6 | [OAuth2 and OIDC](01-auth/20.5.1.06-oauth2-oidc.md) | Grants, PKCE, scopes, social login, the OIDC identity layer | Essential | Foundational | 14 min |
+| 7 | [SSO, SAML, and Federation](01-auth/20.5.1.07-sso-saml-federation.md) | One IdP, many SPs, SAML flows, assertions & certs, SAML vs OIDC, SCIM and JIT provisioning | Important | Specialized | 13 min |
+| 8 | [MFA, Passkeys, and WebAuthn](01-auth/20.5.1.08-mfa-passkeys-webauthn.md) | TOTP mechanics, SMS weaknesses, WebAuthn ceremonies, passkey sync, AAL levels, recovery | Important | Specialized | 14 min |
+| 9 | [RBAC and ABAC](01-auth/20.5.1.09-rbac-abac.md) | Role assignment and activation, policy models, and the boundary between a role and object access | Essential | Foundational | 10 min |
 | 10 | [ABAC Access Control](01-auth/20.5.1.10-abac-access-control.md) | Trusted attribute sources, policy evaluation, enforcement points and failure handling | Essential | Foundational | 12 min |
 
 Stage 10 is the auth question bank ([drills](01-auth/20.5.1.11-interview-questions.md)); the complete learning flow is in the [auth INDEX](01-auth/INDEX.md).
@@ -64,23 +64,23 @@ Stage 10 is the auth question bank ([drills](01-auth/20.5.1.11-interview-questio
 ## Attacks & Defense
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| ----: | ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ------------- | ------------------ | --------: |
-| 11 | [XSS](02-attacks-and-defense/20.5.2.01-xss.md) | Stored/reflected/DOM XSS, CSP, encoding, sanitization | Essential | Foundational | 6 min |
+| ----: | ---------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ------------- | ------------------ | --------: |
+| 11 | [XSS](02-attacks-and-defense/20.5.2.01-xss.md) | Stored, reflected, and DOM XSS, CSP, encoding, sanitization | Essential | Foundational | 6 min |
 | 12 | [CSRF](02-attacks-and-defense/20.5.2.02-csrf.md) | SameSite, CSRF tokens, double-submit cookies, origin checking | Essential | Foundational | 7 min |
 | 13 | [SQL Injection](02-attacks-and-defense/20.5.2.03-sql-injection.md) | Parameterized queries, ORM protection, input validation, WAF | Essential | Foundational | 6 min |
-| 14 | [API Security Best Practices](02-attacks-and-defense/20.5.2.04-api-security-best-practices.md) | Object/property authorization, resource limits, SSRF and input/output boundaries | Essential | Foundational | 10 min |
+| 14 | [API Security Best Practices](02-attacks-and-defense/20.5.2.04-api-security-best-practices.md) | Object and property authorization, resource limits, SSRF, and input and output boundaries | Essential | Foundational | 10 min |
 
 ---
 
 ## Hardening & Operations
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| ----: | --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------- | ------------------ | --------: |
-| — | [Encryption, Hashing & TLS](03-hardening-and-operations/20.5.3.01-encryption.md) | Symmetric/asymmetric, salting, AES/RSA, TLS handshake *(prerequisite for Pass I)* | Essential | Foundational | 7 min |
-| 15 | [Web Security](03-hardening-and-operations/20.5.3.02-web-security.md) | HTTPS, HSTS, CORS, CSP, security headers, OWASP Top 10 | Essential | Foundational | 8 min |
+| ----: | --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- | ------------------ | --------: |
+| — | [Encryption, Hashing & TLS](03-hardening-and-operations/20.5.3.01-encryption.md) | Symmetric and asymmetric cryptography, salting, AES and RSA, TLS handshake *(prerequisite for Pass I)* | Essential | Foundational | 7 min |
+| 15 | [Web Security](03-hardening-and-operations/20.5.3.02-web-security.md) | HTTPS, HSTS, CORS, CSP, security headers, OWASP Top 10 | Essential | Foundational | 9 min |
 | 16 | [Threat Modeling — STRIDE](03-hardening-and-operations/20.5.3.03-threat-modeling-stride.md) | STRIDE, data-flow diagrams, trust boundaries, attack trees | Important | Specialized | 7 min |
-| 17 | [Secrets Management](03-hardening-and-operations/20.5.3.04-secrets-management.md) | Vault, AWS/GCP secret managers, rotation, KMS, dynamic credentials | Essential | Foundational | 8 min |
-| 18 | [Vulnerability Management & Patch Governance](03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.md) | CVE/CVSS + EPSS/KEV triage, SBOM (CycloneDX/SPDX), scanner roles, patch SLAs, emergency process, base-image refresh, risk acceptance, MTTR | Important | Specialized | 12 min |
+| 17 | [Secrets Management](03-hardening-and-operations/20.5.3.04-secrets-management.md) | Vault, AWS and GCP secret managers, rotation, KMS, dynamic credentials | Essential | Foundational | 8 min |
+| 18 | [Vulnerability Management & Patch Governance](03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.md) | CVE and CVSS + EPSS and KEV triage, SBOM (CycloneDX and SPDX), scanner roles, patch SLAs, emergency process, base-image refresh, risk acceptance, MTTR | Important | Specialized | 13 min |
 
 ---
 
@@ -112,7 +112,7 @@ Before drills, revisit [auth revision](01-auth/REVISION.md), [attack revision](0
 6. **Both interview banks** (3 hrs)
 
 ### Path C — Interview tomorrow
-- Spend 60–90 minutes on session/JWT expiry and revocation, OAuth transaction binding, object/tenant authorization, XSS/CSRF boundaries and incident response.
+- Spend 60–90 minutes on session and JWT expiry and revocation, OAuth transaction binding, object and tenant authorization, XSS and CSRF boundaries, and incident response.
 - Rehearse five questions across the auth and security banks. State the threat, enforcement point, failure behavior and evidence you would test.
 - Revisit only the summaries for weak areas; do not try to reread all 24 files.
 
@@ -155,10 +155,10 @@ These [Docita](https://github.com/CVamsi27/docita) source paths are inspection s
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | JWT auth | `apps/api/src/shared/modules/auth/auth/jwt.strategy.ts` + `jwt-auth.guard.ts` + `staff-jwt-audience.guard.ts` — passport strategy with audience checks |
 | Sessions, API keys & resets | `apps/api/src/shared/modules/auth/auth/auth-session.service.ts`, `api-key.service.ts`, `auth-password.controller.ts`, `auth-email-verification.service.ts`, `auth-mfa-orchestrator.service.ts` |
-| RBAC / ABAC | `apps/api/src/shared/modules/authorization/` — `authorization.service.ts` + `abac-policy.registry.ts` + `role-bridge.ts`; enforced via `roles.guard.ts` / `policy.guard.ts` / `require-policy.decorator.ts` |
+| RBAC and ABAC | `apps/api/src/shared/modules/authorization/` — `authorization.service.ts` + `abac-policy.registry.ts` + `role-bridge.ts`; enforced via `roles.guard.ts`, `policy.guard.ts`, and `require-policy.decorator.ts` |
 | Tenant isolation | `apps/api/src/shared/common/middleware/tenant.middleware.ts` + `apps/api/src/shared/modules/auth/guards/tenant.guard.ts` + `shared/modules/rls/` — tenant mechanisms to trace; verify enabled RLS, scoped client usage and cross-tenant denial at each operation |
 | CSRF & security headers | `apps/api/src/shared/common/interceptors/csrf.interceptor.ts`; `helmet` configured in `apps/api/src/main.ts` |
-| Rate limiting | `apps/api/src/shared/modules/auth/guards/ip-rate-limit.guard.ts`, `user-rate-limit.guard.ts` + `shared/modules/tenant-rate-limit/` — per-IP/user/clinic quotas |
+| Rate limiting | `apps/api/src/shared/modules/auth/guards/ip-rate-limit.guard.ts`, `user-rate-limit.guard.ts` + `shared/modules/tenant-rate-limit/` — per-IP, user, and clinic quotas |
 | Audit logging | `apps/api/src/shared/modules/audit/audit-logger.service.ts` + `shared/common/interceptors/patient-audit.interceptor.ts` — access events for PHI surfaces |
 | Field-level encryption | `apps/api/src/shared/common/encryption.service.ts` + `encryption-patient-fields.boundary.ts` — sensitive patient fields encrypted before write |
 | Emergency access | `apps/api/src/shared/common/interceptors/emergency-access.interceptor.ts` + `apps/api/src/shared/modules/auth/decorators/emergency-access.decorator.ts` — break-glass with audit trail |

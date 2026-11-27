@@ -38,6 +38,9 @@ Source: [OWASP Content Security Policy Cheat Sheet](https://cheatsheetseries.owa
 
 Source: [MDN Trusted Types API](https://developer.mozilla.org/en-US/docs/Web/API/Trusted_Types_API)
 
+**Q:** What is mutation XSS (mXSS), and why must sanitized HTML never be string-transformed afterward?
+**A:** Browsers re-parse or re-serialize markup across HTML, `<svg>`, and `<math>` namespaces, which can turn seemingly benign text into executable markup if the sanitizer parser and target browser DOM disagree—keep DOMPurify current and avoid post-processing its output (source: [XSS (Cross-Site Scripting)](20.5.2.01-xss.md)).
+
 ## CSRF (Cross-Site Request Forgery)
 
 Source: [CSRF (Cross-Site Request Forgery)](20.5.2.02-csrf.md)
@@ -57,6 +60,9 @@ Source: [CSRF (Cross-Site Request Forgery)](20.5.2.02-csrf.md)
 **Q:** Does a CSRF attacker need to steal the victim's cookie or read the response?
 
 **A:** No. A browser can carry eligible credentials on the forged request even when the attacker cannot read the cookie or response. Session hijacking and CSRF are distinct paths; authentication checks alone do not distinguish a legitimate mutation from the forged one.
+
+**Q:** How does the `Sec-Fetch-Site` header let servers reject cross-site mutations early?
+**A:** Modern browsers send `Sec-Fetch-Site` (`same-origin`, `same-site`, `cross-site`, or `none`) as a forbidden header JavaScript cannot modify, letting endpoints reject unexpected `cross-site` state changes while keeping a fallback policy for older browsers or non-browser callers that omit it (source: [CSRF (Cross-Site Request Forgery)](20.5.2.02-csrf.md)).
 
 ## SQL Injection
 
@@ -128,6 +134,9 @@ Source: [OWASP API6 — Unrestricted Access to Sensitive Business Flows](https:/
 
 Source: [OWASP SSRF Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html)
 
+**Q:** How does DNS rebinding bypass a hostname check before `fetch`, and how do you block it?
+**A:** A hostile DNS server can return a public IP with a zero TTL during validation and then return `169.254.169.254` on connect; pin the validated post-resolution IP inside the socket connector or lookup hook and re-validate every redirect hop (source: [API Security Best Practices](20.5.2.04-api-security-best-practices.md)).
+
 **Q:** What must an API do before trusting a response from a third-party service?
 
 **A:** Use authenticated TLS, apply explicit time and size limits, validate the response schema, and constrain redirects and downstream effects. A reputable provider's data is still external input.
@@ -150,7 +159,7 @@ Source: [XSS](20.5.2.01-xss.md), [CSRF](20.5.2.02-csrf.md), [SQL injection](20.5
 
 **Q:** Why does a signed double-submit token include the current session identifier in its MAC?
 
-**A:** An attacker may inject a cookie/token pair they obtained for their own session. Session binding prevents that pair from verifying for the victim's session.
+**A:** An attacker may inject a cookie and token pair they obtained for their own session. Session binding prevents that pair from verifying for the victim's session.
 
 **Q:** Does parameterizing a search term make `%` a literal character in `LIKE`?
 
@@ -172,7 +181,7 @@ Use these prompts after the reading pass to recall the attacks and defense mecha
 
 ## See Also
 
-- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for attacker-controlled input and browser/server defenses
+- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for attacker-controlled input and browser and server defenses
 
 ## References & Learn More
 

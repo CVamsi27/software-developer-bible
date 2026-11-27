@@ -8,7 +8,7 @@
 
 ---
 
-Read the auth, attacks and hardening chapters, then their revision companions before attempting this bank. Explain the mechanism and a changed condition before checking the answer.
+Read the auth, attacks, and hardening chapters, then their revision companions before attempting this bank. Explain the mechanism and a changed condition before checking the answer.
 
 ## Files
 

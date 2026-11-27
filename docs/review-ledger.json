@@ -5876,225 +5876,231 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 14A D1-D7 rework of 20.6.1 and 20.6.2)."
   },
   "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.01-saga-pattern.md": {
-   "sha256": "ab505eb79867f9bd2de900c3cc5a9eb3abc7c5fa4fafe61c2f56148cbfb5902c",
+   "sha256": "7ac95ac8993e4dd03ce6d533ecf431833dce960e6f279c337fb675de66b49305",
    "lines": 110,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against Microservices.io Saga specification and Chris Richardson / Sam Newman references; executed `paymentDecision` in Node v26.13.0.",
-    "readable": "Full read of 110 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "743 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 110 lines (796 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "796 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for multi-service workflow coordination, unknown payment outcomes, and compensating actions.",
-    "fast": "18.9 KB raw / 5.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 18.9 KB raw / 5.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Explains why sagas lack global isolation (inventory must enforce local atomic reservations) and why timeouts require reconciliation before compensation. Includes failure boundary analysis."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14B D1-D7 rework of 20.6.3-20.6.5 and 20.6 INDEX (completes 20.6-microservices))."
   },
   "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.02-distributed-transactions.md": {
-   "sha256": "349c10c44c383596829613ba847d187189e2eefb889ec3e1f167885ddac40311",
+   "sha256": "39cdbc55a149f5a9005ba05da76199cab82a59d2459999359a180c4ab78880a5",
    "lines": 120,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against PostgreSQL `PREPARE TRANSACTION` documentation, DDIA Chapter 9, and Microservices.io.",
-    "readable": "Full read of 120 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1049 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 120 lines (1053 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1053 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for comparing atomic commit protocols (2PC) against workflow compensation (Saga) and local intent (Outbox).",
-    "fast": "19.3 KB raw / 6.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 19.3 KB raw / 6.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Clarifies why 2PC coordinates atomicity rather than full serializable isolation and why a prepared participant blocks on coordinator recovery. Includes failure boundary analysis."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14B D1-D7 rework of 20.6.3-20.6.5 and 20.6 INDEX (completes 20.6-microservices))."
   },
   "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.03-event-sourcing.md": {
-   "sha256": "f5486785835770d1688aacefcb2f116c9ea8f9aa60045afcab1cf86618c5df59",
+   "sha256": "4d94099925b7927215ae5be80389b5a52557bc0a5a855432aeebde980c85961a",
    "lines": 144,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against Microservices.io Event Sourcing and DDD aggregate boundaries; executed `replayBalance` in Node v26.13.0.",
-    "readable": "Full read of 144 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "797 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 144 lines (823 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "823 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for event-sourced aggregate persistence, expected-version optimistic concurrency, and snapshot replay.",
-    "fast": "25.2 KB raw / 6.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 25.2 KB raw / 6.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Traces stale-snapshot version skipping failure boundaries and explains why authoritative event streams must never be Kafka-compacted."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14B D1-D7 rework of 20.6.3-20.6.5 and 20.6 INDEX (completes 20.6-microservices))."
   },
   "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.04-cqrs.md": {
-   "sha256": "cbfc098d4ccedd9ed91b8cb29ffd189e880236e5e6a212356707de15991d6c94",
+   "sha256": "21763940c2530ed754602c2c9451e590c7a975206206380acf4ecf97e15fbf9b",
    "lines": 120,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against Martin Fowler, Greg Young, and Azure CQRS architecture guides; executed `projectOrder` in Node v26.13.0.",
-    "readable": "Full read of 120 lines. CQRS chapter separating command write-invariant models from query read-projection models, implementing an idempotent version-checked full-state snapshot projector (`projectOrder`), contrasting full-state vs delta projection gap handling, and defining read-your-writes freshness contracts.",
-    "concise": "770 words across 120 lines; zero filler or duplicate explanations.",
+    "readable": "Full read of 120 lines (789 prose words). CQRS chapter separating command write-invariant models from query read-projection models, implementing an idempotent version-checked full-state snapshot projector (`projectOrder`), contrasting full-state vs delta projection gap handling, and defining read-your-writes freshness contracts.",
+    "concise": "789 words across 120 lines. zero filler or duplicate explanations.",
     "focused": "Focused single-topic scope: Canonical home for command/query model separation and asynchronous read-model freshness contracts.",
-    "fast": "Fast to scan: 22.2 KB raw / 6.3 KB gzip.",
+    "fast": "Measured 22.2 KB raw / 6.3 KB gzip. Fast to scan: 22.2 KB raw / 6.3 KB gzip.",
     "best": "Best-practice depth: Explains why CQRS does not require separate databases or event sourcing and why delta projections cannot skip intermediate versions."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14B D1-D7 rework of 20.6.3-20.6.5 and 20.6 INDEX (completes 20.6-microservices))."
   },
   "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.05-decomposing-monolith-database.md": {
-   "sha256": "bfa84fb08a996c3d9e621be9ab2140b25008d57baf62379f2fdaa9d0d41f9515",
+   "sha256": "c9535d9e226d79fd546162211eae863332f10e88411d2b1d2a18d6f371846cfe",
    "lines": 146,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against Debezium PostgreSQL logical decoding docs, Google SRE Data Integrity, and Sam Newman Monolith to Microservices; executed `applyChange` in Node v26.13.0.",
-    "readable": "Full read of 146 lines. Decomposing the Monolith Database chapter tracing shared-table extraction, PostgreSQL WAL logical decoding CDC + coordinated snapshot watermarks, version-and-tombstone target state application (`applyChange`), replacing cross-boundary FKs/joins, and fencing legacy writers before cutover.",
-    "concise": "1090 words across 146 lines; zero filler or duplicate explanations.",
+    "readable": "Full read of 146 lines (1117 prose words). Decomposing the Monolith Database chapter tracing shared-table extraction, PostgreSQL WAL logical decoding CDC + coordinated snapshot watermarks, version-and-tombstone target state application (`applyChange`), replacing cross-boundary FKs/joins, and fencing legacy writers before cutover.",
+    "concise": "1117 words across 146 lines. zero filler or duplicate explanations.",
     "focused": "Focused single-topic scope: Canonical home for extracting service-owned schemas from a shared monolith database.",
-    "fast": "Fast to scan: 25.1 KB raw / 7.3 KB gzip.",
+    "fast": "Measured 25.1 KB raw / 7.3 KB gzip. Fast to scan: 25.1 KB raw / 7.3 KB gzip.",
     "best": "Best-practice depth: Demonstrates how tombstones prevent late snapshot rows from resurrecting deleted records and why LSNs are not unique row versions. Includes failure boundary analysis."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14B D1-D7 rework of 20.6.3-20.6.5 and 20.6 INDEX (completes 20.6-microservices))."
   },
   "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.06-transactional-outbox.md": {
-   "sha256": "f6cfd2b3d3f9e7351cdd42ace7a16122828814d2118875eeff43ee1e6b670581",
-   "lines": 163,
+   "sha256": "a3d049d35dd83f9508355b942b8691ae1d1e16d34329807fceb1672c37c8bdee",
+   "lines": 165,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against Microservices.io Transactional Outbox, Debezium Outbox Event Router, and AWS Prescriptive Guidance.",
-    "readable": "Full read of 163 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1144 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 165 lines (1240 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1240 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for service-side transactional outbox persistence, relay claiming, and consumer deduplication.",
-    "fast": "23.9 KB raw / 7.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 23.9 KB raw / 7.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Shows why a local cache/DB marker cannot wrap an external email/payment API atomically and why `created_at` sorting fails per-aggregate order."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14B D1-D7 rework of 20.6.3-20.6.5 and 20.6 INDEX (completes 20.6-microservices))."
   },
   "20-backend/20.6-microservices/03-data-and-consistency/INDEX.md": {
-   "sha256": "d8fac2811773cc105b796250ad477fa4bb3d5bf083ad3256efbaf88e41a346ef",
+   "sha256": "3135957372cd7ffb0e0b97a71ae6e6a6d28bf04cdd78c8aa90024ef11a774fb0",
    "lines": 51,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against PostgreSQL 18 prepared transactions, Debezium outbox router, and Microservices.io patterns.",
-    "readable": "Full read of 51 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "112 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 51 lines (114 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "114 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical category index for cross-service atomicity, event history, projections, and data extraction.",
-    "fast": "11.5 KB raw / 3.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 11.5 KB raw / 3.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Separates local transactional outbox guarantees from global distributed atomicity. Includes failure boundary analysis."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14B D1-D7 rework of 20.6.3-20.6.5 and 20.6 INDEX (completes 20.6-microservices))."
   },
   "20-backend/20.6-microservices/03-data-and-consistency/REVISION.md": {
-   "sha256": "69798a5f34a06bf5778fefea288bd40d3b67234447e4cdf5e810071640aa9a3a",
-   "lines": 175,
+   "sha256": "9c5ca5c5ed9198a30fd5ec6db6e8b02dd5b3811c2599c2b1cc3ad030668244fe",
+   "lines": 181,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against PostgreSQL 18, Debezium, and Microservices.io references.",
-    "readable": "Full read of 175 lines. Revision companion for 20.6-microservices/03-data-and-consistency containing 28 source-linked Q&A pairs across Saga unknown outcomes and oversell prevention, 2PC prepared-participant blocking, Event Sourcing expected-version appends and snapshots, CQRS full-state vs delta projections, database decomposition tombstones/LSNs, and Transactional Outbox deduplication.",
-    "concise": "1381 words across 175 lines; zero filler or duplicate explanations.",
+    "readable": "Full read of 181 lines (1522 prose words). Revision companion for 20.6-microservices/03-data-and-consistency containing 28 source-linked Q&A pairs across Saga unknown outcomes and oversell prevention, 2PC prepared-participant blocking, Event Sourcing expected-version appends and snapshots, CQRS full-state vs delta projections, database decomposition tombstones/LSNs, and Transactional Outbox deduplication.",
+    "concise": "1522 words across 181 lines. zero filler or duplicate explanations.",
     "focused": "Focused single-topic scope: Canonical revision companion for 03-data-and-consistency.",
-    "fast": "Fast to scan: 19.0 KB raw / 6.2 KB gzip.",
+    "fast": "Measured 19.0 KB raw / 6.2 KB gzip. Fast to scan: 19.0 KB raw / 6.2 KB gzip.",
     "best": "Best-practice depth: Drills every major distributed-data failure boundary across Sagas, 2PC, Event Sourcing, CQRS, CDC, and Outbox."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14B D1-D7 rework of 20.6.3-20.6.5 and 20.6 INDEX (completes 20.6-microservices))."
   },
   "20-backend/20.6-microservices/04-resilience/20.6.4.01-circuit-breaker.md": {
-   "sha256": "6693ff767e8d05a4400874599193e10d7b0956f0bde65931d7e05d327e36fe3c",
+   "sha256": "22ccd95ee9a3baad02891da8f3a7c8345d45ec4d0cbf4a754eec07f1b0f279b3",
    "lines": 144,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against Resilience4j CircuitBreaker and Martin Fowler Circuit Breaker specification; executed `CircuitBreaker` in Node v26.13.0.",
-    "readable": "Full read of 144 lines. Circuit Breaker chapter tracing CLOSED -> OPEN -> HALF-OPEN transitions, implementing an epoch-fenced single-probe `CircuitBreaker` class with `countsFailure` classification, rolling-window minimum volume rules, retry-vs-breaker nesting order, and unsafe fallback hazards.",
-    "concise": "802 words across 144 lines; zero filler or duplicate explanations.",
+    "readable": "Full read of 144 lines (838 prose words). Circuit Breaker chapter tracing CLOSED -> OPEN -> HALF-OPEN transitions, implementing an epoch-fenced single-probe `CircuitBreaker` class with `countsFailure` classification, rolling-window minimum volume rules, retry-vs-breaker nesting order, and unsafe fallback hazards.",
+    "concise": "838 words across 144 lines. zero filler or duplicate explanations.",
     "focused": "Focused single-topic scope: Canonical home for failure-based dependency call admission and recovery probing.",
-    "fast": "Fast to scan: 25.1 KB raw / 6.5 KB gzip.",
+    "fast": "Measured 25.1 KB raw / 6.5 KB gzip. Fast to scan: 25.1 KB raw / 6.5 KB gzip.",
     "best": "Best-practice depth: Proves how epoch fencing prevents a late completion from an earlier closed state from closing a newly opened circuit. Includes failure boundary analysis."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14B D1-D7 rework of 20.6.3-20.6.5 and 20.6 INDEX (completes 20.6-microservices))."
   },
   "20-backend/20.6-microservices/04-resilience/20.6.4.02-bulkhead-pattern.md": {
-   "sha256": "2ee26f5d7485f9feb561d67605b7879851820330b0ab05a535e49c237b7345b0",
-   "lines": 115,
+   "sha256": "5ea77c63293ea29cd6c457a5b7710fd2640697ae2eaeabaf3b3c7ccf98fb8b2c",
+   "lines": 116,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against Resilience4j Bulkhead and Microsoft Azure Bulkhead Pattern docs; executed `Bulkhead` in Node v26.13.0.",
-    "readable": "Full read of 115 lines. Bulkhead Pattern chapter opening with slow report queries starving login database connections, implementing a fail-fast settlement-bound `Bulkhead` limiter with `AbortSignal` check, contrasting zero-length vs bounded queues, sizing fleet-wide pools (`replicas x limit`), and separating arrival rate limits from concurrent occupancy.",
-    "concise": "896 words across 115 lines; zero filler or duplicate explanations.",
+    "readable": "Full read of 116 lines (951 prose words). Bulkhead Pattern chapter opening with slow report queries starving login database connections, implementing a fail-fast settlement-bound `Bulkhead` limiter with `AbortSignal` check, contrasting zero-length vs bounded queues, sizing fleet-wide pools (`replicas x limit`), and separating arrival rate limits from concurrent occupancy.",
+    "concise": "951 words across 116 lines. zero filler or duplicate explanations.",
     "focused": "Focused single-topic scope: Canonical home for workload resource partitioning and concurrency occupancy limits.",
-    "fast": "Fast to scan: 18.3 KB raw / 6.0 KB gzip.",
+    "fast": "Measured 18.3 KB raw / 6.0 KB gzip. Fast to scan: 18.3 KB raw / 6.0 KB gzip.",
     "best": "Best-practice depth: Explains why permits must be held until actual operation settlement (not released on `Promise.race` caller timeout) and why client pools do not partition shared DB CPU/locks. Includes failure boundary analysis."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14B D1-D7 rework of 20.6.3-20.6.5 and 20.6 INDEX (completes 20.6-microservices))."
   },
   "20-backend/20.6-microservices/04-resilience/INDEX.md": {
-   "sha256": "ccf237b61607b5dc14809b7946a12bf6d011682f0bfbe9c2c3012ac1b9aea223",
+   "sha256": "844c69ccb80515ef860f8cf31a44b561497ee765f7cdaedf718ebaabd68e5d36",
    "lines": 45,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against Resilience4j and Azure architecture pattern references.",
-    "readable": "Full read of 45 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 45 lines (79 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "79 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical category index for partial-failure survival, call admission, and resource partitioning.",
-    "fast": "9.3 KB raw / 3.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 9.3 KB raw / 3.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Connects dependency admission control with in-flight resource occupancy bounds. Includes failure boundary analysis."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14B D1-D7 rework of 20.6.3-20.6.5 and 20.6 INDEX (completes 20.6-microservices))."
   },
   "20-backend/20.6-microservices/04-resilience/REVISION.md": {
-   "sha256": "1a4775e9147fea8069c97138ac79b7c602511d1d993c8e9914918a0254d5d831",
-   "lines": 83,
+   "sha256": "4ea98d93d37eb9392498c6533057fcb98e56bf283b96b2e712239bb1835abfb9",
+   "lines": 89,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against Resilience4j and Azure Bulkhead/Circuit Breaker documentation.",
-    "readable": "Full read of 83 lines. Revision companion for 20.6-microservices/04-resilience containing 12 source-linked Q&A pairs covering retry amplification, circuit-breaker states and epoch fencing, bounded half-open probes, bulkhead permit settlement lifetime, zero-length queues, and shared downstream database CPU/lock limits.",
-    "concise": "498 words across 83 lines; zero filler or duplicate explanations.",
+    "readable": "Full read of 89 lines (598 prose words). Revision companion for 20.6-microservices/04-resilience containing 12 source-linked Q&A pairs covering retry amplification, circuit-breaker states and epoch fencing, bounded half-open probes, bulkhead permit settlement lifetime, zero-length queues, and shared downstream database CPU/lock limits.",
+    "concise": "598 words across 89 lines. zero filler or duplicate explanations.",
     "focused": "Focused single-topic scope: Canonical revision companion for 04-resilience.",
-    "fast": "Fast to scan: 11.0 KB raw / 3.9 KB gzip.",
+    "fast": "Measured 11.0 KB raw / 3.9 KB gzip. Fast to scan: 11.0 KB raw / 3.9 KB gzip.",
     "best": "Best-practice depth: Tests late closed-state completions, fake-guest auth fallbacks, and timeout permit-leak failure boundaries."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14B D1-D7 rework of 20.6.3-20.6.5 and 20.6 INDEX (completes 20.6-microservices))."
   },
   "20-backend/20.6-microservices/05-interview-drills/20.6.5.01-interview-questions.md": {
-   "sha256": "f9e0ff717c37be880892e10b4a1b0763f21ade46bfd1fb1cae01e995c627da4d",
+   "sha256": "321971fc8f0f5f3bb34182c2752ad9d6235ea2f237adbc42b931c2909c70a954",
    "lines": 441,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against the complete 20.6-microservices track, Kafka 4.3, RabbitMQ 4.3.6, and Istio ambient mesh.",
-    "readable": "Full read of 441 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "3841 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 441 lines (4007 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "4007 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical stack-wide interview bank for 20.6-microservices.",
-    "fast": "47.2 KB raw / 14.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 47.2 KB raw / 14.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Every answer traces who owns the decision, what durable state survives a crash, and what happens under timeout, duplicate delivery, or failover. Includes failure boundary analysis."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14B D1-D7 rework of 20.6.3-20.6.5 and 20.6 INDEX (completes 20.6-microservices))."
   },
   "20-backend/20.6-microservices/05-interview-drills/INDEX.md": {
-   "sha256": "a3ddc9af67f6fcb08eeb2f23dd878471ee65b94f38d52bc205eeebe1e23d9657",
+   "sha256": "07ea76a6944df0e95d8eb258c9949ad22446608a36dbab810bad519da42762ac",
    "lines": 39,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against the 20.6-microservices stack and Docita source anchors.",
-    "readable": "Full read of 39 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "80 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 39 lines (82 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "82 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical entrypoint for microservices interview drills.",
-    "fast": "8.5 KB raw / 3.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 8.5 KB raw / 3.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Emphasizes authority, operation identity, unknown outcomes, and failure boundaries."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14B D1-D7 rework of 20.6.3-20.6.5 and 20.6 INDEX (completes 20.6-microservices))."
   },
   "20-backend/20.6-microservices/INDEX.md": {
-   "sha256": "6f467efe979fcecdd371596a16844d3f861a6abc106f0e6f71cfa428a19bf61b",
+   "sha256": "05bc139505e1f457eec4931099e6b08d7827867993ad1c27be1f713d9e5faab3",
    "lines": 91,
    "genre": "index",
    "status": "read",
@@ -6104,10 +6110,10 @@
     "readable": "Full read of 91 lines (125 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "125 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical microservices stack entrypoint starting from a modular monolith baseline before introducing distributed boundaries.",
-    "fast": "Measured 18.6 KB raw / 5.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 18.6 KB raw / 5.1 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Best-practice depth: Frames partial failure boundary conditions, network latency limits, and consistency trade-offs."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 14A D1-D7 rework of 20.6.1 and 20.6.2)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14B D1-D7 rework of 20.6.3-20.6.5 and 20.6 INDEX (completes 20.6-microservices))."
   },
   "20-backend/20.7-graphql/01-fundamentals/20.7.1.01-graphql-overview.md": {
    "sha256": "feda42bac0a302215434cdf7eba5d577fb202d03b2f3ccaf583cebe025a11699",
@@ -6569,7 +6575,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
   },
   "20-backend/INDEX.md": {
-   "sha256": "c4aabb4c0272b5f8f9e5378872090ee67ebd336d64c3a83fabd23a7b568b4f5c",
+   "sha256": "a53f6daa855fb1ad9e7d18a60b7099f3f43cbb331b215c247750b3f59cc9c854",
    "lines": 122,
    "genre": "index",
    "status": "read",
@@ -6582,7 +6588,7 @@
     "fast": "Measured 15.4 KB raw / 5.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Remaining limit is study-hour path estimates are rough guides and depend on each reader's prior backend background."
    },
-   "notes": "Synced live read-time and counts after Phase 14A D1-D7 rework of 20.6.1 and 20.6.2."
+   "notes": "Synced live read-time and counts after Phase 14B D1-D7 rework of 20.6.3-20.6.5 and 20.6 INDEX (completes 20.6-microservices)."
   },
   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md": {
    "sha256": "065e2b7d573b2298550d061453667084b1d010e6fadf07f903f6fdd34a8e5185",
@@ -14375,7 +14381,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "faa378fc50187ddca5ea73d1e3083bcd5b456847b266f8203f2d8ddad7b11334",
+   "sha256": "988bb2c77e0f176227758213a4ffae6a8641b367b3837910f70ab985d679ea2b",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14388,7 +14394,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 14A D1-D7 rework of 20.6.1 and 20.6.2."
+   "notes": "Synced live read-time and counts after Phase 14B D1-D7 rework of 20.6.3-20.6.5 and 20.6 INDEX (completes 20.6-microservices)."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14679,7 +14685,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "782b166d5b7e071d2431ff5af7a77682352e1d0d2add90f56113ca7b95ba38fc",
+   "sha256": "898a4dda43231421f5f2e81fcd9de68fb4061e24b5054efe027287172b0f8c59",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14692,7 +14698,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 14A D1-D7 rework of 20.6.1 and 20.6.2."
+   "notes": "Synced live read-time and counts after Phase 14B D1-D7 rework of 20.6.3-20.6.5 and 20.6 INDEX (completes 20.6-microservices)."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

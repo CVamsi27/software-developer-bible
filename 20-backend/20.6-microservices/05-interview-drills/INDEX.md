@@ -1,6 +1,6 @@
 # Interview Drills — Microservices
 
-> **Study time:** ≈ 10 min of reading (1 file, ~10 min average).
+> **Study time:** ≈ 11 min of reading (1 file, ~11 min average).
 > **1 file.** 30 senior-level answers plus 35 additional quick prompts on decomposition, communication, data, transactions, observability and failure handling. Start with a short answer, then choose one scenario for a timed design discussion.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](../INDEX.md)
@@ -16,7 +16,7 @@ Complete the topology, messaging, data and resilience chapters and their revisio
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Interview Questions](20.6.5.01-interview-questions.md) | Curated senior-level microservices Q&A | Important | Important | 10 min |
+| 01 | [Interview Questions](20.6.5.01-interview-questions.md) | Curated senior-level microservices Q&A | Important | Important | 11 min |
 
 ---
 
@@ -26,11 +26,11 @@ Complete the topology, messaging, data and resilience chapters and their revisio
 
 ## Docita Anchor
 
-The local [Docita](https://github.com/CVamsi27/docita) source inspected on 10 October 2026 provides concrete NestJS/Prisma examples. Source presence does not establish deployment, throughput or successful recovery. Walk through the code and identify what still needs runtime evidence:
+The local [Docita](https://github.com/CVamsi27/docita) source inspected on 10 October 2026 provides concrete NestJS and Prisma examples. Source presence does not establish deployment, throughput or successful recovery. Walk through the code and identify what still needs runtime evidence:
 
 | Drill | Docita evidence |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| Saga / outbox drill | `apps/api/src/shared/modules/outbox/outbox.service.ts` — transaction-local event intent; explain relay retries and duplicate listener effects |
+| Saga and outbox drill | `apps/api/src/shared/modules/outbox/outbox.service.ts` — transaction-local event intent; explain relay retries and duplicate listener effects |
 | Circuit-breaker drill | `apps/api/src/shared/common/utils/circuit-breaker.ts` — thresholds and state transitions in one small class |
 | "Split the monolith" drill | `apps/api/src/app.module.ts` — candidate module seams; extraction also needs independent data ownership and release contracts |
 

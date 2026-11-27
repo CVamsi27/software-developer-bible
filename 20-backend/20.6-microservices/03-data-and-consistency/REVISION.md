@@ -34,6 +34,9 @@ Source: [Saga Pattern](20.6.3.01-saga-pattern.md)
 
 **A:** No. Each local commit can become visible before the saga ends. The inventory service needs an invariant-preserving reservation or atomic conditional mutation; compensation handles failed completion after that boundary.
 
+**Q:** What are compensatable, pivot, and retriable saga steps, and how does semantic locking limit anomalies without global isolation?
+**A:** Compensatable steps precede the single go-or-no-go pivot transaction while retriable idempotent steps follow it; semantic locking (such as marking a row `APPROVAL_PENDING`) forces concurrent writers to defer or fail rather than mutating uncommitted intermediate state (source: [Saga Pattern](20.6.3.01-saga-pattern.md)).
+
 ## Distributed Transactions
 
 Source: [Distributed Transactions](20.6.3.02-distributed-transactions.md)
@@ -52,11 +55,11 @@ Source: [Distributed Transactions](20.6.3.02-distributed-transactions.md)
 
 **Q:** Does a shared two-phase-commit outcome alone establish global serializable isolation?
 
-**A:** No. Atomic commit coordinates the commit/abort decision. Participant isolation, protocol integration and concurrent reads determine the separate isolation/visibility contract; prepared-state recovery also affects availability.
+**A:** No. Atomic commit coordinates the commit-or-abort decision. Participant isolation, protocol integration, and concurrent reads determine the separate isolation and visibility contract; prepared-state recovery also affects availability.
 
 **Q:** Why should a saga not share the formal atomic-transaction definition merely because both coordinate services?
 
-**A:** Its steps commit locally and can be observed before completion. Compensation later creates new effects. Atomic distributed commit instead requires a shared outcome across transactional participants; an outbox provides only its own local mutation/intent boundary.
+**A:** Its steps commit locally and can be observed before completion. Compensation later creates new effects. Atomic distributed commit instead requires a shared outcome across transactional participants; an outbox provides only its own local mutation and intent boundary.
 
 ## Event Sourcing
 
@@ -128,7 +131,10 @@ Source: [Transactional Outbox Pattern](20.6.3.06-transactional-outbox.md)
 
 **Q:** Why must a processed-event marker and a database projection update commit together?
 
-**A:** A marker committed before a failed update can make the retry skip missing work. Keep both in one transaction, verify the intended mutation happened and roll back the marker on failure. A unique consumer/event identity prevents repeated effects for that consumer.
+**A:** A marker committed before a failed update can make the retry skip missing work. Keep both in one transaction, verify the intended mutation happened and roll back the marker on failure. A unique consumer and event identity prevents repeated effects for that consumer.
+
+**Q:** How can a high-throughput outbox avoid PostgreSQL dead-tuple MVCC bloat under polling or CDC?
+**A:** Time-partitioned polling tables let operators drop expired partitions wholesale instead of issuing millions of row deletes, whereas a CDC outbox can insert and immediately delete each event row in the same transaction so WAL decoding captures the commit with minimal table storage—provided `max_slot_wal_keep_size` caps primary WAL retention when the connector stalls (source: [Transactional Outbox Pattern](20.6.3.06-transactional-outbox.md)).
 
 ## Replay, projection and migration failure cases
 
@@ -156,11 +162,11 @@ Sources: [event sourcing](20.6.3.03-event-sourcing.md), [CQRS](20.6.3.04-cqrs.md
 
 **Q:** Why is a PostgreSQL LSN not sufficient as a unique changed-row identity?
 
-**A:** Multiple changes can share a source position. Use the connector's full transaction/record identity and order contract, with atomic target mutation and progress.
+**A:** Multiple changes can share a source position. Use the connector's full transaction and record identity and order contract, with atomic target mutation and progress.
 
 **Q:** Why must a deletion tombstone survive an older snapshot record?
 
-**A:** Dropping deletion ordering allows the stale snapshot to recreate the row. A version/order-aware target must reject that older record and retain appropriate tombstone/checkpoint history.
+**A:** Dropping deletion ordering allows the stale snapshot to recreate the row. A version- and order-aware target must reject that older record and retain appropriate tombstone and checkpoint history.
 
 ## Summary
 

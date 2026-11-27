@@ -26,6 +26,9 @@ Source: [Circuit Breaker](20.6.4.01-circuit-breaker.md)
 
 **A:** Thresholds trade false rejection against continued overload. Bound probe concurrency and account for call volume and timeout behavior; a breaker alone does not cap resources consumed by in-flight calls.
 
+**Q:** Why does a rolling-window circuit breaker track slow-call duration thresholds in addition to error counts?
+**A:** A dependency brownout that stretches latency from milliseconds to several seconds can exhaust caller worker threads before HTTP 500 spikes appear, so slow-call thresholds open the breaker early (source: [Circuit Breaker](20.6.4.01-circuit-breaker.md)).
+
 ## Bulkhead Pattern
 
 Source: [Bulkhead Pattern](20.6.4.02-bulkhead-pattern.md)
@@ -41,6 +44,9 @@ Source: [Bulkhead Pattern](20.6.4.02-bulkhead-pattern.md)
 **Q:** How do bulkheads and circuit breakers address different failure paths?
 
 **A:** A bulkhead limits resource sharing; a breaker suppresses calls to a failing dependency. Both need deadlines and bounded queues, and neither makes fallback or retry automatically safe.
+
+**Q:** Why can LIFO queueing or deadline-aware load shedding preserve more goodput than FIFO during sustained overload?
+**A:** Under heavy queue soak, the oldest FIFO items have often already exceeded caller deadlines, whereas serving newest callers (LIFO) or shedding timed-out waiters saves downstream capacity for completable work (source: [Bulkhead Pattern](20.6.4.02-bulkhead-pattern.md)).
 
 ## Admission and lifetime failure cases
 
@@ -66,7 +72,7 @@ Sources: [circuit breaker](20.6.4.01-circuit-breaker.md), [bulkhead](20.6.4.02-b
 
 **A:** No. Immediate rejection can preserve deadlines and memory. Queue only within bounded burst, waiting and cancellation contracts.
 
-**Q:** Why can separate reporting/login database pools still interfere?
+**Q:** Why can separate reporting and login database pools still interfere?
 
 **A:** They reserve client connections, not database CPU, disk or locks. Test and budget the remaining shared resources.
 

@@ -16,8 +16,8 @@ First follow breaker admission through counted failures and a controlled recover
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Circuit Breaker](20.6.4.01-circuit-breaker.md) | Closed/open/half-open states, threshold tuning, fallbacks, integration with retries/timeouts | Essential | Important | 7 min |
-| 02 | [Bulkhead Pattern](20.6.4.02-bulkhead-pattern.md) | Thread pool/semaphore/connection partitioning, tenant isolation, pool sizing | Important | Important | 6 min |
+| 01 | [Circuit Breaker](20.6.4.01-circuit-breaker.md) | Closed, open, and half-open states, threshold tuning, fallbacks, integration with retries and timeouts | Essential | Important | 7 min |
+| 02 | [Bulkhead Pattern](20.6.4.02-bulkhead-pattern.md) | Thread pool, semaphore, and connection partitioning, tenant isolation, pool sizing | Important | Important | 6 min |
 
 ---
 
@@ -30,11 +30,11 @@ First follow breaker admission through counted failures and a controlled recover
 These [Docita](https://github.com/CVamsi27/docita) source paths illustrate local controls; inspect their actual state, cancellation and resource boundaries:
 
 | Topic | Docita evidence |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Circuit breaker | `apps/api/src/shared/common/utils/circuit-breaker.ts` — `CLOSED`/`OPEN`/`HALF_OPEN` state machine with Prometheus metrics, shared via a registry |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Circuit breaker | `apps/api/src/shared/common/utils/circuit-breaker.ts` — `CLOSED`, `OPEN`, and `HALF_OPEN` state machine with Prometheus metrics, shared via a registry |
 | Request deadlines | `apps/api/src/shared/common/interceptors/timeout.interceptor.ts` — config-driven per-request timeout |
 | Outbound timeouts | `apps/api/src/shared/common/http/fetch-with-timeout.ts` — abortable fetch wrapper for provider calls |
-| Bulkhead by deployment | `apps/worker/src/main.ts` — separate worker process; shared host/database capacity still needs isolation evidence |
+| Bulkhead by deployment | `apps/worker/src/main.ts` — separate worker process; shared host and database capacity still needs isolation evidence |
 
 ## Section Revision
 

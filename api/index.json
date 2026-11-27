@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "7e9edf18a5d11db096a4fe070cb47ac89e55c2f2fab38f334651eace8c8ea88c",
+ "corpus_digest": "0c43ee70e334dad8ad7649b2173a83a258561079c32125d70f51065a0b9c1328",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5580
+  "read_minutes": 5584
  },
  "chapters": [
   {
@@ -3182,7 +3182,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.04-cqrs.html",
@@ -3202,7 +3202,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.06-transactional-outbox.html",
@@ -3215,7 +3215,7 @@
     "outbox",
     "reliability"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "20-backend/20.6-microservices/03-data-and-consistency/REVISION.html",
@@ -3265,7 +3265,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "20-backend/20.7-graphql/01-fundamentals/20.7.1.01-graphql-overview.html",

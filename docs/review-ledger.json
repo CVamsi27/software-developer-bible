@@ -1819,86 +1819,87 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 3D D1-D7 rework: 10.3-react/04-modern-react)."
   },
   "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.01-portals.md": {
-   "sha256": "14624d88df222fbf778654b450aa369eb5c71039768b32f5de946ebca355b015",
-   "lines": 114,
+   "sha256": "eb83b3973e76111e4600dd5f70cf9d0cf04a87783a78bd9ec51812d52d840f15",
+   "lines": 130,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-18",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against react.dev/reference/react-dom/createPortal and the dialog element guidance on MDN; event bubbling through the React tree and the SSR guard match those sources (URLs 200 on 2026-11-18).",
-    "readable": "Full read of 114 lines; a card menu clipped by overflow opens; DOM placement versus React ownership, destination choice, event paths and the limits of placement are traced before the summary.",
-    "concise": "819 words; one menu example carries placement and event behavior, and the accessibility limit is stated once.",
+    "readable": "Full read of 130 lines (905 prose words) a card menu clipped by overflow opens; DOM placement versus React ownership, destination choice, event paths and the limits of placement are traced before the summary.",
+    "concise": "905 words across 130 lines. one menu example carries placement and event behavior, and the accessibility limit is stated once.",
     "focused": "DOM placement versus React ownership is owned here; modal focus and dismissal behavior is delegated to the accessibility reference.",
-    "fast": "17.7 KB raw / 5.5 KB gzip built page; the shared Jekyll shell is included.",
+    "fast": "Measured 17.7 KB raw / 5.5 KB gzip (the shared Jekyll shell is included.)",
     "best": "Separates DOM placement from React ownership and states that a portal does not supply focus trapping or dismissal; SSR safety is a bounded note."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index)."
   },
   "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.02-compound-components.md": {
-   "sha256": "37b4c7bddf7b0a417b9be6d743d47dfd0835ee3a893f6fcafe96baf9ade8d485",
-   "lines": 208,
+   "sha256": "a4d6d449d3b360548e38e86a1010274843c8924ea15b0f5ef6c977292a439c4a",
+   "lines": 247,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against react.dev context docs and the WAI-ARIA tabs pattern; the provider/consumer contract and keyboard expectations match those sources (URLs 200 on 2026-11-18).",
-    "readable": "Full read of 208 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "909 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 247 lines (985 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "985 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "The compound-component composition contract is owned here; context update mechanics point at the Context chapter instead of being retold.",
-    "fast": "34.6 KB raw / 7.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 34.6 KB raw / 7.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Shows a typed composition contract with explicit accessibility ownership; context update cost is the stated limit, not a hidden caveat."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index)."
   },
   "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md": {
-   "sha256": "12d8b71a6547ced453257d70c8dea8c9f1c53b351510b0b8b6af00da7613dccc",
-   "lines": 455,
+   "sha256": "076d1ce129fbe881b5a9811b731112028eff2a0965f3e5f73312033682b82da6",
+   "lines": 494,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "All 43 answer pairs were checked against their chapters and the official React 19 docs; the bank assumes TypeScript 5.4+, strict mode, an ES2022 library and the DOM library, and no sample required compilation beyond those settled APIs (2026-11-18).",
-    "readable": "Full read of 455 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "4198 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 494 lines (4710 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "4710 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Drill bank: each question points at a chapter's canonical treatment rather than re-teaching the mechanism.",
-    "fast": "48.9 KB raw / 15.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 48.9 KB raw / 15.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Provides 43 graded answers with follow-up boundaries; it is interview practice and does not replace the learning chapters."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index)."
   },
   "10-frontend/10.3-react/05-patterns-and-interview/INDEX.md": {
-   "sha256": "c0deb696f5ed17dba9f425955dff6927d609898f8fd3fb99810dc22e3cffe244",
+   "sha256": "8e8075c2a9a18398d967130a5c7bd6c60f5e3bca83d5750f246358a15ece9c0e",
    "lines": 36,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "No version-sensitive claim; the 4-file count, 30-minute total and status-complete badge were re-derived from disk and the table sums on 2026-11-18.",
-    "readable": "Full read of 36 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "79 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 36 lines (81 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "81 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Navigation only: it points at portals, compound components, the interview bank and revision without retelling them.",
-    "fast": "8.5 KB raw / 2.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 8.5 KB raw / 2.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Orders placement patterns before composition and interview practice; it does not attempt to teach the patterns itself."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index)."
   },
   "10-frontend/10.3-react/05-patterns-and-interview/REVISION.md": {
-   "sha256": "81d9e99e31c3f246ea83c892f4f3815f2039ba5fa228b1c15e707da55826c890",
-   "lines": 125,
+   "sha256": "095df6815b60d73885fb55b166e2957e2da62fac133165df05c8a7808cb1e326",
+   "lines": 133,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Answers checked against the two source chapters and official React docs for createPortal and context; no stale API claim was found (2026-11-18).",
-    "readable": "Full read of 125 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "900 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 133 lines (1028 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1028 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Retrieval drill: each group links its source chapter as the canonical treatment.",
-    "fast": "14.6 KB raw / 4.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 14.6 KB raw / 4.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Tests placement and composition contracts under changed conditions; it does not replace the chapters."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index)."
   },
   "10-frontend/10.3-react/INDEX.md": {
-   "sha256": "f3fd05971d25af8966f9e78a1e4595e2bad686ba7dc9dddccd1ea7146f251666",
+   "sha256": "53952b21b6a226ac350df0f1e2f7db3a609f9b726ad6d3e18c5af0da9725c940",
    "lines": 145,
    "genre": "index",
    "status": "read",
@@ -1911,7 +1912,7 @@
     "fast": "Measured 21.2 KB raw / 5.4 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Sets the senior-level scope and a study order; it does not try to be a sixth tutorial."
    },
-   "notes": "Synced live read-time and counts after Phase 3D D1-D7 rework: 10.3-react/04-modern-react."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index)."
   },
   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md": {
    "sha256": "4643edcd97314081446d567f5cbe9fa93195f4412ad852e51e17e56cff5ef39e",
@@ -2986,7 +2987,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/INDEX.md": {
-   "sha256": "f463926bdd6e4cd4e8e24e6df0e5df66a62f0ebf86fc6b166ccc3d30f559b338",
+   "sha256": "11625d3537fff31d52f1acfda64c0ad7c618ca9fe6cd968bae6bacac22859871",
    "lines": 75,
    "genre": "index",
    "status": "read",
@@ -2999,7 +3000,7 @@
     "fast": "Measured 14.7 KB raw / 4.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Sets the frontend study order from execution to optional capabilities; it limits itself to navigation and does not teach any mechanism."
    },
-   "notes": "Synced live read-time and counts after Phase 3D D1-D7 rework: 10.3-react/04-modern-react."
+   "notes": "Synced live read-time and counts after Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index."
   },
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md": {
    "sha256": "cbb48962f1b1c976f33493d3398af0e10c4deb7f49db4537cb50b8af762ebfe1",
@@ -14364,7 +14365,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "f33707013f8669b695894e06b5d390ad7cc6b44670dcb53c506840210c57a263",
+   "sha256": "abcd6f9818b4435ad2d1f303025fbb46f215e528a76e9110d03ba14834a306e5",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14377,7 +14378,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 3D D1-D7 rework: 10.3-react/04-modern-react."
+   "notes": "Synced live read-time and counts after Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14668,7 +14669,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "bdc85191a60b81f8ccb98b504eda39a7a15cdeb045a4109f0ecd554adb6e7a7a",
+   "sha256": "c91e658f6b84640b495d6aeb74ec6a2fbd5be136560b8615bab33bc82a3a1fa0",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14681,7 +14682,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 3D D1-D7 rework: 10.3-react/04-modern-react."
+   "notes": "Synced live read-time and counts after Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

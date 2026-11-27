@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "8a13bce23e71644c382d2af756651bc2b6e7a37691b3d3a5c4c7a334f2aad27d",
+ "corpus_digest": "677d4e7759503df4fe83218a04e8a89ee948671b71d7ec22ecc625872f6729dc",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5491
+  "read_minutes": 5497
  },
  "chapters": [
   {
@@ -1001,7 +1001,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.02-compound-components.html",
@@ -1011,7 +1011,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 11
   },
   {
    "p": "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.html",
@@ -1021,7 +1021,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 14
   },
   {
    "p": "10-frontend/10.3-react/05-patterns-and-interview/REVISION.html",
@@ -1032,7 +1032,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.html",

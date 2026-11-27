@@ -1416,19 +1416,21 @@
     },
     {
       "path": "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.01-portals.md",
-      "sha256": "14624d88df222fbf778654b450aa369eb5c71039768b32f5de946ebca355b015",
+      "sha256": "eb83b3973e76111e4600dd5f70cf9d0cf04a87783a78bd9ec51812d52d840f15",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content: React versus DOM ownership and event paths, stable destination identity, SSR effect-bound target, host versus owned cleanup, top-layer distinction and accessible modal/menu/notification interaction contracts.",
+      "notes": "Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index C1-C8 refinement (2026-11-24): Full read of 130 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-24",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.02-compound-components.md",
-      "sha256": "37b4c7bddf7b0a417b9be6d743d47dfd0835ee3a893f6fcafe96baf9ade8d485",
+      "sha256": "a4d6d449d3b360548e38e86a1010274843c8924ea15b0f5ef6c977292a439c4a",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index C1-C8 refinement (2026-11-24): Full read of 247 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-24",
@@ -1436,10 +1438,10 @@
     },
     {
       "path": "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md",
-      "sha256": "12d8b71a6547ced453257d70c8dea8c9f1c53b351510b0b8b6af00da7613dccc",
+      "sha256": "076d1ce129fbe881b5a9811b731112028eff2a0965f3e5f73312033682b82da6",
       "genre": "interview",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index C1-C8 refinement (2026-11-24): Full read of 494 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-24",
@@ -1447,10 +1449,10 @@
     },
     {
       "path": "10-frontend/10.3-react/05-patterns-and-interview/INDEX.md",
-      "sha256": "c0deb696f5ed17dba9f425955dff6927d609898f8fd3fb99810dc22e3cffe244",
+      "sha256": "8e8075c2a9a18398d967130a5c7bd6c60f5e3bca83d5750f246358a15ece9c0e",
       "genre": "index",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index C1-C8 refinement (2026-11-24): Full read of 36 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-24",
@@ -1458,10 +1460,10 @@
     },
     {
       "path": "10-frontend/10.3-react/05-patterns-and-interview/REVISION.md",
-      "sha256": "81d9e99e31c3f246ea83c892f4f3815f2039ba5fa228b1c15e707da55826c890",
+      "sha256": "095df6815b60d73885fb55b166e2957e2da62fac133165df05c8a7808cb1e326",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index C1-C8 refinement (2026-11-24): Full read of 133 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-24",
@@ -1469,12 +1471,12 @@
     },
     {
       "path": "10-frontend/10.3-react/INDEX.md",
-      "sha256": "f3fd05971d25af8966f9e78a1e4595e2bad686ba7dc9dddccd1ea7146f251666",
+      "sha256": "53952b21b6a226ac350df0f1e2f7db3a609f9b726ad6d3e18c5af0da9725c940",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 3D D1-D7 rework: 10.3-react/04-modern-react count/read-time sync (2026-11-24): Full read of 145 lines. Updated generated counts/read-time navigation after Phase 3D D1-D7 rework: 10.3-react/04-modern-react.",
+      "notes": "Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index C1-C8 refinement (2026-11-24): Full read of 145 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
@@ -2245,10 +2247,10 @@
     },
     {
       "path": "10-frontend/INDEX.md",
-      "sha256": "f463926bdd6e4cd4e8e24e6df0e5df66a62f0ebf86fc6b166ccc3d30f559b338",
+      "sha256": "11625d3537fff31d52f1acfda64c0ad7c618ca9fe6cd968bae6bacac22859871",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Phase 3D D1-D7 rework: 10.3-react/04-modern-react count/read-time sync (2026-11-24): Full read of 75 lines. Updated generated counts/read-time navigation after Phase 3D D1-D7 rework: 10.3-react/04-modern-react.",
+      "notes": "Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index count/read-time sync (2026-11-24): Full read of 75 lines. Updated generated counts/read-time navigation after Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index.",
       "findings": [],
       "reviewer": "root",
       "metadataReview": {
@@ -10064,12 +10066,12 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "f33707013f8669b695894e06b5d390ad7cc6b44670dcb53c506840210c57a263",
+      "sha256": "abcd6f9818b4435ad2d1f303025fbb46f215e528a76e9110d03ba14834a306e5",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 3D D1-D7 rework: 10.3-react/04-modern-react count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 3D D1-D7 rework: 10.3-react/04-modern-react.",
+      "notes": "Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index.",
       "findings": []
     },
     {
@@ -10259,12 +10261,12 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "bdc85191a60b81f8ccb98b504eda39a7a15cdeb045a4109f0ecd554adb6e7a7a",
+      "sha256": "c91e658f6b84640b495d6aeb74ec6a2fbd5be136560b8615bab33bc82a3a1fa0",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 3D D1-D7 rework: 10.3-react/04-modern-react count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 3D D1-D7 rework: 10.3-react/04-modern-react.",
+      "notes": "Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 3E D1-D7 rework: 10.3-react/05-patterns-and-interview and stack index.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

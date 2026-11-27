@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-React-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../../docs/topic-importance.md)
 
@@ -24,7 +24,7 @@ Source: [Portals](10.3.5.01-portals.md)
 
 **Q:** Why can portal roots declared as sibling JSX be unavailable during the same initial render?
 
-**A:** JSX describes future DOM; those nodes exist only after commit. Put targets in the host HTML or wait until a ref/effect has obtained the committed element.
+**A:** JSX describes future DOM; those nodes exist only after commit. Put targets in the host HTML or wait until a ref or effect has obtained the committed element.
 
 **Q:** Which nodes must a dropdown's outside-click check include?
 
@@ -40,11 +40,15 @@ Source: [Portals](10.3.5.01-portals.md)
 
 **Q:** What does a modal still need after being portaled and marked with `aria-modal`?
 
-**A:** Focus entry, trapping and restoration, background interaction control, and an accessible name. A portal supplies placement rather than modal behavior.
+**A:** Focus entry, trapping, and restoration, background interaction control, and an accessible name. A portal supplies placement rather than modal behavior.
 
 **Q:** What happens if the portal receives a different container node on an update?
 
 **A:** React recreates its content in the new target. Keep the container stable when preserving the subtree's state and avoiding extra work matters.
+
+**Q:** Why can `event.stopPropagation()` inside a portaled menu still let an outside-click handler fire, and which native APIs reduce portal overlay boilerplate?
+
+**A:** `event.stopPropagation()` stops synthetic React bubbling through logical ancestors, not unrelated native `document` listeners on the destination DOM path — check refs for both the trigger and portaled menu. Native `<dialog>.showModal()`, Popover (`popover`), and the `inert` attribute handle browser top-layer stacking and background inertness directly.
 
 ## Compound Components
 
@@ -86,6 +90,10 @@ Source: [Compound Components](10.3.5.02-compound-components.md)
 
 **A:** The caller owns the selected value and supplies the change callback; `TabsRoot` distributes that contract through context without storing a second selection. Requiring both props keeps ownership explicit instead of implying an internal default-value mode the example does not implement.
 
+**Q:** How do `asChild` Slot primitives and `useControllableValue` keep compound APIs safe for callers?
+
+**A:** An `asChild` Slot encapsulates `cloneElement` to merge classes, compose event handlers, and forward refs onto a single caller-supplied element (like a link) without exposing fragile child-traversal logic. `useControllableValue` chooses either a caller-supplied `value` or internal `defaultValue` state cleanly without switching modes mid-lifecycle.
+
 ## Changed identity and display contracts
 
 Source: [Portals](10.3.5.01-portals.md), [Compound Components](10.3.5.02-compound-components.md)
@@ -96,15 +104,15 @@ Source: [Portals](10.3.5.01-portals.md), [Compound Components](10.3.5.02-compoun
 
 **Q:** Does setting `z-index` without checking the destination guarantee an overlay stays above the page?
 
-**A:** No. Stacking contexts, positioning and the browser top layer still govern visibility. A portal changes ancestry rather than granting global priority.
+**A:** No. Stacking contexts, positioning, and the browser top layer still govern visibility. A portal changes ancestry rather than granting global priority.
 
 **Q:** What happens to a form draft if an inactive tab panel returns `null`?
 
-**A:** React unmounts the panel’s children, so their local state is discarded. Keep the panel mounted or move the draft state to an owner that survives the tab switch; account for Effects that remain active in a hidden mounted panel.
+**A:** React unmounts the panel's children, so their local state is discarded. Keep the panel mounted or move the draft state to an owner that survives the tab switch; account for Effects that remain active in a hidden mounted panel.
 
 **Q:** What must change if compound tab children can be reordered?
 
-**A:** Use stable values instead of positional selection and define removal/reset behavior; otherwise the same selected index can identify a different tab.
+**A:** Use stable values instead of positional selection and define removal and reset behavior; otherwise the same selected index can identify a different tab.
 
 **Q:** Why can selected object state become obsolete in a generic list?
 
@@ -112,7 +120,7 @@ Source: [Portals](10.3.5.01-portals.md), [Compound Components](10.3.5.02-compoun
 
 ## Summary
 
-Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
+Revisit the linked chapter when an answer misses the mechanism, a boundary, or a failure case.
 
 ---
 

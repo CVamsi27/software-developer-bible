@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-REST%20APIs-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -16,7 +16,7 @@ Source: [API Pagination](20.3.3.01-pagination.md)
 
 **Q:** Why must an API bound the size of collection responses?
 
-**A:** Large responses consume server memory, transfer time and client resources. Return a bounded subset and a documented continuation rule; offset and cursor schemes implement different rules.
+**A:** Large responses consume server memory, transfer time, and client resources. Return a bounded subset and a documented continuation rule; offset and cursor schemes implement different rules.
 
 **Q:** How do offset and cursor pagination behave differently during concurrent changes?
 
@@ -32,11 +32,15 @@ Source: [API Pagination](20.3.3.01-pagination.md)
 
 **Q:** Does an opaque or signed cursor authorize the next page?
 
-**A:** No. Validate its size, fields, version and query binding, then enforce the caller's current authorization and tenant scope on every page. Encoding obscures data and signing detects tampering; neither grants access.
+**A:** No. Validate its size, fields, version, and query binding, then enforce the caller's current authorization and tenant scope on every page. Encoding obscures data and signing detects tampering; neither grants access.
 
 **Q:** Why reject a limit such as `20junk` rather than passing it to `parseInt`?
 
 **A:** `parseInt` accepts a numeric prefix, so malformed input can become a plausible page size. Validate the complete parameter and bound it before querying; distinguish an absent value from an invalid one.
+
+**Q:** Why does tuple comparison like `(priority, id) < ($1, $2)` fail on `ORDER BY priority DESC, id ASC`, and what replaces it?
+
+**A:** SQL tuple comparison applies the same inequality direction to every column. Mixed-direction keysets require an expanded predicate—`(priority < $1) OR (priority = $1 AND id > $2)`—paired with a composite index whose column directions match the query.
 
 ## API Error Handling & Response Design
 
@@ -52,7 +56,7 @@ Source: [API Error Handling & Response Design](20.3.3.02-error-handling-design.m
 
 **Q:** How should an error contract communicate retryability and diagnostic context?
 
-**A:** Document which conditions can change, whether retry is safe and which delay or limit applies. Include a correlation identifier for support without exposing secrets or internal stack traces.
+**A:** Document which conditions can change, whether retry is safe, and which delay or limit applies. Include a correlation identifier for support without exposing secrets or internal stack traces.
 
 ## Long-Running API Operations (202 Accepted Pattern)
 
@@ -60,11 +64,11 @@ Source: [Long-Running API Operations (202 Accepted Pattern)](20.3.3.03-long-runn
 
 **Q:** Why can long-running work outlive a synchronous request's timeout budget?
 
-**A:** The expected work may exceed client, proxy or deployment budgets, and a broken connection does not establish that work stopped. No universal duration threshold determines the design.
+**A:** The expected work may exceed client, proxy, or deployment budgets, and a broken connection does not establish that work stopped. No universal duration threshold determines the design.
 
 **Q:** What does separating acceptance from completion change for a client?
 
-**A:** The client receives acceptance plus an operation resource and checks progress later. Persist queued, running and terminal states so acceptance is distinguishable from successful completion.
+**A:** The client receives acceptance plus an operation resource and checks progress later. Persist queued, running, and terminal states so acceptance is distinguishable from successful completion.
 
 **Q:** Why does creating a long-running operation need an idempotency policy?
 
@@ -80,11 +84,15 @@ Source: [File Upload APIs](20.3.3.04-file-upload-apis.md)
 
 **Q:** Which checks establish that uploaded bytes match the authorized upload?
 
-**A:** Check the authorized object key, size, content rules and checksum where supported, then inspect the stored object before publishing it. Client-supplied metadata alone does not establish content safety.
+**A:** Check the authorized object key, size, content rules, and checksum where supported, then inspect the stored object before publishing it. Client-supplied metadata alone does not establish content safety.
 
 **Q:** Why should an upload API define explicit size and resource limits?
 
-**A:** Explicit body limits, quotas, deadlines and scanning budgets prevent accidental resource exhaustion. Apply limits to both proxy and direct-upload flows.
+**A:** Explicit body limits, quotas, deadlines, and scanning budgets prevent accidental resource exhaustion. Apply limits to both proxy and direct-upload flows.
+
+**Q:** Which HTTP response headers and storage constraints prevent a presigned upload from overwriting an existing key or executing stored XSS when downloaded?
+
+**A:** Enforce write-once storage creation where supported (such as S3 `If-None-Match: *`) or bind publication to an immutable version, and serve untrusted active files with `Content-Disposition: attachment`, `X-Content-Type-Options: nosniff`, and an isolated sandboxed origin (`Content-Security-Policy: sandbox`).
 
 ## Webhooks
 
@@ -92,7 +100,7 @@ Source: [Webhooks](20.3.3.05-webhooks.md)
 
 **Q:** When can a webhook replace polling for an event outcome?
 
-**A:** The provider calls a receiver when an event occurs, avoiding repeated status reads. The receiver must be reachable and own acknowledgment, authentication and failure handling.
+**A:** The provider calls a receiver when an event occurs, avoiding repeated status reads. The receiver must be reachable and own acknowledgment, authentication, and failure handling.
 
 **Q:** Why must a webhook receiver handle repeated deliveries?
 
@@ -110,13 +118,17 @@ Source: [Serialization & Wire Formats](20.3.3.06-serialization-and-wire-formats.
 
 **A:** A receiver observes bytes rather than the sender's in-memory types. Both sides need an encoding contract and validation that restores the expected value semantics.
 
-**Q:** How should payload size, encoding cost and inspectability influence a wire-format choice?
+**Q:** How should payload size, encoding cost, and inspectability influence a wire-format choice?
 
-**A:** Measure representative payloads and encoding costs alongside tooling, schema evolution and debugging needs. Binary formats are not always smaller or faster for every value distribution.
+**A:** Measure representative payloads and encoding costs alongside tooling, schema evolution, and debugging needs. Binary formats are not always smaller or faster for every value distribution.
 
 **Q:** Why do serialized fields need an evolution policy?
 
-**A:** Consumers depend on field names, value meaning, type and nullability. Additions, removals and changed meanings need compatibility rules even without a formal schema file.
+**A:** Consumers depend on field names, value meaning, type, and nullability. Additions, removals, and changed meanings need compatibility rules even without a formal schema file.
+
+**Q:** How do you hash equivalent JSON payloads deterministically across services when raw bytes are unavailable, and how do schema registries prevent breaking event consumers?
+
+**A:** Adopt RFC 8785 JSON Canonicalization Scheme (JCS) rather than ad-hoc `JSON.stringify` for deterministic key order and number formatting, and enforce `BACKWARD`, `FORWARD`, or `FULL` schema-registry compatibility checks in CI before publishing new Avro or Protobuf versions.
 
 ## Transactional Email & Notification Delivery
 
@@ -128,11 +140,11 @@ Source: [Transactional Email & Notification Delivery](20.3.3.07-transactional-em
 
 **Q:** How should a service handle failures reported after the send request succeeds?
 
-**A:** Process provider delivery and bounce events, correlate them with the notification and update its durable state. Classify permanent failures before retrying and avoid misleading success labels.
+**A:** Process provider delivery and bounce events, correlate them with the notification, and update its durable state. Classify permanent failures before retrying and avoid misleading success labels.
 
 **Q:** Where should a notification system enforce retry and deduplication rules?
 
-**A:** Deduplicate by business event at the enqueue/effect boundary and use provider idempotency when available. A new key for each retry defeats deduplication; provider acknowledgment uncertainty still needs an explicit policy.
+**A:** Deduplicate by business event at the enqueue and effect boundary and use provider idempotency when available. A new key for each retry defeats deduplication; provider acknowledgment uncertainty still needs an explicit policy.
 
 ## Changed-Condition Checks
 
@@ -160,7 +172,7 @@ Source: [Uploads](20.3.3.04-file-upload-apis.md)
 
 **Q:** A file passed scanning, then a still-valid upload URL replaced its key. Is serving that key safe?
 
-**A:** The old verdict applies only to the inspected bytes. Bind publication to an immutable version, enforced write-once identity or protected published copy so the served object cannot silently change.
+**A:** The old verdict applies only to the inspected bytes. Bind publication to an immutable version, enforced write-once identity, or protected published copy so the served object cannot silently change.
 
 **Q:** Two resumable `PATCH` requests carry the same offset. Can both append independently?
 
@@ -170,7 +182,7 @@ Source: [Webhooks](20.3.3.05-webhooks.md)
 
 **Q:** An inbox row commits and its acknowledgment is lost. What must the repeated delivery do?
 
-**A:** Verify the delivery, compare its durable identity and payload, acknowledge the existing acceptance and avoid adding new work. The business worker still needs duplicate-safe transitions and separate handling of remote effects.
+**A:** Verify the delivery, compare its durable identity and payload, acknowledge the existing acceptance, and avoid adding new work. The business worker still needs duplicate-safe transitions and separate handling of remote effects.
 
 **Q:** What is wrong with adding a "seen" record before a queue send and returning success immediately?
 
@@ -184,7 +196,7 @@ Source: [Wire formats](20.3.3.06-serialization-and-wire-formats.md)
 
 **Q:** Does a protobuf rename preserve every contract?
 
-**A:** A retained field number can preserve binary identity, but ProtoJSON names and generated language APIs may break. Reserve removed numbers/names and test the actual old/new consumer paths.
+**A:** A retained field number can preserve binary identity, but ProtoJSON names and generated language APIs may break. Reserve removed numbers and names, and test the actual old and new consumer paths.
 
 Source: [Notifications](20.3.3.07-transactional-email-and-notifications.md)
 
@@ -204,11 +216,11 @@ Source: [Long-running polling](20.3.3.03-long-running-api-operations.md)
 
 ## Summary
 
-Use these prompts after reading the chapters to recall payload, error and integration mechanisms alongside their boundary constraints.
+Use these prompts after reading the chapters to recall payload, error, and integration mechanisms alongside their boundary constraints.
 
 ## See Also
 
-- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for validated data, errors and integration outcomes
+- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for validated data, errors, and integration outcomes
 
 ## References & Learn More
 

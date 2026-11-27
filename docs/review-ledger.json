@@ -4340,148 +4340,148 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 11A D1-D7 rework: 20.3-rest-apis/01-design-and-contract and 02-http-mechanics)."
   },
   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.01-pagination.md": {
-   "sha256": "b3e7f9ac6b7488f6ea8813c5c7ad4abc352ecf723721aa68339acaea0199e4dd",
+   "sha256": "652fecfb79f7b6261528a96319250f74b7bb18754a7c32474b223314912ae1f0",
    "lines": 168,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified row-seek semantics against PostgreSQL row-comparison documentation; the TypeScript limit and page-assembly fence type-checks, while query-plan performance remains an explicit boundary. Official sources were checked.",
-    "readable": "Full read of 168 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1217 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 168 lines (1322 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1322 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
-    "fast": "27.1 KB raw / 7.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 27.1 KB raw / 7.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 11B D1-D7 rework of 20.3.3 payloads, errors, and integration)."
   },
   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.02-error-handling-design.md": {
-   "sha256": "a50e2aba6865afd0e24a8020344538ad33aaa8085b49c98489ac0afefac58122",
+   "sha256": "d6f57356dc21748367da8346d27e2c14fa8acf315bdb077e4e5671ee60ac0355",
    "lines": 149,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked Problem Details fields and response boundaries against RFC 9457; the TypeScript mapper type-checks with ambient Node declarations and does not claim framework integration. Official sources were checked.",
-    "readable": "Full read of 149 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "871 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 149 lines (939 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "939 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
-    "fast": "27.6 KB raw / 7.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 27.6 KB raw / 7.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 11B D1-D7 rework of 20.3.3 payloads, errors, and integration)."
   },
   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.03-long-running-api-operations.md": {
-   "sha256": "b9be50af9c32db177688e1b1a05dbf47e3f70f53027a7d0c7007a65645436376",
+   "sha256": "5bb70437f8961a9cc7da6541d4690d4c4f492f44b0376008d867b8c79877a515",
    "lines": 154,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked operation-resource guidance against Google AIP-151, Microsoft HTTP operations guidance and current Node AbortSignal/timer APIs; the polling helper is syntax-checked without claiming a live queue. Official sources were checked.",
-    "readable": "Full read of 154 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "998 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 154 lines (1027 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1027 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
-    "fast": "29.3 KB raw / 7.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 29.3 KB raw / 7.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 11B D1-D7 rework of 20.3.3 payloads, errors, and integration)."
   },
   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.04-file-upload-apis.md": {
-   "sha256": "a29da688c697dabe9a5cfa983f5fa29c161fc421f19c10339085fb0a5c943db9",
+   "sha256": "fa268aae11ebd2e1fa68568d606e26876fa186511ee7cac466129b180969bc20",
    "lines": 135,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified presigned and multipart upload constraints against current AWS S3 documentation; checksum validation and publication-after-scan remain bounded example behavior, not storage integration. Official sources were checked.",
-    "readable": "Full read of 135 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1163 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 135 lines (1228 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1228 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
-    "fast": "21.4 KB raw / 7.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 21.4 KB raw / 7.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 11B D1-D7 rework of 20.3.3 payloads, errors, and integration)."
   },
   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.05-webhooks.md": {
-   "sha256": "c73461ad309acdfd8b196f4aa45800d7a28b229c64a3ab78271a96da011ea6f1",
+   "sha256": "c99061498073351f49e511d34648d0f0659934eae64c0e8dab69df3f5bd44032",
    "lines": 203,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked provider-specific delivery, verification and replay statements against current Stripe, GitHub, Shopify and Slack documentation; the HMAC fixture executes, while SQL remains a database-boundary example. Official sources were checked.",
-    "readable": "Full read of 203 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1492 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 203 lines (1544 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1544 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
-    "fast": "38.8 KB raw / 10.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 38.8 KB raw / 10.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 11B D1-D7 rework of 20.3.3 payloads, errors, and integration)."
   },
   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.md": {
-   "sha256": "68207fefce88648ce94c04a4b7cbe8eb22ac0d95dd4864f61cd47f26ce26ba87",
+   "sha256": "89281b38178ba8a0f6d279b384822d90ccd9539eb9b94238e4b03e3f5609cda7",
    "lines": 123,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified protobuf evolution and presence guidance against the protobuf guide; the Node precision/undefined fixture executes and demonstrates the stated JSON boundary. Official sources were checked.",
-    "readable": "Full read of 123 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1085 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 123 lines (1166 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1166 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
-    "fast": "20.8 KB raw / 7.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 20.8 KB raw / 7.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 11B D1-D7 rework of 20.3.3 payloads, errors, and integration)."
   },
   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.07-transactional-email-and-notifications.md": {
-   "sha256": "a92b717efef564927891b35c08d7d1b1264aae955d1ad5c9d56ce2afa9e0d6a6",
+   "sha256": "49bd06ca66e082378832f401ef166f3d3be01a21c002be6835c85774e4653a81",
    "lines": 141,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked Resend\u2019s documented 24-hour idempotency window and DMARC guidance against Resend and RFC 9989/RFC 9990; the local lost-response fixture executes and proves only effect identity. Official sources were checked.",
-    "readable": "Full read of 141 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1194 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 141 lines (1283 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1283 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
-    "fast": "24.2 KB raw / 7.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 24.2 KB raw / 7.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 11B D1-D7 rework of 20.3.3 payloads, errors, and integration)."
   },
   "20-backend/20.3-rest-apis/03-payloads-errors-integration/INDEX.md": {
-   "sha256": "f54daa7a34f0cf941b151a78b0b97d4e7fc9f5eb6b172cf0ba6501cf5d2846b6",
+   "sha256": "d91f02cd0a36b1351abef2e92bc82c5f50ed6dfd513ba131b72cc7e328ebe5de",
    "lines": 53,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked the three-pass learning flow, five category links, chapter table, revision-before-interview order and project pointers against all REST files; counts remain root-managed. Official sources were checked.",
-    "readable": "Full read of 53 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 53 lines (85 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "85 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
-    "fast": "12.7 KB raw / 4.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 12.7 KB raw / 4.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 11B D1-D7 rework of 20.3.3 payloads, errors, and integration)."
   },
   "20-backend/20.3-rest-apis/03-payloads-errors-integration/REVISION.md": {
-   "sha256": "630242d4184902ab0998d66230c050c170ea6aede9fe8289b5bbad22b9d219bb",
-   "lines": 215,
+   "sha256": "dbcde743a5a0d5807bf2a8b0804338da0628a80c9083b5fa8c647eb1a2fd9a54",
+   "lines": 227,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Read every source-linked Q/A group for pagination, errors, operations, uploads, webhooks, serialization and notifications; answers point back to canonical mechanisms and preserve provider limits. Official sources were checked.",
-    "readable": "Full read of 215 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1683 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 227 lines (1871 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1871 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
-    "fast": "21.7 KB raw / 7.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 21.7 KB raw / 7.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 11B D1-D7 rework of 20.3.3 payloads, errors, and integration)."
   },
   "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.01-rate-limiting.md": {
    "sha256": "cffac800b3fbd23d9f460d604fc996070132989d616f1de8a73947b0a1d7eea4",
@@ -4612,7 +4612,7 @@
    "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/INDEX.md": {
-   "sha256": "e20c23f41db165ce6f4246632b69d7f1148d51593dd95a5ca51db6e41edf8c42",
+   "sha256": "82cf020b5c6aac20ee0b543cbd23473dda9737bf97f4242ab1c773f2f92ddc44",
    "lines": 97,
    "genre": "index",
    "status": "read",
@@ -4622,10 +4622,10 @@
     "readable": "Full read of 97 lines (66 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "66 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
-    "fast": "Measured 19.5 KB raw / 5.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 19.5 KB raw / 5.1 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 11A D1-D7 rework: 20.3-rest-apis/01-design-and-contract and 02-http-mechanics)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 11B D1-D7 rework of 20.3.3 payloads, errors, and integration)."
   },
   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-postgresql.md": {
    "sha256": "924216f5713c48f91f6c893d83dbc728a27adcd385a0f2e897b34bf6774982c7",
@@ -6561,7 +6561,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
   },
   "20-backend/INDEX.md": {
-   "sha256": "36b5bc6835168413c7937b6bbad5bc349ae34aed65356b3deb0f3fae9d4f71ce",
+   "sha256": "cc76f48c52c275f5b8eed5e420a96cdd7ab9358717a3ef0cc2a0f15dba05e96b",
    "lines": 122,
    "genre": "index",
    "status": "read",
@@ -6574,7 +6574,7 @@
     "fast": "Measured 15.4 KB raw / 5.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Remaining limit is study-hour path estimates are rough guides and depend on each reader's prior backend background."
    },
-   "notes": "Synced live read-time and counts after Phase 11A D1-D7 rework: 20.3-rest-apis/01-design-and-contract and 02-http-mechanics."
+   "notes": "Synced live read-time and counts after Phase 11B D1-D7 rework of 20.3.3 payloads, errors, and integration."
   },
   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md": {
    "sha256": "065e2b7d573b2298550d061453667084b1d010e6fadf07f903f6fdd34a8e5185",
@@ -14367,7 +14367,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "1c07f871233e6b02bde36d43837e4e09c3ccb5a4d8d0702d5ccdf3b6326be0b4",
+   "sha256": "644ba39e6a560620b0767e2ae58846c32f2d9940e875ed98be3fb0a19d12c8eb",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14380,7 +14380,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 11A D1-D7 rework: 20.3-rest-apis/01-design-and-contract and 02-http-mechanics."
+   "notes": "Synced live read-time and counts after Phase 11B D1-D7 rework of 20.3.3 payloads, errors, and integration."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14671,7 +14671,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "35d8f302bb30ef9a34bcc6ee00558e8cc686ca289ba82fb0f1b822640b5c04e7",
+   "sha256": "a68c1415ffc4c68de3080cf284ed91afd22a18902245fdf9eecdbb6e0a80c7b1",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14684,7 +14684,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 11A D1-D7 rework: 20.3-rest-apis/01-design-and-contract and 02-http-mechanics."
+   "notes": "Synced live read-time and counts after Phase 11B D1-D7 rework of 20.3.3 payloads, errors, and integration."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

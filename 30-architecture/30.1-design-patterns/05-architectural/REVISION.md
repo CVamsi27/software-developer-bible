@@ -88,7 +88,7 @@ Source: [Saga Pattern](30.1.5.04-saga.md)
 
 **Q:** What if hotel booking times out instead of rejecting?
 
-**A:** Its outcome is unknown. Reconcile using stable operation identity or the provider idempotency/status contract before treating it as failed; a timeout does not cancel remote work.
+**A:** Its outcome is unknown. Reconcile using stable operation identity or the provider idempotency and status contract before treating it as failed; a timeout does not cancel remote work.
 
 **Q:** A retryable step fails after the saga's pivot transaction succeeds. What is the recovery direction?
 
@@ -184,7 +184,7 @@ Source: [Presentation Patterns — MVC, MVP, MVVM](30.1.5.08-presentation-patter
 
 **Q:** What if an earlier asynchronous refresh completes after a newer one?
 
-**A:** Ignore or cancel obsolete results under an explicit request/version policy. Pattern names and bindings alone do not prevent stale presentation; authoritative validation remains outside this screen.
+**A:** Ignore or cancel obsolete results under an explicit request and version policy. Pattern names and bindings alone do not prevent stale presentation; authoritative validation remains outside this screen.
 
 **Q:** The total can be computed from current order lines. Should the view-model store another copy and update it with an Effect?
 
@@ -193,6 +193,12 @@ Source: [Presentation Patterns — MVC, MVP, MVVM](30.1.5.08-presentation-patter
 **Q:** What does a fake view test in passive-view MVP, and what still needs a rendered UI test?
 
 **A:** The fake verifies presenter decisions and calls such as showing USD 12.50 or an error. A rendered test still checks framework binding, formatting, accessibility and actual visible output.
+
+Source: [DDD Tactical Patterns — Aggregates and Value Objects](30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md)
+
+**Q:** Why does keeping an unbounded collection inside a single DDD aggregate root degrade write concurrency even when individual changes appear independent?
+
+**A:** Concurrent writers targeting different child items still load and contend on the same aggregate root version, causing repeated optimistic-lock conflicts and high serialization overhead. Keep aggregates scoped to minimal immediate invariants and reference other aggregates by ID.
 
 ## Summary
 

@@ -24,7 +24,7 @@ Source: [Strategy Pattern](30.1.4.01-strategy.md)
 
 **Q:** What if the chosen policy returns `NaN` or begins calling a carrier API?
 
-**A:** The current workflow rejects `NaN`, and an exception thrown by the selected policy propagates unchanged. An I/O-backed policy needs a compatible asynchronous contract with deadlines, failure, and cancellation rules; a shared function signature alone is insufficient.
+**A:** The current workflow rejects `NaN`, and an exception thrown by the selected policy propagates unchanged. A policy backed by I/O needs a compatible asynchronous contract with deadlines, failure, and cancellation rules; a shared function signature alone is insufficient.
 
 ## Observer Pattern
 
@@ -76,7 +76,7 @@ Source: [State Pattern and State Machines](30.1.4.04-state.md)
 
 **Q:** What if two requests validate against the same persisted version?
 
-**A:** Both can be individually legal while racing. Use a conditional/versioned update or transaction lock, then reload and reevaluate conflicts. A pure function is not a shared-storage atomicity mechanism.
+**A:** Both can be individually legal while racing. Use a conditional or versioned update or transaction lock, then reload and reevaluate conflicts. A pure function is not a shared-storage atomicity mechanism.
 
 ## Template Method Pattern
 
@@ -132,7 +132,7 @@ Source: [Mediator Pattern](30.1.4.07-mediator.md)
 
 **Q:** What if updating a widget automatically emits the identical change back?
 
-**A:** It can create a feedback loop. Compare before writing or distinguish event origin/version. UI enablement still does not establish server validation or permission.
+**A:** It can create a feedback loop. Compare before writing or distinguish event origin and version. UI enablement still does not establish server validation or permission.
 
 **Q:** Does routing field events through a message bus make it a Mediator?
 
@@ -200,15 +200,15 @@ Source: [Interpreter Pattern](30.1.4.11-interpreter.md)
 
 **Q:** When should a handwritten Interpreter give way to a parser or language toolkit?
 
-**A:** Parsing and evaluation are separate jobs. Complex grammar or diagnostics can justify parser tooling, while an evaluator still supplies meaning. Exposed languages also need validation and capability/work limits; a small Interpreter example is not a full language implementation.
+**A:** Parsing and evaluation are separate jobs. Complex grammar or diagnostics can justify parser tooling, while an evaluator still supplies meaning. Exposed languages also need validation and capability and work limits; a small Interpreter example is not a full language implementation.
 
-**Q:** Trace the directly built multiplication/addition tree with `x = 3`.
+**Q:** Trace the directly built multiplication and addition tree with `x = 3`.
 
 **A:** Multiplication evaluates its left addition, which resolves `x` and adds 5 to get 8; its right literal is 2, giving 16. No string parsing occurred.
 
-**Q:** What if `x` is missing, or an incoming tree has unsupported/deep nodes?
+**Q:** What if `x` is missing, or an incoming tree has unsupported or deep nodes?
 
-**A:** Missing `x` throws. External trees require shape/operator/finite-value checks and size/depth/work limits; the typed recursive example alone does not enforce those boundaries.
+**A:** Missing `x` throws. External trees require shape, operator, and finite-value checks plus size, depth, and work limits; the typed recursive example alone does not enforce those boundaries.
 
 ## Null Object Pattern
 
@@ -225,6 +225,12 @@ Source: [Null Object Pattern](30.1.4.12-null-object.md)
 **Q:** What if the logger is absent because required initialization failed?
 
 **A:** Do not silently treat that as configured absence. Required failure must remain an explicit failure; neutral behavior is valid only where the complete contract allows it.
+
+Source: [Observer Pattern](30.1.4.02-observer.md)
+
+**Q:** What causes a diamond-dependency glitch in a synchronous Observer graph, and how do reactive systems eliminate it?
+
+**A:** When two observers watch the same subject and a third downstream observer watches both, synchronous push delivery triggers the downstream listener with one updated branch and one stale branch. Topological propagation order or lazy pull-based evaluation prevents transient inconsistent updates.
 
 ## Summary
 

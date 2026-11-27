@@ -15050,7 +15050,7 @@
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.01-strategy.md",
-      "sha256": "a679cfc4bdc00694fd098777cdd44c80bb08ada2af07a369177fb439c2672ef9",
+      "sha256": "2d96aee30c0da2816e639f5e7df998e1684bc93f89b34ca1ebd69b84e8808661",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -15072,18 +15072,19 @@
       },
       "review": {
         "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.01-strategy.md",
-        "sha256": "a679cfc4bdc00694fd098777cdd44c80bb08ada2af07a369177fb439c2672ef9",
+        "sha256": "2d96aee30c0da2816e639f5e7df998e1684bc93f89b34ca1ebd69b84e8808661",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Trusted policy vs external decoder, validation/errors and object lifecycle, function strategy/State/Template distinctions. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX C1-C8 refinement (2026-11-24): Full read of 117 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture-final",
-        "reviewDate": "2026-11-24"
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.02-observer.md",
-      "sha256": "6af1328d454582f130af2db16639d8408396385b5dbaf8079d08632729518172",
+      "sha256": "2681ee687fe41641de2b9b51ec430016a56c37f0f54ded95d7764291774913a2",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -15105,13 +15106,14 @@
       },
       "review": {
         "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.02-observer.md",
-        "sha256": "6af1328d454582f130af2db16639d8408396385b5dbaf8079d08632729518172",
+        "sha256": "2681ee687fe41641de2b9b51ec430016a56c37f0f54ded95d7764291774913a2",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Node synchronous registration order/once reentrancy, duplicate cleanup/current dispatch snapshot, rejection/error policy and broker distinction. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX C1-C8 refinement (2026-11-24): Full read of 119 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture-final",
-        "reviewDate": "2026-11-24"
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true
       }
     },
     {
@@ -15218,7 +15220,7 @@
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.06-iterator.md",
-      "sha256": "59ed991509c8986fa52b51f62e5d21f3006d5ebead216712c8c4c853dd1158a7",
+      "sha256": "70a18c7d81ae019b15eb493b42dac632b7d5363f7af912cdeee6716066d4e367",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -15241,18 +15243,19 @@
       },
       "review": {
         "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.06-iterator.md",
-        "sha256": "59ed991509c8986fa52b51f62e5d21f3006d5ebead216712c8c4c853dd1158a7",
+        "sha256": "70a18c7d81ae019b15eb493b42dac632b7d5363f7af912cdeee6716066d4e367",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Inclusive bounds/generator closing, ES2025 lazy helpers support, async return vs abort, live Array/Map/Set mutation and resource limits. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX C1-C8 refinement (2026-11-24): Full read of 135 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture-final",
-        "reviewDate": "2026-11-24"
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.07-mediator.md",
-      "sha256": "88329b58c35e9d22a98d5d2da062078206901936ede6fb3fba5ea01ed8d9f4fd",
+      "sha256": "1dfd64a83230bcc26c0c793817aa496ec21c9a76ec42c96cf501a462951ea03c",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -15273,13 +15276,14 @@
       },
       "review": {
         "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.07-mediator.md",
-        "sha256": "88329b58c35e9d22a98d5d2da062078206901936ede6fb3fba5ea01ed8d9f4fd",
+        "sha256": "1dfd64a83230bcc26c0c793817aa496ec21c9a76ec42c96cf501a462951ea03c",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Cohesive interaction rule/initial disabled form, feedback loops and stale results; bus transport not coordination/auth. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX C1-C8 refinement (2026-11-24): Full read of 120 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture-final",
-        "reviewDate": "2026-11-24"
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true
       }
     },
     {
@@ -15317,7 +15321,7 @@
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.09-command.md",
-      "sha256": "ee4a175878f24b42b11d85abffd5c4593eb97b76db549421d2470e82cb56a0c6",
+      "sha256": "39daacaa86d3689ee5a9fde6758c53f1395fb18bb8d5d50d11a0eb64fd74eaa0",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -15338,18 +15342,19 @@
       },
       "review": {
         "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.09-command.md",
-        "sha256": "ee4a175878f24b42b11d85abffd5c4593eb97b76db549421d2470e82cb56a0c6",
+        "sha256": "39daacaa86d3689ee5a9fde6758c53f1395fb18bb8d5d50d11a0eb64fd74eaa0",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Captured previous state, execution/undo guards, order/concurrency, durable allowlisted data and execution authority/idempotency. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX C1-C8 refinement (2026-11-24): Full read of 120 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture-final",
-        "reviewDate": "2026-11-24"
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.10-visitor.md",
-      "sha256": "3a1f13b0b1489440233f71e1a6feb3fe498b13902b956bc7033f5de68d65ac5c",
+      "sha256": "458f43d9738acf845f1707f090d520bb8e9c60889ebd713ea6b83640c9d97a94",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -15371,18 +15376,19 @@
       },
       "review": {
         "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.10-visitor.md",
-        "sha256": "3a1f13b0b1489440233f71e1a6feb3fe498b13902b956bc7033f5de68d65ac5c",
+        "sha256": "458f43d9738acf845f1707f090d520bb8e9c60889ebd713ea6b83640c9d97a94",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Explicit two-step named dispatch and stable node family, operation/type extension tradeoff, traversal owner and validated heading level. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX C1-C8 refinement (2026-11-24): Full read of 116 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture-final",
-        "reviewDate": "2026-11-24"
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.11-interpreter.md",
-      "sha256": "b9b55fc6878a01a3cdb31a02ac03e608580a72ac0c8e879055155f5fc11315d4",
+      "sha256": "f56b4fd2a9acfd27535576d4cdbc2f5dfb87ed860572296000789a956084299e",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -15404,18 +15410,19 @@
       },
       "review": {
         "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.11-interpreter.md",
-        "sha256": "b9b55fc6878a01a3cdb31a02ac03e608580a72ac0c8e879055155f5fc11315d4",
+        "sha256": "f56b4fd2a9acfd27535576d4cdbc2f5dfb87ed860572296000789a956084299e",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Constructed AST, environment and missing binding, syntax vs meaning, shape/finite/depth/work/capability controls and parser tooling. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX C1-C8 refinement (2026-11-24): Full read of 127 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture-final",
-        "reviewDate": "2026-11-24"
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.12-null-object.md",
-      "sha256": "461b9db9b63ee595e31c27c8189e78ff8bf5ce46751ec6535b77bc3fc506eabf",
+      "sha256": "9f1791bff476cccee645b95c1c07d2493c86b9593993354d01540e8b047630ab",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -15437,18 +15444,19 @@
       },
       "review": {
         "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.12-null-object.md",
-        "sha256": "461b9db9b63ee595e31c27c8189e78ff8bf5ce46751ec6535b77bc3fc506eabf",
+        "sha256": "9f1791bff476cccee645b95c1c07d2493c86b9593993354d01540e8b047630ab",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Later pattern, optional configured silence vs initialization failure, neutral semantics/identity and no false delivery/refund. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX C1-C8 refinement (2026-11-24): Full read of 102 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture-final",
-        "reviewDate": "2026-11-24"
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/INDEX.md",
-      "sha256": "d73a10294b1d5e9d36d37bc5e05191d08199995f18a3bed0393f71f6bf81f8ce",
+      "sha256": "7db1f38b00477aef4396357dbcb5705dada8aae47b489d9e16d20e2cae63d463",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -15471,18 +15479,19 @@
       },
       "review": {
         "path": "30-architecture/30.1-design-patterns/04-behavioral/INDEX.md",
-        "sha256": "d73a10294b1d5e9d36d37bc5e05191d08199995f18a3bed0393f71f6bf81f8ce",
+        "sha256": "7db1f38b00477aef4396357dbcb5705dada8aae47b489d9e16d20e2cae63d463",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Full-content review: Full learning flow and decision/comparison tables, separate revision/drill placement, qualified Docita source pointers; no blocking contradiction. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX C1-C8 refinement (2026-11-24): Full read of 184 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture-final",
-        "reviewDate": "2026-11-24"
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/REVISION.md",
-      "sha256": "9309dc7c062cb005d3c7a03ff71dabefee60a9f3cddd840b42e7a74c21c6158e",
+      "sha256": "a579b817021f3499babf897f106c03ac19b33847e6af673c19d8c621ea41d8cb",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -15504,24 +15513,25 @@
           "References"
         ],
         "code_fences": 0,
-        "revision_questions": 42,
+        "revision_questions": 43,
         "has_summary": true,
         "has_first_principles": false
       },
       "review": {
         "path": "30-architecture/30.1-design-patterns/04-behavioral/REVISION.md",
-        "sha256": "9309dc7c062cb005d3c7a03ff71dabefee60a9f3cddd840b42e7a74c21c6158e",
+        "sha256": "a579b817021f3499babf897f106c03ac19b33847e6af673c19d8c621ea41d8cb",
         "genre": "revision",
         "status": "reviewed",
-        "notes": "Full-content review: Every source-linked Q/A fully read against canonical chapter; traces and changed-condition answers preserve policy/state/delivery/cleanup and external effects boundaries. Actual canonical behavior checks: node /tmp/check-architecture-behavioral.cjs PASS (9 groups); checks apply to examples identified by that fixture, not a production deployment. | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX C1-C8 refinement (2026-11-24): Full read of 247 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture-final",
-        "reviewDate": "2026-11-24"
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.01-repository.md",
-      "sha256": "41fb25e392f7d0c3d8f57c65ad19fb4fc99097aeddff0c3a079aaaf88fc9a486",
+      "sha256": "bf79fed4bf2c92ad628d967c4d7d679c0a85da7cce00a5ccb4ff010e137efabe",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -15543,18 +15553,19 @@
       },
       "review": {
         "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.01-repository.md",
-        "sha256": "41fb25e392f7d0c3d8f57c65ad19fb4fc99097aeddff0c3a079aaaf88fc9a486",
+        "sha256": "bf79fed4bf2c92ad628d967c4d7d679c0a85da7cce00a5ccb4ff010e137efabe",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Domain persistence port, not-found/storage/conflict, atomic version contract, shared transaction client, bounded query/cache and actual-store test boundary. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX C1-C8 refinement (2026-11-24): Full read of 100 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture-final",
-        "reviewDate": "2026-11-24"
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.02-cqrs-di.md",
-      "sha256": "e63674193d0a0db5f8ac67a5dc515de68a90632a5eb31b2dc1cfe6ef1e91cc8a",
+      "sha256": "3fc467bfdc92974299707287023148ba95b87e9bf5ff4f28e5ad8312b43eec25",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -15576,18 +15587,19 @@
       },
       "review": {
         "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.02-cqrs-di.md",
-        "sha256": "e63674193d0a0db5f8ac67a5dc515de68a90632a5eb31b2dc1cfe6ef1e91cc8a",
+        "sha256": "3fc467bfdc92974299707287023148ba95b87e9bf5ff4f28e5ad8312b43eec25",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Read/write vs dependency construction, one-store option, asynchronous projection atomic progress and freshness, token erasure/decorator version differences. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX C1-C8 refinement (2026-11-24): Full read of 130 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture-final",
-        "reviewDate": "2026-11-24"
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.03-event-sourcing.md",
-      "sha256": "091cc3423a1db0419d912afa64ec28c3729894c61a382c54a8fe7c3a01e9b4be",
+      "sha256": "fa633220bbeefcf0693d252b61ce692a8b52cb0dd01689dcffec54d3579a345d",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -15610,18 +15622,19 @@
       },
       "review": {
         "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.03-event-sourcing.md",
-        "sha256": "091cc3423a1db0419d912afa64ec28c3729894c61a382c54a8fe7c3a01e9b4be",
+        "sha256": "fa633220bbeefcf0693d252b61ce692a8b52cb0dd01689dcffec54d3579a345d",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Accepted authoritative event stream, trusted fold runtime boundaries, atomic expected-version appends, snapshots/projection checkpoints, schema/retention/effect-safe replay. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX C1-C8 refinement (2026-11-24): Full read of 134 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture-final",
-        "reviewDate": "2026-11-24"
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.04-saga.md",
-      "sha256": "4d5c839ce5a98451d0fdd710348e5dc969b0a188ce23c057efd82e70377abf6b",
+      "sha256": "ef1f2ae6a54c3aecb651a4685593af6e82400441e711ab07f0110af7ce6b467e",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -15643,18 +15656,19 @@
       },
       "review": {
         "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.04-saga.md",
-        "sha256": "4d5c839ce5a98451d0fdd710348e5dc969b0a188ce23c057efd82e70377abf6b",
+        "sha256": "ef1f2ae6a54c3aecb651a4685593af6e82400441e711ab07f0110af7ce6b467e",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Local committed steps vs global isolation, definitive/uncertain outcomes, durable intent/compensation identity and pivot-forward recovery, choreography/2PC tradeoffs. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX C1-C8 refinement (2026-11-24): Full read of 96 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture-final",
-        "reviewDate": "2026-11-24"
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md",
-      "sha256": "f3712a3207e6dd89d62ae97eddaa31634a7d85492dfa62e5e7bc674765c66a52",
+      "sha256": "aead9f5137362a06af1e2b05f1fb0b1f0d1350ccb11d0c673b6c3c62efd1fc89",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -15677,13 +15691,14 @@
       },
       "review": {
         "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md",
-        "sha256": "f3712a3207e6dd89d62ae97eddaa31634a7d85492dfa62e5e7bc674765c66a52",
+        "sha256": "aead9f5137362a06af1e2b05f1fb0b1f0d1350ccb11d0c673b6c3c62efd1fc89",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Bounded contexts, value/identity/root consistency, flat frozen Money safe integer/currency rules, hydration and write concurrency, events after commit not prematurely drained. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX C1-C8 refinement (2026-11-24): Full read of 143 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture-final",
-        "reviewDate": "2026-11-24"
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true
       }
     },
     {
@@ -15721,7 +15736,7 @@
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.07-service-locator-vs-dependency-injection.md",
-      "sha256": "7ca053a6ee6f0da6ebe191ecc3db7cffdd6125b33ebc73f6a89fd791c52f6e08",
+      "sha256": "210e112d5027ce4d2fac5a65d3d15de7f96665d371f5c8fa37fe32b6923ab95b",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -15743,18 +15758,19 @@
       },
       "review": {
         "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.07-service-locator-vs-dependency-injection.md",
-        "sha256": "7ca053a6ee6f0da6ebe191ecc3db7cffdd6125b33ebc73f6a89fd791c52f6e08",
+        "sha256": "210e112d5027ce4d2fac5a65d3d15de7f96665d371f5c8fa37fe32b6923ab95b",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Injected registry still lookup vs direct fixed collaborator, runtime-selected allowlist, lazy errors, erased tokens and scoped lifetime. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX C1-C8 refinement (2026-11-24): Full read of 106 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture-final",
-        "reviewDate": "2026-11-24"
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md",
-      "sha256": "edc83de653d39cbfa528e7e3c8af27261d40e7ab971600213c8b123ba26d1136",
+      "sha256": "ed96ffcc7ed0ea01097228b764a134065734d612040b462dcae2774d7e9e53a1",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -15777,18 +15793,19 @@
       },
       "review": {
         "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md",
-        "sha256": "edc83de653d39cbfa528e7e3c8af27261d40e7ab971600213c8b123ba26d1136",
+        "sha256": "ed96ffcc7ed0ea01097228b764a134065734d612040b462dcae2774d7e9e53a1",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Classic vs web MVC, passive/supervising MVP, bound MVVM, validated USD presentation, React derived values/effect boundaries and async obsolete-result handling. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX C1-C8 refinement (2026-11-24): Full read of 138 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture-final",
-        "reviewDate": "2026-11-24"
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/INDEX.md",
-      "sha256": "1a1b612a2568843ac9176e143580d78f5cff07212fd40aa5e96b880ac6a7451c",
+      "sha256": "e79b2aa1cffc61c1f78c21ce854598122b314ba59fa7bcf25de05076a0432777",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -15811,18 +15828,19 @@
       },
       "review": {
         "path": "30-architecture/30.1-design-patterns/05-architectural/INDEX.md",
-        "sha256": "1a1b612a2568843ac9176e143580d78f5cff07212fd40aa5e96b880ac6a7451c",
+        "sha256": "e79b2aa1cffc61c1f78c21ce854598122b314ba59fa7bcf25de05076a0432777",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Full-content review: Full learning flow and decision/composition tables, complexity caveats and separately qualified candidate source pointers; revision follows chapters. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX C1-C8 refinement (2026-11-24): Full read of 128 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture-final",
-        "reviewDate": "2026-11-24"
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/REVISION.md",
-      "sha256": "94bdda0df2985bbd77492f1015f2a135bc80342b5e995a6d5ec9ed09d21b20c2",
+      "sha256": "6bfa8a66c9b5aec2b7347897fa6253a3b3bc6b2bc723f295715ac70227c92369",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -15840,24 +15858,25 @@
           "References"
         ],
         "code_fences": 0,
-        "revision_questions": 38,
+        "revision_questions": 39,
         "has_summary": true,
         "has_first_principles": false
       },
       "review": {
         "path": "30-architecture/30.1-design-patterns/05-architectural/REVISION.md",
-        "sha256": "94bdda0df2985bbd77492f1015f2a135bc80342b5e995a6d5ec9ed09d21b20c2",
+        "sha256": "6bfa8a66c9b5aec2b7347897fa6253a3b3bc6b2bc723f295715ac70227c92369",
         "genre": "revision",
         "status": "reviewed",
-        "notes": "Full-content review: All source-linked authored Q/A fully read and compared with canonical traces: expected version, read lag, stream replay, Saga pivot/uncertainty, aggregate boundary, vendor meaning, DI and presenter behavior. Actual extracted examples: node /tmp/check-architecture-boundaries.cjs PASS (5 groups; repository fake checks caller contract, not database atomicity). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX C1-C8 refinement (2026-11-24): Full read of 215 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture-final",
-        "reviewDate": "2026-11-24"
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.1-design-patterns/06-interview-prep/30.1.6.01-interview-questions.md",
-      "sha256": "ef788d7769b24796ea8853e92eefb0ee65c03350ffe71faa1e4b5f7fbcb769ae",
+      "sha256": "74f58f25e261839f2a08893ea81c6e917ceb83468be4db0ecce016fd1aa7b496",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -15879,10 +15898,10 @@
       },
       "review": {
         "path": "30-architecture/30.1-design-patterns/06-interview-prep/30.1.6.01-interview-questions.md",
-        "sha256": "ef788d7769b24796ea8853e92eefb0ee65c03350ffe71faa1e4b5f7fbcb769ae",
+        "sha256": "74f58f25e261839f2a08893ea81c6e917ceb83468be4db0ecce016fd1aa7b496",
         "genre": "interview",
         "status": "reviewed",
-        "notes": "Design-patterns bank: mechanism and failure boundary for eleven answers | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX C1-C8 refinement (2026-11-24): Full read of 559 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
@@ -15920,7 +15939,7 @@
     },
     {
       "path": "30-architecture/30.1-design-patterns/INDEX.md",
-      "sha256": "d64108bd4197645e986a5ec061d3367fb58f50ac85e2a508deb341c7a6fd1c61",
+      "sha256": "d804601248cb7e4b3983c20be1308051a8adb47bdc2f7fca2d00b0f47297990a",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -15939,10 +15958,10 @@
       },
       "review": {
         "path": "30-architecture/30.1-design-patterns/INDEX.md",
-        "sha256": "d64108bd4197645e986a5ec061d3367fb58f50ac85e2a508deb341c7a6fd1c61",
+        "sha256": "d804601248cb7e4b3983c20be1308051a8adb47bdc2f7fca2d00b0f47297990a",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Design-patterns bank: eleven one-line definitions now name the mechanism and the failure boundary (adapter translation cost, builder invariant, facade ordering, proxy obligations, strategy substitution, chain path failures, template ordering, command contracts, composite totality, iterator mutation) | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX C1-C8 refinement (2026-11-24): Full read of 138 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",

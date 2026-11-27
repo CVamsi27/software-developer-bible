@@ -17,10 +17,10 @@
 Design patterns are classified into **3 GoF categories** (creational, structural, behavioral) + **foundations** (principles you need first) + **architectural** (application and cross-boundary design) + **interview prep**.
 
 | Category | Purpose | Subfolder | # Patterns |
-| ------------------ | ---------------------------------------------------------------- | ----------------------------------------------- | --------------: |
+| ------------------ | -------------------------------------------------------------------- | ----------------------------------------------- | --------------: |
 | **Foundations** | Principles, OOP, UML — read first | [01-foundations](01-foundations/INDEX.md) | 4 theory files |
 | **Creational** | Object creation mechanisms (decoupling construction from use) | [02-creational](02-creational/INDEX.md) | 5 patterns |
-| **Structural** | Class/object composition (assemble larger structures from parts) | [03-structural](03-structural/INDEX.md) | 8 patterns |
+| **Structural** | Class and object composition (assemble larger structures from parts) | [03-structural](03-structural/INDEX.md) | 8 patterns |
 | **Behavioral** | Object collaboration and responsibility distribution | [04-behavioral](04-behavioral/INDEX.md) | 12 patterns |
 | **Architectural** | Application, domain and presentation boundaries (outside GoF) | [05-architectural](05-architectural/INDEX.md) | 8 patterns |
 | **Interview Prep** | Curated question bank, mock interview scenarios | [06-interview-prep](06-interview-prep/INDEX.md) | 1 file (50+ Qs) |
@@ -53,14 +53,14 @@ Use this decision cheat sheet (full version in each category INDEX):
 | Create objects flexibly | Creational | Factory Method, Builder, Abstract Factory, Prototype, scoped Singleton |
 | Compose classes into larger structures | Structural | Adapter, Decorator, Facade, Proxy, Composite, Bridge, Flyweight, Module |
 | Manage object interactions | Behavioral | Observer, Strategy, State, Command, Mediator, Chain of Responsibility, Iterator, Visitor, Memento, Template Method, Interpreter, Null Object |
-| Application boundaries and distributed coordination | Architectural | Repository, CQRS+DI, Event Sourcing, Saga, DDD Aggregates, Anti-Corruption Layer, Service Locator vs DI, MVC/MVP/MVVM |
+| Application boundaries and distributed coordination | Architectural | Repository, CQRS+DI, Event Sourcing, Saga, DDD Aggregates, Anti-Corruption Layer, Service Locator vs DI, MVC, MVP, and MVVM |
 
 ---
 
 ## Sub-Index Links
 
 ### [01 — Foundations](01-foundations/INDEX.md)
-SOLID, OOP concepts, UML diagrams, DRY/KISS/YAGNI. Read these before any pattern.
+SOLID, OOP concepts, UML diagrams, DRY, KISS, and YAGNI. Read these before any pattern.
 
 ### [02 — Creational Patterns](02-creational/INDEX.md) (5 files)
 Object creation. Decouple "how to construct" from "what to do with the constructed thing."
@@ -72,7 +72,7 @@ Object creation. Decouple "how to construct" from "what to do with the construct
 - [Prototype](02-creational/30.1.2.05-prototype.md) — create from a configured prototype with an explicit copy contract
 
 ### [03 — Structural Patterns](03-structural/INDEX.md) (8 files)
-Class/object composition. Combine small pieces into larger structures while keeping them flexible.
+Class and object composition. Combine small pieces into larger structures while keeping them flexible.
 
 - [Adapter](03-structural/30.1.3.01-adapter.md) — translate an existing interface to the client's contract
 - [Facade](03-structural/30.1.3.02-facade.md) — simplify common operations across a complex subsystem
@@ -93,9 +93,9 @@ Object collaboration. Manage algorithms, responsibilities, and communication bet
 - [Template Method](04-behavioral/30.1.4.05-template-method.md) — skeleton + steps
 - [Iterator](04-behavioral/30.1.4.06-iterator.md) — sequential access without exposing internals
 - [Mediator](04-behavioral/30.1.4.07-mediator.md) — central authority for object communication
-- [Memento](04-behavioral/30.1.4.08-memento.md) — capture/restore internal state
+- [Memento](04-behavioral/30.1.4.08-memento.md) — capture and restore internal state
 - [Command](04-behavioral/30.1.4.09-command.md) — encapsulate a request as an object
-- [Visitor](04-behavioral/30.1.4.10-visitor.md) — add operations over an established element/visitor contract
+- [Visitor](04-behavioral/30.1.4.10-visitor.md) — add operations over an established element and visitor contract
 - [Interpreter](04-behavioral/30.1.4.11-interpreter.md) — grammar + interpreter for a DSL
 - [Null Object](04-behavioral/30.1.4.12-null-object.md) — encapsulated no-op behavior instead of null
 
@@ -103,13 +103,13 @@ Object collaboration. Manage algorithms, responsibilities, and communication bet
 Persistence, domain, coordination and UI boundaries. Some remain in one process; these are outside the original GoF set.
 
 - [Repository](05-architectural/30.1.5.01-repository.md) — data access abstraction
-- [CQRS and DI](05-architectural/30.1.5.02-cqrs-di.md) — command/query separation + dependency injection
+- [CQRS and DI](05-architectural/30.1.5.02-cqrs-di.md) — command and query separation + dependency injection
 - [Event Sourcing](05-architectural/30.1.5.03-event-sourcing.md) — events as the authoritative state history
 - [Saga](05-architectural/30.1.5.04-saga.md) — recoverable workflows across committed local transactions
 - [DDD Tactical Patterns](05-architectural/30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md) — entities, value objects, aggregate boundaries
 - [Anti-Corruption Layer](05-architectural/30.1.5.06-anti-corruption-layer.md) — translate foreign model meaning at a context boundary
 - [Service Locator vs DI](05-architectural/30.1.5.07-service-locator-vs-dependency-injection.md) — consumer lookup versus externally supplied collaborators
-- [Presentation Patterns MVC/MVP/MVVM](05-architectural/30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md) — UI separation strategies and what frameworks really use
+- [Presentation Patterns MVC, MVP, and MVVM](05-architectural/30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md) — UI separation strategies and what frameworks really use
 
 ### [06 — Interview Prep](06-interview-prep/INDEX.md) (1 file, 50+ Qs)
 - [Design Pattern Interview Questions](06-interview-prep/30.1.6.01-interview-questions.md) — 50+ curated Qs with answers
@@ -126,7 +126,7 @@ After each category, use its separate revision companion. Finish with the interv
 
 ## Cross-References
 
-- [System Design](../30.2-system-design/INDEX.md) — many system design patterns build on these (failure control and delivery contracts extend beyond local wrapper/callback shapes)
+- [System Design](../30.2-system-design/INDEX.md) — many system design patterns build on these (failure control and delivery contracts extend beyond local wrapper and callback shapes)
 - [Coding Patterns](../../70-interview-toolkit/70.2-coding-patterns/INDEX.md) — algorithm patterns (sliding window, DP), unrelated but interview-adjacent
 - [NestJS](../../20-backend/20.2-nestjs/INDEX.md) — uses Module, DI, Repository, CQRS, Observer extensively
 - [Microservices](../../20-backend/20.6-microservices/INDEX.md) — Saga, Event Sourcing, Outbox, CQRS

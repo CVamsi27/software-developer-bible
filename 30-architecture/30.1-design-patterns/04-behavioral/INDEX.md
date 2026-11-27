@@ -17,7 +17,7 @@ Creational and structural patterns are about "what" (objects) and "how" (composi
 
 - "I have a `switch` on type to decide which algorithm to run."
 - "My objects are tightly coupled — every one knows about every other."
-- "I need to undo/redo operations."
+- "I need to undo and redo operations."
 - "I have a complex state machine, and `if/else` is unmaintainable."
 - "I need to traverse a collection without exposing its internals."
 
@@ -34,8 +34,8 @@ Creational and structural patterns are about "what" (objects) and "how" (composi
 | 5 | [Template Method](30.1.4.05-template-method.md) | Skeleton + customizable steps | Algorithm with varying steps | Algorithm is fully fixed | Important | Specialized |
 | 6 | [Iterator](30.1.4.06-iterator.md) | Sequential access without exposing internals | Named tree traversals, lazy pipelines, cursor-backed reads | Existing iteration already satisfies the traversal contract | Important | Specialized |
 | 7 | [Mediator](30.1.4.07-mediator.md) | Coordinate interactions within a cohesive group | Peer dependencies spread across a form or workflow | Few participants with clear, stable direct calls | Important | Specialized |
-| 8 | [Memento](30.1.4.08-memento.md) | Originator-owned snapshots; caretaker-managed history | Undo while keeping state representation private | No restore/history requirement | Important | Specialized |
-| 9 | [Command](30.1.4.09-command.md) | Encapsulate a request as an object | Undo/redo, queueing, macro recording, transactional ops | Simple one-shot operations | Important | Specialized |
+| 8 | [Memento](30.1.4.08-memento.md) | Originator-owned snapshots; caretaker-managed history | Undo while keeping state representation private | No restore or history requirement | Important | Specialized |
+| 9 | [Command](30.1.4.09-command.md) | Encapsulate a request as an object | Undo and redo, queueing, macro recording, transactional ops | Simple one-shot operations | Important | Specialized |
 | 10 | [Visitor](30.1.4.10-visitor.md) | Add operations without modifying classes | Abstract syntax trees (ASTs), compilers, complex object structures | Class hierarchy is unstable | Important | Specialized |
 | 11 | [Interpreter](30.1.4.11-interpreter.md) | Define and evaluate a small language | Rules, filters, formulas | A standard language implementation is already suitable | Important | Specialized |
 | 12 | [Null Object](30.1.4.12-null-object.md) | Encapsulated no-op behavior instead of null | Sensible neutral defaults (no-op loggers), branch-free chains | Absence must surface (silence hides bugs) | Important | Specialized |
@@ -90,7 +90,7 @@ Need to manage object interaction / control flow?
 
 | Property | Strategy | State |
 | -- | ---------- | ------- |
-| **Who chooses** | Client / context picks strategy | Defined lifecycle transitions govern state |
+| **Who chooses** | Client or context picks strategy | Defined lifecycle transitions govern state |
 | **Selection lifetime** | Per operation or retained by the caller | Often a state machine with transitions |
 | **Awareness of each other** | Strategies usually don't know about each other | States often trigger transitions to other states |
 | **Intent** | "How to do this" | "What am I currently doing" |
@@ -106,15 +106,15 @@ Use Observer when one thing changes and many react. Use Mediator when many thing
 
 ### Command vs Memento
 
-- **Command** stores the **action** to perform (do/undo).
+- **Command** stores the **action** to perform (do and undo).
 - **Memento** stores the **state** to restore to.
 
-Use Command for "do this later" / "undo what I did". Use Memento for "go back to this snapshot".
+Use Command for "do this later" or "undo what I did". Use Memento for "go back to this snapshot".
 
 ### Iterator vs Visitor
 
 - **Iterator** traverses a structure (reads elements).
-- **Visitor** performs operations on a structure's elements (transforms / inspects).
+- **Visitor** performs operations on a structure's elements (transforms or inspects).
 
 Both work on composite structures. Iterator is about *movement*, Visitor is about *work*.
 
@@ -128,7 +128,7 @@ Both chain-call. Explain the handling or wrapping intention and the actual stopp
 ### Null Object vs Optional
 
 - **Null Object** encodes *what to do* when absent — the neutral response lives inside the object.
-- **`Optional<T>`** encodes *that* something may be absent — callers use its explicit value/absence API; the type system does not prove they handle every case correctly.
+- **`Optional<T>`** encodes *that* something may be absent — callers use its explicit value and absence API; the type system does not prove they handle every case correctly.
 
 They compose: resolve `Optional` to a real-or-null-object at the boundary, then keep the domain branch-free. Choose whether absence is an outcome the caller must see or an agreed neutral capability; the representation follows that meaning.
 
@@ -144,7 +144,7 @@ They compose: resolve `Optional` to a real-or-null-object at the boundary, then 
 - **Custom iterator classes** when existing `for...of` or generators already express the traversal.
 - **Mediator** when interaction is already simple and direct references are clear.
 - **Memento** if undo isn't a requirement.
-- **Command** for one-shot operations with no queue/undo.
+- **Command** for one-shot operations with no queue or undo.
 - **Visitor** if the object structure changes often (you'll rewrite all visitors).
 - Do not make a tiny **Interpreter** example stand in for complex parsing. A parser generator can help syntax processing; evaluation still needs semantic rules.
 - **Null Object** where silence would hide a bug (money, auth, load failures) — let absence throw or return `Optional` instead.
@@ -176,9 +176,9 @@ Trace one request or transition across collaborators and identify who owns order
 Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests to confirm deployed behavior.
 
 | Topic | Docita evidence |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Strategy | Import strategies (`apps/api/src/shared/modules/imports/strategies/patient-import.strategy.ts`…) and search strategies (`search/strategies/*-search.strategy.ts`) behind registries |
 | Template Method | `apps/api/src/shared/modules/document-generation/pdf/base-pdf.service.ts`, `websockets/base-websocket.gateway.ts`, `apps/api/src/shared/modules/queue/base-pdf.processor.ts`, `search-strategy.base.ts` |
-| Observer / domain events | `shared/common/events/{domain-events,event.service}.ts`, `ops-alert.listener.ts`, transactional outbox (`outbox-relay.scheduler.ts`, Architecture Decision Record (ADR) 0010) |
-| Command (CQRS-lite) | `appointment-command.service.ts` vs `appointment-query.service.ts` (+ queue/follow-up twins); queue jobs as command objects |
+| Observer and domain events | `shared/common/events/{domain-events,event.service}.ts`, `ops-alert.listener.ts`, transactional outbox (`outbox-relay.scheduler.ts`, Architecture Decision Record (ADR) 0010) |
+| Command (CQRS-lite) | `appointment-command.service.ts` vs `appointment-query.service.ts` (+ queue and follow-up twins); queue jobs as command objects |
 | Chain of Responsibility | Nest guard→interceptor→pipe request pipeline (tenant-context, CSRF, rate-limit) |

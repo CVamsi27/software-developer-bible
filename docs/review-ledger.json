@@ -6971,36 +6971,36 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 17A D1-D7 rework of 30.1.1-30.1.3 design patterns)."
   },
   "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.01-strategy.md": {
-   "sha256": "a679cfc4bdc00694fd098777cdd44c80bb08ada2af07a369177fb439c2672ef9",
+   "sha256": "2d96aee30c0da2816e639f5e7df998e1684bc93f89b34ca1ebd69b84e8808661",
    "lines": 117,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against GoF Strategy specification and TypeScript Readonly functional contracts.",
-    "readable": "Full read of 117 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "603 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 117 lines (605 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "605 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical Strategy pattern chapter for interchangeable policy delegation.",
-    "fast": "19.7 KB raw / 5.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 19.7 KB raw / 5.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Includes runnable shippingQuote with input and output finite range validation and details untrusted policy-name execution and sync-to-async carrier I/O contract mismatch failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX)."
   },
   "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.02-observer.md": {
-   "sha256": "6af1328d454582f130af2db16639d8408396385b5dbaf8079d08632729518172",
+   "sha256": "2681ee687fe41641de2b9b51ec430016a56c37f0f54ded95d7764291774913a2",
    "lines": 119,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Node.js node:events EventEmitter specification (once removal order, snapshot emission, captureRejections).",
-    "readable": "Full read of 119 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "639 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 119 lines (695 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "695 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical Observer pattern and local subscription lifecycle chapter.",
-    "fast": "18.2 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 18.2 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Demonstrates recursive emit() inside a once() listener and details unawaited async listener rejections, synchronous throw interruption, and missing unsubscribe memory leak failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX)."
   },
   "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.03-chain-of-responsibility.md": {
    "sha256": "f35806c3b6c7c2fa86d079cedafb0a563f14779a1ae6131de9ef9a1dde7f048f",
@@ -7051,36 +7051,36 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
   },
   "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.06-iterator.md": {
-   "sha256": "59ed991509c8986fa52b51f62e5d21f3006d5ebead216712c8c4c853dd1158a7",
+   "sha256": "70a18c7d81ae019b15eb493b42dac632b7d5363f7af912cdeee6716066d4e367",
    "lines": 135,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against ES2025 Iterator Helpers (.map, .filter, .take) and Node.js async generator streams.",
-    "readable": "Full read of 135 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 135 lines (739 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "739 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for Iterator pattern: synchronous and asynchronous generators, cursor pagination iterators, and memory bounds.",
-    "fast": "21.5 KB raw / 6.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 21.5 KB raw / 6.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Demonstrates real-world keyset pagination wrapped in an async generator (`for await...of`) to enforce constant-memory limits on batch jobs."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX)."
   },
   "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.07-mediator.md": {
-   "sha256": "88329b58c35e9d22a98d5d2da062078206901936ede6fb3fba5ea01ed8d9f4fd",
+   "sha256": "1dfd64a83230bcc26c0c793817aa496ec21c9a76ec42c96cf501a462951ea03c",
    "lines": 120,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against modern event-bus / command-bus mediators and UI coordination patterns.",
-    "readable": "Full read of 120 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "513 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 120 lines (515 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "515 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for Mediator: colleague decoupling, hub-and-spoke topology, and avoiding the God-Mediator anti-pattern.",
-    "fast": "18.2 KB raw / 5.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 18.2 KB raw / 5.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Warns against the God-Mediator failure mode and defines the boundary that keeps domain rules inside colleagues."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX)."
   },
   "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.08-memento.md": {
    "sha256": "618144ef7a311752b3594550acb29da190280b629c2cf267b78bf7de001ad153",
@@ -7099,180 +7099,180 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
   },
   "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.09-command.md": {
-   "sha256": "ee4a175878f24b42b11d85abffd5c4593eb97b76db549421d2470e82cb56a0c6",
+   "sha256": "39daacaa86d3689ee5a9fde6758c53f1395fb18bb8d5d50d11a0eb64fd74eaa0",
    "lines": 120,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against modern task queues, undo stacks, and transactional command handlers.",
-    "readable": "Full read of 120 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "664 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 120 lines (668 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "668 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for Command pattern: command reification, reversible operations, macro commands, and queue serialization.",
-    "fast": "20.0 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 20.0 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Distinguishes in-memory reversible UI commands from durable idempotent queue commands and their failure boundaries."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX)."
   },
   "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.10-visitor.md": {
-   "sha256": "3a1f13b0b1489440233f71e1a6feb3fe498b13902b956bc7033f5de68d65ac5c",
+   "sha256": "458f43d9738acf845f1707f090d520bb8e9c60889ebd713ea6b83640c9d97a94",
    "lines": 116,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against TypeScript discriminated unions (exhaustive never checks) and Babel/ESLint AST visitors.",
-    "readable": "Full read of 116 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "604 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 116 lines (608 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "608 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for Visitor pattern: double dispatch, the Expression Problem (new operations vs new types), and AST traversal.",
-    "fast": "21.4 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 21.4 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Frames Visitor through the Expression Problem boundary: use Visitor/union-switch when types are stable and operations grow."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX)."
   },
   "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.11-interpreter.md": {
-   "sha256": "b9b55fc6878a01a3cdb31a02ac03e608580a72ac0c8e879055155f5fc11315d4",
+   "sha256": "f56b4fd2a9acfd27535576d4cdbc2f5dfb87ed860572296000789a956084299e",
    "lines": 127,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against safe expression evaluation (CEL, JSONLogic) vs custom AST interpreters.",
-    "readable": "Full read of 127 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "593 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 127 lines (595 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "595 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for Interpreter pattern: grammar rules, AST evaluation, and when to use an established parser/rule engine instead.",
-    "fast": "21.2 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 21.2 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Explicitly warns against rolling custom string parsers without recursion/step limits (ReDoS/DoS failure modes) when CEL or JSONLogic fits."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX)."
   },
   "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.12-null-object.md": {
-   "sha256": "461b9db9b63ee595e31c27c8189e78ff8bf5ce46751ec6535b77bc3fc506eabf",
+   "sha256": "9f1791bff476cccee645b95c1c07d2493c86b9593993354d01540e8b047630ab",
    "lines": 102,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against TypeScript strictNullChecks and explicit Option/Result alternatives.",
-    "readable": "Full read of 102 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "573 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 102 lines (575 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "575 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for Null Object: polymorphic no-op contracts, silent failure hazards, and Null Object vs Optional types.",
-    "fast": "16.7 KB raw / 5.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 16.7 KB raw / 5.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Highlights the critical failure boundary: never use Null Object where callers must take corrective action on missing data (use explicit null/Result instead)."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX)."
   },
   "30-architecture/30.1-design-patterns/04-behavioral/INDEX.md": {
-   "sha256": "d73a10294b1d5e9d36d37bc5e05191d08199995f18a3bed0393f71f6bf81f8ce",
+   "sha256": "7db1f38b00477aef4396357dbcb5705dada8aae47b489d9e16d20e2cae63d463",
    "lines": 184,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against live 13-file directory and Docita strategy, template-method, domain-event, and CQRS pointers.",
-    "readable": "Full read of 184 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "710 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 184 lines (718 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "718 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical category index for 30.1-design-patterns/04-behavioral.",
-    "fast": "22.6 KB raw / 6.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 22.6 KB raw / 6.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Contrasts Strategy vs State, Observer vs Mediator, Command vs Memento, Iterator vs Visitor, CoR vs Decorator, and Null Object vs Optional with explicit failure boundary rules."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX)."
   },
   "30-architecture/30.1-design-patterns/04-behavioral/REVISION.md": {
-   "sha256": "9309dc7c062cb005d3c7a03ff71dabefee60a9f3cddd840b42e7a74c21c6158e",
-   "lines": 241,
+   "sha256": "a579b817021f3499babf897f106c03ac19b33847e6af673c19d8c621ea41d8cb",
+   "lines": 247,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Node.js EventEmitter captureRejections, Express 5 promise forwarding, and ES2025 Iterator.from helper methods.",
-    "readable": "Full read of 241 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1786 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 247 lines (1866 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1866 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical revision companion for 30.1-design-patterns/04-behavioral.",
-    "fast": "22.8 KB raw / 7.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 22.8 KB raw / 7.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Tests concrete runtime failure boundary behavior across all 12 behavioral patterns including for-await early break AbortSignal requirements and recursive EventEmitter emissions."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX)."
   },
   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.01-repository.md": {
-   "sha256": "41fb25e392f7d0c3d8f57c65ad19fb4fc99097aeddff0c3a079aaaf88fc9a486",
+   "sha256": "bf79fed4bf2c92ad628d967c4d7d679c0a85da7cce00a5ccb4ff010e137efabe",
    "lines": 100,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against TypeScript domain repositories, Prisma/Drizzle adapters, and in-memory test fakes.",
-    "readable": "Full read of 100 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "704 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 100 lines (706 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "706 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for Repository pattern: aggregate-oriented persistence contracts, leaky query builder anti-patterns, and testability.",
-    "fast": "18.0 KB raw / 5.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 18.0 KB raw / 5.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Warns against generic `IRepository<T>` wrappers over ORMs and defines the aggregate-root persistence boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX)."
   },
   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.02-cqrs-di.md": {
-   "sha256": "e63674193d0a0db5f8ac67a5dc515de68a90632a5eb31b2dc1cfe6ef1e91cc8a",
+   "sha256": "3fc467bfdc92974299707287023148ba95b87e9bf5ff4f28e5ad8312b43eec25",
    "lines": 130,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against modern TypeScript constructor injection and read-replica / Elasticsearch projection pipelines.",
-    "readable": "Full read of 130 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "748 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 130 lines (750 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "750 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for CQRS & DI: Command/Query separation levels (same DB vs split read store), eventual consistency lag, and DI composition roots.",
-    "fast": "21.3 KB raw / 6.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 21.3 KB raw / 6.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Separates simple code-level CQRS (split write domain model from fast raw-SQL read queries on one Postgres DB) from full event-sourced multi-store CQRS boundaries."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX)."
   },
   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.03-event-sourcing.md": {
-   "sha256": "091cc3423a1db0419d912afa64ec28c3729894c61a382c54a8fe7c3a01e9b4be",
+   "sha256": "fa633220bbeefcf0693d252b61ce692a8b52cb0dd01689dcffec54d3579a345d",
    "lines": 134,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against PostgreSQL optimistic version checks (`UNIQUE(aggregate_id, version)`), schema upcasting, and GDPR crypto-shredding.",
-    "readable": "Full read of 134 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "828 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 134 lines (832 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "832 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for Event Sourcing: event store invariants, aggregate replay, snapshotting, schema evolution, and right-to-erasure.",
-    "fast": "22.9 KB raw / 6.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 22.9 KB raw / 6.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Addresses the hardest production failure limits of Event Sourcing: event schema upcasting and GDPR right-to-erasure via per-user encryption keys."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX)."
   },
   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.04-saga.md": {
-   "sha256": "4d5c839ce5a98451d0fdd710348e5dc969b0a188ce23c057efd82e70377abf6b",
+   "sha256": "ef1f2ae6a54c3aecb651a4685593af6e82400441e711ab07f0110af7ce6b467e",
    "lines": 96,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Temporal/Step Functions orchestration patterns, Outbox publishing, and semantic lock isolation mitigations.",
-    "readable": "Full read of 96 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "664 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 96 lines (666 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "666 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for Saga pattern in 30.1: pivot transactions, backward compensation, idempotency keys, and lack of ACID isolation (dirty reads).",
-    "fast": "14.5 KB raw / 5.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 14.5 KB raw / 5.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Clearly explains the ACD (no Isolation) failure boundary of Sagas and how semantic locks (`PENDING_APPROVAL`) prevent dirty-read anomalies."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX)."
   },
   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md": {
-   "sha256": "f3712a3207e6dd89d62ae97eddaa31634a7d85492dfa62e5e7bc674765c66a52",
+   "sha256": "aead9f5137362a06af1e2b05f1fb0b1f0d1350ccb11d0c673b6c3c62efd1fc89",
    "lines": 143,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Eric Evans / Vaughn Vernon Aggregate rules and modern TypeScript immutable Value Objects.",
-    "readable": "Full read of 143 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1060 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 143 lines (1129 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1129 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for DDD tactical patterns: Value Object structural equality, Aggregate Root invariant enforcement, cross-aggregate ID references, and optimistic locking.",
-    "fast": "24.9 KB raw / 7.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 24.9 KB raw / 7.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Enforces the four canonical Aggregate boundary rules: small aggregates, reference other aggregates by ID only, one aggregate per transaction, and eventual consistency across aggregates."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX)."
   },
   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.06-anti-corruption-layer.md": {
    "sha256": "fadd1fda3a593b94707ac87fbac617efcd3f3ca391d6bdb7ace51165f93366d9",
@@ -7291,84 +7291,84 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
   },
   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.07-service-locator-vs-dependency-injection.md": {
-   "sha256": "7ca053a6ee6f0da6ebe191ecc3db7cffdd6125b33ebc73f6a89fd791c52f6e08",
+   "sha256": "210e112d5027ce4d2fac5a65d3d15de7f96665d371f5c8fa37fe32b6923ab95b",
    "lines": 106,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Pure DI (explicit composition roots) and modern TypeScript/Node/Go service wiring.",
-    "readable": "Full read of 106 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "684 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 106 lines (686 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "686 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for DI vs Service Locator: compile-time dependency visibility, test isolation, composition roots, and captive dependencies.",
-    "fast": "18.9 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 18.9 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Advocates Pure DI (explicit composition root in `main.ts`) over reflection/decorator DI containers unless framework-mandated, and flags the captive-dependency lifetime failure."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX)."
   },
   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md": {
-   "sha256": "edc83de653d39cbfa528e7e3c8af27261d40e7ab971600213c8b123ba26d1136",
+   "sha256": "ed96ffcc7ed0ea01097228b764a134065734d612040b462dcae2774d7e9e53a1",
    "lines": 138,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against React 19 / Signals / Zustand unidirectional flow vs classic MVC/MVP/MVVM separation.",
-    "readable": "Full read of 138 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "847 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 138 lines (862 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "862 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical home for MVC/MVP/MVVM: Controller vs Presenter vs ViewModel responsibilities, data binding direction, and view-agnostic unit testing.",
-    "fast": "20.6 KB raw / 6.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 20.6 KB raw / 6.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Maps classic MVVM ViewModel boundaries directly onto modern React custom hooks and reactive stores so frontend engineers can test state logic without mounting DOM trees."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX)."
   },
   "30-architecture/30.1-design-patterns/05-architectural/INDEX.md": {
-   "sha256": "1a1b612a2568843ac9176e143580d78f5cff07212fd40aa5e96b880ac6a7451c",
+   "sha256": "e79b2aa1cffc61c1f78c21ce854598122b314ba59fa7bcf25de05076a0432777",
    "lines": 128,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against all 8 chapter links, REVISION.md, and distributed data consistency references.",
-    "readable": "Full read of 128 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "403 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 128 lines (407 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "407 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical index for 05-architectural: study order, pattern decision matrix, and cross-stack links to 30.2 System Design.",
-    "fast": "17.6 KB raw / 5.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 17.6 KB raw / 5.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Bridges class-level GoF patterns to service- and boundary-level enterprise patterns."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX)."
   },
   "30-architecture/30.1-design-patterns/05-architectural/REVISION.md": {
-   "sha256": "94bdda0df2985bbd77492f1015f2a135bc80342b5e995a6d5ec9ed09d21b20c2",
-   "lines": 209,
+   "sha256": "6bfa8a66c9b5aec2b7347897fa6253a3b3bc6b2bc723f295715ac70227c92369",
+   "lines": 215,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against current chapter numbering (30.1.5.01 to 30.1.5.08) and modern DDD/CQRS terminology.",
-    "readable": "Full read of 209 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1728 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 215 lines (1801 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1801 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical revision companion for 05-architectural: tests aggregate transaction boundaries, Saga compensation vs 2PC, ACL translation, and CQRS projection lag.",
-    "fast": "21.5 KB raw / 7.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 21.5 KB raw / 7.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Every question targets a real production failure mode (leaky ORM repositories, aggregate contention, Saga non-isolation)."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX)."
   },
   "30-architecture/30.1-design-patterns/06-interview-prep/30.1.6.01-interview-questions.md": {
-   "sha256": "ef788d7769b24796ea8853e92eefb0ee65c03350ffe71faa1e4b5f7fbcb769ae",
+   "sha256": "74f58f25e261839f2a08893ea81c6e917ceb83468be4db0ecce016fd1aa7b496",
    "lines": 559,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against modern TypeScript, Go, Java 21/25, and React 19 idioms alongside GoF and enterprise patterns.",
-    "readable": "Full read of 559 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "3733 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 559 lines (3752 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "3752 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical interview drill for 30.1 Design Patterns: practical pattern trade-offs, anti-patterns, and distributed Saga/CQRS boundaries.",
-    "fast": "38.1 KB raw / 12.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 38.1 KB raw / 12.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Pairs every pattern question with an explicit when-not-to-use-it boundary so candidates sound like pragmatic senior engineers rather than textbook memorizers."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX)."
   },
   "30-architecture/30.1-design-patterns/06-interview-prep/INDEX.md": {
    "sha256": "6eaf81d74686499c8778d71d7c20eb9d9e7fa0acd5fbbaf16080b1bb968acc8a",
@@ -7387,20 +7387,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
   },
   "30-architecture/30.1-design-patterns/INDEX.md": {
-   "sha256": "d64108bd4197645e986a5ec061d3367fb58f50ac85e2a508deb341c7a6fd1c61",
+   "sha256": "d804601248cb7e4b3983c20be1308051a8adb47bdc2f7fca2d00b0f47297990a",
    "lines": 138,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against live 43-file catalog and cross-links to 20.2-nestjs and 20.6-microservices.",
-    "readable": "Full read of 138 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "730 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 138 lines (746 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "746 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical stack index for 30.1-design-patterns.",
-    "fast": "20.2 KB raw / 6.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 20.2 KB raw / 6.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Provides a problem-first pattern selection matrix and emphasizes failure boundary analysis over rote GoF label memorization."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3B 30.1-design-patterns + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 17B D1-D7 rework of 30.1.4-30.1.6 and 30.1 INDEX)."
   },
   "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.md": {
    "sha256": "dc5f3d1122c55acf0fdb50f83dbddc6d652209f522ae1d9c46562c9476f9e4ff",

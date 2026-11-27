@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Next.js-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -24,7 +24,7 @@ Source: [Authentication in Next.js](10.4.4.01-authentication.md)
 
 **Q:** Why must a protected data read authorize its resource even after Proxy redirects anonymous visitors?
 
-**A:** Proxy is an early routing hint and may not cover every Route Handler or Server Action. The data-access layer must resolve the current principal and enforce tenant/resource permissions where data is read or changed.
+**A:** Proxy is an early routing hint and may not cover every Route Handler or Server Action. The data-access layer must resolve the current principal and enforce tenant and resource permissions where data is read or changed.
 
 **Q:** Why is a reusable JWT labeled `csrf` an inadequate CSRF protocol?
 
@@ -36,7 +36,11 @@ Source: [Authentication in Next.js](10.4.4.01-authentication.md)
 
 **Q:** What differs between the shown NextAuth.js v4 integration and Auth.js v5?
 
-**A:** The shown v4 configuration returns an HTTP handler and uses its compatible adapter. v5 exposes handlers/auth helpers differently, so examples and adapter packages must match the pinned version.
+**A:** The shown v4 configuration returns an HTTP handler and uses its compatible adapter. v5 exposes handlers and auth helpers differently, so examples and adapter packages must match the pinned version.
+
+**Q:** Why should a production session cookie use the `__Host-` prefix, and why must a resolved session never live in a module-level variable?
+
+**A:** The `__Host-` prefix enforces `Secure`, `Path=/`, and no `Domain` attribute, preventing sibling subdomains from tossing or fixing cookies onto the app's origin. Node.js workers serve concurrent requests in one module scope, so a module-level session leaks across users — use `React.cache()` for per-render Server Component deduplication instead.
 
 ## Image Optimization in Next.js
 
@@ -52,7 +56,7 @@ Source: [Image Optimization in Next.js](10.4.4.02-image-optimization.md)
 
 **Q:** When can dimensions and blur data come from a static import?
 
-**A:** Supported static JPEG/PNG/WebP/AVIF imports can provide dimensions and blur metadata automatically; animated sources do not get that blur treatment.
+**A:** Supported static JPEG, PNG, WebP, and AVIF imports can provide dimensions and blur metadata automatically; animated sources do not get that blur treatment.
 
 **Q:** Which parent requirements make `fill` mode reserve stable space?
 
@@ -69,6 +73,10 @@ Source: [Image Optimization in Next.js](10.4.4.02-image-optimization.md)
 **Q:** How can changed images become visible before a long optimizer TTL ends?
 
 **A:** Version or change the source URL so it selects a new variant key. Route tag revalidation does not purge the image optimizer cache.
+
+**Q:** Why does `next/image` block SVG optimization by default, and when should a self-hosted app switch to a custom `loaderFile`?
+
+**A:** Inline SVGs served from the app origin can execute embedded scripts; enabling `dangerouslyAllowSVG: true` requires pairing it with `contentDispositionType: 'attachment'` and a sandboxed `contentSecurityPolicy`. A custom `loaderFile` offloads resizing and AVIF encoding to an external CDN or media service when self-hosted Node.js replicas should stay isolated from CPU-heavy `sharp` bursts and share one transformed cache across regions.
 
 ## Deploying Next.js
 
@@ -100,11 +108,15 @@ Source: [Deploying Next.js](10.4.4.03-deploying-nextjs.md)
 
 **Q:** Which request-time features disappear when the app is deployed as a static export?
 
-**A:** There is no Next.js server to run per-request authorization, Server Actions, Route Handlers, Proxy, runtime regeneration, or the default image optimizer. Move required behavior to an external service/loader or choose a server-capable deployment.
+**A:** There is no Next.js server to run per-request authorization, Server Actions, Route Handlers, Proxy, runtime regeneration, or the default image optimizer. Move required behavior to an external service or loader or choose a server-capable deployment.
 
 **Q:** What proves that a self-hosted shutdown drains real work?
 
 **A:** Send `SIGTERM` or `SIGINT` to the process that owns the Next.js server, allow the configured drain interval, and test with requests in flight. A Kubernetes `preStop` delay alone does not prove ingress has stopped sending traffic.
+
+**Q:** Why can open tabs get `404` chunk errors during a rolling container deploy even when `deploymentId` is configured and health probes pass?
+
+**A:** Replacing containers removes their local `.next/static` files, and `deploymentId` triggers a hard navigation on skew rather than routing old clients to old pods. Serve hashed chunks from a CDN or shared object store via `assetPrefix` (retaining prior release assets through the overlap window), and keep liveness probes lightweight on `/api/health` without blocking on external databases.
 
 ## Trace a production boundary
 
@@ -112,11 +124,11 @@ Source: [Authentication](10.4.4.01-authentication.md), [Image optimization](10.4
 
 **Q:** A signed session says `admin` but the account was demoted. What should authorize a protected write?
 
-**A:** A verified identity resolved against current account/permission policy. An early routing check based on token claims cannot establish current resource access by itself.
+**A:** A verified identity resolved against current account and permission policy. An early routing check based on token claims cannot establish current resource access by itself.
 
 **Q:** Can a response generation counter stop an older login response from setting a cookie?
 
-**A:** No. It can ignore stale client state updates, but the browser processes response cookies independently. Serialize account-changing operations or enforce an appropriate server/session protocol.
+**A:** No. It can ignore stale client state updates, but the browser processes response cookies independently. Serialize account-changing operations or enforce an appropriate server and session protocol.
 
 **Q:** A 400-CSS-pixel card appears on a density-2 display. Why might the browser choose an approximately 800-pixel image?
 
@@ -128,15 +140,15 @@ Source: [Authentication](10.4.4.01-authentication.md), [Image optimization](10.4
 
 **Q:** The new server is healthy but older browser tabs cannot fetch chunks. What did the rollout omit?
 
-**A:** Asset/version compatibility and retention during overlapping deployments. A health probe proves current serving behavior, not that clients with an older build still have the files and action references they need.
+**A:** Asset and version compatibility and retention during overlapping deployments. A health probe proves current serving behavior, not that clients with an older build still have the files and action references they need.
 
 **Q:** Does a shared ISR store automatically provide cross-replica coherence?
 
-**A:** No. Storage also needs compatible serialization, versioned keys and coordinated tag invalidation, including a way for instances to learn about invalidations made elsewhere. Test failure, concurrent regeneration and rollback on the actual deployment topology.
+**A:** No. Storage also needs compatible serialization, versioned keys, and coordinated tag invalidation, including a way for instances to learn about invalidations made elsewhere. Test failure, concurrent regeneration, and rollback on the actual deployment topology.
 
 ## Summary
 
-Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
+Revisit the linked chapter when an answer misses the mechanism, a boundary, or a failure case.
 
 ---
 

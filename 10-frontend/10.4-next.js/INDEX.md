@@ -1,6 +1,6 @@
 # Next.js — Index
 
-> **Study time:** ≈ 3 h 35 m of reading (21 files, ~10 min average).
+> **Study time:** ≈ 3 h 37 m of reading (21 files, ~10 min average).
 > **21 files** — App Router, rendering strategies, server components, data fetching patterns, caching, streaming, ISR, authentication, static exports, deployment (Docker/Vercel/self-hosted), and interview questions.
 
 [![Files](https://img.shields.io/badge/files-21-blue)](../../INDEX.md)
@@ -16,11 +16,11 @@
 The 21 content files — 17 chapters and four revision companions — are organized into 5 category folders. Read them in order.
 
 | Category | Chapters | Why it matters |
-| -------------------------------------------------------------- | -------: | ----------------------------------------------------------------------------------------------------- |
+| -------------------------------------------------------------- | -------: | ------------------------------------------------------------------------------------------------------ |
 | [Rendering Fundamentals](01-rendering-fundamentals/INDEX.md) | 4 | Request rendering, reusable output, streaming, and server and client boundaries |
 | [Routing, HTTP & Metadata](02-routing-and-middleware/INDEX.md) | 3 | Next.js 16 Proxy, Route Handlers, and page metadata |
 | [Data & Caching](03-data-and-caching/INDEX.md) | 6 | Data access, mutations, two cache models, streaming, regeneration, and static export |
-| [Production](04-production/INDEX.md) | 3 | Session-to-resource authorization, responsive image delivery, deployment runtime and cache operations |
+| [Production](04-production/INDEX.md) | 3 | Session-to-resource authorization, responsive image delivery, deployment runtime, and cache operations |
 | [Interview Prep](05-interview-prep/INDEX.md) | 1 | 40 interview questions |
 
 ---
@@ -78,13 +78,13 @@ Six chapters explain data access, mutations, reuse, streaming, regeneration, and
 
 ## Production
 
-Protect current identity/resource boundaries, deliver appropriate image variants and operate a compatible runtime artifact.
+Protect current identity and resource boundaries, deliver appropriate image variants, and operate a compatible runtime artifact.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 14 | [Authentication](04-production/10.4.4.01-authentication.md) | Session verification, resource authorization, cookie and CSRF boundaries, version-pinned Auth.js | Important | Important | 9 min |
-| 15 | [Image Optimization](04-production/10.4.4.02-image-optimization.md) | `next/image`, lazy loading, responsive images, AVIF/WebP | Important | Specialized | 7 min |
-| 16 | [Deploying Next.js](04-production/10.4.4.03-deploying-nextjs.md) | Static vs server runtime, standalone artifact, `cacheHandler` vs `cacheHandlers`, replica coordination, version skew, runtime configuration, streaming and shutdown | Important | Specialized | 8 min |
+| 14 | [Authentication](04-production/10.4.4.01-authentication.md) | Session verification, `__Host-` cookies, `authInterrupts`, resource authorization, CSRF boundaries, and version-pinned Auth.js | Important | Important | 10 min |
+| 15 | [Image Optimization](04-production/10.4.4.02-image-optimization.md) | `next/image`, `sizes` and `fill`, AVIF and WebP, SVG security, `sharp`, custom loaders, and LCP loading hints | Important | Specialized | 7 min |
+| 16 | [Deploying Next.js](04-production/10.4.4.03-deploying-nextjs.md) | Static vs. server runtime, standalone containers, `instrumentation.ts`, health probes, `cacheHandler` vs. `cacheHandlers`, `assetPrefix` version skew, streaming, and shutdown | Important | Specialized | 8 min |
 
 ---
 

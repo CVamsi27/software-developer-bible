@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "6080e7f0ad5c24ba383bdc473745b8774e93dff4b5e9734857a420e6d7170318",
+ "corpus_digest": "915bdb6cd3ab03cd352ef46a18ee663ee97c253e0982769f470cf60818b3cae6",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5510
+  "read_minutes": 5512
  },
  "chapters": [
   {
@@ -1205,7 +1205,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "10-frontend/10.4-next.js/04-production/10.4.4.02-image-optimization.html",
@@ -1236,7 +1236,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 3
+   "m": 4
   },
   {
    "p": "10-frontend/10.4-next.js/05-interview-prep/10.4.5.01-interview-questions.html",

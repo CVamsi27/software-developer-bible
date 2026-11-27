@@ -16,7 +16,7 @@ Source: [gRPC](20.6.2.01-grpc.md)
 
 **Q:** How does HTTP/2 multiplex concurrent gRPC calls?
 
-**A:** HTTP/2 carries independent streams over one connection. It avoids HTTP/1 application-level serialization, but TCP packet loss can still stall streams sharing that transport connection.
+**A:** HTTP/2 carries independent streams over one connection. It avoids HTTP/1.1 application-level serialization, but TCP packet loss can still stall streams sharing that transport connection.
 
 **Q:** How does a Protocol Buffers schema define a cross-language contract?
 
@@ -25,6 +25,9 @@ Source: [gRPC](20.6.2.01-grpc.md)
 **Q:** Why do browser clients need a different gRPC integration path?
 
 **A:** Browser networking APIs do not expose the same transport capabilities as native gRPC clients. gRPC-Web commonly uses an adapter or proxy, with streaming support depending on the chosen implementation.
+
+**Q:** How does server-side `MAX_CONNECTION_AGE` solve HTTP/2 sticky load balancing behind a Layer 4 balancer?
+**A:** Sending `GOAWAY` after `MAX_CONNECTION_AGE` forces long-lived client channels to reconnect gracefully across newly scaled server instances, rebalancing load without dropping active streams within the grace window (source: [gRPC](20.6.2.01-grpc.md)).
 
 ## gRPC Streaming
 
@@ -36,7 +39,7 @@ Source: [gRPC Streaming](20.6.2.02-grpc-streaming.md)
 
 **Q:** Why do long-lived streams require backpressure and cancellation policies?
 
-**A:** Flow control regulates transport pressure, but applications must also bound buffers and propagate cancellation. Deadlines and completion rules define how resources are released and whether reconnect/resume is supported.
+**A:** Flow control regulates transport pressure, but applications must also bound buffers and propagate cancellation. Deadlines and completion rules define how resources are released and whether reconnect and resume are supported.
 
 **Q:** What happens when a stream never completes or notices cancellation?
 
@@ -56,7 +59,10 @@ Source: [Apache Kafka](20.6.2.03-kafka.md)
 
 **Q:** How does retention differ from removing work after acknowledgment?
 
-**A:** Kafka retains records independently of one group's consumption. Time, size and compaction policies determine available history; ordinary work queues instead remove completed deliveries under their acknowledgment contract.
+**A:** Kafka retains records independently of one group's consumption. Time, size, and compaction policies determine available history; ordinary work queues instead remove completed deliveries under their acknowledgment contract.
+
+**Q:** What happens if a consumer reads a transactional Kafka topic without setting `isolation.level=read_committed`?
+**A:** By default, consumers use `read_uncommitted` and receive records from aborted transactions as well as committed ones; pairing `read_committed` with cooperative rebalancing (`CooperativeStickyAssignor` or `KIP-848`) also avoids halting the whole group when partitions move (source: [Apache Kafka](20.6.2.03-kafka.md)).
 
 ## RabbitMQ
 
@@ -77,6 +83,9 @@ Source: [RabbitMQ](20.6.2.04-rabbitmq.md)
 **Q:** Why can a RabbitMQ single active consumer still complete effects out of order?
 
 **A:** One consumer can hold multiple unacknowledged deliveries and finish their handlers in a different order. Use prefetch one or serialize effects when the invariant requires strict sequence, then verify the queue's redelivery ordering contract.
+
+**Q:** How do RabbitMQ Quorum Queues prevent poison-message loops compared with classic queues?
+**A:** Quorum queues replicate via Raft across odd-sized clusters and maintain `x-delivery-count`, letting `delivery-limit` deterministically dead-letter or drop messages after a fixed retry budget (source: [RabbitMQ](20.6.2.04-rabbitmq.md)).
 
 ## Message Brokers: Kafka vs RabbitMQ
 
@@ -116,7 +125,7 @@ Source: [gRPC](20.6.2.01-grpc.md), [Streaming](20.6.2.02-grpc-streaming.md).
 
 **Q:** When would you choose gRPC over REST?
 
-**A:** Compare the actual typed contract, native streaming needs, client/browser support, HTTP semantics, tooling and measured workload. There is no universal speed multiple. Docita's existing in-process/outbox communication should not be described as a deployed gRPC integration.
+**A:** Compare the actual typed contract, native streaming needs, client and browser support, HTTP semantics, tooling, and measured workload. There is no universal speed multiple. Docita's existing in-process and outbox communication should not be described as a deployed gRPC integration.
 
 **Q:** HTTP status is `200` but final gRPC status is `INVALID_ARGUMENT`. Did the RPC succeed?
 
@@ -130,7 +139,7 @@ Source: [gRPC](20.6.2.01-grpc.md), [Streaming](20.6.2.02-grpc-streaming.md).
 
 Source: [Learning chapter](20.6.2.05-message-brokers.md)
 
-**Q:** Is replay a Kafka-versus-RabbitMQ yes/no distinction?
+**Q:** Is replay a Kafka-versus-RabbitMQ yes-or-no distinction?
 
 **A:** No. Kafka retains partition records; ordinary RabbitMQ queues track unfinished deliveries, but RabbitMQ Streams also support retained log replay. Compare the actual storage type and retention contract.
 
@@ -148,7 +157,7 @@ Source: [Learning chapter](20.6.2.06-event-driven-architecture.md)
 
 **Q:** Which failure gap does an outbox close, and which remains?
 
-**A:** Committing state and publication intent together prevents losing the event when a process dies after the database commit. Publish/ack uncertainty can still deliver duplicates.
+**A:** Committing state and publication intent together prevents losing the event when a process dies after the database commit. Publish and acknowledgment uncertainty can still deliver duplicates.
 
 **Q:** Why must a processed-event marker and projection update share a transaction?
 
@@ -168,7 +177,7 @@ Source: [Kafka](20.6.2.03-kafka.md), [RabbitMQ](20.6.2.04-rabbitmq.md).
 
 **Q:** Can that Kafka transaction atomically include an external charge?
 
-**A:** No. External effects need their own idempotency or local atomic job/deduplication boundary; Kafka output/offset coordination does not span arbitrary systems.
+**A:** No. External effects need their own idempotency or local atomic job and deduplication boundary; Kafka output and offset coordination does not span arbitrary systems.
 
 **Q:** RabbitMQ publish returns `false`. Is the message rejected by the broker?
 

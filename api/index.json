@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "4baf6e52d3e3358aa387a009281cb3d8300832e78e64e87e6eedb98aee6c7fff",
+ "corpus_digest": "7e9edf18a5d11db096a4fe070cb47ac89e55c2f2fab38f334651eace8c8ea88c",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5577
+  "read_minutes": 5580
  },
  "chapters": [
   {
@@ -3051,7 +3051,7 @@
    "g": [
     "concept"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "20-backend/20.6-microservices/01-service-topology/20.6.1.03-service-mesh.html",
@@ -3061,7 +3061,7 @@
    "g": [
     "concept"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "20-backend/20.6-microservices/01-service-topology/20.6.1.04-strangler-fig.html",
@@ -3121,7 +3121,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.html",

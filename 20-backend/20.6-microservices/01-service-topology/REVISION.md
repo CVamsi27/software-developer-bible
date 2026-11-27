@@ -24,11 +24,14 @@ Source: [Service Discovery](20.6.1.01-service-discovery.md)
 
 **Q:** Why should discovery account for endpoint health and readiness?
 
-**A:** An address can exist while the instance cannot serve the workload. Define health/readiness signals and expiry behavior, recognizing that cached information and network failures make availability uncertain.
+**A:** An address can exist while the instance cannot serve the workload. Define health and readiness signals and expiry behavior, recognizing that cached information and network failures make availability uncertain.
 
 **Q:** When would you choose a Kubernetes Service, Consul or Eureka for discovery?
 
-**A:** Prefer the platform Service when cluster DNS and forwarding meet the routing need. Consul adds a catalog with health-aware DNS/API lookup for environments that need its registry model; Eureka fits Spring Cloud clients that register and query a replicated registry. In every case, verify the health signal, cache age and who selects the endpoint. See the [Kubernetes Service DNS contract](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/), [Consul discovery model](https://developer.hashicorp.com/consul/docs/discover) and [Spring Cloud Eureka behavior](https://docs.spring.io/spring-cloud-netflix/docs/current/reference/html/).
+**A:** Prefer the platform Service when cluster DNS and forwarding meet the routing need. Consul adds a catalog with health-aware DNS and API lookup for environments that need its registry model; Eureka fits Spring Cloud clients that register and query a replicated registry. In every case, verify the health signal, cache age, and who selects the endpoint. See the [Kubernetes Service DNS contract](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/), [Consul discovery model](https://developer.hashicorp.com/consul/docs/discover), and [Spring Cloud Eureka behavior](https://docs.spring.io/spring-cloud-netflix/docs/current/reference/html/).
+
+**Q:** Why can rolling updates still drop requests even when an application handles `SIGTERM` and drains connections cleanly?
+**A:** Kubernetes propagates pod termination to `EndpointSlice` and `kube-proxy` asynchronously after sending `SIGTERM`, so new requests can still arrive briefly before routing updates; pairing a short `preStop` delay with in-flight draining lets endpoints converge cleanly (source: [Service Discovery](20.6.1.01-service-discovery.md)).
 
 ## API Gateway
 
@@ -60,7 +63,10 @@ Source: [Service Mesh](20.6.1.03-service-mesh.md)
 
 **Q:** How can mesh routing support a controlled rollout?
 
-**A:** Weighted routing and subsets can direct controlled traffic to a new version. Pair those mechanisms with compatible contracts, meaningful health evidence and rollback rules.
+**A:** Weighted routing and subsets can direct controlled traffic to a new version. Pair those mechanisms with compatible contracts, meaningful health evidence, and rollback rules.
+
+**Q:** Why do service meshes embed SPIFFE identities in short-lived X.509 certificates instead of authorizing by pod IP address?
+**A:** Pod IPs are ephemeral and recycled across services, whereas a cryptographically verified SPIFFE ID (`spiffe://<trust-domain>/ns/<namespace>/sa/<service-account>`) binds mutual TLS authentication and authorization directly to a workload identity (source: [Service Mesh](20.6.1.03-service-mesh.md)).
 
 ## Strangler Fig Pattern
 
@@ -92,11 +98,11 @@ Source: [Discovery](20.6.1.01-service-discovery.md), [Gateway](20.6.1.02-api-gat
 
 **Q:** Is a URL-only cache safe for a caller-authorized order read?
 
-**A:** No. Different callers can have different permitted data. Define cache eligibility and authorization/representation scope, or avoid caching the response.
+**A:** No. Different callers can have different permitted data. Define cache eligibility and authorization and representation scope, or avoid caching the response.
 
 **Q:** A mesh retries a write whose response was lost. What property must come from the application?
 
-**A:** Idempotent acceptance/status resolution under a durable operation contract. Authenticated transport cannot prove the first attempt did not commit.
+**A:** Idempotent acceptance and status resolution under a durable operation contract. Authenticated transport cannot prove the first attempt did not commit.
 
 **Q:** Why can a strangler's legacy fallback duplicate an order after timeout?
 

@@ -5652,226 +5652,228 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 13B D1-D7 rework of 20.5.2-20.5.4 and 20.5 INDEX (completes 20.5-security))."
   },
   "20-backend/20.6-microservices/01-service-topology/20.6.1.01-service-discovery.md": {
-   "sha256": "dc761b140212a9392335273e22505958909be05baf97051eef0c3a0d460ed328",
+   "sha256": "2120e2b6d93a320a3ee1b17731834c66af4db7d933ff2103fb73304168877ab9",
    "lines": 120,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against Kubernetes Service DNS and EndpointSlice docs, HashiCorp Consul, and Spring Cloud Eureka; executed `selectEndpoint` in Node v26.13.0.",
-    "readable": "Full read of 120 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "866 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 120 lines (908 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "908 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for dynamic endpoint resolution and readiness lease expiration.",
-    "fast": "21.9 KB raw / 6.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 21.9 KB raw / 6.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Separates registry lookup age from live connection health and write-timeout retry failure boundaries."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14A D1-D7 rework of 20.6.1 and 20.6.2)."
   },
   "20-backend/20.6-microservices/01-service-topology/20.6.1.02-api-gateway.md": {
-   "sha256": "0e2b906269f18f02ab483f42880a7621aab706054f821c6ce5640192de074f78",
+   "sha256": "597e6406b4a506e1c98d058974a330d0f6f5ac3efc39f1429a20b3ac661f1615",
    "lines": 93,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against RFC 9110 HTTP Semantics; executed `routeService` in Node v26.13.0.",
-    "readable": "Full read of 93 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "674 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 93 lines (688 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "688 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for microservice edge routing boundaries without duplicating the REST gateway chapter.",
-    "fast": "16.5 KB raw / 5.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 16.5 KB raw / 5.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Traces `/api/orders-archive` prefix-collision failure boundary and cross-tenant URL-only cache poisoning."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14A D1-D7 rework of 20.6.1 and 20.6.2)."
   },
   "20-backend/20.6-microservices/01-service-topology/20.6.1.03-service-mesh.md": {
-   "sha256": "70140f49f3b5efa4c7f063017c8f4286be7e5d7188d811d6c874d2cfc684a1f1",
+   "sha256": "580cc723ca6c576d7ffdcf886758db7f38d7d25e3e1f6ea269d3248af8e6cda2",
    "lines": 93,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against Istio ambient mode and architecture documentation and Linkerd docs.",
-    "readable": "Full read of 93 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "662 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 93 lines (711 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "711 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for managed service-to-service data-plane policy and mTLS identity.",
-    "fast": "14.9 KB raw / 5.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 14.9 KB raw / 5.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Explains why mTLS does not establish tenant permission or write idempotency and why removing a namespace label does not eject running sidecars."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14A D1-D7 rework of 20.6.1 and 20.6.2)."
   },
   "20-backend/20.6-microservices/01-service-topology/20.6.1.04-strangler-fig.md": {
-   "sha256": "c9fe39006810dc4f36837a4b3b61eaa02c246dde4f1f930a86726b90750bd48b",
+   "sha256": "e819a53684698c022e68ad627d45baa435db6d195aaff93ff6636b8224365827",
    "lines": 111,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against Martin Fowler, AWS, and Azure Strangler Fig architecture guides; executed `migrationTarget` in Node v26.13.0.",
-    "readable": "Full read of 111 lines. Strangler Fig Pattern chapter opening with the replacement checkout commit-timeout duplicate-order hazard, tracing 8 incremental migration stages, SHA-256 deterministic tenant cohort routing (`migrationTarget`), single-writer outbox/CDC data synchronization, safe read shadowing vs write side effects, and 5 cutover/retirement evidence gates.",
-    "concise": "779 words across 111 lines; zero filler or duplicate explanations.",
+    "readable": "Full read of 111 lines (781 prose words). Strangler Fig Pattern chapter opening with the replacement checkout commit-timeout duplicate-order hazard, tracing 8 incremental migration stages, SHA-256 deterministic tenant cohort routing (`migrationTarget`), single-writer outbox/CDC data synchronization, safe read shadowing vs write side effects, and 5 cutover/retirement evidence gates.",
+    "concise": "781 words across 111 lines. zero filler or duplicate explanations.",
     "focused": "Focused single-topic scope: Canonical home for incremental legacy-to-replacement service and data migration.",
-    "fast": "Fast to scan: 18.5 KB raw / 6.1 KB gzip.",
+    "fast": "Measured 18.5 KB raw / 6.1 KB gzip. Fast to scan: 18.5 KB raw / 6.1 KB gzip.",
     "best": "Best-practice depth: Demonstrates why routing rollback cannot undo committed new-schema state and why `Promise.all` dual-writes fail atomicity."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14A D1-D7 rework of 20.6.1 and 20.6.2)."
   },
   "20-backend/20.6-microservices/01-service-topology/INDEX.md": {
-   "sha256": "b27a0ce6571d1e4390aae178203c4075a23bbb570881dbb30c9915b080ce5d62",
+   "sha256": "88352e35706a8da541877789d766aa634eb60e1b7f4dd019a46fee552821aac2",
    "lines": 50,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against Kubernetes Service/EndpointSlice docs, Istio ambient mesh docs, and RFC 9110.",
-    "readable": "Full read of 50 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "127 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 50 lines (131 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "131 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical category index for service endpoint resolution, edge routing, mesh communication, and incremental migration.",
-    "fast": "10.2 KB raw / 3.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 10.2 KB raw / 3.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Frames why a modular monolith needs no external discovery or mesh until deployable boundaries justify them. Includes failure boundary analysis."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14A D1-D7 rework of 20.6.1 and 20.6.2)."
   },
   "20-backend/20.6-microservices/01-service-topology/REVISION.md": {
-   "sha256": "53c693b9dd623997f25d078fdd6353b13091f7fd82553089a3f5f3299a9ae125",
-   "lines": 119,
+   "sha256": "9d34a40124df7e3a31e58834ca8d5667e184b16ee3770694ae0d26273f46a459",
+   "lines": 125,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against Kubernetes Service DNS, Consul, Eureka, Istio, and RFC 9110.",
-    "readable": "Full read of 119 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "805 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 125 lines (918 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "918 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical revision companion for 01-service-topology.",
-    "fast": "14.4 KB raw / 4.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 14.4 KB raw / 4.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Tests changed-condition failure boundaries including lease expiration at `now`, `/api/orders-archive` routing, mesh write retries, and row-count vs semantic backfill validation."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14A D1-D7 rework of 20.6.1 and 20.6.2)."
   },
   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.01-grpc.md": {
-   "sha256": "431d531070c36609a1ad50a97145b292452e1ec0ba90209f47ae0e703060552f",
+   "sha256": "eee9417f8cd675e99709d39d412a1ce77034959d259d23b3ce6747f6ea6c50e4",
    "lines": 120,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against gRPC Core Concepts, gRPC Node (`@grpc/grpc-js`, `@grpc/proto-loader`), and Protobuf proto3 guide.",
-    "readable": "Full read of 120 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "703 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 120 lines (742 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "742 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for unary gRPC contracts, framing, and deadline semantics.",
-    "fast": "22.9 KB raw / 6.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 22.9 KB raw / 6.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Explains why deadline cancellation does not roll back committed server writes and why L4 load balancers pin HTTP/2 connections."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14A D1-D7 rework of 20.6.1 and 20.6.2)."
   },
   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.02-grpc-streaming.md": {
-   "sha256": "fe04c8883bfa62977e3c67c7b3031e43883210ad3255bf1d0f65eeea4d68fbaf",
+   "sha256": "0fdd675c6361f86cc1b85998f5f29447e455f062b1494ab7d2691401da710737",
    "lines": 128,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against gRPC Core Concepts and `grpc-node` (`@grpc/grpc-js`).",
-    "readable": "Full read of 128 lines. gRPC Streaming chapter covering server, client, and bidirectional stream shapes, backpressure (`call.write` false -> `once(call, 'drain')`), cooperative cancellation via `AbortController` on `call.once('cancelled')` (`localRangeService`), and cursor-based reconnect/resume boundaries.",
-    "concise": "577 words across 128 lines; zero filler or duplicate explanations.",
+    "readable": "Full read of 128 lines (584 prose words) gRPC Streaming chapter covering server, client, and bidirectional stream shapes, backpressure (`call.write` false -> `once(call, 'drain')`), cooperative cancellation via `AbortController` on `call.once('cancelled')` (`localRangeService`), and cursor-based reconnect/resume boundaries.",
+    "concise": "584 words across 128 lines. zero filler or duplicate explanations.",
     "focused": "Focused single-topic scope: Canonical home for streaming RPC flow control and cancellation lifecycle.",
-    "fast": "Fast to scan: 26.0 KB raw / 6.1 KB gzip.",
+    "fast": "Measured 26.0 KB raw / 6.1 KB gzip. Fast to scan: 26.0 KB raw / 6.1 KB gzip.",
     "best": "Best-practice depth: Separates local transport `drain` relief from downstream peer completion and unresumed mid-stream disconnects. Includes failure boundary analysis."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14A D1-D7 rework of 20.6.1 and 20.6.2)."
   },
   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md": {
-   "sha256": "efb58ff48eea1b4ecd37fe28e4b16d46c4f3b47eaf47a68a8d03b9898c45a8a4",
+   "sha256": "78d5515b0baf7487b61c801db2ac8f52a9ee765cc2bc37c5e4b1998ddb54fc7e",
    "lines": 130,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against Apache Kafka 4.3 documentation and `@confluentinc/kafka-javascript` 1.11.0 migratioparamPI docs.",
-    "readable": "Full read of 130 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "984 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 130 lines (1050 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1050 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for Kafka partition offset progress and transactional consume-transform-produce within microservices.",
-    "fast": "25.4 KB raw / 7.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 25.4 KB raw / 7.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Clarifies why Kafka transactions cover only Kafka topics/offsets (`offset + 1n`) and cannot atomically encompass external database or payment side effects."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14A D1-D7 rework of 20.6.1 and 20.6.2)."
   },
   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.md": {
-   "sha256": "aaa3eb26fddfe623caed38d7a93bb188a97f4aed035e4fde0bcd0c2c398b60dd",
+   "sha256": "d975d99a928b26df1c468b3e95a0c7db27e44ecc3cd6901c42c2b7df3df143e4",
    "lines": 140,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against RabbitMQ 4.3.6 queue, quorum-queue delayed retry, confirm, and DLX documentation.",
-    "readable": "Full read of 140 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1056 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 140 lines (1142 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1142 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for AMQP exchange routing, publisher confirms, and per-delivery worker acknowledgments.",
-    "fast": "24.8 KB raw / 7.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 24.8 KB raw / 7.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Distinguishes `channel.publish` writable boolean from broker confirm and `mandatory` return failure boundaries."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14A D1-D7 rework of 20.6.1 and 20.6.2)."
   },
   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md": {
-   "sha256": "e05d4275f2de4c37a02e105cc3be3479e7b0f762a4625f813595e73f8be8dbed",
+   "sha256": "fa29a83a1523fb1eab32783bbd627bed6050acdefa2582242de4edd39ad11cfd",
    "lines": 145,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against Apache Kafka 4.3 (including Share Consumers) and RabbitMQ 4.3.6 (including Quorum Queues and RabbitMQ Streams).",
-    "readable": "Full read of 145 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1053 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 145 lines (1081 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1081 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for comparing Kafka and RabbitMQ storage, replay, and acknowledgment models.",
-    "fast": "21.3 KB raw / 7.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 21.3 KB raw / 7.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Refutes the false 'RabbitMQ cannot replay' and 'Kafka cannot do queue work' generalizations by comparing exact storage models."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14A D1-D7 rework of 20.6.1 and 20.6.2)."
   },
   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.06-event-driven-architecture.md": {
-   "sha256": "517f3fe70cdcc98603379d0e4cce45da2d3e1a732a5aef0097a93315d47d6bad",
+   "sha256": "12a7b6b7a6cb8512a6e2927dbe2c17986e93f921ec223d2d7fd3b30f6e2971c9",
    "lines": 147,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against Martin Fowler event-driven architecture taxonomy and Apache Kafka documentation.",
-    "readable": "Full read of 147 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1037 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 147 lines (1047 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1047 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical home for event-driven service decoupling, event envelope identity, and consumer idempotency.",
-    "fast": "19.9 KB raw / 6.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 19.9 KB raw / 6.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Explains why EDA does not imply event sourcing or CQRS and traces the source-commit-to-publish crash boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14A D1-D7 rework of 20.6.1 and 20.6.2)."
   },
   "20-backend/20.6-microservices/02-communication-and-messaging/INDEX.md": {
-   "sha256": "80a94712d3b7609b0175410db722451765a86a77434c02bcf8e7e6928b7ae7bb",
+   "sha256": "f76b90c0709891c9f6b40a19c76207bf63ce0964173e2cef51f22825cd0e66a9",
    "lines": 51,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against gRPC Node, Apache Kafka 4.3, Confluent JS client 1.11.0, and RabbitMQ 4.3.6.",
-    "readable": "Full read of 51 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "125 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 51 lines (127 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "127 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical category index for synchronous RPC and asynchronous broker/event communication.",
-    "fast": "11.2 KB raw / 3.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 11.2 KB raw / 3.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Frames transport acknowledgments vs durable business completion. Includes failure boundary analysis."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14A D1-D7 rework of 20.6.1 and 20.6.2)."
   },
   "20-backend/20.6-microservices/02-communication-and-messaging/REVISION.md": {
-   "sha256": "9371a514fd7f49c4ab81677ccbd03e03e10d69caedf9ae8ce0f5571f145a7b36",
-   "lines": 191,
+   "sha256": "fb665de92d19394efa7f04139d869420fbbe5bb1d56978b01f76e996a020e673",
+   "lines": 200,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against gRPC, Apache Kafka 4.3, and RabbitMQ 4.3.6 documentation.",
-    "readable": "Full read of 191 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1365 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 200 lines (1511 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1511 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical revision companion for 02-communication-and-messaging.",
-    "fast": "19.7 KB raw / 6.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 19.7 KB raw / 6.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Drills `grpc-status` vs HTTP 200, Kafka `offset + 1` transaction boundaries, RabbitMQ `publish()` boolean vs confirm, and single-active-consumer prefetch ordering. Includes failure boundary analysis."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14A D1-D7 rework of 20.6.1 and 20.6.2)."
   },
   "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.01-saga-pattern.md": {
    "sha256": "ab505eb79867f9bd2de900c3cc5a9eb3abc7c5fa4fafe61c2f56148cbfb5902c",
@@ -6092,20 +6094,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
   },
   "20-backend/20.6-microservices/INDEX.md": {
-   "sha256": "3a488040b0c07efeafa3b3ca0ba7dee606350dd645fbad10d1ac5009ecefedde",
+   "sha256": "6f467efe979fcecdd371596a16844d3f861a6abc106f0e6f71cfa428a19bf61b",
    "lines": 91,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against gRPC, OpenTelemetry, transactional outbox, Saga orchestration, and circuit-breaker resilience patterns.",
-    "readable": "Full read of 91 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 91 lines (125 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "125 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical microservices stack entrypoint starting from a modular monolith baseline before introducing distributed boundaries.",
-    "fast": "18.6 KB raw / 5.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 18.6 KB raw / 5.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Frames partial failure boundary conditions, network latency limits, and consistency trade-offs."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 14A D1-D7 rework of 20.6.1 and 20.6.2)."
   },
   "20-backend/20.7-graphql/01-fundamentals/20.7.1.01-graphql-overview.md": {
    "sha256": "feda42bac0a302215434cdf7eba5d577fb202d03b2f3ccaf583cebe025a11699",
@@ -6567,7 +6569,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
   },
   "20-backend/INDEX.md": {
-   "sha256": "a80b1960cb15e69746ac7f8e086d191568b2969504bca6a3cb815fc9ab9e14ac",
+   "sha256": "c4aabb4c0272b5f8f9e5378872090ee67ebd336d64c3a83fabd23a7b568b4f5c",
    "lines": 122,
    "genre": "index",
    "status": "read",
@@ -6580,7 +6582,7 @@
     "fast": "Measured 15.4 KB raw / 5.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Remaining limit is study-hour path estimates are rough guides and depend on each reader's prior backend background."
    },
-   "notes": "Synced live read-time and counts after Phase 13B D1-D7 rework of 20.5.2-20.5.4 and 20.5 INDEX (completes 20.5-security)."
+   "notes": "Synced live read-time and counts after Phase 14A D1-D7 rework of 20.6.1 and 20.6.2."
   },
   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md": {
    "sha256": "065e2b7d573b2298550d061453667084b1d010e6fadf07f903f6fdd34a8e5185",
@@ -14373,7 +14375,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "1a8dc95bfd1d8206fff3701c7c04d5cb82fa43bf6d29b2c746d2833b6dcfc294",
+   "sha256": "faa378fc50187ddca5ea73d1e3083bcd5b456847b266f8203f2d8ddad7b11334",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14386,7 +14388,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 13B D1-D7 rework of 20.5.2-20.5.4 and 20.5 INDEX (completes 20.5-security)."
+   "notes": "Synced live read-time and counts after Phase 14A D1-D7 rework of 20.6.1 and 20.6.2."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14677,7 +14679,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "2cc83debe86dc7d02f7a376007cec1ac1ee477e944512660ec424315d0710a17",
+   "sha256": "782b166d5b7e071d2431ff5af7a77682352e1d0d2add90f56113ca7b95ba38fc",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14690,7 +14692,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 13B D1-D7 rework of 20.5.2-20.5.4 and 20.5 INDEX (completes 20.5-security)."
+   "notes": "Synced live read-time and counts after Phase 14A D1-D7 rework of 20.6.1 and 20.6.2."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "0124ce494114add21793d63496a5a55904197efe88843e2c7ca5b34006b2d800",
+ "corpus_digest": "b68e8c6e007199b933fbc4c8a19783e9465d169638da988e82205bd780f98325",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5529
+  "read_minutes": 5533
  },
  "chapters": [
   {
@@ -1506,7 +1506,7 @@
     "concept",
     "guide"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.7-html-css/10.7.08-browser-storage.html",
@@ -1519,7 +1519,7 @@
     "security",
     "storage"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.7-html-css/10.7.09-tailwind-css.html",
@@ -1530,7 +1530,7 @@
     "concept",
     "styling"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "10-frontend/10.7-html-css/10.7.10-interview-questions.html",
@@ -1541,7 +1541,7 @@
     "interview-questions",
     "reference"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.7-html-css/REVISION.html",

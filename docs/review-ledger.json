@@ -2747,100 +2747,100 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 7A D1-D7 rework: 10.7-html-css (10.7.01-10.7.06))."
   },
   "10-frontend/10.7-html-css/10.7.07-theming-design-tokens.md": {
-   "sha256": "4a62c8437a9799daca98e26456d200351f6bff94d2918180fc13cdf9bb20df57",
-   "lines": 152,
+   "sha256": "3cabc71027df3a76d90936e300cdc18edfc2eaa729cec9681879b179483bc696",
+   "lines": 156,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against MDN prefers-color-scheme, color-scheme and custom-property references plus the WCAG contrast guidance; the media-query fallback, storage-event behavior and 4.5:1/3:1 thresholds match those sources on 2026-11-18 (URLs 200).",
-    "readable": "Full read of 152 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "800 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 156 lines (967 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "967 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Theme choice, effective appearance and token tiers are owned here; CSS architecture owns ownership and layers, and accessibility owns conformance.",
-    "fast": "25.5 KB raw / 6.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 25.5 KB raw / 6.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Keeps the stored choice separate from the effective theme; a token pair check cannot prove contrast under overlays, images or forced colors."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css))."
   },
   "10-frontend/10.7-html-css/10.7.08-browser-storage.md": {
-   "sha256": "b516818bcab03d8ad44814dcf6d874e9228f21ede711b2b550dbce9e26a029c6",
+   "sha256": "eb5c06df1e2f098ba605d1a70e397245cbab14810f0249e5de7bc08289226bf0",
    "lines": 139,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against MDN Web Storage, IndexedDB, storage quotas and cookie references plus RFC 6265; cookie prefixes, sessionStorage copying and transaction auto-commit behavior match those sources on 2026-11-18 (URLs 200).",
-    "readable": "Full read of 139 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1064 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 139 lines (1157 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1157 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Store selection and client-data trust are owned here; PWA owns the service-worker cache, and sessions and cookies owns server session design.",
-    "fast": "23.7 KB raw / 7.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 23.7 KB raw / 7.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Shows why HttpOnly is not full session security; client storage cannot prove server authorization or durable persistence under eviction."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css))."
   },
   "10-frontend/10.7-html-css/10.7.09-tailwind-css.md": {
-   "sha256": "bd62263087f0d59808d457782aa1449a6f1536722528fe78f7a4ec0fd0a74103",
-   "lines": 102,
+   "sha256": "d82c75228fb189dda50f605a7da748e0ffe71585cb3c68c2766b99579eadb3a6",
+   "lines": 106,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-18",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against the Tailwind v4 theme, source-detection and upgrade guides; npm reports tailwindcss 4.3.5 current, @theme and @source inline are current, and the v3 content/safelist path is version-scoped on 2026-11-18 (URLs 200).",
-    "readable": "Full read of 102 lines; a runtime-built class disappearing in production opens; definition and first principles, v4 configuration, candidate detection, variants, extraction and built-artifact verification are ordered.",
-    "concise": "822 words; one status button carries detection, tokens and variants, and the extraction section adds ownership rather than repeating the build trace.",
+    "readable": "Full read of 106 lines (937 prose words) a runtime-built class disappearing in production opens; definition and first principles, v4 configuration, candidate detection, variants, extraction and built-artifact verification are ordered.",
+    "concise": "937 words across 106 lines. one status button carries detection, tokens and variants, and the extraction section adds ownership rather than repeating the build trace.",
     "focused": "Tailwind candidate generation and version boundaries are owned here; CSS architecture owns layer and selector governance, and theming owns token semantics.",
-    "fast": "16.6 KB raw / 5.6 KB gzip built page; the shared Jekyll shell is included.",
+    "fast": "Measured 16.6 KB raw / 5.6 KB gzip (the shared Jekyll shell is included.)",
     "best": "Explains why a complete class string is required; source detection cannot evaluate runtime fragments, and generated CSS does not prove accessible contrast."
    },
-   "notes": "Matched the section badge colour to the other HTML/CSS chapters and corrected the footer chain."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css))."
   },
   "10-frontend/10.7-html-css/10.7.10-interview-questions.md": {
-   "sha256": "a7d50c3884021622ebf0aea3baf36920401bf0e4e46a0f3f83d05df685f62a85",
-   "lines": 188,
+   "sha256": "e973231f97d4450eab16b0b522a9602b69c69b25c66a5db173729ade4874e266",
+   "lines": 204,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "All 28 answers were checked against the HTML/CSS chapters and the MDN cascade, stacking-context and layout references; the reading-flow status (Chrome 137 only) and current Google FAQ deprecation were verified on 2026-11-18.",
-    "readable": "Full read of 188 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1926 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 204 lines (2284 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "2284 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Drill bank: each answer points at a chapter canonical treatment rather than re-teaching the mechanism.",
-    "fast": "29.0 KB raw / 10.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 29.0 KB raw / 10.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Provides 28 graded answers with failure boundaries; it cannot replace the chapters or prove a browser diagnosis."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css))."
   },
   "10-frontend/10.7-html-css/INDEX.md": {
-   "sha256": "0dfe5e86c1281d7e3ee4193ebcd833419a5af9a7a6a61bcfd00a9327628df70e",
+   "sha256": "60befc27c997108cc6e275f0aed30006586c90eb84a8f3e307c8d6c5ea986b82",
    "lines": 67,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "No version-sensitive claim; the 11-file count (ten chapters plus one revision companion), 69-minute total and status badge were re-derived from disk, and the table times sum to 69 on 2026-11-18.",
-    "readable": "Full read of 67 lines (393 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "393 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 67 lines (398 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "398 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Navigation only: it points at ten chapters and their revision drill without retelling their mechanisms.",
-    "fast": "Measured 12.3 KB raw / 4.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 12.3 KB raw / 4.4 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Orders the section from content meaning to pixels to persistence and discovery; it does not teach any chapter itself."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 7A D1-D7 rework: 10.7-html-css (10.7.01-10.7.06))."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css))."
   },
   "10-frontend/10.7-html-css/REVISION.md": {
-   "sha256": "fd9f26d497cf13768e59268666c261d29ababfd32e84a0a32b3fa799d0ce69fd",
-   "lines": 149,
+   "sha256": "614247f129acf5b77f8505cd9d626e555e9ac0413bbe8160bf0c7e7f6f3d9149",
+   "lines": 165,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Every answer was checked against its source chapter and the MDN cascade, storage, cookie and accessibility references; the Tailwind v4 boundary and reading-flow availability match the sources on 2026-11-18.",
-    "readable": "Full read of 149 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "949 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 165 lines (1250 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1250 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Retrieval drill: each group names its source chapter and points at it for the full treatment.",
-    "fast": "16.2 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 16.2 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Tests reload, metadata and layout boundaries under changed conditions; it cannot replace the chapters."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css))."
   },
   "10-frontend/10.8-mobile/10.8.01-react-native-cross-platform.md": {
    "sha256": "85db24d878f2cbba2dbe89e6e6b6a7b5f2cfa88a4126c4d448cd3965dfe8fae4",
@@ -2987,7 +2987,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/INDEX.md": {
-   "sha256": "25968550cf21cfa30b011022216340a124329abf8ae8c17338f8a562e4d734e3",
+   "sha256": "472f2eab563403c9478a23372ff0b601ea50c72c23beccbf92d16824e3079869",
    "lines": 75,
    "genre": "index",
    "status": "read",
@@ -3000,7 +3000,7 @@
     "fast": "Measured 14.7 KB raw / 4.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Sets the frontend study order from execution to optional capabilities; it limits itself to navigation and does not teach any mechanism."
    },
-   "notes": "Synced live read-time and counts after Phase 7A D1-D7 rework: 10.7-html-css (10.7.01-10.7.06)."
+   "notes": "Synced live read-time and counts after Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css)."
   },
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md": {
    "sha256": "cbb48962f1b1c976f33493d3398af0e10c4deb7f49db4537cb50b8af762ebfe1",
@@ -14365,7 +14365,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "47f32a0b27b1e14500571109a7d4197a3f02f2a3a38b15d87aa3f4560ef2be84",
+   "sha256": "663c73ddaddc1e3fc8f97b474cfaac889af46797fe35d9c9d039e03ecc01f21d",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14378,7 +14378,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 7A D1-D7 rework: 10.7-html-css (10.7.01-10.7.06)."
+   "notes": "Synced live read-time and counts after Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css)."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14669,7 +14669,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "35b09a6c5dee819a85c35ca2c83b6b7e35980e5ae1fcfe8e34ded2daf1abbe43",
+   "sha256": "672404e5705cc4ee3130be262cddb530be265fa757b138453c0b71c99abef751",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14682,7 +14682,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 7A D1-D7 rework: 10.7-html-css (10.7.01-10.7.06)."
+   "notes": "Synced live read-time and counts after Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css)."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

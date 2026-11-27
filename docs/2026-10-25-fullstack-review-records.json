@@ -2083,10 +2083,10 @@
     },
     {
       "path": "10-frontend/10.7-html-css/10.7.07-theming-design-tokens.md",
-      "sha256": "4a62c8437a9799daca98e26456d200351f6bff94d2918180fc13cdf9bb20df57",
+      "sha256": "3cabc71027df3a76d90936e300cdc18edfc2eaa729cec9681879b179483bc696",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css) C1-C8 refinement (2026-11-24): Full read of 156 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-24",
@@ -2094,10 +2094,10 @@
     },
     {
       "path": "10-frontend/10.7-html-css/10.7.08-browser-storage.md",
-      "sha256": "b516818bcab03d8ad44814dcf6d874e9228f21ede711b2b550dbce9e26a029c6",
+      "sha256": "eb5c06df1e2f098ba605d1a70e397245cbab14810f0249e5de7bc08289226bf0",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css) C1-C8 refinement (2026-11-24): Full read of 139 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-24",
@@ -2105,21 +2105,21 @@
     },
     {
       "path": "10-frontend/10.7-html-css/10.7.09-tailwind-css.md",
-      "sha256": "bd62263087f0d59808d457782aa1449a6f1536722528fe78f7a4ec0fd0a74103",
+      "sha256": "d82c75228fb189dda50f605a7da748e0ffe71585cb3c68c2766b99579eadb3a6",
       "status": "reviewed",
       "reviewer": "frontend",
-      "reviewDate": "2026-11-18",
+      "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Full content: Tailwind v4 configuration and candidate detection re-checked against the current guides; the badge colour now matches the HTML/CSS section and the footer chain was repaired.",
+      "notes": "Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css) C1-C8 refinement (2026-11-24): Full read of 106 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "genre": "teaching"
     },
     {
       "path": "10-frontend/10.7-html-css/10.7.10-interview-questions.md",
-      "sha256": "a7d50c3884021622ebf0aea3baf36920401bf0e4e46a0f3f83d05df685f62a85",
+      "sha256": "e973231f97d4450eab16b0b522a9602b69c69b25c66a5db173729ade4874e266",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css) C1-C8 refinement (2026-11-24): Full read of 204 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-24",
@@ -2127,10 +2127,10 @@
     },
     {
       "path": "10-frontend/10.7-html-css/INDEX.md",
-      "sha256": "0dfe5e86c1281d7e3ee4193ebcd833419a5af9a7a6a61bcfd00a9327628df70e",
+      "sha256": "60befc27c997108cc6e275f0aed30006586c90eb84a8f3e307c8d6c5ea986b82",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Phase 7A D1-D7 rework: 10.7-html-css (10.7.01-10.7.06) C1-C8 refinement (2026-11-24): Full read of 67 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+      "notes": "Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css) C1-C8 refinement (2026-11-24): Full read of 67 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-24",
@@ -2138,12 +2138,12 @@
     },
     {
       "path": "10-frontend/10.7-html-css/REVISION.md",
-      "sha256": "fd9f26d497cf13768e59268666c261d29ababfd32e84a0a32b3fa799d0ce69fd",
+      "sha256": "614247f129acf5b77f8505cd9d626e555e9ac0413bbe8160bf0c7e7f6f3d9149",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs).",
+      "notes": "Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css) C1-C8 refinement (2026-11-24): Full read of 165 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
@@ -2247,10 +2247,10 @@
     },
     {
       "path": "10-frontend/INDEX.md",
-      "sha256": "25968550cf21cfa30b011022216340a124329abf8ae8c17338f8a562e4d734e3",
+      "sha256": "472f2eab563403c9478a23372ff0b601ea50c72c23beccbf92d16824e3079869",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Phase 7A D1-D7 rework: 10.7-html-css (10.7.01-10.7.06) count/read-time sync (2026-11-24): Full read of 75 lines. Updated generated counts/read-time navigation after Phase 7A D1-D7 rework: 10.7-html-css (10.7.01-10.7.06).",
+      "notes": "Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css) count/read-time sync (2026-11-24): Full read of 75 lines. Updated generated counts/read-time navigation after Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css).",
       "findings": [],
       "reviewer": "root",
       "metadataReview": {
@@ -10066,12 +10066,12 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "47f32a0b27b1e14500571109a7d4197a3f02f2a3a38b15d87aa3f4560ef2be84",
+      "sha256": "663c73ddaddc1e3fc8f97b474cfaac889af46797fe35d9c9d039e03ecc01f21d",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 7A D1-D7 rework: 10.7-html-css (10.7.01-10.7.06) count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 7A D1-D7 rework: 10.7-html-css (10.7.01-10.7.06).",
+      "notes": "Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css) count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css).",
       "findings": []
     },
     {
@@ -10261,12 +10261,12 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "35b09a6c5dee819a85c35ca2c83b6b7e35980e5ae1fcfe8e34ded2daf1abbe43",
+      "sha256": "672404e5705cc4ee3130be262cddb530be265fa757b138453c0b71c99abef751",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Phase 7A D1-D7 rework: 10.7-html-css (10.7.01-10.7.06) count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 7A D1-D7 rework: 10.7-html-css (10.7.01-10.7.06).",
+      "notes": "Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css) count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 7B D1-D7 rework: 10.7-html-css (10.7.07-10.7.10, INDEX, REVISION; completes 10.7-html-css).",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

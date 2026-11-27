@@ -16,7 +16,11 @@ Source: [HTML Fundamentals — Semantic HTML, Forms, Accessibility](10.7.01-html
 
 **Q:** Why is a clickable `<div>` not equivalent to a `<button>`?
 
-**A:** A `<button>` supplies semantics, keyboard behavior, focus and disabled/form behavior. Reimplementing those correctly is more work than using the appropriate native element.
+**A:** A `<button>` supplies semantics, keyboard behavior, focus, and disabled and form behavior. Reimplementing those correctly is more work than using the appropriate native element.
+
+**Q:** Why should one-time verification codes use `type="text" inputmode="numeric"` instead of `type="number"`, and what does `inert` handle for background shells behind custom modals?
+
+**A:** `type="number"` strips leading zeros, permits scientific-notation characters, and can mutate silently on scroll, whereas `type="text" inputmode="numeric"` keeps an exact string while still requesting a numeric keypad. Applying `inert` to the background app shell simultaneously blocks pointer clicks, removes descendants from keyboard tab order, and hides them from the accessibility tree.
 
 ## CSS Fundamentals — Grid, Flexbox, Responsive Design, Variables
 
@@ -24,17 +28,21 @@ Source: [CSS Fundamentals — Grid, Flexbox, Responsive Design, Variables](10.7.
 
 **Q:** Why can a layered rule lose even with a more specific selector?
 
-**A:** Cascade origin, importance and layer precedence are resolved before specificity. Normal unlayered author rules outrank normal layered rules; important layer ordering reverses.
+**A:** Cascade origin, importance, and layer precedence are resolved before specificity. Normal unlayered author rules outrank normal layered rules; important layer ordering reverses.
 
 **Q:** Why should DOM order remain meaningful when a flex or grid layout visually reorders items?
 
-**A:** Visual placement does not rewrite source order. `reading-flow` can adjust sequential reading/navigation in supporting browsers, but it has limited availability; keep the source order sensible as the fallback and verify the actual browser and assistive technology.
+**A:** Visual placement does not rewrite source order. `reading-flow` can adjust sequential reading and navigation in supporting browsers, but it has limited availability; keep the source order sensible as the fallback and verify the actual browser and assistive technology.
+
+**Q:** When should a layout prefer `100svh` or `100dvh` over `100vh`, and how does `grid-template-rows: subgrid` align sibling cards across columns?
+
+**A:** On mobile browsers with retracting toolbars, `100vh` tracks the large viewport and can clip bottom controls; `100svh` holds a stable initial-screen height while `100dvh` tracks the visible viewport dynamically. Setting `display: grid; grid-row: span 3; grid-template-rows: subgrid;` lets child cards share their parent grid's row tracks so variable-length titles and footers line up automatically.
 
 ## Browser Rendering — Critical Rendering Path, Reflow, Paint
 
 Source: [Browser Rendering — Critical Rendering Path, Reflow, Paint](10.7.03-browser-rendering.md)
 
-**Q:** What causes layout thrashing in a read/write loop?
+**Q:** What causes layout thrashing in a read-write loop?
 
 **A:** A layout-dependent read after a style write may force synchronous layout repeatedly. Batch reads before writes and confirm the cost in a performance trace.
 
@@ -44,7 +52,7 @@ Source: [SEO — Meta Tags, Structured Data, Core Web Vitals](10.7.04-seo.md)
 
 **Q:** Why does valid structured data not guarantee a rich search result?
 
-**A:** Eligibility, content policies and search-engine decisions still apply. Validate the markup and rendered content without promising a particular display or ranking.
+**A:** Eligibility, content policies, and search-engine decisions still apply. Validate the markup and rendered content without promising a particular display or ranking.
 
 ## Progressive Web Apps (PWA) — Service Workers, Manifest, Offline
 
@@ -56,7 +64,11 @@ Source: [Progressive Web Apps (PWA) — Service Workers, Manifest, Offline](10.7
 
 **Q:** When is it safe to delete an offline write from IndexedDB?
 
-**A:** After the server acknowledges the result for that stable operation ID. The server must atomically enforce idempotency so a retry after a lost response returns the committed outcome; authentication, conflict and validation failures need foreground recovery.
+**A:** After the server acknowledges the result for that stable operation ID. The server must atomically enforce idempotency so a retry after a lost response returns the committed outcome; authentication, conflict, and validation failures need foreground recovery.
+
+**Q:** How does Navigation Preload remove cold-start latency on network-first HTML navigations, and how do you prevent reload loops on worker updates?
+
+**A:** Enabling `navigationPreload.enable()` during `activate` and awaiting `event.preloadResponse` lets the browser fetch the document in parallel with worker boot instead of waiting sequentially. Serving `/sw.js` with `Cache-Control: no-cache` detects updates promptly, and guarding the `controllerchange` listener with a one-shot boolean flag prevents overlapping controller changes from looping reloads.
 
 ## CSS Architecture & Styling Approaches
 
@@ -64,7 +76,7 @@ Source: [CSS Architecture & Styling Approaches](10.7.06-css-architecture-styling
 
 **Q:** Why do cascade layers help governance without replacing naming or tokens?
 
-**A:** They make precedence explicit across style sources. They do not define component boundaries, semantic values or safe migration by themselves.
+**A:** They make precedence explicit across style sources. They do not define component boundaries, semantic values, or safe migration by themselves.
 
 ## Theming & Design Tokens
 
@@ -72,7 +84,11 @@ Source: [Theming & Design Tokens](10.7.07-theming-design-tokens.md)
 
 **Q:** Why should dark mode switch semantic tokens rather than individual component colors?
 
-**A:** Components retain their intent while the palette changes centrally. Each theme still needs contrast, native-control and persisted-preference verification.
+**A:** Components retain their intent while the palette changes centrally. Each theme still needs contrast, native-control, and persisted-preference verification.
+
+**Q:** Why do borderless chips and `box-shadow` focus rings disappear under `forced-colors: active`, and what keeps them visible?
+
+**A:** Forced-colors mode replaces author backgrounds and strips decorative box shadows using system colors (`Canvas`, `CanvasText`, `Highlight`), erasing shadow-only outlines and background-defined boundaries. Keeping transparent structural borders (`border: 1px solid transparent`) and outlines (`outline: 2px solid transparent`) preserves component edges and focus visibility without changing default themes.
 
 ## Browser Storage
 
@@ -104,27 +120,27 @@ Source: [HTML](10.7.01-html-fundamentals.md), [CSS](10.7.02-css-fundamentals.md)
 
 **Q:** A labeled input lacks `name`. What happens on ordinary form submission?
 
-**A:** The label still names it for interaction/accessibility, but it supplies no named entry in `FormData`. Label association and submitted key have different jobs.
+**A:** The label still names it for interaction and accessibility, but it supplies no named entry in `FormData`. Label association and submitted key have different jobs.
 
 **Q:** Why can a flex child overflow despite `flex: 1`?
 
-**A:** Its automatic minimum can preserve a long content width. Inspect `min-width` and wrapping/overflow; `min-width: 0` permits shrinking but does not itself wrap content.
+**A:** Its automatic minimum can preserve a long content width. Inspect `min-width` and wrapping and overflow behavior; `min-width: 0` permits shrinking, but does not itself wrap content.
 
 **Q:** Does a canonical link redirect the visitor to the preferred URL?
 
-**A:** No. It is a search processing signal. An HTTP redirect performs navigation, and consistency with internal links/sitemaps supports canonical identity.
+**A:** No. It is a search processing signal. An HTTP redirect performs navigation, and consistency with internal links and sitemaps supports canonical identity.
 
 **Q:** How do you handle app updates in a PWA?
 
-**A:** Installation and activation are separate. An installed update may wait while old clients remain; default waiting or an explicit accepted activation protocol must preserve asset/data compatibility. `skipWaiting` does not itself reload pages or guarantee safety.
+**A:** Installation and activation are separate. An installed update may wait while old clients remain; default waiting or an explicit accepted activation protocol must preserve asset and data compatibility. `skipWaiting` does not itself reload pages or guarantee safety.
 
 **Q:** When would you use cache-first vs network-first?
 
-**A:** Use a cache-first rule for suitable immutable/public assets, and network-first only for deliberately cacheable data with defined stale fallback. Private healthcare responses require identity, retention and device-security policy; no strategy name grants permission to store them.
+**A:** Use a cache-first rule for suitable immutable public assets, and network-first only for deliberately cacheable data with defined stale fallback. Private healthcare responses require identity, retention, and device-security policy; no strategy name grants permission to store them.
 
 **Q:** Why can precached HTML still fail on offline reload?
 
-**A:** Its referenced scripts/styles must also be stored and served by matching fetch rules. A manifest or cached document alone does not provide the whole shell.
+**A:** Its referenced scripts and styles must also be stored and served by matching fetch rules. A manifest or cached document alone does not provide the whole shell.
 
 **Q:** Why does choosing `system` differ from storing `dark`?
 

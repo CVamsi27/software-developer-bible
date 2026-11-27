@@ -16,7 +16,7 @@ Source: [Clustering](20.1.3.01-clustering.md)
 
 **Q:** Why can four cluster workers increase database pressure even when HTTP throughput stays constant?
 
-**A:** Each process owns its heap, connection pool and libuv worker pool. A ten-connection database pool per worker permits forty connections; capacity must be budgeted across the deployment.
+**A:** Each process owns its heap, connection pool, and libuv worker pool. A ten-connection database pool per worker permits forty connections; capacity must be budgeted across the deployment.
 
 **Q:** Does round-robin cluster scheduling give each worker an equal number of HTTP requests?
 
@@ -24,7 +24,7 @@ Source: [Clustering](20.1.3.01-clustering.md)
 
 **Q:** What must happen before the primary starts draining workers?
 
-**A:** Disable replacement and cancel pending restart timers. Track workers until actual exit; send shutdown, wait for in-flight work and impose a final termination deadline.
+**A:** Disable replacement and cancel pending restart timers. Track workers until actual exit; send shutdown, wait for in-flight work, and impose a final termination deadline.
 
 **Q:** With two workers listening on port 0, where do three requests on one keep-alive connection go?
 
@@ -32,7 +32,7 @@ Source: [Clustering](20.1.3.01-clustering.md)
 
 **Q:** What changes if each of four workers opens a ten-connection pool in each of three replicas?
 
-**A:** The combined budget can reach 120 connections, alongside multiplied heaps/native resources. Per-connection round-robin does not control database demand or guarantee even request work; measure admission and total external capacity.
+**A:** The combined budget can reach 120 connections, alongside multiplied heaps and native resources. Per-connection round-robin does not control database demand or guarantee even request work; measure admission and total external capacity.
 
 ## Child Processes & Workers
 
@@ -48,15 +48,19 @@ Source: [Child Processes & Workers](20.1.3.02-child-processes-workers.md)
 
 **Q:** Can shell-free `execFile` make an arbitrary command safe?
 
-**A:** It avoids shell interpretation, but the executable still interprets options and can read files or perform other privileged actions. Fix the command and validate allowed arguments, paths, output size and execution time.
+**A:** It avoids shell interpretation, but the executable still interprets options and can read files or perform other privileged actions. Fix the command and validate allowed arguments, paths, output size, and execution time.
 
-**Q:** Trace `runOne` with `iterations` `4`, then with invalid input, no result and a hung worker.
+**Q:** Trace `runOne` with `iterations` `4`, then with invalid input, no result, and a hung worker.
 
 **A:** The compute fixture resolves its sum `4.146264369941973` after owned termination. Invalid `iterations` reject through the worker error; clean exit without a message rejects; no completion reaches the timer and rejects. Each terminal path settles once rather than sharing an uncorrelated message across tasks.
 
 **Q:** What changes when new work arrives after `closePool` begins?
 
-**A:** The example stops application admission before awaiting Piscina close. Later calls reject as closing; accepted work still follows the release's graceful/forced shutdown contract. An abort cannot undo an already completed external effect, and shared bytes require their own synchronization protocol.
+**A:** The example stops application admission before awaiting Piscina close. Later calls reject as closing; accepted work still follows the release's graceful and forced shutdown contract. An abort cannot undo an already completed external effect, and shared bytes require their own synchronization protocol.
+
+**Q:** Why can killing a timed-out child PID orphan grandchildren, and how does `Atomics.waitAsync()` differ from `Atomics.wait()`?
+
+**A:** Signaling only the direct child PID can leave spawned descendants running; on POSIX, launching with `detached: true` lets the supervisor signal the entire process group via `process.kill(-child.pid, 'SIGKILL')`. Unlike blocking `Atomics.wait()`, `Atomics.waitAsync()` returns a promise so the main event loop can wait on shared storage without stalling other callbacks.
 
 ## Process & Environment
 
@@ -76,11 +80,15 @@ Source: [Process & Environment](20.1.3.03-process-environment.md)
 
 **Q:** Why does `PORT="0"` remain `0` and `DEBUG="false"` remain `false` in the config fixture?
 
-**A:** The parser distinguishes absent values, validates the entire string/range and compares an allowed boolean string. A truthiness fallback would replace `0` or treat the string `"false"` as `true`. Empty or `10junk` port values fail explicitly.
+**A:** The parser distinguishes absent values, validates the entire string and range, and compares against allowed boolean strings. A truthiness fallback would replace `0` or treat the string `"false"` as `true`. Empty or `10junk` port values fail explicitly.
 
 **Q:** What happens when shutdown is called twice while resource cleanup hangs?
 
 **A:** Both calls return the same operation, admission is draining, and the deadline covers server drain plus resource close. If cleanup cannot finish, the forced failure path owns termination; `process.exitCode` alone cannot release a leaked handle.
+
+**Q:** Why can Kubernetes pods still drop requests after `SIGTERM` even with `server.close()`, and why leave RSS headroom below the cgroup limit?
+
+**A:** `SIGTERM` races with endpoint removal from load balancers, so pair a `preStop` delay (or failing readiness probes briefly first) with a drain deadline strictly shorter than `terminationGracePeriodSeconds`. Leave 25–30% RSS headroom below container limits so native addons and external `Buffer` allocations do not trigger the kernel OOM-killer before V8 collects garbage.
 
 ## PM2 Process Supervision
 
@@ -88,7 +96,7 @@ Source: [PM2 Process Supervision](20.1.3.04-pm2-process-supervision.md), [PM2 pr
 
 **Q:** What does `pm2 save` preserve, and what must be configured for a host reboot?
 
-**A:** It saves the PM2 process list so it can be resurrected. A host startup integration must also invoke resurrection after reboot. Neither restores process memory, database state or an in-flight request.
+**A:** It saves the PM2 process list so it can be resurrected. A host startup integration must also invoke resurrection after reboot. Neither restores process memory, database state, or an in-flight request.
 
 **Q:** A worker has opened its port but cannot reach its database. Should a rolling reload treat it as ready?
 
@@ -97,6 +105,10 @@ Source: [PM2 Process Supervision](20.1.3.04-pm2-process-supervision.md), [PM2 pr
 **Q:** A payment request times out while its worker is being replaced. What does restarting the worker tell the client?
 
 **A:** Only that PM2 restored a process slot. It does not reveal whether the database commit happened before the connection closed. Resolve the outcome by idempotency key or reconciliation; blind retry can duplicate an effect.
+
+**Q:** Why does `pm2 start` break container PID 1 lifecycle compared to `pm2-runtime`?
+
+**A:** `pm2 start` daemonizes into the background so PID 1 exits or breaks signal forwarding inside a container, whereas `pm2-runtime` runs in the foreground under PID 1 (though running one foreground Node process directly under the orchestrator is usually simpler).
 
 ## Watt Runtime Architecture
 
@@ -108,11 +120,11 @@ Source: [Watt Runtime Architecture](20.1.3.05-watt-runtime-architecture.md) and 
 
 **Q:** A Watt worker is replaced after a crash. Which state and failures should you inspect?
 
-**A:** The replacement has a new isolate and does not recover the old worker's in-memory objects. Other workers may remain active, but a native crash, process-wide memory exhaustion or runtime exit can affect the whole Watt process.
+**A:** The replacement has a new isolate and does not recover the old worker's in-memory objects. Other workers may remain active, but a native crash, process-wide memory exhaustion, or runtime exit can affect the whole Watt process.
 
 **Q:** Two Watt applications share a runtime but need different release schedules. Does a worker boundary provide that independence?
 
-**A:** No. Worker threads separate JavaScript heaps and event loops, but applications in one runtime share its process and deployment lifecycle. Move one to a separate runtime or service if release, scaling, compliance or process-failure boundaries must be independent.
+**A:** No. Worker threads separate JavaScript heaps and event loops, but applications in one runtime share its process and deployment lifecycle. Move one to a separate runtime or service if release, scaling, compliance, or process-failure boundaries must be independent.
 
 ## Summary
 

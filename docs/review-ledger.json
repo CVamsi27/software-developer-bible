@@ -3163,116 +3163,116 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 9A D1-D7 rework: 20.1-node.js (01-runtime-and-async, 02-io-and-data))."
   },
   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.01-clustering.md": {
-   "sha256": "e7eae739073baa0a749792b7cc0026540b05a3d614465afc8c1493abe7932f1c",
-   "lines": 196,
+   "sha256": "84f83b45d41fe2a79d534f33d49b10a75de084cc26f9c2d0623a1861e6733b1a",
+   "lines": 198,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Node Cluster and Worker Threads documentation; `SCHED_RR` default behavior, connection-level distribution, worker lifecycle events, `listen(0)` sharing and IPC serialization remain accurate on Node v26.13.0.",
-    "readable": "Full read of 196 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "948 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 198 lines (1015 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1015 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Cluster topology and process-local resource multiplication are owned here; worker pools, PM2 supervision and container recovery are linked to their canonical chapters.",
-    "fast": "38.4 KB raw / 8.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 38.4 KB raw / 8.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Separates connection balancing from request fairness and capacity recovery from response/state recovery; the example bounds restart loops and shutdown. The boundary is explicit."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 9B D1-D7 rework: 20.1-node.js/03-processes-and-concurrency)."
   },
   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.02-child-processes-workers.md": {
-   "sha256": "f35cee73c21c7c2b9b9aecea43a6cd4f695a2d1d765d441b53bd2125ddadf4c8",
+   "sha256": "f2640c74802ebb2bf544a9219eb55909b26e6f607a683dbd814592709f227cf1",
    "lines": 234,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Node child_process and worker_threads documentation, Piscina 5.3.2 registry metadata and release information; Node v26.13.0 executed the one-shot worker result path, and npm confirms Piscina 5.3.2 declares Node `>=20.x`.",
-    "readable": "Full read of 234 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1078 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 234 lines (1150 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1150 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Worker/process selection, task correlation and queue admission are owned here; cluster scaling and diagnostics are linked rather than re-taught.",
-    "fast": "40.9 KB raw / 8.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 40.9 KB raw / 8.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Settles result/error/exit/timeout exactly once, caps queued work, and distinguishes copy, transfer and shared memory from security isolation. The boundary is explicit."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 9B D1-D7 rework: 20.1-node.js/03-processes-and-concurrency)."
   },
   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.03-process-environment.md": {
-   "sha256": "ee438315f46b9f5eb7fa040cc27a266d10f8b3d2a187dd2cda173f2921325687",
-   "lines": 214,
+   "sha256": "e76a4ecefa9bd1a1c5b398edb8a1983dc91a2324402d8652e7a72d7030150251",
+   "lines": 216,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current Node Process, CLI, environment-variable, worker-thread and server lifecycle documentation; env-file precedence, `SHARE_ENV`, `server.close`, signal behavior, `resourceUsage` units and worker/RSS scope remain accurate on Node v26.13.0.",
-    "readable": "Full read of 214 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "966 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 216 lines (1093 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1093 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Process configuration and shutdown ownership are canonical here; PM2, cluster and HTTP message behavior are linked to their specialized chapters.",
-    "fast": "39.0 KB raw / 8.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 39.0 KB raw / 8.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Treats environment input as untrusted, stops admission before resource closure, keeps the deadline idempotent, and refuses to equate exit code zero with completed cleanup. The boundary is explicit."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 9B D1-D7 rework: 20.1-node.js/03-processes-and-concurrency)."
   },
   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.04-pm2-process-supervision.md": {
-   "sha256": "d8b851bb280bdf515e6b38c083f6ca5f8221d8dc070d1283e594f94251401ffb",
+   "sha256": "d073097f710edfa06bc649751f6406f5d26aa69f63b4b5625ef3f4bcf19bbe0d",
    "lines": 114,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current PM2 process-management, ecosystem, load-balancing and graceful-shutdown documentation; `pm2 save`, `wait_ready`, `listen_timeout`, reload fallback, `kill_timeout` and external-supervisor boundaries match the live docs on 2026-11-18.",
-    "readable": "Full read of 114 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "761 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 114 lines (803 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "803 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "External process supervision is owned here; application readiness/draining and cluster port/state semantics remain linked to their canonical chapters.",
-    "fast": "17.4 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 17.4 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Clearly limits PM2 to capacity/process state: it cannot restore memory, in-flight requests, side effects or a lost host, and timeout expiry is not health proof."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 9B D1-D7 rework: 20.1-node.js/03-processes-and-concurrency)."
   },
   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.05-watt-runtime-architecture.md": {
-   "sha256": "dda4d02067b3a845db0182a9228df2ed39f3fff94613a49b8ffa82564ff67f84",
+   "sha256": "a5a554195edf73923f2410668eef96d59e7527814954d784919552e9d4ca88cb",
    "lines": 118,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against the current Platformatic Watt architecture guide and Node Worker Threads documentation; the guide confirms one worker thread per application, `.plt.local` Undici interception, MessagePort routing, no TCP/DNS for internal calls and shared process/deployment failure boundaries.",
-    "readable": "Full read of 118 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "800 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 118 lines (828 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "828 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Watt\u2019s application-worker boundary is owned here; PM2 process supervision, worker primitives and cluster port sharing are linked to their canonical chapters.",
-    "fast": "16.4 KB raw / 5.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 16.4 KB raw / 5.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Distinguishes isolate/event-loop separation from process, container and release isolation; internal HTTP-shaped calls are not presented as free or network-equivalent. The boundary is explicit."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 9B D1-D7 rework: 20.1-node.js/03-processes-and-concurrency)."
   },
   "20-backend/20.1-node.js/03-processes-and-concurrency/INDEX.md": {
-   "sha256": "cdadee559ddbcb96c98caa53789cfd889acb6dbd399b929c9212ae6ded6771a8",
+   "sha256": "7a992bbf7cd836f23de9d933f00877744e0afbab6e9778a16efccc28411dbb64",
    "lines": 53,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "No version-sensitive claim beyond linked chapter descriptions; the 6-file count and 41-minute total were re-derived from disk and the category files on 2026-11-18.",
-    "readable": "Full read of 53 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "184 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 53 lines (186 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "186 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Navigation only: it points at the canonical five chapters and revision companion without re-teaching process mechanics.",
-    "fast": "12.4 KB raw / 3.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 12.4 KB raw / 3.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Starts with admission and cleanup, then compares process, thread, supervisor and in-process application boundaries in an intentional decision order. The boundary is explicit."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 9B D1-D7 rework: 20.1-node.js/03-processes-and-concurrency)."
   },
   "20-backend/20.1-node.js/03-processes-and-concurrency/REVISION.md": {
-   "sha256": "037d8b5b6bbea0f84dc4149d6bb29ab76eda89c4c73f2223c0749dd759598b53",
-   "lines": 127,
+   "sha256": "eed4baccbf47ad46c4efd33e2ad3943e6a757598aad9d53b7e8d2acfe4cad166",
+   "lines": 139,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Every answer was checked against the five concurrency chapters and current Node Cluster/Workers, PM2 and Watt documentation; connection-level scheduling, shared memory, readiness timeout and `.plt.local` boundaries match the sources on 2026-11-18.",
-    "readable": "Full read of 127 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1095 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 139 lines (1295 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1295 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Retrieval drill: each group points to its canonical chapter and tests a lifecycle or failure boundary rather than repeating definitions.",
-    "fast": "15.9 KB raw / 5.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 15.9 KB raw / 5.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes recovery, readiness, process/thread scope and internal routing explicit; it does not promise zero downtime or exactly-once work from supervision alone."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 9B D1-D7 rework: 20.1-node.js/03-processes-and-concurrency)."
   },
   "20-backend/20.1-node.js/04-security-and-operations/20.1.4.01-node-security.md": {
    "sha256": "7e5261f509f63c0ec05589224fb8b23b301757236c94f84271e593cd8ee17bb8",
@@ -3371,7 +3371,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
   },
   "20-backend/20.1-node.js/INDEX.md": {
-   "sha256": "e6658c87584c28eccc7e2c7a9adfe661cf18e5acc3d8bfa5764df0d4d07a9161",
+   "sha256": "931e7173c8c83f33d97e769ff0675027d622b6df232acf3963934a470d9b4b01",
    "lines": 122,
    "genre": "index",
    "status": "read",
@@ -3381,10 +3381,10 @@
     "readable": "Full read of 122 lines (301 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "301 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Navigation only: it points at the canonical study files, marks the case-study links as inspection pointers and avoids duplicating the Node chapters.",
-    "fast": "Measured 22.3 KB raw / 5.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 22.3 KB raw / 5.7 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Provides a causal route from scheduling to resource ownership to operational evidence instead of a flat module inventory. The boundary is explicit."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 9A D1-D7 rework: 20.1-node.js (01-runtime-and-async, 02-io-and-data))."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 9B D1-D7 rework: 20.1-node.js/03-processes-and-concurrency)."
   },
   "20-backend/20.12-ai-engineering/20.12.01-llm-app-architecture.md": {
    "sha256": "814ff36dfb3d4f94d830228d9d78af502199d0481848f027d13edc061c80b330",
@@ -6560,7 +6560,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
   },
   "20-backend/INDEX.md": {
-   "sha256": "df17fe8f7351ee560bcebd9b5cd4b625bad15aa59ced144564e559cc571523b5",
+   "sha256": "abd3d2c758819204ef386c8f4aa6be4e72c531ae916588e8a8d520673cf7fb4d",
    "lines": 122,
    "genre": "index",
    "status": "read",
@@ -6570,10 +6570,10 @@
     "readable": "Full read of 122 lines (438 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "438 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical Backend stack map; points at sub-stack INDEX files instead of duplicating sub-stack curricula.",
-    "fast": "Measured 15.4 KB raw / 5.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 15.4 KB raw / 5.2 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Remaining limit is study-hour path estimates are rough guides and depend on each reader's prior backend background."
    },
-   "notes": "Synced live read-time and counts after Phase 9A D1-D7 rework: 20.1-node.js (01-runtime-and-async, 02-io-and-data)."
+   "notes": "Synced live read-time and counts after Phase 9B D1-D7 rework: 20.1-node.js/03-processes-and-concurrency."
   },
   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md": {
    "sha256": "065e2b7d573b2298550d061453667084b1d010e6fadf07f903f6fdd34a8e5185",
@@ -14366,7 +14366,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "342a1e7a6019c45bb5c588e4f298ed7cf8b0c7f76ea398b1726900fabcba84d6",
+   "sha256": "5602f59ffe1fdfe93a6bae8d436366c337739163025b0d997bc92f93dfb08d28",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14379,7 +14379,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 9A D1-D7 rework: 20.1-node.js (01-runtime-and-async, 02-io-and-data)."
+   "notes": "Synced live read-time and counts after Phase 9B D1-D7 rework: 20.1-node.js/03-processes-and-concurrency."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14670,7 +14670,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "315424199e3ff8518458d92273b805118327bc36bb4b8766fd0faf707baf1bed",
+   "sha256": "a422f5b0c452a1f09cd3534c4abd393eb2c97eab7e01be338eed291a13625832",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14683,7 +14683,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 9A D1-D7 rework: 20.1-node.js (01-runtime-and-async, 02-io-and-data)."
+   "notes": "Synced live read-time and counts after Phase 9B D1-D7 rework: 20.1-node.js/03-processes-and-concurrency."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

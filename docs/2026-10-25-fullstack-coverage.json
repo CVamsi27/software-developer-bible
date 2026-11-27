@@ -17510,7 +17510,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.17-youtube.md",
-      "sha256": "38af23b36b80a7da668e0de72d3e6014c4e2f81e3169dd3fb9eb1226200f2bfa",
+      "sha256": "5312bfbdc50f2859b030df7873ec92057c0b8c3de2cf92ee62f9832d9be1279f",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17538,10 +17538,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.17-youtube.md",
-        "sha256": "38af23b36b80a7da668e0de72d3e6014c4e2f81e3169dd3fb9eb1226200f2bfa",
+        "sha256": "5312bfbdc50f2859b030df7873ec92057c0b8c3de2cf92ee62f9832d9be1279f",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Upload transfer versus playable publication, source-version fence, PostgreSQL null-check semantics, HLS/DASH, exact capacity units and authorized cache delivery checked. Official HLS draft22 still sent to RFC Editor and not yet a published RFC. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION) C1-C8 refinement (2026-11-24): Full read of 217 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
         "reviewDate": "2026-11-24",
@@ -17550,7 +17550,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md",
-      "sha256": "ebc14e856a9656cdb0486584c66ec4d0cd599725cad45a347c0b5e173025a7ca",
+      "sha256": "04e43472e82ff8a2cea167237aba2a5b87216bcd694cfe0616a2dde61fd3d251",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17578,10 +17578,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md",
-        "sha256": "ebc14e856a9656cdb0486584c66ec4d0cd599725cad45a347c0b5e173025a7ca",
+        "sha256": "04e43472e82ff8a2cea167237aba2a5b87216bcd694cfe0616a2dde61fd3d251",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Immutable chunk publication, deferred version pointers, namespace cursor serialization, local apply/checkpoint, conflict copies, GC reachability and privacy checked against current Dropbox hash/change documentation. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION) C1-C8 refinement (2026-11-24): Full read of 268 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
         "reviewDate": "2026-11-24",
@@ -17590,7 +17590,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.19-lyft.md",
-      "sha256": "b023b16973e61a95f9b41cc57f6630eaf4de71c9eadad4198950d515475ae92b",
+      "sha256": "dfbae7d02665902274c18d30a0054f918f6325cf909d4a1903ee439222964241",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17615,10 +17615,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.19-lyft.md",
-        "sha256": "b023b16973e61a95f9b41cc57f6630eaf4de71c9eadad4198950d515475ae92b",
+        "sha256": "dfbae7d02665902274c18d30a0054f918f6325cf909d4a1903ee439222964241",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Approximate geo freshness versus authoritative driver-and-ride assignment, common lock order, generation/sequence and terminal release boundaries checked. All capacity arithmetic recomputed. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION) C1-C8 refinement (2026-11-24): Full read of 196 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
         "reviewDate": "2026-11-24",
@@ -17627,7 +17627,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.20-distributed-counter.md",
-      "sha256": "66f0f6b3096068d8e4f662b8508f75cda98db3ba286af7bacae53e4f16ef3b3f",
+      "sha256": "f8b23c151da5226bb7942adf432a304f16da02211b0597fdd36090156bdbcecd",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17654,10 +17654,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.20-distributed-counter.md",
-        "sha256": "66f0f6b3096068d8e4f662b8508f75cda98db3ba286af7bacae53e4f16ef3b3f",
+        "sha256": "f8b23c151da5226bb7942adf432a304f16da02211b0597fdd36090156bdbcecd",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Atomic event claim and arithmetic, payload mismatch, replay retention, hot-shard read consistency and G/PN-Counter scope checked. Exact merge code passes idempotent/commutative/associative and reset-to-retained-maximum counterexample. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION) C1-C8 refinement (2026-11-24): Full read of 198 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
         "reviewDate": "2026-11-24",
@@ -17666,7 +17666,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.md",
-      "sha256": "8e9d364b75901f4317d3f18641fdcd6ac3b3bc327baac1e411833d47da2ff59a",
+      "sha256": "61a2d80d1c80a158dbfea31a4991ba93acf4f420e4c807dd9c297fdc902893fd",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17693,10 +17693,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.md",
-        "sha256": "8e9d364b75901f4317d3f18641fdcd6ac3b3bc327baac1e411833d47da2ff59a",
+        "sha256": "61a2d80d1c80a158dbfea31a4991ba93acf4f420e4c807dd9c297fdc902893fd",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Durable DAG eligibility and graph completion, stable effect identity versus lease tokens, cancellation, compensation and versioned replay boundary checked. Exact transition fixture passes expected fail/cancel outcomes. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION) C1-C8 refinement (2026-11-24): Full read of 209 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
         "reviewDate": "2026-11-24",
@@ -17705,7 +17705,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.22-real-time-collaboration.md",
-      "sha256": "ac6a381f8f05c9ad98aa9dacec288f3f779273b87866bd9602f9b8c3d90e909d",
+      "sha256": "1519fdfd8bac86691b66e34ba40b7b55d7eb75a9d8a5595441b1908d70dd5b5c",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17731,10 +17731,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.22-real-time-collaboration.md",
-        "sha256": "ac6a381f8f05c9ad98aa9dacec288f3f779273b87866bd9602f9b8c3d90e909d",
+        "sha256": "1519fdfd8bac86691b66e34ba40b7b55d7eb75a9d8a5595441b1908d70dd5b5c",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Read full Yjs concurrent update, reorder/replay, state-vector repair, storage identity and snapshots; durable save versus peer visibility and revoked offline author boundaries checked against current update API. No provider or speech integration claimed. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION) C1-C8 refinement (2026-11-24): Full read of 210 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
         "reviewDate": "2026-11-24",
@@ -17743,7 +17743,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.23-typeahead-autocomplete.md",
-      "sha256": "0a638cdfe7c865171e99a5d2cc5ad485dd4af93aeefb06ffb8b3d68fe77d9686",
+      "sha256": "f62f2528a6df477dd9526a8c90075f77d2a2b90e71d4732c13cde97f4ebe528a",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17769,10 +17769,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.23-typeahead-autocomplete.md",
-        "sha256": "0a638cdfe7c865171e99a5d2cc5ad485dd4af93aeefb06ffb8b3d68fe77d9686",
+        "sha256": "f62f2528a6df477dd9526a8c90075f77d2a2b90e71d4732c13cde97f4ebe528a",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content read (2026-11-14): Trace runs query volume to prefix index to ranking to cache; numbers appear where they are used. Recomputed 17,361 queries/s, 52,083 peak and 16.8 GB index; the scale claims hold. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION) C1-C8 refinement (2026-11-24): Full read of 243 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -17781,7 +17781,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md",
-      "sha256": "91541c191601add1618acbe613b4f4434cbb913edacea306885b9c24a15d889d",
+      "sha256": "0b3343102f2bde8ee53eb71dab1eda80eb2e75a2eabc640b83d928d1cbce7c4d",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17808,10 +17808,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md",
-        "sha256": "91541c191601add1618acbe613b4f4434cbb913edacea306885b9c24a15d889d",
+        "sha256": "0b3343102f2bde8ee53eb71dab1eda80eb2e75a2eabc640b83d928d1cbce7c4d",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Series identity, cardinality admission, histogram temporality/reset/quantile semantics, durable replay, tenant cache/query budgets and alert lifecycle checked. Capacity/retention and weighted mean arithmetic recomputed; no running Prometheus deployment claimed. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION) C1-C8 refinement (2026-11-24): Full read of 209 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
         "reviewDate": "2026-11-24",
@@ -17820,7 +17820,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.25-distributed-job-scheduler.md",
-      "sha256": "a4871673592f18ea5ef63c8c751f7689f1eb6fa2c4b5f054928140f9a99eb8f0",
+      "sha256": "1319bfefc55998d93441ce19a98cc09ede7f876ec59e5cc3c1d73cfa58e05192",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17847,10 +17847,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.25-distributed-job-scheduler.md",
-        "sha256": "a4871673592f18ea5ef63c8c751f7689f1eb6fa2c4b5f054928140f9a99eb8f0",
+        "sha256": "1319bfefc55998d93441ce19a98cc09ede7f876ec59e5cc3c1d73cfa58e05192",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Unique occurrence versus attempt, atomic due-claim and DB timestamp boundaries, stale worker fencing scope, DST/misfire and DRR fairness checked. Schema and claim SQL inspected; prior isolated PG fixture evidence remains separate. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION) C1-C8 refinement (2026-11-24): Full read of 199 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
         "reviewDate": "2026-11-24",
@@ -17859,7 +17859,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.26-distributed-id-generator.md",
-      "sha256": "6080315ae75b7e774645f4fd4db2d19a5337e6012e619fdb96f2544e570c384e",
+      "sha256": "4fc6eda603b2360cb31c43975675d5bb6f90d21746af3a2c45f9540a66cd6d66",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17885,10 +17885,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.26-distributed-id-generator.md",
-        "sha256": "6080315ae75b7e774645f4fd4db2d19a5337e6012e619fdb96f2544e570c384e",
+        "sha256": "4fc6eda603b2360cb31c43975675d5bb6f90d21746af3a2c45f9540a66cd6d66",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Packed field capacities, same-ms exhaustion, backward clock, horizon, durable range reservation and stale-owner reuse checked against RFC9562. Exact generator assertions pass Node24, including decoded bits, rollback and exhaustion; no distributed throughput benchmark. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION) C1-C8 refinement (2026-11-24): Full read of 226 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
         "reviewDate": "2026-11-24",
@@ -17897,7 +17897,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.27-ad-click-aggregator.md",
-      "sha256": "d60bc280cd4345483f37f73d69fe0ab037a7967d4af3905a87eed535c19dbefc",
+      "sha256": "9588c00bfac54a9eb575c6ebd5276e5b46cafacdbc6717251d2bb2624adf15c5",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17923,10 +17923,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.27-ad-click-aggregator.md",
-        "sha256": "d60bc280cd4345483f37f73d69fe0ab037a7967d4af3905a87eed535c19dbefc",
+        "sha256": "9588c00bfac54a9eb575c6ebd5276e5b46cafacdbc6717251d2bb2624adf15c5",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Trusted producer identity versus lookalike events, exact dedup, watermark correction, versioned snapshot reads and accounting settlement checked. Exact Python model passes replay, changed-input rejection, currency/window and immutable-state cases. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION) C1-C8 refinement (2026-11-24): Full read of 212 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
         "reviewDate": "2026-11-24",
@@ -17935,7 +17935,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.28-parking-lot.md",
-      "sha256": "8f74aa0780b39b3c7e6affbe8b30fb9aac1913aeeeb67112034d002cc35db8a3",
+      "sha256": "a12622eda89c450af381446a4c0da0524f85335c31e1c5b2a529fffe6b832b32",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17961,10 +17961,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.28-parking-lot.md",
-        "sha256": "8f74aa0780b39b3c7e6affbe8b30fb9aac1913aeeeb67112034d002cc35db8a3",
+        "sha256": "a12622eda89c450af381446a4c0da0524f85335c31e1c5b2a529fffe6b832b32",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Live-session ownership versus physical passage, delayed release, tariff version and precise rolling-day arithmetic checked. Exact Python tariff assertions pass; physical hardware and payment providers not exercised. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION) C1-C8 refinement (2026-11-24): Full read of 192 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
         "reviewDate": "2026-11-24",
@@ -17973,7 +17973,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.29-distributed-cache.md",
-      "sha256": "10b33f56eed9846d35bed2c0dc24bbb433d2ddda55ac55ccdc606209346f8979",
+      "sha256": "f0eee97fb51bb572afc8aa02278ec0afb256236b83018770c4da0947915215b5",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -18001,10 +18001,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.29-distributed-cache.md",
-        "sha256": "10b33f56eed9846d35bed2c0dc24bbb433d2ddda55ac55ccdc606209346f8979",
+        "sha256": "f0eee97fb51bb572afc8aa02278ec0afb256236b83018770c4da0947915215b5",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Scoped derived-value authority, topology generations, Redis slots/replication, TTL versus source age, stale-fill fence, bounded singleflight and origin-safe outage behavior checked. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION) C1-C8 refinement (2026-11-24): Full read of 145 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
         "reviewDate": "2026-11-24",
@@ -18013,7 +18013,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md",
-      "sha256": "c334cd3e34a7ad3d33ff4be8db066b781c3427eed118d7657f7532d9c9b7c7ab",
+      "sha256": "9b5a1744f93a33968aa01d0063dd329d8df8c0a857f09be702a6eeacb9002115",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -18040,10 +18040,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md",
-        "sha256": "c334cd3e34a7ad3d33ff4be8db066b781c3427eed118d7657f7532d9c9b7c7ab",
+        "sha256": "9b5a1744f93a33968aa01d0063dd329d8df8c0a857f09be702a6eeacb9002115",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Retained log partition order versus business effects, ISR/acknowledgment/durability settings, atomic Kafka transaction boundary, poison handling and SQS five-minute dedup scope checked; no actual broker integration. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION) C1-C8 refinement (2026-11-24): Full read of 149 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
         "reviewDate": "2026-11-24",
@@ -18052,7 +18052,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.31-api-gateway.md",
-      "sha256": "a4f5cde5f6d48706a06cd022cce6101c42114740c57e9d24745db9d3d1f71105",
+      "sha256": "5d908820f9543dd14db6431d7afb99ed538f0354266d8a4b8e9121f5350efbfd",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -18079,10 +18079,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.31-api-gateway.md",
-        "sha256": "a4f5cde5f6d48706a06cd022cce6101c42114740c57e9d24745db9d3d1f71105",
+        "sha256": "5d908820f9543dd14db6431d7afb99ed538f0354266d8a4b8e9121f5350efbfd",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Route normalization and pinning, protected identity propagation versus object authorization, key-refresh budget, timeout-after-write, cancellation, scoped cache and BFF ownership checked. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION) C1-C8 refinement (2026-11-24): Full read of 154 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
         "reviewDate": "2026-11-24",
@@ -18091,7 +18091,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/INDEX.md",
-      "sha256": "bebd155a57cc3a7ad7092d6001b884023360ad92c1dae35081b3d5f8a54befe7",
+      "sha256": "b47df3b43bc8c2bb21bfa9dc90abaa284aa9a7b5cd51b10b85b076be59a7f90d",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -18110,10 +18110,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/INDEX.md",
-        "sha256": "bebd155a57cc3a7ad7092d6001b884023360ad92c1dae35081b3d5f8a54befe7",
+        "sha256": "b47df3b43bc8c2bb21bfa9dc90abaa284aa9a7b5cd51b10b85b076be59a7f90d",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Phase 19A: 30.2.2 system design case studies (01-16) C1-C8 refinement (2026-11-24): Full read of 114 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+        "notes": "Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION) C1-C8 refinement (2026-11-24): Full read of 114 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "root",
         "reviewDate": "2026-11-24",
@@ -18122,7 +18122,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/REVISION.md",
-      "sha256": "dcb341b4ddb6a7cf8f795f6f38485d00426f6cff5afd045d2185a126136ac8cd",
+      "sha256": "ff9f9c6054f89f332b16d66037e319ba46a7064af7e1257684a5569929b87fd8",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -18164,16 +18164,16 @@
           "References"
         ],
         "code_fences": 0,
-        "revision_questions": 182,
+        "revision_questions": 186,
         "has_summary": true,
         "has_first_principles": false
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/REVISION.md",
-        "sha256": "dcb341b4ddb6a7cf8f795f6f38485d00426f6cff5afd045d2185a126136ac8cd",
+        "sha256": "ff9f9c6054f89f332b16d66037e319ba46a7064af7e1257684a5569929b87fd8",
         "genre": "revision",
         "status": "reviewed",
-        "notes": "Full read: Every question and answer across all31cases plus additional traces read. Corrected G-Counter restart answer: max merge retains the larger old slot and masks new increments; it does not erase retained increments. All other retrieval boundaries align with canonical cases. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
+        "notes": "Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION) C1-C8 refinement (2026-11-24): Full read of 931 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
         "reviewDate": "2026-11-24",
@@ -18182,7 +18182,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/INDEX.md",
-      "sha256": "b5203c62de49b7f1258e1f08e24d3cebd018542be25765256a68fea815faa420",
+      "sha256": "666e11b319ed046cff1c76241409a849cde6a10c6fcdc1c04398671d916e953b",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -18199,10 +18199,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/INDEX.md",
-        "sha256": "b5203c62de49b7f1258e1f08e24d3cebd018542be25765256a68fea815faa420",
+        "sha256": "666e11b319ed046cff1c76241409a849cde6a10c6fcdc1c04398671d916e953b",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Phase 19A: 30.2.2 system design case studies (01-16) count/read-time sync (2026-11-24): Full read of 52 lines. Updated generated counts/read-time navigation after Phase 19A: 30.2.2 system design case studies (01-16).",
+        "notes": "Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION) count/read-time sync (2026-11-24): Full read of 52 lines. Updated generated counts/read-time navigation after Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION).",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "root",
@@ -19184,7 +19184,7 @@
     },
     {
       "path": "30-architecture/INDEX.md",
-      "sha256": "abc78cf03cc67233c5a0e6f2f6a3148944870e36ed2193eebbee212c122d88ba",
+      "sha256": "de415fa931e753e71e335c3ca1eb54593892f781b3f767af157d390bc89e7010",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -19201,10 +19201,10 @@
       },
       "review": {
         "path": "30-architecture/INDEX.md",
-        "sha256": "abc78cf03cc67233c5a0e6f2f6a3148944870e36ed2193eebbee212c122d88ba",
+        "sha256": "de415fa931e753e71e335c3ca1eb54593892f781b3f767af157d390bc89e7010",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Phase 19A: 30.2.2 system design case studies (01-16) count/read-time sync (2026-11-24): Full read of 66 lines. Updated generated counts/read-time navigation after Phase 19A: 30.2.2 system design case studies (01-16).",
+        "notes": "Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION) count/read-time sync (2026-11-24): Full read of 66 lines. Updated generated counts/read-time navigation after Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION).",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "root",
@@ -31071,7 +31071,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "fb4bd46c35b81588d5f87cd4a7bf7abd6c1ded6ab5844884883c743a56063aa7",
+      "sha256": "5bc21f0a53161ff4791e1ccfaa8cb5b9e744f53dde11e6c1663d1d74db978767",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -31089,12 +31089,12 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "fb4bd46c35b81588d5f87cd4a7bf7abd6c1ded6ab5844884883c743a56063aa7",
+        "sha256": "5bc21f0a53161ff4791e1ccfaa8cb5b9e744f53dde11e6c1663d1d74db978767",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 19A: 30.2.2 system design case studies (01-16) count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 19A: 30.2.2 system design case studies (01-16).",
+        "notes": "Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION) count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION).",
         "findings": []
       }
     },
@@ -31674,7 +31674,7 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "9418f15d1f0a82bf6c88964ee67ee1e0d47b45dfea06025c38053edf037feb4e",
+      "sha256": "d30a5cae7ecfdefcfb48ebee0fb86b8bf55522bc5cd6c9e5fed498b32175d622",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31692,12 +31692,12 @@
       },
       "review": {
         "path": "docs/api-contract.md",
-        "sha256": "9418f15d1f0a82bf6c88964ee67ee1e0d47b45dfea06025c38053edf037feb4e",
+        "sha256": "d30a5cae7ecfdefcfb48ebee0fb86b8bf55522bc5cd6c9e5fed498b32175d622",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 19A: 30.2.2 system design case studies (01-16) count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 19A: 30.2.2 system design case studies (01-16).",
+        "notes": "Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION) count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION).",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

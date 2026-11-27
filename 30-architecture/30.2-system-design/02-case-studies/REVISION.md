@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-23_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-24_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -84,7 +84,7 @@ Source: [Netflix System Design](30.2.2.04-netflix.md)
 
 **Q:** Why is the quality-selection example not a production adaptive-bitrate controller?
 
-**A:** It filters a fixed rendition list by nominal bitrate and height. A player must also use actual codec/DRM support, segment availability, buffer occupancy and changing throughput, then control switching to avoid oscillation.
+**A:** It filters a fixed rendition list by nominal bitrate and height. A player must also use actual codec and DRM support, segment availability, buffer occupancy and changing throughput, then control switching to avoid oscillation.
 
 ## Google Drive System Design
 
@@ -170,7 +170,7 @@ Source: [Notification Service System Design](30.2.2.07-notification-service.md)
 
 Source: [Ticket Booking System Design](30.2.2.08-ticket-booking.md)
 
-**Q:** Why should ticket holds expire conditionally on their current owner/version?
+**Q:** Why should ticket holds expire conditionally on their current owner and version?
 
 **A:** A late cleanup task must release a seat only if it is still held by that exact hold and its authoritative deadline has passed. Event scope and the copied seat deadline must match the hold record; renewal updates both under the same transaction so stale cleanup cannot release a newer owner.
 
@@ -184,7 +184,7 @@ Source: [Ticket Booking System Design](30.2.2.08-ticket-booking.md)
 
 **Q:** Why must every workflow lock seat rows in the same order?
 
-**A:** Two multi-seat transactions can deadlock if they acquire overlapping rows in opposite orders. A common event/seat order reduces that cycle; deadlocks can still arise through other resources, so retry the entire aborted transaction under its stable request identity.
+**A:** Two multi-seat transactions can deadlock if they acquire overlapping rows in opposite orders. A common event and seat order reduces that cycle; deadlocks can still arise through other resources, so retry the entire aborted transaction under its stable request identity.
 
 **Q:** Why does a hold ID not replace request idempotency?
 
@@ -192,7 +192,7 @@ Source: [Ticket Booking System Design](30.2.2.08-ticket-booking.md)
 
 **Q:** What should happen when the payment result is unknown as the hold expires?
 
-**A:** Reconcile the existing provider command instead of treating timeout as decline or issuing a second charge. If the hold is reassigned before a late success arrives, preserve the new owner's seats and follow the defined void/refund or manual-resolution path.
+**A:** Reconcile the existing provider command instead of treating timeout as decline or issuing a second charge. If the hold is reassigned before a late success arrives, preserve the new owner's seats and follow the defined void or refund or manual-resolution path.
 
 **Q:** Why does a signed QR code not guarantee single-use admission?
 
@@ -204,7 +204,7 @@ Source: [E-Commerce System Design](30.2.2.09-e-commerce.md)
 
 **Q:** Why is a shopping cart a different consistency problem from inventory reservation?
 
-**A:** The cart expresses mutable intent and can tolerate stale availability. A reservation conditionally decrements authoritative stock and records a stable order/SKU identity; a retry returns that outcome, while a competing buyer cannot allocate the same final unit.
+**A:** The cart expresses mutable intent and can tolerate stale availability. A reservation conditionally decrements authoritative stock and records a stable order and SKU identity; a retry returns that outcome, while a competing buyer cannot allocate the same final unit.
 
 **Q:** Why does the final-unit update include `available >= quantity` in the `WHERE` clause?
 
@@ -216,7 +216,7 @@ Source: [E-Commerce System Design](30.2.2.09-e-commerce.md)
 
 **Q:** What does `UNIQUE(order_id, sku)` prove, and what must the retry API still check?
 
-**A:** It prevents two reservation rows for the same order/SKU, but does not prove a repeated request has the same quantity or other payload. Bind a stable checkout key to a canonical fingerprint; return the original result for a match and conflict on changed input.
+**A:** It prevents two reservation rows for the same order and SKU, but does not prove a repeated request has the same quantity or other payload. Bind a stable checkout key to a canonical fingerprint; return the original result for a match and conflict on changed input.
 
 **Q:** What should the service do after a checkout payment timeout?
 
@@ -224,7 +224,7 @@ Source: [E-Commerce System Design](30.2.2.09-e-commerce.md)
 
 **Q:** Why snapshot price and address data into the order?
 
-**A:** Catalog and profile rows change after checkout. The order must preserve the exact items, amounts, tax/shipping calculation and delivery address the buyer accepted, with restricted access and retention for personal data.
+**A:** Catalog and profile rows change after checkout. The order must preserve the exact items, amounts, tax and shipping calculation and delivery address the buyer accepted, with restricted access and retention for personal data.
 
 **Q:** Which retry is required after a PostgreSQL serialization failure?
 
@@ -356,7 +356,7 @@ Source: [Rate Limiter System Design](30.2.2.13-rate-limiter.md)
 
 **Q:** What state does a token bucket need, and why must its update be atomic?
 
-**A:** Keep the current credit and last-refill time. Refill from one authoritative clock, cap credit at the burst capacity, compare against request cost and spend only on admission. A cost above capacity can never pass. If concurrent requests read the same old balance, they can all spend one token. A Redis script makes the check/update atomic on the executing primary, but [Redis replication is asynchronous](https://redis.io/docs/latest/operate/oss_and_stack/management/replication/) and can lose a recent acknowledged write during failover; atomicity does not promise durable global quota enforcement.
+**A:** Keep the current credit and last-refill time. Refill from one authoritative clock, cap credit at the burst capacity, compare against request cost and spend only on admission. A cost above capacity can never pass. If concurrent requests read the same old balance, they can all spend one token. A Redis script makes the check and update atomic on the executing primary, but [Redis replication is asynchronous](https://redis.io/docs/latest/operate/oss_and_stack/management/replication/) and can lose a recent acknowledged write during failover; atomicity does not promise durable global quota enforcement.
 
 ## Web Crawler System Design
 
@@ -468,7 +468,7 @@ Source: [YouTube System Design](30.2.2.17-youtube.md)
 
 **Q:** Why must a version-one transcoder not publish ready after a replacement upload?
 
-**A:** Its outputs belong to a superseded source version. Publication checks the current source/processing version and only exposes a complete validated manifest for that version.
+**A:** Its outputs belong to a superseded source version. Publication checks the current source and processing version and only exposes a complete validated manifest for that version.
 
 **Q:** Why keep `ready_version` separate from `source_version` during replacement processing?
 
@@ -476,7 +476,7 @@ Source: [YouTube System Design](30.2.2.17-youtube.md)
 
 **Q:** What must be true before the service publishes an HLS or DASH manifest?
 
-**A:** Every required playlist and referenced segment must exist, pass validation and belong to the same source/rendition generation. A manifest that points to partial or mixed-version objects turns a successful database update into a broken playback path.
+**A:** Every required playlist and referenced segment must exist, pass validation and belong to the same source and rendition generation. A manifest that points to partial or mixed-version objects turns a successful database update into a broken playback path.
 
 **Q:** Why must a PostgreSQL `CHECK` for a ready video explicitly reject a `NULL` version?
 
@@ -508,7 +508,7 @@ Source: [Dropbox System Design](30.2.2.18-dropbox.md)
 
 ## Lyft / Ride-Sharing System Design
 
-Source: [Lyft / Ride-Sharing System Design](30.2.2.19-lyft.md)
+Source: [Lyft Ride-Sharing System Design](30.2.2.19-lyft.md)
 
 **Q:** What prevents two dispatch workers from assigning the same driver?
 
@@ -532,7 +532,7 @@ Source: [Lyft / Ride-Sharing System Design](30.2.2.19-lyft.md)
 
 ## Distributed Counter / Metrics Aggregation System Design
 
-Source: [Distributed Counter / Metrics Aggregation System Design](30.2.2.20-distributed-counter.md)
+Source: [Distributed Counter and Metrics Aggregation System Design](30.2.2.20-distributed-counter.md)
 
 **Q:** Why can a sharded counter be scalable yet unsuitable for a hard inventory cap?
 
@@ -592,7 +592,7 @@ Source: [Real-Time Collaboration — System Design Case Study](30.2.2.22-real-ti
 
 ## Typeahead / Autocomplete System Design
 
-Source: [Typeahead / Autocomplete System Design](30.2.2.23-typeahead-autocomplete.md)
+Source: [Typeahead and Autocomplete System Design](30.2.2.23-typeahead-autocomplete.md)
 
 **Q:** Why should autocomplete rank candidates after applying access constraints?
 
@@ -628,7 +628,7 @@ Source: [Metrics & Monitoring Pipeline System Design](30.2.2.24-metrics-monitori
 
 **Q:** How does delta temporality change counter or histogram rate processing?
 
-**A:** Each delta covers a non-overlapping interval, while cumulative points cover an interval from a start time. Preserve those boundaries and detect gaps/resets before aggregation; applying cumulative reset logic to deltas can double-count or lose samples. See the [OpenTelemetry metrics data model](https://opentelemetry.io/docs/specs/otel/metrics/data-model/).
+**A:** Each delta covers a non-overlapping interval, while cumulative points cover an interval from a start time. Preserve those boundaries and detect gaps and resets before aggregation; applying cumulative reset logic to deltas can double-count or lose samples. See the [OpenTelemetry metrics data model](https://opentelemetry.io/docs/specs/otel/metrics/data-model/).
 
 **Q:** Which identity fields can be lost when mapping an OpenTelemetry stream into Prometheus labels?
 
@@ -668,15 +668,15 @@ Source: [Distributed ID Generator System Design](30.2.2.26-distributed-id-genera
 
 **Q:** What should an ID generator do when the clock moves backward?
 
-**A:** Follow an explicit policy such as waiting, a logical clock or refusing generation. Reusing a timestamp/worker/sequence range can violate uniqueness.
+**A:** Follow an explicit policy such as waiting, a logical clock or refusing generation. Reusing a timestamp, worker, and sequence range can violate uniqueness.
 
 **Q:** Why can writing last timestamp every few seconds fail after restart?
 
-**A:** Issued timestamp/sequence combinations inside the unsaved interval can be reused. Persist a safe reservation before issuance or restore a protocol that skips all possibly issued values and preserves exclusive identity.
+**A:** Issued timestamp and sequence combinations inside the unsaved interval can be reused. Persist a safe reservation before issuance or restore a protocol that skips all possibly issued values and preserves exclusive identity.
 
 **Q:** Does a worker ID make a Snowflake-style generator safe after its lease expires?
 
-**A:** No. A paused old process can resume after reassignment and emit the same worker/time/sequence tuple. The reuse protocol must prevent that stale issuer from continuing, for example by confirming termination, reserving non-overlapping durable time ranges, or encoding a non-reused generation.
+**A:** No. A paused old process can resume after reassignment and emit the same worker, time, and sequence tuple. The reuse protocol must prevent that stale issuer from continuing, for example by confirming termination, reserving non-overlapping durable time ranges, or encoding a non-reused generation.
 
 **Q:** What does UUIDv7 ordering guarantee within one millisecond?
 
@@ -696,7 +696,7 @@ Source: [Ad Click Aggregator System Design](30.2.2.27-ad-click-aggregator.md)
 
 **Q:** Why does nightly replay not by itself prove an invoice exact?
 
-**A:** The log may miss source events or retain outdated fraud/price policy. Reconcile defined event sets and versions, settle an auditable revision, and record later adjustments rather than overwrite issued billing.
+**A:** The log may miss source events or retain outdated fraud and price policy. Reconcile defined event sets and versions, settle an auditable revision, and record later adjustments rather than overwrite issued billing.
 
 **Q:** What does a one-percent Bloom-filter false-positive rate describe?
 
@@ -716,11 +716,11 @@ Source: [Parking Lot System Design](30.2.2.28-parking-lot.md)
 
 **Q:** What should make releasing a parking space safe to retry?
 
-**A:** A ticket/session identity and conditional transition ensure that repeating an old release cannot free a space currently occupied by a newer session.
+**A:** A ticket and session identity and conditional transition ensure that repeating an old release cannot free a space currently occupied by a newer session.
 
 **Q:** Why must payment and physical exit remain separate facts?
 
-**A:** A paid car may still occupy a space, and a sent barrier command may not have executed. Reconcile controller/passage/occupancy evidence under the facility policy before releasing authoritative ownership.
+**A:** A paid car may still occupy a space, and a sent barrier command may not have executed. Reconcile controller, passage, and occupancy evidence under the facility policy before releasing authoritative ownership.
 
 **Q:** Why are `assigned_at` and `entered_at` separate timestamps?
 
@@ -744,11 +744,11 @@ Source: [Distributed Cache System Design](30.2.2.29-distributed-cache.md)
 
 **Q:** How can delete-after-write still leave an old cached value?
 
-**A:** An in-flight reader loaded version seven before a version-eight write and invalidation, then populates seven afterward. Version/generation-aware population or an explicit stale-window policy handles the race.
+**A:** An in-flight reader loaded version seven before a version-eight write and invalidation, then populates seven afterward. Version- and generation-aware population or an explicit stale-window policy handles the race.
 
 **Q:** Does a five-minute TTL guarantee the cached value is at most five minutes old?
 
-**A:** No. TTL measures time since insertion. A slow loader can insert an old origin snapshot just before insertion and keep it for another five minutes; record source version/observation time when source age matters.
+**A:** No. TTL measures time since insertion. A slow loader can insert an old origin snapshot just before insertion and keep it for another five minutes; record source version and observation time when source age matters.
 
 **Q:** What does a Redis Cluster hash tag enable for a multi-key command, and what can it cost?
 
@@ -792,7 +792,7 @@ Source: [API Gateway System Design](30.2.2.31-api-gateway.md)
 
 **Q:** Why are identity headers not safe merely because a gateway sets them?
 
-**A:** A caller can spoof them unless the gateway strips inbound values and the backend authenticates the protected gateway context/channel. The backend still checks resource and tenant authorization.
+**A:** A caller can spoof them unless the gateway strips inbound values and the backend authenticates the protected gateway context and channel. The backend still checks resource and tenant authorization.
 
 **Q:** Where should the final decision to read `/orders/7` be made?
 
@@ -800,7 +800,7 @@ Source: [API Gateway System Design](30.2.2.31-api-gateway.md)
 
 **Q:** Why can a correctly signed JWT still be invalid for this API?
 
-**A:** Its signature proves that a trusted key signed the token, not that this API is its intended audience. Validate the expected issuer, audience, approved algorithm/key, expiry, and token type before trusting its claims. See [RFC 8725, Section 3.9](https://www.rfc-editor.org/rfc/rfc8725.html#section-3.9).
+**A:** Its signature proves that a trusted key signed the token, not that this API is its intended audience. Validate the expected issuer, audience, approved algorithm and key, expiry, and token type before trusting its claims. See [RFC 8725, Section 3.9](https://www.rfc-editor.org/rfc/rfc8725.html#section-3.9).
 
 **Q:** What should the gateway do when an upstream times out after a `POST` may have committed?
 
@@ -824,7 +824,7 @@ Source: [30.2.2.04-netflix](30.2.2.04-netflix.md)
 
 **Q:** Why cannot a license outage create an offline license?
 
-**A:** Offline rights must be provisioned in advance under expiry/device policy. An outage cannot safely manufacture authorization; existing valid licenses may continue while new starts fail.
+**A:** Offline rights must be provisioned in advance under expiry and device policy. An outage cannot safely manufacture authorization; existing valid licenses may continue while new starts fail.
 
 Source: [30.2.2.05-google-drive](30.2.2.05-google-drive.md)
 
@@ -836,13 +836,13 @@ Source: [30.2.2.06-payment-gateway](30.2.2.06-payment-gateway.md)
 
 **Q:** Why must a timed-out charge retain its provider identity?
 
-**A:** The provider may have succeeded before the response was lost. Another provider has a separate deduplication namespace and can charge again. Reconcile/retry the existing identity before changing route.
+**A:** The provider may have succeeded before the response was lost. Another provider has a separate deduplication namespace and can charge again. Reconcile and retry the existing identity before changing route.
 
 Source: [30.2.2.07-notification-service](30.2.2.07-notification-service.md)
 
 **Q:** Why recheck preferences after scheduling?
 
-**A:** A recipient may opt out or lose a valid channel target while a job waits. Acceptance-time consent is stale; dispatch rechecks purpose/channel policy, quiet hours and expiry before provider work.
+**A:** A recipient may opt out or lose a valid channel target while a job waits. Acceptance-time consent is stale; dispatch rechecks purpose and channel policy, quiet hours and expiry before provider work.
 
 Source: [30.2.2.16-instagram](30.2.2.16-instagram.md)
 
@@ -878,7 +878,7 @@ Source: [Twitter feed](30.2.2.12-twitter-feed.md)
 
 **Q:** Why can visibility filtering require fetching more candidate IDs than the requested page size?
 
-**A:** Deleted, blocked or protected posts may be filtered after candidate retrieval. Fetch bounded continuation batches until the page is full or the scan/deadline budget is exhausted, and report another page only when an eligible continuation exists.
+**A:** Deleted, blocked or protected posts may be filtered after candidate retrieval. Fetch bounded continuation batches until the page is full or the scan and deadline budget is exhausted, and report another page only when an eligible continuation exists.
 
 Source: [Web crawler](30.2.2.14-web-crawler.md)
 
@@ -890,7 +890,31 @@ Source: [Chat system](30.2.2.15-chat-system.md)
 
 **Q:** Why does a new-message cursor miss offline edits?
 
-**A:** An edit changes an existing sequence rather than creating a later message. Retain a separate change/delta cursor with a snapshot watermark, apply changes before advancing it, and require resynchronization when retention removed needed deltas.
+**A:** An edit changes an existing sequence rather than creating a later message. Retain a separate change and delta cursor with a snapshot watermark, apply changes before advancing it, and require resynchronization when retention removed needed deltas.
+
+Source: [Payment gateway](30.2.2.06-payment-gateway.md)
+
+**Q:** Why can updating a shared platform or processor-receivable account balance row serialize checkout throughput, and how do high-volume ledgers prevent that bottleneck?
+
+**A:** Every confirmed payment debits or credits the same omnibus settlement or fee account, so locking one mutable balance row turns parallel checkouts into a single serial queue and invites deadlocks. High-volume ledgers keep committed journal entries append-only without locking a shared running total during checkout, or shard hot omnibus accounts into multiple sub-accounts whose balances are aggregated asynchronously for reporting.
+
+Source: [Ticket booking](30.2.2.08-ticket-booking.md)
+
+**Q:** Why do interactive per-seat maps degrade throughput during flash sales compared with best-available section allocation using `FOR UPDATE SKIP LOCKED`?
+
+**A:** When thousands of buyers click the same desirable seats on a slightly stale map, competing transactions serialize on those hot rows and abort almost every attempt while adjacent seats sit idle. Assigning best-available inventory within a section using `FOR UPDATE SKIP LOCKED` lets each concurrent claim skip already-locked rows immediately, pairing naturally with waiting-room admission and coarse section availability counts.
+
+Source: [Workflow engine](30.2.2.21-workflow-engine.md)
+
+**Q:** What causes a non-determinism error when deploying updated code to a replay-based workflow engine, and how do teams evolve long-running workflows safely?
+
+**A:** Replay engines reconstruct execution state by re-running workflow code against recorded event history, so calling wall-clock time, randomness, or inserting a new activity before an existing step emits commands that mismatch prior history and stalls in-flight runs. Teams preserve replay compatibility by guarding changes behind explicit version gates (such as `patched()` checks) or routing existing executions to pinned immutable worker build IDs until older runs complete.
+
+Source: [Real-time collaboration](30.2.2.22-real-time-collaboration.md)
+
+**Q:** Why do text CRDT documents accumulate tombstones over time, and what trade-off governs pruning them safely?
+
+**A:** Text CRDTs keep tombstones for deleted characters so concurrent insertions anchored beside a deleted neighbor still converge at the same position across replicas. Unbounded tombstones bloat long-lived documents, yet pruning them safely either replaces deleted content with compact identifier ranges (trading away exact deleted-text history inside the CRDT) or requires confirming every active and offline replica has observed the deletion before compacting.
 
 ## Summary
 

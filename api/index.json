@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "a05fc364f73e8ea4eadf6c7e41d0190f83dd19df8a8f62d23370b353dedc46f4",
+ "corpus_digest": "9307d56b7c96672ac8720773410170e18e1e1e9c461a187097aed763a9b418ee",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5602
+  "read_minutes": 5606
  },
  "chapters": [
   {
@@ -4507,7 +4507,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.26-distributed-id-generator.html",
@@ -4537,7 +4537,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.29-distributed-cache.html",
@@ -4547,7 +4547,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.html",
@@ -4578,7 +4578,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 23
+   "m": 24
   },
   {
    "p": "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.html",

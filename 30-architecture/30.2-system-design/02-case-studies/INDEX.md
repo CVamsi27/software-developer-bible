@@ -1,6 +1,6 @@
 # System Design — Case Studies
 
-> **Study time:** ≈ 6 h 32 m of reading (32 files, ~12 min average).
+> **Study time:** ≈ 6 h 36 m of reading (32 files, ~12 min average).
 Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then choose cases that match your interview goals.
 
 [![Files](https://img.shields.io/badge/files-32-blue)](../../../INDEX.md)
@@ -52,7 +52,7 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 | 01 | [URL Shortener](30.2.2.01-url-shortener.md) | Web (foundational) | Code allocation, uniqueness, redirect caching, analytics durability | Important | Important |
 | 02 | [WhatsApp](30.2.2.02-whatsapp.md) | Messaging and Real-Time | Retry-safe acceptance, device delivery, end-to-end encryption (E2EE), group membership | Important | Important |
 | 03 | [Uber](30.2.2.03-uber.md) | Ride-sharing and Geo | Location freshness, geo discovery, road estimated time of arrival (ETA), trip and payment boundaries | Important | Important |
-| 04 | [Netflix](30.2.2.04-netflix.md) | Streaming and Media | Playback rights, adaptive quality, CDN/origin recovery, progress | Important | Important |
+| 04 | [Netflix](30.2.2.04-netflix.md) | Streaming and Media | Playback rights, adaptive quality, CDN and origin recovery, progress | Important | Important |
 | 05 | [Google Drive](30.2.2.05-google-drive.md) | Storage and Sync | Staged publication, inherited access, quota races, version conflicts and replay | Important | Important |
 | 06 | [Payment Gateway](30.2.2.06-payment-gateway.md) | Commerce and Fintech | Unknown outcomes, scoped idempotency, balanced ledger, webhook replay and refunds | Important | Important |
 | 07 | [Notification Service](30.2.2.07-notification-service.md) | Messaging and Real-Time | Per-channel identity, fresh consent, quiet hours, outcomes and retries | Important | Important |
@@ -67,10 +67,10 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 | 16 | [Instagram](30.2.2.16-instagram.md) | Social and Feed | Validated media publication, hybrid feeds, visibility checks, stable cursors and retry-safe interactions | Important | Important |
 | 17 | [YouTube](30.2.2.17-youtube.md) | Streaming and Media | Version-fenced uploads, HTTP Live Streaming (HLS) and Dynamic Adaptive Streaming over HTTP (DASH) adaptive playback, manifest publication, authorized delivery and capacity | Important | Important |
 | 18 | [Dropbox](30.2.2.18-dropbox.md) | Storage and Sync | Block-level sync, content-addressable storage, conflict resolution, cursors | Important | Important |
-| 19 | [Lyft](30.2.2.19-lyft.md) | Ride-sharing and Geo | S2/H3 geo indexing, dispatch algorithm, ETA service, surge pricing | Important | Important |
+| 19 | [Lyft](30.2.2.19-lyft.md) | Ride-sharing and Geo | S2 and H3 geo indexing, dispatch algorithm, ETA service, surge pricing | Important | Important |
 | 20 | [Distributed Counter](30.2.2.20-distributed-counter.md) | Web (foundational) | Stable event identity, hot-key sharding, conflict-free replicated data type (CRDT) merge, read contracts | Important | Important |
 | 21 | [Workflow Engine](30.2.2.21-workflow-engine.md) | Automation | Dependency eligibility, durable state, action identity, waits, compensation | Important | Important |
-| 22 | [Real-Time Collaboration](30.2.2.22-real-time-collaboration.md) | Messaging and Real-Time | Operational transformation (OT) vs CRDT, WebSocket protocol, Redis publish/subscribe (Pub/Sub), version history, offline support | Important | Important |
+| 22 | [Real-Time Collaboration](30.2.2.22-real-time-collaboration.md) | Messaging and Real-Time | Operational transformation (OT) vs CRDT, WebSocket protocol, Redis publish-subscribe (Pub/Sub), version history, offline support | Important | Important |
 | 23 | [Typeahead Autocomplete](30.2.2.23-typeahead-autocomplete.md) | Search and Data | Trie, radix tree, and finite-state transducer (FST), bounded typo matching, deterministic ranking, visibility-scoped candidates, versioned index rollout | Important | Important |
 | 24 | [Metrics Monitoring Pipeline](30.2.2.24-metrics-monitoring-pipeline.md) | Platform and Telemetry | Time-series database (TSDB) ingestion, OpenTelemetry (OTel) identity and temporality, exact cardinality admission, late samples, rollups, alert lifecycle | Important | Important |
 | 25 | [Distributed Job Scheduler](30.2.2.25-distributed-job-scheduler.md) | Automation | Occurrence identity, leases and fencing scope, outbox recovery, daylight saving time (DST) and misfire policy, retries, tenant fairness | Important | Important |
@@ -89,7 +89,7 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 
 ## Reading Path and Completion Check
 
-Choose a compact case first, such as the URL shortener. Move to a scarce-resource case, then a delivery/streaming case and a coordination case. Reuse theory links rather than relearning each mechanism.
+Choose a compact case first, such as the URL shortener. Move to a scarce-resource case, then a delivery or streaming case and a coordination case. Reuse theory links rather than relearning each mechanism.
 
 For each case, explain one rule that must always hold, which changes must succeed or fail together to preserve it, the largest source of scaling pressure, and one path for recovering from failure. Then use [section revision](REVISION.md) without reopening the chapters. After that, use the [system-design interview bank](../01-theory/30.2.1.16-interview-questions.md) as a separate drill.
 

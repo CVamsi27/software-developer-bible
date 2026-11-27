@@ -8059,279 +8059,279 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 19A: 30.2.2 system design case studies (01-16))."
   },
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.17-youtube.md": {
-   "sha256": "38af23b36b80a7da668e0de72d3e6014c4e2f81e3169dd3fb9eb1226200f2bfa",
+   "sha256": "5312bfbdc50f2859b030df7873ec92057c0b8c3de2cf92ee62f9832d9be1279f",
    "lines": 217,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against RFC 8216 (HLS), HLS 2nd Edition draft (rfc8216bis), DASH-IF IOP v5, AWS S3 Multipart Upload, and FFmpeg libx264 HLS muxer flags.",
-    "readable": "Full read of 217 lines: traces S3 multipart upload initiation, part ETags, and explicit completion through version-fenced transcoding workers, HLS and MPEG-DASH manifest validation, atomic ready_version publication, and CDN segment delivery.",
-    "concise": "1801 words across 217 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 217 lines (1850 prose words) traces S3 multipart upload initiation, part ETags, and explicit completion through version-fenced transcoding workers, HLS and MPEG-DASH manifest validation, atomic ready_version publication, and CDN segment delivery.",
+    "concise": "1850 words across 217 lines. zero filler or duplicate mechanism prose.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical user-generated video upload, transcoding pipeline, and atomic manifest publication case study.",
-    "fast": "Measured 32.9 KB raw / 10.3 KB gzip. Measured {'path': '30-architecture/30.2-system-design/02-case-studies/30.2.2.17-youtube.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.2-system-design/02-case-studies/30.2.2.17-youtube.html', 'status': 'built', 'sourceBytes': 19144, 'rawBytes': 33714, 'gzipBytes': 10572, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "Measured 32.9 KB raw / 10.3 KB gzip. }; lightweight markdown and compact diagrams.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Includes reproducible FFmpeg HLS VOD command and version-fenced PostgreSQL ready_version update preventing stale worker overwrite failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION))."
   },
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md": {
-   "sha256": "ebc14e856a9656cdb0486584c66ec4d0cd599725cad45a347c0b5e173025a7ca",
+   "sha256": "04e43472e82ff8a2cea167237aba2a5b87216bcd694cfe0616a2dde61fd3d251",
    "lines": 268,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Dropbox API content_hash specification, /files/list_folder/longpoll cursor contract, and rsync technical report.",
-    "readable": "Full read of 268 lines: models 4-MiB block SHA-256 content_hash, deferred composite FK between file_metadata and file_versions, conditional base-revision updates producing conflict copies on stale offline edits, and monotonic namespace sequence cursors.",
-    "concise": "1735 words across 268 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 268 lines (1771 prose words) models 4-MiB block SHA-256 content_hash, deferred composite FK between file_metadata and file_versions, conditional base-revision updates producing conflict copies on stale offline edits, and monotonic namespace sequence cursors.",
+    "concise": "1771 words across 268 lines. zero filler or duplicate mechanism prose.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical block-hashed file synchronization, offline conflict copy, and cursor replay case study.",
-    "fast": "Measured 38.0 KB raw / 10.3 KB gzip. Measured {'path': '30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.html', 'status': 'built', 'sourceBytes': 19336, 'rawBytes': 38863, 'gzipBytes': 10545, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "Measured 38.0 KB raw / 10.3 KB gzip. }; lightweight markdown and compact diagrams.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Includes runnable dropbox_content_hash Python implementation and PostgreSQL namespace_changes schema with garbage-collection live-reference failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION))."
   },
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.19-lyft.md": {
-   "sha256": "b023b16973e61a95f9b41cc57f6630eaf4de71c9eadad4198950d515475ae92b",
+   "sha256": "dfbae7d02665902274c18d30a0054f918f6325cf909d4a1903ee439222964241",
    "lines": 196,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against H3 grid model, Google S2 Geometry Library, OSRM routing, and PostgreSQL unique constraint transaction semantics.",
-    "readable": "Full read of 196 lines: derives spatial discovery (S2 and H3 cells with 12 pentagons, Redis ZRANGEBYSCORE freshness filtering) vs bounded road-ETA routing and dual-resource atomic assignment (one active ride per driver, one active driver per ride).",
-    "concise": "1651 words across 196 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 196 lines (1660 prose words) derives spatial discovery (S2 and H3 cells with 12 pentagons, Redis ZRANGEBYSCORE freshness filtering) vs bounded road-ETA routing and dual-resource atomic assignment (one active ride per driver, one active driver per ride).",
+    "concise": "1660 words across 196 lines. zero filler or duplicate mechanism prose.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical dual-resource driver and ride assignment invariant and city-density trade-off case study; pairs with Uber in 30.2.2.03.",
-    "fast": "Measured 26.1 KB raw / 8.9 KB gzip. Measured {'path': '30-architecture/30.2-system-design/02-case-studies/30.2.2.19-lyft.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.2-system-design/02-case-studies/30.2.2.19-lyft.html', 'status': 'built', 'sourceBytes': 16270, 'rawBytes': 26743, 'gzipBytes': 9112, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "Measured 26.1 KB raw / 8.9 KB gzip. }; lightweight markdown and compact diagrams.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Provides executable PostgreSQL rides, drivers, and active_assignments DDL with deterministic lock ordering preventing double-booking failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION))."
   },
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.20-distributed-counter.md": {
-   "sha256": "66f0f6b3096068d8e4f662b8508f75cda98db3ba286af7bacae53e4f16ef3b3f",
+   "sha256": "f8b23c151da5226bb7942adf432a304f16da02211b0597fdd36090156bdbcecd",
    "lines": 198,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against PostgreSQL 18 CTE INSERT ON CONFLICT semantics, Redis replication write-loss limits, and Shapiro et al. CRDT specification.",
-    "readable": "Full read of 198 lines: separates atomic arithmetic from event-ID duplicate suppression, provides parameterized PostgreSQL CTE counter_events + counter_values SQL, traces sharded hot-key writes vs non-linearizable sequential sum reads, and implements a runnable Python G-Counter CRDT merge.",
-    "concise": "1390 words across 198 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 198 lines (1400 prose words) separates atomic arithmetic from event-ID duplicate suppression, provides parameterized PostgreSQL CTE counter_events + counter_values SQL, traces sharded hot-key writes vs non-linearizable sequential sum reads, and implements a runnable Python G-Counter CRDT merge.",
+    "concise": "1400 words across 198 lines. zero filler or duplicate mechanism prose.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical distributed counter and metrics aggregation case study.",
-    "fast": "Measured 30.6 KB raw / 8.9 KB gzip. Measured {'path': '30-architecture/30.2-system-design/02-case-studies/30.2.2.20-distributed-counter.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.2-system-design/02-case-studies/30.2.2.20-distributed-counter.html', 'status': 'built', 'sourceBytes': 15502, 'rawBytes': 31323, 'gzipBytes': 9143, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "Measured 30.6 KB raw / 8.9 KB gzip. }; lightweight markdown and compact diagrams.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Includes runnable G-Counter CRDT merge with idempotence, commutativity, and associativity assertions and details sharded decrement lower-bound failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION))."
   },
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.md": {
-   "sha256": "8e9d364b75901f4317d3f18641fdcd6ac3b3bc327baac1e411833d47da2ff59a",
-   "lines": 207,
+   "sha256": "61a2d80d1c80a158dbfea31a4991ba93acf4f420e4c807dd9c297fdc902893fd",
+   "lines": 209,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Temporal workflow definition and cancellation semantics, Camunda 7.24, BullMQ stalled-job handling, and PostgreSQL 18 DDL.",
-    "readable": "Full read of 207 lines: models immutable DAG workflow versions, durable execution_steps with ownership lease tokens, TypeScript execution state machine transitions (queued, running, waiting, cancelling, completed, failed, cancelled), and action-key idempotency vs Temporal deterministic replay.",
-    "concise": "1444 words across 207 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 209 lines (1524 prose words) models immutable DAG workflow versions, durable execution_steps with ownership lease tokens, TypeScript execution state machine transitions (queued, running, waiting, cancelling, completed, failed, cancelled), and action-key idempotency vs Temporal deterministic replay.",
+    "concise": "1524 words across 209 lines. zero filler or duplicate mechanism prose.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical multi-step DAG workflow engine, durable wait, and compensation case study.",
-    "fast": "Measured 34.0 KB raw / 8.9 KB gzip. Measured {'path': '30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.html', 'status': 'built', 'sourceBytes': 15816, 'rawBytes': 34765, 'gzipBytes': 9138, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "Measured 34.0 KB raw / 8.9 KB gzip. }; lightweight markdown and compact diagrams.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Includes runnable TypeScript workflow transition machine and PostgreSQL execution_steps lease schema preventing crashed-worker double-charge failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION))."
   },
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.22-real-time-collaboration.md": {
-   "sha256": "ac6a381f8f05c9ad98aa9dacec288f3f779273b87866bd9602f9b8c3d90e909d",
-   "lines": 208,
+   "sha256": "1519fdfd8bac86691b66e34ba40b7b55d7eb75a9d8a5595441b1908d70dd5b5c",
+   "lines": 210,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Yjs v13+ Y.Doc, encodeStateAsUpdate, encodeStateVector, applyUpdate APIs and PostgreSQL 18 DDL.",
-    "readable": "Full read of 208 lines: contrasts Operational Transformation (OT) with CRDTs, provides a runnable Yjs ESM concurrent insert/delete/reorder/state-vector repair example, separates ephemeral awareness presence from durable PostgreSQL binary update logs and CRDT snapshots, and traces per-user undo.",
-    "concise": "1358 words across 208 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 210 lines (1453 prose words) contrasts Operational Transformation (OT) with CRDTs, provides a runnable Yjs ESM concurrent insert/delete/reorder/state-vector repair example, separates ephemeral awareness presence from durable PostgreSQL binary update logs and CRDT snapshots, and traces per-user undo.",
+    "concise": "1453 words across 210 lines. zero filler or duplicate mechanism prose.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical real-time collaborative editing (CRDT and OT), state-vector sync, and snapshot compaction case study.",
-    "fast": "Measured 34.1 KB raw / 8.5 KB gzip. Measured {'path': '30-architecture/30.2-system-design/02-case-studies/30.2.2.22-real-time-collaboration.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.2-system-design/02-case-studies/30.2.2.22-real-time-collaboration.html', 'status': 'built', 'sourceBytes': 15382, 'rawBytes': 34940, 'gzipBytes': 8677, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "Measured 34.1 KB raw / 8.5 KB gzip. }; lightweight markdown and compact diagrams.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Includes runnable Yjs convergence and state-vector delta test and details plain-text snapshot ID loss and revoked offline editor failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION))."
   },
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.23-typeahead-autocomplete.md": {
-   "sha256": "0a638cdfe7c865171e99a5d2cc5ad485dd4af93aeefb06ffb8b3d68fe77d9686",
+   "sha256": "f62f2528a6df477dd9526a8c90075f77d2a2b90e71d4732c13cde97f4ebe528a",
    "lines": 243,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Unicode Standard Annex #15 (NFKC normalization), Elasticsearch completion suggesters, and TypeScript strict typing.",
-    "readable": "Full read of 243 lines: implements a runnable TypeScript TypeaheadIndex with Unicode NFKC normalization, deterministic code-unit tie-breaking, and top-k prefix lists, compares Trie, sorted dictionary, FST, and Elasticsearch completion suggesters, and separates public prefix caches from private history.",
-    "concise": "1446 words across 243 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 243 lines (1475 prose words) implements a runnable TypeScript TypeaheadIndex with Unicode NFKC normalization, deterministic code-unit tie-breaking, and top-k prefix lists, compares Trie, sorted dictionary, FST, and Elasticsearch completion suggesters, and separates public prefix caches from private history.",
+    "concise": "1475 words across 243 lines. zero filler or duplicate mechanism prose.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical low-latency typeahead autocomplete, prefix indexing, and query-generation UI ordering case study.",
-    "fast": "Measured 44.6 KB raw / 10.1 KB gzip. Measured {'path': '30-architecture/30.2-system-design/02-case-studies/30.2.2.23-typeahead-autocomplete.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.2-system-design/02-case-studies/30.2.2.23-typeahead-autocomplete.html', 'status': 'built', 'sourceBytes': 18028, 'rawBytes': 45647, 'gzipBytes': 10330, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "Measured 44.6 KB raw / 10.1 KB gzip. }; lightweight markdown and compact diagrams.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Includes runnable TypeaheadIndex test suite and details out-of-order response generation race, personalized=true cache leak, and 1-char fuzzy expansion failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION))."
   },
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md": {
-   "sha256": "91541c191601add1618acbe613b4f4434cbb913edacea306885b9c24a15d889d",
+   "sha256": "0b3343102f2bde8ee53eb71dab1eda80eb2e75a2eabc640b83d928d1cbce7c4d",
    "lines": 209,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Prometheus native histograms, OpenMetrics 1.0, OpenTelemetry metrics data model, and Gorilla TSDB compression.",
-    "readable": "Full read of 209 lines: models series cardinality admission limits (exact tenant-scoped registry vs Bloom filter), OpenTelemetry delta vs cumulative temporality, Prometheus native vs classic histograms, weighted gauge rollups, and PromQL alert evaluation with missing-data handling.",
-    "concise": "1924 words across 209 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 209 lines (1958 prose words) models series cardinality admission limits (exact tenant-scoped registry vs Bloom filter), OpenTelemetry delta vs cumulative temporality, Prometheus native vs classic histograms, weighted gauge rollups, and PromQL alert evaluation with missing-data handling.",
+    "concise": "1958 words across 209 lines. zero filler or duplicate mechanism prose.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical time-series metrics ingestion, rollup compaction, and alerting pipeline case study.",
-    "fast": "Measured 28.2 KB raw / 9.7 KB gzip. Measured {'path': '30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.html', 'status': 'built', 'sourceBytes': 19067, 'rawBytes': 28840, 'gzipBytes': 9937, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "Measured 28.2 KB raw / 9.7 KB gzip. }; lightweight markdown and compact diagrams.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Includes valid PromQL classic and native histogram p99 alert rule YAML and details series cardinality explosion, averaging p99s, and missing-series false recovery failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION))."
   },
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.25-distributed-job-scheduler.md": {
-   "sha256": "a4871673592f18ea5ef63c8c751f7689f1eb6fa2c4b5f054928140f9a99eb8f0",
+   "sha256": "1319bfefc55998d93441ce19a98cc09ede7f876ec59e5cc3c1d73cfa58e05192",
    "lines": 199,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against PostgreSQL 18 FOR UPDATE SKIP LOCKED, clock_timestamp() vs statement_timestamp(), Shreedhar & Varghese DRR paper, and Temporal/BullMQ semantics.",
-    "readable": "Full read of 199 lines: separates logical occurrence identity from attempt identity, provides executable PostgreSQL job_definitions and job_runs DDL with FOR UPDATE SKIP LOCKED lease claiming and fence tokens, and analyzes IANA DST transitions and Deficit Round-Robin (DRR) tenant fairness.",
-    "concise": "1651 words across 199 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 199 lines (1689 prose words) separates logical occurrence identity from attempt identity, provides executable PostgreSQL job_definitions and job_runs DDL with FOR UPDATE SKIP LOCKED lease claiming and fence tokens, and analyzes IANA DST transitions and Deficit Round-Robin (DRR) tenant fairness.",
+    "concise": "1689 words across 199 lines. zero filler or duplicate mechanism prose.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical distributed job scheduler, occurrence deduplication, and leased worker execution case study.",
-    "fast": "Measured 31.1 KB raw / 9.2 KB gzip. Measured {'path': '30-architecture/30.2-system-design/02-case-studies/30.2.2.25-distributed-job-scheduler.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.2-system-design/02-case-studies/30.2.2.25-distributed-job-scheduler.html', 'status': 'built', 'sourceBytes': 16601, 'rawBytes': 31851, 'gzipBytes': 9462, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "Measured 31.1 KB raw / 9.2 KB gzip. }; lightweight markdown and compact diagrams.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Provides executable PostgreSQL SKIP LOCKED claim query with fence_token increment and details live-only partial unique index replay bug and paused-worker external side-effect failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION))."
   },
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.26-distributed-id-generator.md": {
-   "sha256": "6080315ae75b7e774645f4fd4db2d19a5337e6012e619fdb96f2544e570c384e",
+   "sha256": "4fc6eda603b2360cb31c43975675d5bb6f90d21746af3a2c45f9540a66cd6d66",
    "lines": 226,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against RFC 9562 (UUIDv7), JavaScript BigInt 64-bit integer precision rules, and PostgreSQL atomic UPDATE RETURNING range allocation.",
-    "readable": "Full read of 226 lines: compares DB sequences, reserved ranges, 64-bit Snowflake (1-41-10-12 bit layout), UUIDv4, and RFC 9562 UUIDv7, implements a runnable TypeScript BigInt SnowflakeGenerator with clock-rollback and sequence-overflow traps, and provides PostgreSQL atomic range allocation SQL.",
-    "concise": "1329 words across 226 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 226 lines (1365 prose words) compares DB sequences, reserved ranges, 64-bit Snowflake (1-41-10-12 bit layout), UUIDv4, and RFC 9562 UUIDv7, implements a runnable TypeScript BigInt SnowflakeGenerator with clock-rollback and sequence-overflow traps, and provides PostgreSQL atomic range allocation SQL.",
+    "concise": "1365 words across 226 lines. zero filler or duplicate mechanism prose.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical distributed ID generation, clock-regression handling, and lease-reuse boundary case study.",
-    "fast": "Measured 39.4 KB raw / 9.4 KB gzip. Measured {'path': '30-architecture/30.2-system-design/02-case-studies/30.2.2.26-distributed-id-generator.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.2-system-design/02-case-studies/30.2.2.26-distributed-id-generator.html', 'status': 'built', 'sourceBytes': 16093, 'rawBytes': 40371, 'gzipBytes': 9660, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "Measured 39.4 KB raw / 9.4 KB gzip. }; lightweight markdown and compact diagrams.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Includes runnable TypeScript SnowflakeGenerator test suite and details paused-worker lease reassignment collision and non-durable timestamp restart failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION))."
   },
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.27-ad-click-aggregator.md": {
-   "sha256": "d60bc280cd4345483f37f73d69fe0ab037a7967d4af3905a87eed535c19dbefc",
+   "sha256": "9588c00bfac54a9eb575c6ebd5276e5b46cafacdbc6717251d2bb2624adf15c5",
    "lines": 212,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Apache Flink event-time watermark and checkpoint docs and ClickHouse ReplacingMergeTree FINAL and argMax query deduplication.",
-    "readable": "Full read of 212 lines: separates real-time provisional click dashboards from settled invoice-grade billing revisions, implements an immutable Python AcceptedClick + State deduplicating window aggregator, traces event-time watermarks with 24h allowed lateness, and models ClickHouse ReplacingMergeTree revisions.",
-    "concise": "1555 words across 212 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 212 lines (1597 prose words) separates real-time provisional click dashboards from settled invoice-grade billing revisions, implements an immutable Python AcceptedClick + State deduplicating window aggregator, traces event-time watermarks with 24h allowed lateness, and models ClickHouse ReplacingMergeTree revisions.",
+    "concise": "1597 words across 212 lines. zero filler or duplicate mechanism prose.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical streaming ad-click aggregation, deduplication, and billing reconciliation case study.",
-    "fast": "Measured 37.7 KB raw / 9.7 KB gzip. Measured {'path': '30-architecture/30.2-system-design/02-case-studies/30.2.2.27-ad-click-aggregator.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.2-system-design/02-case-studies/30.2.2.27-ad-click-aggregator.html', 'status': 'built', 'sourceBytes': 17470, 'rawBytes': 38559, 'gzipBytes': 9900, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "Measured 37.7 KB raw / 9.7 KB gzip. }; lightweight markdown and compact diagrams.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Includes runnable Python immutable state transition model with payload-conflict rejection and details cross-region duplicate forwarding and late fraud reversal failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION))."
   },
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.28-parking-lot.md": {
-   "sha256": "8f74aa0780b39b3c7e6affbe8b30fb9aac1913aeeeb67112034d002cc35db8a3",
+   "sha256": "a12622eda89c450af381446a4c0da0524f85335c31e1c5b2a529fffe6b832b32",
    "lines": 192,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against PostgreSQL 18 partial unique indexes and Python integer minor-unit fee arithmetic.",
-    "readable": "Full read of 192 lines: models physical vs software state separation (assigned, parked, exit_authorized, closed, cancelled), partial unique index one_live_session_per_spot, integer minor-unit tariff math with grace and rolling 24h cap, and barrier sensor reconciliation.",
-    "concise": "1150 words across 192 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 192 lines (1186 prose words) models physical vs software state separation (assigned, parked, exit_authorized, closed, cancelled), partial unique index one_live_session_per_spot, integer minor-unit tariff math with grace and rolling 24h cap, and barrier sensor reconciliation.",
+    "concise": "1186 words across 192 lines. zero filler or duplicate mechanism prose.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical finite physical space allocation, sensor reconciliation, and tariff calculation case study.",
-    "fast": "Measured 32.5 KB raw / 8.1 KB gzip. Measured {'path': '30-architecture/30.2-system-design/02-case-studies/30.2.2.28-parking-lot.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.2-system-design/02-case-studies/30.2.2.28-parking-lot.html', 'status': 'built', 'sourceBytes': 14408, 'rawBytes': 33290, 'gzipBytes': 8337, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "Measured 32.5 KB raw / 8.1 KB gzip. }; lightweight markdown and compact diagrams.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Includes runnable parking_fee Python function with boundary assertions and PostgreSQL partial unique index preventing double-assigned spot failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION))."
   },
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.29-distributed-cache.md": {
-   "sha256": "10b33f56eed9846d35bed2c0dc24bbb433d2ddda55ac55ccdc606209346f8979",
+   "sha256": "f0eee97fb51bb572afc8aa02278ec0afb256236b83018770c4da0947915215b5",
    "lines": 145,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against Redis Cluster specification, Redis eviction docs, and AWS Builders' Library caching strategies.",
-    "readable": "Full read of 145 lines. Distributed Cache case study opening with the reader-v7 / writer-v8 stale-fill race after cache `DEL`, sizing 10M replicated keys across nodes, comparing consistent-hashing rings against Redis Cluster 16,384 hash slots, distinguishing expiry vs eviction vs invalidation, and designing versioned population, bounded singleflight miss coalescing, and hot-key replication.",
-    "concise": "1401 words across 145 lines; zero filler or duplicate explanations.",
+    "readable": "Full read of 145 lines (1449 prose words). Distributed Cache case study opening with the reader-v7 / writer-v8 stale-fill race after cache `DEL`, sizing 10M replicated keys across nodes, comparing consistent-hashing rings against Redis Cluster 16,384 hash slots, distinguishing expiry vs eviction vs invalidation, and designing versioned population, bounded singleflight miss coalescing, and hot-key replication.",
+    "concise": "1449 words across 145 lines. zero filler or duplicate explanations.",
     "focused": "Focused single-topic scope: Canonical case study for distributed derived-data cache partitioning, stale-fill prevention, and stampede control.",
-    "fast": "Fast to scan: 20.8 KB raw / 7.6 KB gzip.",
+    "fast": "Measured 20.8 KB raw / 7.6 KB gzip. Fast to scan: 20.8 KB raw / 7.6 KB gzip.",
     "best": "Best-practice depth: Traces why `DEL` after write fails against a slow in-flight reader and why shard failover requires origin-safe load shedding. Includes failure boundary analysis."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION))."
   },
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md": {
-   "sha256": "c334cd3e34a7ad3d33ff4be8db066b781c3427eed118d7657f7532d9c9b7c7ab",
+   "sha256": "9b5a1744f93a33968aa01d0063dd329d8df8c0a857f09be702a6eeacb9002115",
    "lines": 149,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Apache Kafka 4.3 producer acks=all and transaction docs, RabbitMQ publisher confirms, and AWS SQS FIFO 5-minute deduplication scope.",
-    "readable": "Full read of 149 lines: designs a partitioned append-only message broker log with consumer group offsets, ISR replication and min.insync.replicas acceptance rules, at-least-once vs at-most-once commit boundaries, log compaction vs retention, and DLQ poison handling.",
-    "concise": "1486 words across 149 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 149 lines (1547 prose words) designs a partitioned append-only message broker log with consumer group offsets, ISR replication and min.insync.replicas acceptance rules, at-least-once vs at-most-once commit boundaries, log compaction vs retention, and DLQ poison handling.",
+    "concise": "1547 words across 149 lines. zero filler or duplicate mechanism prose.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical message broker architecture case study; complements operational broker chapters in 20.9.",
-    "fast": "Measured 22.8 KB raw / 8.0 KB gzip. Measured {'path': '30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.html', 'status': 'built', 'sourceBytes': 15066, 'rawBytes': 23375, 'gzipBytes': 8159, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "Measured 22.8 KB raw / 8.0 KB gzip. }; lightweight markdown and compact diagrams.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Contrasts Kafka retained log, RabbitMQ queues and streams, and SQS Standard and FIFO and traces consumer crash pre-commit replay failure boundary."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION))."
   },
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.31-api-gateway.md": {
-   "sha256": "a4f5cde5f6d48706a06cd022cce6101c42114740c57e9d24745db9d3d1f71105",
+   "sha256": "5d908820f9543dd14db6431d7afb99ed538f0354266d8a4b8e9121f5350efbfd",
    "lines": 154,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against RFC 8725 (JWT BCP), AWS API Gateway, Kong Gateway, and CloudFront documentation.",
-    "readable": "Full read of 154 lines. API Gateway case study tracing `/orders/7` edge authentication and admission vs downstream order-7 resource authorization, Little's Law in-flight buffer sizing (10K RPS x 200ms = 2,000 in-flight), atomic config generation pinning, JWT RFC 8725 validation and header stripping, retry amplification (`3 x 3 x 3 = 27`), and scoped response caching.",
-    "concise": "1449 words across 154 lines; zero filler or duplicate explanations.",
+    "readable": "Full read of 154 lines (1522 prose words). API Gateway case study tracing `/orders/7` edge authentication and admission vs downstream order-7 resource authorization, Little's Law in-flight buffer sizing (10K RPS x 200ms = 2,000 in-flight), atomic config generation pinning, JWT RFC 8725 validation and header stripping, retry amplification (`3 x 3 x 3 = 27`), and scoped response caching.",
+    "concise": "1522 words across 154 lines. zero filler or duplicate explanations.",
     "focused": "Focused single-topic scope: Canonical system-design case study for edge policy pipelines, downstream identity trust, and retry/fan-out budgets.",
-    "fast": "Fast to scan: 22.9 KB raw / 8.1 KB gzip.",
+    "fast": "Measured 22.9 KB raw / 8.1 KB gzip. Fast to scan: 22.9 KB raw / 8.1 KB gzip.",
     "best": "Best-practice depth: Highlights path-normalization mismatches, header spoofing, and timeout-after-write retry duplication boundaries. Includes failure boundary analysis."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION))."
   },
   "30-architecture/30.2-system-design/02-case-studies/INDEX.md": {
-   "sha256": "bebd155a57cc3a7ad7092d6001b884023360ad92c1dae35081b3d5f8a54befe7",
+   "sha256": "b47df3b43bc8c2bb21bfa9dc90abaa284aa9a7b5cd51b10b85b076be59a7f90d",
    "lines": 114,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against all 31 numbered case studies and REVISION.md.",
-    "readable": "Full read of 114 lines (299 prose words). Category index for 30.2-system-design/02-case-studies organizing 31 applied system design case studies by 4 difficulty tiers and 12 engineering domains, with Docita implementation anchors.",
-    "concise": "299 words across 114 lines. zero filler or duplicate explanations.",
+    "readable": "Full read of 114 lines (301 prose words). Category index for 30.2-system-design/02-case-studies organizing 31 applied system design case studies by 4 difficulty tiers and 12 engineering domains, with Docita implementation anchors.",
+    "concise": "301 words across 114 lines. zero filler or duplicate explanations.",
     "focused": "Focused single-topic scope: Canonical entrypoint for applied system design interview case studies.",
     "fast": "Measured 25.7 KB raw / 7.0 KB gzip. Fast to scan: 25.7 KB raw / 7.0 KB gzip.",
     "best": "Best-practice depth: Guides readers to state the core invariant, atomic boundary, scaling bottleneck, and failure recovery path for each design."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 19A: 30.2.2 system design case studies (01-16))."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION))."
   },
   "30-architecture/30.2-system-design/02-case-studies/REVISION.md": {
-   "sha256": "dcb341b4ddb6a7cf8f795f6f38485d00426f6cff5afd045d2185a126136ac8cd",
-   "lines": 907,
+   "sha256": "ff9f9c6054f89f332b16d66037e319ba46a7064af7e1257684a5569929b87fd8",
+   "lines": 931,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against 2026 system design case study targets, H3 geospatial indexing, WebTransport and WebSocket presence, Kafka 4.x KRaft logs, and Redis 8.x data structures.",
-    "readable": "Full read of 907 lines: verified 66 Q&A pairs across all 30 case studies (URL shortener, WhatsApp, Uber, Netflix, Google Drive, Payment Gateway, Notification Service, Ticket Booking, E-Commerce, Hospital Management, Live Betting, Twitter Feed, Rate Limiter, Web Crawler, Chat System, Instagram, YouTube, Dropbox, Lyft, Airbnb, Google Maps, Stock Exchange, Distributed File System, Ad Click Aggregator, Search Autocomplete, Recommendation Engine, Leaderboard, Parking Lot, Distributed Cache, Message Queue, API Gateway) plus 6 cross-cutting architecture tradeoff questions.",
-    "concise": "9155 words across 907 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 931 lines (9557 prose words) verified 66 Q&A pairs across all 30 case studies (URL shortener, WhatsApp, Uber, Netflix, Google Drive, Payment Gateway, Notification Service, Ticket Booking, E-Commerce, Hospital Management, Live Betting, Twitter Feed, Rate Limiter, Web Crawler, Chat System, Instagram, YouTube, Dropbox, Lyft, Airbnb, Google Maps, Stock Exchange, Distributed File System, Ad Click Aggregator, Search Autocomplete, Recommendation Engine, Leaderboard, Parking Lot, Distributed Cache, Message Queue, API Gateway) plus 6 cross-cutting architecture tradeoff questions.",
+    "concise": "9557 words across 931 lines. zero filler or duplicate mechanism prose.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical revision companion for 30.2-system-design/02-case-studies; no duplicate full architecture walkthroughs.",
-    "fast": "Measured 84.9 KB raw / 25.3 KB gzip. Measured {'path': '30-architecture/30.2-system-design/02-case-studies/REVISION.md', 'genre': 'revision', 'html': '_site/30-architecture/30.2-system-design/02-case-studies/REVISION.html', 'status': 'built', 'sourceBytes': 65987, 'rawBytes': 86988, 'gzipBytes': 25905, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "Measured 84.9 KB raw / 25.3 KB gzip. }; lightweight markdown and compact diagrams.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Every Q&A states concrete capacity math, partitioning keys, and failure boundary conditions (hot celebrity fan-out, payment double-charge, split-brain lock expiry)."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION))."
   },
   "30-architecture/30.2-system-design/INDEX.md": {
-   "sha256": "b5203c62de49b7f1258e1f08e24d3cebd018542be25765256a68fea815faa420",
+   "sha256": "666e11b319ed046cff1c76241409a849cde6a10c6fcdc1c04398671d916e953b",
    "lines": 52,
    "genre": "index",
    "status": "read",
@@ -8344,7 +8344,7 @@
     "fast": "Measured 10.9 KB raw / 3.6 KB gzip. Fast to scan: 10.9 KB raw / 3.6 KB gzip.",
     "best": "Best-practice depth: Emphasizes tracing invariants through normal execution, failure boundary conditions, and recovery."
    },
-   "notes": "Synced live read-time and counts after Phase 19A: 30.2.2 system design case studies (01-16)."
+   "notes": "Synced live read-time and counts after Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION)."
   },
   "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md": {
    "sha256": "6259ab27f5569b7ad1362bca40b4e0af6aabaabc9f297f097187a6b711cdc58a",
@@ -8811,7 +8811,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/INDEX.md": {
-   "sha256": "abc78cf03cc67233c5a0e6f2f6a3148944870e36ed2193eebbee212c122d88ba",
+   "sha256": "de415fa931e753e71e335c3ca1eb54593892f781b3f767af157d390bc89e7010",
    "lines": 66,
    "genre": "index",
    "status": "read",
@@ -8824,7 +8824,7 @@
     "fast": "Measured 12.3 KB raw / 4.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Best-practice depth: Frames failure boundary conditions, trade-offs, and Docita source anchors."
    },
-   "notes": "Synced live read-time and counts after Phase 19A: 30.2.2 system design case studies (01-16)."
+   "notes": "Synced live read-time and counts after Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION)."
   },
   "40-platform/40.1-docker/40.1.01-images-containers.md": {
    "sha256": "b248dd1fb71b1d733104d71b67efc21c161e7c2990cf5a60c602d2db3ba9aa4a",
@@ -14395,7 +14395,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "fb4bd46c35b81588d5f87cd4a7bf7abd6c1ded6ab5844884883c743a56063aa7",
+   "sha256": "5bc21f0a53161ff4791e1ccfaa8cb5b9e744f53dde11e6c1663d1d74db978767",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14408,7 +14408,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 19A: 30.2.2 system design case studies (01-16)."
+   "notes": "Synced live read-time and counts after Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION)."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14699,7 +14699,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "9418f15d1f0a82bf6c88964ee67ee1e0d47b45dfea06025c38053edf037feb4e",
+   "sha256": "d30a5cae7ecfdefcfb48ebee0fb86b8bf55522bc5cd6c9e5fed498b32175d622",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14712,7 +14712,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 19A: 30.2.2 system design case studies (01-16)."
+   "notes": "Synced live read-time and counts after Phase 19B: 30.2.2 system design case studies (17-31, INDEX, REVISION)."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

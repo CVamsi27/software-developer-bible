@@ -2011,84 +2011,84 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 4A D1-D7 rework: 10.4-next.js/01-rendering-fundamentals)."
   },
   "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.01-middleware.md": {
-   "sha256": "33514695342aa06af321e5843fe2c11d2b6d16232ead943be184df85e1acb2bc",
-   "lines": 215,
+   "sha256": "f9c1eb8e82ab3d85cdeb1dc1e4c3494194c15f8e86ebfb41df9bf3c51b001fa9",
+   "lines": 217,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against the official proxy file-convention documentation; middleware.ts is deprecated in favor of proxy.ts, Proxy defaults to the Node.js runtime, and setting a runtime export throws, as documented on 2026-11-18 (URL 200).",
-    "readable": "Full read of 215 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "844 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 217 lines (950 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "950 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "The Proxy early-routing contract is owned here; Route Handlers own the HTTP contract, and Authentication owns resource authorization.",
-    "fast": "31.5 KB raw / 7.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 31.5 KB raw / 7.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Keeps Proxy to early routing and states that a matcher is not an authorization boundary; it cannot protect requests the matcher excludes."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 4B D1-D7 rework: 10.4-next.js/02-routing-and-middleware)."
   },
   "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.02-route-handlers.md": {
-   "sha256": "8c16f05f34b6e1c989167c94b58f2324671c5c8a2e3f0a7254c5083c998eea1b",
-   "lines": 350,
+   "sha256": "cfe40d99e9325c70f37cfb5c3907f5ada2ead22a1482aeed0033d0ae140ba6cc",
+   "lines": 362,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against the official Route Handler, serverActions and revalidateTag documentation; the 1 MiB default body limit, profile-based revalidation and deprecated one-argument form match those pages, and the first snippet now imports NextRequest before using it (2026-11-18).",
-    "readable": "Full read of 350 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1234 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 362 lines (1336 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1336 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "The Route Handler HTTP contract is owned here; Server Actions own mutations, and Caching owns the revalidation and cache-model policy.",
-    "fast": "53.9 KB raw / 9.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 53.9 KB raw / 9.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Owns the HTTP contract from verification to status; it does not make a webhook idempotent or a stream flush through every proxy."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 4B D1-D7 rework: 10.4-next.js/02-routing-and-middleware)."
   },
   "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.03-metadata.md": {
-   "sha256": "893a1dea5c7796608b8e6100e9cb3eb4c75abf534d068a64ba659addf6957b4a",
+   "sha256": "90cd0d8c1aafa3fd736285a9a59e0b6e18687374621d07cce5f0bfb004a633ab",
    "lines": 305,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against the official generateMetadata, metadata file-convention, generateViewport and generateSitemaps references; metadataBase resolution, inheritance and streaming constraints match those pages (URLs 200 on 2026-11-18).",
-    "readable": "Full read of 305 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1257 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 305 lines (1331 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1331 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Metadata output and inheritance are owned here; rendering and caching own when the values are produced, and those chapters are linked.",
-    "fast": "45.9 KB raw / 9.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 45.9 KB raw / 9.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Aligns canonical, sharing and crawler output with the rendered page; metadata cannot enforce access or fix content that is wrong."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 4B D1-D7 rework: 10.4-next.js/02-routing-and-middleware)."
   },
   "10-frontend/10.4-next.js/02-routing-and-middleware/INDEX.md": {
-   "sha256": "3b108f89cd520a3701118c0d865de8fb1c6b26f1b46cadb25fae88f24d363de0",
+   "sha256": "15e3595a6641477123749a5485246ab0f5d9765e7e9634efe3c258b7ae1ed7fe",
    "lines": 37,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "No version-sensitive claim; the 4-file count (three chapters plus one revision companion), 41-minute total and status badge were re-derived from disk and the table sums on 2026-11-18.",
-    "readable": "Full read of 37 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 37 lines (91 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "91 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Navigation only: it points at the three chapters and their revision drill without retelling their mechanisms.",
-    "fast": "8.7 KB raw / 2.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 8.7 KB raw / 2.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Orders the request from early Proxy routing to the HTTP handler to document metadata; it does not teach any of the three itself."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 4B D1-D7 rework: 10.4-next.js/02-routing-and-middleware)."
   },
   "10-frontend/10.4-next.js/02-routing-and-middleware/REVISION.md": {
-   "sha256": "ef92a57bf181b374495681264955f0b5040368106fac21bdfc08894f49e9d0d3",
-   "lines": 161,
+   "sha256": "78fe225b4686b18992ebc9e31fd176a39e43c44ff85dc0ea7142aca4e281f975",
+   "lines": 173,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Every answer was checked against its source chapter and the official Next.js proxy, route-handler and metadata references; the Node.js runtime and runtime-export rejection match the proxy page on 2026-11-18.",
-    "readable": "Full read of 161 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1191 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 173 lines (1397 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1397 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Retrieval drill: each group names its source chapter and points at it for the full treatment.",
-    "fast": "17.2 KB raw / 5.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 17.2 KB raw / 5.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Tests where a request must be rejected or verified; it does not replace the chapters."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 4B D1-D7 rework: 10.4-next.js/02-routing-and-middleware)."
   },
   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.01-data-fetching-patterns.md": {
    "sha256": "ea076fb033a06e8e2ff0d60a454fb59e750f7e996092e3dce4d58df99657130c",
@@ -2331,7 +2331,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/10.4-next.js/INDEX.md": {
-   "sha256": "2943c9f0a708a5562daa27faee9921ef8cfdd4d1dac9802aa587d3f197c35f18",
+   "sha256": "baf5ed2f659d4f33a5fad629664527aa170e638b7cbf20bcf0f8fd9931adf38b",
    "lines": 132,
    "genre": "index",
    "status": "read",
@@ -2341,10 +2341,10 @@
     "readable": "Full read of 132 lines (306 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "306 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Section map: it points at five category indexes and the cross-reference table without retelling their chapters.",
-    "fast": "Measured 18.9 KB raw / 5.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 18.9 KB raw / 5.0 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Sets the senior-level scope and three study paths; it does not try to be a sixth tutorial."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 4A D1-D7 rework: 10.4-next.js/01-rendering-fundamentals)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 4B D1-D7 rework: 10.4-next.js/02-routing-and-middleware)."
   },
   "10-frontend/10.5-form-handling/10.5.01-react-hook-form.md": {
    "sha256": "de1ef83bf4d319b99e32ee39d28e0f3771b8c8b2456c4d4c4f1f463add6f6cef",
@@ -2987,7 +2987,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/INDEX.md": {
-   "sha256": "0e4849c17f0462ecc03e027e1b53b8ebcecc1f06fe361f483b5733b72978d253",
+   "sha256": "c1efd6c629c00e1c600b141eaa92d529a4748ed5f206e48d134a36bad66ff1f9",
    "lines": 75,
    "genre": "index",
    "status": "read",
@@ -3000,7 +3000,7 @@
     "fast": "Measured 14.7 KB raw / 4.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Sets the frontend study order from execution to optional capabilities; it limits itself to navigation and does not teach any mechanism."
    },
-   "notes": "Synced live read-time and counts after Phase 4A D1-D7 rework: 10.4-next.js/01-rendering-fundamentals."
+   "notes": "Synced live read-time and counts after Phase 4B D1-D7 rework: 10.4-next.js/02-routing-and-middleware."
   },
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md": {
    "sha256": "cbb48962f1b1c976f33493d3398af0e10c4deb7f49db4537cb50b8af762ebfe1",
@@ -14365,7 +14365,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "a8a5c4b2abeb1ef8a44453288daa901f5671d78997ebcd662870bbc209057b57",
+   "sha256": "9c66193ad2b0e3faac4a2f32570904b72931910fb1853e49a7a5c083b0216904",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14378,7 +14378,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 4A D1-D7 rework: 10.4-next.js/01-rendering-fundamentals."
+   "notes": "Synced live read-time and counts after Phase 4B D1-D7 rework: 10.4-next.js/02-routing-and-middleware."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14669,7 +14669,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "5d4f369c64370dae9e57a8a333141a09d46a978acd0287fb88ac6cd31e608f23",
+   "sha256": "ff3fa6f0488c8114f95e0228e486fbdf9c113d419a7170e8d73945083316bd51",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14682,7 +14682,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 4A D1-D7 rework: 10.4-next.js/01-rendering-fundamentals."
+   "notes": "Synced live read-time and counts after Phase 4B D1-D7 rework: 10.4-next.js/02-routing-and-middleware."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

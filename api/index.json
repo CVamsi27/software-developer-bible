@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "a260228fcbfb18f032100a304133d58d62d957645e3f0f578392b25bdaa5de0d",
+ "corpus_digest": "1adfb232d92ae891c7ddb9568a067b520d0eb02f8059a9814e512e4b5f33d0d6",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5502
+  "read_minutes": 5506
  },
  "chapters": [
   {
@@ -1093,7 +1093,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.02-route-handlers.html",
@@ -1103,7 +1103,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 16
   },
   {
    "p": "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.03-metadata.html",
@@ -1113,7 +1113,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "10-frontend/10.4-next.js/02-routing-and-middleware/REVISION.html",
@@ -1124,7 +1124,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 3
+   "m": 4
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.01-data-fetching-patterns.html",

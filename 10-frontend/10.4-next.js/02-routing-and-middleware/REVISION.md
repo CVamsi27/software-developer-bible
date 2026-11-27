@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Next.js-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -24,7 +24,7 @@ Source: [Proxy in Next.js](10.4.2.01-middleware.md)
 
 **Q:** Why can an experiment lose its sticky assignment even though `cookies.set` was called?
 
-**A:** The cookie was attached to a response that was discarded. Set it on the same rewrite/continue response that the entry point actually returns.
+**A:** The cookie was attached to a response that was discarded. Set it on the same rewrite or continue response that the entry point actually returns.
 
 **Q:** How should verified identity reach a downstream server handler?
 
@@ -32,7 +32,7 @@ Source: [Proxy in Next.js](10.4.2.01-middleware.md)
 
 **Q:** Why must a distributed rate limiter make its check-and-increment atomic?
 
-**A:** Concurrent requests can all observe a count below the limit and over-accept unless the shared store performs the decision as one operation. The key, window, expiry and trusted identity source also define who shares a quota.
+**A:** Concurrent requests can all observe a count below the limit and over-accept unless the shared store performs the decision as one operation. The key, window, expiry, and trusted identity source also define who shares a quota.
 
 **Q:** Why should a cookie-presence redirect never be the only authorization check?
 
@@ -41,6 +41,10 @@ Source: [Proxy in Next.js](10.4.2.01-middleware.md)
 **Q:** Why can excluding a page path in `config.matcher` leave its Server Function outside Proxy checks too?
 
 **A:** Server Function calls are `POST` requests to the page route, not separate routes. Their own function must authenticate and authorize every call; a Proxy matcher is not their security boundary.
+
+**Q:** Why must `proxy.ts` overwrite internal forwarding headers, and what do per-request CSP nonces and `missing` prefetch matchers change?
+
+**A:** HTTP clients can forge headers like `x-tenant-id`, so `proxy.ts` must strip or replace spoofable headers before `NextResponse.next({ request: { headers } })`. Generating a per-request CSP `nonce` turns matched pages dynamic and prevents static or shared CDN caching, while `missing` header filters prevent `<Link>` prefetches from inflating Proxy counters.
 
 ## Route Handlers in Next.js
 
@@ -56,7 +60,7 @@ Source: [Route Handlers in Next.js](10.4.2.02-route-handlers.md)
 
 **Q:** Why must signature verification precede JSON parsing for a webhook?
 
-**A:** The signature covers the exact raw bytes/text. Parsing and re-encoding may change those bytes, and the request body stream can only be consumed once.
+**A:** The signature covers the exact raw bytes and text. Parsing and re-encoding may change those bytes, and the request body stream can only be consumed once.
 
 **Q:** What must a schema failure return to become a useful HTTP validation response?
 
@@ -77,6 +81,10 @@ Source: [Route Handlers in Next.js](10.4.2.02-route-handlers.md)
 **Q:** What should logout do beyond expiring the browser's session cookie?
 
 **A:** Revoke the server-side session as well. Cookie flags reduce exposure, but they do not validate the session or authorize a mutation; cookie-authenticated writes also need a CSRF policy.
+
+**Q:** When should a Route Handler schedule work with `after()`, and why wire `request.signal` and `X-Accel-Buffering: no` for SSE?
+
+**A:** Use `after()` (`next/server`) only for non-critical post-response tasks like audit logs or telemetry flushes after committing durable writes before returning `200`, since a crash after response could still drop `after()` callbacks. On SSE routes, `request.signal` aborts timers immediately on disconnect and `X-Accel-Buffering: no` stops proxy buffering.
 
 ## Metadata API in Next.js
 
@@ -104,7 +112,7 @@ Source: [Metadata API in Next.js](10.4.2.03-metadata.md)
 
 **Q:** Do two Open Graph image sizes provide responsive on-page images?
 
-**A:** No. Sharing platforms choose preview images; a browser's responsive page image uses `srcset`/`sizes` through `next/image`.
+**A:** No. Sharing platforms choose preview images; a browser's responsive page image uses `srcset` and `sizes` through `next/image`.
 
 **Q:** Where does JSON-LD belong if it is not a field in the `Metadata` object?
 
@@ -117,6 +125,10 @@ Source: [Metadata API in Next.js](10.4.2.03-metadata.md)
 **Q:** Which sitemap fields should be kept accurate for Google, and which do not affect its crawl decisions?
 
 **A:** `lastModified` should reflect a significant content change; Google ignores `priority` and `changefreq`. Split a sitemap above 50,000 URLs.
+
+**Q:** Why does `generateMetadata` plus `page.tsx` run an ORM call twice without `React.cache()`, and what must dynamic `opengraph-image.tsx` guard?
+
+**A:** Next.js only auto-memoizes `GET` `fetch()` calls within a render pass, so ORM and database reads must be wrapped in `React.cache()` to deduplicate across metadata and page rendering. Dynamic `opengraph-image.tsx` (`ImageResponse`) consumes runtime CPU and font-loading budget, so keep its inputs bounded and cached.
 
 ## Follow the Failure Boundary
 
@@ -140,7 +152,7 @@ Source: [Proxy](10.4.2.01-middleware.md), [Route Handlers](10.4.2.02-route-handl
 
 **Q:** Why does a verified payment webhook still need event deduplication?
 
-**A:** Verification establishes source/integrity. Delivery may retry or arrive out of order, so durable handling must avoid duplicate side effects and invalid state transitions.
+**A:** Verification establishes source and integrity. Delivery may retry or arrive out of order, so durable handling must avoid duplicate side effects and invalid state transitions.
 
 **Q:** Why should a sitemap not stamp every page with the time the file was generated?
 
@@ -148,7 +160,7 @@ Source: [Proxy](10.4.2.01-middleware.md), [Route Handlers](10.4.2.02-route-handl
 
 ## Summary
 
-Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
+Revisit the linked chapter when an answer misses the mechanism, a boundary, or a failure case.
 
 ---
 

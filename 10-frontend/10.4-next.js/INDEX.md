@@ -1,6 +1,6 @@
 # Next.js — Index
 
-> **Study time:** ≈ 3 h 27 m of reading (21 files, ~10 min average).
+> **Study time:** ≈ 3 h 31 m of reading (21 files, ~10 min average).
 > **21 files** — App Router, rendering strategies, server components, data fetching patterns, caching, streaming, ISR, authentication, static exports, deployment (Docker/Vercel/self-hosted), and interview questions.
 
 [![Files](https://img.shields.io/badge/files-21-blue)](../../INDEX.md)
@@ -55,9 +55,9 @@ Trace how a URL reaches a page or handler, then place request-specific policy at
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 05 | [Proxy and Middleware](02-routing-and-middleware/10.4.2.01-middleware.md) | Next.js 16 Proxy, earlier Middleware, matchers, redirects, rewrites, early routing versus authorization | Important | Specialized | 9 min |
-| 06 | [Route Handlers](02-routing-and-middleware/10.4.2.02-route-handlers.md) | API routes, request/response, caching, dynamic vs static | Important | Important | 15 min |
-| 07 | [Metadata](02-routing-and-middleware/10.4.2.03-metadata.md) | Static/dynamic metadata, SEO, Open Graph, robots, sitemaps | Important | Specialized | 13 min |
+| 05 | [Proxy and Middleware](02-routing-and-middleware/10.4.2.01-middleware.md) | Next.js 16 Node Proxy, matchers and prefetch skipping, rewrites, header stripping, CSP nonces, and authorization boundaries | Important | Specialized | 10 min |
+| 06 | [Route Handlers](02-routing-and-middleware/10.4.2.02-route-handlers.md) | HTTP methods, validation, SSE abort handling, webhooks and `after()`, uploads, Cache Components, and CORS | Important | Important | 16 min |
+| 07 | [Metadata](02-routing-and-middleware/10.4.2.03-metadata.md) | Static and dynamic metadata, `React.cache()` deduplication, JSON-LD escaping, `next/og` images, robots, and sitemaps | Important | Specialized | 14 min |
 
 ---
 

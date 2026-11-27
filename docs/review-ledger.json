@@ -2091,132 +2091,132 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 4B D1-D7 rework: 10.4-next.js/02-routing-and-middleware)."
   },
   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.01-data-fetching-patterns.md": {
-   "sha256": "ea076fb033a06e8e2ff0d60a454fb59e750f7e996092e3dce4d58df99657130c",
+   "sha256": "10923e79fc889185c10dace3754dbebcc07b0c7f21be0cfa7f7fa26e00b2a842",
    "lines": 201,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against the official fetching-data and client-side-data-fetching guides plus react.dev use and cache references; request deduplication, parallel reads and the server/client ownership split match those sources (URLs 200 on 2026-11-18).",
-    "readable": "Full read of 201 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1062 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 201 lines (1125 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1125 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Read placement and the dependency graph are owned here; Caching owns reuse and invalidation policy, and the cross-section TanStack Query chapter owns browser cache mechanics.",
-    "fast": "32.0 KB raw / 7.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 32.0 KB raw / 7.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Separates read placement from cache policy and authorization; it does not turn a client query cache into shared server state."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 4C D1-D7 rework: 10.4-next.js/03-data-and-caching)."
   },
   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.02-server-actions.md": {
-   "sha256": "34cb6c927940956743efab01366491cd80305d8d485bb2b1133f4fc161b959ab",
+   "sha256": "d263256818830b1dd3e8575b52671b12f82c2f1ee7c0108cdd45b1f03839b7a1",
    "lines": 208,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against the official mutating-data, serverActions and useActionState documentation; the 1 MiB default body limit, action POST boundary and revalidation ordering match those pages (URLs 200 on 2026-11-18).",
-    "readable": "Full read of 208 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1029 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 208 lines (1087 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1087 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "The Server Action mutation contract is owned here; Route Handlers own the HTTP contract, and Caching owns the invalidation APIs.",
-    "fast": "35.6 KB raw / 8.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 35.6 KB raw / 8.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Shows validation, authorization and commit ordering at the action boundary; it cannot make a retried write safe without idempotency."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 4C D1-D7 rework: 10.4-next.js/03-data-and-caching)."
   },
   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.03-caching.md": {
-   "sha256": "00a3ff9663c1faa77a1b6496cbb93a8a9fd2a760d43deab2e2dbe30acf12f39a",
-   "lines": 194,
+   "sha256": "2322687a24328a62da93e4eaf43c059eefb5f5894f69f662b8bdc885dfcf48fb",
+   "lines": 196,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against the official cacheComponents (stable 16.0.0), partialPrefetching (16.3.0), revalidateTag and updateTag references; the profile argument, deprecated one-argument form and Server-Actions-only updateTag match those pages (2026-11-18).",
-    "readable": "Full read of 194 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1171 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 196 lines (1267 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1267 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Cache-model selection and invalidation are owned here; ISR owns regeneration policy, and data fetching owns read placement.",
-    "fast": "32.8 KB raw / 8.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 32.8 KB raw / 8.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes the installed cache model the first decision; it does not claim invalidation eagerly rebuilds every route or updates open browsers."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 4C D1-D7 rework: 10.4-next.js/03-data-and-caching)."
   },
   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.04-streaming.md": {
-   "sha256": "36bb768c5e7a6ad9d16c7aade8498b779d0f2fb0df8a03fe7f9a80b41e0878f4",
+   "sha256": "c0c3059ab64e316e34630fd770e63380c7d0c78e0d1da50cfd6982815fa080f8",
    "lines": 128,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against the official streaming guide and react.dev Suspense reference; fallback scope, loading.tsx behavior and the pre-first-byte status constraint match those sources (URLs 200 on 2026-11-18).",
-    "readable": "Full read of 128 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "818 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 128 lines (846 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "846 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Streaming and Suspense boundary placement are owned here; Server Components own the payload, and Caching owns reuse policy.",
-    "fast": "21.8 KB raw / 5.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 21.8 KB raw / 5.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Places Suspense where waiting begins and separates pending from failed; streaming cannot change a status code after the first byte."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 4C D1-D7 rework: 10.4-next.js/03-data-and-caching)."
   },
   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.05-incremental-static-regeneration.md": {
-   "sha256": "88ee209bb159777e01311febb793364d3c4ac07a4a4b5fdd20a0148bb1369e32",
+   "sha256": "35064a9cdb688aa5aaf0b79eb4f0e5a7f3d3bca9dbdf7e7ae900eee248140882",
    "lines": 211,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against the official ISR guides for both cache models plus the revalidateTag reference; the traditional model is scoped to Next.js 16.4 with cacheComponents disabled, revalidateTag(tag, max) means stale-while-revalidate, and npm reports 16.4.6 current on 2026-11-18.",
-    "readable": "Full read of 211 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1128 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 211 lines (1177 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1177 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "ISR regeneration is owned here; Caching owns model selection and tag semantics, and Deployment owns shared-cache topology.",
-    "fast": "35.5 KB raw / 8.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 35.5 KB raw / 8.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Explains eligibility versus regeneration and the API-specific stale contract; it cannot guarantee refresh if no request arrives."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 4C D1-D7 rework: 10.4-next.js/03-data-and-caching)."
   },
   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.06-static-exports.md": {
-   "sha256": "668336e105b45aab8e8d5188157210d571158602b4007b4972c1cb4df4d929a0",
-   "lines": 185,
+   "sha256": "8cc0852117893f2482f1d8b37fd7b88ba00268c0d19c6ef1cc1b10018597f0f2",
+   "lines": 187,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against the official static-exports guide and Image component reference; the unsupported request-time features, generateStaticParams requirement, unoptimized or custom loader choice and preload-versus-priority change match those pages (2026-11-18).",
-    "readable": "Full read of 185 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "856 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 187 lines (910 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "910 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Static export constraints are owned here; Deployment owns the runtime artifact, and Image Optimization owns loader and cache policy.",
-    "fast": "28.8 KB raw / 6.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 28.8 KB raw / 6.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "States what a file host cannot do and moves that work to an authorized service; export cannot run a request-time Next.js handler."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 4C D1-D7 rework: 10.4-next.js/03-data-and-caching)."
   },
   "10-frontend/10.4-next.js/03-data-and-caching/INDEX.md": {
-   "sha256": "faf8fdaf9d684423385dbb2d1445336f177b518d294e1069916012447764adde",
+   "sha256": "4189046d092e451346ec78dfa771c51c3e0d79cb7c1a7e11778fae74ed7e1037",
    "lines": 41,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "No version-sensitive claim; the 7-file count (six chapters plus one revision companion), 58-minute total and status badge were re-derived from disk and the table sums on 2026-11-18.",
-    "readable": "Full read of 41 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "95 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 41 lines (99 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "99 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Navigation only: it points at the six chapters and their revision drill without retelling their mechanisms.",
-    "fast": "9.8 KB raw / 3.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 9.8 KB raw / 3.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Orders reads from placement through mutation, reuse, delivery and export; it does not teach any chapter itself."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 4C D1-D7 rework: 10.4-next.js/03-data-and-caching)."
   },
   "10-frontend/10.4-next.js/03-data-and-caching/REVISION.md": {
-   "sha256": "c1bd8588da9f56c04684ae717782b65bc263bd7c5ce332a66b9e51c86045423c",
-   "lines": 257,
+   "sha256": "aabc70858f096ebd6e7e8bfb667d5b7a2c455d76fbde7c635ed906a9b0d0e4c3",
+   "lines": 281,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Every answer was checked against its source chapter and the official Next.js caching, revalidateTag, updateTag and static-export references; the 16.0 and 16.3 version boundaries match those pages on 2026-11-18.",
-    "readable": "Full read of 257 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1833 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 281 lines (2174 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "2174 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Retrieval drill: each group names its source chapter and points at it for the full treatment.",
-    "fast": "23.3 KB raw / 7.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 23.3 KB raw / 7.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Tests cache-model and freshness decisions under changed conditions; it does not replace the chapters."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 4C D1-D7 rework: 10.4-next.js/03-data-and-caching)."
   },
   "10-frontend/10.4-next.js/04-production/10.4.4.01-authentication.md": {
    "sha256": "8fb31fc001e71d2611583c2e8098b34620d2a7fb0fc97a9629de07e7d3198600",
@@ -2331,7 +2331,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/10.4-next.js/INDEX.md": {
-   "sha256": "baf5ed2f659d4f33a5fad629664527aa170e638b7cbf20bcf0f8fd9931adf38b",
+   "sha256": "b4dcc3930f8c8061455ba62f8e5b001b28d3df553b8c6722e1f5ebb3532add37",
    "lines": 132,
    "genre": "index",
    "status": "read",
@@ -2341,10 +2341,10 @@
     "readable": "Full read of 132 lines (306 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "306 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Section map: it points at five category indexes and the cross-reference table without retelling their chapters.",
-    "fast": "Measured 18.9 KB raw / 5.0 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
+    "fast": "Measured 18.9 KB raw / 5.0 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Sets the senior-level scope and three study paths; it does not try to be a sixth tutorial."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Phase 4B D1-D7 rework: 10.4-next.js/02-routing-and-middleware)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 4C D1-D7 rework: 10.4-next.js/03-data-and-caching)."
   },
   "10-frontend/10.5-form-handling/10.5.01-react-hook-form.md": {
    "sha256": "de1ef83bf4d319b99e32ee39d28e0f3771b8c8b2456c4d4c4f1f463add6f6cef",
@@ -2987,7 +2987,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/INDEX.md": {
-   "sha256": "c1efd6c629c00e1c600b141eaa92d529a4748ed5f206e48d134a36bad66ff1f9",
+   "sha256": "54336bd8a575a114b3a9cae57b051039eacace0cc6a8658ae8a8b2610a24ff19",
    "lines": 75,
    "genre": "index",
    "status": "read",
@@ -3000,7 +3000,7 @@
     "fast": "Measured 14.7 KB raw / 4.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Sets the frontend study order from execution to optional capabilities; it limits itself to navigation and does not teach any mechanism."
    },
-   "notes": "Synced live read-time and counts after Phase 4B D1-D7 rework: 10.4-next.js/02-routing-and-middleware."
+   "notes": "Synced live read-time and counts after Phase 4C D1-D7 rework: 10.4-next.js/03-data-and-caching."
   },
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md": {
    "sha256": "cbb48962f1b1c976f33493d3398af0e10c4deb7f49db4537cb50b8af762ebfe1",
@@ -14365,7 +14365,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "9c66193ad2b0e3faac4a2f32570904b72931910fb1853e49a7a5c083b0216904",
+   "sha256": "24f7e0539884d246cc1274f8e45dd0428d9750b6ec8db9bdf49046523b27ff91",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14378,7 +14378,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 4B D1-D7 rework: 10.4-next.js/02-routing-and-middleware."
+   "notes": "Synced live read-time and counts after Phase 4C D1-D7 rework: 10.4-next.js/03-data-and-caching."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14669,7 +14669,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "ff3fa6f0488c8114f95e0228e486fbdf9c113d419a7170e8d73945083316bd51",
+   "sha256": "ec012ddf6a29ca6466d0d1350bfa087c2a2f0df6cb9a985efb727ea499fa8792",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14682,7 +14682,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 4B D1-D7 rework: 10.4-next.js/02-routing-and-middleware."
+   "notes": "Synced live read-time and counts after Phase 4C D1-D7 rework: 10.4-next.js/03-data-and-caching."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

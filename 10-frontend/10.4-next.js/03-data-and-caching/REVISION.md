@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Next.js-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-6_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -36,11 +36,15 @@ Source: [Data Fetching Patterns in Next.js (App Router)](10.4.3.01-data-fetching
 
 **Q:** Will `useDeferredValue` guarantee fewer search requests?
 
-**A:** No. It prioritizes rendering rather than enforcing a time-based debounce; use debouncing/cancellation when controlling query traffic.
+**A:** No. It prioritizes rendering rather than enforcing a time-based debounce; use debouncing and cancellation when controlling query traffic.
 
 **Q:** Where should cache invalidation occur relative to a mutation?
 
-**A:** After the authorized, validated write succeeds and before redirecting to dependent output. Target the routes/tags affected rather than invalidating unrelated data.
+**A:** After the authorized, validated write succeeds and before redirecting to dependent output. Target the routes and tags affected rather than invalidating unrelated data.
+
+**Q:** When does `Promise.allSettled` or the `React.cache()` preload pattern fit better than raw `Promise.all`?
+
+**A:** `Promise.all` fails fast on the first rejection, so use `Promise.allSettled` (or separate `<Suspense>` and error boundaries) when secondary panels should degrade independently. Exporting a `preloadProduct(id)` helper calling `void getProduct(id)` backed by `React.cache()` warms an expensive read ahead of conditional branches without breaking component boundaries.
 
 ## Server Actions in Next.js
 
@@ -74,6 +78,10 @@ Source: [Server Actions in Next.js](10.4.3.02-server-actions.md)
 
 **A:** The Next.js client currently dispatches and awaits Server Functions one at a time. Keep reads in Server Components, or run independent server work together inside one action or Route Handler.
 
+**Q:** Why is bound `'use server'` closure encryption insufficient for security or rolling multi-replica deploys?
+
+**A:** Next.js encrypts bound closure arguments over the wire, yet callers can replay an encrypted payload after permissions are revoked — every action must re-authorize access. Multi-instance servers must share `NEXT_SERVER_ACTIONS_ENCRYPTION_KEY` across replicas so rolling deploys do not break in-flight closures.
+
 ## Caching in Next.js
 
 Source: [Caching in Next.js](10.4.3.03-caching.md)
@@ -88,7 +96,7 @@ Source: [Caching in Next.js](10.4.3.03-caching.md)
 
 **Q:** Which requests does automatic request memoization combine?
 
-**A:** Identical `GET` URL/options calls within a React server render. Different endpoints and Route Handler execution are outside that deduplication rule.
+**A:** Identical `GET` URL and options calls within a React server render. Different endpoints and Route Handler execution are outside that deduplication rule.
 
 **Q:** Why does an invalidation tag not isolate two users' cached records?
 
@@ -96,11 +104,15 @@ Source: [Caching in Next.js](10.4.3.03-caching.md)
 
 **Q:** Can every Next.js 16 minor version enable both Cache Components and Partial Prefetching?
 
-**A:** No. Cache Components is available from 16.0, while the separate `partialPrefetching` flag starts at 16.3 and requires Cache Components. Enable the supported configuration for the installed minor version. Cache reusable functions or components explicitly and place uncached request-time work under Suspense; traditional `dynamic`/`revalidate`/`fetchCache` segment settings are not equivalent controls.
+**A:** No. Cache Components is available from 16.0, while the separate `partialPrefetching` flag starts at 16.3 and requires Cache Components. Enable the supported configuration for the installed minor version. Cache reusable functions or components explicitly and place uncached request-time work under Suspense; traditional `dynamic`, `revalidate`, and `fetchCache` segment settings are not equivalent controls.
 
 **Q:** Which Next.js 16 invalidation choice gives a Server Action read-your-writes behavior?
 
 **A:** `updateTag` immediately expires tagged data for that action workflow. `revalidateTag` with `'max'` instead permits stale output while background refresh runs.
+
+**Q:** How do `'use cache'`, `'use cache: remote'`, and `'use cache: private'` differ in Next.js 16?
+
+**A:** Default `'use cache'` caches through the default server handler, `'use cache: remote'` explicitly targets a shared remote cache store for multi-instance or serverless runtime sharing, and `'use cache: private'` allows reading `cookies()` or `headers()` for per-visitor runtime caching and client prefetching without polluting shared server caches.
 
 ## Streaming in Next.js
 
@@ -120,7 +132,7 @@ Source: [Streaming in Next.js](10.4.3.04-streaming.md)
 
 **Q:** Must every Suspense boundary have its own `error.tsx`?
 
-**A:** No. Suspense handles pending work, while route/custom error boundaries handle failures. A route boundary may cover several Suspense regions.
+**A:** No. Suspense handles pending work, while route or custom error boundaries handle failures. A route boundary may cover several Suspense regions.
 
 **Q:** Why can a late not-found result still have HTTP status 200?
 
@@ -137,6 +149,10 @@ Source: [Streaming in Next.js](10.4.3.04-streaming.md)
 **Q:** What streaming behavior should an HTML-limited crawler expect around metadata?
 
 **A:** Next.js waits for `generateMetadata` so the crawler receives metadata in the initial head. Page content can still stream after that metadata resolves; DOM-capable crawlers can receive streamed metadata.
+
+**Q:** How do parallel route `loading.tsx` files isolate slow UI regions?
+
+**A:** Placing `loading.tsx` inside each named slot folder (`@analytics/loading.tsx`, `@feed/loading.tsx`) creates independent Suspense boundaries so slower slots stream progressively without blocking sibling slots rendered in the same layout.
 
 ## Incremental Static Regeneration (ISR)
 
@@ -170,6 +186,10 @@ Source: [Incremental Static Regeneration (ISR)](10.4.3.05-incremental-static-reg
 
 **A:** On-demand ISR requests do not run Proxy, so invalidate the actual route path after rewriting. Multi-instance self-hosting also needs shared cache coordination.
 
+**Q:** Why can an invalidated popular ISR route still stampede an origin database across self-hosted replicas?
+
+**A:** Each Next.js instance coalesces concurrent regenerations inside its own process, not automatically across separate containers. Multi-instance self-hosted deployments sharing a cache store must coordinate revalidation locks or budget for parallel origin rebuilds per replica.
+
 ## Static Exports in Next.js
 
 Source: [Static Exports in Next.js](10.4.3.06-static-exports.md)
@@ -192,11 +212,15 @@ Source: [Static Exports in Next.js](10.4.3.06-static-exports.md)
 
 **Q:** How can `next/image` work when no optimizer server exists?
 
-**A:** Serve the source unoptimized or use a custom loader pointing to an external optimizer/CDN. Preserve layout dimensions either way.
+**A:** Serve the source unoptimized or use a custom loader pointing to an external optimizer or CDN. Preserve layout dimensions either way.
 
 **Q:** Where is authorization enforced when an exported shell shows private API data?
 
 **A:** The external API must verify the request and enforce permissions. Hiding client UI is not an access-control boundary.
+
+**Q:** Why do static-export CDNs split `Cache-Control` policies between HTML and `/_next/static/*`?
+
+**A:** Hashed assets under `/_next/static/*` can safely be `public, max-age=31536000, immutable`, whereas HTML files and static RSC `.txt` payloads need `public, max-age=0, must-revalidate` so browsers never keep stale HTML pointing at deleted JavaScript chunk hashes after deployment.
 
 ## Configured cache model and freshness
 
@@ -204,11 +228,11 @@ Source: [Learning chapter](10.4.3.03-caching.md)
 
 **Q:** Why must you inspect `cacheComponents` before copying a caching example?
 
-**A:** Next.js 16 Cache Components and the traditional model use different configuration controls. Segment `dynamic`/`revalidate`/`fetchCache` options are not interchangeable with `'use cache'` boundaries.
+**A:** Next.js 16 Cache Components and the traditional model use different configuration controls. Segment `dynamic`, `revalidate`, and `fetchCache` options are not interchangeable with `'use cache'` boundaries.
 
 **Q:** Why can `router.refresh()` still show old server data?
 
-**A:** It requests fresh client route rendering without necessarily invalidating the persistent server Data Cache. Invalidate the relevant server entry/path according to the write contract.
+**A:** It requests fresh client route rendering without necessarily invalidating the persistent server Data Cache. Invalidate the relevant server entry and path according to the write contract.
 
 **Q:** How do `updateTag` and `revalidateTag` with `'max'` differ?
 
@@ -228,23 +252,23 @@ Source: [Fetching](10.4.3.01-data-fetching-patterns.md), [Actions](10.4.3.02-ser
 
 **Q:** What makes a temporary optimistic todo disappear after successful submission?
 
-**A:** The action overlay ends. If the authorized server list has not become the new base, React returns to the old list; revalidation/base reconciliation is part of success.
+**A:** The action overlay ends. If the authorized server list has not become the new base, React returns to the old list; revalidation and base reconciliation are part of success.
 
 **Q:** Can a fast streamed title guarantee a fast largest-content paint?
 
-**A:** No. The largest visible region may still wait for data, assets or proxy buffering. Measure its arrival separately from shell delivery.
+**A:** No. The largest visible region may still wait for data, assets, or proxy buffering. Measure its arrival separately from shell delivery.
 
 **Q:** Why invalidate a bestseller list when a rating falls below its threshold?
 
-**A:** The product was present in the old selection and must be removed. Checking only the new qualifying state misses that change; use before/after data or conservative list invalidation.
+**A:** The product was present in the old selection and must be removed. Checking only the new qualifying state misses that change; use before and after data or conservative list invalidation.
 
 **Q:** Does fetching generated JSON after mount make an exported dashboard live?
 
-**A:** No. The JSON remains the deployed build snapshot. Live or private data requires a separate runtime and the appropriate freshness/access policy.
+**A:** No. The JSON remains the deployed build snapshot. Live or private data requires a separate runtime and the appropriate freshness and access policy.
 
 ## Summary
 
-Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
+Revisit the linked chapter when an answer misses the mechanism, a boundary, or a failure case.
 
 ---
 

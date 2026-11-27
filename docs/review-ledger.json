@@ -3387,141 +3387,148 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 9C D1-D7 rework: 20.1-node.js/04-security-and-operations and 20.1 INDEX (completes 20.1-node.js))."
   },
   "20-backend/20.12-ai-engineering/20.12.01-llm-app-architecture.md": {
-   "sha256": "814ff36dfb3d4f94d830228d9d78af502199d0481848f027d13edc061c80b330",
+   "sha256": "b4aceba7cf629793ddd2ed2d4a61ed0bdec9ee6db59757b58bd46f0abdb1b4c5",
    "lines": 278,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against OpenAI Function Calling docs, Anthropic tool-use docs, pgvector, and Node.js stream backpressure/AbortController semantics (Node 24 LTS); excerpts explicitly marked as adapter sketches requiring vendor SDKs.",
-    "readable": "Full read of 278 lines. Rewritten for clarity: opens with 4 concrete week-1 production failures, traces one request end-to-end with a clean diagram, compares prompting/RAG/fine-tuning, explains chunking & post-filter recall traps, SSE backpressure/disconnects, tool-call ID correlation, and production release gates.",
-    "concise": "1432 words. Each section tackles one architectural boundary with concrete examples and zero legalistic padding.",
+    "readable": "Full read of 278 lines (1494 prose words). Rewritten for clarity: opens with 4 concrete week-1 production failures, traces one request end-to-end with a clean diagram, compares prompting/RAG/fine-tuning, explains chunking & post-filter recall traps, SSE backpressure/disconnects, tool-call ID correlation, and production release gates.",
+    "concise": "1494 words across 278 lines. Each section tackles one architectural boundary with concrete examples and zero legalistic padding.",
     "focused": "Canonical home for end-to-end LLM application boundaries. Deep eval pipelines stay in 20.12.02, hybrid retrieval/RRF in 20.12.03, agent loops/MCP in 20.12.04, and cost/safety governance in 20.12.06.",
-    "fast": "43.1 KB raw / 11.4 KB gzip built page on the shared Jekyll shell; well under the 64 KiB gzip budget.",
+    "fast": "Measured 43.1 KB raw / 11.4 KB gzip (on the shared Jekyll shell; well under the 64 KiB gzip budget.)",
     "best": "Explicitly states the security, backpressure, post-filter recall, and tool-call correlation boundaries; remaining limit is that provider adapters are excerpts because live inference requires paid vendor keys."
    },
-   "notes": "Phase 0 calibration pilot rewrite; satisfies both LLM App Architecture Q&As in 20.12 REVISION.md."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 16A D1-D7 rework of 20.12-ai-engineering)."
   },
   "20-backend/20.12-ai-engineering/20.12.02-prompts-context-evals.md": {
-   "sha256": "ff9466bf5ad028f5d295231cbaab5a09e666f251315bfd21f2cf8bf320db3247",
-   "lines": 295,
+   "sha256": "209e9475657316902471fcabc906f2d3fdd1cd16a6c63b750051d9f3dde537a5",
+   "lines": 296,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Executed checkAnswer in Node v26.13.0 (verified valid and invented source cases); checked against OpenAI and Anthropic prompt/eval docs.",
-    "readable": "Full read of 295 lines. Rewrote for clear first-pass comprehension covering prompt structure, full serialized context budgeting, multi-layer evals, and judge calibration; preserved #one-deterministic-evaluation-trace.",
-    "concise": "1406 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "readable": "Full read of 296 lines (1484 prose words). Rewrote for clear first-pass comprehension covering prompt structure, full serialized context budgeting, multi-layer evals, and judge calibration; preserved #one-deterministic-evaluation-trace.",
+    "concise": "1484 words across 296 lines. Clear plain-English structure with worked traces, tables, and zero padding.",
     "focused": "Canonical prompts, context budgeting, and eval chapter; points at 20.12.01 for architecture and 20.12.06 for governance.",
-    "fast": "48.6 KB raw / 11.1 KB gzip",
+    "fast": "Measured 48.6 KB raw / 11.1 KB gzip.",
     "best": "Remaining limit is that checkAnswer validates JSON shape and source membership only; factual claim entailment requires a separate calibrated grader."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 16A D1-D7 rework of 20.12-ai-engineering)."
   },
   "20-backend/20.12-ai-engineering/20.12.03-retrieval-quality-hybrid-search-reranking.md": {
-   "sha256": "ccfd139458a174a5158181f9b843741c39ccdd240389a2e5420e0b07186505c3",
-   "lines": 325,
+   "sha256": "b94da02fbed6a8bdf1e120588049871932ae306527583b672e6e1b037bba8665",
+   "lines": 327,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Executed fuse() in Node v26.13.0 (confirmed B:0.0315 beats A:0.0303 and C:0.0164 at k=60); checked against pgvector, Cohere Rerank, and BGE docs.",
-    "readable": "Full read of 325 lines. Unpacked dense definitions into clear plain English covering lexical FTS/BM25, dense vectors, RRF, bi-encoder vs cross-encoder, HNSW vs IVF, chunking, and recall@k; preserved #trace-fusion-independently-of-any-provider.",
-    "concise": "1575 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "readable": "Full read of 327 lines (1636 prose words). Unpacked dense definitions into clear plain English covering lexical FTS/BM25, dense vectors, RRF, bi-encoder vs cross-encoder, HNSW vs IVF, chunking, and recall@k; preserved #trace-fusion-independently-of-any-provider.",
+    "concise": "1636 words across 327 lines. Clear plain-English structure with worked traces, tables, and zero padding.",
     "focused": "Canonical hybrid retrieval and reranking chapter; points at 20.4.5.05 for search infrastructure operations and 20.12.02 for eval loops.",
-    "fast": "55.8 KB raw / 12.9 KB gzip",
+    "fast": "Measured 55.8 KB raw / 12.9 KB gzip.",
     "best": "Remaining limit is that reranking cannot recover a relevant passage excluded by first-stage retrieval or starved by selective ANN tenant filters."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 16A D1-D7 rework of 20.12-ai-engineering)."
   },
   "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.md": {
-   "sha256": "fff0ef98b5667b7bb82dbe7cf255c009adaec86cd1254f301d6007a65826a659",
-   "lines": 363,
+   "sha256": "5ddba0ee125200d0acfb1a14ebd4651ebdaeed3db738fd74a51716927eac11d6",
+   "lines": 364,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Executed runAgent() in Node v26.13.0 (verified happy search->answer path and unknown-tool turn_budget halt); checked against MCP 2026-07-28 transport spec.",
-    "readable": "Full read of 363 lines. Fixed both broken ASCII diagrams (orchestrator loop and graph/state-machine view) and rewrote ReAct, stopping guards, MCP 2026-07-28, multi-agent topologies, and trajectory evals clearly; preserved #an-executable-control-loop-with-injected-read-tools.",
-    "concise": "1799 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "readable": "Full read of 364 lines (1867 prose words). Fixed both broken ASCII diagrams (orchestrator loop and graph/state-machine view) and rewrote ReAct, stopping guards, MCP 2026-07-28, multi-agent topologies, and trajectory evals clearly; preserved #an-executable-control-loop-with-injected-read-tools.",
+    "concise": "1867 words across 364 lines. Clear plain-English structure with worked traces, tables, and zero padding.",
     "focused": "Canonical agent orchestration chapter; points at 20.12.06 for spend reservations and authz boundaries.",
-    "fast": "61.8 KB raw / 13.7 KB gzip",
+    "fast": "Measured 61.8 KB raw / 13.7 KB gzip.",
     "best": "Remaining limit is that runAgent enforces local turn/call/byte/deadline bounds only; production spend caps and mutating tools still require pre-call billing reservations and idempotent server actions."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 16A D1-D7 rework of 20.12-ai-engineering)."
   },
   "20-backend/20.12-ai-engineering/20.12.05-serving-models-hosted-vs-self-hosted.md": {
-   "sha256": "7279b898f2fb8bb5b17cf18bc047f61528644b0d49d8f9d062888525e71a8b4a",
+   "sha256": "1a1357ac7754f8b44d75ab9abc89b3d804f1f08aed1ee1c9cd5bfb6204ab4f81",
    "lines": 352,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Executed estimateVram() in Node v26.13.0 (confirmed 70B 4-bit @ 8k/16 conc -> 32.6 GiB weights, 2.5 GiB/req KV, 81.86 GiB total, >=2 GPUs); checked against vLLM docs and GDPR Chapter V.",
-    "readable": "Full read of 352 lines. Rewrote hosted vs self-hosted decision framework, PagedAttention, continuous batching, quantization ladder, GPU VRAM/KV-cache math, and vLLM deployment guidance in plain English; preserved #vram-sizing-calculator.",
-    "concise": "1533 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "readable": "Full read of 352 lines (1613 prose words). Rewrote hosted vs self-hosted decision framework, PagedAttention, continuous batching, quantization ladder, GPU VRAM/KV-cache math, and vLLM deployment guidance in plain English; preserved #vram-sizing-calculator.",
+    "concise": "1613 words across 352 lines. Clear plain-English structure with worked traces, tables, and zero padding.",
     "focused": "Canonical model-serving chapter; points at 20.12.06 for authoritative data-class derivation rather than duplicating governance rules.",
-    "fast": "54.5 KB raw / 13.4 KB gzip",
+    "fast": "Measured 54.5 KB raw / 13.4 KB gzip.",
     "best": "Remaining limit is that VRAM arithmetic is a lower-bound estimate and does not replace real GPU load testing for mixed prompt/output lengths and OOM margins."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 16A D1-D7 rework of 20.12-ai-engineering)."
   },
   "20-backend/20.12-ai-engineering/20.12.06-safety-cost-governance.md": {
-   "sha256": "65ff576519fedd74329e28581d48d28caef4404ef0455884581ea62ab7bf131b",
+   "sha256": "e37f1314beb11e1335add36653c01060a212e231f89c27005f0ac370fa32181a",
    "lines": 229,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against EU AI Act staged dates (2 Aug 2026 / 2 Dec 2027 / 2 Aug 2028), OWASP LLM Top 10, and atomic PostgreSQL upsert semantics.",
-    "readable": "Full read of 229 lines. Rewrote 5-layer governance controls, EU AI Act 2026-2028 staged timetable, prompt-injection authorization boundary, atomic SQL budget reservation, and PII redaction limits clearly.",
-    "concise": "1022 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "readable": "Full read of 229 lines (1025 prose words). Rewrote 5-layer governance controls, EU AI Act 2026-2028 staged timetable, prompt-injection authorization boundary, atomic SQL budget reservation, and PII redaction limits clearly.",
+    "concise": "1025 words across 229 lines. Clear plain-English structure with worked traces, tables, and zero padding.",
     "focused": "Canonical AI safety, spend-governance, and audit chapter; points at 20.5.2.04 and 20.5.3.04 for base API security and secrets management.",
-    "fast": "36.4 KB raw / 9.5 KB gzip",
+    "fast": "Measured 36.4 KB raw / 9.5 KB gzip.",
     "best": "Remaining limit is that regex redaction misses free-text identifiers and cannot downgrade authoritative data classification; engineering controls do not substitute for legal review."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 16A D1-D7 rework of 20.12-ai-engineering)."
   },
   "20-backend/20.12-ai-engineering/20.12.07-interview-questions.md": {
-   "sha256": "586461b79408fc002a38951d9951a76714c5b1f9b66a592e1d234092ca2266f1",
+   "sha256": "d33978c8a8e0aac7520cfba479b532c4530e8297632d3917434b9a166b455be2",
    "lines": 237,
    "genre": "interview",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against rewritten 20.12.01-06 chapters, MCP 2026-07-28 revision, and EU AI Act 2026-2028 dates.",
-    "readable": "Full read of 237 lines. Cleaned up duplicate inline trap formatting across all 28 Q&As into crisp 30-second answers paired with distinct senior follow-up boundaries.",
-    "concise": "2443 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "readable": "Full read of 237 lines (2490 prose words). Cleaned up duplicate inline trap formatting across all 28 Q&As into crisp 30-second answers paired with distinct senior follow-up boundaries.",
+    "concise": "2490 words across 237 lines. Clear plain-English structure with worked traces, tables, and zero padding.",
     "focused": "Canonical AI Engineering interview drill; kept separate from REVISION.md active-recall questions.",
-    "fast": "31.5 KB raw / 11.6 KB gzip",
+    "fast": "Measured 31.5 KB raw / 11.6 KB gzip.",
     "best": "Remaining limit is that reading concise model answers does not replace speaking trade-offs aloud under adversarial follow-up probes."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 16A D1-D7 rework of 20.12-ai-engineering)."
   },
   "20-backend/20.12-ai-engineering/INDEX.md": {
-   "sha256": "9ee9e8fe34078202a4a258837e3b1219361f3fc699fde47d7e80a6edcdd95be1",
+   "sha256": "d316400b92c74156481a1f84d5fd4ef6ba48a0eea50d584702d76aa6d41411bc",
    "lines": 66,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against all 8 files in 20.12-ai-engineering/ and Docita paths; all links verified.",
-    "readable": "Full read of 66 lines. Fixed misaligned ASCII stack diagram and polished AI Engineering learning flow and Docita anchors.",
-    "concise": "174 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "readable": "Full read of 66 lines (175 prose words). Fixed misaligned ASCII stack diagram and polished AI Engineering learning flow and Docita anchors.",
+    "concise": "175 words across 66 lines. Clear plain-English structure with worked traces, tables, and zero padding.",
     "focused": "Canonical AI Engineering reading flow; points at numbered chapters and REVISION.md without duplicating technical lessons.",
-    "fast": "12.5 KB raw / 4.3 KB gzip",
+    "fast": "Measured 12.5 KB raw / 4.3 KB gzip.",
     "best": "Remaining limit is Docita pointers are code leads and require checking live deployment configuration before making claims."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 16A D1-D7 rework of 20.12-ai-engineering)."
   },
   "20-backend/20.12-ai-engineering/REVISION.md": {
-   "sha256": "05c376aa4a1fd44ae110b2cc6ddefc39e411352c076da918ff0f08fc96c4278d",
-   "lines": 128,
+   "sha256": "5d3e063e8830106567eb778d817701adba916ad8ba98a8e0abc9878bf96b545d",
+   "lines": 146,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against rewritten 20.12 chapters and MCP 2026-07-28 revision details; all anchors verified.",
-    "readable": "Full read of 128 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "914 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 146 lines (1111 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1111 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical active-recall companion for AI Engineering; separate from concept chapters and 20.12.07 interview bank.",
-    "fast": "15.6 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 15.6 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Remaining limit is that recall Q&As check conceptual boundaries and should be paired with hands-on eval and architecture drills."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 16A D1-D7 rework of 20.12-ai-engineering)."
   },
   "20-backend/20.13-java/20.13.01-java-language-fundamentals.md": {
    "sha256": "9d1a11b50535e7c66d0191ef73072078ac62bb9da882faafdcf579c6ea1e7c3c",
@@ -6580,7 +6587,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers)."
   },
   "20-backend/INDEX.md": {
-   "sha256": "f3b053d30f37e230654b7b237141de0ee43e43d3bc1af4abbac233eea49a922e",
+   "sha256": "20bebf4f513a98232d38d020ff82c531e6015e45d9be49eb5050dd0c473f9ba9",
    "lines": 122,
    "genre": "index",
    "status": "read",
@@ -6593,7 +6600,7 @@
     "fast": "Measured 15.4 KB raw / 5.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Remaining limit is study-hour path estimates are rough guides and depend on each reader's prior backend background."
    },
-   "notes": "Synced live read-time and counts after Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers."
+   "notes": "Synced live read-time and counts after Phase 16A D1-D7 rework of 20.12-ai-engineering."
   },
   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md": {
    "sha256": "065e2b7d573b2298550d061453667084b1d010e6fadf07f903f6fdd34a8e5185",
@@ -14386,7 +14393,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "757190b0f2599c718ba1d32f7a3cbe03285da6c4a85e9374a47a717459c824e2",
+   "sha256": "b4af1417175ae68959de3dfa0f12f87a62dbcadf8776b741ee5ab4312f79e27a",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14399,7 +14406,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers."
+   "notes": "Synced live read-time and counts after Phase 16A D1-D7 rework of 20.12-ai-engineering."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14690,7 +14697,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "149a1249385ca34697e4abdb1336d5a42825ed108c39e26965f690a694c64e47",
+   "sha256": "3ed0ca69bea179667a53a4d5e9771db12a1ceeceb2d4ed54bcaa2f7c9d9e2cdb",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14703,7 +14710,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers."
+   "notes": "Synced live read-time and counts after Phase 16A D1-D7 rework of 20.12-ai-engineering."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

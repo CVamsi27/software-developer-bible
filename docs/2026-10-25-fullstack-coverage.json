@@ -7412,7 +7412,7 @@
     },
     {
       "path": "20-backend/20.12-ai-engineering/20.12.01-llm-app-architecture.md",
-      "sha256": "814ff36dfb3d4f94d830228d9d78af502199d0481848f027d13edc061c80b330",
+      "sha256": "b4aceba7cf629793ddd2ed2d4a61ed0bdec9ee6db59757b58bd46f0abdb1b4c5",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -7438,19 +7438,19 @@
       },
       "review": {
         "path": "20-backend/20.12-ai-engineering/20.12.01-llm-app-architecture.md",
-        "sha256": "814ff36dfb3d4f94d830228d9d78af502199d0481848f027d13edc061c80b330",
+        "sha256": "b4aceba7cf629793ddd2ed2d4a61ed0bdec9ee6db59757b58bd46f0abdb1b4c5",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
-        "notes": "Phase 0 pilot comprehension rewrite (2026-11-23): plain-English end-to-end architecture walkthrough with 4 production failure hook, request pipeline diagram, prompting/RAG/fine-tuning decision table, chunking & post-filter recall traps, SSE drain backpressure & res.on(close) cancellation, tool-call ID correlation, and boundary metering excerpts. Satisfies 20.12 REVISION.md Q&As; provider calls explicitly framed as excerpts requiring vendor keys.",
+        "reviewDate": "2026-11-24",
+        "notes": "Phase 16A D1-D7 rework of 20.12-ai-engineering C1-C8 refinement (2026-11-24): Full read of 278 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.12-ai-engineering/20.12.02-prompts-context-evals.md",
-      "sha256": "ff9466bf5ad028f5d295231cbaab5a09e666f251315bfd21f2cf8bf320db3247",
+      "sha256": "209e9475657316902471fcabc906f2d3fdd1cd16a6c63b750051d9f3dde537a5",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -7474,19 +7474,19 @@
       },
       "review": {
         "path": "20-backend/20.12-ai-engineering/20.12.02-prompts-context-evals.md",
-        "sha256": "ff9466bf5ad028f5d295231cbaab5a09e666f251315bfd21f2cf8bf320db3247",
+        "sha256": "209e9475657316902471fcabc906f2d3fdd1cd16a6c63b750051d9f3dde537a5",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
-        "notes": "Phase 2 Batch 2a (2026-11-23): Full read of 295 lines. Rewrote for clear first-pass comprehension covering prompt structure, full serialized context budgeting, multi-layer evals, and judge calibration; preserved #one-deterministic-evaluation-trace. Executed checkAnswer in Node v26.13.0 (verified valid and invented source cases); checked against OpenAI and Anthropic prompt/eval docs.",
+        "reviewDate": "2026-11-24",
+        "notes": "Phase 16A D1-D7 rework of 20.12-ai-engineering C1-C8 refinement (2026-11-24): Full read of 296 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.12-ai-engineering/20.12.03-retrieval-quality-hybrid-search-reranking.md",
-      "sha256": "ccfd139458a174a5158181f9b843741c39ccdd240389a2e5420e0b07186505c3",
+      "sha256": "b94da02fbed6a8bdf1e120588049871932ae306527583b672e6e1b037bba8665",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -7512,19 +7512,19 @@
       },
       "review": {
         "path": "20-backend/20.12-ai-engineering/20.12.03-retrieval-quality-hybrid-search-reranking.md",
-        "sha256": "ccfd139458a174a5158181f9b843741c39ccdd240389a2e5420e0b07186505c3",
+        "sha256": "b94da02fbed6a8bdf1e120588049871932ae306527583b672e6e1b037bba8665",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
-        "notes": "Phase 2 Batch 2a (2026-11-23): Full read of 325 lines. Unpacked dense definitions into clear plain English covering lexical FTS/BM25, dense vectors, RRF, bi-encoder vs cross-encoder, HNSW vs IVF, chunking, and recall@k; preserved #trace-fusion-independently-of-any-provider. Executed fuse() in Node v26.13.0 (confirmed B:0.0315 beats A:0.0303 and C:0.0164 at k=60); checked against pgvector, Cohere Rerank, and BGE docs.",
+        "reviewDate": "2026-11-24",
+        "notes": "Phase 16A D1-D7 rework of 20.12-ai-engineering C1-C8 refinement (2026-11-24): Full read of 327 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.md",
-      "sha256": "fff0ef98b5667b7bb82dbe7cf255c009adaec86cd1254f301d6007a65826a659",
+      "sha256": "5ddba0ee125200d0acfb1a14ebd4651ebdaeed3db738fd74a51716927eac11d6",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -7546,19 +7546,19 @@
       },
       "review": {
         "path": "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.md",
-        "sha256": "fff0ef98b5667b7bb82dbe7cf255c009adaec86cd1254f301d6007a65826a659",
+        "sha256": "5ddba0ee125200d0acfb1a14ebd4651ebdaeed3db738fd74a51716927eac11d6",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
-        "notes": "Phase 2 Batch 2a (2026-11-23): Full read of 363 lines. Fixed both broken ASCII diagrams (orchestrator loop and graph/state-machine view) and rewrote ReAct, stopping guards, MCP 2026-07-28, multi-agent topologies, and trajectory evals clearly; preserved #an-executable-control-loop-with-injected-read-tools. Executed runAgent() in Node v26.13.0 (verified happy search->answer path and unknown-tool turn_budget halt); checked against MCP 2026-07-28 transport spec.",
+        "reviewDate": "2026-11-24",
+        "notes": "Phase 16A D1-D7 rework of 20.12-ai-engineering C1-C8 refinement (2026-11-24): Full read of 364 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.12-ai-engineering/20.12.05-serving-models-hosted-vs-self-hosted.md",
-      "sha256": "7279b898f2fb8bb5b17cf18bc047f61528644b0d49d8f9d062888525e71a8b4a",
+      "sha256": "1a1357ac7754f8b44d75ab9abc89b3d804f1f08aed1ee1c9cd5bfb6204ab4f81",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -7585,19 +7585,19 @@
       },
       "review": {
         "path": "20-backend/20.12-ai-engineering/20.12.05-serving-models-hosted-vs-self-hosted.md",
-        "sha256": "7279b898f2fb8bb5b17cf18bc047f61528644b0d49d8f9d062888525e71a8b4a",
+        "sha256": "1a1357ac7754f8b44d75ab9abc89b3d804f1f08aed1ee1c9cd5bfb6204ab4f81",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
-        "notes": "Phase 2 Batch 2a (2026-11-23): Full read of 352 lines. Rewrote hosted vs self-hosted decision framework, PagedAttention, continuous batching, quantization ladder, GPU VRAM/KV-cache math, and vLLM deployment guidance in plain English; preserved #vram-sizing-calculator. Executed estimateVram() in Node v26.13.0 (confirmed 70B 4-bit @ 8k/16 conc -> 32.6 GiB weights, 2.5 GiB/req KV, 81.86 GiB total, >=2 GPUs); checked against vLLM docs and GDPR Chapter V.",
+        "reviewDate": "2026-11-24",
+        "notes": "Phase 16A D1-D7 rework of 20.12-ai-engineering C1-C8 refinement (2026-11-24): Full read of 352 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.12-ai-engineering/20.12.06-safety-cost-governance.md",
-      "sha256": "65ff576519fedd74329e28581d48d28caef4404ef0455884581ea62ab7bf131b",
+      "sha256": "e37f1314beb11e1335add36653c01060a212e231f89c27005f0ac370fa32181a",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -7619,19 +7619,19 @@
       },
       "review": {
         "path": "20-backend/20.12-ai-engineering/20.12.06-safety-cost-governance.md",
-        "sha256": "65ff576519fedd74329e28581d48d28caef4404ef0455884581ea62ab7bf131b",
+        "sha256": "e37f1314beb11e1335add36653c01060a212e231f89c27005f0ac370fa32181a",
         "genre": "learning-chapter",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
-        "notes": "Phase 2 Batch 2a (2026-11-23): Full read of 229 lines. Rewrote 5-layer governance controls, EU AI Act 2026-2028 staged timetable, prompt-injection authorization boundary, atomic SQL budget reservation, and PII redaction limits clearly. Checked against EU AI Act staged dates (2 Aug 2026 / 2 Dec 2027 / 2 Aug 2028), OWASP LLM Top 10, and atomic PostgreSQL upsert semantics.",
+        "reviewDate": "2026-11-24",
+        "notes": "Phase 16A D1-D7 rework of 20.12-ai-engineering C1-C8 refinement (2026-11-24): Full read of 229 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.12-ai-engineering/20.12.07-interview-questions.md",
-      "sha256": "586461b79408fc002a38951d9951a76714c5b1f9b66a592e1d234092ca2266f1",
+      "sha256": "d33978c8a8e0aac7520cfba479b532c4530e8297632d3917434b9a166b455be2",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -7654,19 +7654,19 @@
       },
       "review": {
         "path": "20-backend/20.12-ai-engineering/20.12.07-interview-questions.md",
-        "sha256": "586461b79408fc002a38951d9951a76714c5b1f9b66a592e1d234092ca2266f1",
+        "sha256": "d33978c8a8e0aac7520cfba479b532c4530e8297632d3917434b9a166b455be2",
         "genre": "interview-bank",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
-        "notes": "Phase 2 Batch 2a (2026-11-23): Full read of 237 lines. Cleaned up duplicate inline trap formatting across all 28 Q&As into crisp 30-second answers paired with distinct senior follow-up boundaries. Checked against rewritten 20.12.01-06 chapters, MCP 2026-07-28 revision, and EU AI Act 2026-2028 dates.",
+        "reviewDate": "2026-11-24",
+        "notes": "Phase 16A D1-D7 rework of 20.12-ai-engineering C1-C8 refinement (2026-11-24): Full read of 237 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.12-ai-engineering/INDEX.md",
-      "sha256": "9ee9e8fe34078202a4a258837e3b1219361f3fc699fde47d7e80a6edcdd95be1",
+      "sha256": "d316400b92c74156481a1f84d5fd4ef6ba48a0eea50d584702d76aa6d41411bc",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -7685,19 +7685,19 @@
       },
       "review": {
         "path": "20-backend/20.12-ai-engineering/INDEX.md",
-        "sha256": "9ee9e8fe34078202a4a258837e3b1219361f3fc699fde47d7e80a6edcdd95be1",
+        "sha256": "d316400b92c74156481a1f84d5fd4ef6ba48a0eea50d584702d76aa6d41411bc",
         "genre": "navigation-index",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
-        "notes": "Phase 2 Batch 2a (2026-11-23): Full read of 66 lines. Fixed misaligned ASCII stack diagram and polished AI Engineering learning flow and Docita anchors. Checked against all 8 files in 20.12-ai-engineering/ and Docita paths; all links verified.",
+        "reviewDate": "2026-11-24",
+        "notes": "Phase 16A D1-D7 rework of 20.12-ai-engineering C1-C8 refinement (2026-11-24): Full read of 66 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
     },
     {
       "path": "20-backend/20.12-ai-engineering/REVISION.md",
-      "sha256": "05c376aa4a1fd44ae110b2cc6ddefc39e411352c076da918ff0f08fc96c4278d",
+      "sha256": "5d3e063e8830106567eb778d817701adba916ad8ba98a8e0abc9878bf96b545d",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -7714,18 +7714,18 @@
           "References & Learn More"
         ],
         "code_fences": 0,
-        "revision_questions": 19,
+        "revision_questions": 22,
         "has_summary": true,
         "has_first_principles": false
       },
       "review": {
         "path": "20-backend/20.12-ai-engineering/REVISION.md",
-        "sha256": "05c376aa4a1fd44ae110b2cc6ddefc39e411352c076da918ff0f08fc96c4278d",
+        "sha256": "5d3e063e8830106567eb778d817701adba916ad8ba98a8e0abc9878bf96b545d",
         "genre": "revision-companion",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "Phase 16A D1-D7 rework of 20.12-ai-engineering C1-C8 refinement (2026-11-24): Full read of 146 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "fullContentRead": true,
         "findings": []
       }
@@ -14227,7 +14227,7 @@
     },
     {
       "path": "20-backend/INDEX.md",
-      "sha256": "f3b053d30f37e230654b7b237141de0ee43e43d3bc1af4abbac233eea49a922e",
+      "sha256": "20bebf4f513a98232d38d020ff82c531e6015e45d9be49eb5050dd0c473f9ba9",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -14246,12 +14246,12 @@
       },
       "review": {
         "path": "20-backend/INDEX.md",
-        "sha256": "f3b053d30f37e230654b7b237141de0ee43e43d3bc1af4abbac233eea49a922e",
+        "sha256": "20bebf4f513a98232d38d020ff82c531e6015e45d9be49eb5050dd0c473f9ba9",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers count/read-time sync (2026-11-24): Full read of 122 lines. Updated generated counts/read-time navigation after Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers.",
+        "notes": "Phase 16A D1-D7 rework of 20.12-ai-engineering count/read-time sync (2026-11-24): Full read of 122 lines. Updated generated counts/read-time navigation after Phase 16A D1-D7 rework of 20.12-ai-engineering.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "ab7ced08ffe012474a86db7f5ff38398ca691458b124ed67f5bf5a2780894865",
@@ -31035,7 +31035,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "757190b0f2599c718ba1d32f7a3cbe03285da6c4a85e9374a47a717459c824e2",
+      "sha256": "b4af1417175ae68959de3dfa0f12f87a62dbcadf8776b741ee5ab4312f79e27a",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -31053,12 +31053,12 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "757190b0f2599c718ba1d32f7a3cbe03285da6c4a85e9374a47a717459c824e2",
+        "sha256": "b4af1417175ae68959de3dfa0f12f87a62dbcadf8776b741ee5ab4312f79e27a",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers.",
+        "notes": "Phase 16A D1-D7 rework of 20.12-ai-engineering count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Phase 16A D1-D7 rework of 20.12-ai-engineering.",
         "findings": []
       }
     },
@@ -31638,7 +31638,7 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "149a1249385ca34697e4abdb1336d5a42825ed108c39e26965f690a694c64e47",
+      "sha256": "3ed0ca69bea179667a53a4d5e9771db12a1ceeceb2d4ed54bcaa2f7c9d9e2cdb",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31656,12 +31656,12 @@
       },
       "review": {
         "path": "docs/api-contract.md",
-        "sha256": "149a1249385ca34697e4abdb1336d5a42825ed108c39e26965f690a694c64e47",
+        "sha256": "3ed0ca69bea179667a53a4d5e9771db12a1ceeceb2d4ed54bcaa2f7c9d9e2cdb",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 15B D1-D7 rework of 20.8-caching and 20.9-message-brokers.",
+        "notes": "Phase 16A D1-D7 rework of 20.12-ai-engineering count/read-time sync (2026-11-24): Full read of 115 lines. Updated generated counts/read-time navigation after Phase 16A D1-D7 rework of 20.12-ai-engineering.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

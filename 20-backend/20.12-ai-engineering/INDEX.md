@@ -1,6 +1,6 @@
 # AI Engineering — Index
 
-> **Study time:** ≈ 1 h 31 m of reading (8 files, ~11 min average).
+> **Study time:** ≈ 1 h 34 m of reading (8 files, ~12 min average).
 > **Building products with language models** — this track focuses on application architecture, retrieval, evaluation, serving, and governance rather than model training. Learn the mechanisms in order, then practice explaining their trade-offs with evidence from systems you have actually worked on.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
@@ -14,10 +14,10 @@
 Start by framing the model as a probabilistic dependency inside an ordinary application. Then follow a request through context selection, retrieval, orchestration, serving, and governance. Each chapter adds a boundary the previous one relies on.
 
 | Step | Read | Be ready to explain |
-| ---- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| ---- | ----------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | 1 | [LLM App Architecture](20.12.01-llm-app-architecture.md) | When a problem calls for prompting, retrieval, or tuning; where validation and authorization belong |
 | 2 | [Prompts, Context & Evals](20.12.02-prompts-context-evals.md) | How to budget a serialized request and measure quality, refusal, cost, and latency |
-| 3 | [Retrieval Quality: Hybrid Search & Reranking](20.12.03-retrieval-quality-hybrid-search-reranking.md) | How lexical/vector candidates, fusion, reranking, chunking, and tenant filters shape evidence quality |
+| 3 | [Retrieval Quality: Hybrid Search & Reranking](20.12.03-retrieval-quality-hybrid-search-reranking.md) | How lexical and vector candidates, fusion, reranking, chunking, and tenant filters shape evidence quality |
 | 4 | [Agent Orchestration Patterns](20.12.04-agent-orchestration-patterns.md) | How application code bounds tool use, state, side effects, and recovery |
 | 5 | [Serving Models: Hosted vs Self-Hosted](20.12.05-serving-models-hosted-vs-self-hosted.md) | How quality, total cost, latency, data handling, and operations decide the serving path |
 | 6 | [Safety, Cost & Governance](20.12.06-safety-cost-governance.md) | How to enforce egress, authorization, budget, review, and audit controls |
@@ -26,7 +26,7 @@ Start by framing the model as a probabilistic dependency inside an ordinary appl
 
 ## Choose Your First Pass
 
-For an interactive document assistant, begin with architecture → prompts/evals → retrieval. Add orchestration when the feature needs tools or multi-step work. Before designing provider egress or fallback chains, read governance and serving. Use the [separate Revision](REVISION.md) to retrieve mechanisms from memory, then practice trade-offs in the interview bank.
+For an interactive document assistant, begin with architecture → prompts and evals → retrieval. Add orchestration when the feature needs tools or multi-step work. Before designing provider egress or fallback chains, read governance and serving. Use the [separate Revision](REVISION.md) to retrieve mechanisms from memory, then practice trade-offs in the interview bank.
 
 ## The Production Stack in One Diagram
 
@@ -63,4 +63,4 @@ Inspect these [Docita](https://github.com/CVamsi27/docita) modules to see how th
 
 ## Navigation
 
-[← Previous: Microservices](../20.6-microservices/INDEX.md) · [ Back to Index](../../INDEX.md)
+[← Previous: Microservices](../20.6-microservices/INDEX.md) · [Back to Index](../../INDEX.md)

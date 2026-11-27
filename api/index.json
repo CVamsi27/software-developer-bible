@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "64c1a7622a800aced98f67531b7a00a62396adea4fb625bdf019e4c4e438acee",
+ "corpus_digest": "31213cb4842d7f48080e21911aa2c0f84111bc1defefd1bdf5f92b7ce326e54f",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5590
+  "read_minutes": 5593
  },
  "chapters": [
   {
@@ -1869,7 +1869,7 @@
    "g": [
     "concept"
    ],
-   "m": 16
+   "m": 17
   },
   {
    "p": "20-backend/20.12-ai-engineering/20.12.05-serving-models-hosted-vs-self-hosted.html",
@@ -1879,7 +1879,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 16
   },
   {
    "p": "20-backend/20.12-ai-engineering/20.12.06-safety-cost-governance.html",
@@ -1909,7 +1909,7 @@
    "g": [
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "20-backend/20.13-java/20.13.01-java-language-fundamentals.html",

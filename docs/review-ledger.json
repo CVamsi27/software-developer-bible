@@ -2651,100 +2651,100 @@
    "notes": "C1-C8 genuine file-by-file refinement (Phase 6B D1-D7 rework: 10.6-animation (completes 10.6-animation))."
   },
   "10-frontend/10.7-html-css/10.7.01-html-fundamentals.md": {
-   "sha256": "396d94eb305648916103051927c47505348f0078fbd72cbeeeed05f6f0e92d61",
-   "lines": 188,
+   "sha256": "ce6b3c592f45d9f39e721245d431d7ae32227abb2b60d751590a3822795745b1",
+   "lines": 192,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against the WHATWG HTML standard and MDN form, label and accessibility references; button default type, successful-control submission, datalist suggestions and aria-describedby behavior match those sources on 2026-11-18 (URLs 200).",
-    "readable": "Full read of 188 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "850 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 192 lines (961 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "961 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Semantic form contract and document metadata are owned here; CSS fundamentals own the styling layer, and SEO owns crawl and index consequences.",
-    "fast": "30.3 KB raw / 7.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 30.3 KB raw / 7.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Separates native validation from server authorization and metadata from access control; a canonical link cannot enforce access or redirect a visitor."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 7A D1-D7 rework: 10.7-html-css (10.7.01-10.7.06))."
   },
   "10-frontend/10.7-html-css/10.7.02-css-fundamentals.md": {
-   "sha256": "3ac6e477ea5c2ef364526966da9135e2d0bfc701c0d73fd2390b5e3c3d7a6135",
-   "lines": 230,
+   "sha256": "cde66c003d82e0337a25c2121659ce1e0eca184e4b8b0aed4046cf9e89f49e93",
+   "lines": 250,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against MDN cascade, specificity, flexbox, grid and container-query references; layer ordering, important reversal, transition precedence and logical properties match those sources on 2026-11-18 (URLs 200).",
-    "readable": "Full read of 230 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "751 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 250 lines (915 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "915 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Cascade and layout primitives are owned here; CSS architecture owns team-scale ownership, and theming owns token semantics.",
-    "fast": "30.6 KB raw / 6.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 30.6 KB raw / 6.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Shows why a declaration lost before prescribing a fix; specificity arithmetic cannot explain layer or origin precedence, and no layout mode removes the need for content testing."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 7A D1-D7 rework: 10.7-html-css (10.7.01-10.7.06))."
   },
   "10-frontend/10.7-html-css/10.7.03-browser-rendering.md": {
-   "sha256": "09d87d0d169164ca13fd3f7048e40bb42a50fa4dabda188497015ae6af680316",
-   "lines": 103,
+   "sha256": "b26c47bbc4eb9d39fe90bff24d9d447ecf525848a45ff1d35877f2f1754d4da8",
+   "lines": 105,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against web.dev rendering-performance, MDN Performance API and Chrome DevTools performance documentation; the parser, defer and async behavior and compositor qualifications match those sources on 2026-11-18 (URLs 200).",
-    "readable": "Full read of 103 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "792 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 105 lines (915 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "915 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Render-stage invalidation is owned here; CSS fundamentals own the properties, and performance monitoring owns field measurement.",
-    "fast": "18.2 KB raw / 5.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 18.2 KB raw / 5.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Traces which stage a change invalidates; a rAF callback does not erase read/write dependencies, and compositing cannot be guaranteed from a property list."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 7A D1-D7 rework: 10.7-html-css (10.7.01-10.7.06))."
   },
   "10-frontend/10.7-html-css/10.7.04-seo.md": {
-   "sha256": "4bedb0bf279c2f8bcb31e1f42d2a388d702e169baaba20102bd119aeef003083",
-   "lines": 108,
+   "sha256": "27188b04a06b117a4ff0aeae562f816aac5204099c69924461e424e59ffe7aad",
+   "lines": 112,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against the Google Search Central changelog and JavaScript SEO guidance plus web.dev vitals; the FAQ rich-result deprecation on 7 May 2026, canonical-signal limits and the LCP/INP/CLS thresholds match those sources on 2026-11-18 (URLs 200).",
-    "readable": "Full read of 108 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "659 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 112 lines (779 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "779 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Technical discovery and index eligibility are owned here; Next.js metadata owns framework output, and performance monitoring owns field evidence.",
-    "fast": "17.2 KB raw / 5.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 17.2 KB raw / 5.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Separates crawling, indexing and ranking; noindex cannot protect private content, and valid structured data does not guarantee a rich result."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 7A D1-D7 rework: 10.7-html-css (10.7.01-10.7.06))."
   },
   "10-frontend/10.7-html-css/10.7.05-pwa.md": {
-   "sha256": "1582ec800e635434e5919bcc996a67220e2dfea7b1c9d15570c921b06be9367e",
-   "lines": 244,
+   "sha256": "8d772db892147aa599308e5563f5143d76e4c973f57d7ed2693f0fd06c94a4e2",
+   "lines": 269,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against MDN service worker, Cache API, Background Sync and Push references plus web.dev PWA guidance; secure-context scope, waiting-worker activation, addAll failure and idempotency requirements match those sources on 2026-11-18 (URLs 200).",
-    "readable": "Full read of 244 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "1062 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 269 lines (1178 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1178 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Service-worker lifecycle and offline write replay are owned here; browser storage owns the store comparison, and HTTP caching owns shared cache semantics.",
-    "fast": "41.3 KB raw / 8.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 41.3 KB raw / 8.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Names the privacy boundary of cached authenticated responses; a service worker cannot make a queued write exactly-once without server-enforced idempotency."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 7A D1-D7 rework: 10.7-html-css (10.7.01-10.7.06))."
   },
   "10-frontend/10.7-html-css/10.7.06-css-architecture-styling-approaches.md": {
-   "sha256": "1b35f124778ecbfeb3a8c59f9771a5444267c21c252be80f1e11aebcd9893407",
-   "lines": 122,
+   "sha256": "324d08f9efdae9969e2a074727e4ee90ad2e0c18a713c726eb7a9cd1063efd6b",
+   "lines": 131,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against MDN cascade layers, the Tailwind v4 theme and upgrade guides, and the CSS Modules and Stylelint documentation; unlayered precedence and the v4 CSS-first configuration match those sources on 2026-11-18 (URLs 200).",
-    "readable": "Full read of 122 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "768 words of prose after removing redundant opener/callout repetition and stale phrasing.",
+    "readable": "Full read of 131 lines (891 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "891 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Selector ownership and layer governance are owned here; CSS fundamentals own specificity mechanics, and theming owns token values.",
-    "fast": "19.1 KB raw / 6.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 19.1 KB raw / 6.0 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Separates ownership from precedence and value sharing; a hashed class cannot fix theme precedence, and cascade layers do not prevent broad selectors."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 7A D1-D7 rework: 10.7-html-css (10.7.01-10.7.06))."
   },
   "10-frontend/10.7-html-css/10.7.07-theming-design-tokens.md": {
    "sha256": "4a62c8437a9799daca98e26456d200351f6bff94d2918180fc13cdf9bb20df57",
@@ -2811,20 +2811,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/10.7-html-css/INDEX.md": {
-   "sha256": "23ef9d1dffbe580a3157f1c43f2128de58efb5738539d9e42258ce8a300cdc06",
+   "sha256": "0dfe5e86c1281d7e3ee4193ebcd833419a5af9a7a6a61bcfd00a9327628df70e",
    "lines": 67,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "No version-sensitive claim; the 11-file count (ten chapters plus one revision companion), 69-minute total and status badge were re-derived from disk, and the table times sum to 69 on 2026-11-18.",
-    "readable": "Full read of 67 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 67 lines (393 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "393 words of prose after removing redundant opener/callout repetition and stale phrasing.",
     "focused": "Navigation only: it points at ten chapters and their revision drill without retelling their mechanisms.",
-    "fast": "12.3 KB raw / 4.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured 12.3 KB raw / 4.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Orders the section from content meaning to pixels to persistence and discovery; it does not teach any chapter itself."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
+   "notes": "C1-C8 genuine file-by-file refinement (Phase 7A D1-D7 rework: 10.7-html-css (10.7.01-10.7.06))."
   },
   "10-frontend/10.7-html-css/REVISION.md": {
    "sha256": "fd9f26d497cf13768e59268666c261d29ababfd32e84a0a32b3fa799d0ce69fd",
@@ -2987,7 +2987,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 1 10-frontend + synced index/docs)."
   },
   "10-frontend/INDEX.md": {
-   "sha256": "ba4f9165e954479a4392ae49286d60f6998ad3a92725adacfb1a69fd5270bd29",
+   "sha256": "25968550cf21cfa30b011022216340a124329abf8ae8c17338f8a562e4d734e3",
    "lines": 75,
    "genre": "index",
    "status": "read",
@@ -3000,7 +3000,7 @@
     "fast": "Measured 14.7 KB raw / 4.8 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Sets the frontend study order from execution to optional capabilities; it limits itself to navigation and does not teach any mechanism."
    },
-   "notes": "Synced live read-time and counts after Phase 6B D1-D7 rework: 10.6-animation (completes 10.6-animation)."
+   "notes": "Synced live read-time and counts after Phase 7A D1-D7 rework: 10.7-html-css (10.7.01-10.7.06)."
   },
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md": {
    "sha256": "cbb48962f1b1c976f33493d3398af0e10c4deb7f49db4537cb50b8af762ebfe1",
@@ -14365,7 +14365,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "c7fef1db90a2dc39dcef9b7994eb29f3721844f6f1aeccf665365fd782abab0a",
+   "sha256": "47f32a0b27b1e14500571109a7d4197a3f02f2a3a38b15d87aa3f4560ef2be84",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14378,7 +14378,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (no separate page weight measured beyond source bytes.)",
     "best": "Does not duplicate stack index content; its boundary is navigation only and it cannot replace reading any chapter."
    },
-   "notes": "Synced live read-time and counts after Phase 6B D1-D7 rework: 10.6-animation (completes 10.6-animation)."
+   "notes": "Synced live read-time and counts after Phase 7A D1-D7 rework: 10.7-html-css (10.7.01-10.7.06)."
   },
   "README.md": {
    "sha256": "b0292130eb6914c6bdb030f178fef072e84fc33256167a4f18b53678ebf35339",
@@ -14669,7 +14669,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
-   "sha256": "e464b65403d7ca582fd5ff9adba67b9b2aa239af63f06d2d04ec703b4c8fc609",
+   "sha256": "35b09a6c5dee819a85c35ca2c83b6b7e35980e5ae1fcfe8e34ded2daf1abbe43",
    "lines": 115,
    "genre": "doc",
    "status": "read",
@@ -14682,7 +14682,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Phase 6B D1-D7 rework: 10.6-animation (completes 10.6-animation)."
+   "notes": "Synced live read-time and counts after Phase 7A D1-D7 rework: 10.7-html-css (10.7.01-10.7.06)."
   },
   "docs/deployment.md": {
    "sha256": "6de8af2afffaa122368c5911b71463a4109716592dbeb891418cdda639ef2e77",

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "9fafb8e743b76332194b0cb0a347871d6ca00c0731fd278bc1bed8598eed0790",
+ "corpus_digest": "0124ce494114add21793d63496a5a55904197efe88843e2c7ca5b34006b2d800",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5522
+  "read_minutes": 5529
  },
  "chapters": [
   {
@@ -1444,7 +1444,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.7-html-css/10.7.02-css-fundamentals.html",
@@ -1454,7 +1454,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 10
   },
   {
    "p": "10-frontend/10.7-html-css/10.7.03-browser-rendering.html",
@@ -1464,7 +1464,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "10-frontend/10.7-html-css/10.7.04-seo.html",
@@ -1484,7 +1484,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 13
   },
   {
    "p": "10-frontend/10.7-html-css/10.7.06-css-architecture-styling-approaches.html",
@@ -1495,7 +1495,7 @@
     "concept",
     "guide"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "10-frontend/10.7-html-css/10.7.07-theming-design-tokens.html",
